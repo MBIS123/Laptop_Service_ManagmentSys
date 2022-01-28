@@ -54,6 +54,7 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.linklblPayment = new System.Windows.Forms.LinkLabel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.grpBoxRequest.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -152,7 +153,7 @@
             "6 Operating System Format and Installation\t   \t RM 100     \tRM 150",
             "7 Data backup and recovery \t\t\t RM 80       \tRM 130",
             "8 Internet connectivity issues \t\t\t RM 70       \tRM 100"});
-            this.lstBoxService.Location = new System.Drawing.Point(31, 39);
+            this.lstBoxService.Location = new System.Drawing.Point(16, 39);
             this.lstBoxService.Name = "lstBoxService";
             this.lstBoxService.Size = new System.Drawing.Size(722, 202);
             this.lstBoxService.TabIndex = 0;
@@ -360,12 +361,20 @@
             this.linklblPayment.TabStop = true;
             this.linklblPayment.Text = "PAYMENT";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(649, 49);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(300, 31);
+            this.dateTimePicker1.TabIndex = 41;
+            // 
             // frmServRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(986, 601);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -427,5 +436,6 @@
         private Splitter splitter1;
         private GroupBox groupBox5;
         private LinkLabel linklblPayment;
+        private DateTimePicker dateTimePicker1;
     }
 }
