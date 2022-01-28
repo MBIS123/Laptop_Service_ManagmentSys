@@ -59,12 +59,15 @@
             this.lblRcn = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.linklblPayment = new System.Windows.Forms.LinkLabel();
             this.grpBoxReg.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpBoxReg
@@ -258,7 +261,7 @@
             // 
             this.groupBox4.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox4.Controls.Add(this.linklblLogout);
-            this.groupBox4.Location = new System.Drawing.Point(1, 417);
+            this.groupBox4.Location = new System.Drawing.Point(1, 470);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(203, 36);
             this.groupBox4.TabIndex = 38;
@@ -391,16 +394,41 @@
             this.splitter1.BackColor = System.Drawing.Color.SeaShell;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(203, 495);
+            this.splitter1.Size = new System.Drawing.Size(203, 516);
             this.splitter1.TabIndex = 34;
             this.splitter1.TabStop = false;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox5.Controls.Add(this.linklblPayment);
+            this.groupBox5.Location = new System.Drawing.Point(1, 413);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(203, 36);
+            this.groupBox5.TabIndex = 39;
+            this.groupBox5.TabStop = false;
+            // 
+            // linklblPayment
+            // 
+            this.linklblPayment.ActiveLinkColor = System.Drawing.Color.DarkRed;
+            this.linklblPayment.AutoSize = true;
+            this.linklblPayment.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.linklblPayment.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linklblPayment.LinkColor = System.Drawing.Color.Blue;
+            this.linklblPayment.Location = new System.Drawing.Point(51, 8);
+            this.linklblPayment.Name = "linklblPayment";
+            this.linklblPayment.Size = new System.Drawing.Size(94, 20);
+            this.linklblPayment.TabIndex = 28;
+            this.linklblPayment.TabStop = true;
+            this.linklblPayment.Text = "PAYMENT";
             // 
             // frmAccSet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(842, 495);
+            this.ClientSize = new System.Drawing.Size(842, 516);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -424,6 +452,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -461,5 +491,7 @@
         private Label lblRcn;
         private PictureBox pictureBoxLogo;
         private Splitter splitter1;
+        private GroupBox groupBox5;
+        private LinkLabel linklblPayment;
     }
 }
