@@ -34,7 +34,7 @@
             this.lblAmt = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblServType = new System.Windows.Forms.Label();
-            this.btnPayment = new System.Windows.Forms.Button();
+            this.btnOrder = new System.Windows.Forms.Button();
             this.radBtnUrgent = new System.Windows.Forms.RadioButton();
             this.radBtnNormal = new System.Windows.Forms.RadioButton();
             this.lstBoxService = new System.Windows.Forms.ListBox();
@@ -72,7 +72,7 @@
             this.grpBoxRequest.Controls.Add(this.lblAmt);
             this.grpBoxRequest.Controls.Add(this.btnClear);
             this.grpBoxRequest.Controls.Add(this.lblServType);
-            this.grpBoxRequest.Controls.Add(this.btnPayment);
+            this.grpBoxRequest.Controls.Add(this.btnOrder);
             this.grpBoxRequest.Controls.Add(this.radBtnUrgent);
             this.grpBoxRequest.Controls.Add(this.radBtnNormal);
             this.grpBoxRequest.Controls.Add(this.lstBoxService);
@@ -122,17 +122,17 @@
             this.lblServType.TabIndex = 4;
             this.lblServType.Text = "Service Type:";
             // 
-            // btnPayment
+            // btnOrder
             // 
-            this.btnPayment.BackColor = System.Drawing.Color.White;
-            this.btnPayment.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnPayment.Location = new System.Drawing.Point(308, 362);
-            this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(256, 34);
-            this.btnPayment.TabIndex = 3;
-            this.btnPayment.Text = "Confirm Payment";
-            this.btnPayment.UseVisualStyleBackColor = false;
-            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
+            this.btnOrder.BackColor = System.Drawing.Color.White;
+            this.btnOrder.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnOrder.Location = new System.Drawing.Point(308, 362);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(256, 34);
+            this.btnOrder.TabIndex = 3;
+            this.btnOrder.Text = "Confirm Order";
+            this.btnOrder.UseVisualStyleBackColor = false;
+            this.btnOrder.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // radBtnUrgent
             // 
@@ -426,7 +426,7 @@
         private GroupBox grpBoxRequest;
         private Button btnClear;
         private Label lblServType;
-        private Button btnPayment;
+        private Button btnOrder;
         private RadioButton radBtnUrgent;
         private RadioButton radBtnNormal;
         private ListBox lstBoxService;
