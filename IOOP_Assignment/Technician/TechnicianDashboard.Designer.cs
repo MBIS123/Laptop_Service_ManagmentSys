@@ -29,21 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TechnicianDashboard));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnAccess_Profile = new System.Windows.Forms.Button();
@@ -60,17 +52,6 @@
             this.panelWidget_Pend = new System.Windows.Forms.Panel();
             this.lblWidg_ValuePendServ = new System.Windows.Forms.Label();
             this.lblWidg_TextPendServ = new System.Windows.Forms.Label();
-            this.l = new System.Windows.Forms.Label();
-            this.dataGrid_CompServ = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boolCollected = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnAccess_PendServ = new System.Windows.Forms.Button();
             this.dataGrid_PendServ = new System.Windows.Forms.DataGridView();
             this.JobID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,7 +61,7 @@
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CollectionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblTable_TextPendServ = new System.Windows.Forms.Label();
+            this.lblTable_TextAllServ = new System.Windows.Forms.Label();
             this.panelTable_Pend = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMenuProfile)).BeginInit();
@@ -88,8 +69,6 @@
             this.panelWidget_Comp.SuspendLayout();
             this.panelWidget_Urg.SuspendLayout();
             this.panelWidget_Pend.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_CompServ)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_PendServ)).BeginInit();
             this.panelTable_Pend.SuspendLayout();
             this.SuspendLayout();
@@ -180,7 +159,7 @@
             this.panelWidget_Comp.BackColor = System.Drawing.Color.Khaki;
             this.panelWidget_Comp.Controls.Add(this.lblWidg_ValueCompServ);
             this.panelWidget_Comp.Controls.Add(this.lblWidg_TextCompServ);
-            this.panelWidget_Comp.Location = new System.Drawing.Point(839, 54);
+            this.panelWidget_Comp.Location = new System.Drawing.Point(1118, 62);
             this.panelWidget_Comp.Name = "panelWidget_Comp";
             this.panelWidget_Comp.Size = new System.Drawing.Size(237, 100);
             this.panelWidget_Comp.TabIndex = 9;
@@ -211,7 +190,7 @@
             this.panelWidget_Urg.BackColor = System.Drawing.Color.Khaki;
             this.panelWidget_Urg.Controls.Add(this.lblWidg_ValueUrgServ);
             this.panelWidget_Urg.Controls.Add(this.lblWidg_TextUrgServ);
-            this.panelWidget_Urg.Location = new System.Drawing.Point(568, 54);
+            this.panelWidget_Urg.Location = new System.Drawing.Point(783, 62);
             this.panelWidget_Urg.Name = "panelWidget_Urg";
             this.panelWidget_Urg.Size = new System.Drawing.Size(237, 100);
             this.panelWidget_Urg.TabIndex = 8;
@@ -242,7 +221,7 @@
             this.panelWidget_Pend.BackColor = System.Drawing.Color.Khaki;
             this.panelWidget_Pend.Controls.Add(this.lblWidg_ValuePendServ);
             this.panelWidget_Pend.Controls.Add(this.lblWidg_TextPendServ);
-            this.panelWidget_Pend.Location = new System.Drawing.Point(299, 54);
+            this.panelWidget_Pend.Location = new System.Drawing.Point(447, 62);
             this.panelWidget_Pend.Name = "panelWidget_Pend";
             this.panelWidget_Pend.Size = new System.Drawing.Size(237, 100);
             this.panelWidget_Pend.TabIndex = 5;
@@ -268,142 +247,11 @@
             this.lblWidg_TextPendServ.TabIndex = 0;
             this.lblWidg_TextPendServ.Text = "Pending";
             // 
-            // l
-            // 
-            this.l.AutoSize = true;
-            this.l.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l.Location = new System.Drawing.Point(0, 0);
-            this.l.Name = "l";
-            this.l.Size = new System.Drawing.Size(407, 36);
-            this.l.TabIndex = 10;
-            this.l.Text = "Completed Service Requests:";
-            // 
-            // dataGrid_CompServ
-            // 
-            this.dataGrid_CompServ.BackgroundColor = System.Drawing.Color.Khaki;
-            this.dataGrid_CompServ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_CompServ.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.boolCollected,
-            this.dataGridViewTextBoxColumn7});
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGrid_CompServ.DefaultCellStyle = dataGridViewCellStyle23;
-            this.dataGrid_CompServ.Location = new System.Drawing.Point(3, 49);
-            this.dataGrid_CompServ.Name = "dataGrid_CompServ";
-            this.dataGrid_CompServ.RowHeadersWidth = 51;
-            this.dataGrid_CompServ.RowTemplate.Height = 29;
-            this.dataGrid_CompServ.Size = new System.Drawing.Size(777, 137);
-            this.dataGrid_CompServ.TabIndex = 11;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle16;
-            this.dataGridViewTextBoxColumn1.HeaderText = "JobID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle17;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Request Date";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle18;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Service Requested";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 300;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle19;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Service Type";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle20;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Status";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle21;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Collection Date";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 125;
-            // 
-            // boolCollected
-            // 
-            this.boolCollected.HeaderText = "Collected?";
-            this.boolCollected.MinimumWidth = 6;
-            this.boolCollected.Name = "boolCollected";
-            this.boolCollected.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle22;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Comments";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 125;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dataGrid_CompServ);
-            this.panel1.Controls.Add(this.l);
-            this.panel1.Location = new System.Drawing.Point(299, 458);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(789, 193);
-            this.panel1.TabIndex = 14;
-            // 
             // btnAccess_PendServ
             // 
             this.btnAccess_PendServ.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnAccess_PendServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAccess_PendServ.Location = new System.Drawing.Point(601, 214);
+            this.btnAccess_PendServ.Location = new System.Drawing.Point(987, 403);
             this.btnAccess_PendServ.Name = "btnAccess_PendServ";
             this.btnAccess_PendServ.Padding = new System.Windows.Forms.Padding(4);
             this.btnAccess_PendServ.Size = new System.Drawing.Size(173, 40);
@@ -427,15 +275,15 @@
             this.dataGrid_PendServ.Name = "dataGrid_PendServ";
             this.dataGrid_PendServ.RowHeadersWidth = 51;
             this.dataGrid_PendServ.RowTemplate.Height = 29;
-            this.dataGrid_PendServ.Size = new System.Drawing.Size(777, 137);
+            this.dataGrid_PendServ.Size = new System.Drawing.Size(1160, 323);
             this.dataGrid_PendServ.TabIndex = 4;
             // 
             // JobID
             // 
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.JobID.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            this.JobID.DefaultCellStyle = dataGridViewCellStyle1;
             this.JobID.HeaderText = "JobID";
             this.JobID.MinimumWidth = 6;
             this.JobID.Name = "JobID";
@@ -443,10 +291,10 @@
             // 
             // RequestDate
             // 
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.RequestDate.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            this.RequestDate.DefaultCellStyle = dataGridViewCellStyle2;
             this.RequestDate.HeaderText = "Request Date";
             this.RequestDate.MinimumWidth = 6;
             this.RequestDate.Name = "RequestDate";
@@ -454,10 +302,10 @@
             // 
             // ServType
             // 
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.ServType.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            this.ServType.DefaultCellStyle = dataGridViewCellStyle3;
             this.ServType.HeaderText = "Service Requested";
             this.ServType.MinimumWidth = 6;
             this.ServType.Name = "ServType";
@@ -465,10 +313,10 @@
             // 
             // NormalorUrgent
             // 
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.NormalorUrgent.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            this.NormalorUrgent.DefaultCellStyle = dataGridViewCellStyle4;
             this.NormalorUrgent.HeaderText = "Service Type";
             this.NormalorUrgent.MinimumWidth = 6;
             this.NormalorUrgent.Name = "NormalorUrgent";
@@ -476,10 +324,10 @@
             // 
             // Status
             // 
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.Status.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            this.Status.DefaultCellStyle = dataGridViewCellStyle5;
             this.Status.HeaderText = "Status";
             this.Status.MinimumWidth = 6;
             this.Status.Name = "Status";
@@ -487,10 +335,10 @@
             // 
             // CollectionDate
             // 
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.CollectionDate.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            this.CollectionDate.DefaultCellStyle = dataGridViewCellStyle6;
             this.CollectionDate.HeaderText = "Collection Date";
             this.CollectionDate.MinimumWidth = 6;
             this.CollectionDate.Name = "CollectionDate";
@@ -498,33 +346,33 @@
             // 
             // Comments
             // 
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.Comments.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            this.Comments.DefaultCellStyle = dataGridViewCellStyle7;
             this.Comments.HeaderText = "Comments";
             this.Comments.MinimumWidth = 6;
             this.Comments.Name = "Comments";
             this.Comments.Width = 125;
             // 
-            // lblTable_TextPendServ
+            // lblTable_TextAllServ
             // 
-            this.lblTable_TextPendServ.AutoSize = true;
-            this.lblTable_TextPendServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTable_TextPendServ.Location = new System.Drawing.Point(3, 0);
-            this.lblTable_TextPendServ.Name = "lblTable_TextPendServ";
-            this.lblTable_TextPendServ.Size = new System.Drawing.Size(370, 36);
-            this.lblTable_TextPendServ.TabIndex = 7;
-            this.lblTable_TextPendServ.Text = "Pending Service Requests:";
+            this.lblTable_TextAllServ.AutoSize = true;
+            this.lblTable_TextAllServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTable_TextAllServ.Location = new System.Drawing.Point(3, 0);
+            this.lblTable_TextAllServ.Name = "lblTable_TextAllServ";
+            this.lblTable_TextAllServ.Size = new System.Drawing.Size(320, 36);
+            this.lblTable_TextAllServ.TabIndex = 7;
+            this.lblTable_TextAllServ.Text = "Your Service Requests:";
             // 
             // panelTable_Pend
             // 
-            this.panelTable_Pend.Controls.Add(this.lblTable_TextPendServ);
+            this.panelTable_Pend.Controls.Add(this.lblTable_TextAllServ);
             this.panelTable_Pend.Controls.Add(this.dataGrid_PendServ);
             this.panelTable_Pend.Controls.Add(this.btnAccess_PendServ);
             this.panelTable_Pend.Location = new System.Drawing.Point(299, 185);
             this.panelTable_Pend.Name = "panelTable_Pend";
-            this.panelTable_Pend.Size = new System.Drawing.Size(789, 257);
+            this.panelTable_Pend.Size = new System.Drawing.Size(1163, 453);
             this.panelTable_Pend.TabIndex = 13;
             // 
             // TechnicianDashboard
@@ -532,13 +380,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightYellow;
-            this.ClientSize = new System.Drawing.Size(1115, 666);
+            this.ClientSize = new System.Drawing.Size(1496, 666);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelWidget_Comp);
             this.Controls.Add(this.panelWidget_Urg);
             this.Controls.Add(this.panelWidget_Pend);
             this.Controls.Add(this.panelTable_Pend);
-            this.Controls.Add(this.panel1);
             this.Name = "TechnicianDashboard";
             this.Text = "Technician Dashboard";
             this.panelMenu.ResumeLayout(false);
@@ -551,9 +398,6 @@
             this.panelWidget_Urg.PerformLayout();
             this.panelWidget_Pend.ResumeLayout(false);
             this.panelWidget_Pend.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_CompServ)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_PendServ)).EndInit();
             this.panelTable_Pend.ResumeLayout(false);
             this.panelTable_Pend.PerformLayout();
@@ -579,9 +423,6 @@
         private Panel panelWidget_Pend;
         private Label lblWidg_ValuePendServ;
         private Label lblWidg_TextPendServ;
-        private Label l;
-        private DataGridView dataGrid_CompServ;
-        private Panel panel1;
         private Button btnAccess_PendServ;
         private DataGridView dataGrid_PendServ;
         private DataGridViewTextBoxColumn JobID;
@@ -591,15 +432,7 @@
         private DataGridViewTextBoxColumn Status;
         private DataGridViewTextBoxColumn CollectionDate;
         private DataGridViewTextBoxColumn Comments;
-        private Label lblTable_TextPendServ;
+        private Label lblTable_TextAllServ;
         private Panel panelTable_Pend;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private DataGridViewTextBoxColumn boolCollected;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }
