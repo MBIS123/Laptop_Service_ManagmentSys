@@ -30,11 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmServRequest));
             this.grpBoxRequest = new System.Windows.Forms.GroupBox();
-            this.txtAmt = new System.Windows.Forms.TextBox();
-            this.lblAmt = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblServType = new System.Windows.Forms.Label();
-            this.btnPayment = new System.Windows.Forms.Button();
+            this.btnOrder = new System.Windows.Forms.Button();
             this.radBtnUrgent = new System.Windows.Forms.RadioButton();
             this.radBtnNormal = new System.Windows.Forms.RadioButton();
             this.lstBoxService = new System.Windows.Forms.ListBox();
@@ -56,6 +54,7 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.linklblPayment = new System.Windows.Forms.LinkLabel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.grpBoxRequest.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -68,44 +67,25 @@
             // grpBoxRequest
             // 
             this.grpBoxRequest.BackColor = System.Drawing.Color.PeachPuff;
-            this.grpBoxRequest.Controls.Add(this.txtAmt);
-            this.grpBoxRequest.Controls.Add(this.lblAmt);
             this.grpBoxRequest.Controls.Add(this.btnClear);
             this.grpBoxRequest.Controls.Add(this.lblServType);
-            this.grpBoxRequest.Controls.Add(this.btnPayment);
+            this.grpBoxRequest.Controls.Add(this.btnOrder);
             this.grpBoxRequest.Controls.Add(this.radBtnUrgent);
             this.grpBoxRequest.Controls.Add(this.radBtnNormal);
             this.grpBoxRequest.Controls.Add(this.lstBoxService);
             this.grpBoxRequest.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.grpBoxRequest.Location = new System.Drawing.Point(211, 232);
             this.grpBoxRequest.Name = "grpBoxRequest";
-            this.grpBoxRequest.Size = new System.Drawing.Size(761, 401);
+            this.grpBoxRequest.Size = new System.Drawing.Size(761, 358);
             this.grpBoxRequest.TabIndex = 5;
             this.grpBoxRequest.TabStop = false;
             this.grpBoxRequest.Text = "Requested Service";
-            // 
-            // txtAmt
-            // 
-            this.txtAmt.Location = new System.Drawing.Point(399, 304);
-            this.txtAmt.Name = "txtAmt";
-            this.txtAmt.Size = new System.Drawing.Size(162, 40);
-            this.txtAmt.TabIndex = 7;
-            // 
-            // lblAmt
-            // 
-            this.lblAmt.AutoSize = true;
-            this.lblAmt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblAmt.Location = new System.Drawing.Point(186, 312);
-            this.lblAmt.Name = "lblAmt";
-            this.lblAmt.Size = new System.Drawing.Size(213, 26);
-            this.lblAmt.TabIndex = 6;
-            this.lblAmt.Text = "Amount Paid:   RM";
             // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.White;
             this.btnClear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnClear.Location = new System.Drawing.Point(189, 362);
+            this.btnClear.Location = new System.Drawing.Point(186, 309);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(104, 34);
             this.btnClear.TabIndex = 5;
@@ -122,17 +102,17 @@
             this.lblServType.TabIndex = 4;
             this.lblServType.Text = "Service Type:";
             // 
-            // btnPayment
+            // btnOrder
             // 
-            this.btnPayment.BackColor = System.Drawing.Color.White;
-            this.btnPayment.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnPayment.Location = new System.Drawing.Point(308, 362);
-            this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(256, 34);
-            this.btnPayment.TabIndex = 3;
-            this.btnPayment.Text = "Confirm Payment";
-            this.btnPayment.UseVisualStyleBackColor = false;
-            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
+            this.btnOrder.BackColor = System.Drawing.Color.White;
+            this.btnOrder.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnOrder.Location = new System.Drawing.Point(305, 309);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(256, 34);
+            this.btnOrder.TabIndex = 3;
+            this.btnOrder.Text = "Confirm Order";
+            this.btnOrder.UseVisualStyleBackColor = false;
+            this.btnOrder.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // radBtnUrgent
             // 
@@ -173,7 +153,7 @@
             "6 Operating System Format and Installation\t   \t RM 100     \tRM 150",
             "7 Data backup and recovery \t\t\t RM 80       \tRM 130",
             "8 Internet connectivity issues \t\t\t RM 70       \tRM 100"});
-            this.lstBoxService.Location = new System.Drawing.Point(31, 39);
+            this.lstBoxService.Location = new System.Drawing.Point(16, 39);
             this.lstBoxService.Name = "lstBoxService";
             this.lstBoxService.Size = new System.Drawing.Size(722, 202);
             this.lstBoxService.TabIndex = 0;
@@ -353,7 +333,7 @@
             this.splitter1.BackColor = System.Drawing.Color.SeaShell;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(203, 644);
+            this.splitter1.Size = new System.Drawing.Size(203, 601);
             this.splitter1.TabIndex = 26;
             this.splitter1.TabStop = false;
             // 
@@ -381,12 +361,20 @@
             this.linklblPayment.TabStop = true;
             this.linklblPayment.Text = "PAYMENT";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(649, 49);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(300, 31);
+            this.dateTimePicker1.TabIndex = 41;
+            // 
             // frmServRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(986, 644);
+            this.ClientSize = new System.Drawing.Size(986, 601);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -426,14 +414,12 @@
         private GroupBox grpBoxRequest;
         private Button btnClear;
         private Label lblServType;
-        private Button btnPayment;
+        private Button btnOrder;
         private RadioButton radBtnUrgent;
         private RadioButton radBtnNormal;
         private ListBox lstBoxService;
         private ListBox lstBoxCustomer;
         private Label lblTitle;
-        private TextBox txtAmt;
-        private Label lblAmt;
         private Label lblSearch;
         private TextBox txtSearch;
         private GroupBox groupBox4;
@@ -450,5 +436,6 @@
         private Splitter splitter1;
         private GroupBox groupBox5;
         private LinkLabel linklblPayment;
+        private DateTimePicker dateTimePicker1;
     }
 }
