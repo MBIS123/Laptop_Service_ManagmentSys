@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmServRequest));
             this.grpBoxRequest = new System.Windows.Forms.GroupBox();
-            this.txtAmt = new System.Windows.Forms.TextBox();
-            this.lblAmt = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblServType = new System.Windows.Forms.Label();
             this.btnOrder = new System.Windows.Forms.Button();
@@ -68,8 +66,6 @@
             // grpBoxRequest
             // 
             this.grpBoxRequest.BackColor = System.Drawing.Color.PeachPuff;
-            this.grpBoxRequest.Controls.Add(this.txtAmt);
-            this.grpBoxRequest.Controls.Add(this.lblAmt);
             this.grpBoxRequest.Controls.Add(this.btnClear);
             this.grpBoxRequest.Controls.Add(this.lblServType);
             this.grpBoxRequest.Controls.Add(this.btnOrder);
@@ -79,33 +75,16 @@
             this.grpBoxRequest.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.grpBoxRequest.Location = new System.Drawing.Point(211, 232);
             this.grpBoxRequest.Name = "grpBoxRequest";
-            this.grpBoxRequest.Size = new System.Drawing.Size(761, 401);
+            this.grpBoxRequest.Size = new System.Drawing.Size(761, 358);
             this.grpBoxRequest.TabIndex = 5;
             this.grpBoxRequest.TabStop = false;
             this.grpBoxRequest.Text = "Requested Service";
-            // 
-            // txtAmt
-            // 
-            this.txtAmt.Location = new System.Drawing.Point(399, 304);
-            this.txtAmt.Name = "txtAmt";
-            this.txtAmt.Size = new System.Drawing.Size(162, 40);
-            this.txtAmt.TabIndex = 7;
-            // 
-            // lblAmt
-            // 
-            this.lblAmt.AutoSize = true;
-            this.lblAmt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblAmt.Location = new System.Drawing.Point(186, 312);
-            this.lblAmt.Name = "lblAmt";
-            this.lblAmt.Size = new System.Drawing.Size(213, 26);
-            this.lblAmt.TabIndex = 6;
-            this.lblAmt.Text = "Amount Paid:   RM";
             // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.White;
             this.btnClear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnClear.Location = new System.Drawing.Point(189, 362);
+            this.btnClear.Location = new System.Drawing.Point(186, 309);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(104, 34);
             this.btnClear.TabIndex = 5;
@@ -126,7 +105,7 @@
             // 
             this.btnOrder.BackColor = System.Drawing.Color.White;
             this.btnOrder.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnOrder.Location = new System.Drawing.Point(308, 362);
+            this.btnOrder.Location = new System.Drawing.Point(305, 309);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(256, 34);
             this.btnOrder.TabIndex = 3;
@@ -353,7 +332,7 @@
             this.splitter1.BackColor = System.Drawing.Color.SeaShell;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(203, 644);
+            this.splitter1.Size = new System.Drawing.Size(203, 601);
             this.splitter1.TabIndex = 26;
             this.splitter1.TabStop = false;
             // 
@@ -386,7 +365,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(986, 644);
+            this.ClientSize = new System.Drawing.Size(986, 601);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -432,8 +411,6 @@
         private ListBox lstBoxService;
         private ListBox lstBoxCustomer;
         private Label lblTitle;
-        private TextBox txtAmt;
-        private Label lblAmt;
         private Label lblSearch;
         private TextBox txtSearch;
         private GroupBox groupBox4;

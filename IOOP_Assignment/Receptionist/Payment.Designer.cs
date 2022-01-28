@@ -44,6 +44,11 @@
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblPayment = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.btnPayment = new System.Windows.Forms.Button();
+            this.lblAmt = new System.Windows.Forms.Label();
+            this.txtAmt = new System.Windows.Forms.TextBox();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -214,28 +219,82 @@
             this.splitter2.BackColor = System.Drawing.Color.SeaShell;
             this.splitter2.Location = new System.Drawing.Point(0, 0);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(203, 533);
+            this.splitter2.Size = new System.Drawing.Size(203, 570);
             this.splitter2.TabIndex = 42;
             this.splitter2.TabStop = false;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(238, 51);
+            this.dataGridView1.Location = new System.Drawing.Point(215, 91);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(504, 305);
+            this.dataGridView1.Size = new System.Drawing.Size(717, 350);
             this.dataGridView1.TabIndex = 51;
+            // 
+            // lblPayment
+            // 
+            this.lblPayment.AutoSize = true;
+            this.lblPayment.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPayment.Location = new System.Drawing.Point(493, 12);
+            this.lblPayment.Name = "lblPayment";
+            this.lblPayment.Size = new System.Drawing.Size(136, 36);
+            this.lblPayment.TabIndex = 52;
+            this.lblPayment.Text = "Payment";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblStatus.Location = new System.Drawing.Point(215, 56);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(89, 32);
+            this.lblStatus.TabIndex = 53;
+            this.lblStatus.Text = "Status";
+            // 
+            // btnPayment
+            // 
+            this.btnPayment.BackColor = System.Drawing.Color.White;
+            this.btnPayment.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnPayment.Location = new System.Drawing.Point(437, 524);
+            this.btnPayment.Name = "btnPayment";
+            this.btnPayment.Size = new System.Drawing.Size(256, 34);
+            this.btnPayment.TabIndex = 55;
+            this.btnPayment.Text = "Confirm Payment";
+            this.btnPayment.UseVisualStyleBackColor = false;
+            // 
+            // lblAmt
+            // 
+            this.lblAmt.AutoSize = true;
+            this.lblAmt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblAmt.Location = new System.Drawing.Point(373, 473);
+            this.lblAmt.Name = "lblAmt";
+            this.lblAmt.Size = new System.Drawing.Size(213, 26);
+            this.lblAmt.TabIndex = 56;
+            this.lblAmt.Text = "Amount Paid:   RM";
+            // 
+            // txtAmt
+            // 
+            this.txtAmt.Location = new System.Drawing.Point(592, 470);
+            this.txtAmt.Name = "txtAmt";
+            this.txtAmt.Size = new System.Drawing.Size(162, 31);
+            this.txtAmt.TabIndex = 57;
             // 
             // frmPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(800, 533);
+            this.ClientSize = new System.Drawing.Size(944, 570);
+            this.Controls.Add(this.txtAmt);
+            this.Controls.Add(this.lblAmt);
+            this.Controls.Add(this.btnPayment);
+            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.lblPayment);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -282,5 +341,10 @@
         private PictureBox pictureBoxLogo;
         private Splitter splitter2;
         private DataGridView dataGridView1;
+        private Label lblPayment;
+        private Label lblStatus;
+        private Button btnPayment;
+        private Label lblAmt;
+        private TextBox txtAmt;
     }
 }
