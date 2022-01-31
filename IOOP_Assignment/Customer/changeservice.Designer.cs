@@ -46,9 +46,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.rdb_urgent = new System.Windows.Forms.RadioButton();
+            this.rdb_normal = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnback = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.lbl_decided_change_service = new System.Windows.Forms.Label();
-            this.ckdservice = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_servicein = new System.Windows.Forms.Label();
             this.lstservices = new System.Windows.Forms.ListBox();
@@ -59,7 +63,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnback = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -248,10 +251,13 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.rdb_urgent);
+            this.groupBox1.Controls.Add(this.rdb_normal);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnback);
             this.groupBox1.Controls.Add(this.btnConfirm);
             this.groupBox1.Controls.Add(this.lbl_decided_change_service);
-            this.groupBox1.Controls.Add(this.ckdservice);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lbl_servicein);
             this.groupBox1.Controls.Add(this.lstservices);
@@ -267,42 +273,93 @@
             this.groupBox1.Size = new System.Drawing.Size(870, 925);
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Linen;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(116, 599);
+            this.label4.Name = "label4";
+            this.label4.Padding = new System.Windows.Forms.Padding(20);
+            this.label4.Size = new System.Drawing.Size(549, 86);
+            this.label4.TabIndex = 77;
+            this.label4.Text = "Dear customer please take note after change service request\r\nand amount of fees t" +
+    "o pay will change accordingly !";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // rdb_urgent
+            // 
+            this.rdb_urgent.AutoSize = true;
+            this.rdb_urgent.Location = new System.Drawing.Point(64, 544);
+            this.rdb_urgent.Name = "rdb_urgent";
+            this.rdb_urgent.Size = new System.Drawing.Size(75, 24);
+            this.rdb_urgent.TabIndex = 76;
+            this.rdb_urgent.TabStop = true;
+            this.rdb_urgent.Text = "Urgent";
+            this.rdb_urgent.UseVisualStyleBackColor = true;
+            this.rdb_urgent.CheckedChanged += new System.EventHandler(this.rdb_urgent_CheckedChanged);
+            // 
+            // rdb_normal
+            // 
+            this.rdb_normal.AutoSize = true;
+            this.rdb_normal.Location = new System.Drawing.Point(64, 514);
+            this.rdb_normal.Name = "rdb_normal";
+            this.rdb_normal.Size = new System.Drawing.Size(80, 24);
+            this.rdb_normal.TabIndex = 75;
+            this.rdb_normal.TabStop = true;
+            this.rdb_normal.Text = "Normal";
+            this.rdb_normal.UseVisualStyleBackColor = true;
+            this.rdb_normal.CheckedChanged += new System.EventHandler(this.rdb_normal_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Linen;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(429, 193);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label3.Size = new System.Drawing.Size(226, 208);
+            this.label3.TabIndex = 74;
+            this.label3.Text = "RM 50             RM80\r\nRM60              RM90\r\nRM380            RM430\r\nRM160    " +
+    "        RM200\r\nRM100            RM150\r\nRM80              RM130\r\nRM70            " +
+    "  RM100";
+            // 
+            // btnback
+            // 
+            this.btnback.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnback.Location = new System.Drawing.Point(429, 829);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(119, 29);
+            this.btnback.TabIndex = 73;
+            this.btnback.Text = "BACK";
+            this.btnback.UseVisualStyleBackColor = true;
             // 
             // btnConfirm
             // 
             this.btnConfirm.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnConfirm.Location = new System.Drawing.Point(236, 796);
+            this.btnConfirm.Location = new System.Drawing.Point(236, 829);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(119, 29);
             this.btnConfirm.TabIndex = 72;
             this.btnConfirm.Text = "CONFIRM";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // lbl_decided_change_service
             // 
             this.lbl_decided_change_service.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbl_decided_change_service.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lbl_decided_change_service.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Assertive;
-            this.lbl_decided_change_service.Location = new System.Drawing.Point(46, 639);
+            this.lbl_decided_change_service.Location = new System.Drawing.Point(46, 711);
             this.lbl_decided_change_service.Name = "lbl_decided_change_service";
             this.lbl_decided_change_service.Size = new System.Drawing.Size(750, 86);
             this.lbl_decided_change_service.TabIndex = 71;
-            this.lbl_decided_change_service.Text = "You wish to change the service from\r\nTroubleshot and fix computer running slow to" +
-    " Laptop Keyboard replacement";
             this.lbl_decided_change_service.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ckdservice
-            // 
-            this.ckdservice.BackColor = System.Drawing.Color.Linen;
-            this.ckdservice.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ckdservice.FormattingEnabled = true;
-            this.ckdservice.Items.AddRange(new object[] {
-            "Normal",
-            "Urgent"});
-            this.ckdservice.Location = new System.Drawing.Point(56, 520);
-            this.ckdservice.Name = "ckdservice";
-            this.ckdservice.Size = new System.Drawing.Size(177, 48);
-            this.ckdservice.TabIndex = 54;
+            this.lbl_decided_change_service.Click += new System.EventHandler(this.lbl_decided_change_service_Click);
             // 
             // label1
             // 
@@ -333,17 +390,17 @@
             this.lstservices.FormattingEnabled = true;
             this.lstservices.ItemHeight = 23;
             this.lstservices.Items.AddRange(new object[] {
-            "Remove virus, malware or spyware\t\tRM50\tRM80",
-            "Troubleshot and fix computer running slow\tRM60\tRM90",
-            "Laptop screen replacement\t\t\tRM380\tRM430",
-            "Laptop Keyboard replacement\t\t\tRM160\tRM200",
-            "Laptop battery replacement \t\t\tRM180\tRM210",
-            "Operating System Format and Installation\tRM100\tRM150",
-            "Data backup and recovery\t\t\tRM80\tRM130",
-            "Internet connectivity issues\t\t\tRM70\tRM100"});
+            "Remove virus, malware or spyware",
+            "Troubleshot and fix computer running slow",
+            "Laptop screen replacement",
+            "Laptop Keyboard replacement",
+            "Laptop battery replacement",
+            "Operating System Format and Installation",
+            "Data backup and recovery",
+            "Internet connectivity issues"});
             this.lstservices.Location = new System.Drawing.Point(56, 192);
             this.lstservices.Name = "lstservices";
-            this.lstservices.Size = new System.Drawing.Size(685, 209);
+            this.lstservices.Size = new System.Drawing.Size(362, 209);
             this.lstservices.TabIndex = 50;
             // 
             // lblnormal_urgent
@@ -351,7 +408,7 @@
             this.lblnormal_urgent.AutoSize = true;
             this.lblnormal_urgent.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblnormal_urgent.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lblnormal_urgent.Location = new System.Drawing.Point(445, 166);
+            this.lblnormal_urgent.Location = new System.Drawing.Point(446, 163);
             this.lblnormal_urgent.Name = "lblnormal_urgent";
             this.lblnormal_urgent.Size = new System.Drawing.Size(156, 23);
             this.lblnormal_urgent.TabIndex = 49;
@@ -422,16 +479,6 @@
             this.pictureBox1.TabIndex = 66;
             this.pictureBox1.TabStop = false;
             // 
-            // btnback
-            // 
-            this.btnback.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnback.Location = new System.Drawing.Point(429, 796);
-            this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(119, 29);
-            this.btnback.TabIndex = 73;
-            this.btnback.Text = "BACK";
-            this.btnback.UseVisualStyleBackColor = true;
-            // 
             // change_service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -453,6 +500,7 @@
             this.Controls.Add(this.lblwelcome);
             this.Name = "change_service";
             this.Text = "ChangeService";
+            this.Load += new System.EventHandler(this.change_service_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -490,7 +538,6 @@
         private Label lbltitle_changeserv;
         private Button btnConfirm;
         private Label lbl_decided_change_service;
-        private CheckedListBox ckdservice;
         private Label label1;
         private Label lbl_servicein;
         private ListBox lstservices;
@@ -501,5 +548,9 @@
         private Label label12;
         private PictureBox pictureBox1;
         private Button btnback;
+        private Label label3;
+        private RadioButton rdb_urgent;
+        private RadioButton rdb_normal;
+        private Label label4;
     }
 }
