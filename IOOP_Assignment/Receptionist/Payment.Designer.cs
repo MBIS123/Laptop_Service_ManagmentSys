@@ -43,7 +43,7 @@
             this.lblRcn = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.splitter2 = new System.Windows.Forms.Splitter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewStatus = new System.Windows.Forms.DataGridView();
             this.lblPayment = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.btnPayment = new System.Windows.Forms.Button();
@@ -55,7 +55,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox5
@@ -223,18 +223,18 @@
             this.splitter2.TabIndex = 42;
             this.splitter2.TabStop = false;
             // 
-            // dataGridView1
+            // dataGridViewStatus
             // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(215, 91);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(717, 350);
-            this.dataGridView1.TabIndex = 51;
+            this.dataGridViewStatus.AllowUserToDeleteRows = false;
+            this.dataGridViewStatus.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStatus.Location = new System.Drawing.Point(215, 91);
+            this.dataGridViewStatus.Name = "dataGridViewStatus";
+            this.dataGridViewStatus.ReadOnly = true;
+            this.dataGridViewStatus.RowHeadersWidth = 62;
+            this.dataGridViewStatus.RowTemplate.Height = 33;
+            this.dataGridViewStatus.Size = new System.Drawing.Size(717, 350);
+            this.dataGridViewStatus.TabIndex = 51;
             // 
             // lblPayment
             // 
@@ -295,7 +295,7 @@
             this.Controls.Add(this.btnPayment);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblPayment);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewStatus);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -318,7 +318,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,7 +340,7 @@
         private Label lblRcn;
         private PictureBox pictureBoxLogo;
         private Splitter splitter2;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewStatus;
         private Label lblPayment;
         private Label lblStatus;
         private Button btnPayment;
