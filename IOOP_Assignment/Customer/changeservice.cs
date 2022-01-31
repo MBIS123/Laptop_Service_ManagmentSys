@@ -12,6 +12,8 @@ namespace testing
 {
     public partial class change_service : Form
     {
+        string Type;
+        
         public change_service()
         {
             InitializeComponent();
@@ -22,6 +24,42 @@ namespace testing
 
         }
 
-        
+        private void lbl_decided_change_service_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void rdb_normal_CheckedChanged(object sender, EventArgs e)
+        {
+            Type = "Normal";
+        }
+
+        private void rdb_urgent_CheckedChanged(object sender, EventArgs e)
+        {
+            Type = "Urgent";
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            string selected_service = lstservices.Text;
+            if (lstservices.SelectedItems.Count == 1 && (rdb_normal.Checked || rdb_urgent.Checked))
+            {
+                lbl_decided_change_service.Text = "You have change service from " + selected_service + " with " + Type + " successfully.";
+
+            }
+            else
+                MessageBox.Show("You have not choose service / service type yet");
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void change_service_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
