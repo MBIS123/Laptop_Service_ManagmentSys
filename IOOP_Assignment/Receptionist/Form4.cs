@@ -20,5 +20,10 @@ namespace Assignment
         {
 
         }
+
+        private void lblLaptop_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
