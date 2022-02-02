@@ -47,37 +47,43 @@
             // 
             this.btnReset.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnReset.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnReset.Location = new System.Drawing.Point(231, 411);
+            this.btnReset.Location = new System.Drawing.Point(277, 370);
             this.btnReset.Name = "btnReset";
             this.btnReset.Padding = new System.Windows.Forms.Padding(4);
             this.btnReset.Size = new System.Drawing.Size(173, 40);
             this.btnReset.TabIndex = 4;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.MouseEnter += new System.EventHandler(this.btnReset_MouseEnter);
+            this.btnReset.MouseLeave += new System.EventHandler(this.btnReset_MouseLeave);
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnSave.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.Location = new System.Drawing.Point(425, 411);
+            this.btnSave.Location = new System.Drawing.Point(476, 372);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(4);
             this.btnSave.Size = new System.Drawing.Size(173, 40);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
+            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnClose.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnClose.Location = new System.Drawing.Point(604, 412);
+            this.btnClose.Location = new System.Drawing.Point(676, 372);
             this.btnClose.Name = "btnClose";
             this.btnClose.Padding = new System.Windows.Forms.Padding(4);
             this.btnClose.Size = new System.Drawing.Size(173, 40);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
+            this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
             // 
             // lblEditServ
             // 
@@ -124,7 +130,7 @@
             // 
             this.radioCompleted.AutoSize = true;
             this.radioCompleted.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.radioCompleted.Location = new System.Drawing.Point(277, 196);
+            this.radioCompleted.Location = new System.Drawing.Point(520, 161);
             this.radioCompleted.Name = "radioCompleted";
             this.radioCompleted.Size = new System.Drawing.Size(140, 29);
             this.radioCompleted.TabIndex = 12;
@@ -136,7 +142,7 @@
             // 
             this.lblCollectDate.AutoSize = true;
             this.lblCollectDate.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCollectDate.Location = new System.Drawing.Point(12, 345);
+            this.lblCollectDate.Location = new System.Drawing.Point(12, 306);
             this.lblCollectDate.Name = "lblCollectDate";
             this.lblCollectDate.Size = new System.Drawing.Size(183, 29);
             this.lblCollectDate.TabIndex = 13;
@@ -145,16 +151,16 @@
             // CollectDatePicker
             // 
             this.CollectDatePicker.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CollectDatePicker.Location = new System.Drawing.Point(277, 345);
+            this.CollectDatePicker.Location = new System.Drawing.Point(277, 306);
             this.CollectDatePicker.Name = "CollectDatePicker";
-            this.CollectDatePicker.Size = new System.Drawing.Size(345, 29);
+            this.CollectDatePicker.Size = new System.Drawing.Size(500, 29);
             this.CollectDatePicker.TabIndex = 14;
             // 
             // lblServDescription
             // 
             this.lblServDescription.AutoSize = true;
             this.lblServDescription.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblServDescription.Location = new System.Drawing.Point(12, 247);
+            this.lblServDescription.Location = new System.Drawing.Point(12, 208);
             this.lblServDescription.Name = "lblServDescription";
             this.lblServDescription.Size = new System.Drawing.Size(235, 58);
             this.lblServDescription.TabIndex = 15;
@@ -163,9 +169,9 @@
             // richServDescription
             // 
             this.richServDescription.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.richServDescription.Location = new System.Drawing.Point(277, 247);
+            this.richServDescription.Location = new System.Drawing.Point(277, 208);
             this.richServDescription.Name = "richServDescription";
-            this.richServDescription.Size = new System.Drawing.Size(345, 58);
+            this.richServDescription.Size = new System.Drawing.Size(500, 58);
             this.richServDescription.TabIndex = 16;
             this.richServDescription.Text = "";
             // 
@@ -186,7 +192,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
-            this.ClientSize = new System.Drawing.Size(800, 463);
+            this.ClientSize = new System.Drawing.Size(855, 422);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.richServDescription);
             this.Controls.Add(this.lblServDescription);
@@ -200,6 +206,8 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnReset);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "EditServiceRequest";
             this.RightToLeftLayout = true;
             this.Text = "Edit Service Request";

@@ -394,6 +394,8 @@
             this.Controls.Add(this.panelWidget_Urg);
             this.Controls.Add(this.panelWidget_Pend);
             this.Controls.Add(this.panelTable_Pend);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "TechnicianDashboard";
             this.Text = "Technician Dashboard";
             this.panelMenu.ResumeLayout(false);
