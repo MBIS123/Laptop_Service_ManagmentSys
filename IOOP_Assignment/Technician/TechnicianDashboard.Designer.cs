@@ -97,6 +97,8 @@
             this.btnLogOut.TabIndex = 5;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.MouseEnter += new System.EventHandler(this.btnLogOut_MouseEnter);
+            this.btnLogOut.MouseLeave += new System.EventHandler(this.btnLogOut_MouseLeave);
             // 
             // btnAccess_Profile
             // 
@@ -109,6 +111,8 @@
             this.btnAccess_Profile.TabIndex = 4;
             this.btnAccess_Profile.Text = "Profile";
             this.btnAccess_Profile.UseVisualStyleBackColor = false;
+            this.btnAccess_Profile.MouseEnter += new System.EventHandler(this.btnAccess_Profile_MouseEnter);
+            this.btnAccess_Profile.MouseLeave += new System.EventHandler(this.btnAccess_Profile_MouseLeave);
             // 
             // btnAccess_Dashboard
             // 
@@ -121,6 +125,8 @@
             this.btnAccess_Dashboard.TabIndex = 2;
             this.btnAccess_Dashboard.Text = "Dashboard";
             this.btnAccess_Dashboard.UseVisualStyleBackColor = false;
+            this.btnAccess_Dashboard.MouseEnter += new System.EventHandler(this.btnAccess_Dashboard_MouseEnter);
+            this.btnAccess_Dashboard.MouseLeave += new System.EventHandler(this.btnAccess_Dashboard_MouseLeave);
             // 
             // picMenuProfile
             // 
@@ -258,6 +264,8 @@
             this.btnAccess_PendServ.TabIndex = 3;
             this.btnAccess_PendServ.Text = "Edit";
             this.btnAccess_PendServ.UseVisualStyleBackColor = false;
+            this.btnAccess_PendServ.MouseEnter += new System.EventHandler(this.btnAccess_PendServ_MouseEnter);
+            this.btnAccess_PendServ.MouseLeave += new System.EventHandler(this.btnAccess_PendServ_MouseLeave);
             // 
             // dataGrid_PendServ
             // 

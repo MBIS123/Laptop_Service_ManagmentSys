@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Technician
 {
-    public partial class EditServ : Form
+    public partial class EditServiceRequest : Form
     {
-        public EditServ()
+        public EditServiceRequest()
         {
             InitializeComponent();
         }
