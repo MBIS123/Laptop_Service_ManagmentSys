@@ -1,6 +1,6 @@
 ﻿namespace Technician
 {
-    partial class EditServ
+    partial class EditServiceRequest
     {
         /// <summary>
         /// Required designer variable.
@@ -32,23 +32,22 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblEditServ = new System.Windows.Forms.Label();
-            this.lblJobID = new System.Windows.Forms.Label();
+            this.lblOrderID = new System.Windows.Forms.Label();
             this.comboJobID = new System.Windows.Forms.ComboBox();
             this.lblChange = new System.Windows.Forms.Label();
             this.radioCompleted = new System.Windows.Forms.RadioButton();
             this.lblCollectDate = new System.Windows.Forms.Label();
             this.CollectDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.lblComments = new System.Windows.Forms.Label();
-            this.richComments = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblServDescription = new System.Windows.Forms.Label();
+            this.richServDescription = new System.Windows.Forms.RichTextBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // btnReset
             // 
             this.btnReset.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnReset.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnReset.Location = new System.Drawing.Point(22, 363);
+            this.btnReset.Location = new System.Drawing.Point(231, 411);
             this.btnReset.Name = "btnReset";
             this.btnReset.Padding = new System.Windows.Forms.Padding(4);
             this.btnReset.Size = new System.Drawing.Size(173, 40);
@@ -60,7 +59,7 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnSave.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.Location = new System.Drawing.Point(223, 363);
+            this.btnSave.Location = new System.Drawing.Point(425, 411);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(4);
             this.btnSave.Size = new System.Drawing.Size(173, 40);
@@ -72,7 +71,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnClose.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnClose.Location = new System.Drawing.Point(422, 363);
+            this.btnClose.Location = new System.Drawing.Point(604, 412);
             this.btnClose.Name = "btnClose";
             this.btnClose.Padding = new System.Windows.Forms.Padding(4);
             this.btnClose.Size = new System.Drawing.Size(173, 40);
@@ -90,15 +89,15 @@
             this.lblEditServ.TabIndex = 8;
             this.lblEditServ.Text = "Edit Service Request:";
             // 
-            // lblJobID
+            // lblOrderID
             // 
-            this.lblJobID.AutoSize = true;
-            this.lblJobID.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblJobID.Location = new System.Drawing.Point(12, 103);
-            this.lblJobID.Name = "lblJobID";
-            this.lblJobID.Size = new System.Drawing.Size(78, 29);
-            this.lblJobID.TabIndex = 9;
-            this.lblJobID.Text = "JobID";
+            this.lblOrderID.AutoSize = true;
+            this.lblOrderID.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblOrderID.Location = new System.Drawing.Point(12, 103);
+            this.lblOrderID.Name = "lblOrderID";
+            this.lblOrderID.Size = new System.Drawing.Size(103, 29);
+            this.lblOrderID.TabIndex = 9;
+            this.lblOrderID.Text = "OrderID";
             // 
             // comboJobID
             // 
@@ -106,7 +105,7 @@
             this.comboJobID.Items.AddRange(new object[] {
             "J0002",
             "J0003"});
-            this.comboJobID.Location = new System.Drawing.Point(230, 103);
+            this.comboJobID.Location = new System.Drawing.Point(277, 103);
             this.comboJobID.Name = "comboJobID";
             this.comboJobID.Size = new System.Drawing.Size(140, 28);
             this.comboJobID.TabIndex = 10;
@@ -125,7 +124,7 @@
             // 
             this.radioCompleted.AutoSize = true;
             this.radioCompleted.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.radioCompleted.Location = new System.Drawing.Point(230, 161);
+            this.radioCompleted.Location = new System.Drawing.Point(277, 196);
             this.radioCompleted.Name = "radioCompleted";
             this.radioCompleted.Size = new System.Drawing.Size(140, 29);
             this.radioCompleted.TabIndex = 12;
@@ -137,7 +136,7 @@
             // 
             this.lblCollectDate.AutoSize = true;
             this.lblCollectDate.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCollectDate.Location = new System.Drawing.Point(12, 225);
+            this.lblCollectDate.Location = new System.Drawing.Point(12, 345);
             this.lblCollectDate.Name = "lblCollectDate";
             this.lblCollectDate.Size = new System.Drawing.Size(183, 29);
             this.lblCollectDate.TabIndex = 13;
@@ -146,68 +145,63 @@
             // CollectDatePicker
             // 
             this.CollectDatePicker.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CollectDatePicker.Location = new System.Drawing.Point(230, 222);
+            this.CollectDatePicker.Location = new System.Drawing.Point(277, 345);
             this.CollectDatePicker.Name = "CollectDatePicker";
             this.CollectDatePicker.Size = new System.Drawing.Size(345, 29);
             this.CollectDatePicker.TabIndex = 14;
             // 
-            // lblComments
+            // lblServDescription
             // 
-            this.lblComments.AutoSize = true;
-            this.lblComments.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblComments.Location = new System.Drawing.Point(12, 287);
-            this.lblComments.Name = "lblComments";
-            this.lblComments.Size = new System.Drawing.Size(134, 29);
-            this.lblComments.TabIndex = 15;
-            this.lblComments.Text = "Comments";
+            this.lblServDescription.AutoSize = true;
+            this.lblServDescription.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblServDescription.Location = new System.Drawing.Point(12, 247);
+            this.lblServDescription.Name = "lblServDescription";
+            this.lblServDescription.Size = new System.Drawing.Size(235, 58);
+            this.lblServDescription.TabIndex = 15;
+            this.lblServDescription.Text = "Service Description/\r\nSuggestions";
             // 
-            // richComments
+            // richServDescription
             // 
-            this.richComments.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.richComments.Location = new System.Drawing.Point(230, 287);
-            this.richComments.Name = "richComments";
-            this.richComments.Size = new System.Drawing.Size(345, 50);
-            this.richComments.TabIndex = 16;
-            this.richComments.Text = "";
+            this.richServDescription.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.richServDescription.Location = new System.Drawing.Point(277, 247);
+            this.richServDescription.Name = "richServDescription";
+            this.richServDescription.Size = new System.Drawing.Size(345, 58);
+            this.richServDescription.TabIndex = 16;
+            this.richServDescription.Text = "";
             // 
-            // label1
+            // radioButton2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(472, 170);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "label1";
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.radioButton2.Location = new System.Drawing.Point(277, 161);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(209, 29);
+            this.radioButton2.TabIndex = 18;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Changes Required";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(454, 107);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 19;
-            // 
-            // EditServ
+            // EditServiceRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
-            this.ClientSize = new System.Drawing.Size(636, 426);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.richComments);
-            this.Controls.Add(this.lblComments);
+            this.ClientSize = new System.Drawing.Size(800, 463);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.richServDescription);
+            this.Controls.Add(this.lblServDescription);
             this.Controls.Add(this.CollectDatePicker);
             this.Controls.Add(this.lblCollectDate);
             this.Controls.Add(this.radioCompleted);
             this.Controls.Add(this.lblChange);
             this.Controls.Add(this.comboJobID);
-            this.Controls.Add(this.lblJobID);
+            this.Controls.Add(this.lblOrderID);
             this.Controls.Add(this.lblEditServ);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnReset);
-            this.Name = "EditServ";
+            this.Name = "EditServiceRequest";
+            this.RightToLeftLayout = true;
             this.Text = "Edit Service Request";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -220,15 +214,14 @@
         private Button btnSave;
         private Button btnClose;
         private Label lblEditServ;
-        private Label lblJobID;
+        private Label lblOrderID;
         private ComboBox comboJobID;
         private Label lblChange;
         private RadioButton radioCompleted;
         private Label lblCollectDate;
         private DateTimePicker CollectDatePicker;
-        private Label lblComments;
-        private RichTextBox richComments;
-        private Label label1;
-        private ComboBox comboBox1;
+        private Label lblServDescription;
+        private RichTextBox richServDescription;
+        private RadioButton radioButton2;
     }
 }

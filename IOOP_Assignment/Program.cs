@@ -1,3 +1,4 @@
+using Technician;
 using testing;
 
 namespace IOOPAssignment
@@ -11,7 +12,7 @@ namespace IOOPAssignment
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new change_service());
+            Application.Run(new EditServiceRequest());
             
         }
     }
