@@ -68,6 +68,12 @@
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblexpected_collect_date = new System.Windows.Forms.Label();
+            this.btnsave = new System.Windows.Forms.Button();
+            this.btnclear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logopic)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -161,6 +167,12 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox1.Controls.Add(this.btnclear);
+            this.groupBox1.Controls.Add(this.btnsave);
+            this.groupBox1.Controls.Add(this.lblexpected_collect_date);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtreview);
             this.groupBox1.Controls.Add(this.lblcollec_date);
             this.groupBox1.Controls.Add(this.lblsuggest);
@@ -201,7 +213,7 @@
             // 
             this.lblcollec_date.AutoSize = true;
             this.lblcollec_date.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblcollec_date.Location = new System.Drawing.Point(65, 704);
+            this.lblcollec_date.Location = new System.Drawing.Point(372, 705);
             this.lblcollec_date.Name = "lblcollec_date";
             this.lblcollec_date.Size = new System.Drawing.Size(77, 20);
             this.lblcollec_date.TabIndex = 60;
@@ -304,9 +316,9 @@
             this.lblcollect.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblcollect.Location = new System.Drawing.Point(65, 650);
             this.lblcollect.Name = "lblcollect";
-            this.lblcollect.Size = new System.Drawing.Size(145, 23);
+            this.lblcollect.Size = new System.Drawing.Size(226, 23);
             this.lblcollect.TabIndex = 43;
-            this.lblcollect.Text = "Collection Date ";
+            this.lblcollect.Text = "Expected Collection Date ";
             // 
             // lblsuggestion
             // 
@@ -314,9 +326,9 @@
             this.lblsuggestion.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblsuggestion.Location = new System.Drawing.Point(62, 493);
             this.lblsuggestion.Name = "lblsuggestion";
-            this.lblsuggestion.Size = new System.Drawing.Size(107, 23);
+            this.lblsuggestion.Size = new System.Drawing.Size(62, 23);
             this.lblsuggestion.TabIndex = 42;
-            this.lblsuggestion.Text = "Suggestion ";
+            this.lblsuggestion.Text = "Status";
             // 
             // lblamount
             // 
@@ -334,9 +346,9 @@
             this.lbldesc.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lbldesc.Location = new System.Drawing.Point(65, 188);
             this.lbldesc.Name = "lbldesc";
-            this.lbldesc.Size = new System.Drawing.Size(177, 23);
+            this.lbldesc.Size = new System.Drawing.Size(277, 23);
             this.lbldesc.TabIndex = 40;
-            this.lbldesc.Text = "Service Description ";
+            this.lbldesc.Text = "Service Description / suggestion";
             // 
             // lbltitle_myorder
             // 
@@ -356,9 +368,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(65, 203);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 20);
+            this.label1.Size = new System.Drawing.Size(279, 20);
             this.label1.TabIndex = 45;
-            this.label1.Text = "--------------------------";
+            this.label1.Text = "---------------------------------------------";
             // 
             // label10
             // 
@@ -378,9 +390,9 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(62, 508);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(103, 17);
+            this.label9.Size = new System.Drawing.Size(68, 17);
             this.label9.TabIndex = 47;
-            this.label9.Text = "-------------------";
+            this.label9.Text = "------------";
             // 
             // label11
             // 
@@ -389,9 +401,9 @@
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label11.Location = new System.Drawing.Point(62, 665);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(165, 20);
+            this.label11.Size = new System.Drawing.Size(219, 20);
             this.label11.TabIndex = 50;
-            this.label11.Text = "--------------------------";
+            this.label11.Text = "-----------------------------------";
             // 
             // label19
             // 
@@ -509,6 +521,65 @@
             this.label14.TabIndex = 56;
             this.label14.Text = "6";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Wingdings 2", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(326, 643);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 30);
+            this.label3.TabIndex = 62;
+            this.label3.Text = "e";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(372, 651);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(145, 23);
+            this.label7.TabIndex = 63;
+            this.label7.Text = "Collection Date ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.PeachPuff;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(372, 665);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(141, 20);
+            this.label8.TabIndex = 64;
+            this.label8.Text = "----------------------";
+            // 
+            // lblexpected_collect_date
+            // 
+            this.lblexpected_collect_date.AutoSize = true;
+            this.lblexpected_collect_date.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblexpected_collect_date.Location = new System.Drawing.Point(65, 705);
+            this.lblexpected_collect_date.Name = "lblexpected_collect_date";
+            this.lblexpected_collect_date.Size = new System.Drawing.Size(77, 20);
+            this.lblexpected_collect_date.TabIndex = 65;
+            this.lblexpected_collect_date.Text = "10/11/2021";
+            // 
+            // btnsave
+            // 
+            this.btnsave.Location = new System.Drawing.Point(65, 921);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(94, 29);
+            this.btnsave.TabIndex = 66;
+            this.btnsave.Text = "SAVE";
+            this.btnsave.UseVisualStyleBackColor = true;
+            // 
+            // btnclear
+            // 
+            this.btnclear.Location = new System.Drawing.Point(201, 921);
+            this.btnclear.Name = "btnclear";
+            this.btnclear.Size = new System.Drawing.Size(94, 29);
+            this.btnclear.TabIndex = 67;
+            this.btnclear.Text = "CLEAR";
+            this.btnclear.UseVisualStyleBackColor = true;
+            // 
             // Myorder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -587,5 +658,11 @@
         private Label label20;
         private GroupBox groupBox5;
         private Label label14;
+        private Button btnclear;
+        private Button btnsave;
+        private Label lblexpected_collect_date;
+        private Label label7;
+        private Label label8;
+        private Label label3;
     }
 }
