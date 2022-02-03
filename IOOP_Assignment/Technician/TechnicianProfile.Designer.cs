@@ -72,6 +72,8 @@
             this.btnAccess_Profile.TabIndex = 4;
             this.btnAccess_Profile.Text = "Profile";
             this.btnAccess_Profile.UseVisualStyleBackColor = false;
+            this.btnAccess_Profile.MouseEnter += new System.EventHandler(this.btnAccess_Profile_MouseEnter);
+            this.btnAccess_Profile.MouseLeave += new System.EventHandler(this.btnAccess_Profile_MouseLeave);
             // 
             // btnAccess_Dashboard
             // 
@@ -84,6 +86,8 @@
             this.btnAccess_Dashboard.TabIndex = 2;
             this.btnAccess_Dashboard.Text = "Dashboard";
             this.btnAccess_Dashboard.UseVisualStyleBackColor = false;
+            this.btnAccess_Dashboard.MouseEnter += new System.EventHandler(this.btnAccess_Dashboard_MouseEnter);
+            this.btnAccess_Dashboard.MouseLeave += new System.EventHandler(this.btnAccess_Dashboard_MouseLeave);
             // 
             // picMenuProfile
             // 
@@ -131,6 +135,8 @@
             this.btnLogOut.TabIndex = 5;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.MouseEnter += new System.EventHandler(this.btnLogOut_MouseEnter);
+            this.btnLogOut.MouseLeave += new System.EventHandler(this.btnLogOut_MouseLeave);
             // 
             // lblName
             // 
@@ -332,12 +338,15 @@
             this.btnAccess_EditProfile.TabIndex = 6;
             this.btnAccess_EditProfile.Text = "Edit";
             this.btnAccess_EditProfile.UseVisualStyleBackColor = false;
+            this.btnAccess_EditProfile.MouseEnter += new System.EventHandler(this.btnAccess_EditProfile_MouseEnter);
+            this.btnAccess_EditProfile.MouseLeave += new System.EventHandler(this.btnAccess_EditProfile_MouseLeave);
             // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.txtName.Location = new System.Drawing.Point(586, 284);
             this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(189, 42);
             this.txtName.TabIndex = 25;
             this.txtName.Text = "Chew Jay Ren";
@@ -368,6 +377,8 @@
             this.Controls.Add(this.lblText_Technician);
             this.Controls.Add(this.picProfile);
             this.Controls.Add(this.panelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "TechnicianProfile";
             this.Text = "Profile";
             ((System.ComponentModel.ISupportInitialize)(this.picMenuProfile)).EndInit();

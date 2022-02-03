@@ -12,7 +12,7 @@ namespace IOOPAssignment
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new EditServiceRequest());
+            Application.Run(new UpdateProfile());
             
         }
     }
