@@ -56,7 +56,6 @@
             this.userControlServiceReport1 = new IOOPAssignment.UserControlServiceReport();
             this.userControlRegistration1 = new IOOPAssignment.UserControlRegistration();
             this.userControlAdminDashBoard1 = new IOOPAssignment.UserControlAdminDashBoard();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxIncome)).BeginInit();
@@ -418,15 +417,6 @@
             this.userControlAdminDashBoard1.Size = new System.Drawing.Size(836, 462);
             this.userControlAdminDashBoard1.TabIndex = 279;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(30, 125);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 84);
-            this.button2.TabIndex = 280;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -434,7 +424,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(979, 498);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.userControlAdminDashBoard1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.button1);
@@ -508,6 +497,5 @@
         private UserControlServiceReport userControlServiceReport1;
         private UserControlRegistration userControlRegistration1;
         private UserControlAdminDashBoard userControlAdminDashBoard1;
-        private Button button2;
     }
 }

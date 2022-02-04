@@ -27,6 +27,9 @@ namespace IOOPAssignment
             
         }
 
+        private void UserControlAdminDashBoard_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -101,6 +101,7 @@
             this.btnRegis.Text = "Register";
             this.btnRegis.TextColor = System.Drawing.Color.White;
             this.btnRegis.UseVisualStyleBackColor = true;
+            this.btnRegis.Click += new System.EventHandler(this.btnRegis_Click);
             // 
             // lblOtrEthinc
             // 
@@ -438,6 +439,7 @@
             this.Controls.Add(this.lnlCtnJobPost);
             this.Name = "UserControlRegistration";
             this.Size = new System.Drawing.Size(836, 685);
+            this.Load += new System.EventHandler(this.UserControlRegistration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
