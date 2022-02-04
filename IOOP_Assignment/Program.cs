@@ -1,3 +1,6 @@
+using Technician;
+using testing;
+
 namespace IOOPAssignment
 {
     internal static class Program
@@ -9,7 +12,7 @@ namespace IOOPAssignment
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new AdminPage());
+            Application.Run(new UpdateProfile());
             
         }
     }

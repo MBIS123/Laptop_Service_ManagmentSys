@@ -30,15 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmServRequest));
             this.grpBoxRequest = new System.Windows.Forms.GroupBox();
-            this.txtAmt = new System.Windows.Forms.TextBox();
-            this.lblAmt = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblServType = new System.Windows.Forms.Label();
-            this.btnPayment = new System.Windows.Forms.Button();
+            this.btnOrder = new System.Windows.Forms.Button();
             this.radBtnUrgent = new System.Windows.Forms.RadioButton();
             this.radBtnNormal = new System.Windows.Forms.RadioButton();
-            this.lstBoxService = new System.Windows.Forms.ListBox();
-            this.lstBoxCustomer = new System.Windows.Forms.ListBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -54,55 +50,46 @@
             this.lblRcn = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.linklblPayment = new System.Windows.Forms.LinkLabel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dataGridViewCustomer = new System.Windows.Forms.DataGridView();
+            this.dataGridViewServ = new System.Windows.Forms.DataGridView();
+            this.lblLaptop = new System.Windows.Forms.Label();
+            this.txtLaptop = new System.Windows.Forms.TextBox();
             this.grpBoxRequest.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServ)).BeginInit();
             this.SuspendLayout();
             // 
             // grpBoxRequest
             // 
             this.grpBoxRequest.BackColor = System.Drawing.Color.PeachPuff;
-            this.grpBoxRequest.Controls.Add(this.txtAmt);
-            this.grpBoxRequest.Controls.Add(this.lblAmt);
+            this.grpBoxRequest.Controls.Add(this.dataGridViewServ);
             this.grpBoxRequest.Controls.Add(this.btnClear);
             this.grpBoxRequest.Controls.Add(this.lblServType);
-            this.grpBoxRequest.Controls.Add(this.btnPayment);
+            this.grpBoxRequest.Controls.Add(this.btnOrder);
             this.grpBoxRequest.Controls.Add(this.radBtnUrgent);
             this.grpBoxRequest.Controls.Add(this.radBtnNormal);
-            this.grpBoxRequest.Controls.Add(this.lstBoxService);
             this.grpBoxRequest.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.grpBoxRequest.Location = new System.Drawing.Point(211, 232);
+            this.grpBoxRequest.Location = new System.Drawing.Point(213, 271);
             this.grpBoxRequest.Name = "grpBoxRequest";
-            this.grpBoxRequest.Size = new System.Drawing.Size(761, 401);
+            this.grpBoxRequest.Size = new System.Drawing.Size(761, 365);
             this.grpBoxRequest.TabIndex = 5;
             this.grpBoxRequest.TabStop = false;
             this.grpBoxRequest.Text = "Requested Service";
-            // 
-            // txtAmt
-            // 
-            this.txtAmt.Location = new System.Drawing.Point(399, 304);
-            this.txtAmt.Name = "txtAmt";
-            this.txtAmt.Size = new System.Drawing.Size(162, 40);
-            this.txtAmt.TabIndex = 7;
-            // 
-            // lblAmt
-            // 
-            this.lblAmt.AutoSize = true;
-            this.lblAmt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblAmt.Location = new System.Drawing.Point(186, 312);
-            this.lblAmt.Name = "lblAmt";
-            this.lblAmt.Size = new System.Drawing.Size(213, 26);
-            this.lblAmt.TabIndex = 6;
-            this.lblAmt.Text = "Amount Paid:   RM";
             // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.White;
             this.btnClear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnClear.Location = new System.Drawing.Point(189, 362);
+            this.btnClear.Location = new System.Drawing.Point(186, 318);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(104, 34);
             this.btnClear.TabIndex = 5;
@@ -113,29 +100,29 @@
             // 
             this.lblServType.AutoSize = true;
             this.lblServType.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblServType.Location = new System.Drawing.Point(186, 257);
+            this.lblServType.Location = new System.Drawing.Point(186, 266);
             this.lblServType.Name = "lblServType";
             this.lblServType.Size = new System.Drawing.Size(139, 25);
             this.lblServType.TabIndex = 4;
             this.lblServType.Text = "Service Type:";
             // 
-            // btnPayment
+            // btnOrder
             // 
-            this.btnPayment.BackColor = System.Drawing.Color.White;
-            this.btnPayment.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnPayment.Location = new System.Drawing.Point(308, 362);
-            this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(256, 34);
-            this.btnPayment.TabIndex = 3;
-            this.btnPayment.Text = "Confirm Payment";
-            this.btnPayment.UseVisualStyleBackColor = false;
-            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
+            this.btnOrder.BackColor = System.Drawing.Color.White;
+            this.btnOrder.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnOrder.Location = new System.Drawing.Point(305, 318);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(256, 34);
+            this.btnOrder.TabIndex = 3;
+            this.btnOrder.Text = "Confirm Order";
+            this.btnOrder.UseVisualStyleBackColor = false;
+            this.btnOrder.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // radBtnUrgent
             // 
             this.radBtnUrgent.AutoSize = true;
             this.radBtnUrgent.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radBtnUrgent.Location = new System.Drawing.Point(466, 257);
+            this.radBtnUrgent.Location = new System.Drawing.Point(466, 266);
             this.radBtnUrgent.Name = "radBtnUrgent";
             this.radBtnUrgent.Size = new System.Drawing.Size(95, 29);
             this.radBtnUrgent.TabIndex = 2;
@@ -147,43 +134,13 @@
             // 
             this.radBtnNormal.AutoSize = true;
             this.radBtnNormal.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radBtnNormal.Location = new System.Drawing.Point(339, 257);
+            this.radBtnNormal.Location = new System.Drawing.Point(339, 266);
             this.radBtnNormal.Name = "radBtnNormal";
             this.radBtnNormal.Size = new System.Drawing.Size(103, 29);
             this.radBtnNormal.TabIndex = 1;
             this.radBtnNormal.TabStop = true;
             this.radBtnNormal.Text = "Normal";
             this.radBtnNormal.UseVisualStyleBackColor = true;
-            // 
-            // lstBoxService
-            // 
-            this.lstBoxService.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lstBoxService.FormattingEnabled = true;
-            this.lstBoxService.ItemHeight = 22;
-            this.lstBoxService.Items.AddRange(new object[] {
-            "\t\t\t\t\t Normal\t                 Urgent",
-            "1 Remove virus, malware or spyware\t\t RM 50 \t  \tRM 80",
-            "2 Troubleshot and fix computer running slow \t RM 60      \tRM 90",
-            "3 Laptop screen replacement \t\t\t RM 380     \tRM 430",
-            "4 Laptop keyboard replacement \t\t\t RM 160     \tRM 200",
-            "5 Laptop battery replacement\t\t\t RM 180     \tRM 210",
-            "6 Operating System Format and Installation\t   \t RM 100     \tRM 150",
-            "7 Data backup and recovery \t\t\t RM 80       \tRM 130",
-            "8 Internet connectivity issues \t\t\t RM 70       \tRM 100"});
-            this.lstBoxService.Location = new System.Drawing.Point(31, 39);
-            this.lstBoxService.Name = "lstBoxService";
-            this.lstBoxService.Size = new System.Drawing.Size(722, 202);
-            this.lstBoxService.TabIndex = 0;
-            // 
-            // lstBoxCustomer
-            // 
-            this.lstBoxCustomer.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lstBoxCustomer.FormattingEnabled = true;
-            this.lstBoxCustomer.ItemHeight = 22;
-            this.lstBoxCustomer.Location = new System.Drawing.Point(227, 86);
-            this.lstBoxCustomer.Name = "lstBoxCustomer";
-            this.lstBoxCustomer.Size = new System.Drawing.Size(722, 136);
-            this.lstBoxCustomer.TabIndex = 6;
             // 
             // lblTitle
             // 
@@ -217,7 +174,7 @@
             // 
             this.groupBox4.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox4.Controls.Add(this.linklblLogout);
-            this.groupBox4.Location = new System.Drawing.Point(1, 419);
+            this.groupBox4.Location = new System.Drawing.Point(1, 478);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(203, 36);
             this.groupBox4.TabIndex = 30;
@@ -350,16 +307,93 @@
             this.splitter1.BackColor = System.Drawing.Color.SeaShell;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(203, 644);
+            this.splitter1.Size = new System.Drawing.Size(203, 648);
             this.splitter1.TabIndex = 26;
             this.splitter1.TabStop = false;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox5.Controls.Add(this.linklblPayment);
+            this.groupBox5.Location = new System.Drawing.Point(2, 418);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(203, 36);
+            this.groupBox5.TabIndex = 40;
+            this.groupBox5.TabStop = false;
+            // 
+            // linklblPayment
+            // 
+            this.linklblPayment.ActiveLinkColor = System.Drawing.Color.DarkRed;
+            this.linklblPayment.AutoSize = true;
+            this.linklblPayment.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.linklblPayment.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linklblPayment.LinkColor = System.Drawing.Color.Blue;
+            this.linklblPayment.Location = new System.Drawing.Point(51, 8);
+            this.linklblPayment.Name = "linklblPayment";
+            this.linklblPayment.Size = new System.Drawing.Size(94, 20);
+            this.linklblPayment.TabIndex = 28;
+            this.linklblPayment.TabStop = true;
+            this.linklblPayment.Text = "PAYMENT";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(649, 49);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(300, 31);
+            this.dateTimePicker1.TabIndex = 41;
+            // 
+            // dataGridViewCustomer
+            // 
+            this.dataGridViewCustomer.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCustomer.Location = new System.Drawing.Point(227, 86);
+            this.dataGridViewCustomer.Name = "dataGridViewCustomer";
+            this.dataGridViewCustomer.RowHeadersWidth = 62;
+            this.dataGridViewCustomer.RowTemplate.Height = 33;
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(731, 134);
+            this.dataGridViewCustomer.TabIndex = 42;
+            // 
+            // dataGridViewServ
+            // 
+            this.dataGridViewServ.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewServ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewServ.Location = new System.Drawing.Point(14, 34);
+            this.dataGridViewServ.Name = "dataGridViewServ";
+            this.dataGridViewServ.RowHeadersWidth = 62;
+            this.dataGridViewServ.RowTemplate.Height = 33;
+            this.dataGridViewServ.Size = new System.Drawing.Size(731, 228);
+            this.dataGridViewServ.TabIndex = 6;
+            // 
+            // lblLaptop
+            // 
+            this.lblLaptop.AutoSize = true;
+            this.lblLaptop.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLaptop.Location = new System.Drawing.Point(227, 234);
+            this.lblLaptop.Name = "lblLaptop";
+            this.lblLaptop.Size = new System.Drawing.Size(142, 25);
+            this.lblLaptop.TabIndex = 43;
+            this.lblLaptop.Text = "Laptop Model:";
+            this.lblLaptop.Click += new System.EventHandler(this.lblLaptop_Click);
+            // 
+            // txtLaptop
+            // 
+            this.txtLaptop.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtLaptop.Location = new System.Drawing.Point(375, 229);
+            this.txtLaptop.Name = "txtLaptop";
+            this.txtLaptop.Size = new System.Drawing.Size(285, 30);
+            this.txtLaptop.TabIndex = 44;
             // 
             // frmServRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(986, 644);
+            this.ClientSize = new System.Drawing.Size(986, 648);
+            this.Controls.Add(this.txtLaptop);
+            this.Controls.Add(this.lblLaptop);
+            this.Controls.Add(this.dataGridViewCustomer);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -372,7 +406,6 @@
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.grpBoxRequest);
-            this.Controls.Add(this.lstBoxCustomer);
             this.Name = "frmServRequest";
             this.Text = "Service Request ";
             this.grpBoxRequest.ResumeLayout(false);
@@ -386,6 +419,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServ)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,14 +433,10 @@
         private GroupBox grpBoxRequest;
         private Button btnClear;
         private Label lblServType;
-        private Button btnPayment;
+        private Button btnOrder;
         private RadioButton radBtnUrgent;
         private RadioButton radBtnNormal;
-        private ListBox lstBoxService;
-        private ListBox lstBoxCustomer;
         private Label lblTitle;
-        private TextBox txtAmt;
-        private Label lblAmt;
         private Label lblSearch;
         private TextBox txtSearch;
         private GroupBox groupBox4;
@@ -418,5 +451,12 @@
         private Label lblRcn;
         private PictureBox pictureBoxLogo;
         private Splitter splitter1;
+        private GroupBox groupBox5;
+        private LinkLabel linklblPayment;
+        private DateTimePicker dateTimePicker1;
+        private DataGridView dataGridViewServ;
+        private DataGridView dataGridViewCustomer;
+        private Label lblLaptop;
+        private TextBox txtLaptop;
     }
 }
