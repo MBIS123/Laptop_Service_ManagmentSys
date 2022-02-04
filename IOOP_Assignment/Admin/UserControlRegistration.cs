@@ -26,7 +26,7 @@ namespace IOOPAssignment
         private void btnRegis_Click(object sender, EventArgs e)
         {
             name = txtFirstName.Text;  
-            DataVa
+            
             
             
             

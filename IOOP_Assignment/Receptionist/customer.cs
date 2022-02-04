@@ -44,6 +44,7 @@ namespace IOOP_Assignment.Receptionist
         {
             cusUsername = un;
         }
+        /*
         public string addNewCus()
         {
             string status;
@@ -51,6 +52,6 @@ namespace IOOP_Assignment.Receptionist
             SqlCommand cmd = new SqlCommand("insert into Customer(Name, Gender, Date of Birth, IC No., Contact No., Email, Address) values() ");
 
 
-        }
+        }*/
     }
 }
