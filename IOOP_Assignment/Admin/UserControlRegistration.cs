@@ -12,9 +12,25 @@ namespace IOOPAssignment
 {
     public partial class UserControlRegistration : UserControl
     {
+        private string name;
         public UserControlRegistration()
         {
             InitializeComponent();
+        }
+
+        private void UserControlRegistration_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegis_Click(object sender, EventArgs e)
+        {
+            name = txtFirstName.Text;  
+            DataVa
+            
+            
+            
+            
         }
     }
 }
