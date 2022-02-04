@@ -6,27 +6,32 @@ using System.Threading.Tasks;
 using System.Collections;
 using System.Text.RegularExpressions;
 
-namespace IOOP_Assignment
+namespace IOOPAssignment
 {
 
 
     public class DataValidation
     {
             
-        bool isString(string input)
+        internal bool isString(string input)
         {
-            if (new Regex(input).IsMatch("^[a-zA-Z]$")) 
+            if (input.All(Char.IsLetter))
+            {
                 return true;
+            }
             else
                 return false;
         }
 
-        bool isPhoneNum(string input)
+        internal bool isPhoneNum(string input)
         {
-            if (new Regex(input).IsMatch("^(+60)[0-9]{11}$"))
+            if ( Regex.IsMatch(input, @"^[0-9]{1,11}$"))
                 return true;
             else
                 return false ;
+            
         }
+
+
     }
 }

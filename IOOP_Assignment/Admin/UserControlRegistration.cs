@@ -13,6 +13,7 @@ namespace IOOPAssignment
     public partial class UserControlRegistration : UserControl
     {
         private string name;
+      
         public UserControlRegistration()
         {
             InitializeComponent();
@@ -25,12 +26,13 @@ namespace IOOPAssignment
 
         private void btnRegis_Click(object sender, EventArgs e)
         {
-            name = txtFirstName.Text;  
-            
-            
-            
-            
-            
+            name = txtFirstName.Text.ToString();
+            DataValidation obj1 = new DataValidation();
+            if (obj1.isPhoneNum(name) )
+                MessageBox.Show("correct");
+
+            else
+                MessageBox.Show("wrong");
         }
     }
 }
