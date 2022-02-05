@@ -1,4 +1,5 @@
-﻿using IOOPAssignment;
+﻿
+using IOOPAssignment;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
 namespace IOOP_Assignment
 {
     internal class Users
@@ -45,7 +47,7 @@ namespace IOOP_Assignment
                 /*else if (user_role = "customer")
                 {
                     wenhui, you need to change your namespace to IOOP_Assignment first. 
-                }*/
+                }
                 else if (user_role = "receptionist")
                 {
                     frmLogin f = new frmLogin();
@@ -66,3 +68,4 @@ namespace IOOP_Assignment
 
     }
 }
+*/

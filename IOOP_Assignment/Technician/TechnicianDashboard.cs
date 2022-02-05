@@ -57,5 +57,24 @@ namespace IOOP_Assignment
         {
             btnAccess_AllServ.BackColor = Color.SteelBlue;
         }
+
+        //clicking 'edit'
+        private void btnAccess_AllServ_Click(object sender, EventArgs e)
+        {
+            EditServiceRequest ed = new EditServiceRequest();
+            ed.StartPosition = FormStartPosition.Manual;
+            ed.Location = new Point(500, 250);
+            ed.ShowDialog();
+        }
+
+        private void btnAccess_Profile_Click(object sender, EventArgs e)
+        {
+            UpdateTechnicianProfile utp = new UpdateTechnicianProfile();
+            utp.StartPosition = FormStartPosition.Manual;
+            utp.Location = new Point(100, 100);
+            utp.ShowDialog();
+        }
+
+        //still have to code logout
     }
 }
