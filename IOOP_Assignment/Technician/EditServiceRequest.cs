@@ -10,11 +10,46 @@ using System.Windows.Forms;
 
 namespace Technician
 {
-    public partial class EditServ : Form
+    public partial class EditServiceRequest : Form
     {
-        public EditServ()
+        public EditServiceRequest()
         {
             InitializeComponent();
+        }
+
+        private void btnReset_MouseLeave(object sender, EventArgs e)
+        {
+            btnReset.BackColor = Color.LightSkyBlue;
+        }
+
+        private void btnReset_MouseEnter(object sender, EventArgs e)
+        {
+            btnReset.BackColor = Color.SteelBlue;
+        }
+
+        private void btnSave_MouseLeave(object sender, EventArgs e)
+        {
+            btnSave.BackColor = Color.LightSkyBlue;
+        }
+
+        private void btnSave_MouseEnter(object sender, EventArgs e)
+        {
+            btnSave.BackColor = Color.SteelBlue;
+        }
+
+        private void btnClose_MouseLeave(object sender, EventArgs e)
+        {
+            btnClose.BackColor = Color.LightSkyBlue;
+        }
+
+        private void btnClose_MouseEnter(object sender, EventArgs e)
+        {
+            btnClose.BackColor = Color.SteelBlue;
+        }
+
+        private void EditServiceRequest_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

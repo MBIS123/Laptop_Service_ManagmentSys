@@ -728,6 +728,7 @@
             this.Controls.Add(this.pcBxRndEdg3);
             this.Name = "UserControlAdminDashBoard";
             this.Size = new System.Drawing.Size(836, 462);
+            this.Load += new System.EventHandler(this.UserControlAdminDashBoard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcBxChart)).EndInit();
             this.grpBxServRpt.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcBxServRpt)).EndInit();
