@@ -1,4 +1,4 @@
-﻿namespace Assignment
+﻿namespace IOOP_Assignment
 {
     partial class frmRegNewCus
     {
@@ -476,6 +476,7 @@
             this.Controls.Add(this.lblNewCusReg);
             this.Name = "frmRegNewCus";
             this.Text = "New Customer Registration  ";
+            this.Load += new System.EventHandler(this.frmRegNewCus_Load);
             this.grpBoxReg.ResumeLayout(false);
             this.grpBoxReg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();

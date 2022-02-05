@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace IOOP_Assignment.Receptionist
 {
-    class customer
+    class Customer
     {
         private string cusName;
         private string cusGender;
@@ -19,6 +19,8 @@ namespace IOOP_Assignment.Receptionist
         private string cusAddress;
         private string cusDob;
         private string cusUsername;
+        //frmRegNewCus
+
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
         public string CusName { get => cusName; set => cusName = value; }
@@ -29,7 +31,7 @@ namespace IOOP_Assignment.Receptionist
         public string CusAddress { get => cusAddress; set => cusAddress = value; }
         public string CusDob { get => cusDob; set => cusDob = value; }
 
-        public customer(string n, string g, string i, string num, string e, string a, string d, string un)
+        public Customer(string n, string g, string i, string num, string e, string a, string d, string un)
         {
             cusName = n;
             cusGender = g;
@@ -40,20 +42,26 @@ namespace IOOP_Assignment.Receptionist
             cusDob = d;
             cusUsername = un;
         }
+        public Customer()
+        {
 
-        public customer(string un)
+        }
+        public Customer(string un)
         {
             cusUsername = un;
         }
-        /*
+
         public string addNewCus()
         {
+      
             string status;
             con.Open();
-            SqlCommand cmd = new SqlCommand("insert into Customer(Name, Gender, Date of Birth, IC No., Contact No., Email, Address) values(@name, @gender, @dob, @ic, @phone, @email, @address)", con);
+            
+            SqlCommand cmd1 = new SqlCommand("insert into Users(Username, Password, Role) values (@username, @pwd, @role)", con);
+            SqlCommand cmd2 = new SqlCommand("insert into Customer(UserID, Name, Gender, Date of Birth, IC No., Contact No., Email, Address) values(@userID, @name, @gender, @dob, @ic, @phone, @email, @address)", con);
 
 
-
-        }*/
+            return status;
+        }
     }
 }
