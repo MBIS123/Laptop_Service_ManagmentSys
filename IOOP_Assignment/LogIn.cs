@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Assignment
+namespace IOOP_Assignment
 {
     public partial class frmLogin : Form
     {

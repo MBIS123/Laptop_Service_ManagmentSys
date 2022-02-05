@@ -1,4 +1,4 @@
-﻿namespace Assignment
+﻿namespace IOOP_Assignment
 {
     partial class frmLogin
     {
