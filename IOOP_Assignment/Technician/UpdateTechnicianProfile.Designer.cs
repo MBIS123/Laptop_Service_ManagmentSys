@@ -1,6 +1,6 @@
 ﻿namespace IOOP_Assignment
 {
-    partial class UpdateProfile
+    partial class UpdateTechnicianProfile
     {
         /// <summary>
         /// Required designer variable.
