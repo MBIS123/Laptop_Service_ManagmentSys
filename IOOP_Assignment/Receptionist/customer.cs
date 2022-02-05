@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
@@ -49,7 +50,8 @@ namespace IOOP_Assignment.Receptionist
         {
             string status;
             con.Open();
-            SqlCommand cmd = new SqlCommand("insert into Customer(Name, Gender, Date of Birth, IC No., Contact No., Email, Address) values() ");
+            SqlCommand cmd = new SqlCommand("insert into Customer(Name, Gender, Date of Birth, IC No., Contact No., Email, Address) values(@name, @gender, @dob, @ic, @phone, @email, @address)", con);
+
 
 
         }*/
