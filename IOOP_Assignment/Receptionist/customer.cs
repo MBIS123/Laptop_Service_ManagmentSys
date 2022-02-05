@@ -45,6 +45,7 @@ namespace IOOP_Assignment.Receptionist
         {
             cusUsername = un;
         }
+        /*
         public string addNewCus()
         {
             string status;
@@ -53,6 +54,6 @@ namespace IOOP_Assignment.Receptionist
 
 
 
-        }
+        }*/
     }
 }

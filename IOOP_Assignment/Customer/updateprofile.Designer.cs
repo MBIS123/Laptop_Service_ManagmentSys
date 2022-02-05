@@ -72,6 +72,7 @@
             this.lblmyaccount = new System.Windows.Forms.Label();
             this.lblwelcome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnclear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -83,6 +84,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox1.Controls.Add(this.btnclear);
             this.groupBox1.Controls.Add(this.btnsave);
             this.groupBox1.Controls.Add(this.txtconfirmpassw);
             this.groupBox1.Controls.Add(this.lblconfirmpass);
@@ -556,6 +558,16 @@
             this.pictureBox1.TabIndex = 79;
             this.pictureBox1.TabStop = false;
             // 
+            // btnclear
+            // 
+            this.btnclear.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnclear.Location = new System.Drawing.Point(189, 955);
+            this.btnclear.Name = "btnclear";
+            this.btnclear.Size = new System.Drawing.Size(94, 29);
+            this.btnclear.TabIndex = 121;
+            this.btnclear.Text = "CLEAR";
+            this.btnclear.UseVisualStyleBackColor = true;
+            // 
             // update_profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -636,5 +648,6 @@
         private Label lblpassword;
         private Label label29;
         private PictureBox pictureBox1;
+        private Button btnclear;
     }
 }

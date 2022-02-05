@@ -46,16 +46,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.rdb_urgent = new System.Windows.Forms.RadioButton();
+            this.rdb_normal = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnback = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.lbl_decided_change_service = new System.Windows.Forms.Label();
-            this.btnCalc = new System.Windows.Forms.Button();
-            this.lbl_RMcurrent = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbl_currentamount = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbl_existamount = new System.Windows.Forms.Label();
-            this.ckdservice = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_servicein = new System.Windows.Forms.Label();
             this.lstservices = new System.Windows.Forms.ListBox();
@@ -65,8 +62,6 @@
             this.lbltitle_changeserv = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -256,16 +251,13 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.rdb_urgent);
+            this.groupBox1.Controls.Add(this.rdb_normal);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.btnback);
             this.groupBox1.Controls.Add(this.btnConfirm);
             this.groupBox1.Controls.Add(this.lbl_decided_change_service);
-            this.groupBox1.Controls.Add(this.btnCalc);
-            this.groupBox1.Controls.Add(this.lbl_RMcurrent);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.lbl_currentamount);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.lbl_existamount);
-            this.groupBox1.Controls.Add(this.ckdservice);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lbl_servicein);
             this.groupBox1.Controls.Add(this.lstservices);
@@ -275,130 +267,105 @@
             this.groupBox1.Controls.Add(this.lbltitle_changeserv);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(304, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(870, 925);
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Linen;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(116, 599);
+            this.label4.Name = "label4";
+            this.label4.Padding = new System.Windows.Forms.Padding(20);
+            this.label4.Size = new System.Drawing.Size(549, 86);
+            this.label4.TabIndex = 77;
+            this.label4.Text = "Dear customer please take note after change service request\r\nand amount of fees t" +
+    "o pay will change accordingly !";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // rdb_urgent
+            // 
+            this.rdb_urgent.AutoSize = true;
+            this.rdb_urgent.Location = new System.Drawing.Point(64, 544);
+            this.rdb_urgent.Name = "rdb_urgent";
+            this.rdb_urgent.Size = new System.Drawing.Size(75, 24);
+            this.rdb_urgent.TabIndex = 76;
+            this.rdb_urgent.TabStop = true;
+            this.rdb_urgent.Text = "Urgent";
+            this.rdb_urgent.UseVisualStyleBackColor = true;
+            this.rdb_urgent.CheckedChanged += new System.EventHandler(this.rdb_urgent_CheckedChanged);
+            // 
+            // rdb_normal
+            // 
+            this.rdb_normal.AutoSize = true;
+            this.rdb_normal.Location = new System.Drawing.Point(64, 514);
+            this.rdb_normal.Name = "rdb_normal";
+            this.rdb_normal.Size = new System.Drawing.Size(80, 24);
+            this.rdb_normal.TabIndex = 75;
+            this.rdb_normal.TabStop = true;
+            this.rdb_normal.Text = "Normal";
+            this.rdb_normal.UseVisualStyleBackColor = true;
+            this.rdb_normal.CheckedChanged += new System.EventHandler(this.rdb_normal_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Linen;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(429, 193);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label3.Size = new System.Drawing.Size(226, 208);
+            this.label3.TabIndex = 74;
+            this.label3.Text = "RM 50             RM80\r\nRM60              RM90\r\nRM380            RM430\r\nRM160    " +
+    "        RM200\r\nRM100            RM150\r\nRM80              RM130\r\nRM70            " +
+    "  RM100";
+            // 
+            // btnback
+            // 
+            this.btnback.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnback.Location = new System.Drawing.Point(429, 829);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(119, 29);
+            this.btnback.TabIndex = 73;
+            this.btnback.Text = "BACK";
+            this.btnback.UseVisualStyleBackColor = true;
             // 
             // btnConfirm
             // 
             this.btnConfirm.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnConfirm.Location = new System.Drawing.Point(362, 847);
+            this.btnConfirm.Location = new System.Drawing.Point(236, 829);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(119, 29);
             this.btnConfirm.TabIndex = 72;
             this.btnConfirm.Text = "CONFIRM";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // lbl_decided_change_service
             // 
             this.lbl_decided_change_service.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbl_decided_change_service.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lbl_decided_change_service.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Assertive;
-            this.lbl_decided_change_service.Location = new System.Drawing.Point(45, 733);
+            this.lbl_decided_change_service.Location = new System.Drawing.Point(46, 711);
             this.lbl_decided_change_service.Name = "lbl_decided_change_service";
             this.lbl_decided_change_service.Size = new System.Drawing.Size(750, 86);
             this.lbl_decided_change_service.TabIndex = 71;
-            this.lbl_decided_change_service.Text = "You wish to change the service from\r\nTroubleshot and fix computer running slow to" +
-    " Laptop Keyboard replacement";
             this.lbl_decided_change_service.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnCalc
-            // 
-            this.btnCalc.BackColor = System.Drawing.Color.LightGray;
-            this.btnCalc.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCalc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCalc.Location = new System.Drawing.Point(337, 680);
-            this.btnCalc.Name = "btnCalc";
-            this.btnCalc.Size = new System.Drawing.Size(162, 37);
-            this.btnCalc.TabIndex = 70;
-            this.btnCalc.Text = "CALCULATE  PRICE";
-            this.btnCalc.UseVisualStyleBackColor = false;
-            // 
-            // lbl_RMcurrent
-            // 
-            this.lbl_RMcurrent.AutoSize = true;
-            this.lbl_RMcurrent.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_RMcurrent.Location = new System.Drawing.Point(382, 625);
-            this.lbl_RMcurrent.Name = "lbl_RMcurrent";
-            this.lbl_RMcurrent.Size = new System.Drawing.Size(308, 23);
-            this.lbl_RMcurrent.TabIndex = 69;
-            this.lbl_RMcurrent.Text = "Laptop Keyboard replacement | RM160";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(379, 576);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(416, 23);
-            this.label10.TabIndex = 68;
-            this.label10.Text = "Troubleshot and fix computer runnning slow | RM 90";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Wingdings 2", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(16, 618);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 30);
-            this.label4.TabIndex = 58;
-            this.label4.Text = "e";
-            // 
-            // lbl_currentamount
-            // 
-            this.lbl_currentamount.AutoSize = true;
-            this.lbl_currentamount.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lbl_currentamount.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lbl_currentamount.Location = new System.Drawing.Point(64, 625);
-            this.lbl_currentamount.Name = "lbl_currentamount";
-            this.lbl_currentamount.Size = new System.Drawing.Size(312, 23);
-            this.lbl_currentamount.TabIndex = 57;
-            this.lbl_currentamount.Text = "Current selected service to be paid : ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Wingdings 2", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(16, 569);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 30);
-            this.label3.TabIndex = 56;
-            this.label3.Text = "e";
-            // 
-            // lbl_existamount
-            // 
-            this.lbl_existamount.AutoSize = true;
-            this.lbl_existamount.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lbl_existamount.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lbl_existamount.Location = new System.Drawing.Point(64, 575);
-            this.lbl_existamount.Name = "lbl_existamount";
-            this.lbl_existamount.Size = new System.Drawing.Size(294, 23);
-            this.lbl_existamount.TabIndex = 55;
-            this.lbl_existamount.Text = "Existing selected service amount :";
-            // 
-            // ckdservice
-            // 
-            this.ckdservice.BackColor = System.Drawing.Color.Linen;
-            this.ckdservice.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ckdservice.FormattingEnabled = true;
-            this.ckdservice.Items.AddRange(new object[] {
-            "Normal",
-            "Urgent"});
-            this.ckdservice.Location = new System.Drawing.Point(56, 485);
-            this.ckdservice.Name = "ckdservice";
-            this.ckdservice.Size = new System.Drawing.Size(177, 48);
-            this.ckdservice.TabIndex = 54;
+            this.lbl_decided_change_service.Click += new System.EventHandler(this.lbl_decided_change_service_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Wingdings 2", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(16, 432);
+            this.label1.Location = new System.Drawing.Point(16, 442);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 30);
             this.label1.TabIndex = 52;
@@ -409,7 +376,7 @@
             this.lbl_servicein.AutoSize = true;
             this.lbl_servicein.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lbl_servicein.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lbl_servicein.Location = new System.Drawing.Point(64, 438);
+            this.lbl_servicein.Location = new System.Drawing.Point(64, 449);
             this.lbl_servicein.Name = "lbl_servicein";
             this.lbl_servicein.Size = new System.Drawing.Size(97, 23);
             this.lbl_servicein.TabIndex = 51;
@@ -423,17 +390,17 @@
             this.lstservices.FormattingEnabled = true;
             this.lstservices.ItemHeight = 23;
             this.lstservices.Items.AddRange(new object[] {
-            "Remove virus, malware or spyware\t\tRM50\tRM80",
-            "Troubleshot and fix computer running slow\tRM60\tRM90",
-            "Laptop screen replacement\t\t\tRM380\tRM430",
-            "Laptop Keyboard replacement\t\t\tRM160\tRM200",
-            "Laptop battery replacement \t\t\tRM180\tRM210",
-            "Operating System Format and Installation\tRM100\tRM150",
-            "Data backup and recovery\t\t\tRM80\tRM130",
-            "Internet connectivity issues\t\t\tRM70\tRM100"});
+            "Remove virus, malware or spyware",
+            "Troubleshot and fix computer running slow",
+            "Laptop screen replacement",
+            "Laptop Keyboard replacement",
+            "Laptop battery replacement",
+            "Operating System Format and Installation",
+            "Data backup and recovery",
+            "Internet connectivity issues"});
             this.lstservices.Location = new System.Drawing.Point(56, 192);
             this.lstservices.Name = "lstservices";
-            this.lstservices.Size = new System.Drawing.Size(685, 209);
+            this.lstservices.Size = new System.Drawing.Size(362, 209);
             this.lstservices.TabIndex = 50;
             // 
             // lblnormal_urgent
@@ -441,7 +408,7 @@
             this.lblnormal_urgent.AutoSize = true;
             this.lblnormal_urgent.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblnormal_urgent.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lblnormal_urgent.Location = new System.Drawing.Point(445, 166);
+            this.lblnormal_urgent.Location = new System.Drawing.Point(446, 163);
             this.lblnormal_urgent.Name = "lblnormal_urgent";
             this.lblnormal_urgent.Size = new System.Drawing.Size(156, 23);
             this.lblnormal_urgent.TabIndex = 49;
@@ -495,33 +462,11 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.PeachPuff;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(64, 452);
+            this.label12.Location = new System.Drawing.Point(64, 469);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(103, 17);
             this.label12.TabIndex = 53;
             this.label12.Text = "-------------------";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.PeachPuff;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(64, 589);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(291, 20);
-            this.label5.TabIndex = 66;
-            this.label5.Text = "-----------------------------------------------";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.PeachPuff;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(67, 637);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(291, 20);
-            this.label9.TabIndex = 67;
-            this.label9.Text = "-----------------------------------------------";
             // 
             // pictureBox1
             // 
@@ -555,6 +500,7 @@
             this.Controls.Add(this.lblwelcome);
             this.Name = "change_service";
             this.Text = "ChangeService";
+            this.Load += new System.EventHandler(this.change_service_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -592,14 +538,6 @@
         private Label lbltitle_changeserv;
         private Button btnConfirm;
         private Label lbl_decided_change_service;
-        private Button btnCalc;
-        private Label lbl_RMcurrent;
-        private Label label10;
-        private Label label4;
-        private Label lbl_currentamount;
-        private Label label3;
-        private Label lbl_existamount;
-        private CheckedListBox ckdservice;
         private Label label1;
         private Label lbl_servicein;
         private ListBox lstservices;
@@ -608,8 +546,11 @@
         private Label lbl_service;
         private Label label11;
         private Label label12;
-        private Label label5;
-        private Label label9;
         private PictureBox pictureBox1;
+        private Button btnback;
+        private Label label3;
+        private RadioButton rdb_urgent;
+        private RadioButton rdb_normal;
+        private Label label4;
     }
 }
