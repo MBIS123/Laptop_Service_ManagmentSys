@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Assignment
+namespace IOOP_Assignment
 {
     public partial class frmRegNewCus : Form
     {
@@ -29,6 +29,12 @@ namespace Assignment
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void frmRegNewCus_Load(object sender, EventArgs e)
+        {
+            Customer obj1 = new Customer();
 
         }
     }
