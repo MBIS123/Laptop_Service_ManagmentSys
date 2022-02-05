@@ -49,9 +49,6 @@
             this.lblServType = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblContact = new System.Windows.Forms.Label();
@@ -276,32 +273,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(624, 129);
             this.tableLayoutPanel2.TabIndex = 33;
             // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.White;
-            this.btnPrint.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnPrint.Location = new System.Drawing.Point(332, 605);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(112, 34);
-            this.btnPrint.TabIndex = 34;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = false;
-            // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Document = this.printDocument1;
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintDocument1_PrintPreviewDialog1);
-            // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.BackgroundImage")));
@@ -407,7 +378,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(791, 653);
+            this.ClientSize = new System.Drawing.Size(791, 600);
             this.Controls.Add(this.lblThx);
             this.Controls.Add(this.lblRcn);
             this.Controls.Add(this.lblInvoice);
@@ -417,7 +388,6 @@
             this.Controls.Add(this.lblInvoiceT);
             this.Controls.Add(this.lblContact);
             this.Controls.Add(this.pictureBoxLogo);
-            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblDate);
@@ -462,9 +432,6 @@
         public Label lblTotal;
         public Label lblAmtPaid;
         public Label lblBal;
-        private Button btnPrint;
-        private PrintPreviewDialog printPreviewDialog1;
-        private System.Drawing.Printing.PrintDocument printDocument1;
         private PictureBox pictureBoxLogo;
         private System.Windows.Forms.Timer timer1;
         private Label lblContact;
