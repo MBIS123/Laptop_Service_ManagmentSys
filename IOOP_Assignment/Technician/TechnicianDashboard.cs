@@ -50,12 +50,12 @@ namespace Technician
 
         private void btnAccess_PendServ_MouseLeave(object sender, EventArgs e)
         {
-            btnAccess_PendServ.BackColor = Color.LightSkyBlue;
+            btnAccess_AllServ.BackColor = Color.LightSkyBlue;
         }
 
         private void btnAccess_PendServ_MouseEnter(object sender, EventArgs e)
         {
-            btnAccess_PendServ.BackColor = Color.SteelBlue;
+            btnAccess_AllServ.BackColor = Color.SteelBlue;
         }
     }
 }

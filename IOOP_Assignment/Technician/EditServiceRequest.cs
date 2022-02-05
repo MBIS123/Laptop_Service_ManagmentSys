@@ -46,5 +46,10 @@ namespace Technician
         {
             btnClose.BackColor = Color.SteelBlue;
         }
+
+        private void EditServiceRequest_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
