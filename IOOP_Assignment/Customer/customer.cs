@@ -6,26 +6,39 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace IOOP_Assignment.Customer
+namespace IOOPAssignment
 {
-    internal class customer
+    internal class Customer
     {
-        private string service;
+        private int service;
         private string service_type;
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
-        public string Service { get => service; set => service = value; }
+        public int Service { get => service; set => service = value; }
         public string Service_type { get => service_type; set => service_type = value; }
 
-        internal void change_service(string serv,string type) // change the customer service (should return status)
+        public Customer(int serv,string type)
         {
-            con.Open();
-
             service = serv;
             service_type = type;
+        }
+        private string change_service() // change the customer service (should return status)
+        {
+            string status;
+            con.Open();
 
-            SqlCommand cmd = new SqlCommand("update order set service ='" + serv + "',serviceType='" + type, con);
+            SqlCommand cmd = new SqlCommand("update order set ServiceRequestType ID ='" + service + "',Service Type='" + service_type, con);
+            int i = cmd.ExecuteNonQuery();////executes the command and returns the number of rows affected
+            if (i != 0)
+            {
+                status = "Change Successfully.";
+            }
+            else
+            {
+                status = "Change Unsuccessfully.";
+            }
             con.Close();
+            return status;
         }
     }
 }
