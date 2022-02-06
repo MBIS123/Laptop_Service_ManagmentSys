@@ -1,7 +1,7 @@
 using Technician;
 using testing;
 
-namespace IOOPAssignment
+namespace IOOP_Assignment
 {
     internal static class Program
     {
