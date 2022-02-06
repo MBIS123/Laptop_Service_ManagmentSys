@@ -1,4 +1,4 @@
-﻿namespace Technician
+﻿namespace IOOP_Assignment
 {
     partial class TechnicianDashboard
     {
@@ -111,6 +111,7 @@
             this.btnAccess_Profile.TabIndex = 4;
             this.btnAccess_Profile.Text = "Profile";
             this.btnAccess_Profile.UseVisualStyleBackColor = false;
+            this.btnAccess_Profile.Click += new System.EventHandler(this.btnAccess_Profile_Click);
             this.btnAccess_Profile.MouseEnter += new System.EventHandler(this.btnAccess_Profile_MouseEnter);
             this.btnAccess_Profile.MouseLeave += new System.EventHandler(this.btnAccess_Profile_MouseLeave);
             // 
@@ -264,6 +265,7 @@
             this.btnAccess_AllServ.TabIndex = 3;
             this.btnAccess_AllServ.Text = "Edit";
             this.btnAccess_AllServ.UseVisualStyleBackColor = false;
+            this.btnAccess_AllServ.Click += new System.EventHandler(this.btnAccess_AllServ_Click);
             this.btnAccess_AllServ.MouseEnter += new System.EventHandler(this.btnAccess_PendServ_MouseEnter);
             this.btnAccess_AllServ.MouseLeave += new System.EventHandler(this.btnAccess_PendServ_MouseLeave);
             // 

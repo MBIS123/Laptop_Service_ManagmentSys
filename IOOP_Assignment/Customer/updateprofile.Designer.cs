@@ -1,4 +1,4 @@
-﻿namespace testing
+﻿namespace IOOPAssignment
 {
     partial class update_profile
     {

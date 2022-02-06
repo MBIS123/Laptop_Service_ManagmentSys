@@ -1,4 +1,4 @@
-﻿namespace Technician
+﻿namespace IOOP_Assignment
 {
     partial class EditServiceRequest
     {

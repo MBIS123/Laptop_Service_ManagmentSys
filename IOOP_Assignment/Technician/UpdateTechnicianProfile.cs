@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Technician
+namespace IOOP_Assignment
 {
-    public partial class UpdateProfile : Form
+    public partial class UpdateTechnicianProfile : Form
     {
-        public UpdateProfile()
+        public UpdateTechnicianProfile()
         {
             InitializeComponent();
         }
