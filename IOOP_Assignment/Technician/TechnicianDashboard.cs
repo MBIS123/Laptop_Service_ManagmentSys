@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,27 @@ namespace IOOP_Assignment
 {
     public partial class TechnicianDashboard : Form
     {
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Source\Repos\IOOP_Assignment\IOOP_Assignment\LpDoctorDataBase.mdf;Integrated Security=True;";
         public TechnicianDashboard()
         {
             InitializeComponent();
+        }
+        private void TechnicianDashboard_Load(object sender, EventArgs e)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [Order]", con);
+                DataTable dtbl = new DataTable();
+                da.Fill(dtbl);
+
+                //method 1 - direct method that shows all columns
+                //dataGrid_AllServ.DataSource = dtbl;
+
+                //method 2 - indirect method that shows select columns
+                dataGrid_AllServ.AutoGenerateColumns = false;
+                dataGrid_AllServ.DataSource = dtbl;
+            }
         }
 
         //for changes in button color when user hovers over button 
@@ -58,7 +77,7 @@ namespace IOOP_Assignment
             btnAccess_AllServ.BackColor = Color.SteelBlue;
         }
 
-        //clicking 'edit'
+        //navigating menu
         private void btnAccess_AllServ_Click(object sender, EventArgs e)
         {
             EditServiceRequest ed = new EditServiceRequest();
@@ -69,12 +88,24 @@ namespace IOOP_Assignment
 
         private void btnAccess_Profile_Click(object sender, EventArgs e)
         {
-            UpdateTechnicianProfile utp = new UpdateTechnicianProfile();
-            utp.StartPosition = FormStartPosition.Manual;
-            utp.Location = new Point(100, 100);
-            utp.ShowDialog();
+            this.Hide();
+            TechnicianProfile tp = new TechnicianProfile();
+            tp.StartPosition = FormStartPosition.Manual;
+            tp.Location = new Point(100, 100);
+            tp.ShowDialog();
         }
 
-        //still have to code logout
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin f1 = new frmLogin();
+            f1.ShowDialog(); 
+        }
+
+        //when form is closed
+        /*private void TechnicianDashboard.Closed(object sender, EventArgs e)
+        {
+
+        }*/
     }
 }

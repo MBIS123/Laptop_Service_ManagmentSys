@@ -86,6 +86,7 @@
             this.btnAccess_Dashboard.TabIndex = 2;
             this.btnAccess_Dashboard.Text = "Dashboard";
             this.btnAccess_Dashboard.UseVisualStyleBackColor = false;
+            this.btnAccess_Dashboard.Click += new System.EventHandler(this.btnAccess_Dashboard_Click);
             this.btnAccess_Dashboard.MouseEnter += new System.EventHandler(this.btnAccess_Dashboard_MouseEnter);
             this.btnAccess_Dashboard.MouseLeave += new System.EventHandler(this.btnAccess_Dashboard_MouseLeave);
             // 
@@ -135,6 +136,7 @@
             this.btnLogOut.TabIndex = 5;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             this.btnLogOut.MouseEnter += new System.EventHandler(this.btnLogOut_MouseEnter);
             this.btnLogOut.MouseLeave += new System.EventHandler(this.btnLogOut_MouseLeave);
             // 
@@ -338,6 +340,7 @@
             this.btnAccess_EditProfile.TabIndex = 6;
             this.btnAccess_EditProfile.Text = "Edit";
             this.btnAccess_EditProfile.UseVisualStyleBackColor = false;
+            this.btnAccess_EditProfile.Click += new System.EventHandler(this.btnAccess_EditProfile_Click);
             this.btnAccess_EditProfile.MouseEnter += new System.EventHandler(this.btnAccess_EditProfile_MouseEnter);
             this.btnAccess_EditProfile.MouseLeave += new System.EventHandler(this.btnAccess_EditProfile_MouseLeave);
             // 

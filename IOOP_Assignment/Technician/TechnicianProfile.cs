@@ -57,5 +57,30 @@ namespace IOOP_Assignment
         {
             btnAccess_EditProfile.BackColor= Color.SteelBlue;
         }
+
+        //navigating menu
+        private void btnAccess_EditProfile_Click(object sender, EventArgs e)
+        {
+            UpdateTechnicianProfile utp = new UpdateTechnicianProfile();
+            utp.StartPosition = FormStartPosition.Manual;
+            utp.Location = new Point(100, 100);
+            utp.ShowDialog();
+        }
+
+        private void btnAccess_Dashboard_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TechnicianDashboard td = new TechnicianDashboard();
+            td.StartPosition = FormStartPosition.Manual;
+            td.Location = new Point(100, 100);
+            td.ShowDialog();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin f1 = new frmLogin();
+            f1.ShowDialog();
+        }
     }
 }
