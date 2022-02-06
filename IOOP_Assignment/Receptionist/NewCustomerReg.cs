@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Assignment
+namespace IOOP_Assignment
 {
     public partial class frmRegNewCus : Form
     {
@@ -16,20 +16,39 @@ namespace Assignment
         {
             InitializeComponent();
         }
-
-        private void grpBoxRequest_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblRcn_Click(object sender, EventArgs e)
-        {
-
-        }
+        string Gender;
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            Customer obj1 = new Customer(txtName.Text,Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, dateTimePickerDate.Text, txtUsername.Text);
+            MessageBox.Show(obj1.addNewCus());
+        }
 
+        private void frmRegNewCus_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radBtnFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            Gender = "Female";
+        }
+
+        private void radBtnMale_CheckedChanged(object sender, EventArgs e)
+        {
+            Gender = "Male";
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtName.Clear();
+            txtAddress.Clear();
+            txtEmail.Clear();
+            txtIC.Clear();
+            txtMobile.Clear();
+            txtUsername.Clear();
+            radBtnFemale.Checked = false;
+            radBtnMale.Checked = false;
         }
     }
 }
