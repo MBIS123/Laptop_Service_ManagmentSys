@@ -20,20 +20,8 @@ namespace IOOP_Assignment
         }
         private void TechnicianDashboard_Load(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                con.Open();
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [Order]", con);
-                DataTable dtbl = new DataTable();
-                da.Fill(dtbl);
-
-                //method 1 - direct method that shows all columns
-                //dataGrid_AllServ.DataSource = dtbl;
-
-                //method 2 - indirect method that shows select columns
-                dataGrid_AllServ.AutoGenerateColumns = false;
-                dataGrid_AllServ.DataSource = dtbl;
-            }
+            Technician obj1 = new Technician();
+            obj1.loadOrderTable(dataGrid_AllServ);
         }
 
         //for changes in button color when user hovers over button 
@@ -67,14 +55,24 @@ namespace IOOP_Assignment
             btnLogOut.BackColor = Color.SteelBlue;
         }
 
-        private void btnAccess_PendServ_MouseLeave(object sender, EventArgs e)
+        private void btnAccess_AllServ_MouseLeave(object sender, EventArgs e)
         {
             btnAccess_AllServ.BackColor = Color.LightSkyBlue;
         }
 
-        private void btnAccess_PendServ_MouseEnter(object sender, EventArgs e)
+        private void btnAccess_AllServ_MouseEnter(object sender, EventArgs e)
         {
             btnAccess_AllServ.BackColor = Color.SteelBlue;
+        }
+
+        private void btnRefresh_AllServ_MouseLeave(object sender, EventArgs e)
+        {
+            btnRefresh_AllServ.BackColor = Color.LightSkyBlue;
+        }
+
+        private void btnRefresh_AllServ_MouseEnter(object sender, EventArgs e)
+        {
+            btnRefresh_AllServ.BackColor = Color.SteelBlue;
         }
 
         //navigating menu
@@ -84,6 +82,12 @@ namespace IOOP_Assignment
             ed.StartPosition = FormStartPosition.Manual;
             ed.Location = new Point(500, 250);
             ed.ShowDialog();
+        }
+
+        private void btnRefresh_AllServ_Click(object sender, EventArgs e)
+        {
+            Technician obj1 = new Technician();
+            obj1.loadOrderTable(dataGrid_AllServ);
         }
 
         private void btnAccess_Profile_Click(object sender, EventArgs e)
@@ -97,10 +101,17 @@ namespace IOOP_Assignment
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmLogin f1 = new frmLogin();
-            f1.ShowDialog(); 
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+                frmLogin f1 = new frmLogin();
+                f1.ShowDialog();
+            }
         }
+
+
+
 
         //when form is closed
         /*private void TechnicianDashboard.Closed(object sender, EventArgs e)

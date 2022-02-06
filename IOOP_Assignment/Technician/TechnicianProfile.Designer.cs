@@ -358,8 +358,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightYellow;
             this.ClientSize = new System.Drawing.Size(1115, 666);
+            this.ControlBox = false;
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.btnAccess_EditProfile);
             this.Controls.Add(this.txtAddress);
