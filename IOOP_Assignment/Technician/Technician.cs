@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -35,6 +36,20 @@ namespace IOOP_Assignment
         public string TechnicianPassword { get => technicianPassword; set => technicianPassword = value; }
 
 
-        /*public Technician*/
+        public void loadOrderTable(DataGridView dgv)
+        {
+            con.Open();
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [Order]", con);
+            DataTable dtbl = new DataTable();
+            da.Fill(dtbl);
+
+            //method 1 - direct method that shows all columns
+            //dataGrid_AllServ.DataSource = dtbl;
+
+            //method 2 - indirect method that shows select columns
+            dgv.AutoGenerateColumns = false;
+            dgv.DataSource = dtbl;
+            con.Close();
+        }
     }
 }

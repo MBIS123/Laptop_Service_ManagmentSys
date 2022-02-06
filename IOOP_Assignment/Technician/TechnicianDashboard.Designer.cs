@@ -60,6 +60,7 @@
             this.Laptop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTable_TextAllServ = new System.Windows.Forms.Label();
             this.panelTable_Pend = new System.Windows.Forms.Panel();
+            this.btnRefresh_AllServ = new System.Windows.Forms.Button();
             this.OrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateRequested = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -276,8 +277,8 @@
             this.btnAccess_AllServ.Text = "Edit";
             this.btnAccess_AllServ.UseVisualStyleBackColor = false;
             this.btnAccess_AllServ.Click += new System.EventHandler(this.btnAccess_AllServ_Click);
-            this.btnAccess_AllServ.MouseEnter += new System.EventHandler(this.btnAccess_PendServ_MouseEnter);
-            this.btnAccess_AllServ.MouseLeave += new System.EventHandler(this.btnAccess_PendServ_MouseLeave);
+            this.btnAccess_AllServ.MouseEnter += new System.EventHandler(this.btnAccess_AllServ_MouseEnter);
+            this.btnAccess_AllServ.MouseLeave += new System.EventHandler(this.btnAccess_AllServ_MouseLeave);
             // 
             // dataGrid_AllServ
             // 
@@ -412,6 +413,7 @@
             // 
             // panelTable_Pend
             // 
+            this.panelTable_Pend.Controls.Add(this.btnRefresh_AllServ);
             this.panelTable_Pend.Controls.Add(this.lblTable_TextAllServ);
             this.panelTable_Pend.Controls.Add(this.dataGrid_AllServ);
             this.panelTable_Pend.Controls.Add(this.btnAccess_AllServ);
@@ -419,6 +421,21 @@
             this.panelTable_Pend.Name = "panelTable_Pend";
             this.panelTable_Pend.Size = new System.Drawing.Size(1163, 453);
             this.panelTable_Pend.TabIndex = 13;
+            // 
+            // btnRefresh_AllServ
+            // 
+            this.btnRefresh_AllServ.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnRefresh_AllServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRefresh_AllServ.Location = new System.Drawing.Point(798, 403);
+            this.btnRefresh_AllServ.Name = "btnRefresh_AllServ";
+            this.btnRefresh_AllServ.Padding = new System.Windows.Forms.Padding(4);
+            this.btnRefresh_AllServ.Size = new System.Drawing.Size(173, 40);
+            this.btnRefresh_AllServ.TabIndex = 8;
+            this.btnRefresh_AllServ.Text = "Refresh";
+            this.btnRefresh_AllServ.UseVisualStyleBackColor = false;
+            this.btnRefresh_AllServ.Click += new System.EventHandler(this.btnRefresh_AllServ_Click);
+            this.btnRefresh_AllServ.MouseEnter += new System.EventHandler(this.btnRefresh_AllServ_MouseEnter);
+            this.btnRefresh_AllServ.MouseLeave += new System.EventHandler(this.btnRefresh_AllServ_MouseLeave);
             // 
             // OrderID
             // 
@@ -508,6 +525,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightYellow;
             this.ClientSize = new System.Drawing.Size(1496, 666);
             this.ControlBox = false;
@@ -583,5 +601,6 @@
         private DataGridViewTextBoxColumn CollectionDate;
         private DataGridViewTextBoxColumn Comments;
         private DataGridViewTextBoxColumn Laptop;
+        private Button btnRefresh_AllServ;
     }
 }
