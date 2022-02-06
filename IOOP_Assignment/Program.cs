@@ -1,4 +1,4 @@
-using testing;
+
 
 namespace IOOP_Assignment
 {
@@ -11,7 +11,7 @@ namespace IOOP_Assignment
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new TechnicianDashboard());
+            Application.Run(new frmRegNewCus());
             
         }
     }

@@ -116,7 +116,6 @@
             this.llbmy_order.TabIndex = 57;
             this.llbmy_order.TabStop = true;
             this.llbmy_order.Text = "MY  ORDER";
-            this.llbmy_order.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // llbchange_serv
             // 
@@ -359,7 +358,6 @@
             this.lbl_decided_change_service.Size = new System.Drawing.Size(750, 86);
             this.lbl_decided_change_service.TabIndex = 71;
             this.lbl_decided_change_service.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_decided_change_service.Click += new System.EventHandler(this.lbl_decided_change_service_Click);
             // 
             // label1
             // 
