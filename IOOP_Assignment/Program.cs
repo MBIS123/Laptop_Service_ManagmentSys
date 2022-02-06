@@ -1,5 +1,7 @@
 
 
+using System.Data.SqlClient;
+
 namespace IOOP_Assignment
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace IOOP_Assignment
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmRegNewCus());
+            Application.Run(new TechnicianDashboard());
             
         }
     }

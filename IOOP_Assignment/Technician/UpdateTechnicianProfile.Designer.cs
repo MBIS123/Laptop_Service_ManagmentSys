@@ -116,6 +116,7 @@
             this.btnClose.TabIndex = 19;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
             this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
             // 
@@ -270,6 +271,7 @@
             // 
             // grpUpdateContactDetails
             // 
+            this.grpUpdateContactDetails.BackColor = System.Drawing.Color.LightYellow;
             this.grpUpdateContactDetails.Controls.Add(this.lblContactExample);
             this.grpUpdateContactDetails.Controls.Add(this.lblEmailExample);
             this.grpUpdateContactDetails.Controls.Add(this.txtEmail);
@@ -335,6 +337,7 @@
             // 
             // grpUpdatePW
             // 
+            this.grpUpdatePW.BackColor = System.Drawing.Color.LightYellow;
             this.grpUpdatePW.Controls.Add(this.lblPWGuidelines);
             this.grpUpdatePW.Controls.Add(this.btnSavePW);
             this.grpUpdatePW.Controls.Add(this.btnResetPW);
@@ -446,20 +449,21 @@
             this.lblNewPW.TabIndex = 23;
             this.lblNewPW.Text = "Enter New \r\nPassword";
             // 
-            // UpdateProfile
+            // UpdateTechnicianProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(1525, 766);
+            this.ControlBox = false;
             this.Controls.Add(this.grpUpdatePW);
             this.Controls.Add(this.lblUpdateProfile);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grpUpdateContactDetails);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "UpdateProfile";
+            this.Name = "UpdateTechnicianProfile";
             this.Text = "Update Profile";
             this.grpUpdateContactDetails.ResumeLayout(false);
             this.grpUpdateContactDetails.PerformLayout();

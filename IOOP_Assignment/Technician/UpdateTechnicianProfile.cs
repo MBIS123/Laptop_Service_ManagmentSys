@@ -73,5 +73,14 @@ namespace IOOP_Assignment
         {
 
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TechnicianDashboard td = new TechnicianDashboard();
+            td.StartPosition = FormStartPosition.Manual;
+            td.Location = new Point(100, 100);
+            td.ShowDialog();
+        }
     }
 }
