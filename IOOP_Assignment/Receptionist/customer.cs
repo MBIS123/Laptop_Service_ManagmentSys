@@ -53,8 +53,8 @@ namespace IOOP_Assignment
 
         public string addNewCus()
         {
-      
-            string status;
+
+            string status = null;
             con.Open();
             bool exists = false;
             SqlCommand cmd1 = new SqlCommand("select count(*) from Users where Username= ", con);
