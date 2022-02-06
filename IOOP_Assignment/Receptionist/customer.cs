@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IOOP_Assignment.Receptionist
+namespace IOOP_Assignment
 {
-    class Customer
+    internal class Customer
     {
         private string cusName;
         private string cusGender;
@@ -56,11 +56,35 @@ namespace IOOP_Assignment.Receptionist
       
             string status;
             con.Open();
-            
-            SqlCommand cmd1 = new SqlCommand("insert into Users(Username, Password, Role) values (@username, @pwd, @role)", con);
-            SqlCommand cmd2 = new SqlCommand("insert into Customer(UserID, Name, Gender, Date of Birth, IC No., Contact No., Email, Address) values(@userID, @name, @gender, @dob, @ic, @phone, @email, @address)", con);
+            bool exists = false;
+            SqlCommand cmd1 = new SqlCommand("select count(*) from Users where Username= ", con);
+            exists = (int)cmd1.ExecuteScalar() > 0;
+            if (exists)
+            {
+                MessageBox.Show("Username existed. Please enter a valid username");
+            }
+            else
+            {
+                SqlCommand cmd2 = new SqlCommand("insert into Users(Username, Password, Role) values (@username, '123456', 'customer')", con);
+                SqlCommand cmd3 = new SqlCommand("insert into Customer(Name, Gender, Date of Birth, IC No., Contact No., Email, Address) values(@name, @gender, @dob, @ic, @phone, @email, @address)", con);
+                cmd2.Parameters.AddWithValue("@username", cusUsername);
+                cmd3.Parameters.AddWithValue("@name", cusName);
+                cmd3.Parameters.AddWithValue("@gender", cusGender);
+                cmd3.Parameters.AddWithValue("@dob", cusDob);
+                cmd3.Parameters.AddWithValue("@ic", cusIC);
+                cmd3.Parameters.AddWithValue("@phone", cusPhoneNum);
+                cmd3.Parameters.AddWithValue("@email", cusEmail);
+                cmd3.Parameters.AddWithValue("@address", cusAddress);
 
-
+                cmd2.ExecuteNonQuery();
+                int i = cmd3.ExecuteNonQuery();
+                if (i != 0)
+                    status = "Registration Successful!";
+                //cmd3.Parameters.AddWithValue("@userID", Convert.ToInt32(cmd2.ExecuteScalar().ToString()));
+                else
+                    status = "Unable to Register!";
+            }
+            con.Close();
             return status;
         }
     }

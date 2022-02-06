@@ -121,6 +121,7 @@
             this.radBtnFemale.TabStop = true;
             this.radBtnFemale.Text = "Female";
             this.radBtnFemale.UseVisualStyleBackColor = true;
+            this.radBtnFemale.CheckedChanged += new System.EventHandler(this.radBtnFemale_CheckedChanged);
             // 
             // radBtnMale
             // 
@@ -132,6 +133,7 @@
             this.radBtnMale.TabStop = true;
             this.radBtnMale.Text = "Male";
             this.radBtnMale.UseVisualStyleBackColor = true;
+            this.radBtnMale.CheckedChanged += new System.EventHandler(this.radBtnMale_CheckedChanged);
             // 
             // lblIC
             // 
@@ -278,6 +280,7 @@
             this.btnClear.TabIndex = 15;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnConfirm
             // 
@@ -321,7 +324,6 @@
             this.lblRcn.Size = new System.Drawing.Size(126, 22);
             this.lblRcn.TabIndex = 6;
             this.lblRcn.Text = "Chew Yong En";
-            this.lblRcn.Click += new System.EventHandler(this.lblRcn_Click);
             // 
             // lblRole
             // 
