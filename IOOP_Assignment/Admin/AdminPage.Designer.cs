@@ -1,4 +1,4 @@
-﻿namespace IOOPAssignment
+﻿namespace IOOP_Assignment
 {
     partial class AdminPage
     {
@@ -52,10 +52,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.btnExit = new System.Windows.Forms.Button();
-            this.userControlMonthlyIncome1 = new IOOPAssignment.UserControlMonthlyIncome();
-            this.userControlServiceReport1 = new IOOPAssignment.UserControlServiceReport();
-            this.userControlRegistration1 = new IOOPAssignment.UserControlRegistration();
-            this.userControlAdminDashBoard1 = new IOOPAssignment.UserControlAdminDashBoard();
+            this.userControlMonthlyIncome1 = new IOOP_Assignment.UserControlMonthlyIncome();
+            this.userControlServiceReport1 = new IOOP_Assignment.UserControlServiceReport();
+            this.userControlRegistration1 = new IOOP_Assignment.UserControlRegistration();
+            this.userControlAdminDashBoard1 = new IOOP_Assignment.UserControlAdminDashBoard();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxIncome)).BeginInit();

@@ -1,6 +1,6 @@
 using System.Windows.Forms;
 
-namespace IOOPAssignment
+namespace IOOP_Assignment
 {
     public partial class AdminPage : Form
     {
