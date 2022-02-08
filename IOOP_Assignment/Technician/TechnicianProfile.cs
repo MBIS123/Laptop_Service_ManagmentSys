@@ -12,6 +12,8 @@ namespace IOOP_Assignment
 {
     public partial class TechnicianProfile : Form
     {
+        public static string name;
+
         public TechnicianProfile()
         {
             InitializeComponent();
@@ -85,6 +87,29 @@ namespace IOOP_Assignment
                 frmLogin f1 = new frmLogin();
                 f1.ShowDialog();
             }
+        }
+        //loading details into Profile
+        public TechnicianProfile(string n)
+        {
+            InitializeComponent();
+            name = n;
+        }
+        private void TechnicianProfile_Load(object sender, EventArgs e)
+        {
+            Technician obj1 = new Technician(name);
+            Technician.viewTechProfile(obj1);
+            txtGender.Text = obj1.TechGender;
+            txtDOB.Text = (obj1.TechDOB).ToString("dd/MM/yyyy");
+            txtEthnicity.Text = obj1.TechEthnicity;
+            txtIC.Text = obj1.TechIC;
+            txtContact.Text = obj1.TechContact;
+            txtEmail.Text = obj1.TechEmail;
+            txtAddress.Text = obj1.TechAddress;
+        }
+
+        private void txtIC_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -11,30 +11,34 @@ namespace IOOP_Assignment
 {
     internal class Technician
     {
-        private int technicianID;
-        private string technicianName;
-        private string technicianGender;
-        private DateOnly technicianDOB;
-        private string technicianEthnicity;
-        private string technicianIC;
-        private string technicianContact;
-        private string technicianEmail;
-        private string technicianAddress;
-        private string technicianPassword;
+        private int techID;
+        private string techName;
+        private string techGender;
+        private DateTime techDOB;
+        private string techEthnicity;
+        private string techIC;
+        private string techContact;
+        private string techEmail;
+        private string techAddress;
+        private string techPassword;
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
         //static used to use 'con' object multiple times
 
         //methods for 'auto-filling' fields when viewing technician profile + update profile
-        public string TechnicianName { get => technicianName; set => technicianName = value; }
-        public string TechnicianGender { get => technicianGender; set => technicianGender = value; }
-        public DateOnly TechnicianDOB { get => technicianDOB; set => technicianDOB = value; }
-        public string TechnicianEthnicity { get => technicianEthnicity; set => technicianEthnicity = value; }
-        public string TechnicianIC { get => technicianIC; set => technicianIC = value; }
-        public string TechnicianContact { get => technicianContact; set => technicianContact = value; }
-        public string TechnicianEmail { get => technicianEmail; set => technicianEmail = value; }
-        public string TechnicianAddress { get => technicianAddress; set => technicianAddress = value; }
-        public string TechnicianPassword { get => technicianPassword; set => technicianPassword = value; }
+        public string TechName { get => techName; set => techName = value; }
+        public string TechGender { get => techGender; set => techGender = value; }
+        public DateTime TechDOB { get => techDOB; set => techDOB = value; }
+        public string TechEthnicity { get => techEthnicity; set => techEthnicity = value; }
+        public string TechIC { get => techIC; set => techIC = value; }
+        public string TechContact { get => techContact; set => techContact = value; }
+        public string TechEmail { get => techEmail; set => techEmail = value; }
+        public string TechAddress { get => techAddress; set => techAddress = value; }
+        public string TechPassword { get => techPassword; set => techPassword = value; }
 
+        public Technician(string tn)
+        {
+            techName = tn;
+        }
 
         public void loadOrderTable(DataGridView dgv)
         {
@@ -50,6 +54,24 @@ namespace IOOP_Assignment
             dgv.AutoGenerateColumns = false;
             dgv.DataSource = dtbl;
             con.Close();
+        }
+
+        //loading technician information into profile
+        public static void viewTechProfile(Technician o1)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from Technician where Name = 'Chew Jay Ren'", con); //how do i save name?
+            SqlDataReader sqlDataReader = cmd.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                o1.techGender = sqlDataReader.GetString(3);
+                o1.techDOB = sqlDataReader.GetDateTime(4);
+                o1.techEthnicity = sqlDataReader.GetString(5);
+                o1.techIC = sqlDataReader.GetString(6);
+                o1.techContact = sqlDataReader.GetString(7);
+                o1.techEmail = sqlDataReader.GetString(8);
+                o1.techAddress = sqlDataReader.GetString(9);
+            }
         }
     }
 }

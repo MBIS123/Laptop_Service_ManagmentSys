@@ -13,6 +13,8 @@ namespace IOOP_Assignment
 {
     public partial class TechnicianDashboard : Form
     {
+        public static string name;
+
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Source\Repos\IOOP_Assignment\IOOP_Assignment\LpDoctorDataBase.mdf;Integrated Security=True;";
         public TechnicianDashboard()
         {
@@ -20,7 +22,7 @@ namespace IOOP_Assignment
         }
         private void TechnicianDashboard_Load(object sender, EventArgs e)
         {
-            Technician obj1 = new Technician();
+            Technician obj1 = new Technician(name);
             obj1.loadOrderTable(dataGrid_AllServ);
         }
 
@@ -86,7 +88,7 @@ namespace IOOP_Assignment
 
         private void btnRefresh_AllServ_Click(object sender, EventArgs e)
         {
-            Technician obj1 = new Technician();
+            Technician obj1 = new Technician(name);
             obj1.loadOrderTable(dataGrid_AllServ);
         }
 
