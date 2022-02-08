@@ -58,7 +58,7 @@ namespace IOOP_Assignment
                     SqlCommand cmd3 = new SqlCommand("select [name] from technician where UserID = (select UserID from users where username = '" + username + "')", con);
                     string technician_name = cmd3.ExecuteScalar().ToString();
                     TechnicianDashboard td = new TechnicianDashboard(technician_name); 
-                    td.ShowDialog();
+                    td.ShowDialog(); //adding a simple comment here
                 }
             }
             else
