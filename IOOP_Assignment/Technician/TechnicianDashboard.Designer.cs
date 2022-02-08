@@ -156,9 +156,9 @@
             this.lblName.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblName.Location = new System.Drawing.Point(52, 529);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(142, 25);
+            this.lblName.Size = new System.Drawing.Size(66, 25);
             this.lblName.TabIndex = 0;
-            this.lblName.Text = "Chew Jay Ren";
+            this.lblName.Text = "name";
             // 
             // picLogo
             // 

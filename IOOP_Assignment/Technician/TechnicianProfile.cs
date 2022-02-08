@@ -84,8 +84,6 @@ namespace IOOP_Assignment
             if (dialogResult == DialogResult.Yes)
             {
                 this.Hide();
-                frmLogin f1 = new frmLogin();
-                f1.ShowDialog();
             }
         }
         //loading details into Profile
@@ -98,6 +96,8 @@ namespace IOOP_Assignment
         {
             Technician obj1 = new Technician(name);
             Technician.viewTechProfile(obj1);
+            lblName.Text = obj1.TechName;
+            txtName.Text = obj1.TechName;
             txtGender.Text = obj1.TechGender;
             txtDOB.Text = (obj1.TechDOB).ToString("dd/MM/yyyy");
             txtEthnicity.Text = obj1.TechEthnicity;

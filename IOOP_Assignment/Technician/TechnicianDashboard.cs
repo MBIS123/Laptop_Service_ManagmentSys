@@ -20,9 +20,17 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
         }
+
+        public TechnicianDashboard(string n) //technician_name passed
+        {
+            InitializeComponent();
+            name = n;
+        }
         private void TechnicianDashboard_Load(object sender, EventArgs e)
         {
             Technician obj1 = new Technician(name);
+            Technician.viewTechProfile(obj1);
+            lblName.Text = obj1.TechName; //loading name into label
             obj1.loadOrderTable(dataGrid_AllServ);
         }
 
@@ -95,7 +103,7 @@ namespace IOOP_Assignment
         private void btnAccess_Profile_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TechnicianProfile tp = new TechnicianProfile();
+            TechnicianProfile tp = new TechnicianProfile(name);
             tp.StartPosition = FormStartPosition.Manual;
             tp.Location = new Point(100, 100);
             tp.ShowDialog();
@@ -107,13 +115,8 @@ namespace IOOP_Assignment
             if (dialogResult == DialogResult.Yes)
             {
                 this.Hide();
-                frmLogin f1 = new frmLogin();
-                f1.ShowDialog();
             }
         }
-
-
-
 
         //when form is closed
         /*private void TechnicianDashboard.Closed(object sender, EventArgs e)

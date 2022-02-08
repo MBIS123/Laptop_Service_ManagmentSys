@@ -42,7 +42,6 @@ namespace IOOP_Assignment
 
         public void loadOrderTable(DataGridView dgv)
         {
-            con.Open();
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [Order]", con);
             DataTable dtbl = new DataTable();
             da.Fill(dtbl);
@@ -60,7 +59,7 @@ namespace IOOP_Assignment
         public static void viewTechProfile(Technician o1)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from Technician where Name = 'Chew Jay Ren'", con); //how do i save name?
+            SqlCommand cmd = new SqlCommand("select * from Technician where Name = '" + o1.techName + "'", con); //how do i save name?
             SqlDataReader sqlDataReader = cmd.ExecuteReader();
             while (sqlDataReader.Read())
             {

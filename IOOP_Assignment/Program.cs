@@ -13,7 +13,7 @@ namespace IOOP_Assignment
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new TechnicianDashboard());
+            Application.Run(new frmLogin());
             
         }
     }
