@@ -400,6 +400,7 @@
             this.lstservices.Name = "lstservices";
             this.lstservices.Size = new System.Drawing.Size(362, 209);
             this.lstservices.TabIndex = 50;
+            this.lstservices.SelectedIndexChanged += new System.EventHandler(this.lstservices_SelectedIndexChanged);
             // 
             // lblnormal_urgent
             // 
@@ -498,7 +499,6 @@
             this.Controls.Add(this.lblwelcome);
             this.Name = "change_service";
             this.Text = "ChangeService";
-            this.Load += new System.EventHandler(this.change_service_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);

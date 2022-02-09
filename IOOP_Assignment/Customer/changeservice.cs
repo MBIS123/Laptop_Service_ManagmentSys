@@ -8,16 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace IOOPAssignment
 {
     public partial class change_service : Form
     {
         string Type;
-        private void change_service_Load(object sender, EventArgs e)
-        {
-            //classname objectname = new constructor
-            Customer c1 = new Customer(lstservices.SelectedIndex, Type);
-        }
+        int index;
+
         public change_service()
         {
             InitializeComponent();
@@ -33,15 +31,19 @@ namespace IOOPAssignment
             Type = "Urgent";
         }
 
+        private void lstservices_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            index = lstservices.SelectedIndex; 
+        }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-           
-            string selected_service = lstservices.SelectedIndex.ToString();
-            
+            string decide_change_service = lstservices.Text;
+        
             if (lstservices.SelectedItems.Count == 1 && (rdb_normal.Checked || rdb_urgent.Checked))
             {
-                lbl_decided_change_service.Text = "You have change service from " + selected_service + " with " + Type + " successfully.";
-
+                lbl_decided_change_service.Text = "You have change service from " + decide_change_service + " with " + Type + " successfully";
+                Customer obj1 = new Customer(index, Type);
+                MessageBox.Show(obj1.changeservice());
             }
             else
                 MessageBox.Show("You have not choose service / service type yet");
