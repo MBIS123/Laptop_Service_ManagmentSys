@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
 
-namespace IOOPAssignment
+namespace IOOP_Assignment
 {
     public partial class UserControlServiceReport : UserControl
     {
@@ -46,7 +46,7 @@ namespace IOOPAssignment
             return dt;
 
         }
-    
+
 
 
 }

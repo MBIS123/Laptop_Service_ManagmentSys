@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IOOPAssignment
+namespace IOOP_Assignment
 {
     public partial class UserControlAdminDashBoard : UserControl
     {
@@ -27,6 +27,9 @@ namespace IOOPAssignment
             
         }
 
+        private void UserControlAdminDashBoard_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

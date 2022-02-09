@@ -1,6 +1,11 @@
-using testing;
 
-namespace IOOPAssignment
+
+
+using System.Data.SqlClient;
+
+=======
+
+namespace IOOP_Assignment
 {
     internal static class Program
     {
@@ -11,7 +16,7 @@ namespace IOOPAssignment
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new change_service());
+            Application.Run(new AdminPage());
             
         }
     }
