@@ -4,7 +4,7 @@ namespace IOOP_Assignment
 {
     public partial class AdminPage : Form
     {
-  
+
         public AdminPage()
         {
             InitializeComponent();

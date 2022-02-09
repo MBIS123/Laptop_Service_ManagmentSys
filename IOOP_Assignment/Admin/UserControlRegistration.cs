@@ -10,9 +10,11 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
+
     public partial class UserControlRegistration : UserControl
     {
-        private string name;
+        Admin obj = new Admin();
+        
       
         public UserControlRegistration()
         {
@@ -26,13 +28,13 @@ namespace IOOP_Assignment
 
         private void btnRegis_Click(object sender, EventArgs e)
         {
-            name = txtFirstName.Text.ToString();
-            DataValidation obj1 = new DataValidation();
-            if (obj1.isPhoneNum(name) )
-                MessageBox.Show("correct");
+            obj.regisPosition(rdBtnTech, rdBtnRecep); //THEN I CALL IT AT FORM THERE AND PASS THE BUTTON 
 
-            else
-                MessageBox.Show("wrong");
+        }
+
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
