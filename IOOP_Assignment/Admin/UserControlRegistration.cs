@@ -23,13 +23,17 @@ namespace IOOP_Assignment
 
         private void UserControlRegistration_Load(object sender, EventArgs e)
         {
+   
+            
 
         }
 
         private void btnRegis_Click(object sender, EventArgs e)
         {
-            obj.regisPosition(rdBtnTech, rdBtnRecep); //THEN I CALL IT AT FORM THERE AND PASS THE BUTTON 
-
+            obj.validateRegisPosition(rdBtnTech,rdBtnRecep);
+            obj.validateRegisCheckComboBx(cmbBxGender, cmbBxEthnic);
+            obj.checking();
+            obj.askToReenter();
         }
 
         private void txtFirstName_TextChanged(object sender, EventArgs e)
