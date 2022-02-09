@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Technician
+namespace IOOP_Assignment
 {
-    public partial class UpdateProfile : Form
+    public partial class UpdateTechnicianProfile : Form
     {
-        public UpdateProfile()
+        public UpdateTechnicianProfile()
         {
             InitializeComponent();
         }
@@ -72,6 +72,16 @@ namespace Technician
         private void btnResetContactDetails_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //close window button
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TechnicianDashboard td = new TechnicianDashboard();
+            td.StartPosition = FormStartPosition.Manual;
+            td.Location = new Point(100, 100);
+            td.ShowDialog();
         }
     }
 }

@@ -76,7 +76,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // splitter2
             // 
@@ -88,7 +87,6 @@
             this.splitter2.Size = new System.Drawing.Size(838, 45);
             this.splitter2.TabIndex = 7;
             this.splitter2.TabStop = false;
-            this.splitter2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitter2_SplitterMoved);
             // 
             // frmHeader
             // 
@@ -115,7 +113,6 @@
             this.label3.Size = new System.Drawing.Size(67, 15);
             this.label3.TabIndex = 10;
             this.label3.Text = "Tan Jin Hao";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label5
             // 
@@ -153,7 +150,6 @@
             this.label6.Size = new System.Drawing.Size(46, 15);
             this.label6.TabIndex = 16;
             this.label6.Text = "JinHao ";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // pcBxIncome
             // 
@@ -361,7 +357,6 @@
             this.splitter1.Size = new System.Drawing.Size(141, 498);
             this.splitter1.TabIndex = 9;
             this.splitter1.TabStop = false;
-            this.splitter1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitter1_SplitterMoved);
             // 
             // btnExit
             // 

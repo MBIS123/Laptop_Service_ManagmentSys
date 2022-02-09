@@ -1,4 +1,4 @@
-﻿namespace Technician
+﻿namespace IOOP_Assignment
 {
     partial class TechnicianProfile
     {
@@ -86,6 +86,7 @@
             this.btnAccess_Dashboard.TabIndex = 2;
             this.btnAccess_Dashboard.Text = "Dashboard";
             this.btnAccess_Dashboard.UseVisualStyleBackColor = false;
+            this.btnAccess_Dashboard.Click += new System.EventHandler(this.btnAccess_Dashboard_Click);
             this.btnAccess_Dashboard.MouseEnter += new System.EventHandler(this.btnAccess_Dashboard_MouseEnter);
             this.btnAccess_Dashboard.MouseLeave += new System.EventHandler(this.btnAccess_Dashboard_MouseLeave);
             // 
@@ -135,6 +136,7 @@
             this.btnLogOut.TabIndex = 5;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             this.btnLogOut.MouseEnter += new System.EventHandler(this.btnLogOut_MouseEnter);
             this.btnLogOut.MouseLeave += new System.EventHandler(this.btnLogOut_MouseLeave);
             // 
@@ -144,9 +146,8 @@
             this.lblName.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblName.Location = new System.Drawing.Point(52, 529);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(142, 25);
+            this.lblName.Size = new System.Drawing.Size(0, 25);
             this.lblName.TabIndex = 0;
-            this.lblName.Text = "Chew Jay Ren";
             // 
             // picProfile
             // 
@@ -199,7 +200,6 @@
             this.txtGender.ReadOnly = true;
             this.txtGender.Size = new System.Drawing.Size(198, 38);
             this.txtGender.TabIndex = 12;
-            this.txtGender.Text = "Male";
             // 
             // lblDOB
             // 
@@ -220,7 +220,6 @@
             this.txtDOB.ReadOnly = true;
             this.txtDOB.Size = new System.Drawing.Size(198, 38);
             this.txtDOB.TabIndex = 14;
-            this.txtDOB.Text = "24/10/2001";
             // 
             // lblEthnicity
             // 
@@ -241,7 +240,6 @@
             this.txtEthnicity.ReadOnly = true;
             this.txtEthnicity.Size = new System.Drawing.Size(198, 38);
             this.txtEthnicity.TabIndex = 16;
-            this.txtEthnicity.Text = "Malaysian-Chinese";
             // 
             // lblIC
             // 
@@ -262,7 +260,7 @@
             this.txtIC.ReadOnly = true;
             this.txtIC.Size = new System.Drawing.Size(198, 38);
             this.txtIC.TabIndex = 18;
-            this.txtIC.Text = "011124-25-1523";
+            this.txtIC.TextChanged += new System.EventHandler(this.txtIC_TextChanged);
             // 
             // txtAddress
             // 
@@ -273,7 +271,6 @@
             this.txtAddress.ReadOnly = true;
             this.txtAddress.Size = new System.Drawing.Size(198, 98);
             this.txtAddress.TabIndex = 24;
-            this.txtAddress.Text = "No 11, Jalan Tropika, Seksyen U11, Setia Impian, 40170 Shah Alam";
             // 
             // lblAddress
             // 
@@ -294,7 +291,6 @@
             this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(198, 38);
             this.txtEmail.TabIndex = 22;
-            this.txtEmail.Text = "24/10/2001";
             // 
             // lblEmail
             // 
@@ -315,7 +311,6 @@
             this.txtContact.ReadOnly = true;
             this.txtContact.Size = new System.Drawing.Size(198, 38);
             this.txtContact.TabIndex = 20;
-            this.txtContact.Text = "Male";
             // 
             // lblContact
             // 
@@ -338,6 +333,7 @@
             this.btnAccess_EditProfile.TabIndex = 6;
             this.btnAccess_EditProfile.Text = "Edit";
             this.btnAccess_EditProfile.UseVisualStyleBackColor = false;
+            this.btnAccess_EditProfile.Click += new System.EventHandler(this.btnAccess_EditProfile_Click);
             this.btnAccess_EditProfile.MouseEnter += new System.EventHandler(this.btnAccess_EditProfile_MouseEnter);
             this.btnAccess_EditProfile.MouseLeave += new System.EventHandler(this.btnAccess_EditProfile_MouseLeave);
             // 
@@ -349,14 +345,15 @@
             this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(189, 42);
             this.txtName.TabIndex = 25;
-            this.txtName.Text = "Chew Jay Ren";
             // 
             // TechnicianProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightYellow;
             this.ClientSize = new System.Drawing.Size(1115, 666);
+            this.ControlBox = false;
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.btnAccess_EditProfile);
             this.Controls.Add(this.txtAddress);
@@ -381,6 +378,7 @@
             this.MaximizeBox = false;
             this.Name = "TechnicianProfile";
             this.Text = "Profile";
+            this.Load += new System.EventHandler(this.TechnicianProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picMenuProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panelMenu.ResumeLayout(false);

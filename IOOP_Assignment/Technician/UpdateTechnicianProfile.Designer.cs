@@ -1,6 +1,6 @@
-﻿namespace Technician
+﻿namespace IOOP_Assignment
 {
-    partial class UpdateProfile
+    partial class UpdateTechnicianProfile
     {
         /// <summary>
         /// Required designer variable.
@@ -46,12 +46,12 @@
             this.masktxtPost = new System.Windows.Forms.MaskedTextBox();
             this.lblState = new System.Windows.Forms.Label();
             this.comboState = new System.Windows.Forms.ComboBox();
-            this.grpContactDetails = new System.Windows.Forms.GroupBox();
+            this.grpUpdateContactDetails = new System.Windows.Forms.GroupBox();
             this.lblContactExample = new System.Windows.Forms.Label();
             this.lblEmailExample = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtContact = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpUpdatePW = new System.Windows.Forms.GroupBox();
             this.lblPWGuidelines = new System.Windows.Forms.Label();
             this.btnSavePW = new System.Windows.Forms.Button();
             this.btnResetPW = new System.Windows.Forms.Button();
@@ -61,8 +61,8 @@
             this.lblConfirmNewPW = new System.Windows.Forms.Label();
             this.lblCurrentPW = new System.Windows.Forms.Label();
             this.lblNewPW = new System.Windows.Forms.Label();
-            this.grpContactDetails.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.grpUpdateContactDetails.SuspendLayout();
+            this.grpUpdatePW.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUpdateAddress
@@ -116,6 +116,7 @@
             this.btnClose.TabIndex = 19;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
             this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
             // 
@@ -268,36 +269,37 @@
             this.comboState.Size = new System.Drawing.Size(237, 33);
             this.comboState.TabIndex = 42;
             // 
-            // grpContactDetails
+            // grpUpdateContactDetails
             // 
-            this.grpContactDetails.Controls.Add(this.lblContactExample);
-            this.grpContactDetails.Controls.Add(this.lblEmailExample);
-            this.grpContactDetails.Controls.Add(this.txtEmail);
-            this.grpContactDetails.Controls.Add(this.txtContact);
-            this.grpContactDetails.Controls.Add(this.lblUpdateContact);
-            this.grpContactDetails.Controls.Add(this.comboState);
-            this.grpContactDetails.Controls.Add(this.btnSaveContactDetails);
-            this.grpContactDetails.Controls.Add(this.lblUpdateEmail);
-            this.grpContactDetails.Controls.Add(this.lblState);
-            this.grpContactDetails.Controls.Add(this.btnResetContactDetails);
-            this.grpContactDetails.Controls.Add(this.lblUpdateAddress);
-            this.grpContactDetails.Controls.Add(this.masktxtPost);
-            this.grpContactDetails.Controls.Add(this.lblAddLine1);
-            this.grpContactDetails.Controls.Add(this.lblPostExample);
-            this.grpContactDetails.Controls.Add(this.txtAddLine1);
-            this.grpContactDetails.Controls.Add(this.lblPost);
-            this.grpContactDetails.Controls.Add(this.lblAddLine1Example);
-            this.grpContactDetails.Controls.Add(this.lblAddLine2Example);
-            this.grpContactDetails.Controls.Add(this.txtAddLine2);
-            this.grpContactDetails.Controls.Add(this.lblAddLine2);
-            this.grpContactDetails.Cursor = System.Windows.Forms.Cursors.Default;
-            this.grpContactDetails.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.grpContactDetails.Location = new System.Drawing.Point(25, 98);
-            this.grpContactDetails.Name = "grpContactDetails";
-            this.grpContactDetails.Size = new System.Drawing.Size(726, 656);
-            this.grpContactDetails.TabIndex = 44;
-            this.grpContactDetails.TabStop = false;
-            this.grpContactDetails.Text = "UPDATE CONTACT DETAILS";
+            this.grpUpdateContactDetails.BackColor = System.Drawing.Color.LightYellow;
+            this.grpUpdateContactDetails.Controls.Add(this.lblContactExample);
+            this.grpUpdateContactDetails.Controls.Add(this.lblEmailExample);
+            this.grpUpdateContactDetails.Controls.Add(this.txtEmail);
+            this.grpUpdateContactDetails.Controls.Add(this.txtContact);
+            this.grpUpdateContactDetails.Controls.Add(this.lblUpdateContact);
+            this.grpUpdateContactDetails.Controls.Add(this.comboState);
+            this.grpUpdateContactDetails.Controls.Add(this.btnSaveContactDetails);
+            this.grpUpdateContactDetails.Controls.Add(this.lblUpdateEmail);
+            this.grpUpdateContactDetails.Controls.Add(this.lblState);
+            this.grpUpdateContactDetails.Controls.Add(this.btnResetContactDetails);
+            this.grpUpdateContactDetails.Controls.Add(this.lblUpdateAddress);
+            this.grpUpdateContactDetails.Controls.Add(this.masktxtPost);
+            this.grpUpdateContactDetails.Controls.Add(this.lblAddLine1);
+            this.grpUpdateContactDetails.Controls.Add(this.lblPostExample);
+            this.grpUpdateContactDetails.Controls.Add(this.txtAddLine1);
+            this.grpUpdateContactDetails.Controls.Add(this.lblPost);
+            this.grpUpdateContactDetails.Controls.Add(this.lblAddLine1Example);
+            this.grpUpdateContactDetails.Controls.Add(this.lblAddLine2Example);
+            this.grpUpdateContactDetails.Controls.Add(this.txtAddLine2);
+            this.grpUpdateContactDetails.Controls.Add(this.lblAddLine2);
+            this.grpUpdateContactDetails.Cursor = System.Windows.Forms.Cursors.Default;
+            this.grpUpdateContactDetails.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.grpUpdateContactDetails.Location = new System.Drawing.Point(25, 98);
+            this.grpUpdateContactDetails.Name = "grpUpdateContactDetails";
+            this.grpUpdateContactDetails.Size = new System.Drawing.Size(726, 656);
+            this.grpUpdateContactDetails.TabIndex = 44;
+            this.grpUpdateContactDetails.TabStop = false;
+            this.grpUpdateContactDetails.Text = "UPDATE CONTACT DETAILS";
             // 
             // lblContactExample
             // 
@@ -333,24 +335,25 @@
             this.txtContact.Size = new System.Drawing.Size(435, 37);
             this.txtContact.TabIndex = 43;
             // 
-            // groupBox1
+            // grpUpdatePW
             // 
-            this.groupBox1.Controls.Add(this.lblPWGuidelines);
-            this.groupBox1.Controls.Add(this.btnSavePW);
-            this.groupBox1.Controls.Add(this.btnResetPW);
-            this.groupBox1.Controls.Add(this.txtConfirmNewPW);
-            this.groupBox1.Controls.Add(this.txtNewPW);
-            this.groupBox1.Controls.Add(this.txtCurrentPW);
-            this.groupBox1.Controls.Add(this.lblConfirmNewPW);
-            this.groupBox1.Controls.Add(this.lblCurrentPW);
-            this.groupBox1.Controls.Add(this.lblNewPW);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(776, 98);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(726, 554);
-            this.groupBox1.TabIndex = 45;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "UPDATE PASSWORD";
+            this.grpUpdatePW.BackColor = System.Drawing.Color.LightYellow;
+            this.grpUpdatePW.Controls.Add(this.lblPWGuidelines);
+            this.grpUpdatePW.Controls.Add(this.btnSavePW);
+            this.grpUpdatePW.Controls.Add(this.btnResetPW);
+            this.grpUpdatePW.Controls.Add(this.txtConfirmNewPW);
+            this.grpUpdatePW.Controls.Add(this.txtNewPW);
+            this.grpUpdatePW.Controls.Add(this.txtCurrentPW);
+            this.grpUpdatePW.Controls.Add(this.lblConfirmNewPW);
+            this.grpUpdatePW.Controls.Add(this.lblCurrentPW);
+            this.grpUpdatePW.Controls.Add(this.lblNewPW);
+            this.grpUpdatePW.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.grpUpdatePW.Location = new System.Drawing.Point(776, 98);
+            this.grpUpdatePW.Name = "grpUpdatePW";
+            this.grpUpdatePW.Size = new System.Drawing.Size(726, 554);
+            this.grpUpdatePW.TabIndex = 45;
+            this.grpUpdatePW.TabStop = false;
+            this.grpUpdatePW.Text = "UPDATE PASSWORD";
             // 
             // lblPWGuidelines
             // 
@@ -446,25 +449,27 @@
             this.lblNewPW.TabIndex = 23;
             this.lblNewPW.Text = "Enter New \r\nPassword";
             // 
-            // UpdateProfile
+            // UpdateTechnicianProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(1525, 766);
-            this.Controls.Add(this.groupBox1);
+            this.ControlBox = false;
+            this.Controls.Add(this.grpUpdatePW);
             this.Controls.Add(this.lblUpdateProfile);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.grpContactDetails);
+            this.Controls.Add(this.grpUpdateContactDetails);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "UpdateProfile";
+            this.Name = "UpdateTechnicianProfile";
             this.Text = "Update Profile";
-            this.grpContactDetails.ResumeLayout(false);
-            this.grpContactDetails.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpUpdateContactDetails.ResumeLayout(false);
+            this.grpUpdateContactDetails.PerformLayout();
+            this.grpUpdatePW.ResumeLayout(false);
+            this.grpUpdatePW.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -489,8 +494,8 @@
         private MaskedTextBox masktxtPost;
         private Label lblState;
         private ComboBox comboState;
-        private GroupBox grpContactDetails;
-        private GroupBox groupBox1;
+        private GroupBox grpUpdateContactDetails;
+        private GroupBox grpUpdatePW;
         private Label lblConfirmNewPW;
         private Label lblCurrentPW;
         private Label lblNewPW;

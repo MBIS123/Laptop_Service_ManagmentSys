@@ -1,4 +1,4 @@
-﻿namespace Technician
+﻿namespace IOOP_Assignment
 {
     partial class TechnicianDashboard
     {
@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TechnicianDashboard));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnAccess_Profile = new System.Windows.Forms.Button();
@@ -44,32 +37,49 @@
             this.lblName = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelWidget_Comp = new System.Windows.Forms.Panel();
-            this.lblWidg_ValueCompServ = new System.Windows.Forms.Label();
             this.lblWidg_TextCompServ = new System.Windows.Forms.Label();
+            this.lblWidg_ValueCompServ = new System.Windows.Forms.Label();
             this.panelWidget_Urg = new System.Windows.Forms.Panel();
             this.lblWidg_ValueUrgServ = new System.Windows.Forms.Label();
             this.lblWidg_TextUrgServ = new System.Windows.Forms.Label();
             this.panelWidget_Pend = new System.Windows.Forms.Panel();
             this.lblWidg_ValuePendServ = new System.Windows.Forms.Label();
             this.lblWidg_TextPendServ = new System.Windows.Forms.Label();
-            this.btnAccess_PendServ = new System.Windows.Forms.Button();
-            this.dataGrid_PendServ = new System.Windows.Forms.DataGridView();
-            this.JobID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RequestDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NormalorUrgent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAccess_AllServ = new System.Windows.Forms.Button();
+            this.dataGrid_AllServ = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExpectedCompletionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CollectionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Laptop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTable_TextAllServ = new System.Windows.Forms.Label();
             this.panelTable_Pend = new System.Windows.Forms.Panel();
+            this.btnRefresh_AllServ = new System.Windows.Forms.Button();
+            this.OrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateRequested = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceRequestTypeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMenuProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelWidget_Comp.SuspendLayout();
             this.panelWidget_Urg.SuspendLayout();
             this.panelWidget_Pend.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_PendServ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_AllServ)).BeginInit();
             this.panelTable_Pend.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +107,7 @@
             this.btnLogOut.TabIndex = 5;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             this.btnLogOut.MouseEnter += new System.EventHandler(this.btnLogOut_MouseEnter);
             this.btnLogOut.MouseLeave += new System.EventHandler(this.btnLogOut_MouseLeave);
             // 
@@ -111,6 +122,7 @@
             this.btnAccess_Profile.TabIndex = 4;
             this.btnAccess_Profile.Text = "Profile";
             this.btnAccess_Profile.UseVisualStyleBackColor = false;
+            this.btnAccess_Profile.Click += new System.EventHandler(this.btnAccess_Profile_Click);
             this.btnAccess_Profile.MouseEnter += new System.EventHandler(this.btnAccess_Profile_MouseEnter);
             this.btnAccess_Profile.MouseLeave += new System.EventHandler(this.btnAccess_Profile_MouseLeave);
             // 
@@ -144,9 +156,9 @@
             this.lblName.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblName.Location = new System.Drawing.Point(52, 529);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(142, 25);
+            this.lblName.Size = new System.Drawing.Size(66, 25);
             this.lblName.TabIndex = 0;
-            this.lblName.Text = "Chew Jay Ren";
+            this.lblName.Text = "name";
             // 
             // picLogo
             // 
@@ -163,12 +175,22 @@
             // panelWidget_Comp
             // 
             this.panelWidget_Comp.BackColor = System.Drawing.Color.Khaki;
-            this.panelWidget_Comp.Controls.Add(this.lblWidg_ValueCompServ);
             this.panelWidget_Comp.Controls.Add(this.lblWidg_TextCompServ);
+            this.panelWidget_Comp.Controls.Add(this.lblWidg_ValueCompServ);
             this.panelWidget_Comp.Location = new System.Drawing.Point(1118, 62);
             this.panelWidget_Comp.Name = "panelWidget_Comp";
             this.panelWidget_Comp.Size = new System.Drawing.Size(237, 100);
             this.panelWidget_Comp.TabIndex = 9;
+            // 
+            // lblWidg_TextCompServ
+            // 
+            this.lblWidg_TextCompServ.AutoSize = true;
+            this.lblWidg_TextCompServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblWidg_TextCompServ.Location = new System.Drawing.Point(63, 15);
+            this.lblWidg_TextCompServ.Name = "lblWidg_TextCompServ";
+            this.lblWidg_TextCompServ.Size = new System.Drawing.Size(171, 72);
+            this.lblWidg_TextCompServ.TabIndex = 0;
+            this.lblWidg_TextCompServ.Text = "Completed\r\nThis Month";
             // 
             // lblWidg_ValueCompServ
             // 
@@ -180,16 +202,6 @@
             this.lblWidg_ValueCompServ.TabIndex = 2;
             this.lblWidg_ValueCompServ.Text = "1";
             this.lblWidg_ValueCompServ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblWidg_TextCompServ
-            // 
-            this.lblWidg_TextCompServ.AutoSize = true;
-            this.lblWidg_TextCompServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblWidg_TextCompServ.Location = new System.Drawing.Point(64, 31);
-            this.lblWidg_TextCompServ.Name = "lblWidg_TextCompServ";
-            this.lblWidg_TextCompServ.Size = new System.Drawing.Size(166, 36);
-            this.lblWidg_TextCompServ.TabIndex = 0;
-            this.lblWidg_TextCompServ.Text = "Completed";
             // 
             // panelWidget_Urg
             // 
@@ -253,115 +265,141 @@
             this.lblWidg_TextPendServ.TabIndex = 0;
             this.lblWidg_TextPendServ.Text = "Pending";
             // 
-            // btnAccess_PendServ
+            // btnAccess_AllServ
             // 
-            this.btnAccess_PendServ.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnAccess_PendServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAccess_PendServ.Location = new System.Drawing.Point(987, 403);
-            this.btnAccess_PendServ.Name = "btnAccess_PendServ";
-            this.btnAccess_PendServ.Padding = new System.Windows.Forms.Padding(4);
-            this.btnAccess_PendServ.Size = new System.Drawing.Size(173, 40);
-            this.btnAccess_PendServ.TabIndex = 3;
-            this.btnAccess_PendServ.Text = "Edit";
-            this.btnAccess_PendServ.UseVisualStyleBackColor = false;
-            this.btnAccess_PendServ.MouseEnter += new System.EventHandler(this.btnAccess_PendServ_MouseEnter);
-            this.btnAccess_PendServ.MouseLeave += new System.EventHandler(this.btnAccess_PendServ_MouseLeave);
+            this.btnAccess_AllServ.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnAccess_AllServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAccess_AllServ.Location = new System.Drawing.Point(987, 403);
+            this.btnAccess_AllServ.Name = "btnAccess_AllServ";
+            this.btnAccess_AllServ.Padding = new System.Windows.Forms.Padding(4);
+            this.btnAccess_AllServ.Size = new System.Drawing.Size(173, 40);
+            this.btnAccess_AllServ.TabIndex = 3;
+            this.btnAccess_AllServ.Text = "Edit";
+            this.btnAccess_AllServ.UseVisualStyleBackColor = false;
+            this.btnAccess_AllServ.Click += new System.EventHandler(this.btnAccess_AllServ_Click);
+            this.btnAccess_AllServ.MouseEnter += new System.EventHandler(this.btnAccess_AllServ_MouseEnter);
+            this.btnAccess_AllServ.MouseLeave += new System.EventHandler(this.btnAccess_AllServ_MouseLeave);
             // 
-            // dataGrid_PendServ
+            // dataGrid_AllServ
             // 
-            this.dataGrid_PendServ.BackgroundColor = System.Drawing.Color.Khaki;
-            this.dataGrid_PendServ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_PendServ.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.JobID,
-            this.RequestDate,
-            this.ServType,
-            this.NormalorUrgent,
-            this.Status,
+            this.dataGrid_AllServ.BackgroundColor = System.Drawing.Color.Khaki;
+            this.dataGrid_AllServ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_AllServ.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.ExpectedCompletionDate,
             this.CollectionDate,
-            this.Comments});
-            this.dataGrid_PendServ.Location = new System.Drawing.Point(0, 61);
-            this.dataGrid_PendServ.Name = "dataGrid_PendServ";
-            this.dataGrid_PendServ.RowHeadersWidth = 51;
-            this.dataGrid_PendServ.RowTemplate.Height = 29;
-            this.dataGrid_PendServ.Size = new System.Drawing.Size(1160, 323);
-            this.dataGrid_PendServ.TabIndex = 4;
+            this.Comments,
+            this.Laptop});
+            this.dataGrid_AllServ.Location = new System.Drawing.Point(0, 61);
+            this.dataGrid_AllServ.Name = "dataGrid_AllServ";
+            this.dataGrid_AllServ.RowHeadersWidth = 51;
+            this.dataGrid_AllServ.RowTemplate.Height = 29;
+            this.dataGrid_AllServ.Size = new System.Drawing.Size(1160, 323);
+            this.dataGrid_AllServ.TabIndex = 4;
             // 
-            // JobID
+            // dataGridViewTextBoxColumn7
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.JobID.DefaultCellStyle = dataGridViewCellStyle1;
-            this.JobID.HeaderText = "JobID";
-            this.JobID.MinimumWidth = 6;
-            this.JobID.Name = "JobID";
-            this.JobID.Width = 50;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "OrderID";
+            this.dataGridViewTextBoxColumn7.HeaderText = "OrderID";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 125;
             // 
-            // RequestDate
+            // dataGridViewTextBoxColumn8
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.RequestDate.DefaultCellStyle = dataGridViewCellStyle2;
-            this.RequestDate.HeaderText = "Request Date";
-            this.RequestDate.MinimumWidth = 6;
-            this.RequestDate.Name = "RequestDate";
-            this.RequestDate.Width = 125;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "CustomerID";
+            this.dataGridViewTextBoxColumn8.HeaderText = "CustomerID";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 125;
             // 
-            // ServType
+            // dataGridViewTextBoxColumn9
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.ServType.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ServType.HeaderText = "Service Requested";
-            this.ServType.MinimumWidth = 6;
-            this.ServType.Name = "ServType";
-            this.ServType.Width = 300;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Date Requested";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Date Requested";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 125;
             // 
-            // NormalorUrgent
+            // dataGridViewTextBoxColumn10
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.NormalorUrgent.DefaultCellStyle = dataGridViewCellStyle4;
-            this.NormalorUrgent.HeaderText = "Service Type";
-            this.NormalorUrgent.MinimumWidth = 6;
-            this.NormalorUrgent.Name = "NormalorUrgent";
-            this.NormalorUrgent.Width = 125;
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "ServiceRequestType ID";
+            this.dataGridViewTextBoxColumn10.HeaderText = "ServiceRequestType ID";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 125;
             // 
-            // Status
+            // dataGridViewTextBoxColumn11
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.Status.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            this.Status.Width = 200;
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Service Type";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Service Type";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Status";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Service Description/Suggestion";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Service Description/Suggestion";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 125;
+            // 
+            // ExpectedCompletionDate
+            // 
+            this.ExpectedCompletionDate.DataPropertyName = "Expected Completion Date";
+            this.ExpectedCompletionDate.HeaderText = "Expected Completion Date";
+            this.ExpectedCompletionDate.MinimumWidth = 6;
+            this.ExpectedCompletionDate.Name = "ExpectedCompletionDate";
+            this.ExpectedCompletionDate.ReadOnly = true;
+            this.ExpectedCompletionDate.Width = 125;
             // 
             // CollectionDate
             // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.CollectionDate.DefaultCellStyle = dataGridViewCellStyle6;
+            this.CollectionDate.DataPropertyName = "Collection Date";
             this.CollectionDate.HeaderText = "Collection Date";
             this.CollectionDate.MinimumWidth = 6;
             this.CollectionDate.Name = "CollectionDate";
+            this.CollectionDate.ReadOnly = true;
             this.CollectionDate.Width = 125;
             // 
             // Comments
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.Comments.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Comments.DataPropertyName = "Comments";
             this.Comments.HeaderText = "Comments";
             this.Comments.MinimumWidth = 6;
             this.Comments.Name = "Comments";
+            this.Comments.ReadOnly = true;
             this.Comments.Width = 125;
+            // 
+            // Laptop
+            // 
+            this.Laptop.DataPropertyName = "Laptop";
+            this.Laptop.HeaderText = "Laptop";
+            this.Laptop.MinimumWidth = 6;
+            this.Laptop.Name = "Laptop";
+            this.Laptop.ReadOnly = true;
+            this.Laptop.Width = 125;
             // 
             // lblTable_TextAllServ
             // 
@@ -375,20 +413,122 @@
             // 
             // panelTable_Pend
             // 
+            this.panelTable_Pend.Controls.Add(this.btnRefresh_AllServ);
             this.panelTable_Pend.Controls.Add(this.lblTable_TextAllServ);
-            this.panelTable_Pend.Controls.Add(this.dataGrid_PendServ);
-            this.panelTable_Pend.Controls.Add(this.btnAccess_PendServ);
+            this.panelTable_Pend.Controls.Add(this.dataGrid_AllServ);
+            this.panelTable_Pend.Controls.Add(this.btnAccess_AllServ);
             this.panelTable_Pend.Location = new System.Drawing.Point(299, 185);
             this.panelTable_Pend.Name = "panelTable_Pend";
             this.panelTable_Pend.Size = new System.Drawing.Size(1163, 453);
             this.panelTable_Pend.TabIndex = 13;
             // 
+            // btnRefresh_AllServ
+            // 
+            this.btnRefresh_AllServ.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnRefresh_AllServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRefresh_AllServ.Location = new System.Drawing.Point(798, 403);
+            this.btnRefresh_AllServ.Name = "btnRefresh_AllServ";
+            this.btnRefresh_AllServ.Padding = new System.Windows.Forms.Padding(4);
+            this.btnRefresh_AllServ.Size = new System.Drawing.Size(173, 40);
+            this.btnRefresh_AllServ.TabIndex = 8;
+            this.btnRefresh_AllServ.Text = "Refresh";
+            this.btnRefresh_AllServ.UseVisualStyleBackColor = false;
+            this.btnRefresh_AllServ.Click += new System.EventHandler(this.btnRefresh_AllServ_Click);
+            this.btnRefresh_AllServ.MouseEnter += new System.EventHandler(this.btnRefresh_AllServ_MouseEnter);
+            this.btnRefresh_AllServ.MouseLeave += new System.EventHandler(this.btnRefresh_AllServ_MouseLeave);
+            // 
+            // OrderID
+            // 
+            this.OrderID.HeaderText = "OrderID";
+            this.OrderID.MinimumWidth = 6;
+            this.OrderID.Name = "OrderID";
+            this.OrderID.Width = 125;
+            // 
+            // CustomerID
+            // 
+            this.CustomerID.HeaderText = "CustomerID";
+            this.CustomerID.MinimumWidth = 6;
+            this.CustomerID.Name = "CustomerID";
+            this.CustomerID.Width = 125;
+            // 
+            // DateRequested
+            // 
+            this.DateRequested.HeaderText = "Date Requested";
+            this.DateRequested.MinimumWidth = 6;
+            this.DateRequested.Name = "DateRequested";
+            this.DateRequested.Width = 125;
+            // 
+            // ServiceRequestTypeID
+            // 
+            this.ServiceRequestTypeID.HeaderText = "ServiceRequestType ID";
+            this.ServiceRequestTypeID.MinimumWidth = 6;
+            this.ServiceRequestTypeID.Name = "ServiceRequestTypeID";
+            this.ServiceRequestTypeID.Width = 125;
+            // 
+            // ServiceType
+            // 
+            this.ServiceType.HeaderText = "Service Type";
+            this.ServiceType.MinimumWidth = 6;
+            this.ServiceType.Name = "ServiceType";
+            this.ServiceType.Width = 125;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "OrderID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "CustomerID";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "DateRequested";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "ServiceRequestType ID";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Service Type";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
             // TechnicianDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightYellow;
             this.ClientSize = new System.Drawing.Size(1496, 666);
+            this.ControlBox = false;
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelWidget_Comp);
             this.Controls.Add(this.panelWidget_Urg);
@@ -398,6 +538,7 @@
             this.MaximizeBox = false;
             this.Name = "TechnicianDashboard";
             this.Text = "Technician Dashboard";
+            this.Load += new System.EventHandler(this.TechnicianDashboard_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMenuProfile)).EndInit();
@@ -408,7 +549,7 @@
             this.panelWidget_Urg.PerformLayout();
             this.panelWidget_Pend.ResumeLayout(false);
             this.panelWidget_Pend.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_PendServ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_AllServ)).EndInit();
             this.panelTable_Pend.ResumeLayout(false);
             this.panelTable_Pend.PerformLayout();
             this.ResumeLayout(false);
@@ -433,16 +574,33 @@
         private Panel panelWidget_Pend;
         private Label lblWidg_ValuePendServ;
         private Label lblWidg_TextPendServ;
-        private Button btnAccess_PendServ;
-        private DataGridView dataGrid_PendServ;
-        private DataGridViewTextBoxColumn JobID;
-        private DataGridViewTextBoxColumn RequestDate;
-        private DataGridViewTextBoxColumn ServType;
-        private DataGridViewTextBoxColumn NormalorUrgent;
-        private DataGridViewTextBoxColumn Status;
-        private DataGridViewTextBoxColumn CollectionDate;
-        private DataGridViewTextBoxColumn Comments;
+        private Button btnAccess_AllServ;
+        private DataGridView dataGrid_AllServ;
         private Label lblTable_TextAllServ;
         private Panel panelTable_Pend;
+        private DataGridViewTextBoxColumn OrderID;
+        private DataGridViewTextBoxColumn CustomerID;
+        private DataGridViewTextBoxColumn DateRequested;
+        private DataGridViewTextBoxColumn ServiceRequestTypeID;
+        private DataGridViewTextBoxColumn ServiceType;
+        private DataGridViewTextBoxColumn Status;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private DataGridViewTextBoxColumn ExpectedCompletionDate;
+        private DataGridViewTextBoxColumn CollectionDate;
+        private DataGridViewTextBoxColumn Comments;
+        private DataGridViewTextBoxColumn Laptop;
+        private Button btnRefresh_AllServ;
     }
 }

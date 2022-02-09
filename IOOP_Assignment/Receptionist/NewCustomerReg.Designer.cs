@@ -1,4 +1,4 @@
-﻿namespace Assignment
+﻿namespace IOOP_Assignment
 {
     partial class frmRegNewCus
     {
@@ -121,6 +121,7 @@
             this.radBtnFemale.TabStop = true;
             this.radBtnFemale.Text = "Female";
             this.radBtnFemale.UseVisualStyleBackColor = true;
+            this.radBtnFemale.CheckedChanged += new System.EventHandler(this.radBtnFemale_CheckedChanged);
             // 
             // radBtnMale
             // 
@@ -132,6 +133,7 @@
             this.radBtnMale.TabStop = true;
             this.radBtnMale.Text = "Male";
             this.radBtnMale.UseVisualStyleBackColor = true;
+            this.radBtnMale.CheckedChanged += new System.EventHandler(this.radBtnMale_CheckedChanged);
             // 
             // lblIC
             // 
@@ -278,6 +280,7 @@
             this.btnClear.TabIndex = 15;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnConfirm
             // 
@@ -289,6 +292,7 @@
             this.btnConfirm.TabIndex = 14;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // splitter1
             // 
@@ -320,7 +324,6 @@
             this.lblRcn.Size = new System.Drawing.Size(126, 22);
             this.lblRcn.TabIndex = 6;
             this.lblRcn.Text = "Chew Yong En";
-            this.lblRcn.Click += new System.EventHandler(this.lblRcn_Click);
             // 
             // lblRole
             // 
@@ -475,6 +478,7 @@
             this.Controls.Add(this.lblNewCusReg);
             this.Name = "frmRegNewCus";
             this.Text = "New Customer Registration  ";
+            this.Load += new System.EventHandler(this.frmRegNewCus_Load);
             this.grpBoxReg.ResumeLayout(false);
             this.grpBoxReg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();

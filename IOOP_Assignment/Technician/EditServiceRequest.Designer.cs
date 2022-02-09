@@ -1,4 +1,4 @@
-﻿namespace Technician
+﻿namespace IOOP_Assignment
 {
     partial class EditServiceRequest
     {
@@ -33,14 +33,14 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.lblEditServ = new System.Windows.Forms.Label();
             this.lblOrderID = new System.Windows.Forms.Label();
-            this.comboJobID = new System.Windows.Forms.ComboBox();
+            this.comboOrderID = new System.Windows.Forms.ComboBox();
             this.lblChange = new System.Windows.Forms.Label();
             this.radioCompleted = new System.Windows.Forms.RadioButton();
             this.lblCollectDate = new System.Windows.Forms.Label();
-            this.CollectDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.CollectionDatePicker = new System.Windows.Forms.DateTimePicker();
             this.lblServDescription = new System.Windows.Forms.Label();
             this.richServDescription = new System.Windows.Forms.RichTextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioChangesRequired = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // btnReset
@@ -82,6 +82,7 @@
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
             this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
             // 
@@ -105,16 +106,16 @@
             this.lblOrderID.TabIndex = 9;
             this.lblOrderID.Text = "OrderID";
             // 
-            // comboJobID
+            // comboOrderID
             // 
-            this.comboJobID.FormattingEnabled = true;
-            this.comboJobID.Items.AddRange(new object[] {
+            this.comboOrderID.FormattingEnabled = true;
+            this.comboOrderID.Items.AddRange(new object[] {
             "J0002",
             "J0003"});
-            this.comboJobID.Location = new System.Drawing.Point(277, 103);
-            this.comboJobID.Name = "comboJobID";
-            this.comboJobID.Size = new System.Drawing.Size(140, 28);
-            this.comboJobID.TabIndex = 10;
+            this.comboOrderID.Location = new System.Drawing.Point(277, 103);
+            this.comboOrderID.Name = "comboOrderID";
+            this.comboOrderID.Size = new System.Drawing.Size(140, 28);
+            this.comboOrderID.TabIndex = 10;
             // 
             // lblChange
             // 
@@ -148,13 +149,13 @@
             this.lblCollectDate.TabIndex = 13;
             this.lblCollectDate.Text = "Collection Date";
             // 
-            // CollectDatePicker
+            // CollectionDatePicker
             // 
-            this.CollectDatePicker.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CollectDatePicker.Location = new System.Drawing.Point(277, 306);
-            this.CollectDatePicker.Name = "CollectDatePicker";
-            this.CollectDatePicker.Size = new System.Drawing.Size(500, 29);
-            this.CollectDatePicker.TabIndex = 14;
+            this.CollectionDatePicker.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CollectionDatePicker.Location = new System.Drawing.Point(277, 306);
+            this.CollectionDatePicker.Name = "CollectionDatePicker";
+            this.CollectionDatePicker.Size = new System.Drawing.Size(500, 29);
+            this.CollectionDatePicker.TabIndex = 14;
             // 
             // lblServDescription
             // 
@@ -175,32 +176,34 @@
             this.richServDescription.TabIndex = 16;
             this.richServDescription.Text = "";
             // 
-            // radioButton2
+            // radioChangesRequired
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.radioButton2.Location = new System.Drawing.Point(277, 161);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(209, 29);
-            this.radioButton2.TabIndex = 18;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Changes Required";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioChangesRequired.AutoSize = true;
+            this.radioChangesRequired.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.radioChangesRequired.Location = new System.Drawing.Point(277, 161);
+            this.radioChangesRequired.Name = "radioChangesRequired";
+            this.radioChangesRequired.Size = new System.Drawing.Size(209, 29);
+            this.radioChangesRequired.TabIndex = 18;
+            this.radioChangesRequired.TabStop = true;
+            this.radioChangesRequired.Text = "Changes Required";
+            this.radioChangesRequired.UseVisualStyleBackColor = true;
             // 
             // EditServiceRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(855, 422);
-            this.Controls.Add(this.radioButton2);
+            this.ControlBox = false;
+            this.Controls.Add(this.radioChangesRequired);
             this.Controls.Add(this.richServDescription);
             this.Controls.Add(this.lblServDescription);
-            this.Controls.Add(this.CollectDatePicker);
+            this.Controls.Add(this.CollectionDatePicker);
             this.Controls.Add(this.lblCollectDate);
             this.Controls.Add(this.radioCompleted);
             this.Controls.Add(this.lblChange);
-            this.Controls.Add(this.comboJobID);
+            this.Controls.Add(this.comboOrderID);
             this.Controls.Add(this.lblOrderID);
             this.Controls.Add(this.lblEditServ);
             this.Controls.Add(this.btnClose);
@@ -211,6 +214,7 @@
             this.Name = "EditServiceRequest";
             this.RightToLeftLayout = true;
             this.Text = "Edit Service Request";
+            this.Load += new System.EventHandler(this.EditServiceRequest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,13 +227,13 @@
         private Button btnClose;
         private Label lblEditServ;
         private Label lblOrderID;
-        private ComboBox comboJobID;
+        private ComboBox comboOrderID;
         private Label lblChange;
         private RadioButton radioCompleted;
         private Label lblCollectDate;
-        private DateTimePicker CollectDatePicker;
+        private DateTimePicker CollectionDatePicker;
         private Label lblServDescription;
         private RichTextBox richServDescription;
-        private RadioButton radioButton2;
+        private RadioButton radioChangesRequired;
     }
 }

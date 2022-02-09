@@ -8,25 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace testing
+namespace IOOPAssignment
 {
     public partial class change_service : Form
     {
         string Type;
-        
+        private void change_service_Load(object sender, EventArgs e)
+        {
+            //classname objectname = new constructor
+            Customer c1 = new Customer(lstservices.SelectedIndex, Type);
+        }
         public change_service()
         {
             InitializeComponent();
-        }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void lbl_decided_change_service_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void rdb_normal_CheckedChanged(object sender, EventArgs e)
@@ -41,7 +35,9 @@ namespace testing
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            string selected_service = lstservices.Text;
+           
+            string selected_service = lstservices.SelectedIndex.ToString();
+            
             if (lstservices.SelectedItems.Count == 1 && (rdb_normal.Checked || rdb_urgent.Checked))
             {
                 lbl_decided_change_service.Text = "You have change service from " + selected_service + " with " + Type + " successfully.";
@@ -57,9 +53,6 @@ namespace testing
 
         }
 
-        private void change_service_Load(object sender, EventArgs e)
-        {
-            
-        }
+        
     }
 }

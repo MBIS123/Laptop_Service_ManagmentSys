@@ -10,35 +10,7 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void toolStripTextBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void Admin_Load(object sender, EventArgs e)
         {
@@ -49,120 +21,7 @@ namespace IOOP_Assignment
             
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chart1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_woc3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_woc2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void pictureBox8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label27_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label26_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label34_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label41_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label48_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
-
-        private void splitter2_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
-
-   
-
-        private void userControlRegistration1_Load(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void userControlMonthlyIncome1_Load(object sender, EventArgs e)
         {
 
@@ -215,19 +74,6 @@ namespace IOOP_Assignment
             showUserControl("DashBoard");
      
         }
-
-    
-
-        private void userControlAdminDashBoard1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void userControlAdminDashBoard1_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
 
 
         private void btnDashBoard_MouseLeave(object sender, EventArgs e)

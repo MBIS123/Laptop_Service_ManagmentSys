@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Technician
+namespace IOOP_Assignment
 {
     public partial class EditServiceRequest : Form
     {
@@ -46,5 +46,16 @@ namespace Technician
         {
             btnClose.BackColor = Color.SteelBlue;
         }
+
+        private void EditServiceRequest_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+        //close window button
     }
 }
