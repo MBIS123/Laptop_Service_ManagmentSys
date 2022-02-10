@@ -259,6 +259,7 @@
             this.btnSavePW.TabIndex = 46;
             this.btnSavePW.Text = "Save Password";
             this.btnSavePW.UseVisualStyleBackColor = false;
+            this.btnSavePW.Click += new System.EventHandler(this.btnSavePW_Click);
             this.btnSavePW.MouseEnter += new System.EventHandler(this.btnSavePW_MouseEnter);
             this.btnSavePW.MouseLeave += new System.EventHandler(this.btnSavePW_MouseLeave);
             // 
@@ -273,6 +274,7 @@
             this.btnResetPW.TabIndex = 43;
             this.btnResetPW.Text = "Reset Password";
             this.btnResetPW.UseVisualStyleBackColor = false;
+            this.btnResetPW.Click += new System.EventHandler(this.btnResetPW_Click);
             this.btnResetPW.MouseEnter += new System.EventHandler(this.btnResetPW_MouseEnter);
             this.btnResetPW.MouseLeave += new System.EventHandler(this.btnResetPW_MouseLeave);
             // 

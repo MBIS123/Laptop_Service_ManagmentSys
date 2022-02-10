@@ -49,18 +49,55 @@ namespace IOOP_Assignment
         {
             //validation
             DataValidation objval = new DataValidation();
-            if (objval.isPhoneNum(txtContact.Text)) //&& (objval.isEmail(txtEmail.Text)) && (objval.isAddress(txtAddress.Text)) 
+            if (objval.isPhoneNum(txtContact.Text) && (objval.isStringNull(txtAddress) == false)) //&& (objval.isEmail(txtEmail.Text))  
             {
-                //calling the update method
                 Technician obj1 = new Technician(name);
                 MessageBox.Show(obj1.updateTechProfileContactDetails(txtContact.Text, txtEmail.Text, txtAddress.Text));
             }
             else
             {
                 MessageBox.Show("Invalid!");
-            }
+            }   
+        }
 
-            
+        //reset password button: textboxes cleared
+        private void btnResetPW_Click(object sender, EventArgs e)
+        {
+            txtCurrentPW.Text = String.Empty;
+            txtNewPW.Text = String.Empty;
+            txtConfirmNewPW.Text = String.Empty;
+        }
+        
+        //save password button: update users table
+        private void btnSavePW_Click(object sender, EventArgs e)
+        {
+            //validation part 1: check if password matches original password
+            Technician obj1 = new Technician(name);
+            Technician.viewTechProfile(obj1);
+            if (txtCurrentPW.Text == obj1.TechPassword)
+            {
+                DataValidation objpassval = new DataValidation();
+                if (objpassval.isPassword(txtNewPW.Text)) //if newpw is valid
+                {
+                    if (txtNewPW.Text == txtConfirmNewPW.Text) //if newpw and confirm are the same
+                    {
+                        MessageBox.Show(obj1.updateTechProfilePassword(txtNewPW.Text)); //update users table
+                    }
+                    else //if newpw and confirm are not the same
+                    {
+                        MessageBox.Show("Your new passwords do not match. Please try again.");
+                    }
+                }
+                else //if newpw is not valid
+                {
+                    MessageBox.Show("The new password you have entered is not valid. Please try again.");
+                    
+                }
+            }
+            else
+            {
+                MessageBox.Show("The password you have entered does not match your current password. Please try again.");
+            }
         }
 
         //close window button
