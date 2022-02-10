@@ -24,9 +24,9 @@ namespace IOOP_Assignment
 
         private void frmPayment_Load_1(object sender, EventArgs e)
         {
-            /*string maincon = ConfigurationManager.ConnectionStrings["myCS"].ConnectionString;
+            string maincon = ConfigurationManager.ConnectionStrings["myCS"].ConnectionString;
             SqlConnection con = new SqlConnection(maincon);
-            string sqlquery = "select Order.OrderID,Customer.Name, Types of Service Request.Service Title, Order.Service Type, Order.Status,Order.Laptop, Order.Amount, Order.Payment Status" +
+            string sqlquery = "select Order.OrderID,Customer.Name, Types of Service Request.Service Title, Order.Service Type, Order.Status,Order.Laptop, Order.Amount(RM), Order.Payment Status" +
                 " From [dob].[Order] inner join [dob].[Customer] on Order.CustomerID=Customer.CustomerID inner join [dob].[Types of Service Request] on Order.ServiceRequestTypeID=Types of Service Request.ServiceRequestTypeID";
 
             SqlCommand sqlcomm = new SqlCommand(sqlquery, con);
@@ -35,7 +35,7 @@ namespace IOOP_Assignment
             DataTable dt = new DataTable();
             sdr.Fill(dt);
             dataGridViewPayment.DataSource = dt;
-            con.Close();*/
+            con.Close();
         }
 
         private void btnPay_Click(object sender, EventArgs e)

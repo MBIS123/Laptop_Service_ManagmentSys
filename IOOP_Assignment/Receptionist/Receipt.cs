@@ -12,15 +12,9 @@ namespace IOOP_Assignment
 {
     public partial class frmReceipt : Form
     {
-
         public frmReceipt()
         {
             InitializeComponent();
-        }
-
-        private void frmReceipt_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
