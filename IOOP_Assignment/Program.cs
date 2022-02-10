@@ -12,7 +12,7 @@ namespace IOOP_Assignment
         {
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new frmPayment());
+            Application.Run(new frmLogin());
 
             
         }
