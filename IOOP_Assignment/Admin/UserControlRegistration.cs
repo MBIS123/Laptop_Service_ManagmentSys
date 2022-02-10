@@ -36,8 +36,6 @@ namespace IOOP_Assignment
             obj.checking();
             obj.askToReenter();
 
-            if (validtObj.isIcNum(txtIcNo))
-                MessageBox.Show("True");
 
         }
 
