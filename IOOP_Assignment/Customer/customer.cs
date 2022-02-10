@@ -15,12 +15,10 @@ namespace IOOP_Assignment
         private string user_name;
         private string userid;
         private string customer_id;
-        private string service_desc;
         private string amount;
         private string status;
         private string Expec_date;
         private string Collec_date;
-        private string Comments;
 
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
