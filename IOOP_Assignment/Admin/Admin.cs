@@ -21,8 +21,7 @@ namespace IOOP_Assignment
         private int phoneNumber;
         private static bool adminRegisAllInfoFilled = true;  // used for validation purpose
 
-        string[] ethnicityComboBxItem = { "Malays", "Chinese", "Indians", "Other" };
-        string[] genderComboBxItem = { "Malays", "Chinese", "Indians", "Other" };
+
         public Admin() { 
         }
 
