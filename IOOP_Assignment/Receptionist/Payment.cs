@@ -26,7 +26,7 @@ namespace IOOP_Assignment
         {
             string maincon = ConfigurationManager.ConnectionStrings["myCS"].ConnectionString;
             SqlConnection con = new SqlConnection(maincon);
-            string sqlquery = "select Order.OrderID,Customer.Name, Types of Service Request.Service Title, Order.Service Type, Order.Status,Order.Laptop, Order.Amount, Order.Payment Status" +
+            string sqlquery = "select Order.OrderID,Customer.Name, Types of Service Request.Service Title, Order.Service Type, Order.Status,Order.Laptop, Order.Amount(RM), Order.Payment Status" +
                 " From [dob].[Order] inner join [dob].[Customer] on Order.CustomerID=Customer.CustomerID inner join [dob].[Types of Service Request] on Order.ServiceRequestTypeID=Types of Service Request.ServiceRequestTypeID";
 
             SqlCommand sqlcomm = new SqlCommand(sqlquery, con);
