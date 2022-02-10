@@ -26,13 +26,43 @@ namespace IOOP_Assignment
         //loading details into fields
         private void UpdateTechnicianProfile_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(name);
+            MessageBox.Show(name); //for testing
             Technician obj1 = new Technician(name);
             Technician.viewTechProfile(obj1);
             txtContact.Text = obj1.TechContact;
             txtEmail.Text = obj1.TechEmail;
             txtAddress.Text = obj1.TechAddress;
-            txtCurrentPW.Text = obj1.TechPassword;
+        }
+
+        //reset contact details button: details reset to details saved in database
+        private void btnResetContactDetails_Click(object sender, EventArgs e)
+        {
+            Technician obj1 = new Technician(name);
+            Technician.viewTechProfile(obj1);
+            txtContact.Text = obj1.TechContact;
+            txtEmail.Text = obj1.TechEmail;
+            txtAddress.Text = obj1.TechAddress;
+        }
+        
+        //save contact details button: update technician table
+        private void btnSaveContactDetails_Click(object sender, EventArgs e)
+        {
+            //validation
+            DataValidation objval = new DataValidation(txtContact.Text);
+
+            //calling the update method
+            /*Technician obj1 = new Technician(name);
+            MessageBox.Show(obj1.updateTechProfileContactDetails(txtContact.Text, txtEmail.Text, txtAddress.Text));*/
+        }
+
+        //close window button
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            /*TechnicianDashboard td = new TechnicianDashboard();
+            td.StartPosition = FormStartPosition.Manual;
+            td.Location = new Point(100, 100);
+            td.ShowDialog();*/
         }
 
         //for changes in button color when user hovers over button
@@ -84,22 +114,6 @@ namespace IOOP_Assignment
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
             btnClose.BackColor= Color.SteelBlue;
-        }
-
-        //reset contact details button
-        private void btnResetContactDetails_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //close window button
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            /*TechnicianDashboard td = new TechnicianDashboard();
-            td.StartPosition = FormStartPosition.Manual;
-            td.Location = new Point(100, 100);
-            td.ShowDialog();*/
         }
     }
 }
