@@ -122,6 +122,7 @@
             this.btnSaveContactDetails.TabIndex = 18;
             this.btnSaveContactDetails.Text = "Save Contact Details";
             this.btnSaveContactDetails.UseVisualStyleBackColor = false;
+            this.btnSaveContactDetails.Click += new System.EventHandler(this.btnSaveContactDetails_Click);
             this.btnSaveContactDetails.MouseEnter += new System.EventHandler(this.btnSaveContactDetails_MouseEnter);
             this.btnSaveContactDetails.MouseLeave += new System.EventHandler(this.btnSaveContactDetails_MouseLeave);
             // 
@@ -187,9 +188,9 @@
             this.lblContactExample.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblContactExample.Location = new System.Drawing.Point(241, 105);
             this.lblContactExample.Name = "lblContactExample";
-            this.lblContactExample.Size = new System.Drawing.Size(324, 22);
+            this.lblContactExample.Size = new System.Drawing.Size(278, 22);
             this.lblContactExample.TabIndex = 46;
-            this.lblContactExample.Text = "e.g. +60123456789 or +601123456789";
+            this.lblContactExample.Text = "e.g. 0123456789 or 01123456789";
             // 
             // lblEmailExample
             // 
@@ -258,6 +259,7 @@
             this.btnSavePW.TabIndex = 46;
             this.btnSavePW.Text = "Save Password";
             this.btnSavePW.UseVisualStyleBackColor = false;
+            this.btnSavePW.Click += new System.EventHandler(this.btnSavePW_Click);
             this.btnSavePW.MouseEnter += new System.EventHandler(this.btnSavePW_MouseEnter);
             this.btnSavePW.MouseLeave += new System.EventHandler(this.btnSavePW_MouseLeave);
             // 
@@ -272,6 +274,7 @@
             this.btnResetPW.TabIndex = 43;
             this.btnResetPW.Text = "Reset Password";
             this.btnResetPW.UseVisualStyleBackColor = false;
+            this.btnResetPW.Click += new System.EventHandler(this.btnResetPW_Click);
             this.btnResetPW.MouseEnter += new System.EventHandler(this.btnResetPW_MouseEnter);
             this.btnResetPW.MouseLeave += new System.EventHandler(this.btnResetPW_MouseLeave);
             // 

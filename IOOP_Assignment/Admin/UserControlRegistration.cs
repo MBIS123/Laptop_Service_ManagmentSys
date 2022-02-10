@@ -14,6 +14,7 @@ namespace IOOP_Assignment
     public partial class UserControlRegistration : UserControl
     {
         Admin obj = new Admin();
+        DataValidation validtObj = new DataValidation();    
         
       
         public UserControlRegistration()
@@ -23,12 +24,18 @@ namespace IOOP_Assignment
 
         private void UserControlRegistration_Load(object sender, EventArgs e)
         {
+   
+            
 
         }
 
         private void btnRegis_Click(object sender, EventArgs e)
         {
-            obj.regisPosition(rdBtnTech, rdBtnRecep); //THEN I CALL IT AT FORM THERE AND PASS THE BUTTON 
+            obj.validateRegisPosition(rdBtnTech,rdBtnRecep);
+            obj.validateRegisCheckComboBx(cmbBxGender, cmbBxEthnic);
+            obj.checking();
+            obj.askToReenter();
+
 
         }
 

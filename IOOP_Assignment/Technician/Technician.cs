@@ -75,5 +75,44 @@ namespace IOOP_Assignment
             }
             con.Close();
         }
+
+        public string updateTechProfileContactDetails(string cont, string em, string add)
+        {
+            string status;
+            con.Open();
+
+            techContact = cont;
+            techEmail = em;
+            techAddress = add;
+
+            SqlCommand cmd = new SqlCommand("update [Technician] set [Contact No.] = '" + techContact + "', [Email] = '" + techEmail + "', [Address] = '" + techAddress + "' where [Name] = '" + techName + "'", con);
+            int i = cmd.ExecuteNonQuery();
+            if (i != 0)
+                status = "Your details have been successfully updated.";
+            else
+                status = "Update Unsuccessful. Please try again.";
+            con.Close();
+
+            return status;
+        }
+        public string updateTechProfilePassword(string pw)
+        {
+            string status;
+            con.Open();
+
+            techPassword = pw;
+
+            SqlCommand cmd = new SqlCommand("update [Users] set [Password] = '" + techPassword + "' where [UserID] = (select Users.[UserID] from Technician, Users where Technician.UserID = Users.UserID)", con);
+            //("select [Password] from Users, Technician where Users.UserID = Technician.UserID and Technician.Name = '" + o1.techName + "'", con);
+
+            int i = cmd.ExecuteNonQuery();
+            if (i != 0)
+                status = "Your password has been successfully updated.";
+            else
+                status = "Update Unsuccessful. Please try again.";
+            con.Close();
+
+            return status;
+        }
     }
 }
