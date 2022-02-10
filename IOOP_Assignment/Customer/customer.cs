@@ -19,11 +19,23 @@ namespace IOOP_Assignment
         private string status;
         private string Expec_date;
         private string Collec_date;
+        private string CusUName;
+        private string CusBOD;
+        private string CusPhoneNo;
+        private string CusEmail;
+        private string CusAddress;
+        private string CusPassword;
 
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
         public int Service { get => service; set => service = value; }
         public string Service_type { get => service_type; set => service_type = value; }
+        public string CusName1 { get => CusUName; set => CusUName = value; }
+        public string CusBOD1 { get => CusBOD; set => CusBOD = value; }
+        public string CusPhoneNo1 { get => CusPhoneNo; set => CusPhoneNo = value; }
+        public string CusEmail1 { get => CusEmail; set => CusEmail = value; }
+        public string CusAddress1 { get => CusAddress; set => CusAddress = value; }
+        public string CusPassword1 { get => CusPassword; set => CusPassword = value; }
 
         public Customers (int serv,string type)
         {
@@ -159,5 +171,28 @@ namespace IOOP_Assignment
             con.Close();
             return stat5;
         }
+
+        internal void viewCustomer(string u)
+        {
+            con.Open();
+            SqlCommand cmd8 = new SqlCommand("select UserID from [Users] where UserName = '" + u + "'", con);
+            user_name = u;
+
+            SqlCommand cmd9 = new SqlCommand("select * from Customer where UserID = '" + user_name + "'", con);
+            SqlCommand cmd10 = new SqlCommand("select Password from [Users],[Customer] where Users.UserID = Customer.UserID and Customer.Name = '" + o1.CusUName + "'", con);
+            CusPassword = cmd10.ExecuteScalar().ToString();
+            SqlDataReader sqlDataReader = cmd9.ExecuteReader(); //used for any result set with multiple rows/columns (e.g., SELECT col1, col2 from sometable )
+
+            while(sqlDataReader.Read())
+            {
+                CusUName= sqlDataReader.GetString(2);
+                CusBOD = sqlDataReader.GetString(4);
+                CusPhoneNo = sqlDataReader.GetString(6);
+                CusEmail = sqlDataReader.GetString(7);
+                CusAddress = sqlDataReader.GetString(8);
+            }
+            con.Close();
+        }
+
     }
 }
