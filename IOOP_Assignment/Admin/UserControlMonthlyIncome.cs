@@ -11,7 +11,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 
 
-namespace IOOPAssignment
+namespace IOOP_Assignment
 {
     public partial class UserControlMonthlyIncome : UserControl
     {

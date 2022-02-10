@@ -16,19 +16,22 @@ namespace IOOPAssignment
 
         public int Service { get => service; set => service = value; }
         public string Service_type { get => service_type; set => service_type = value; }
-
-        public Customer(int serv,string type)
+        
+        public Customer (int serv,string type)
         {
             service = serv;
             service_type = type;
         }
-        private string change_service() // change the customer service (should return status)
+        
+        internal string changeservice() 
         {
             string status;
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("update order set ServiceRequestType ID ='" + service + "',Service Type='" + service_type, con);
-            int i = cmd.ExecuteNonQuery();////executes the command and returns the number of rows affected
+            // the status of the service is pending only can change service
+            SqlCommand cmd = new SqlCommand("update [Order] set ServiceRequestTypeID ='" + service + "',[Service Type]='" + service_type + "' where Status = 'pending'" , con);
+            
+            int i = cmd.ExecuteNonQuery();//executes the command and returns the number of rows affected
             if (i != 0)
             {
                 status = "Change Successfully.";

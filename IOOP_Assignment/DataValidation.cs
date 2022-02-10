@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Collections;
 using System.Text.RegularExpressions;
 
-namespace IOOPAssignment
+namespace IOOP_Assignment
 {
 
 
@@ -30,6 +30,24 @@ namespace IOOPAssignment
             else
                 return false ;
             
+        }
+
+        internal bool isInt(string input)
+        {
+            int i;
+            if (int.TryParse(input, out i))
+                return true;
+            else
+                return false;
+        }
+
+        internal bool isIcNum(string input)
+        {
+            if (Regex.IsMatch(input, @"^[0-9]{3}$"))
+                return true;
+            else
+                return false;
+
         }
 
 

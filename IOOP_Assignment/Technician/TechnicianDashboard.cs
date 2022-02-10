@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,25 @@ namespace IOOP_Assignment
 {
     public partial class TechnicianDashboard : Form
     {
+        public static string name;
+
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Source\Repos\IOOP_Assignment\IOOP_Assignment\LpDoctorDataBase.mdf;Integrated Security=True;";
         public TechnicianDashboard()
         {
             InitializeComponent();
+        }
+
+        public TechnicianDashboard(string n) //technician_name passed
+        {
+            InitializeComponent();
+            name = n;
+        }
+        private void TechnicianDashboard_Load(object sender, EventArgs e)
+        {
+            Technician obj1 = new Technician(name);
+            Technician.viewTechProfile(obj1);
+            lblName.Text = obj1.TechName; //loading name into label
+            obj1.loadOrderTable(dataGrid_AllServ);
         }
 
         //for changes in button color when user hovers over button 
@@ -48,17 +65,27 @@ namespace IOOP_Assignment
             btnLogOut.BackColor = Color.SteelBlue;
         }
 
-        private void btnAccess_PendServ_MouseLeave(object sender, EventArgs e)
+        private void btnAccess_AllServ_MouseLeave(object sender, EventArgs e)
         {
             btnAccess_AllServ.BackColor = Color.LightSkyBlue;
         }
 
-        private void btnAccess_PendServ_MouseEnter(object sender, EventArgs e)
+        private void btnAccess_AllServ_MouseEnter(object sender, EventArgs e)
         {
             btnAccess_AllServ.BackColor = Color.SteelBlue;
         }
 
-        //clicking 'edit'
+        private void btnRefresh_AllServ_MouseLeave(object sender, EventArgs e)
+        {
+            btnRefresh_AllServ.BackColor = Color.LightSkyBlue;
+        }
+
+        private void btnRefresh_AllServ_MouseEnter(object sender, EventArgs e)
+        {
+            btnRefresh_AllServ.BackColor = Color.SteelBlue;
+        }
+
+        //navigating menu
         private void btnAccess_AllServ_Click(object sender, EventArgs e)
         {
             EditServiceRequest ed = new EditServiceRequest();
@@ -67,14 +94,34 @@ namespace IOOP_Assignment
             ed.ShowDialog();
         }
 
-        private void btnAccess_Profile_Click(object sender, EventArgs e)
+        private void btnRefresh_AllServ_Click(object sender, EventArgs e)
         {
-            UpdateTechnicianProfile utp = new UpdateTechnicianProfile();
-            utp.StartPosition = FormStartPosition.Manual;
-            utp.Location = new Point(100, 100);
-            utp.ShowDialog();
+            Technician obj1 = new Technician(name);
+            obj1.loadOrderTable(dataGrid_AllServ);
         }
 
-        //still have to code logout
+        private void btnAccess_Profile_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TechnicianProfile tp = new TechnicianProfile(name);
+            tp.StartPosition = FormStartPosition.Manual;
+            tp.Location = new Point(100, 100);
+            tp.ShowDialog();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+            }
+        }
+
+        //when form is closed
+        /*private void TechnicianDashboard.Closed(object sender, EventArgs e)
+        {
+
+        }*/
     }
 }

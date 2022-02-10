@@ -1,4 +1,4 @@
-﻿namespace IOOPAssignment
+﻿namespace IOOP_Assignment
 {
     partial class UserControlMonthlyIncome
     {

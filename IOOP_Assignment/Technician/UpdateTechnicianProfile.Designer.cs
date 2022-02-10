@@ -35,17 +35,8 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSaveContactDetails = new System.Windows.Forms.Button();
             this.btnResetContactDetails = new System.Windows.Forms.Button();
-            this.txtAddLine1 = new System.Windows.Forms.TextBox();
-            this.lblAddLine1 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblAddLine1Example = new System.Windows.Forms.Label();
-            this.lblAddLine2Example = new System.Windows.Forms.Label();
-            this.lblAddLine2 = new System.Windows.Forms.Label();
-            this.txtAddLine2 = new System.Windows.Forms.TextBox();
-            this.lblPostExample = new System.Windows.Forms.Label();
-            this.lblPost = new System.Windows.Forms.Label();
-            this.masktxtPost = new System.Windows.Forms.MaskedTextBox();
-            this.lblState = new System.Windows.Forms.Label();
-            this.comboState = new System.Windows.Forms.ComboBox();
             this.grpUpdateContactDetails = new System.Windows.Forms.GroupBox();
             this.lblContactExample = new System.Windows.Forms.Label();
             this.lblEmailExample = new System.Windows.Forms.Label();
@@ -109,13 +100,14 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnClose.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnClose.Location = new System.Drawing.Point(1329, 714);
+            this.btnClose.Location = new System.Drawing.Point(1329, 671);
             this.btnClose.Name = "btnClose";
             this.btnClose.Padding = new System.Windows.Forms.Padding(4);
             this.btnClose.Size = new System.Drawing.Size(173, 40);
             this.btnClose.TabIndex = 19;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
             this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
             // 
@@ -123,7 +115,7 @@
             // 
             this.btnSaveContactDetails.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnSaveContactDetails.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSaveContactDetails.Location = new System.Drawing.Point(400, 610);
+            this.btnSaveContactDetails.Location = new System.Drawing.Point(398, 508);
             this.btnSaveContactDetails.Name = "btnSaveContactDetails";
             this.btnSaveContactDetails.Padding = new System.Windows.Forms.Padding(4);
             this.btnSaveContactDetails.Size = new System.Drawing.Size(245, 40);
@@ -137,7 +129,7 @@
             // 
             this.btnResetContactDetails.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnResetContactDetails.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnResetContactDetails.Location = new System.Drawing.Point(132, 610);
+            this.btnResetContactDetails.Location = new System.Drawing.Point(130, 508);
             this.btnResetContactDetails.Name = "btnResetContactDetails";
             this.btnResetContactDetails.Padding = new System.Windows.Forms.Padding(4);
             this.btnResetContactDetails.Size = new System.Drawing.Size(245, 40);
@@ -148,153 +140,43 @@
             this.btnResetContactDetails.MouseEnter += new System.EventHandler(this.btnResetContactDetails_MouseEnter);
             this.btnResetContactDetails.MouseLeave += new System.EventHandler(this.btnResetContactDetails_MouseLeave);
             // 
-            // txtAddLine1
+            // txtAddress
             // 
-            this.txtAddLine1.Location = new System.Drawing.Point(241, 281);
-            this.txtAddLine1.Multiline = true;
-            this.txtAddLine1.Name = "txtAddLine1";
-            this.txtAddLine1.Size = new System.Drawing.Size(435, 34);
-            this.txtAddLine1.TabIndex = 31;
-            // 
-            // lblAddLine1
-            // 
-            this.lblAddLine1.AutoSize = true;
-            this.lblAddLine1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAddLine1.Location = new System.Drawing.Point(241, 253);
-            this.lblAddLine1.Name = "lblAddLine1";
-            this.lblAddLine1.Size = new System.Drawing.Size(127, 22);
-            this.lblAddLine1.TabIndex = 32;
-            this.lblAddLine1.Text = "Address Line 1";
+            this.txtAddress.Location = new System.Drawing.Point(241, 281);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(435, 110);
+            this.txtAddress.TabIndex = 31;
             // 
             // lblAddLine1Example
             // 
             this.lblAddLine1Example.AutoSize = true;
             this.lblAddLine1Example.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblAddLine1Example.Location = new System.Drawing.Point(241, 327);
+            this.lblAddLine1Example.Location = new System.Drawing.Point(241, 402);
             this.lblAddLine1Example.Name = "lblAddLine1Example";
-            this.lblAddLine1Example.Size = new System.Drawing.Size(267, 22);
+            this.lblAddLine1Example.Size = new System.Drawing.Size(385, 44);
             this.lblAddLine1Example.TabIndex = 33;
-            this.lblAddLine1Example.Text = "e.g. No. 44, Jalan Desa Melur 4/1";
-            // 
-            // lblAddLine2Example
-            // 
-            this.lblAddLine2Example.AutoSize = true;
-            this.lblAddLine2Example.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblAddLine2Example.Location = new System.Drawing.Point(241, 443);
-            this.lblAddLine2Example.Name = "lblAddLine2Example";
-            this.lblAddLine2Example.Size = new System.Drawing.Size(248, 22);
-            this.lblAddLine2Example.TabIndex = 36;
-            this.lblAddLine2Example.Text = "e.g. Taman Bandar Connaught";
-            // 
-            // lblAddLine2
-            // 
-            this.lblAddLine2.AutoSize = true;
-            this.lblAddLine2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAddLine2.Location = new System.Drawing.Point(241, 369);
-            this.lblAddLine2.Name = "lblAddLine2";
-            this.lblAddLine2.Size = new System.Drawing.Size(127, 22);
-            this.lblAddLine2.TabIndex = 35;
-            this.lblAddLine2.Text = "Address Line 2";
-            // 
-            // txtAddLine2
-            // 
-            this.txtAddLine2.Location = new System.Drawing.Point(241, 397);
-            this.txtAddLine2.Multiline = true;
-            this.txtAddLine2.Name = "txtAddLine2";
-            this.txtAddLine2.Size = new System.Drawing.Size(435, 34);
-            this.txtAddLine2.TabIndex = 34;
-            // 
-            // lblPostExample
-            // 
-            this.lblPostExample.AutoSize = true;
-            this.lblPostExample.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblPostExample.Location = new System.Drawing.Point(241, 566);
-            this.lblPostExample.Name = "lblPostExample";
-            this.lblPostExample.Size = new System.Drawing.Size(93, 22);
-            this.lblPostExample.TabIndex = 39;
-            this.lblPostExample.Text = "e.g. 56000";
-            // 
-            // lblPost
-            // 
-            this.lblPost.AutoSize = true;
-            this.lblPost.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPost.Location = new System.Drawing.Point(241, 487);
-            this.lblPost.Name = "lblPost";
-            this.lblPost.Size = new System.Drawing.Size(105, 22);
-            this.lblPost.TabIndex = 38;
-            this.lblPost.Text = "Postal Code";
-            // 
-            // masktxtPost
-            // 
-            this.masktxtPost.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.masktxtPost.Location = new System.Drawing.Point(241, 520);
-            this.masktxtPost.Name = "masktxtPost";
-            this.masktxtPost.Size = new System.Drawing.Size(158, 34);
-            this.masktxtPost.TabIndex = 40;
-            // 
-            // lblState
-            // 
-            this.lblState.AutoSize = true;
-            this.lblState.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblState.Location = new System.Drawing.Point(439, 487);
-            this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(51, 22);
-            this.lblState.TabIndex = 41;
-            this.lblState.Text = "State";
-            // 
-            // comboState
-            // 
-            this.comboState.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboState.FormattingEnabled = true;
-            this.comboState.Items.AddRange(new object[] {
-            "Johor",
-            "Kedah",
-            "Kelantan",
-            "Malacca",
-            "Negeri",
-            "Sembilan",
-            "Pahang",
-            "Perak",
-            "Perlis",
-            "Sabah",
-            "Sarawak",
-            "Selangor",
-            "Terengganu",
-            "Federal Territory of Kuala Lumpur",
-            "Federal Territory of Labuan",
-            "Federal Territory of Putrajaya"});
-            this.comboState.Location = new System.Drawing.Point(439, 520);
-            this.comboState.Name = "comboState";
-            this.comboState.Size = new System.Drawing.Size(237, 33);
-            this.comboState.TabIndex = 42;
+            this.lblAddLine1Example.Text = "e.g. No. 44, Jalan Desa Melur 4/1, Bukit Tangan, \r\nShah Alam, Selangor";
             // 
             // grpUpdateContactDetails
             // 
+            this.grpUpdateContactDetails.BackColor = System.Drawing.Color.LightYellow;
             this.grpUpdateContactDetails.Controls.Add(this.lblContactExample);
             this.grpUpdateContactDetails.Controls.Add(this.lblEmailExample);
             this.grpUpdateContactDetails.Controls.Add(this.txtEmail);
             this.grpUpdateContactDetails.Controls.Add(this.txtContact);
             this.grpUpdateContactDetails.Controls.Add(this.lblUpdateContact);
-            this.grpUpdateContactDetails.Controls.Add(this.comboState);
             this.grpUpdateContactDetails.Controls.Add(this.btnSaveContactDetails);
             this.grpUpdateContactDetails.Controls.Add(this.lblUpdateEmail);
-            this.grpUpdateContactDetails.Controls.Add(this.lblState);
             this.grpUpdateContactDetails.Controls.Add(this.btnResetContactDetails);
             this.grpUpdateContactDetails.Controls.Add(this.lblUpdateAddress);
-            this.grpUpdateContactDetails.Controls.Add(this.masktxtPost);
-            this.grpUpdateContactDetails.Controls.Add(this.lblAddLine1);
-            this.grpUpdateContactDetails.Controls.Add(this.lblPostExample);
-            this.grpUpdateContactDetails.Controls.Add(this.txtAddLine1);
-            this.grpUpdateContactDetails.Controls.Add(this.lblPost);
+            this.grpUpdateContactDetails.Controls.Add(this.txtAddress);
             this.grpUpdateContactDetails.Controls.Add(this.lblAddLine1Example);
-            this.grpUpdateContactDetails.Controls.Add(this.lblAddLine2Example);
-            this.grpUpdateContactDetails.Controls.Add(this.txtAddLine2);
-            this.grpUpdateContactDetails.Controls.Add(this.lblAddLine2);
             this.grpUpdateContactDetails.Cursor = System.Windows.Forms.Cursors.Default;
             this.grpUpdateContactDetails.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.grpUpdateContactDetails.Location = new System.Drawing.Point(25, 98);
             this.grpUpdateContactDetails.Name = "grpUpdateContactDetails";
-            this.grpUpdateContactDetails.Size = new System.Drawing.Size(726, 656);
+            this.grpUpdateContactDetails.Size = new System.Drawing.Size(726, 554);
             this.grpUpdateContactDetails.TabIndex = 44;
             this.grpUpdateContactDetails.TabStop = false;
             this.grpUpdateContactDetails.Text = "UPDATE CONTACT DETAILS";
@@ -335,6 +217,7 @@
             // 
             // grpUpdatePW
             // 
+            this.grpUpdatePW.BackColor = System.Drawing.Color.LightYellow;
             this.grpUpdatePW.Controls.Add(this.lblPWGuidelines);
             this.grpUpdatePW.Controls.Add(this.btnSavePW);
             this.grpUpdatePW.Controls.Add(this.btnResetPW);
@@ -446,21 +329,24 @@
             this.lblNewPW.TabIndex = 23;
             this.lblNewPW.Text = "Enter New \r\nPassword";
             // 
-            // UpdateProfile
+            // UpdateTechnicianProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.PeachPuff;
-            this.ClientSize = new System.Drawing.Size(1525, 766);
+            this.ClientSize = new System.Drawing.Size(1525, 723);
+            this.ControlBox = false;
             this.Controls.Add(this.grpUpdatePW);
             this.Controls.Add(this.lblUpdateProfile);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grpUpdateContactDetails);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "UpdateProfile";
+            this.Name = "UpdateTechnicianProfile";
             this.Text = "Update Profile";
+            this.Load += new System.EventHandler(this.UpdateTechnicianProfile_Load);
             this.grpUpdateContactDetails.ResumeLayout(false);
             this.grpUpdateContactDetails.PerformLayout();
             this.grpUpdatePW.ResumeLayout(false);
@@ -478,17 +364,8 @@
         private Button btnClose;
         private Button btnSaveContactDetails;
         private Button btnResetContactDetails;
-        private TextBox txtAddLine1;
-        private Label lblAddLine1;
+        private TextBox txtAddress;
         private Label lblAddLine1Example;
-        private Label lblAddLine2Example;
-        private Label lblAddLine2;
-        private TextBox txtAddLine2;
-        private Label lblPostExample;
-        private Label lblPost;
-        private MaskedTextBox masktxtPost;
-        private Label lblState;
-        private ComboBox comboState;
         private GroupBox grpUpdateContactDetails;
         private GroupBox grpUpdatePW;
         private Label lblConfirmNewPW;

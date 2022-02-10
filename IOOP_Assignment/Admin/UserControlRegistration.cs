@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IOOPAssignment
+namespace IOOP_Assignment
 {
+
     public partial class UserControlRegistration : UserControl
     {
-        private string name;
+        Admin obj = new Admin();
+        
       
         public UserControlRegistration()
         {
@@ -21,18 +23,22 @@ namespace IOOPAssignment
 
         private void UserControlRegistration_Load(object sender, EventArgs e)
         {
+   
+            
 
         }
 
         private void btnRegis_Click(object sender, EventArgs e)
         {
-            name = txtFirstName.Text.ToString();
-            DataValidation obj1 = new DataValidation();
-            if (obj1.isPhoneNum(name) )
-                MessageBox.Show("correct");
+            obj.validateRegisPosition(rdBtnTech,rdBtnRecep);
+            obj.validateRegisCheckComboBx(cmbBxGender, cmbBxEthnic);
+            obj.checking();
+            obj.askToReenter();
+        }
 
-            else
-                MessageBox.Show("wrong");
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,9 +12,27 @@ namespace IOOP_Assignment
 {
     public partial class UpdateTechnicianProfile : Form
     {
+        public static string name;
         public UpdateTechnicianProfile()
         {
             InitializeComponent();
+        }
+        public UpdateTechnicianProfile(string n)
+        {
+            InitializeComponent();
+            name = n;
+        }
+
+        //loading details into fields
+        private void UpdateTechnicianProfile_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show(name);
+            Technician obj1 = new Technician(name);
+            Technician.viewTechProfile(obj1);
+            txtContact.Text = obj1.TechContact;
+            txtEmail.Text = obj1.TechEmail;
+            txtAddress.Text = obj1.TechAddress;
+            txtCurrentPW.Text = obj1.TechPassword;
         }
 
         //for changes in button color when user hovers over button
@@ -72,6 +90,16 @@ namespace IOOP_Assignment
         private void btnResetContactDetails_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //close window button
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            /*TechnicianDashboard td = new TechnicianDashboard();
+            td.StartPosition = FormStartPosition.Manual;
+            td.Location = new Point(100, 100);
+            td.ShowDialog();*/
         }
     }
 }

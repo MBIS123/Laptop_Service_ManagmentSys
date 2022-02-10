@@ -51,5 +51,11 @@ namespace IOOP_Assignment
         {
 
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+        //close window button
     }
 }
