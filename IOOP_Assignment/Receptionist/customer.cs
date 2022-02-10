@@ -11,6 +11,8 @@ namespace IOOP_Assignment
 {
     internal class Customer
     {
+        DataValidation objDataVal = new DataValidation();
+
         private string cusName;
         private string cusGender;
         private string cusIC;
@@ -19,7 +21,7 @@ namespace IOOP_Assignment
         private string cusAddress;
         private string cusDob;
         private string cusUsername;
-        //frmRegNewCus
+        private static bool allcusinfoFilled = true;
 
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
@@ -50,6 +52,13 @@ namespace IOOP_Assignment
         {
             cusUsername = un;
         }
+        internal void allSecFill()
+        {
+            if (!allcusinfoFilled) //some infor are not filled
+            {
+                MessageBox.Show("Please ensure every section was filled !", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
         public string addNewCus()
         {
@@ -57,7 +66,7 @@ namespace IOOP_Assignment
             string status = null;
             con.Open();
             bool exists = false;
-            SqlCommand cmd1 = new SqlCommand("select count(*) from Users where Username= ", con);
+            SqlCommand cmd1 = new SqlCommand("select count(*) from Users where Username= '"+ cusUsername+ "'" ,con);
             exists = (int)cmd1.ExecuteScalar() > 0;
             if (exists)
             {
@@ -65,7 +74,7 @@ namespace IOOP_Assignment
             }
             else
             {
-                SqlCommand cmd2 = new SqlCommand("insert into Users(Username, Password, Role) values (@username, '123456', 'customer')", con);
+                SqlCommand cmd2 = new SqlCommand("insert into Users(Username, Password, User Role) values (@username, '123456', 'customer')", con);
                 SqlCommand cmd3 = new SqlCommand("insert into Customer(Name, Gender, Date of Birth, IC No., Contact No., Email, Address) values(@name, @gender, @dob, @ic, @phone, @email, @address)", con);
                 cmd2.Parameters.AddWithValue("@username", cusUsername);
                 cmd3.Parameters.AddWithValue("@name", cusName);
