@@ -1,4 +1,4 @@
-﻿namespace IOOPAssignment
+﻿namespace IOOP_Assignment
 {
     partial class update_profile
     {
@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(update_profile));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnclear = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
             this.txtconfirmpassw = new System.Windows.Forms.TextBox();
             this.lblconfirmpass = new System.Windows.Forms.Label();
@@ -72,7 +73,7 @@
             this.lblmyaccount = new System.Windows.Forms.Label();
             this.lblwelcome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnclear = new System.Windows.Forms.Button();
+            this.lbl_cusName = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -116,6 +117,17 @@
             this.groupBox1.Size = new System.Drawing.Size(840, 1008);
             this.groupBox1.TabIndex = 78;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnclear
+            // 
+            this.btnclear.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnclear.Location = new System.Drawing.Point(189, 955);
+            this.btnclear.Name = "btnclear";
+            this.btnclear.Size = new System.Drawing.Size(94, 29);
+            this.btnclear.TabIndex = 121;
+            this.btnclear.Text = "CLEAR";
+            this.btnclear.UseVisualStyleBackColor = true;
             // 
             // btnsave
             // 
@@ -404,6 +416,7 @@
             this.llbmy_order.TabIndex = 70;
             this.llbmy_order.TabStop = true;
             this.llbmy_order.Text = "MY  ORDER";
+            this.llbmy_order.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbmy_order_LinkClicked);
             // 
             // llbchange_serv
             // 
@@ -417,6 +430,7 @@
             this.llbchange_serv.TabIndex = 69;
             this.llbchange_serv.TabStop = true;
             this.llbchange_serv.Text = "CHANGE  SERVICE";
+            this.llbchange_serv.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbchange_serv_LinkClicked);
             // 
             // label2
             // 
@@ -432,7 +446,7 @@
             this.groupBox2.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.llbchange_serv);
-            this.groupBox2.Location = new System.Drawing.Point(-20, 279);
+            this.groupBox2.Location = new System.Drawing.Point(-20, 343);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(309, 47);
             this.groupBox2.TabIndex = 73;
@@ -454,7 +468,7 @@
             this.groupBox3.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.llbmy_order);
-            this.groupBox3.Location = new System.Drawing.Point(0, 349);
+            this.groupBox3.Location = new System.Drawing.Point(0, 413);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(290, 47);
             this.groupBox3.TabIndex = 74;
@@ -476,7 +490,7 @@
             this.groupBox4.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox4.Controls.Add(this.llbaccount_setting);
             this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Location = new System.Drawing.Point(0, 423);
+            this.groupBox4.Location = new System.Drawing.Point(0, 487);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(281, 47);
             this.groupBox4.TabIndex = 75;
@@ -493,6 +507,7 @@
             this.llbaccount_setting.TabIndex = 36;
             this.llbaccount_setting.TabStop = true;
             this.llbaccount_setting.Text = "ACCOUNT  SETTING";
+            this.llbaccount_setting.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbaccount_setting_LinkClicked);
             // 
             // label20
             // 
@@ -510,7 +525,7 @@
             this.groupBox5.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Controls.Add(this.llblogout);
-            this.groupBox5.Location = new System.Drawing.Point(-4, 493);
+            this.groupBox5.Location = new System.Drawing.Point(-4, 557);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(293, 47);
             this.groupBox5.TabIndex = 76;
@@ -531,7 +546,7 @@
             // 
             this.lblmyaccount.AutoSize = true;
             this.lblmyaccount.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblmyaccount.Location = new System.Drawing.Point(40, 211);
+            this.lblmyaccount.Location = new System.Drawing.Point(40, 289);
             this.lblmyaccount.Name = "lblmyaccount";
             this.lblmyaccount.Size = new System.Drawing.Size(175, 35);
             this.lblmyaccount.TabIndex = 68;
@@ -541,32 +556,31 @@
             // 
             this.lblwelcome.AutoSize = true;
             this.lblwelcome.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblwelcome.Location = new System.Drawing.Point(24, 174);
+            this.lblwelcome.Location = new System.Drawing.Point(41, 205);
             this.lblwelcome.Name = "lblwelcome";
-            this.lblwelcome.Size = new System.Drawing.Size(210, 25);
+            this.lblwelcome.Size = new System.Drawing.Size(169, 25);
             this.lblwelcome.TabIndex = 67;
-            this.lblwelcome.Text = "Welcome back, Ken";
+            this.lblwelcome.Text = "Welcome back !";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(57, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(57, 33);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(145, 162);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 79;
             this.pictureBox1.TabStop = false;
             // 
-            // btnclear
+            // lbl_cusName
             // 
-            this.btnclear.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnclear.Location = new System.Drawing.Point(189, 955);
-            this.btnclear.Name = "btnclear";
-            this.btnclear.Size = new System.Drawing.Size(94, 29);
-            this.btnclear.TabIndex = 121;
-            this.btnclear.Text = "CLEAR";
-            this.btnclear.UseVisualStyleBackColor = true;
+            this.lbl_cusName.AutoSize = true;
+            this.lbl_cusName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_cusName.Location = new System.Drawing.Point(74, 241);
+            this.lbl_cusName.Name = "lbl_cusName";
+            this.lbl_cusName.Size = new System.Drawing.Size(0, 25);
+            this.lbl_cusName.TabIndex = 80;
             // 
             // update_profile
             // 
@@ -574,6 +588,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(1151, 987);
+            this.Controls.Add(this.lbl_cusName);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
@@ -649,5 +664,6 @@
         private Label label29;
         private PictureBox pictureBox1;
         private Button btnclear;
+        private Label lbl_cusName;
     }
 }

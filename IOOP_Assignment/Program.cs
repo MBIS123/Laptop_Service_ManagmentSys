@@ -1,9 +1,11 @@
 
 
 
+using IOOP_Assignment.Receptionist;
+using IOOPAssignment;
 using System.Data.SqlClient;
 
-=======
+
 
 namespace IOOP_Assignment
 {
@@ -16,7 +18,7 @@ namespace IOOP_Assignment
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new AdminPage());
+            Application.Run(new frmLogin());
             
         }
     }

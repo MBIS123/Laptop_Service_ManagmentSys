@@ -30,36 +30,41 @@ namespace IOOP_Assignment
             con.Open();
 
             //SqlCommand objectName = new Constructor(sqlQuery, connectionString)
-            SqlCommand cmd = new SqlCommand("select count(*) from users where UserName = '" + username + "' and Password = '" + password + "'", con);
+            SqlCommand cmd = new SqlCommand("select count(*) from [Users] where UserName = '" + username + "' and Password = '" + password + "'", con);
 
             int count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
 
             if (count > 0) //redirection to admin, customer, receptionist or technician
             {
-                SqlCommand cmd2 = new SqlCommand("select [User Role] from users where username = '" + username + "' and password = '" + password + "'", con);
+                SqlCommand cmd2 = new SqlCommand("select [User Role] from Users where UserName = '" + username + "' and Password = '" + password + "'", con);
                 string user_role = cmd2.ExecuteScalar().ToString();
-                /*
+                
                 if (user_role == "admin")
                 {
                     AdminPage a = new AdminPage();
                     a.ShowDialog();
                 }
-                else if (user_role == "customer")
-                {
-                    //wenhui, you need to change your namespace to IOOP_Assignment first. 
-                }
                 else if (user_role == "receptionist")
                 {
                     frmLogin f = new frmLogin();
                     f.ShowDialog();
-                }*/
-                if (user_role == "technician")
+                }
+                
+                else if (user_role == "customer")
+                {
+                    update_profile u = new update_profile(un);// pass customer name and display at update profile form
+                    change_service d = new change_service(un); // pass customer name and display at change service form
+                    Myorder c = new Myorder(un);// pass customer name and display at my order form
+                    c.ShowDialog();
+                }
+                else if (user_role == "technician")
                 {
                     SqlCommand cmd3 = new SqlCommand("select [name] from technician where UserID = (select UserID from users where username = '" + username + "')", con);
                     string technician_name = cmd3.ExecuteScalar().ToString();
-                    TechnicianDashboard td = new TechnicianDashboard(technician_name); 
+                    TechnicianDashboard td = new TechnicianDashboard(technician_name);
                     td.ShowDialog(); //adding a simple comment here
                 }
+       
             }
             else
                 status = "Incorrect username or password entered!";
