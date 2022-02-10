@@ -16,5 +16,10 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
         }
+
+        private void frmReceipt_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
