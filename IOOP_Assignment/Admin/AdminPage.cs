@@ -19,7 +19,6 @@ namespace IOOP_Assignment
             userControlAdminDashBoard1.Show();
             userControlAdminDashBoard1.BringToFront();
 
-
         }
 
       

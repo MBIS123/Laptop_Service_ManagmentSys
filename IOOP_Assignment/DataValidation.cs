@@ -33,8 +33,7 @@ namespace IOOP_Assignment
 
         }
 
-        internal bool isInt(string input){
-          }//return true if string input is number
+
 
         internal bool isPassword(string input)
             // 1) It must contain at least a number
@@ -59,7 +58,6 @@ namespace IOOP_Assignment
         }
 
         internal bool isInt(string input)
-
         {
             int temp;
             if (int.TryParse(input, out temp))
