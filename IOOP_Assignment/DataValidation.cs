@@ -34,7 +34,6 @@ namespace IOOP_Assignment
         }
 
 
-
         internal bool isPassword(string input)
             // 1) It must contain at least a number
             // 2) at least one upper case letter
