@@ -524,6 +524,7 @@
             this.btnPay.TabIndex = 55;
             this.btnPay.Text = "Confirm Payment";
             this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // btnClear
             // 
