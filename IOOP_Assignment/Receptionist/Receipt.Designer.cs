@@ -1,4 +1,4 @@
-﻿namespace Assignment
+﻿namespace IOOP_Assignment
 {
     partial class frmReceipt
     {
@@ -17,7 +17,6 @@
             {
                 components.Dispose();
             }
-            base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
@@ -63,7 +62,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            this.SuspendLayout();
+
             // 
             // lblAddress3
             // 
@@ -375,39 +374,12 @@
             // 
             // frmReceipt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(791, 600);
-            this.Controls.Add(this.lblThx);
-            this.Controls.Add(this.lblRcn);
-            this.Controls.Add(this.lblInvoice);
-            this.Controls.Add(this.lblCustomer);
-            this.Controls.Add(this.lblCustomerT);
-            this.Controls.Add(this.lblRcnT);
-            this.Controls.Add(this.lblInvoiceT);
-            this.Controls.Add(this.lblContact);
-            this.Controls.Add(this.pictureBoxLogo);
-            this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.lblDateT);
-            this.Controls.Add(this.lblAddress3);
-            this.Controls.Add(this.lblAddress2);
-            this.Controls.Add(this.lblDesign2);
-            this.Controls.Add(this.lblAddress1);
-            this.Controls.Add(this.lblDesign1);
-            this.Controls.Add(this.lblTitle);
-            this.Name = "frmReceipt";
-            this.Text = "Receipt";
-            this.Load += new System.EventHandler(this.frmReceipt_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+
 
         }
 
