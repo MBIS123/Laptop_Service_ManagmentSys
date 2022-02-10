@@ -1,4 +1,4 @@
-﻿namespace IOOPAssignment
+﻿namespace IOOP_Assignment
 {
     partial class Myorder
     {
@@ -37,9 +37,15 @@
             this.llbaccount_setting = new System.Windows.Forms.LinkLabel();
             this.llblogout = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnclear = new System.Windows.Forms.Button();
+            this.btnsave = new System.Windows.Forms.Button();
+            this.lblexpected_collect_date = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtreview = new System.Windows.Forms.TextBox();
             this.lblcollec_date = new System.Windows.Forms.Label();
-            this.lblsuggest = new System.Windows.Forms.Label();
+            this.lblstatus = new System.Windows.Forms.Label();
             this.lblamount_pay = new System.Windows.Forms.Label();
             this.lblserv_desc = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -68,12 +74,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblexpected_collect_date = new System.Windows.Forms.Label();
-            this.btnsave = new System.Windows.Forms.Button();
-            this.btnclear = new System.Windows.Forms.Button();
+            this.lbl_cusName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logopic)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -97,17 +98,17 @@
             // 
             this.lblwelcome.AutoSize = true;
             this.lblwelcome.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblwelcome.Location = new System.Drawing.Point(21, 205);
+            this.lblwelcome.Location = new System.Drawing.Point(45, 205);
             this.lblwelcome.Name = "lblwelcome";
-            this.lblwelcome.Size = new System.Drawing.Size(210, 25);
+            this.lblwelcome.Size = new System.Drawing.Size(169, 25);
             this.lblwelcome.TabIndex = 32;
-            this.lblwelcome.Text = "Welcome back, Ken";
+            this.lblwelcome.Text = "Welcome back !";
             // 
             // lblmyaccount
             // 
             this.lblmyaccount.AutoSize = true;
             this.lblmyaccount.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblmyaccount.Location = new System.Drawing.Point(40, 246);
+            this.lblmyaccount.Location = new System.Drawing.Point(40, 283);
             this.lblmyaccount.Name = "lblmyaccount";
             this.lblmyaccount.Size = new System.Drawing.Size(175, 35);
             this.lblmyaccount.TabIndex = 33;
@@ -119,12 +120,13 @@
             this.llbchange_serv.BackColor = System.Drawing.Color.PeachPuff;
             this.llbchange_serv.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.llbchange_serv.LinkColor = System.Drawing.Color.Black;
-            this.llbchange_serv.Location = new System.Drawing.Point(40, 320);
+            this.llbchange_serv.Location = new System.Drawing.Point(40, 349);
             this.llbchange_serv.Name = "llbchange_serv";
             this.llbchange_serv.Size = new System.Drawing.Size(191, 23);
             this.llbchange_serv.TabIndex = 34;
             this.llbchange_serv.TabStop = true;
             this.llbchange_serv.Text = "CHANGE  SERVICE";
+            this.llbchange_serv.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbchange_serv_LinkClicked);
             // 
             // linkLabel2
             // 
@@ -132,7 +134,7 @@
             this.linkLabel2.BackColor = System.Drawing.Color.PeachPuff;
             this.linkLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.linkLabel2.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel2.Location = new System.Drawing.Point(40, 397);
+            this.linkLabel2.Location = new System.Drawing.Point(40, 426);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(121, 23);
             this.linkLabel2.TabIndex = 35;
@@ -150,6 +152,7 @@
             this.llbaccount_setting.TabIndex = 36;
             this.llbaccount_setting.TabStop = true;
             this.llbaccount_setting.Text = "ACCOUNT  SETTING";
+            this.llbaccount_setting.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbaccount_setting_LinkClicked);
             // 
             // llblogout
             // 
@@ -157,7 +160,7 @@
             this.llblogout.BackColor = System.Drawing.Color.PeachPuff;
             this.llblogout.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.llblogout.LinkColor = System.Drawing.Color.Black;
-            this.llblogout.Location = new System.Drawing.Point(40, 531);
+            this.llblogout.Location = new System.Drawing.Point(40, 560);
             this.llblogout.Name = "llblogout";
             this.llblogout.Size = new System.Drawing.Size(98, 23);
             this.llblogout.TabIndex = 37;
@@ -175,7 +178,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtreview);
             this.groupBox1.Controls.Add(this.lblcollec_date);
-            this.groupBox1.Controls.Add(this.lblsuggest);
+            this.groupBox1.Controls.Add(this.lblstatus);
             this.groupBox1.Controls.Add(this.lblamount_pay);
             this.groupBox1.Controls.Add(this.lblserv_desc);
             this.groupBox1.Controls.Add(this.label13);
@@ -200,6 +203,66 @@
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             // 
+            // btnclear
+            // 
+            this.btnclear.Location = new System.Drawing.Point(201, 921);
+            this.btnclear.Name = "btnclear";
+            this.btnclear.Size = new System.Drawing.Size(94, 29);
+            this.btnclear.TabIndex = 67;
+            this.btnclear.Text = "CLEAR";
+            this.btnclear.UseVisualStyleBackColor = true;
+            this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
+            // 
+            // btnsave
+            // 
+            this.btnsave.Location = new System.Drawing.Point(65, 921);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(94, 29);
+            this.btnsave.TabIndex = 66;
+            this.btnsave.Text = "SAVE";
+            this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
+            // 
+            // lblexpected_collect_date
+            // 
+            this.lblexpected_collect_date.AutoSize = true;
+            this.lblexpected_collect_date.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblexpected_collect_date.Location = new System.Drawing.Point(65, 705);
+            this.lblexpected_collect_date.Name = "lblexpected_collect_date";
+            this.lblexpected_collect_date.Size = new System.Drawing.Size(0, 20);
+            this.lblexpected_collect_date.TabIndex = 65;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(372, 651);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(145, 23);
+            this.label7.TabIndex = 63;
+            this.label7.Text = "Collection Date ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.PeachPuff;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(372, 665);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(141, 20);
+            this.label8.TabIndex = 64;
+            this.label8.Text = "----------------------";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Wingdings 2", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(326, 643);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 30);
+            this.label3.TabIndex = 62;
+            this.label3.Text = "e";
+            // 
             // txtreview
             // 
             this.txtreview.BackColor = System.Drawing.Color.White;
@@ -215,20 +278,17 @@
             this.lblcollec_date.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblcollec_date.Location = new System.Drawing.Point(372, 705);
             this.lblcollec_date.Name = "lblcollec_date";
-            this.lblcollec_date.Size = new System.Drawing.Size(77, 20);
+            this.lblcollec_date.Size = new System.Drawing.Size(0, 20);
             this.lblcollec_date.TabIndex = 60;
-            this.lblcollec_date.Text = "10/11/2021";
             // 
-            // lblsuggest
+            // lblstatus
             // 
-            this.lblsuggest.AutoSize = true;
-            this.lblsuggest.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblsuggest.Location = new System.Drawing.Point(62, 545);
-            this.lblsuggest.Name = "lblsuggest";
-            this.lblsuggest.Size = new System.Drawing.Size(429, 40);
-            this.lblsuggest.TabIndex = 59;
-            this.lblsuggest.Text = "There are virus inside the laptop. \r\nWe highly suggest you to change service to r" +
-    "emove the virus.";
+            this.lblstatus.AutoSize = true;
+            this.lblstatus.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblstatus.Location = new System.Drawing.Point(62, 545);
+            this.lblstatus.Name = "lblstatus";
+            this.lblstatus.Size = new System.Drawing.Size(0, 20);
+            this.lblstatus.TabIndex = 59;
             // 
             // lblamount_pay
             // 
@@ -236,9 +296,8 @@
             this.lblamount_pay.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblamount_pay.Location = new System.Drawing.Point(65, 405);
             this.lblamount_pay.Name = "lblamount_pay";
-            this.lblamount_pay.Size = new System.Drawing.Size(52, 20);
+            this.lblamount_pay.Size = new System.Drawing.Size(0, 20);
             this.lblamount_pay.TabIndex = 58;
-            this.lblamount_pay.Text = "RM 50";
             // 
             // lblserv_desc
             // 
@@ -246,9 +305,8 @@
             this.lblserv_desc.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblserv_desc.Location = new System.Drawing.Point(65, 256);
             this.lblserv_desc.Name = "lblserv_desc";
-            this.lblserv_desc.Size = new System.Drawing.Size(195, 20);
+            this.lblserv_desc.Size = new System.Drawing.Size(0, 20);
             this.lblserv_desc.TabIndex = 57;
-            this.lblserv_desc.Text = "The service still in pending ";
             // 
             // label13
             // 
@@ -440,7 +498,7 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Location = new System.Drawing.Point(-26, 308);
+            this.groupBox2.Location = new System.Drawing.Point(-26, 337);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(288, 47);
             this.groupBox2.TabIndex = 54;
@@ -461,7 +519,7 @@
             // 
             this.llbmy_order.BackColor = System.Drawing.Color.PeachPuff;
             this.llbmy_order.Controls.Add(this.label16);
-            this.llbmy_order.Location = new System.Drawing.Point(-7, 384);
+            this.llbmy_order.Location = new System.Drawing.Point(-7, 413);
             this.llbmy_order.Name = "llbmy_order";
             this.llbmy_order.Size = new System.Drawing.Size(288, 47);
             this.llbmy_order.TabIndex = 55;
@@ -483,7 +541,7 @@
             this.groupBox4.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.llbaccount_setting);
-            this.groupBox4.Location = new System.Drawing.Point(2, 450);
+            this.groupBox4.Location = new System.Drawing.Point(2, 479);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(276, 47);
             this.groupBox4.TabIndex = 55;
@@ -504,7 +562,7 @@
             // 
             this.groupBox5.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox5.Controls.Add(this.label14);
-            this.groupBox5.Location = new System.Drawing.Point(-5, 521);
+            this.groupBox5.Location = new System.Drawing.Point(-5, 550);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(288, 47);
             this.groupBox5.TabIndex = 55;
@@ -521,71 +579,22 @@
             this.label14.TabIndex = 56;
             this.label14.Text = "6";
             // 
-            // label3
+            // lbl_cusName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Wingdings 2", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(326, 643);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 30);
-            this.label3.TabIndex = 62;
-            this.label3.Text = "e";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(372, 651);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 23);
-            this.label7.TabIndex = 63;
-            this.label7.Text = "Collection Date ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.PeachPuff;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(372, 665);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(141, 20);
-            this.label8.TabIndex = 64;
-            this.label8.Text = "----------------------";
-            // 
-            // lblexpected_collect_date
-            // 
-            this.lblexpected_collect_date.AutoSize = true;
-            this.lblexpected_collect_date.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblexpected_collect_date.Location = new System.Drawing.Point(65, 705);
-            this.lblexpected_collect_date.Name = "lblexpected_collect_date";
-            this.lblexpected_collect_date.Size = new System.Drawing.Size(77, 20);
-            this.lblexpected_collect_date.TabIndex = 65;
-            this.lblexpected_collect_date.Text = "10/11/2021";
-            // 
-            // btnsave
-            // 
-            this.btnsave.Location = new System.Drawing.Point(65, 921);
-            this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(94, 29);
-            this.btnsave.TabIndex = 66;
-            this.btnsave.Text = "SAVE";
-            this.btnsave.UseVisualStyleBackColor = true;
-            // 
-            // btnclear
-            // 
-            this.btnclear.Location = new System.Drawing.Point(201, 921);
-            this.btnclear.Name = "btnclear";
-            this.btnclear.Size = new System.Drawing.Size(94, 29);
-            this.btnclear.TabIndex = 67;
-            this.btnclear.Text = "CLEAR";
-            this.btnclear.UseVisualStyleBackColor = true;
+            this.lbl_cusName.AutoSize = true;
+            this.lbl_cusName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_cusName.Location = new System.Drawing.Point(73, 236);
+            this.lbl_cusName.Name = "lbl_cusName";
+            this.lbl_cusName.Size = new System.Drawing.Size(0, 25);
+            this.lbl_cusName.TabIndex = 56;
             // 
             // Myorder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
-            this.ClientSize = new System.Drawing.Size(1061, 964);
+            this.ClientSize = new System.Drawing.Size(1064, 968);
+            this.Controls.Add(this.lbl_cusName);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.llblogout);
@@ -601,6 +610,7 @@
             this.Controls.Add(this.groupBox5);
             this.Name = "Myorder";
             this.Text = "MyOrder";
+            this.Load += new System.EventHandler(this.Myorder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logopic)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -629,7 +639,7 @@
         private GroupBox groupBox1;
         private TextBox txtreview;
         private Label lblcollec_date;
-        private Label lblsuggest;
+        private Label lblstatus;
         private Label lblamount_pay;
         private Label lblserv_desc;
         private Label label13;
@@ -664,5 +674,6 @@
         private Label label7;
         private Label label8;
         private Label label3;
+        private Label lbl_cusName;
     }
 }

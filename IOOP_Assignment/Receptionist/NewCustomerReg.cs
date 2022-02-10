@@ -12,6 +12,7 @@ namespace IOOP_Assignment
 {
     public partial class frmRegNewCus : Form
     {
+        Customer obj1 = new Customer();
         public frmRegNewCus()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace IOOP_Assignment
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             Customer obj1 = new Customer(txtName.Text,Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, dateTimePickerDate.Text, txtUsername.Text);
+            obj1.allSecFill();
             MessageBox.Show(obj1.addNewCus());
         }
 
