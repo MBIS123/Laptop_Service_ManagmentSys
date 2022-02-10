@@ -12,7 +12,8 @@ namespace IOOP_Assignment
         {
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new AdminPage());
+            Application.Run(new frmPayment());
+
             
         }
     }
