@@ -48,11 +48,19 @@ namespace IOOP_Assignment
         private void btnSaveContactDetails_Click(object sender, EventArgs e)
         {
             //validation
-            DataValidation objval = new DataValidation(txtContact.Text);
+            DataValidation objval = new DataValidation();
+            if (objval.isPhoneNum(txtContact.Text)) //&& (objval.isEmail(txtEmail.Text)) && (objval.isAddress(txtAddress.Text)) 
+            {
+                //calling the update method
+                Technician obj1 = new Technician(name);
+                MessageBox.Show(obj1.updateTechProfileContactDetails(txtContact.Text, txtEmail.Text, txtAddress.Text));
+            }
+            else
+            {
+                MessageBox.Show("Invalid!");
+            }
 
-            //calling the update method
-            /*Technician obj1 = new Technician(name);
-            MessageBox.Show(obj1.updateTechProfileContactDetails(txtContact.Text, txtEmail.Text, txtAddress.Text));*/
+            
         }
 
         //close window button
