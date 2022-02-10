@@ -24,16 +24,16 @@ namespace IOOP_Assignment
                 return false;
         }
 
-        internal bool isPhoneNum(string input)
+        internal bool isPhoneNum(string input) 
         {
-            if ( Regex.IsMatch(input, @"^(\+?6?01)[02-9]-*[0-9]{7}$|^(\+?6?01)[1]-*[0-9]{8}$"))
+            if (Regex.IsMatch(input, @"^(\+?6?01)[02-9]-*[0-9]{7}$|^(\+?6?01)[1]-*[0-9]{8}$"))
                 return true;
             else
-                return false ;
-            
+                return false;
+
         }
 
-        internal bool isInt(string input)
+        internal bool isInt(string input) //return true if string input is number
         {
             int temp;
             if (int.TryParse(input, out temp))
@@ -42,19 +42,19 @@ namespace IOOP_Assignment
                 return false;
         }
 
-        internal bool isIcNum(TextBox input)
+        internal bool isIcNum(TextBox input) //return true if the input from textbox match the IC format
         {
             int icNum;
 
             if (!(input.Text.Contains('-')))
                 return false;
-            for (int i =0; i <3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 partOfIC[i] = input.Text.Split('-')[i];
             }
             for (int i = 0; i < 3; i++)
             {
-                if(!(int.TryParse(partOfIC[i] , out icNum)))
+                if (!(int.TryParse(partOfIC[i], out icNum)))
                 {
                     return false;
                 }
@@ -75,10 +75,10 @@ namespace IOOP_Assignment
 
         }
 
-        internal bool isStringNull(TextBox input) //return true if the text box has null or empty or whispace value
+        internal bool isStringNull(TextBox input) //return true if the text box has null or empty or whitespace value
         {
-            if(string.IsNullOrWhiteSpace(input.Text))
-                return true ;
+            if (string.IsNullOrWhiteSpace(input.Text))
+                return true;
             else
                 return false;
         }
@@ -89,11 +89,18 @@ namespace IOOP_Assignment
             if (DateTime.TryParse(input.Text, out tempDate))
                 return true;
             else
-                return false ;
+                return false;
 
         }
-        internal bool 
-      
+        internal bool isEmailAddress(TextBox input) // return true if email was correct
+        {
+            if (Regex.IsMatch(input.Text.Trim(), @"^[a-zA-Z0-9]{2,30}@[a-zA-Z0-9][\w\.]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
+                return true ;
+            else
+                return false ;
+        }
+
+
 
 
     }

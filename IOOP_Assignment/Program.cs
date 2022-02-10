@@ -1,9 +1,4 @@
-
-
-
 using System.Data.SqlClient;
-
-
 
 namespace IOOP_Assignment
 {
@@ -17,7 +12,7 @@ namespace IOOP_Assignment
         {
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new frmLogin());
+            Application.Run(new AdminPage());
             
         }
     }
