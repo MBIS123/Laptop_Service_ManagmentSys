@@ -82,7 +82,7 @@ namespace IOOP_Assignment
                 return false;
         }
 
-        internal bool isDate(TextBox input)
+        internal bool isDate(TextBox input) // return true it is a date
         {
             DateTime tempDate;
             if (DateTime.TryParse(input.Text, out tempDate))
@@ -91,7 +91,7 @@ namespace IOOP_Assignment
                 return false ;
 
         }
-
+        internal bool 
       
 
 
