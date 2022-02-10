@@ -1,4 +1,4 @@
-﻿namespace IOOP_Assignment.Receptionist
+﻿namespace IOOP_Assignment
 {
     partial class frmPayment
     {
@@ -17,7 +17,6 @@
             {
                 components.Dispose();
             }
-            base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
@@ -56,7 +55,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatus)).BeginInit();
-            this.SuspendLayout();
+
             // 
             // groupBox5
             // 
@@ -233,6 +232,7 @@
             this.dataGridViewStatus.ReadOnly = true;
             this.dataGridViewStatus.RowHeadersWidth = 62;
             this.dataGridViewStatus.RowTemplate.Height = 33;
+            this.dataGridViewStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewStatus.Size = new System.Drawing.Size(717, 350);
             this.dataGridViewStatus.TabIndex = 51;
             // 
@@ -286,27 +286,7 @@
             // 
             // frmPayment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(944, 570);
-            this.Controls.Add(this.txtAmt);
-            this.Controls.Add(this.lblAmt);
-            this.Controls.Add(this.btnPayment);
-            this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.lblPayment);
-            this.Controls.Add(this.dataGridViewStatus);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lblRole);
-            this.Controls.Add(this.lblRcn);
-            this.Controls.Add(this.pictureBoxLogo);
-            this.Controls.Add(this.splitter2);
-            this.Name = "frmPayment";
-            this.Text = "Payment";
+
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -319,8 +299,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatus)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+
 
         }
 

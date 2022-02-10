@@ -59,7 +59,9 @@ namespace IOOP_Assignment
         public static void viewTechProfile(Technician o1)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from Technician where Name = '" + o1.techName + "'", con); //how do i save name?
+            SqlCommand cmd = new SqlCommand("select * from Technician where Name = '" + o1.techName + "'", con);
+            SqlCommand cmd2 = new SqlCommand("select [Password] from Users, Technician where Users.UserID = Technician.UserID and Technician.Name = '" + o1.techName + "'", con);
+            o1.techPassword = cmd2.ExecuteScalar().ToString();
             SqlDataReader sqlDataReader = cmd.ExecuteReader();
             while (sqlDataReader.Read())
             {
@@ -71,6 +73,27 @@ namespace IOOP_Assignment
                 o1.techEmail = sqlDataReader.GetString(8);
                 o1.techAddress = sqlDataReader.GetString(9);
             }
+            con.Close();
+        }
+
+        public string updateTechProfileContactDetails(string cont, string em, string add)
+        {
+            string status;
+            con.Open();
+
+            techContact = cont;
+            techEmail = em;
+            techAddress = add;
+
+            SqlCommand cmd = new SqlCommand("update [Technician] set [Contact No.] = '" + techContact + "', [Email] = '" + techEmail + "', [Address] = '" + techAddress + "' where [Name] = '" + techName + "'", con);
+            int i = cmd.ExecuteNonQuery();
+            if (i != 0)
+                status = "Your details have been successfully updated.";
+            else
+                status = "Update Unsuccessful. Please try again.";
+            con.Close();
+
+            return status;
         }
     }
 }
