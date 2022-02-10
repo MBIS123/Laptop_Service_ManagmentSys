@@ -13,8 +13,6 @@ namespace IOOP_Assignment
     public class DataValidation
     {
         private string[] partOfIC = new string[3];
-        
-
 
         internal bool isString(string input)
         {
@@ -26,9 +24,12 @@ namespace IOOP_Assignment
                 return false;
         }
 
-        internal bool isPhoneNum(TextBox input)
+        internal bool isPhoneNum(string input)
         {
-            return true;
+            if ( Regex.IsMatch(input, @"^(\+?6?01)[02-9]-*[0-9]{7}$|^(\+?6?01)[1]-*[0-9]{8}$"))
+                return true;
+            else
+                return false ;
             
         }
 
