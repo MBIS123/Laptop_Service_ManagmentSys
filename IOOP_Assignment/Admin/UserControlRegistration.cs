@@ -14,6 +14,7 @@ namespace IOOP_Assignment
     public partial class UserControlRegistration : UserControl
     {
         Admin obj = new Admin();
+        DataValidation validtObj = new DataValidation();    
         
       
         public UserControlRegistration()
@@ -34,6 +35,8 @@ namespace IOOP_Assignment
             obj.validateRegisCheckComboBx(cmbBxGender, cmbBxEthnic);
             obj.checking();
             obj.askToReenter();
+
+
         }
 
         private void txtFirstName_TextChanged(object sender, EventArgs e)

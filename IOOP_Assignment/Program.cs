@@ -16,7 +16,8 @@ namespace IOOP_Assignment
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmPayment());
+
+            Application.Run(new frmLogin());
             
         }
     }
