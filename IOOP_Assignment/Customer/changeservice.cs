@@ -9,18 +9,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace IOOPAssignment
+namespace IOOP_Assignment
 {
     public partial class change_service : Form
     {
+        public static string name;
         string Type;
         int index;
-
+        public change_service(string n)
+        {
+            InitializeComponent();
+            name = n;
+        }
         public change_service()
         {
             InitializeComponent();
         }
+        private void change_service_Load(object sender, EventArgs e)
+        {
+            lbl_cusName.Text = name;
 
+        }
         private void rdb_normal_CheckedChanged(object sender, EventArgs e)
         {
             Type = "Normal";
@@ -42,7 +51,7 @@ namespace IOOPAssignment
             if (lstservices.SelectedItems.Count == 1 && (rdb_normal.Checked || rdb_urgent.Checked))
             {
                 lbl_decided_change_service.Text = "You have change service from " + decide_change_service + " with " + Type + " successfully";
-                Customer obj1 = new Customer(index, Type);
+                Customers obj1 = new Customers(index, Type);
                 MessageBox.Show(obj1.changeservice());
             }
             else
@@ -50,9 +59,16 @@ namespace IOOPAssignment
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void llbmy_order_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Myorder order = new Myorder();
+            order.ShowDialog();
+        }
 
+        private void llbaccount_setting_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            update_profile up_prof = new update_profile();
+            up_prof.ShowDialog();
         }
 
         
