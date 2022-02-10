@@ -4,7 +4,7 @@ namespace IOOP_Assignment
 {
     public partial class AdminPage : Form
     {
-  
+
         public AdminPage()
         {
             InitializeComponent();
@@ -18,7 +18,8 @@ namespace IOOP_Assignment
             pcBxDashBrd.Show();
             userControlAdminDashBoard1.Show();
             userControlAdminDashBoard1.BringToFront();
-            
+
+
         }
 
       
