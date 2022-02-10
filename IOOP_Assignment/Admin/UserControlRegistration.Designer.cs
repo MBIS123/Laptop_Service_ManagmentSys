@@ -53,6 +53,7 @@
             this.lblStaffRegisTitle = new System.Windows.Forms.Label();
             this.lnlCtnJobPost = new System.Windows.Forms.Label();
             this.txtDateOfBirth = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancelRegis
@@ -192,11 +193,13 @@
             // 
             // cmbBxEthnic
             // 
+            this.cmbBxEthnic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(190)))), ((int)(((byte)(253)))));
+            this.cmbBxEthnic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBxEthnic.FormattingEnabled = true;
             this.cmbBxEthnic.Items.AddRange(new object[] {
-            "Malays ",
-            "Chinese",
             "Indians ",
+            "Malays",
+            "Chinese ",
             "Other"});
             this.cmbBxEthnic.Location = new System.Drawing.Point(204, 241);
             this.cmbBxEthnic.MinimumSize = new System.Drawing.Size(140, 0);
@@ -224,6 +227,8 @@
             // 
             // cmbBxGender
             // 
+            this.cmbBxGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(190)))), ((int)(((byte)(253)))));
+            this.cmbBxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBxGender.FormattingEnabled = true;
             this.cmbBxGender.Items.AddRange(new object[] {
             "Male",
@@ -327,12 +332,22 @@
             this.txtDateOfBirth.Size = new System.Drawing.Size(170, 30);
             this.txtDateOfBirth.TabIndex = 225;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(461, 216);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 15);
+            this.label1.TabIndex = 226;
+            this.label1.Text = "(YYYY-MM-DD)";
+            // 
             // UserControlRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDateOfBirth);
             this.Controls.Add(this.btnCancelRegis);
             this.Controls.Add(this.btnRegis);
@@ -396,5 +411,6 @@
         private Label lnlCtnJobPost;
         internal TextBox txtContactNo;
         private TextBox txtDateOfBirth;
+        private Label label1;
     }
 }

@@ -13,7 +13,7 @@ namespace IOOP_Assignment
     public class DataValidation
     {
         private string[] partOfIC = new string[3];
-        private string[] partOfPhoneNum = new string[2];
+        
 
 
         internal bool isString(string input)
@@ -34,8 +34,8 @@ namespace IOOP_Assignment
 
         internal bool isInt(string input)
         {
-            int i;
-            if (int.TryParse(input, out i))
+            int temp;
+            if (int.TryParse(input, out temp))
                 return true;
             else
                 return false;
@@ -81,6 +81,18 @@ namespace IOOP_Assignment
             else
                 return false;
         }
+
+        internal bool isDate(TextBox input)
+        {
+            DateTime tempDate;
+            if (DateTime.TryParse(input.Text, out tempDate))
+                return true;
+            else
+                return false ;
+
+        }
+
+      
 
 
     }
