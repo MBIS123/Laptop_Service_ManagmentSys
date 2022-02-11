@@ -179,9 +179,9 @@
             this.lblTotalT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTotalT.Location = new System.Drawing.Point(3, 0);
             this.lblTotalT.Name = "lblTotalT";
-            this.lblTotalT.Size = new System.Drawing.Size(66, 27);
+            this.lblTotalT.Size = new System.Drawing.Size(60, 27);
             this.lblTotalT.TabIndex = 22;
-            this.lblTotalT.Text = "Total:";
+            this.lblTotalT.Text = "Total";
             // 
             // lblAmtPaidT
             // 
@@ -398,6 +398,7 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "frmReceipt";
             this.Text = "Receipt";
+            this.Load += new System.EventHandler(this.frmReceipt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -411,9 +412,6 @@
         #endregion
 
         private Label lblThx;
-        private Label lblRcn;
-        private Label lblInvoice;
-        private Label lblCustomer;
         private Label lblCustomerT;
         private Label lblRcnT;
         private Label lblInvoiceT;
@@ -439,5 +437,8 @@
         private Label lblAddress1;
         private Label lblDesign1;
         private Label lblTitle;
+        public Label lblRcn;
+        public Label lblInvoice;
+        public Label lblCustomer;
     }
 }

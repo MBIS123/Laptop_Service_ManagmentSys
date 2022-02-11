@@ -478,11 +478,16 @@
             // 
             // dataGridViewPayment
             // 
+            this.dataGridViewPayment.AllowUserToAddRows = false;
+            this.dataGridViewPayment.AllowUserToDeleteRows = false;
+            this.dataGridViewPayment.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewPayment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPayment.Location = new System.Drawing.Point(233, 58);
             this.dataGridViewPayment.Name = "dataGridViewPayment";
+            this.dataGridViewPayment.ReadOnly = true;
             this.dataGridViewPayment.RowHeadersWidth = 62;
             this.dataGridViewPayment.RowTemplate.Height = 33;
+            this.dataGridViewPayment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPayment.Size = new System.Drawing.Size(712, 304);
             this.dataGridViewPayment.TabIndex = 51;
             // 
@@ -558,7 +563,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.splitter1);
             this.Name = "frmPayment";
-            this.Load += new System.EventHandler(this.frmPayment_Load_1);
+            this.Load += new System.EventHandler(this.frmPayment_Load);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);

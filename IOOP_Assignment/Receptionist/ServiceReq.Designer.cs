@@ -1,4 +1,4 @@
-﻿namespace Assignment
+﻿namespace IOOP_Assignment
 {
     partial class frmServRequest
     {
@@ -32,7 +32,7 @@
             this.grpBoxRequest = new System.Windows.Forms.GroupBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblServType = new System.Windows.Forms.Label();
-            this.btnOrder = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.radBtnUrgent = new System.Windows.Forms.RadioButton();
             this.radBtnNormal = new System.Windows.Forms.RadioButton();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -51,12 +51,10 @@
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.linklblPayment = new System.Windows.Forms.LinkLabel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.linklblPrintReceipt = new System.Windows.Forms.LinkLabel();
             this.dataGridViewCustomer = new System.Windows.Forms.DataGridView();
             this.dataGridViewServ = new System.Windows.Forms.DataGridView();
-            this.lblLaptop = new System.Windows.Forms.Label();
-            this.txtLaptop = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.grpBoxRequest.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -74,13 +72,13 @@
             this.grpBoxRequest.Controls.Add(this.dataGridViewServ);
             this.grpBoxRequest.Controls.Add(this.btnClear);
             this.grpBoxRequest.Controls.Add(this.lblServType);
-            this.grpBoxRequest.Controls.Add(this.btnOrder);
+            this.grpBoxRequest.Controls.Add(this.btnConfirm);
             this.grpBoxRequest.Controls.Add(this.radBtnUrgent);
             this.grpBoxRequest.Controls.Add(this.radBtnNormal);
             this.grpBoxRequest.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.grpBoxRequest.Location = new System.Drawing.Point(213, 271);
+            this.grpBoxRequest.Location = new System.Drawing.Point(213, 254);
             this.grpBoxRequest.Name = "grpBoxRequest";
-            this.grpBoxRequest.Size = new System.Drawing.Size(761, 365);
+            this.grpBoxRequest.Size = new System.Drawing.Size(761, 361);
             this.grpBoxRequest.TabIndex = 5;
             this.grpBoxRequest.TabStop = false;
             this.grpBoxRequest.Text = "Requested Service";
@@ -89,7 +87,7 @@
             // 
             this.btnClear.BackColor = System.Drawing.Color.White;
             this.btnClear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnClear.Location = new System.Drawing.Point(186, 318);
+            this.btnClear.Location = new System.Drawing.Point(221, 316);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(104, 34);
             this.btnClear.TabIndex = 5;
@@ -100,29 +98,29 @@
             // 
             this.lblServType.AutoSize = true;
             this.lblServType.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblServType.Location = new System.Drawing.Point(186, 266);
+            this.lblServType.Location = new System.Drawing.Point(186, 269);
             this.lblServType.Name = "lblServType";
             this.lblServType.Size = new System.Drawing.Size(139, 25);
             this.lblServType.TabIndex = 4;
             this.lblServType.Text = "Service Type:";
             // 
-            // btnOrder
+            // btnConfirm
             // 
-            this.btnOrder.BackColor = System.Drawing.Color.White;
-            this.btnOrder.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnOrder.Location = new System.Drawing.Point(305, 318);
-            this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(256, 34);
-            this.btnOrder.TabIndex = 3;
-            this.btnOrder.Text = "Confirm Order";
-            this.btnOrder.UseVisualStyleBackColor = false;
-            this.btnOrder.Click += new System.EventHandler(this.btnPayment_Click);
+            this.btnConfirm.BackColor = System.Drawing.Color.White;
+            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnConfirm.Location = new System.Drawing.Point(339, 316);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(222, 34);
+            this.btnConfirm.TabIndex = 3;
+            this.btnConfirm.Text = "Confirm Order";
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // radBtnUrgent
             // 
             this.radBtnUrgent.AutoSize = true;
             this.radBtnUrgent.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radBtnUrgent.Location = new System.Drawing.Point(466, 266);
+            this.radBtnUrgent.Location = new System.Drawing.Point(466, 269);
             this.radBtnUrgent.Name = "radBtnUrgent";
             this.radBtnUrgent.Size = new System.Drawing.Size(95, 29);
             this.radBtnUrgent.TabIndex = 2;
@@ -134,7 +132,7 @@
             // 
             this.radBtnNormal.AutoSize = true;
             this.radBtnNormal.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radBtnNormal.Location = new System.Drawing.Point(339, 266);
+            this.radBtnNormal.Location = new System.Drawing.Point(339, 269);
             this.radBtnNormal.Name = "radBtnNormal";
             this.radBtnNormal.Size = new System.Drawing.Size(103, 29);
             this.radBtnNormal.TabIndex = 1;
@@ -174,7 +172,7 @@
             // 
             this.groupBox4.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox4.Controls.Add(this.linklblLogout);
-            this.groupBox4.Location = new System.Drawing.Point(1, 478);
+            this.groupBox4.Location = new System.Drawing.Point(1, 477);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(203, 36);
             this.groupBox4.TabIndex = 30;
@@ -307,92 +305,72 @@
             this.splitter1.BackColor = System.Drawing.Color.SeaShell;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(203, 648);
+            this.splitter1.Size = new System.Drawing.Size(203, 625);
             this.splitter1.TabIndex = 26;
             this.splitter1.TabStop = false;
             // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.PeachPuff;
-            this.groupBox5.Controls.Add(this.linklblPayment);
-            this.groupBox5.Location = new System.Drawing.Point(2, 418);
+            this.groupBox5.Controls.Add(this.linklblPrintReceipt);
+            this.groupBox5.Location = new System.Drawing.Point(2, 419);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(203, 36);
-            this.groupBox5.TabIndex = 40;
+            this.groupBox5.TabIndex = 31;
             this.groupBox5.TabStop = false;
             // 
-            // linklblPayment
+            // linklblPrintReceipt
             // 
-            this.linklblPayment.ActiveLinkColor = System.Drawing.Color.DarkRed;
-            this.linklblPayment.AutoSize = true;
-            this.linklblPayment.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.linklblPayment.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.linklblPayment.LinkColor = System.Drawing.Color.Blue;
-            this.linklblPayment.Location = new System.Drawing.Point(51, 8);
-            this.linklblPayment.Name = "linklblPayment";
-            this.linklblPayment.Size = new System.Drawing.Size(94, 20);
-            this.linklblPayment.TabIndex = 28;
-            this.linklblPayment.TabStop = true;
-            this.linklblPayment.Text = "PAYMENT";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(649, 49);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(300, 31);
-            this.dateTimePicker1.TabIndex = 41;
+            this.linklblPrintReceipt.ActiveLinkColor = System.Drawing.Color.DarkRed;
+            this.linklblPrintReceipt.AutoSize = true;
+            this.linklblPrintReceipt.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.linklblPrintReceipt.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linklblPrintReceipt.LinkColor = System.Drawing.Color.Blue;
+            this.linklblPrintReceipt.Location = new System.Drawing.Point(24, 11);
+            this.linklblPrintReceipt.Name = "linklblPrintReceipt";
+            this.linklblPrintReceipt.Size = new System.Drawing.Size(146, 20);
+            this.linklblPrintReceipt.TabIndex = 28;
+            this.linklblPrintReceipt.TabStop = true;
+            this.linklblPrintReceipt.Text = "PRINT RECEIPT";
             // 
             // dataGridViewCustomer
             // 
             this.dataGridViewCustomer.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCustomer.Location = new System.Drawing.Point(227, 86);
+            this.dataGridViewCustomer.Location = new System.Drawing.Point(227, 84);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
             this.dataGridViewCustomer.RowHeadersWidth = 62;
             this.dataGridViewCustomer.RowTemplate.Height = 33;
-            this.dataGridViewCustomer.Size = new System.Drawing.Size(731, 134);
-            this.dataGridViewCustomer.TabIndex = 42;
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(747, 154);
+            this.dataGridViewCustomer.TabIndex = 34;
             // 
             // dataGridViewServ
             // 
             this.dataGridViewServ.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewServ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewServ.Location = new System.Drawing.Point(14, 34);
+            this.dataGridViewServ.Location = new System.Drawing.Point(16, 39);
             this.dataGridViewServ.Name = "dataGridViewServ";
             this.dataGridViewServ.RowHeadersWidth = 62;
             this.dataGridViewServ.RowTemplate.Height = 33;
-            this.dataGridViewServ.Size = new System.Drawing.Size(731, 228);
-            this.dataGridViewServ.TabIndex = 6;
+            this.dataGridViewServ.Size = new System.Drawing.Size(724, 212);
+            this.dataGridViewServ.TabIndex = 35;
             // 
-            // lblLaptop
+            // dateTimePicker1
             // 
-            this.lblLaptop.AutoSize = true;
-            this.lblLaptop.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLaptop.Location = new System.Drawing.Point(227, 234);
-            this.lblLaptop.Name = "lblLaptop";
-            this.lblLaptop.Size = new System.Drawing.Size(142, 25);
-            this.lblLaptop.TabIndex = 43;
-            this.lblLaptop.Text = "Laptop Model:";
-            this.lblLaptop.Click += new System.EventHandler(this.lblLaptop_Click);
-            // 
-            // txtLaptop
-            // 
-            this.txtLaptop.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtLaptop.Location = new System.Drawing.Point(375, 229);
-            this.txtLaptop.Name = "txtLaptop";
-            this.txtLaptop.Size = new System.Drawing.Size(285, 30);
-            this.txtLaptop.TabIndex = 44;
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker1.Location = new System.Drawing.Point(674, 46);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(300, 31);
+            this.dateTimePicker1.TabIndex = 35;
             // 
             // frmServRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(986, 648);
-            this.Controls.Add(this.txtLaptop);
-            this.Controls.Add(this.lblLaptop);
-            this.Controls.Add(this.dataGridViewCustomer);
+            this.ClientSize = new System.Drawing.Size(986, 625);
             this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dataGridViewCustomer);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -433,7 +411,7 @@
         private GroupBox grpBoxRequest;
         private Button btnClear;
         private Label lblServType;
-        private Button btnOrder;
+        private Button btnConfirm;
         private RadioButton radBtnUrgent;
         private RadioButton radBtnNormal;
         private Label lblTitle;
@@ -452,11 +430,9 @@
         private PictureBox pictureBoxLogo;
         private Splitter splitter1;
         private GroupBox groupBox5;
-        private LinkLabel linklblPayment;
-        private DateTimePicker dateTimePicker1;
-        private DataGridView dataGridViewServ;
+        private LinkLabel linklblPrintReceipt;
         private DataGridView dataGridViewCustomer;
-        private Label lblLaptop;
-        private TextBox txtLaptop;
+        private DataGridView dataGridViewServ;
+        private DateTimePicker dateTimePicker1;
     }
 }
