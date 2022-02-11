@@ -179,8 +179,8 @@ namespace IOOP_Assignment
             user_name = u;
 
             SqlCommand cmd9 = new SqlCommand("select * from Customer where UserID = '" + user_name + "'", con);
-            //SqlCommand cmd10 = new SqlCommand("select Password from [Users],[Customer] where Users.UserID = Customer.UserID and Customer.Name = '" + o1.CusUName + "'", con);
-            //CusPassword = cmd10.ExecuteScalar().ToString();
+            SqlCommand cmd10 = new SqlCommand("select Password from [Users],[Customer] where Users.UserID = Customer.UserID and Customer.Name = '" + o1.CusUName + "'", con);
+            CusPassword = cmd10.ExecuteScalar().ToString();
             SqlDataReader sqlDataReader = cmd9.ExecuteReader(); //used for any result set with multiple rows/columns (e.g., SELECT col1, col2 from sometable )
 
             while(sqlDataReader.Read())
