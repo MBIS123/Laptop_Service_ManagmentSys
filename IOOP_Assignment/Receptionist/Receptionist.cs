@@ -103,21 +103,26 @@ namespace IOOP_Assignment
                 " [Types of Service Request].[Service Title], [Order].[Service Type], " +
                 "[Order].Status,[Order].Laptop, [Order].[Amount (RM)], [Order].[Payment Status] " +
                 "From [dbo].[Order] inner join [dbo].[Customer] on [Order].CustomerID=[Customer].CustomerID inner join " +
-                "[dbo].[Types of Service Request] on [Order].[ServiceRequestType ID]=[Types of Service Request].ServiceRequestTypeID", con);
+                "[dbo].[Types of Service Request] on [Order].[ServiceRequestType ID]=[Types of Service Request].ServiceRequestTypeID where [Order].[Payment Status]='Unpaid'", con);
             
             DataTable dtbl = new DataTable();
             da.Fill(dtbl);
             dgv.DataSource = dtbl;
             con.Close();
         }
-        public string updPaymentStatus(i)
+        public string updPaymentStatus(string row)
         {
             string status;
+            string pStatusRow = row;
+            //string pStatusCell= cell;
             con.Open();
-            SqlCommand cmd = new SqlCommand("update [Order] set [Payment Status] = 'Completed' where ", con);
-            int i = cmd.ExecuteNonQuery();
+            SqlCommand command = new SqlCommand("update [Order] set [Payment Status] = 'Paid'" +
+                " where OrderId = '" + pStatusRow + "'", con);
+            //command.Parameters.AddWithValue("Paid", pStatusCell);
+
+            int i = command.ExecuteNonQuery();
             if (i != 0)
-                status = "The service request has been successfully updated.";
+                status = "Payment Status has been successfully updated.";
             else
                 status = "Update Unsuccessful. Please try again.";
             con.Close();
@@ -125,20 +130,20 @@ namespace IOOP_Assignment
             return status;
         }
 
-        public void loadCustomerTable(DataGridView dgv)
+        public void loadCustomerTable(DataGridView dgv1)
         {
             SqlDataAdapter da = new SqlDataAdapter("select * from [Customer]", con);
             DataTable dtbl = new DataTable();
             da.Fill(dtbl);
-            dgv.DataSource = dtbl;
+            dgv1.DataSource = dtbl;
             con.Close();
         }
-        public void loadServReqTable(DataGridView dgv)
+        public void loadServReqTable(DataGridView dgv2)
         {
             SqlDataAdapter da = new SqlDataAdapter("select * from [Types of Service Request]", con);
             DataTable dtbl = new DataTable();
             da.Fill(dtbl);
-            dgv.DataSource = dtbl;
+            dgv2.DataSource = dtbl;
             con.Close();
         }
     }
