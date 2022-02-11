@@ -36,6 +36,10 @@ namespace IOOP_Assignment
             Technician.viewTechProfile(obj1);
             lblName.Text = obj1.TechName; //loading name into label
             obj1.loadOrderTable(dataGrid_AllServ);
+            Technician.dashboardWidgetValues(obj1);
+            lblWidg_ValuePendServ.Text = obj1.Numberofpending.ToString();
+            lblWidg_ValueUrgServ.Text = obj1.Numberofurgent.ToString();
+            lblWidg_ValueCompServ.Text = obj1.Numberofcompleted.ToString();
         }
 
         //navigating menu

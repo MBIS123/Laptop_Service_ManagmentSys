@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReceipt));
             this.lblThx = new System.Windows.Forms.Label();
             this.lblRcn = new System.Windows.Forms.Label();
@@ -58,6 +59,7 @@
             this.lblAddress1 = new System.Windows.Forms.Label();
             this.lblDesign1 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -440,5 +442,6 @@
         public Label lblRcn;
         public Label lblInvoice;
         public Label lblCustomer;
+        private System.Windows.Forms.Timer timer1;
     }
 }

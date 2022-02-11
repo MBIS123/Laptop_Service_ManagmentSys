@@ -30,15 +30,59 @@ namespace IOOP_Assignment
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lavy Chew\source\repos\IOOP_Assignment\IOOP_Assignment\LpDoctorDataBase.mdf;Integrated Security = True;";
         private void btnPay_Click(object sender, EventArgs e)
         {
-            frmReceipt fReceipt = new frmReceipt();
-            fReceipt.Show();
-            this.Hide();
-            fReceipt.lblReqServ.Text = this.dataGridViewPayment.CurrentRow.Cells[2].Value.ToString();
-            fReceipt.lblServType.Text = this.dataGridViewPayment.CurrentRow.Cells[3].Value.ToString();
-            fReceipt.lblTotal.Text = "RM" + this.dataGridViewPayment.CurrentRow.Cells[6].Value.ToString();
-            fReceipt.lblInvoice.Text = this.dataGridViewPayment.CurrentRow.Cells[0].Value.ToString();
-            //fReceipt.lblAmtPaid.Text = this.dataGridViewPayment.CurrentRow.Cells[2].Value.ToString();
+            foreach (DataGridViewRow row in dataGridViewPayment.Rows)
+            {
+                if (this.dataGridViewPayment.SelectedRows.Count == 1)
+                {
+                    // get information of status column from the row
+                    if (dataGridViewPayment.CurrentRow.Cells[4].ToString() != "Completed")
+                    {
+                        MessageBox.Show("The service is not done yet!", "Invalid payment.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        //validation for enter numbers only in textbox
+                        int Amount;
+                        if (int.TryParse(txtAmtPaid.Text, out Amount))
+                        {
+                            int chckTotalAmt = Convert.ToInt32(dataGridViewPayment.CurrentRow.Cells[6].Value);
+                            float Amt = float.Parse(txtAmtPaid.Text);
+                            if (Amt < chckTotalAmt)
+                            {
+                                MessageBox.Show("The amount paid is incorrect!", "Please pay the correct amount.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else
+                            {
+                                //Calculate the balanced
+                                float bal = (float)(Amt - chckTotalAmt);
+                                frmReceipt fReceipt = new frmReceipt();
+                                this.Hide();
+                                fReceipt.Show();
 
+                                //Pass values to receipt for printing
+                                fReceipt.lblReqServ.Text = this.dataGridViewPayment.CurrentRow.Cells[2].Value.ToString();
+                                fReceipt.lblServType.Text = this.dataGridViewPayment.CurrentRow.Cells[3].Value.ToString();
+                                fReceipt.lblTotal.Text = "RM" + this.dataGridViewPayment.CurrentRow.Cells[6].Value.ToString();
+                                fReceipt.lblInvoice.Text = this.dataGridViewPayment.CurrentRow.Cells[0].Value.ToString();
+                                fReceipt.lblCustomer.Text = this.dataGridViewPayment.CurrentRow.Cells[1].Value.ToString();
+                                fReceipt.lblAmtPaid.Text = "RM" + Amt.ToString();
+                                fReceipt.lblBal.Text = "RM" + bal.ToString();
+
+                                //update Payment Status to Paid
+                                Receptionist objPay = new Receptionist();
+                                string idrow = dataGridViewPayment.CurrentRow.Cells[0].Value.ToString();
+                                //string paymentstat = dataGridViewPayment.CurrentRow.Cells[4].ToString();
+                                objPay.updPaymentStatus(idrow);
+
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Enter numbers only!", "Please enter the correct amount.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+               }
+            }
 
         }
 
