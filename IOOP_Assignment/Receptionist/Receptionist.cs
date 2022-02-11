@@ -110,11 +110,21 @@ namespace IOOP_Assignment
             dgv.DataSource = dtbl;
             con.Close();
         }
-
-        public void paymentDone(float amt, float balanced)
+        public string updPaymentStatus(i)
         {
+            string status;
+            con.Open();
+            SqlCommand cmd = new SqlCommand("update [Order] set [Payment Status] = 'Completed' where ", con);
+            int i = cmd.ExecuteNonQuery();
+            if (i != 0)
+                status = "The service request has been successfully updated.";
+            else
+                status = "Update Unsuccessful. Please try again.";
+            con.Close();
 
+            return status;
         }
+
         public void loadCustomerTable(DataGridView dgv)
         {
             SqlDataAdapter da = new SqlDataAdapter("select * from [Customer]", con);
