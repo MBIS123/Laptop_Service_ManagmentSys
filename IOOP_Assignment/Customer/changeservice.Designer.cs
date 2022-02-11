@@ -488,7 +488,7 @@
             // 
             this.lbl_cusName.AutoSize = true;
             this.lbl_cusName.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_cusName.Location = new System.Drawing.Point(78, 247);
+            this.lbl_cusName.Location = new System.Drawing.Point(77, 247);
             this.lbl_cusName.Name = "lbl_cusName";
             this.lbl_cusName.Size = new System.Drawing.Size(0, 31);
             this.lbl_cusName.TabIndex = 67;
