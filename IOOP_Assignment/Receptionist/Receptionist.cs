@@ -113,11 +113,7 @@ namespace IOOP_Assignment
 
         public void paymentDone(float amt, float balanced)
         {
-            /*servType = this.dataGridViewPayment.CurrentRow.Cells[2].Value.ToString();
-            this.Hide();
-            fReceipt.lblReqServ.Text = this.dataGridViewPayment.CurrentRow.Cells[2].Value.ToString();
-            fReceipt.lblServType.Text = this.dataGridViewPayment.CurrentRow.Cells[3].Value.ToString();
-            fReceipt.lblTotal.Text = this.dataGridViewPayment.CurrentRow.Cells[6].Value.ToString();*/
+
         }
         public void loadCustomerTable(DataGridView dgv)
         {
