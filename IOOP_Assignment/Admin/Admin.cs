@@ -9,6 +9,7 @@ namespace IOOP_Assignment
     internal class Admin
     {
         DataValidation objValidt = new DataValidation();
+        
 
         private string position;
         private string name;
@@ -19,7 +20,7 @@ namespace IOOP_Assignment
         private string emailAddress;
         private int noIC;
         private int phoneNumber;
-        private static bool adminRegisAllInfoFilled = true;  // used for validation purpose
+        private bool allInfoFilled = true;  // used for validation purpose
 
 
         public Admin() { 
@@ -34,6 +35,7 @@ namespace IOOP_Assignment
         public string EmailAddress { get => emailAddress; set => emailAddress = value; }
         public int NoIC { get => noIC; set => noIC = value; }
         public int PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
+        public bool AllInfoFilled { get => allInfoFilled; set => allInfoFilled = value; }
 
         internal void validateRegisPosition(RadioButton technician ,RadioButton receptionist)
         {
@@ -42,19 +44,19 @@ namespace IOOP_Assignment
             else if (receptionist.Checked == true)
                 position = "receptionist";
             else 
-                adminRegisAllInfoFilled = false;
+                allInfoFilled = false;
                
         }
         internal void validateRegisCheckComboBx(ComboBox gender, ComboBox ethnic )
         {
 
             if (gender.SelectedIndex == -1 && ethnic.SelectedIndex == -1) // ensure admin select something (validation for gender)
-                adminRegisAllInfoFilled = false;
+                allInfoFilled = false;
         
             else if (ethnic.SelectedIndex == -1 )
-                adminRegisAllInfoFilled = false;
+                allInfoFilled = false;
             else if (gender.SelectedIndex == -1)
-                adminRegisAllInfoFilled = false;
+                allInfoFilled = false;
             else
             {
                 this.gender = gender.SelectedItem.ToString();
@@ -66,12 +68,12 @@ namespace IOOP_Assignment
 
         internal void askToReenter()
         { 
-            if (!adminRegisAllInfoFilled) //some infor are not filled
+            if (!allInfoFilled) //some infor are not filled
             {
-                MessageBox.Show("Please ensure every section was filled !", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("dl ui", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
+    
         internal void checking()
         {
             MessageBox.Show(position + " " + ethnicity + " " + gender );
