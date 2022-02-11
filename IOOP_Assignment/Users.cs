@@ -66,7 +66,15 @@ namespace IOOP_Assignment
                     TechnicianDashboard td = new TechnicianDashboard(technician_name, technician_id); 
                     td.ShowDialog(); //adding a simple comment here
                 }
-
+                else if (user_role == "receptionist")
+                {
+                    SqlCommand cmd3 = new SqlCommand("select [name] from Receptionist where UserID = (select UserID from users where username = '" + username + "')", con);
+                    string receptionist_name = cmd3.ExecuteScalar().ToString();
+                    SqlCommand cmd4 = new SqlCommand("select [ReceptionistID] from Receptionist where UserID = (select UserID from users where username = '" + username + "')", con);
+                    int receptionist_id = (int)cmd4.ExecuteScalar();
+                    frmPayment td = new frmPayment(receptionist_name);
+                    td.ShowDialog(); //adding a simple comment here
+                }
             }
             else
                 status = "Incorrect username or password entered!";
