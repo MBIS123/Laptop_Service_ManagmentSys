@@ -44,12 +44,6 @@ namespace IOOP_Assignment
                     AdminPage a = new AdminPage();
                     a.ShowDialog();
                 }
-                else if (user_role == "receptionist")
-                {
-                    frmLogin f = new frmLogin();
-                    f.ShowDialog();
-                }
-                
                 else if (user_role == "customer")
                 {
                     update_profile u = new update_profile(un);// pass customer name and display at update profile form

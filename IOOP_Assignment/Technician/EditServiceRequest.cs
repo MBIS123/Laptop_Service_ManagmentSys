@@ -35,11 +35,17 @@ namespace IOOP_Assignment
             orderid_forselection = oid;
         }
 
+        public EditServiceRequest(int t)
+        {
+            technician_ID = t;
+        }
+
         //load existing data 
         private void EditServiceRequest_Load(object sender, EventArgs e)
         {
             ArrayList orderid = new ArrayList();
-            orderid = Technician.viewOrderID();
+            Technician obj1 = new Technician(technician_ID);
+            orderid = Technician.viewOrderID(obj1);
             foreach (var item in orderid)
             {
                 comboOrderID.Items.Add(item);
@@ -50,7 +56,8 @@ namespace IOOP_Assignment
         {
 
             ArrayList orderid = new ArrayList();
-            orderid = Technician.viewOrderID();
+            Technician obj2 = new Technician(technician_ID);
+            orderid = Technician.viewOrderID(obj2);
             //MessageBox.Show(comboOrderID.SelectedIndex.ToString()); //for testing
             string combo_index_string = comboOrderID.SelectedIndex.ToString();
             int combo_index_int = Int32.Parse(combo_index_string);
@@ -83,12 +90,13 @@ namespace IOOP_Assignment
             //and value of collection date
             if (comboOrderID.Items.Count > 0) //check if there are items
             {
-                if (comboOrderID.SelectedIndex > 0) //check if there is a selection
+                if (comboOrderID.SelectedIndex >= 0) //check if there is a selection
                 {
                     int flag = 1; //for radiobutton validation
 
                     ArrayList orderid = new ArrayList();
-                    orderid = Technician.viewOrderID();
+                    Technician obj1 = new Technician(technician_ID);
+                    orderid = Technician.viewOrderID(obj1);
                     string combo_index_string = comboOrderID.SelectedIndex.ToString();
                     int combo_index_int = Int32.Parse(combo_index_string);
                     orderid_forselection = (int)orderid[combo_index_int];
@@ -110,8 +118,10 @@ namespace IOOP_Assignment
 
                     if (flag == 1)
                     {
-                        Technician obj1 = new Technician();
-                        MessageBox.Show(obj1.updateEditServReq(orderid_forselection, status, richServDescription.Text, CollectionDatePicker.Value.Date));
+                        Technician obj2 = new Technician();
+                        MessageBox.Show(obj2.updateEditServReq(orderid_forselection, status, richServDescription.Text, CollectionDatePicker.Value.Date));
+                        comboOrderID.Items.Remove(comboOrderID.SelectedItem);
+                        comboOrderID.Text = String.Empty;
                     }
                     else
                     {
