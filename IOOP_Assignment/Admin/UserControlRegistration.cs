@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+
 
 namespace IOOP_Assignment
 {
@@ -24,8 +26,11 @@ namespace IOOP_Assignment
 
         private void UserControlRegistration_Load(object sender, EventArgs e)
         {
-   
-            
+            if (!this.DesignMode)
+            {
+                //....stuff
+            }
+
 
         }
 
@@ -34,9 +39,13 @@ namespace IOOP_Assignment
             if (ckBxFilled.Checked)
             {
                 if (isValidated())
+                {
                     MessageBox.Show("yay finally done registration");
+                    setValueToVar();
+                    MessageBox.Show(adminObj.Name + " " + adminObj.Ethnicity + " " + adminObj.Gender + " " + adminObj.DateOfBirth + " " + adminObj.EmailAddress + " " + adminObj.PhoneNumber + " " + adminObj.NoIC + " " + adminObj.Position);
+                }
                 else
-                    MessageBox.Show(" Entered data does not meet the format");
+                    MessageBox.Show(" Entered data does not meet the format.Please try again");
             }
             else
                 MessageBox.Show("Required field was not marked !", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -98,5 +107,32 @@ namespace IOOP_Assignment
             }
                 
         }
+
+        private void setValueToVar()  // get the value from textbox and pass to related member field
+        {
+            adminObj.Name = txtName.Text.ToUpper().Replace(" ","");
+            adminObj.Address = txtAddress.Text;
+            adminObj.PhoneNumber = txtContactNo.Text;
+            adminObj.DateOfBirth = dateFormation();
+            adminObj.EmailAddress = txtEmailAddress.Text;
+            adminObj.NoIC = txtIcNo.Text;
+        }
+
+        private string dateFormation()
+        {
+            DateTime birthDate;
+
+            DateTime.TryParse(txtDateOfBirth.Text, out birthDate);
+
+            string year = birthDate.Year.ToString().PadLeft(4, '0');
+            string day = birthDate.Day.ToString().PadLeft(2, '0');
+            string month = birthDate.Month.ToString().PadLeft(2, '0');
+
+            string formattedBirthDate = year + '-'+ month + '-'+day;
+
+            return formattedBirthDate; // the birthdate are now in YYYY-MM-DD
+
+        }
+
     }
 }

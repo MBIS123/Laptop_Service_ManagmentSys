@@ -54,7 +54,6 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.userControlMonthlyIncome1 = new IOOP_Assignment.UserControlMonthlyIncome();
             this.userControlServiceReport1 = new IOOP_Assignment.UserControlServiceReport();
-            this.userControlRegistration1 = new IOOP_Assignment.UserControlRegistration();
             this.userControlAdminDashBoard1 = new IOOP_Assignment.UserControlAdminDashBoard();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -107,12 +106,13 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(10, 157);
+            this.label3.Location = new System.Drawing.Point(8, 156);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.MaximumSize = new System.Drawing.Size(130, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 15);
+            this.label3.Size = new System.Drawing.Size(71, 15);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Tan Jin Hao";
+            this.label3.Text = "TANJINHAO";
             // 
             // label5
             // 
@@ -393,16 +393,6 @@
             this.userControlServiceReport1.Size = new System.Drawing.Size(836, 462);
             this.userControlServiceReport1.TabIndex = 277;
             // 
-            // userControlRegistration1
-            // 
-            this.userControlRegistration1.AutoScroll = true;
-            this.userControlRegistration1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
-            this.userControlRegistration1.Location = new System.Drawing.Point(145, 45);
-            this.userControlRegistration1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.userControlRegistration1.Name = "userControlRegistration1";
-            this.userControlRegistration1.Size = new System.Drawing.Size(836, 462);
-            this.userControlRegistration1.TabIndex = 278;
-            // 
             // userControlAdminDashBoard1
             // 
             this.userControlAdminDashBoard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
@@ -444,7 +434,6 @@
             this.Controls.Add(this.splitter2);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.userControlServiceReport1);
-            this.Controls.Add(this.userControlRegistration1);
             this.Controls.Add(this.userControlMonthlyIncome1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
