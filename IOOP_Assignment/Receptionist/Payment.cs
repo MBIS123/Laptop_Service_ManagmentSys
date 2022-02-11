@@ -44,7 +44,7 @@ namespace IOOP_Assignment
 
         private void frmPayment_Load(object sender, EventArgs e)
         {
-            Customer obj1 = new Customer();
+            Receptionist obj1 = new Receptionist();
             obj1.loadPaymentTable(dataGridViewPayment);
         }
     }
