@@ -67,7 +67,7 @@
             this.txtPwd.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPwd.Location = new System.Drawing.Point(152, 157);
             this.txtPwd.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txtPwd.MaxLength = 8;
+            this.txtPwd.MaxLength = 20;
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(237, 29);

@@ -23,6 +23,11 @@ namespace IOOP_Assignment
         private string techAddress;
         private string techPassword;
 
+        //for dashboard widgets
+        private int numberofpending;
+        private int numberofurgent;
+        private int numberofcompleted;
+        
         //for edit service request form
         private int orderid_forselection;
         private string servicerequest_status;
@@ -48,6 +53,9 @@ namespace IOOP_Assignment
         public string Servdesc { get => servdesc; set => servdesc = value; }
         public DateTime Collectiondate { get => collectiondate; set => collectiondate = value; }
         public int Orderid_forselection { get => orderid_forselection; set => orderid_forselection = value; }
+        public int Numberofpending { get => numberofpending; set => numberofpending = value; }
+        public int Numberofurgent { get => numberofurgent; set => numberofurgent = value; }
+        public int Numberofcompleted { get => numberofcompleted; set => numberofcompleted = value; }
 
         public Technician(string tn)
         {
@@ -81,6 +89,19 @@ namespace IOOP_Assignment
             con.Close();
         }
 
+        //loading number of pending jobs into dashboard widget
+        public static void dashboardWidgetValues(Technician o1)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select COUNT(OrderID) FROM [Order] where Status = 'Pending'", con); //no. of pending jobs
+            o1.numberofpending = (Int32) cmd.ExecuteScalar();
+            SqlCommand cmd2 = new SqlCommand("select COUNT(OrderID) FROM [Order] where [Service Type] = 'Urgent'", con); //no. of pending jobs
+            o1.numberofurgent = (Int32) cmd2.ExecuteScalar();
+            SqlCommand cmd3 = new SqlCommand("select COUNT(OrderID) FROM [Order] where Status = 'Completed'", con); //no. of pending jobs
+            o1.numberofcompleted = (Int32) cmd3.ExecuteScalar();
+            con.Close();
+        }
+
         //loading details from order table into edit service request
         public static void viewOrderTableforEdit(Technician o1)
         {
@@ -90,11 +111,11 @@ namespace IOOP_Assignment
             while (sqlDataReader.Read())
             {
                 o1.servicerequest_status = sqlDataReader.GetString(5); //true or false...
-                o1.servdesc = sqlDataReader.GetString(7);
-                //MessageBox.Show(o1.servdesc);
-                o1.collectiondate = sqlDataReader.GetDateTime(8);
-                //MessageBox.Show(o1.collectiondate.ToString());
-
+                if (!sqlDataReader.IsDBNull(7))
+                {
+                    o1.servdesc = sqlDataReader.GetString(7);
+                    o1.collectiondate = sqlDataReader.GetDateTime(8);
+                }
             }
             con.Close();
 
