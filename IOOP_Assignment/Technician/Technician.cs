@@ -57,10 +57,12 @@ namespace IOOP_Assignment
         public int Numberofurgent { get => numberofurgent; set => numberofurgent = value; }
         public int Numberofcompleted { get => numberofcompleted; set => numberofcompleted = value; }
 
-        public Technician(string tn)
+        public Technician(string tn, int tid)
         {
             techName = tn;
+            techID = tid;
         }
+
 
         public Technician(int tid, int ord_id)
         {
@@ -73,10 +75,20 @@ namespace IOOP_Assignment
 
         }
 
-        //loading order table into technician dashboard
-        public void loadOrderTable(DataGridView dgv)
+        public Technician(int tid)
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [Order]", con);
+            techID = tid;
+        }
+
+        public Technician(string tn)
+        {
+            techName = tn;
+        }
+
+        //loading order table into technician dashboard
+        public void loadOrderTable(DataGridView dgv, int tech_ID)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [Order] where TechnicianID = '" + tech_ID + "' AND Status = 'Pending' or Status = 'Changes Required'", con);
             DataTable dtbl = new DataTable();
             da.Fill(dtbl);
 
@@ -106,6 +118,7 @@ namespace IOOP_Assignment
         public static void viewOrderTableforEdit(Technician o1)
         {
             con.Open();
+            Technician obj1 = new Technician(o1.techID);
             SqlCommand cmd = new SqlCommand("SELECT * FROM [Order] where OrderID = '" + o1.orderid_forselection + "'AND TechnicianID = '" + o1.techID + "'", con);
             SqlDataReader sqlDataReader = cmd.ExecuteReader();
             while (sqlDataReader.Read())
@@ -122,11 +135,13 @@ namespace IOOP_Assignment
         }
 
         //loading OrderIDs into array to show in comboOrderID
-        public static ArrayList viewOrderID()
+        public static ArrayList viewOrderID(Technician o1)
         {
             con.Open();
+            MessageBox.Show(o1.techID.ToString());
             ArrayList OID = new ArrayList();
-            SqlCommand cmd = new SqlCommand("select [OrderID] FROM [Order] where Status = 'Pending' or Status = 'Changes Required'", con); //only add pending 
+            //SqlCommand cmd = new SqlCommand("select [OrderID] FROM [Order] where Status = 'Pending' or Status = 'Changes Required' AND TechnicianID = '" + techID + "'", con); //only add pending 
+            SqlCommand cmd = new SqlCommand("select [OrderID] FROM [Order] where TechnicianID = '" + o1.techID + "'", con); //only add pending 
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
