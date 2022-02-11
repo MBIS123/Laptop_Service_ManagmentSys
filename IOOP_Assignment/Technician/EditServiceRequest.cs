@@ -63,9 +63,9 @@ namespace IOOP_Assignment
                 radioChangesRequired.Checked = true;
             }
             richServDescription.Text = obj1.Servdesc;
-            collection_Date = obj1.Collectiondate;
+            //collection_Date = obj1.Collectiondate;
             //MessageBox.Show(collection_Date.ToString()); //for testing
-            CollectionDatePicker.Value = collection_Date.Date;
+            //CollectionDatePicker.Value = collection_Date.Date;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -81,38 +81,51 @@ namespace IOOP_Assignment
         {
             //take in value of orderid, string of change status, string of serv_desc,
             //and value of collection date
-            int flag = 1; //for radiobutton validation
-            
-            ArrayList orderid = new ArrayList();
-            orderid = Technician.viewOrderID();
-            string combo_index_string = comboOrderID.SelectedIndex.ToString();
-            int combo_index_int = Int32.Parse(combo_index_string);
-            orderid_forselection = (int)orderid[combo_index_int];
-
-            //collection_Date_string = CollectionDatePicker.Value.ToString("dd/MM/yyyy");
-
-            if (radioChangesRequired.Checked)
+            if (comboOrderID.Items.Count > 0) //check if there are items
             {
-                status = "Changes Required"; 
-            }
-            else if (radioCompleted.Checked)
-            {
-                status = "Completed";
+                if (comboOrderID.SelectedIndex > 0) //check if there is a selection
+                {
+                    int flag = 1; //for radiobutton validation
+
+                    ArrayList orderid = new ArrayList();
+                    orderid = Technician.viewOrderID();
+                    string combo_index_string = comboOrderID.SelectedIndex.ToString();
+                    int combo_index_int = Int32.Parse(combo_index_string);
+                    orderid_forselection = (int)orderid[combo_index_int];
+
+                    //collection_Date_string = CollectionDatePicker.Value.ToString("dd/MM/yyyy");
+
+                    if (radioChangesRequired.Checked)
+                    {
+                        status = "Changes Required";
+                    }
+                    else if (radioCompleted.Checked)
+                    {
+                        status = "Completed";
+                    }
+                    else
+                    {
+                        flag = 0;
+                    }
+
+                    if (flag == 1)
+                    {
+                        Technician obj1 = new Technician();
+                        MessageBox.Show(obj1.updateEditServReq(orderid_forselection, status, richServDescription.Text, CollectionDatePicker.Value.Date));
+                    }
+                    else
+                    {
+                        MessageBox.Show("You need to select a status.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid. Please select an OrderID.");
+                }
             }
             else
-            {
-                flag = 0;
-            }
+                MessageBox.Show("Invalid. There are no service requests to be edited.");
 
-            if (flag == 1)
-            {
-                Technician obj1 = new Technician();
-                MessageBox.Show(obj1.updateEditServReq(orderid_forselection, status, richServDescription.Text, CollectionDatePicker.Value.Date));
-            }
-            else
-            {
-                MessageBox.Show("You need to select a status.");
-            }
           
         }
 
