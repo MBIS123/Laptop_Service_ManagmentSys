@@ -1,4 +1,4 @@
-﻿namespace IOOPAssignment
+﻿namespace IOOP_Assignment
 {
     partial class change_service
     {
@@ -63,6 +63,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_cusName = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -75,17 +76,18 @@
             // 
             this.lblwelcome.AutoSize = true;
             this.lblwelcome.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblwelcome.Location = new System.Drawing.Point(22, 192);
+            this.lblwelcome.Location = new System.Drawing.Point(43, 208);
             this.lblwelcome.Name = "lblwelcome";
-            this.lblwelcome.Size = new System.Drawing.Size(210, 25);
+            this.lblwelcome.Size = new System.Drawing.Size(169, 25);
             this.lblwelcome.TabIndex = 33;
-            this.lblwelcome.Text = "Welcome back, Ken";
+            this.lblwelcome.Text = "Welcome back !";
+            this.lblwelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblmyaccount
             // 
             this.lblmyaccount.AutoSize = true;
             this.lblmyaccount.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblmyaccount.Location = new System.Drawing.Point(42, 241);
+            this.lblmyaccount.Location = new System.Drawing.Point(36, 287);
             this.lblmyaccount.Name = "lblmyaccount";
             this.lblmyaccount.Size = new System.Drawing.Size(175, 35);
             this.lblmyaccount.TabIndex = 34;
@@ -97,7 +99,7 @@
             this.llblogout.BackColor = System.Drawing.Color.PeachPuff;
             this.llblogout.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.llblogout.LinkColor = System.Drawing.Color.Black;
-            this.llblogout.Location = new System.Drawing.Point(43, 523);
+            this.llblogout.Location = new System.Drawing.Point(43, 556);
             this.llblogout.Name = "llblogout";
             this.llblogout.Size = new System.Drawing.Size(98, 23);
             this.llblogout.TabIndex = 58;
@@ -110,12 +112,13 @@
             this.llbmy_order.BackColor = System.Drawing.Color.PeachPuff;
             this.llbmy_order.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.llbmy_order.LinkColor = System.Drawing.Color.Black;
-            this.llbmy_order.Location = new System.Drawing.Point(41, 389);
+            this.llbmy_order.Location = new System.Drawing.Point(41, 422);
             this.llbmy_order.Name = "llbmy_order";
             this.llbmy_order.Size = new System.Drawing.Size(121, 23);
             this.llbmy_order.TabIndex = 57;
             this.llbmy_order.TabStop = true;
             this.llbmy_order.Text = "MY  ORDER";
+            this.llbmy_order.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbmy_order_LinkClicked);
             // 
             // llbchange_serv
             // 
@@ -123,7 +126,7 @@
             this.llbchange_serv.BackColor = System.Drawing.Color.PeachPuff;
             this.llbchange_serv.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.llbchange_serv.LinkColor = System.Drawing.Color.Black;
-            this.llbchange_serv.Location = new System.Drawing.Point(42, 312);
+            this.llbchange_serv.Location = new System.Drawing.Point(42, 345);
             this.llbchange_serv.Name = "llbchange_serv";
             this.llbchange_serv.Size = new System.Drawing.Size(191, 23);
             this.llbchange_serv.TabIndex = 56;
@@ -134,7 +137,7 @@
             // 
             this.label2.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.label2.Enabled = false;
-            this.label2.Location = new System.Drawing.Point(256, -26);
+            this.label2.Location = new System.Drawing.Point(271, -26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(23, 983);
             this.label2.TabIndex = 59;
@@ -143,7 +146,7 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Location = new System.Drawing.Point(-30, 300);
+            this.groupBox2.Location = new System.Drawing.Point(-30, 333);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(309, 47);
             this.groupBox2.TabIndex = 60;
@@ -164,7 +167,7 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Location = new System.Drawing.Point(-11, 376);
+            this.groupBox3.Location = new System.Drawing.Point(-11, 409);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(290, 47);
             this.groupBox3.TabIndex = 61;
@@ -186,7 +189,7 @@
             this.groupBox4.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox4.Controls.Add(this.llbaccount_setting);
             this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Location = new System.Drawing.Point(-2, 442);
+            this.groupBox4.Location = new System.Drawing.Point(-2, 475);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(281, 47);
             this.groupBox4.TabIndex = 62;
@@ -203,6 +206,7 @@
             this.llbaccount_setting.TabIndex = 36;
             this.llbaccount_setting.TabStop = true;
             this.llbaccount_setting.Text = "ACCOUNT  SETTING";
+            this.llbaccount_setting.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbaccount_setting_LinkClicked);
             // 
             // label20
             // 
@@ -219,7 +223,7 @@
             // 
             this.groupBox5.BackColor = System.Drawing.Color.PeachPuff;
             this.groupBox5.Controls.Add(this.label14);
-            this.groupBox5.Location = new System.Drawing.Point(-9, 513);
+            this.groupBox5.Location = new System.Drawing.Point(-9, 546);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(293, 47);
             this.groupBox5.TabIndex = 63;
@@ -240,7 +244,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.PeachPuff;
-            this.label6.Location = new System.Drawing.Point(271, -137);
+            this.label6.Location = new System.Drawing.Point(314, -123);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 1080);
             this.label6.TabIndex = 64;
@@ -267,12 +271,11 @@
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(304, 3);
+            this.groupBox1.Location = new System.Drawing.Point(343, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(870, 925);
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label4
             // 
@@ -478,19 +481,30 @@
             this.pictureBox1.TabIndex = 66;
             this.pictureBox1.TabStop = false;
             // 
+            // lbl_cusName
+            // 
+            this.lbl_cusName.AutoSize = true;
+            this.lbl_cusName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_cusName.Location = new System.Drawing.Point(72, 242);
+            this.lbl_cusName.Name = "lbl_cusName";
+            this.lbl_cusName.Size = new System.Drawing.Size(0, 25);
+            this.lbl_cusName.TabIndex = 67;
+            this.lbl_cusName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // change_service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(1168, 922);
+            this.Controls.Add(this.lbl_cusName);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.llblogout);
             this.Controls.Add(this.llbmy_order);
             this.Controls.Add(this.llbchange_serv);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
@@ -499,6 +513,7 @@
             this.Controls.Add(this.lblwelcome);
             this.Name = "change_service";
             this.Text = "ChangeService";
+            this.Load += new System.EventHandler(this.change_service_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -550,5 +565,6 @@
         private RadioButton rdb_urgent;
         private RadioButton rdb_normal;
         private Label label4;
+        private Label lbl_cusName;
     }
 }

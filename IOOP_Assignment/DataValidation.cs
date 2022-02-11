@@ -16,6 +16,8 @@ namespace IOOP_Assignment
 
         internal bool isString(string input)
         {
+            input = input.Replace(" ","");
+            MessageBox.Show(input);
             if (input.All(Char.IsLetter))
             {
                 return true;
@@ -65,15 +67,15 @@ namespace IOOP_Assignment
                 return false;
         }
 
-        internal bool isIcNum(TextBox input) //return true if the input from textbox match the IC format
+        internal bool isIcNum(TextBox txtBx) //return true if the input from textbox match the IC format
         {
             int icNum;
 
-            if (!(input.Text.Contains('-')))
+            if (!(txtBx.Text.Contains('-')))
                 return false;
             for (int i = 0; i < 3; i++)
             {
-                partOfIC[i] = input.Text.Split('-')[i];
+                partOfIC[i] = txtBx.Text.Split('-')[i];
             }
             for (int i = 0; i < 3; i++)
             {
@@ -82,42 +84,33 @@ namespace IOOP_Assignment
                     return false;
                 }
             }
-
-            if (Regex.IsMatch(partOfIC[0], @"^[0-9]{6}$"))
-                return true;
-            else
-                return false;
-            if (Regex.IsMatch(partOfIC[1], @"^[0-9]{2}$"))
-                return true;
-            else
-                return false;
-            if (Regex.IsMatch(partOfIC[2], @"^[0-9]{4}$"))
+            if (Regex.IsMatch(partOfIC[0], @"^[0-9]{6}$")&& Regex.IsMatch(partOfIC[1], @"^[0-9]{2}$") && Regex.IsMatch(partOfIC[2], @"^[0-9]{4}$"))
                 return true;
             else
                 return false;
 
         }
 
-        internal bool isStringNull(TextBox input) //return true if the text box has null or empty or whitespace value
+        internal bool isStringNull(TextBox txtBx) //return true if the text box has null or empty or whitespace value
         {
-            if (string.IsNullOrWhiteSpace(input.Text))
+            if (string.IsNullOrWhiteSpace(txtBx.Text))
                 return true;
             else
                 return false;
         }
 
-        internal bool isDate(TextBox input) // return true it is a date
+        internal bool isDate(TextBox txtBx) // return true it is a date
         {
             DateTime tempDate;
-            if (DateTime.TryParse(input.Text, out tempDate))
+            if (DateTime.TryParse(txtBx.Text, out tempDate))
                 return true;
             else
                 return false;
 
         }
-        internal bool isEmailAddress(TextBox input) // return true if email was correct
+        internal bool isEmailAddress(TextBox txtBx) // return true if email was correct
         {
-            if (Regex.IsMatch(input.Text.Trim(), @"^[a-zA-Z0-9]{2,30}@[a-zA-Z0-9][\w\.]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
+            if (Regex.IsMatch(txtBx.Text.Trim(), @"^[a-zA-Z0-9]{2,30}@[a-zA-Z0-9][\w\.]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
                 return true ;
             else
                 return false ;

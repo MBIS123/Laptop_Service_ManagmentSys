@@ -54,6 +54,7 @@
             this.btnReset.TabIndex = 4;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             this.btnReset.MouseEnter += new System.EventHandler(this.btnReset_MouseEnter);
             this.btnReset.MouseLeave += new System.EventHandler(this.btnReset_MouseLeave);
             // 
@@ -68,6 +69,7 @@
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             this.btnSave.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
             this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             // 
@@ -109,13 +111,11 @@
             // comboOrderID
             // 
             this.comboOrderID.FormattingEnabled = true;
-            this.comboOrderID.Items.AddRange(new object[] {
-            "J0002",
-            "J0003"});
             this.comboOrderID.Location = new System.Drawing.Point(277, 103);
             this.comboOrderID.Name = "comboOrderID";
             this.comboOrderID.Size = new System.Drawing.Size(140, 28);
             this.comboOrderID.TabIndex = 10;
+            this.comboOrderID.SelectionChangeCommitted += new System.EventHandler(this.comboOrderID_SelectionChangeCommitted);
             // 
             // lblChange
             // 
@@ -138,6 +138,7 @@
             this.radioCompleted.TabStop = true;
             this.radioCompleted.Text = "Completed";
             this.radioCompleted.UseVisualStyleBackColor = true;
+            this.radioCompleted.CheckedChanged += new System.EventHandler(this.radioCompleted_CheckedChanged);
             // 
             // lblCollectDate
             // 
@@ -187,6 +188,7 @@
             this.radioChangesRequired.TabStop = true;
             this.radioChangesRequired.Text = "Changes Required";
             this.radioChangesRequired.UseVisualStyleBackColor = true;
+            this.radioChangesRequired.CheckedChanged += new System.EventHandler(this.radioChangesRequired_CheckedChanged);
             // 
             // EditServiceRequest
             // 

@@ -54,6 +54,7 @@
             this.lnlCtnJobPost = new System.Windows.Forms.Label();
             this.txtDateOfBirth = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancelRegis
@@ -118,6 +119,7 @@
             this.ckBxFilled.TabIndex = 220;
             this.ckBxFilled.Text = "All section were filled";
             this.ckBxFilled.UseVisualStyleBackColor = true;
+            this.ckBxFilled.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ckBxFilled_MouseClick);
             // 
             // txtIcNo
             // 
@@ -143,7 +145,7 @@
             this.txtContactNo.Location = new System.Drawing.Point(514, 388);
             this.txtContactNo.MinimumSize = new System.Drawing.Size(4, 30);
             this.txtContactNo.Name = "txtContactNo";
-            this.txtContactNo.Size = new System.Drawing.Size(150, 30);
+            this.txtContactNo.Size = new System.Drawing.Size(200, 30);
             this.txtContactNo.TabIndex = 216;
             // 
             // lclContactNo
@@ -256,7 +258,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(370, 30);
             this.txtName.TabIndex = 200;
-            this.txtName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // lblFN
             // 
@@ -335,11 +336,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(461, 216);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 15);
             this.label1.TabIndex = 226;
             this.label1.Text = "(YYYY-MM-DD)";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(588, 370);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 15);
+            this.label2.TabIndex = 227;
+            this.label2.Text = "(+601X-XXXXXXXX)";
             // 
             // UserControlRegistration
             // 
@@ -347,6 +359,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDateOfBirth);
             this.Controls.Add(this.btnCancelRegis);
@@ -412,5 +425,6 @@
         internal TextBox txtContactNo;
         private TextBox txtDateOfBirth;
         private Label label1;
+        private Label label2;
     }
 }
