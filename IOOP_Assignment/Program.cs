@@ -12,11 +12,8 @@ namespace IOOP_Assignment
         static void Main()
         {
             ApplicationConfiguration.Initialize();
+            Application.Run(new AdminPage());
 
-
-            Application.Run(new frmLogin());
-
-            
         }
     }
 }
