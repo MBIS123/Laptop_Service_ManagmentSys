@@ -68,10 +68,10 @@ namespace IOOP_Assignment
                 }
                 else if (user_role == "receptionist")
                 {
-                    SqlCommand cmd3 = new SqlCommand("select [name] from Receptionist where UserID = (select UserID from users where username = '" + username + "')", con);
-                    string receptionist_name = cmd3.ExecuteScalar().ToString();
-                    SqlCommand cmd4 = new SqlCommand("select [ReceptionistID] from Receptionist where UserID = (select UserID from users where username = '" + username + "')", con);
-                    int receptionist_id = (int)cmd4.ExecuteScalar();
+                    SqlCommand cmd5 = new SqlCommand("select [name] from Receptionist where UserID = (select UserID from users where username = '" + username + "')", con);
+                    string receptionist_name = cmd5.ExecuteScalar().ToString();
+                    SqlCommand cmd6 = new SqlCommand("select [ReceptionistID] from Receptionist where UserID = (select UserID from users where username = '" + username + "')", con);
+                    int receptionist_id = (int)cmd6.ExecuteScalar();
                     frmPayment td = new frmPayment(receptionist_name);
                     td.ShowDialog(); //adding a simple comment here
                 }
