@@ -14,51 +14,40 @@ namespace IOOP_Assignment
 
         private void Admin_Load(object sender, EventArgs e)
         {
-            hideAllUserCtrl();
             pcBxDashBrd.Show();
-            userControlAdminDashBoard1.Show();
-            userControlAdminDashBoard1.BringToFront();
+
 
         }
 
       
-        private void userControlMonthlyIncome1_Load(object sender, EventArgs e)
-        {
-
-            hideAllUserCtrl();
-            userControlAdminDashBoard1.Show();
-            userControlAdminDashBoard1.BringToFront();
-        }
 
         private void btnIncome_Click(object sender, EventArgs e)
         {
-            hideAllUserCtrl();
             frmHeader.Text = "Monthly Income";   
-            pcBxIncome.Show();
+         
             chgSideLabelLocation(btnIncome);
             chgForeColour(btnIncome);
-            showUserControl("Income");
 
         }
 
         internal void btnServiceReport_Click(object sender, EventArgs e)
         {
-            hideAllUserCtrl();
+           
             frmHeader.Text = "Service Report";
             pcBxServRpt.Show();
             chgSideLabelLocation(btnServiceReport);
             chgForeColour(btnServiceReport);
-            showUserControl("Service Report");
+           
         }
 
         private void btnRegistration_Click(object sender, EventArgs e)
         {
-            hideAllUserCtrl();
+         
             frmHeader.Text = "Registration";
-            pcBxRegis.Show();
+          
             chgSideLabelLocation(btnRegistration);
             chgForeColour(btnRegistration);
-            showUserControl("Registration");
+           
 
         }
 
@@ -66,12 +55,12 @@ namespace IOOP_Assignment
 
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
-            hideAllUserCtrl();
+           
             frmHeader.Text = "Admin DashBoard";
             pcBxDashBrd.Show();
             chgSideLabelLocation(btnDashBoard);
             chgForeColour(btnDashBoard);
-            showUserControl("DashBoard");
+           
      
         }
 
@@ -87,18 +76,7 @@ namespace IOOP_Assignment
         }
 
         //DEFINED FUNCTION
-        internal void hideAllUserCtrl()
-        {
-            userControlMonthlyIncome1.Hide();
-            userControlRegistration1.Hide();
-            userControlServiceReport1.Hide();
-            userControlAdminDashBoard1.Hide();
-            pcBxDashBrd.Hide();
-            pcBxIncome.Hide();
-            pcBxRegis.Hide();
-            pcBxServRpt.Hide();
 
-        }
 
         private void chgForeColour(Button x) //changeThe fore color of button to indicate which user control was shown
         {
@@ -115,30 +93,7 @@ namespace IOOP_Assignment
             sideLabel.Location =  new Point(3,x.Location.Y);
         }
 
-        private void showUserControl(String useCtrlName )
-        {
-            switch (useCtrlName)
-            {
-                case "DashBoard" :
-                    userControlAdminDashBoard1.Show();
-                    userControlAdminDashBoard1.BringToFront();
-                    break;
-                case "Registration":
-                    userControlRegistration1.Show();
-                    userControlRegistration1.BringToFront();
-                    break ;
-                case "Income":
-                    userControlMonthlyIncome1.Show();
-                    userControlMonthlyIncome1.BringToFront();
-                    break;;
-                case "Service Report":
-                    userControlServiceReport1.Show();
-                    userControlServiceReport1.BringToFront();
-                    break;
-
-            }
-
-        } //yused to show related user control
+       //yused to show related user control
 
         private void btnRegistration_MouseEnter(object sender, EventArgs e)
         {

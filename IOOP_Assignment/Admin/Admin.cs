@@ -80,9 +80,12 @@ namespace IOOP_Assignment
 
             conn.Open();
             int userID = numOfUsers+ 1; //generating new userID
+            MessageBox.Show(userID.ToString());
 
-            SqlCommand cmdInsertStaff = new SqlCommand("insert into Users(UserID,UserName,Password,[User Role]) values" +
-                                                       "( "+ userID+" ,'"+userName+"','"+password+"','"+position+"' ); ");
+            SqlCommand cmdInsertStaff = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users(UserID,UserName,Password,[User Role]) values" +
+                                                       "( "+ userID+" ,'"+userName+"','"+password+"','"+position+ "' ); SET IDENTITY_INSERT Users off; ",conn);
+            int i = cmdInsertStaff.ExecuteNonQuery();
+            MessageBox.Show("insert ady lo");
 
             conn.Close();
         }

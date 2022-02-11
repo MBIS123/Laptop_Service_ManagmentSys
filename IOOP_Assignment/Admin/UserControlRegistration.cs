@@ -28,7 +28,7 @@ namespace IOOP_Assignment
         {
             if (!this.DesignMode)
             {
-                //....stuff
+                MessageBox.Show("hi");
             }
 
 
@@ -113,7 +113,7 @@ namespace IOOP_Assignment
             adminObj.Name = txtName.Text.ToUpper().Replace(" ","");
             adminObj.Address = txtAddress.Text;
             adminObj.PhoneNumber = txtContactNo.Text;
-            adminObj.DateOfBirth = dateFormation();
+            //adminObj.DateOfBirth = dateFormation();
             adminObj.EmailAddress = txtEmailAddress.Text;
             adminObj.NoIC = txtIcNo.Text;
         }
