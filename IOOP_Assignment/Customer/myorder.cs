@@ -1,3 +1,5 @@
+using IOOP_Assignment.Customer;
+
 namespace IOOP_Assignment
 {
     public partial class Myorder : Form
@@ -21,7 +23,7 @@ namespace IOOP_Assignment
             lblamount_pay.Text = obj1.showAmount_ToPaid();
             lblstatus.Text = obj1.showStatus();
             lblexpected_collect_date.Text = obj1.showExpec_date();
-            lblcollec_date.Text=obj1.showCollec_date();
+            lblcollec_date.Text = obj1.showCollec_date();
             // i want display service description in my lbl by using method show_servdesc
         }
 
@@ -33,8 +35,8 @@ namespace IOOP_Assignment
 
         private void llbaccount_setting_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            update_profile up_prof = new update_profile();
-            up_prof.ShowDialog();
+            Viewprofile view_prof = new Viewprofile();
+            view_prof.ShowDialog();
 
         }
 
