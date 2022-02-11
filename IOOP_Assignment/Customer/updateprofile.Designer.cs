@@ -30,8 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(update_profile));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnclear = new System.Windows.Forms.Button();
-            this.btnsave = new System.Windows.Forms.Button();
+            this.lbl_password_note = new System.Windows.Forms.Label();
+            this.btn_resetprofile = new System.Windows.Forms.Button();
+            this.btn_saveprofile = new System.Windows.Forms.Button();
+            this.lbladdress = new System.Windows.Forms.Label();
+            this.btn_resetpassw = new System.Windows.Forms.Button();
+            this.btn_savepassw = new System.Windows.Forms.Button();
             this.txtconfirmpassw = new System.Windows.Forms.TextBox();
             this.lblconfirmpass = new System.Windows.Forms.Label();
             this.txtnewpassw = new System.Windows.Forms.TextBox();
@@ -42,15 +46,13 @@
             this.lblpassword = new System.Windows.Forms.Label();
             this.txtemail = new System.Windows.Forms.TextBox();
             this.lblemail = new System.Windows.Forms.Label();
-            this.cbxphnum = new System.Windows.Forms.ComboBox();
             this.txtphonenum = new System.Windows.Forms.TextBox();
             this.lblphnum = new System.Windows.Forms.Label();
             this.txtbirthdate = new System.Windows.Forms.TextBox();
             this.lblbirthdate = new System.Windows.Forms.Label();
-            this.txtlastname = new System.Windows.Forms.TextBox();
-            this.txtfirstname = new System.Windows.Forms.TextBox();
-            this.lbllastname = new System.Windows.Forms.Label();
-            this.lblfirstname = new System.Windows.Forms.Label();
+            this.txtaddress = new System.Windows.Forms.TextBox();
+            this.txtname = new System.Windows.Forms.TextBox();
+            this.lblname = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.lbl_personalinfo = new System.Windows.Forms.Label();
             this.lbltitle_accountsetting = new System.Windows.Forms.Label();
@@ -84,9 +86,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.PeachPuff;
-            this.groupBox1.Controls.Add(this.btnclear);
-            this.groupBox1.Controls.Add(this.btnsave);
+            this.groupBox1.BackColor = System.Drawing.Color.Tan;
+            this.groupBox1.Controls.Add(this.lbl_password_note);
+            this.groupBox1.Controls.Add(this.btn_resetprofile);
+            this.groupBox1.Controls.Add(this.btn_saveprofile);
+            this.groupBox1.Controls.Add(this.lbladdress);
+            this.groupBox1.Controls.Add(this.btn_resetpassw);
+            this.groupBox1.Controls.Add(this.btn_savepassw);
             this.groupBox1.Controls.Add(this.txtconfirmpassw);
             this.groupBox1.Controls.Add(this.lblconfirmpass);
             this.groupBox1.Controls.Add(this.txtnewpassw);
@@ -97,15 +103,13 @@
             this.groupBox1.Controls.Add(this.lblpassword);
             this.groupBox1.Controls.Add(this.txtemail);
             this.groupBox1.Controls.Add(this.lblemail);
-            this.groupBox1.Controls.Add(this.cbxphnum);
             this.groupBox1.Controls.Add(this.txtphonenum);
             this.groupBox1.Controls.Add(this.lblphnum);
             this.groupBox1.Controls.Add(this.txtbirthdate);
             this.groupBox1.Controls.Add(this.lblbirthdate);
-            this.groupBox1.Controls.Add(this.txtlastname);
-            this.groupBox1.Controls.Add(this.txtfirstname);
-            this.groupBox1.Controls.Add(this.lbllastname);
-            this.groupBox1.Controls.Add(this.lblfirstname);
+            this.groupBox1.Controls.Add(this.txtaddress);
+            this.groupBox1.Controls.Add(this.txtname);
+            this.groupBox1.Controls.Add(this.lblname);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.lbl_personalinfo);
             this.groupBox1.Controls.Add(this.lbltitle_accountsetting);
@@ -114,35 +118,80 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(311, -18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(840, 1008);
+            this.groupBox1.Size = new System.Drawing.Size(840, 1069);
             this.groupBox1.TabIndex = 78;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // btnclear
+            // lbl_password_note
             // 
-            this.btnclear.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnclear.Location = new System.Drawing.Point(189, 955);
-            this.btnclear.Name = "btnclear";
-            this.btnclear.Size = new System.Drawing.Size(94, 29);
-            this.btnclear.TabIndex = 121;
-            this.btnclear.Text = "CLEAR";
-            this.btnclear.UseVisualStyleBackColor = true;
+            this.lbl_password_note.AutoSize = true;
+            this.lbl_password_note.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_password_note.Location = new System.Drawing.Point(462, 804);
+            this.lbl_password_note.Name = "lbl_password_note";
+            this.lbl_password_note.Size = new System.Drawing.Size(361, 100);
+            this.lbl_password_note.TabIndex = 125;
+            this.lbl_password_note.Text = "Your password should have:\r\n- At least 8 characters\r\n- A mixture of both uppercas" +
+    "e and lowercase letters\r\n- A mixture of letters and numbers\r\n- At least one spec" +
+    "ial character, e.g. , ! @ # ? \"\r\n";
             // 
-            // btnsave
+            // btn_resetprofile
             // 
-            this.btnsave.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnsave.Location = new System.Drawing.Point(67, 955);
-            this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(94, 29);
-            this.btnsave.TabIndex = 120;
-            this.btnsave.Text = "SAVE";
-            this.btnsave.UseVisualStyleBackColor = true;
+            this.btn_resetprofile.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_resetprofile.Location = new System.Drawing.Point(221, 558);
+            this.btn_resetprofile.Name = "btn_resetprofile";
+            this.btn_resetprofile.Size = new System.Drawing.Size(112, 32);
+            this.btn_resetprofile.TabIndex = 124;
+            this.btn_resetprofile.Text = "RESET";
+            this.btn_resetprofile.UseVisualStyleBackColor = true;
+            this.btn_resetprofile.Click += new System.EventHandler(this.btn_resetprofile_Click_1);
+            // 
+            // btn_saveprofile
+            // 
+            this.btn_saveprofile.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_saveprofile.Location = new System.Drawing.Point(70, 558);
+            this.btn_saveprofile.Name = "btn_saveprofile";
+            this.btn_saveprofile.Size = new System.Drawing.Size(112, 32);
+            this.btn_saveprofile.TabIndex = 123;
+            this.btn_saveprofile.Text = "SAVE";
+            this.btn_saveprofile.UseVisualStyleBackColor = true;
+            this.btn_saveprofile.Click += new System.EventHandler(this.btn_saveprofile_Click_1);
+            // 
+            // lbladdress
+            // 
+            this.lbladdress.AutoSize = true;
+            this.lbladdress.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbladdress.Location = new System.Drawing.Point(404, 311);
+            this.lbladdress.Name = "lbladdress";
+            this.lbladdress.Size = new System.Drawing.Size(85, 19);
+            this.lbladdress.TabIndex = 122;
+            this.lbladdress.Text = "ADDRESS";
+            // 
+            // btn_resetpassw
+            // 
+            this.btn_resetpassw.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_resetpassw.Location = new System.Drawing.Point(255, 939);
+            this.btn_resetpassw.Name = "btn_resetpassw";
+            this.btn_resetpassw.Size = new System.Drawing.Size(197, 35);
+            this.btn_resetpassw.TabIndex = 121;
+            this.btn_resetpassw.Text = "RESET PASSWORD";
+            this.btn_resetpassw.UseVisualStyleBackColor = true;
+            // 
+            // btn_savepassw
+            // 
+            this.btn_savepassw.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_savepassw.Location = new System.Drawing.Point(62, 939);
+            this.btn_savepassw.Name = "btn_savepassw";
+            this.btn_savepassw.Size = new System.Drawing.Size(163, 35);
+            this.btn_savepassw.TabIndex = 120;
+            this.btn_savepassw.Text = "SAVE PASSWORD";
+            this.btn_savepassw.UseVisualStyleBackColor = true;
             // 
             // txtconfirmpassw
             // 
             this.txtconfirmpassw.BackColor = System.Drawing.Color.White;
-            this.txtconfirmpassw.Location = new System.Drawing.Point(464, 788);
+            this.txtconfirmpassw.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtconfirmpassw.Location = new System.Drawing.Point(462, 753);
             this.txtconfirmpassw.Multiline = true;
             this.txtconfirmpassw.Name = "txtconfirmpassw";
             this.txtconfirmpassw.Size = new System.Drawing.Size(297, 35);
@@ -152,7 +201,7 @@
             // 
             this.lblconfirmpass.AutoSize = true;
             this.lblconfirmpass.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblconfirmpass.Location = new System.Drawing.Point(464, 746);
+            this.lblconfirmpass.Location = new System.Drawing.Point(462, 711);
             this.lblconfirmpass.Name = "lblconfirmpass";
             this.lblconfirmpass.Size = new System.Drawing.Size(187, 19);
             this.lblconfirmpass.TabIndex = 118;
@@ -161,7 +210,8 @@
             // txtnewpassw
             // 
             this.txtnewpassw.BackColor = System.Drawing.Color.White;
-            this.txtnewpassw.Location = new System.Drawing.Point(63, 893);
+            this.txtnewpassw.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtnewpassw.Location = new System.Drawing.Point(61, 858);
             this.txtnewpassw.Multiline = true;
             this.txtnewpassw.Name = "txtnewpassw";
             this.txtnewpassw.Size = new System.Drawing.Size(297, 35);
@@ -171,7 +221,7 @@
             // 
             this.lblnewpass.AutoSize = true;
             this.lblnewpass.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblnewpass.Location = new System.Drawing.Point(70, 850);
+            this.lblnewpass.Location = new System.Drawing.Point(68, 815);
             this.lblnewpass.Name = "lblnewpass";
             this.lblnewpass.Size = new System.Drawing.Size(144, 19);
             this.lblnewpass.TabIndex = 116;
@@ -180,7 +230,8 @@
             // txtcurrentpassw
             // 
             this.txtcurrentpassw.BackColor = System.Drawing.Color.White;
-            this.txtcurrentpassw.Location = new System.Drawing.Point(64, 788);
+            this.txtcurrentpassw.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtcurrentpassw.Location = new System.Drawing.Point(62, 753);
             this.txtcurrentpassw.Multiline = true;
             this.txtcurrentpassw.Name = "txtcurrentpassw";
             this.txtcurrentpassw.Size = new System.Drawing.Size(297, 35);
@@ -190,7 +241,7 @@
             // 
             this.lblcurrentpass.AutoSize = true;
             this.lblcurrentpass.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblcurrentpass.Location = new System.Drawing.Point(70, 746);
+            this.lblcurrentpass.Location = new System.Drawing.Point(68, 711);
             this.lblcurrentpass.Name = "lblcurrentpass";
             this.lblcurrentpass.Size = new System.Drawing.Size(186, 19);
             this.lblcurrentpass.TabIndex = 114;
@@ -200,7 +251,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Wingdings 2", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(16, 679);
+            this.label1.Location = new System.Drawing.Point(14, 644);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 30);
             this.label1.TabIndex = 112;
@@ -210,7 +261,7 @@
             // 
             this.lblpassword.AutoSize = true;
             this.lblpassword.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblpassword.Location = new System.Drawing.Point(67, 684);
+            this.lblpassword.Location = new System.Drawing.Point(65, 649);
             this.lblpassword.Name = "lblpassword";
             this.lblpassword.Size = new System.Drawing.Size(90, 23);
             this.lblpassword.TabIndex = 111;
@@ -219,7 +270,8 @@
             // txtemail
             // 
             this.txtemail.BackColor = System.Drawing.Color.White;
-            this.txtemail.Location = new System.Drawing.Point(63, 603);
+            this.txtemail.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtemail.Location = new System.Drawing.Point(404, 237);
             this.txtemail.Multiline = true;
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(297, 35);
@@ -229,30 +281,17 @@
             // 
             this.lblemail.AutoSize = true;
             this.lblemail.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblemail.Location = new System.Drawing.Point(67, 558);
+            this.lblemail.Location = new System.Drawing.Point(404, 198);
             this.lblemail.Name = "lblemail";
             this.lblemail.Size = new System.Drawing.Size(148, 19);
             this.lblemail.TabIndex = 109;
             this.lblemail.Text = "E-MAIL ADDRESS";
             // 
-            // cbxphnum
-            // 
-            this.cbxphnum.BackColor = System.Drawing.Color.White;
-            this.cbxphnum.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbxphnum.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cbxphnum.FormattingEnabled = true;
-            this.cbxphnum.Items.AddRange(new object[] {
-            "+60"});
-            this.cbxphnum.Location = new System.Drawing.Point(64, 469);
-            this.cbxphnum.Name = "cbxphnum";
-            this.cbxphnum.Size = new System.Drawing.Size(67, 31);
-            this.cbxphnum.TabIndex = 108;
-            this.cbxphnum.Text = "+60";
-            // 
             // txtphonenum
             // 
             this.txtphonenum.BackColor = System.Drawing.Color.White;
-            this.txtphonenum.Location = new System.Drawing.Point(147, 469);
+            this.txtphonenum.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtphonenum.Location = new System.Drawing.Point(64, 469);
             this.txtphonenum.Multiline = true;
             this.txtphonenum.Name = "txtphonenum";
             this.txtphonenum.Size = new System.Drawing.Size(220, 34);
@@ -271,7 +310,8 @@
             // txtbirthdate
             // 
             this.txtbirthdate.BackColor = System.Drawing.Color.White;
-            this.txtbirthdate.Location = new System.Drawing.Point(63, 345);
+            this.txtbirthdate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtbirthdate.Location = new System.Drawing.Point(64, 345);
             this.txtbirthdate.Multiline = true;
             this.txtbirthdate.Name = "txtbirthdate";
             this.txtbirthdate.Size = new System.Drawing.Size(220, 34);
@@ -287,43 +327,35 @@
             this.lblbirthdate.TabIndex = 104;
             this.lblbirthdate.Text = "BIRTH DATE";
             // 
-            // txtlastname
+            // txtaddress
             // 
-            this.txtlastname.BackColor = System.Drawing.Color.White;
-            this.txtlastname.Location = new System.Drawing.Point(379, 238);
-            this.txtlastname.Multiline = true;
-            this.txtlastname.Name = "txtlastname";
-            this.txtlastname.Size = new System.Drawing.Size(220, 34);
-            this.txtlastname.TabIndex = 103;
+            this.txtaddress.BackColor = System.Drawing.Color.White;
+            this.txtaddress.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtaddress.Location = new System.Drawing.Point(404, 345);
+            this.txtaddress.Multiline = true;
+            this.txtaddress.Name = "txtaddress";
+            this.txtaddress.Size = new System.Drawing.Size(408, 158);
+            this.txtaddress.TabIndex = 103;
             // 
-            // txtfirstname
+            // txtname
             // 
-            this.txtfirstname.BackColor = System.Drawing.Color.White;
-            this.txtfirstname.Location = new System.Drawing.Point(63, 238);
-            this.txtfirstname.Multiline = true;
-            this.txtfirstname.Name = "txtfirstname";
-            this.txtfirstname.Size = new System.Drawing.Size(220, 34);
-            this.txtfirstname.TabIndex = 102;
+            this.txtname.BackColor = System.Drawing.Color.White;
+            this.txtname.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtname.Location = new System.Drawing.Point(63, 238);
+            this.txtname.Multiline = true;
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(220, 34);
+            this.txtname.TabIndex = 102;
             // 
-            // lbllastname
+            // lblname
             // 
-            this.lbllastname.AutoSize = true;
-            this.lbllastname.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbllastname.Location = new System.Drawing.Point(379, 198);
-            this.lbllastname.Name = "lbllastname";
-            this.lbllastname.Size = new System.Drawing.Size(104, 19);
-            this.lbllastname.TabIndex = 101;
-            this.lbllastname.Text = "LAST NAME";
-            // 
-            // lblfirstname
-            // 
-            this.lblfirstname.AutoSize = true;
-            this.lblfirstname.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblfirstname.Location = new System.Drawing.Point(67, 198);
-            this.lblfirstname.Name = "lblfirstname";
-            this.lblfirstname.Size = new System.Drawing.Size(111, 19);
-            this.lblfirstname.TabIndex = 100;
-            this.lblfirstname.Text = "FIRST NAME";
+            this.lblname.AutoSize = true;
+            this.lblname.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblname.Location = new System.Drawing.Point(67, 198);
+            this.lblname.Name = "lblname";
+            this.lblname.Size = new System.Drawing.Size(59, 19);
+            this.lblname.TabIndex = 100;
+            this.lblname.Text = "NAME";
             // 
             // label17
             // 
@@ -349,7 +381,7 @@
             // lbltitle_accountsetting
             // 
             this.lbltitle_accountsetting.AutoSize = true;
-            this.lbltitle_accountsetting.BackColor = System.Drawing.Color.PeachPuff;
+            this.lbltitle_accountsetting.BackColor = System.Drawing.Color.Tan;
             this.lbltitle_accountsetting.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbltitle_accountsetting.Location = new System.Drawing.Point(46, 56);
             this.lbltitle_accountsetting.Name = "lbltitle_accountsetting";
@@ -360,7 +392,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.PeachPuff;
+            this.label26.BackColor = System.Drawing.Color.Tan;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label26.Location = new System.Drawing.Point(63, 142);
             this.label26.Name = "label26";
@@ -371,9 +403,9 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.PeachPuff;
+            this.label29.BackColor = System.Drawing.Color.Tan;
             this.label29.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label29.Location = new System.Drawing.Point(67, 696);
+            this.label29.Location = new System.Drawing.Point(65, 661);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(93, 20);
             this.label29.TabIndex = 113;
@@ -382,8 +414,8 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.PeachPuff;
-            this.label6.Location = new System.Drawing.Point(279, -150);
+            this.label6.BackColor = System.Drawing.Color.Tan;
+            this.label6.Location = new System.Drawing.Point(279, -75);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 1140);
             this.label6.TabIndex = 77;
@@ -394,7 +426,7 @@
             // llblogout
             // 
             this.llblogout.AutoSize = true;
-            this.llblogout.BackColor = System.Drawing.Color.PeachPuff;
+            this.llblogout.BackColor = System.Drawing.Color.Tan;
             this.llblogout.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.llblogout.LinkColor = System.Drawing.Color.Black;
             this.llblogout.Location = new System.Drawing.Point(63, 12);
@@ -407,7 +439,7 @@
             // llbmy_order
             // 
             this.llbmy_order.AutoSize = true;
-            this.llbmy_order.BackColor = System.Drawing.Color.PeachPuff;
+            this.llbmy_order.BackColor = System.Drawing.Color.Tan;
             this.llbmy_order.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.llbmy_order.LinkColor = System.Drawing.Color.Black;
             this.llbmy_order.Location = new System.Drawing.Point(59, 9);
@@ -416,12 +448,11 @@
             this.llbmy_order.TabIndex = 70;
             this.llbmy_order.TabStop = true;
             this.llbmy_order.Text = "MY  ORDER";
-            this.llbmy_order.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbmy_order_LinkClicked);
             // 
             // llbchange_serv
             // 
             this.llbchange_serv.AutoSize = true;
-            this.llbchange_serv.BackColor = System.Drawing.Color.PeachPuff;
+            this.llbchange_serv.BackColor = System.Drawing.Color.Tan;
             this.llbchange_serv.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.llbchange_serv.LinkColor = System.Drawing.Color.Black;
             this.llbchange_serv.Location = new System.Drawing.Point(79, 11);
@@ -436,14 +467,14 @@
             // 
             this.label2.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.label2.Enabled = false;
-            this.label2.Location = new System.Drawing.Point(269, -44);
+            this.label2.Location = new System.Drawing.Point(266, -75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 1034);
+            this.label2.Size = new System.Drawing.Size(23, 1140);
             this.label2.TabIndex = 72;
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox2.BackColor = System.Drawing.Color.Tan;
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.llbchange_serv);
             this.groupBox2.Location = new System.Drawing.Point(-20, 343);
@@ -455,7 +486,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.PeachPuff;
+            this.label15.BackColor = System.Drawing.Color.Tan;
             this.label15.Font = new System.Drawing.Font("Wingdings 2", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.Location = new System.Drawing.Point(34, 6);
             this.label15.Name = "label15";
@@ -465,7 +496,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox3.BackColor = System.Drawing.Color.Tan;
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.llbmy_order);
             this.groupBox3.Location = new System.Drawing.Point(0, 413);
@@ -477,7 +508,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.PeachPuff;
+            this.label16.BackColor = System.Drawing.Color.Tan;
             this.label16.Font = new System.Drawing.Font("Wingdings 2", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.Location = new System.Drawing.Point(13, 8);
             this.label16.Name = "label16";
@@ -487,7 +518,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox4.BackColor = System.Drawing.Color.Tan;
             this.groupBox4.Controls.Add(this.llbaccount_setting);
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Location = new System.Drawing.Point(0, 487);
@@ -512,7 +543,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.PeachPuff;
+            this.label20.BackColor = System.Drawing.Color.Tan;
             this.label20.Font = new System.Drawing.Font("Wingdings", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label20.Location = new System.Drawing.Point(16, 6);
             this.label20.Name = "label20";
@@ -522,7 +553,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox5.BackColor = System.Drawing.Color.Tan;
             this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Controls.Add(this.llblogout);
             this.groupBox5.Location = new System.Drawing.Point(-4, 557);
@@ -534,7 +565,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.PeachPuff;
+            this.label14.BackColor = System.Drawing.Color.Tan;
             this.label14.Font = new System.Drawing.Font("Wingdings", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.Location = new System.Drawing.Point(21, 6);
             this.label14.Name = "label14";
@@ -556,11 +587,11 @@
             // 
             this.lblwelcome.AutoSize = true;
             this.lblwelcome.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblwelcome.Location = new System.Drawing.Point(41, 205);
+            this.lblwelcome.Location = new System.Drawing.Point(27, 198);
             this.lblwelcome.Name = "lblwelcome";
-            this.lblwelcome.Size = new System.Drawing.Size(169, 25);
+            this.lblwelcome.Size = new System.Drawing.Size(210, 25);
             this.lblwelcome.TabIndex = 67;
-            this.lblwelcome.Text = "Welcome back !";
+            this.lblwelcome.Text = "WELCOME BACK\r\n";
             // 
             // pictureBox1
             // 
@@ -576,18 +607,19 @@
             // lbl_cusName
             // 
             this.lbl_cusName.AutoSize = true;
-            this.lbl_cusName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_cusName.Location = new System.Drawing.Point(74, 241);
+            this.lbl_cusName.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_cusName.Location = new System.Drawing.Point(83, 247);
             this.lbl_cusName.Name = "lbl_cusName";
-            this.lbl_cusName.Size = new System.Drawing.Size(0, 25);
+            this.lbl_cusName.Size = new System.Drawing.Size(0, 31);
             this.lbl_cusName.TabIndex = 80;
+            this.lbl_cusName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // update_profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Tan;
-            this.ClientSize = new System.Drawing.Size(1151, 987);
+            this.BackColor = System.Drawing.Color.PeachPuff;
+            this.ClientSize = new System.Drawing.Size(1151, 974);
             this.Controls.Add(this.lbl_cusName);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
@@ -642,17 +674,15 @@
         private Label lblwelcome;
         private TextBox txtemail;
         private Label lblemail;
-        private ComboBox cbxphnum;
         private TextBox txtphonenum;
         private Label lblphnum;
         private TextBox txtbirthdate;
         private Label lblbirthdate;
-        private TextBox txtlastname;
-        private TextBox txtfirstname;
-        private Label lbllastname;
-        private Label lblfirstname;
+        private TextBox txtaddress;
+        private TextBox txtname;
+        private Label lblname;
         private Label label26;
-        private Button btnsave;
+        private Button btn_savepassw;
         private TextBox txtconfirmpassw;
         private Label lblconfirmpass;
         private TextBox txtnewpassw;
@@ -663,7 +693,11 @@
         private Label lblpassword;
         private Label label29;
         private PictureBox pictureBox1;
-        private Button btnclear;
+        private Button btn_resetpassw;
         private Label lbl_cusName;
+        private Label lbladdress;
+        private Button btn_resetprofile;
+        private Button btn_saveprofile;
+        private Label lbl_password_note;
     }
 }

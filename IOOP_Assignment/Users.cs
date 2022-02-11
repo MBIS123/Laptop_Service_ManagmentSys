@@ -1,4 +1,5 @@
 ﻿
+using IOOP_Assignment.Customer;
 using IOOPAssignment;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,7 @@ namespace IOOP_Assignment
                 else if (user_role == "customer")
                 {
                     update_profile u = new update_profile(un);// pass customer name and display at update profile form
+                    Viewprofile v = new Viewprofile(un);
                     change_service d = new change_service(un); // pass customer name and display at change service form
                     Myorder c = new Myorder(un);// pass customer name and display at my order form
                     c.ShowDialog();

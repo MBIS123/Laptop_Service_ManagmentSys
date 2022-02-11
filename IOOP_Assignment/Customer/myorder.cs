@@ -1,3 +1,5 @@
+using IOOP_Assignment.Customer;
+
 namespace IOOP_Assignment
 {
     public partial class Myorder : Form
@@ -12,7 +14,7 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
         }
-
+        
         private void Myorder_Load(object sender, EventArgs e)
         {
             lbl_cusName.Text = name;
@@ -33,8 +35,8 @@ namespace IOOP_Assignment
 
         private void llbaccount_setting_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            update_profile up_prof = new update_profile();
-            up_prof.ShowDialog();
+            Viewprofile view_prof = new Viewprofile();
+            view_prof.ShowDialog();
 
         }
 

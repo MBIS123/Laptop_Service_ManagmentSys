@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace IOOP_Assignment
 {
-    internal class Customer
+    internal class Receptionist
     {
 
         private string cusName;
@@ -34,7 +34,7 @@ namespace IOOP_Assignment
         public string CusAddress { get => cusAddress; set => cusAddress = value; }
         public string CusDob { get => cusDob; set => cusDob = value; }
 
-        public Customer(string n, string g, string i, string num, string e, string a, string d, string un)
+        public Receptionist(string n, string g, string i, string num, string e, string a, string d, string un)
         {
             cusName = n;
             cusGender = g;
@@ -45,11 +45,11 @@ namespace IOOP_Assignment
             cusDob = d;
             cusUsername = un;
         }
-        public Customer()
+        public Receptionist()
         {
 
         }
-        public Customer(string un)
+        public Receptionist(string un)
         {
             cusName = un;
         }
