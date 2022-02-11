@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmServRequest));
             this.grpBoxRequest = new System.Windows.Forms.GroupBox();
+            this.dataGridViewServ = new System.Windows.Forms.DataGridView();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblServType = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
@@ -53,9 +54,11 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.linklblPrintReceipt = new System.Windows.Forms.LinkLabel();
             this.dataGridViewCustomer = new System.Windows.Forms.DataGridView();
-            this.dataGridViewServ = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblLaptop = new System.Windows.Forms.Label();
+            this.txtLaptop = new System.Windows.Forms.TextBox();
             this.grpBoxRequest.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServ)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,7 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServ)).BeginInit();
             this.SuspendLayout();
             // 
             // grpBoxRequest
@@ -76,12 +78,23 @@
             this.grpBoxRequest.Controls.Add(this.radBtnUrgent);
             this.grpBoxRequest.Controls.Add(this.radBtnNormal);
             this.grpBoxRequest.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.grpBoxRequest.Location = new System.Drawing.Point(213, 254);
+            this.grpBoxRequest.Location = new System.Drawing.Point(213, 282);
             this.grpBoxRequest.Name = "grpBoxRequest";
             this.grpBoxRequest.Size = new System.Drawing.Size(761, 361);
             this.grpBoxRequest.TabIndex = 5;
             this.grpBoxRequest.TabStop = false;
             this.grpBoxRequest.Text = "Requested Service";
+            // 
+            // dataGridViewServ
+            // 
+            this.dataGridViewServ.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewServ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewServ.Location = new System.Drawing.Point(16, 39);
+            this.dataGridViewServ.Name = "dataGridViewServ";
+            this.dataGridViewServ.RowHeadersWidth = 62;
+            this.dataGridViewServ.RowTemplate.Height = 33;
+            this.dataGridViewServ.Size = new System.Drawing.Size(724, 212);
+            this.dataGridViewServ.TabIndex = 35;
             // 
             // btnClear
             // 
@@ -305,7 +318,7 @@
             this.splitter1.BackColor = System.Drawing.Color.SeaShell;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(203, 625);
+            this.splitter1.Size = new System.Drawing.Size(203, 656);
             this.splitter1.TabIndex = 26;
             this.splitter1.TabStop = false;
             // 
@@ -344,17 +357,6 @@
             this.dataGridViewCustomer.Size = new System.Drawing.Size(747, 154);
             this.dataGridViewCustomer.TabIndex = 34;
             // 
-            // dataGridViewServ
-            // 
-            this.dataGridViewServ.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridViewServ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewServ.Location = new System.Drawing.Point(16, 39);
-            this.dataGridViewServ.Name = "dataGridViewServ";
-            this.dataGridViewServ.RowHeadersWidth = 62;
-            this.dataGridViewServ.RowTemplate.Height = 33;
-            this.dataGridViewServ.Size = new System.Drawing.Size(724, 212);
-            this.dataGridViewServ.TabIndex = 35;
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -363,12 +365,32 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(300, 31);
             this.dateTimePicker1.TabIndex = 35;
             // 
+            // lblLaptop
+            // 
+            this.lblLaptop.AutoSize = true;
+            this.lblLaptop.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLaptop.Location = new System.Drawing.Point(227, 250);
+            this.lblLaptop.Name = "lblLaptop";
+            this.lblLaptop.Size = new System.Drawing.Size(142, 25);
+            this.lblLaptop.TabIndex = 36;
+            this.lblLaptop.Text = "Laptop Model:";
+            // 
+            // txtLaptop
+            // 
+            this.txtLaptop.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtLaptop.Location = new System.Drawing.Point(375, 244);
+            this.txtLaptop.Name = "txtLaptop";
+            this.txtLaptop.Size = new System.Drawing.Size(285, 30);
+            this.txtLaptop.TabIndex = 37;
+            // 
             // frmServRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(986, 625);
+            this.ClientSize = new System.Drawing.Size(986, 656);
+            this.Controls.Add(this.txtLaptop);
+            this.Controls.Add(this.lblLaptop);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dataGridViewCustomer);
             this.Controls.Add(this.groupBox5);
@@ -388,6 +410,7 @@
             this.Text = "Service Request ";
             this.grpBoxRequest.ResumeLayout(false);
             this.grpBoxRequest.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServ)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -400,7 +423,6 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServ)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -434,5 +456,7 @@
         private DataGridView dataGridViewCustomer;
         private DataGridView dataGridViewServ;
         private DateTimePicker dateTimePicker1;
+        private Label lblLaptop;
+        private TextBox txtLaptop;
     }
 }
