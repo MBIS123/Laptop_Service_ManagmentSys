@@ -44,11 +44,11 @@ namespace IOOP_Assignment
                     AdminPage a = new AdminPage();
                     a.ShowDialog();
                 }
-                else if (user_role == "receptionist")
+                /*else if (user_role == "receptionist")
                 {
                     frmLogin f = new frmLogin();
                     f.ShowDialog();
-                }
+                }*/
                 
                 else if (user_role == "customer")
                 {
@@ -72,7 +72,7 @@ namespace IOOP_Assignment
                     string receptionist_name = cmd5.ExecuteScalar().ToString();
                     SqlCommand cmd6 = new SqlCommand("select [ReceptionistID] from Receptionist where UserID = (select UserID from users where username = '" + username + "')", con);
                     int receptionist_id = (int)cmd6.ExecuteScalar();
-                    frmPayment td = new frmPayment(receptionist_name);
+                    frmServRequest td = new frmServRequest(receptionist_name);
                     td.ShowDialog(); //adding a simple comment here
                 }
             }
