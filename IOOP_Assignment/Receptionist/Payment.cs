@@ -30,12 +30,12 @@ namespace IOOP_Assignment
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lavy Chew\source\repos\IOOP_Assignment\IOOP_Assignment\LpDoctorDataBase.mdf;Integrated Security = True;";
         private void btnPay_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridViewPayment.Rows)
-            {
+
                 if (this.dataGridViewPayment.SelectedRows.Count == 1)
                 {
-                    // get information of status column from the row
-                    if (dataGridViewPayment.CurrentRow.Cells[4].ToString() != "Completed")
+                // get information of status column from the row
+                    string statusChck = this.dataGridViewPayment.CurrentRow.Cells[4].Value.ToString();
+                    if (statusChck != "Completed")
                     {
                         MessageBox.Show("The service is not done yet!", "Invalid payment.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
@@ -69,10 +69,10 @@ namespace IOOP_Assignment
                                 fReceipt.lblBal.Text = "RM" + bal.ToString();
 
                                 //update Payment Status to Paid
-                                Receptionist objPay = new Receptionist();
+                                Receptionist1 objPay = new Receptionist1();
                                 string idrow = dataGridViewPayment.CurrentRow.Cells[0].Value.ToString();
                                 //string paymentstat = dataGridViewPayment.CurrentRow.Cells[4].ToString();
-                                objPay.updPaymentStatus(idrow);
+                                MessageBox.Show(objPay.updPaymentStatus(idrow));
 
                             }
                         }
@@ -82,13 +82,12 @@ namespace IOOP_Assignment
                         }
                     }
                }
-            }
 
         }
 
         private void frmPayment_Load(object sender, EventArgs e)
         {
-            Receptionist obj1 = new Receptionist();
+            Receptionist1 obj1 = new Receptionist1();
             obj1.loadPaymentTable(dataGridViewPayment);
         }
     }
