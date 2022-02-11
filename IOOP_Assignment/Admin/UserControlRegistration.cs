@@ -74,29 +74,26 @@ namespace IOOP_Assignment
 
         private bool isValidated()
         {
-            int validtFlg = 0;
+            int sucssCase = 0;
 
            if(validtObj.isString(txtName.Text) && validtObj.isString(txtAddress.Text))
-                validtFlg +=1;
-
-
+                sucssCase +=1;
            if (validtObj.isDate(txtDateOfBirth))
-                validtFlg += 1;
+                sucssCase += 1;
 
            if (validtObj.isEmailAddress(txtEmailAddress))
-                validtFlg += 1;
+                sucssCase += 1;
 
            if (validtObj.isIcNum(txtIcNo))
-                validtFlg += 1;
+                sucssCase += 1;
 
            if (validtObj.isPhoneNum(txtContactNo.Text))
-                validtFlg += 1;
+                sucssCase += 1;
 
-            if (validtFlg == 5)  // there are 5 testcase for data validation
+            if (sucssCase == 5)  // there are 5 testcase for data validation
                 return true;
             else
             {
-                MessageBox.Show(validtFlg.ToString());
                 return false; 
             }
                 
