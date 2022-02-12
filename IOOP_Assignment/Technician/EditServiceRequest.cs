@@ -75,6 +75,16 @@ namespace IOOP_Assignment
             //CollectionDatePicker.Value = collection_Date.Date;
         }
 
+        //ensuring technician can't pick a date earlier than today
+        private void CollectionDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            if (CollectionDatePicker.Value < DateTime.Today)
+            {
+                MessageBox.Show("You cannot select dates earlier than today!");
+                CollectionDatePicker.Value = DateTime.Today;
+            }
+        }
+
         private void btnReset_Click(object sender, EventArgs e)
         {
             comboOrderID.SelectedIndex = -1;
@@ -118,11 +128,16 @@ namespace IOOP_Assignment
 
                     if (flag == 1)
                     {
-                        Technician obj2 = new Technician();
+                        Technician obj2 = new Technician(technician_ID);
                         MessageBox.Show(obj2.updateEditServReq(orderid_forselection, status, richServDescription.Text, CollectionDatePicker.Value.Date));
-                        comboOrderID.Items.Remove(comboOrderID.SelectedItem);
+                        if (radioCompleted.Checked)
+                        {
+                            comboOrderID.Items.Remove(comboOrderID.SelectedItem);
+                        }
                         comboOrderID.Text = String.Empty;
                         richServDescription.Text = String.Empty;
+                        Users u = new Users();
+                        u.assignOrder();
                     }
                     else
                     {
