@@ -188,9 +188,9 @@
             this.lblContactExample.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblContactExample.Location = new System.Drawing.Point(241, 105);
             this.lblContactExample.Name = "lblContactExample";
-            this.lblContactExample.Size = new System.Drawing.Size(278, 22);
+            this.lblContactExample.Size = new System.Drawing.Size(338, 22);
             this.lblContactExample.TabIndex = 46;
-            this.lblContactExample.Text = "e.g. 0123456789 or 01123456789";
+            this.lblContactExample.Text = "e.g. +6012-3456789 or +6011-23456789";
             // 
             // lblEmailExample
             // 

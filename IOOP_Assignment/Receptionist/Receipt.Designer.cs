@@ -51,7 +51,7 @@
             this.lblServType = new System.Windows.Forms.Label();
             this.lblServTypeT = new System.Windows.Forms.Label();
             this.lblReqServ = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
+            this.lblDateTime = new System.Windows.Forms.Label();
             this.lblDateT = new System.Windows.Forms.Label();
             this.lblAddress3 = new System.Windows.Forms.Label();
             this.lblAddress2 = new System.Windows.Forms.Label();
@@ -292,15 +292,16 @@
             this.lblReqServ.TabIndex = 30;
             this.lblReqServ.Text = "label1";
             // 
-            // lblDate
+            // lblDateTime
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDate.Location = new System.Drawing.Point(198, 264);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(157, 22);
-            this.lblDate.TabIndex = 51;
-            this.lblDate.Text = "1.1.2022 16:50:42";
+            this.lblDateTime.AutoSize = true;
+            this.lblDateTime.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDateTime.Location = new System.Drawing.Point(198, 264);
+            this.lblDateTime.Name = "lblDateTime";
+            this.lblDateTime.Size = new System.Drawing.Size(157, 22);
+            this.lblDateTime.TabIndex = 51;
+            this.lblDateTime.Text = "1.1.2022 16:50:42";
+            this.lblDateTime.Click += new System.EventHandler(this.lblDateTime_Click);
             // 
             // lblDateT
             // 
@@ -373,6 +374,10 @@
             this.lblTitle.TabIndex = 44;
             this.lblTitle.Text = "LpDoctor";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmReceipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -390,7 +395,7 @@
             this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.lblDate);
+            this.Controls.Add(this.lblDateTime);
             this.Controls.Add(this.lblDateT);
             this.Controls.Add(this.lblAddress3);
             this.Controls.Add(this.lblAddress2);
@@ -431,7 +436,7 @@
         public Label lblServType;
         private Label lblServTypeT;
         public Label lblReqServ;
-        private Label lblDate;
+        private Label lblDateTime;
         private Label lblDateT;
         private Label lblAddress3;
         private Label lblAddress2;

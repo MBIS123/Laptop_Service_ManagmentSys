@@ -1,4 +1,5 @@
 ﻿
+using IOOP_Assignment.Customer;
 using IOOPAssignment;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace IOOP_Assignment
         {
             username = u;
             password = p;
-        } 
+        }
 
         public string login(string un) //login method, un = admin
         {
@@ -38,23 +39,18 @@ namespace IOOP_Assignment
             {
                 SqlCommand cmd2 = new SqlCommand("select [User Role] from Users where UserName = '" + username + "' and Password = '" + password + "'", con);
                 string user_role = cmd2.ExecuteScalar().ToString();
-                
+
                 if (user_role == "admin")
                 {
                     DashBoard a = new DashBoard();
                     a.ShowDialog();
                 }
-                else if (user_role == "receptionist")
-                {
-                    frmLogin f = new frmLogin();
-                    f.ShowDialog();
-                }
-                
                 else if (user_role == "customer")
                 {
-                    update_profile u = new update_profile(un);// pass customer name and display at update profile form
-                    change_service d = new change_service(un); // pass customer name and display at change service form
-                    Myorder c = new Myorder(un);// pass customer name and display at my order form
+                    update_profile u = new update_profile(un);// pass username and display at update profile form
+                    Viewprofile v = new Viewprofile(un);
+                    change_service d = new change_service(un); 
+                    Myorder c = new Myorder(un);
                     c.ShowDialog();
                 }
                 else if (user_role == "technician")
@@ -63,7 +59,7 @@ namespace IOOP_Assignment
                     string technician_name = cmd3.ExecuteScalar().ToString();
                     SqlCommand cmd4 = new SqlCommand("select [TechnicianID] from technician where UserID = (select UserID from users where username = '" + username + "')", con);
                     int technician_id = (int)cmd4.ExecuteScalar();
-                    TechnicianDashboard td = new TechnicianDashboard(technician_name, technician_id); 
+                    TechnicianDashboard td = new TechnicianDashboard(technician_name, technician_id);
                     td.ShowDialog(); //adding a simple comment here
                 }
                 else if (user_role == "receptionist")
@@ -72,7 +68,7 @@ namespace IOOP_Assignment
                     string receptionist_name = cmd5.ExecuteScalar().ToString();
                     SqlCommand cmd6 = new SqlCommand("select [ReceptionistID] from Receptionist where UserID = (select UserID from users where username = '" + username + "')", con);
                     int receptionist_id = (int)cmd6.ExecuteScalar();
-                    frmPayment td = new frmPayment(receptionist_name);
+                    frmServRequest td = new frmServRequest(receptionist_name);
                     td.ShowDialog(); //adding a simple comment here
                 }
             }
@@ -80,8 +76,9 @@ namespace IOOP_Assignment
                 status = "Incorrect username or password entered!";
             con.Close();
 
-            return status; 
+            return status;
         }
+
 
         internal void assignOrder()
         {
@@ -202,5 +199,8 @@ namespace IOOP_Assignment
 
         }
 
+
     }
 }
+
+                    
