@@ -12,7 +12,6 @@ namespace IOOP_Assignment
 {
     internal class Receptionist1
     {
-        DataValidation objValid = new DataValidation();
 
         private string cusName;
         private string cusGender;
@@ -20,7 +19,7 @@ namespace IOOP_Assignment
         private string cusPhoneNum;
         private string cusEmail;
         private string cusAddress;
-        private string cusDob;
+        private DateTime cusDob;
         private string cusUsername;
         private static bool allcusinfoFilled = true;
 
@@ -40,7 +39,9 @@ namespace IOOP_Assignment
         public string CusPhoneNum { get => cusPhoneNum; set => cusPhoneNum = value; }
         public string CusEmail { get => cusEmail; set => cusEmail = value; }
         public string CusAddress { get => cusAddress; set => cusAddress = value; }
-        public string CusDob { get => cusDob; set => cusDob = value; }
+        public DateTime CusDob { get => cusDob; set => cusDob = value; }
+        public string CusUsername { get => cusUsername; set => cusUsername = value; }
+
         public static bool AllcusinfoFilled { get => allcusinfoFilled; set => allcusinfoFilled = value; }
         public string RecName { get => recName; set => recName = value; }
         public string RecPhone { get => recPhone; set => recPhone = value; }
@@ -48,7 +49,7 @@ namespace IOOP_Assignment
         public string RecAddress { get => recAddress; set => recAddress = value; }
         public string RecPw { get => recPw; set => recPw = value; }
 
-        public Receptionist1(string n, string g, string i, string num, string e, string a, string d, string un)
+        public Receptionist1(string n, string g, string i, string num, string e, string a, DateTime d, string un)
         {
             cusName = n;
             cusGender = g;
@@ -56,7 +57,7 @@ namespace IOOP_Assignment
             cusPhoneNum = num;
             cusEmail = e;
             cusAddress = a;
-            cusDob = d;
+            DateTime cusDob = d;
             cusUsername = un;
         }
         public Receptionist1()
@@ -67,50 +68,45 @@ namespace IOOP_Assignment
         {
             recName = un;
         }
-        internal void allSecFill()
-        {
-            if (!allcusinfoFilled) //some infor are not filled
-            {
-                MessageBox.Show("Please ensure every section was filled !", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
 
-        public string addNewCus()
+        public string AddNewCustomer()
         {
-
-            string status= null;
+            string status;
             con.Open();
             bool exists = false;
-            SqlCommand cmd1 = new SqlCommand("select count(*) from Users where Username= '" + cusUsername + "'", con);
-            exists = (int)cmd1.ExecuteScalar() > 0;
-            if (exists)
+            SqlCommand cmdUsernameExist = new SqlCommand("select count(*) from Users where Username= '" + cusUsername + "'", con);
+            //count if the username existed
+            if (exists = (int)cmdUsernameExist.ExecuteScalar() > 0)
             {
                 MessageBox.Show("Username existed. Please enter a valid username");
             }
             else
             {
-                SqlCommand cmd2 = new SqlCommand("insert into Users(Username, Password, User Role) values (@username, '123456', 'customer')", con);
-                SqlCommand cmd3 = new SqlCommand("insert into Customer(Name, Gender, Date of Birth, IC No., Contact No., Email, Address) values(@name, @gender, @dob, @ic, @phone, @email, @address)", con);
-                cmd2.Parameters.AddWithValue("@username", cusUsername);
-                cmd3.Parameters.AddWithValue("@name", cusName);
-                cmd3.Parameters.AddWithValue("@gender", cusGender);
-                cmd3.Parameters.AddWithValue("@dob", cusDob);
-                cmd3.Parameters.AddWithValue("@ic", cusIC);
-                cmd3.Parameters.AddWithValue("@phone", cusPhoneNum);
-                cmd3.Parameters.AddWithValue("@email", cusEmail);
-                cmd3.Parameters.AddWithValue("@address", cusAddress);
+                SqlCommand cmdNumUser = new SqlCommand("select count(*) from Users", con);
+                int numUsers = int.Parse(cmdNumUser.ExecuteScalar().ToString());
+                int userID = numUsers + 1;
 
-                cmd2.ExecuteNonQuery();
-                int i = cmd3.ExecuteNonQuery();
+                SqlCommand cmdNumCus = new SqlCommand("select count(*) from Customer", con);
+                int numCus = int.Parse(cmdNumCus.ExecuteScalar().ToString());
+                int cusID = numCus + 1;
+
+                SqlCommand cmdUserCus = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users(UserID,UserName,Password,[User Role]) values" +
+                                                       "( " + userID + ","+ " @username, '123456', 'customer'); SET IDENTITY_INSERT Users off; ", con);
+
+                SqlCommand cmdNewCus = new SqlCommand("SET IDENTITY_INSERT Customer ON; insert into Customer(CustomerID,UserID,Name,Gender,[Date of Birth],[IC No.],[Contact No.],Email,Address) values" +
+                                                      "( " + cusID + "," + userID + " ,'" + cusName + "','" + cusGender + "','" + cusDob + "','" + cusIC + "','" + cusPhoneNum + "','" + CusEmail + "','" + CusAddress + "); SET IDENTITY_INSERT Customer off; ", con);
+
+                cmdUserCus.Parameters.AddWithValue("@username", cusUsername);
+                cmdUserCus.ExecuteNonQuery();
+                int i = cmdNewCus.ExecuteNonQuery();
                 if (i != 0)
                     status = "Registration Successful!";
-                //cmd3.Parameters.AddWithValue("@userID", Convert.ToInt32(cmd2.ExecuteScalar().ToString()));
                 else
                     status = "Unable to Register!";
-
+                return status;
             }
             con.Close();
-            return status;
+            return cusUsername;
         }
         public void loadPaymentTable(DataGridView dgv)
         {

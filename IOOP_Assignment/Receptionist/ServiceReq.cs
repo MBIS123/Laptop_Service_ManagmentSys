@@ -45,6 +45,8 @@ namespace IOOP_Assignment
                         Receptionist1 objOrder1 = new Receptionist1();
                         int customerID = Convert.ToInt32(dataGridViewCustomer.CurrentRow.Cells[0].Value);
                         MessageBox.Show(objOrder1.AddOrder(customerID, date, servReID, stype, fee, txtLaptop.Text));
+                        Users techForServ1 = new Users();
+                        techForServ1.assignOrder();
                     }
                     if (radBtnUrgent.Checked==true)
                     {
@@ -54,6 +56,8 @@ namespace IOOP_Assignment
                         Receptionist1 objOrder2 = new Receptionist1();
                         int customerID = Convert.ToInt32(dataGridViewCustomer.CurrentRow.Cells[0].Value);
                         MessageBox.Show(objOrder2.AddOrder(customerID, date, servReID, stype, fee, txtLaptop.Text));
+                        Users techForServ2 = new Users();
+                        techForServ2.assignOrder();
                     }
                 }
             }
