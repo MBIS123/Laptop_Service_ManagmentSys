@@ -45,7 +45,7 @@ namespace IOOP_Assignment
         //navigating menu
         private void btnAccess_AllServ_Click(object sender, EventArgs e) //edit button
         {
-            MessageBox.Show(technician_ID.ToString());
+            //MessageBox.Show(technician_ID.ToString()); //for testing value of technician_ID
             EditServiceRequest ed = new EditServiceRequest(technician_ID, order_id);
             ed.StartPosition = FormStartPosition.Manual;
             ed.Location = new Point(500, 250);
