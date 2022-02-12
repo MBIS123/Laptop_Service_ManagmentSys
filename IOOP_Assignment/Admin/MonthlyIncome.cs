@@ -12,6 +12,7 @@ namespace IOOP_Assignment
 {
     public partial class MonthlyIncome : Form
     {
+        Admin objAdminI = new Admin();
         public MonthlyIncome()
         {
             InitializeComponent();
@@ -20,8 +21,30 @@ namespace IOOP_Assignment
         private void btnRegistration_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Registration obj =  new Registration();
-            obj.ShowDialog();
+            Registration rObj = new Registration();
+            rObj.Show();
+
         }
+
+        private void btnDashBoard_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DashBoard dObj = new DashBoard();
+            dObj.Show();
+        }
+
+        private void btnServiceReport_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ServiceReport sObj = new ServiceReport();
+            sObj.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+ 
     }
 }

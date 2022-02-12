@@ -41,7 +41,7 @@ namespace IOOP_Assignment
                 
                 if (user_role == "admin")
                 {
-                    AdminPage a = new AdminPage();
+                    DashBoard a = new DashBoard();
                     a.ShowDialog();
                 }
                 else if (user_role == "receptionist")

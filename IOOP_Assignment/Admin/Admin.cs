@@ -51,7 +51,7 @@ namespace IOOP_Assignment
                 position = "technician";
             else if (receptionist.Checked == true)
                 position = "receptionist";
-            else 
+            else
                 allInfoFilled = false;
                
         }
@@ -59,12 +59,23 @@ namespace IOOP_Assignment
         internal void validateRegisCheckComboBx(ComboBox gender, ComboBox ethnic )
         {
             if (gender.SelectedIndex == -1 && ethnic.SelectedIndex == -1) // ensure admin select something (validation for gender)
+            {
                 allInfoFilled = false;
-        
-            else if (ethnic.SelectedIndex == -1 )
+                MessageBox.Show("first false");
+            }
+
+            else if (ethnic.SelectedIndex == -1)
+            {
                 allInfoFilled = false;
+                MessageBox.Show("secfalse");
+            }
+
             else if (gender.SelectedIndex == -1)
+            {
                 allInfoFilled = false;
+                MessageBox.Show("third false");
+            }
+
             else
             {
                 this.gender = gender.SelectedItem.ToString();
@@ -80,12 +91,24 @@ namespace IOOP_Assignment
 
             conn.Open();
             int userID = numOfUsers+ 1; //generating new userID
-            MessageBox.Show(userID.ToString());
+            int techID = numOfTechnician + 1;
+            int recpID = numOfReceptionist + 1; 
 
-            SqlCommand cmdInsertStaff = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users(UserID,UserName,Password,[User Role]) values" +
+            SqlCommand cmdInsertStaffToUser = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users(UserID,UserName,Password,[User Role]) values" +
                                                        "( "+ userID+" ,'"+userName+"','"+password+"','"+position+ "' ); SET IDENTITY_INSERT Users off; ",conn);
-            int i = cmdInsertStaff.ExecuteNonQuery();
-            MessageBox.Show("insert ady lo");
+            cmdInsertStaffToUser.ExecuteNonQuery();
+
+            SqlCommand cmdInsertTechnician = new SqlCommand("SET IDENTITY_INSERT Technician ON; insert into Technician(TechnicianID,UserID,Name,Gender,[Date of Birth],Ethnicity,[IC No.],[Contact No.],Email,Address,Status) values" +
+                                                      "( "+techID+","+ userID + " ,'" + name + "','" + gender + "','" + dateOfBirth + "','"+ethnicity + "','"+noIC+ "','"+phoneNumber + "','" +emailAddress+ "','"+address+ "','Available'); SET IDENTITY_INSERT Technician off; ", conn);
+
+            SqlCommand cmdInsertReceptionist = new SqlCommand("SET IDENTITY_INSERT Receptionist ON; insert into Receptionist (ReceptionistID,UserID,Name,Gender,[Date of Birth],Ethnicity,[IC No.],[Contact No.],Email,Address) values" +
+                                          "( " + recpID + "," + userID + " ,'" + name + "','" + gender + "','" + dateOfBirth + "','" + ethnicity + "','" + noIC + "','" + phoneNumber + "','" + emailAddress + "','" + address + "'); SET IDENTITY_INSERT Receptionist off; ", conn);
+
+            if (position == "receptionist")
+                cmdInsertReceptionist.ExecuteNonQuery();
+            else
+                cmdInsertTechnician.ExecuteNonQuery();
+
 
             conn.Close();
         }
@@ -114,14 +137,41 @@ namespace IOOP_Assignment
             if (position == "technician")
             {
                 headUserName = "T_";
-                userName = headUserName + dateOfBirth.Replace("-","") + numOfTechnician;
+                userName = headUserName + dateOfBirth.Replace("-","") + (numOfTechnician+1);
             }
             else
             {
                 headUserName = "R_";
-                userName = headUserName + dateOfBirth.Replace("-", "") + numOfReceptionist;
+                userName = headUserName + dateOfBirth.Replace("-", "") + (numOfReceptionist+1);
             }
             return userName;
+        }
+    
+        internal  void showRelatedForm(string x)
+        {
+            DashBoard adminFrm = new DashBoard();
+            MonthlyIncome incomeFrm = new MonthlyIncome();
+            Registration regisFrm = new Registration();
+            ServiceReport reportFrm = new ServiceReport();
+
+            switch (x)
+            {
+                case "dashboard":
+                    adminFrm.Show();
+                    break;
+                case "income":
+                    incomeFrm.Show();
+                    break;
+                case "registration":
+                    regisFrm.Show();
+                    break ;
+                case "serviceReport":
+                    reportFrm.Show();
+                    break;
+                    
+            }
+
+
         }
         
   

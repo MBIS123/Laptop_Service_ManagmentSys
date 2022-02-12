@@ -1,6 +1,6 @@
 ﻿namespace IOOP_Assignment
 {
-    partial class AdminPage
+    partial class DashBoard
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPage));
             System.Windows.Forms.Label label26;
             System.Windows.Forms.Label label25;
             System.Windows.Forms.Label label24;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.frmHeader = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnDashBoard = new System.Windows.Forms.Button();
@@ -101,6 +100,7 @@
             this.pcBxRndEdg1 = new System.Windows.Forms.PictureBox();
             this.pcBxRndEdg2 = new System.Windows.Forms.PictureBox();
             this.pcBxRndEdg3 = new System.Windows.Forms.PictureBox();
+            this.btnExitAdmin = new System.Windows.Forms.Button();
             label26 = new System.Windows.Forms.Label();
             label25 = new System.Windows.Forms.Label();
             label24 = new System.Windows.Forms.Label();
@@ -114,6 +114,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcBxRndEdg2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxRndEdg3)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.BackColor = System.Drawing.SystemColors.ControlDark;
+            label26.Location = new System.Drawing.Point(656, 464);
+            label26.MinimumSize = new System.Drawing.Size(1, 1);
+            label26.Name = "label26";
+            label26.Size = new System.Drawing.Size(1, 15);
+            label26.TabIndex = 296;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.BackColor = System.Drawing.SystemColors.ControlDark;
+            label25.Location = new System.Drawing.Point(511, 464);
+            label25.MinimumSize = new System.Drawing.Size(1, 1);
+            label25.Name = "label25";
+            label25.Size = new System.Drawing.Size(1, 15);
+            label25.TabIndex = 295;
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.BackColor = System.Drawing.SystemColors.ControlDark;
+            label24.Location = new System.Drawing.Point(366, 464);
+            label24.MinimumSize = new System.Drawing.Size(1, 1);
+            label24.Name = "label24";
+            label24.Size = new System.Drawing.Size(1, 15);
+            label24.TabIndex = 294;
             // 
             // pictureBox1
             // 
@@ -151,7 +181,6 @@
             this.frmHeader.Size = new System.Drawing.Size(145, 20);
             this.frmHeader.TabIndex = 8;
             this.frmHeader.Text = "Admin DashBoard";
-            this.frmHeader.Click += new System.EventHandler(this.frmHeader_Click);
             // 
             // label3
             // 
@@ -183,25 +212,13 @@
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.SizeNESW;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(765, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(824, 3);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 36);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(810, 15);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 15);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "JinHao ";
             // 
             // btnLogOut
             // 
@@ -216,14 +233,13 @@
             this.btnLogOut.TabIndex = 20;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             this.btnLogOut.MouseEnter += new System.EventHandler(this.btnLogOut_MouseEnter);
             this.btnLogOut.MouseLeave += new System.EventHandler(this.btnLogOut_MouseLeave);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.HotTrack;
-            this.dateTimePicker1.Location = new System.Drawing.Point(561, 12);
+            this.dateTimePicker1.Location = new System.Drawing.Point(605, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker1.TabIndex = 24;
@@ -351,7 +367,6 @@
             this.pcBxDashBrd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcBxDashBrd.TabIndex = 271;
             this.pcBxDashBrd.TabStop = false;
-            this.pcBxDashBrd.Click += new System.EventHandler(this.pcBxDashBrd_Click);
             // 
             // button1
             // 
@@ -679,36 +694,6 @@
             this.lblSerbBar3.Size = new System.Drawing.Size(372, 20);
             this.lblSerbBar3.TabIndex = 297;
             // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.BackColor = System.Drawing.SystemColors.ControlDark;
-            label26.Location = new System.Drawing.Point(656, 464);
-            label26.MinimumSize = new System.Drawing.Size(1, 1);
-            label26.Name = "label26";
-            label26.Size = new System.Drawing.Size(1, 15);
-            label26.TabIndex = 296;
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.BackColor = System.Drawing.SystemColors.ControlDark;
-            label25.Location = new System.Drawing.Point(511, 464);
-            label25.MinimumSize = new System.Drawing.Size(1, 1);
-            label25.Name = "label25";
-            label25.Size = new System.Drawing.Size(1, 15);
-            label25.TabIndex = 295;
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.BackColor = System.Drawing.SystemColors.ControlDark;
-            label24.Location = new System.Drawing.Point(366, 464);
-            label24.MinimumSize = new System.Drawing.Size(1, 1);
-            label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(1, 15);
-            label24.TabIndex = 294;
-            // 
             // pcBxChart
             // 
             this.pcBxChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
@@ -921,6 +906,7 @@
             this.uCBtnServiceReport.Text = "Service Report";
             this.uCBtnServiceReport.TextColor = System.Drawing.Color.Black;
             this.uCBtnServiceReport.UseVisualStyleBackColor = true;
+            this.uCBtnServiceReport.Click += new System.EventHandler(this.uCBtnServiceReport_Click);
             // 
             // pcBxServRpt
             // 
@@ -969,13 +955,27 @@
             this.pcBxRndEdg3.TabIndex = 283;
             this.pcBxRndEdg3.TabStop = false;
             // 
-            // AdminPage
+            // btnExitAdmin
+            // 
+            this.btnExitAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.btnExitAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExitAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnExitAdmin.Image")));
+            this.btnExitAdmin.Location = new System.Drawing.Point(12, 456);
+            this.btnExitAdmin.Name = "btnExitAdmin";
+            this.btnExitAdmin.Size = new System.Drawing.Size(32, 33);
+            this.btnExitAdmin.TabIndex = 326;
+            this.btnExitAdmin.UseCompatibleTextRendering = true;
+            this.btnExitAdmin.UseVisualStyleBackColor = false;
+            this.btnExitAdmin.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(981, 504);
+            this.Controls.Add(this.btnExitAdmin);
             this.Controls.Add(this.label53);
             this.Controls.Add(this.lblIncomeClrTitle);
             this.Controls.Add(this.lblServClrTitle);
@@ -1038,7 +1038,6 @@
             this.Controls.Add(this.btnDashBoard);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnLogOut);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -1046,11 +1045,12 @@
             this.Controls.Add(this.pcBxDashBrd);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.splitter2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1001, 547);
-            this.Name = "AdminPage";
+            this.Name = "DashBoard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Dashboard";
             this.Load += new System.EventHandler(this.Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1074,7 +1074,6 @@
         private Label label3;
         private Label label5;
         private PictureBox pictureBox2;
-        private Label label6;
         private Button btnLogOut;
         private DateTimePicker dateTimePicker1;
         private Button btnDashBoard;
@@ -1139,5 +1138,6 @@
         private PictureBox pcBxRndEdg1;
         private PictureBox pcBxRndEdg2;
         private PictureBox pcBxRndEdg3;
+        private Button btnExitAdmin;
     }
 }

@@ -2,10 +2,11 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
-    public partial class AdminPage : Form
+    public partial class DashBoard : Form
     {
+        
 
-        public AdminPage()
+        public DashBoard()
         {
             InitializeComponent();
         }
@@ -14,8 +15,6 @@ namespace IOOP_Assignment
 
         private void Admin_Load(object sender, EventArgs e)
         {
-            pcBxDashBrd.Show();
-
 
         }
 
@@ -23,31 +22,25 @@ namespace IOOP_Assignment
 
         private void btnIncome_Click(object sender, EventArgs e)
         {
-            frmHeader.Text = "Monthly Income";   
-         
-            chgSideLabelLocation(btnIncome);
-            chgForeColour(btnIncome);
+            this.Hide();
+            MonthlyIncome iObj = new MonthlyIncome();
+            iObj.Show();
+            
 
         }
 
         internal void btnServiceReport_Click(object sender, EventArgs e)
         {
-           
-            frmHeader.Text = "Service Report";
-            pcBxServRpt.Show();
-            chgSideLabelLocation(btnServiceReport);
-            chgForeColour(btnServiceReport);
-           
+            this.Hide();
+            ServiceReport sObj = new ServiceReport();
+            sObj.Show();
         }
 
         private void btnRegistration_Click(object sender, EventArgs e)
-        {
-         
-            frmHeader.Text = "Registration";
-          
-            chgSideLabelLocation(btnRegistration);
-            chgForeColour(btnRegistration);
-           
+        {   
+            this.Hide();
+            Registration rObj = new Registration();
+            rObj.Show();
 
         }
 
@@ -55,13 +48,7 @@ namespace IOOP_Assignment
 
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
-           
-            frmHeader.Text = "Admin DashBoard";
-            pcBxDashBrd.Show();
-            chgSideLabelLocation(btnDashBoard);
-            chgForeColour(btnDashBoard);
-           
-     
+
         }
 
 
@@ -125,26 +112,6 @@ namespace IOOP_Assignment
             btnServiceReport.BackColor = ColorTranslator.FromHtml("#0A0909");
         }
 
-        private void pcBxDashBrd_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmHeader_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnLogOut_MouseEnter(object sender, EventArgs e)
         {
             btnLogOut.BackColor = Color.FromArgb(57,57,57);
@@ -165,6 +132,23 @@ namespace IOOP_Assignment
             btnExit.BackColor = Color.FromArgb(10,10,10);
         }
 
+        private void showForm(Registration a)
+        {
+            this.Hide();
+            a.Show();
+        }
 
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void uCBtnServiceReport_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ServiceReport sObj = new ServiceReport();
+            sObj.Show();
+        }
     }
 }

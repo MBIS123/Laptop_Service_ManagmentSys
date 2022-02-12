@@ -13,11 +13,18 @@ namespace IOOP_Assignment
 {
     public partial class Registration : Form
     {
-        Admin adminObj = new Admin();
+        Admin adminObjR = new Admin();
         DataValidation validtObj = new DataValidation();
+        
+
+
         public Registration()
         {
             InitializeComponent();
+        }
+        private void Registration_Load(object sender, EventArgs e)
+        {
+
         }
         private void btnRegis_Click(object sender, EventArgs e)
         {
@@ -25,10 +32,10 @@ namespace IOOP_Assignment
             {
                 if (isValidated())
                 {
-                    MessageBox.Show("yay finally done registration");
                     setValueToVar();
-                    MessageBox.Show(adminObj.Name + " " + adminObj.Ethnicity + " " + adminObj.Gender + " " + adminObj.DateOfBirth + " " + adminObj.EmailAddress + " " + adminObj.PhoneNumber + " " + adminObj.NoIC + " " + adminObj.Position);
-                    adminObj.insertDataBase();
+                    adminObjR.insertDataBase();
+                    MessageBox.Show("Registration Successfully !");
+                    clearForm();
                 }
                 else
                     MessageBox.Show(" Entered data does not meet the format.Please try again");
@@ -40,7 +47,7 @@ namespace IOOP_Assignment
 
         private void ckBxFilled_MouseClick(object sender, MouseEventArgs e)
         {
-            adminObj.AllInfoFilled = true;
+           
 
             if (!allFilled(ckBxFilled)) // if not allfilled then need to fill in again ant chkbox will become unchecked
                 ckBxFilled.Checked = false;
@@ -52,14 +59,20 @@ namespace IOOP_Assignment
 
             if (chkBx.Checked)
             {
-                adminObj.validateRegisCheckComboBx(cmbBxGender, cmbBxEthnic); // will set the value of selected combo box index  to related variable
-                adminObj.validateRegisPosition(rdBtnTech, rdBtnRecep);       // will set the value of selected radioButton for position to related variable
+                adminObjR.AllInfoFilled = true;
+                MessageBox.Show(adminObjR.AllInfoFilled.ToString());
+                adminObjR.validateRegisCheckComboBx(cmbBxGender, cmbBxEthnic); // will set the value of selected combo box index  to related variable
+                MessageBox.Show(adminObjR.AllInfoFilled.ToString() + "for combobox");
+
+                adminObjR.validateRegisPosition(rdBtnTech, rdBtnRecep);       // will set the value of selected radioButton for position to related variable
+                MessageBox.Show(adminObjR.AllInfoFilled.ToString()+ "regis positon");
             }
-            bool filledInfo = adminObj.AllInfoFilled; // will return false if the radio button was not click , and checkbox index = -1;
+            bool filledInfo = adminObjR.AllInfoFilled; // will return false if the radio button was not click , and checkbox index = -1;
 
             if ((validtObj.isStringNull(txtName) || validtObj.isStringNull(txtDateOfBirth) || validtObj.isStringNull(txtAddress)
                 || validtObj.isStringNull(txtEmailAddress) || validtObj.isStringNull(txtIcNo) || validtObj.isStringNull(txtContactNo)) || !filledInfo) // if gt null value
             {
+                MessageBox.Show(txtName.Text +" " + txtDateOfBirth.Text + " "+ txtAddress.Text + " " + txtEmailAddress.Text  +" " +txtIcNo.Text + " "+ txtContactNo.Text + "filled info  = " + filledInfo);
                 MessageBox.Show("Please ensure every section was filled !", " Reminder ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
@@ -84,6 +97,7 @@ namespace IOOP_Assignment
 
             if (validtObj.isPhoneNum(txtContactNo.Text))
                 sucssCase += 1;
+            MessageBox.Show("num of tsetcase =" + sucssCase.ToString());
 
             if (sucssCase == 5)  // there are 5 testcase for data validation
                 return true;
@@ -96,12 +110,12 @@ namespace IOOP_Assignment
 
         private void setValueToVar()  // get the value from textbox and pass to related member field
         {
-            adminObj.Name = txtName.Text.ToUpper().Replace(" ", "");
-            adminObj.Address = txtAddress.Text;
-            adminObj.PhoneNumber = txtContactNo.Text;
-            adminObj.DateOfBirth = dateFormation();
-            adminObj.EmailAddress = txtEmailAddress.Text;
-            adminObj.NoIC = txtIcNo.Text;
+            adminObjR.Name = txtName.Text.ToUpper().Replace(" ", "");
+            adminObjR.Address = txtAddress.Text;
+            adminObjR.PhoneNumber = txtContactNo.Text;
+            adminObjR.DateOfBirth = dateFormation();
+            adminObjR.EmailAddress = txtEmailAddress.Text;
+            adminObjR.NoIC = txtIcNo.Text;
         }
 
         private string dateFormation()
@@ -117,19 +131,50 @@ namespace IOOP_Assignment
             string formattedBirthDate = year + '-' + month + '-' + day;
 
             return formattedBirthDate; // the birthdate are now in YYYY-MM-DD
+        }
+        
+        private void clearForm()
+        {
+            txtIcNo.Text =String.Empty;
+            txtName.Text = String.Empty;
+            txtAddress.Text = String.Empty; 
+            txtContactNo.Text = String.Empty;
+            txtDateOfBirth.Text = String.Empty;
+            txtEmailAddress.Text = String.Empty;
+            txtContactNo.Text = String.Empty;
+            rdBtnRecep.Checked = false;
+            rdBtnTech.Checked = false;
+            ckBxFilled.Checked = false;
+            cmbBxEthnic.SelectedIndex = -1;
+            cmbBxGender.SelectedIndex = -1;
 
         }
 
         private void btnIncome_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MonthlyIncome obj = new MonthlyIncome();
-            obj.ShowDialog();
+            MonthlyIncome iObj = new MonthlyIncome();
+            iObj.Show();
         }
 
-        private void Registration_Load(object sender, EventArgs e)
+        private void btnDashBoard_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            DashBoard dObj = new DashBoard();
+            dObj.Show();
         }
+
+        private void btnServiceReport_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ServiceReport sObj = new ServiceReport();
+            sObj.Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }

@@ -19,7 +19,7 @@ namespace IOOP_Assignment
 
         private void button_woc3_Click(object sender, EventArgs e)
         {
-            AdminPage adminPageObj = new AdminPage();
+            DashBoard adminPageObj = new DashBoard();
           
             
         }

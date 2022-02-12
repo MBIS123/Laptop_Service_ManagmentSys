@@ -38,7 +38,6 @@
             this.btnDashBoard = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.frmHeader = new System.Windows.Forms.Label();
             this.dtGVIncome = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxIncome)).BeginInit();
@@ -137,6 +137,7 @@
             this.btnServiceReport.Text = "Service Report";
             this.btnServiceReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnServiceReport.UseVisualStyleBackColor = false;
+            this.btnServiceReport.Click += new System.EventHandler(this.btnServiceReport_Click);
             // 
             // btnDashBoard
             // 
@@ -153,11 +154,12 @@
             this.btnDashBoard.Text = "Dashboard";
             this.btnDashBoard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashBoard.UseVisualStyleBackColor = false;
+            this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.HotTrack;
-            this.dateTimePicker1.Location = new System.Drawing.Point(561, 12);
+            this.dateTimePicker1.Location = new System.Drawing.Point(605, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker1.TabIndex = 282;
@@ -176,24 +178,12 @@
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(810, 15);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 15);
-            this.label6.TabIndex = 279;
-            this.label6.Text = "JinHao ";
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.SizeNESW;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(765, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(824, 3);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 36);
@@ -289,12 +279,26 @@
             this.dtGVIncome.Size = new System.Drawing.Size(775, 269);
             this.dtGVIncome.TabIndex = 289;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(12, 456);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(32, 33);
+            this.button2.TabIndex = 327;
+            this.button2.UseCompatibleTextRendering = true;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // MonthlyIncome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(985, 508);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.dtGVIncome);
             this.Controls.Add(this.sideLabel);
             this.Controls.Add(this.label1);
@@ -305,7 +309,6 @@
             this.Controls.Add(this.btnDashBoard);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnLogOut);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -313,7 +316,9 @@
             this.Controls.Add(this.frmHeader);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.splitter2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MonthlyIncome";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MonthlyIncome";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -335,7 +340,6 @@
         private Button btnDashBoard;
         private DateTimePicker dateTimePicker1;
         private Button btnLogOut;
-        private Label label6;
         private PictureBox pictureBox2;
         private Label label5;
         private Label label3;
@@ -344,5 +348,6 @@
         private Splitter splitter1;
         private Label frmHeader;
         private DataGridView dtGVIncome;
+        private Button button2;
     }
 }
