@@ -1,4 +1,6 @@
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace IOOP_Assignment
 {
@@ -15,6 +17,14 @@ namespace IOOP_Assignment
 
         private void Admin_Load(object sender, EventArgs e)
         {
+           
+
+
+
+
+
+
+
 
         }
 

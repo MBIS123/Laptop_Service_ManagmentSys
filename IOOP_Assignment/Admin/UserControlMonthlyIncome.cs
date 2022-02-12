@@ -48,8 +48,9 @@ namespace IOOP_Assignment
             return dt;
         }
 
+        private void dtGVIncome_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-
-
+        }
     }
 }
