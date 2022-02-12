@@ -35,11 +35,17 @@ namespace IOOP_Assignment
             orderid_forselection = oid;
         }
 
+        public EditServiceRequest(int t)
+        {
+            technician_ID = t;
+        }
+
         //load existing data 
         private void EditServiceRequest_Load(object sender, EventArgs e)
         {
             ArrayList orderid = new ArrayList();
-            orderid = Technician.viewOrderID();
+            Technician obj1 = new Technician(technician_ID);
+            orderid = Technician.viewOrderID(obj1);
             foreach (var item in orderid)
             {
                 comboOrderID.Items.Add(item);
@@ -50,7 +56,8 @@ namespace IOOP_Assignment
         {
 
             ArrayList orderid = new ArrayList();
-            orderid = Technician.viewOrderID();
+            Technician obj2 = new Technician(technician_ID);
+            orderid = Technician.viewOrderID(obj2);
             //MessageBox.Show(comboOrderID.SelectedIndex.ToString()); //for testing
             string combo_index_string = comboOrderID.SelectedIndex.ToString();
             int combo_index_int = Int32.Parse(combo_index_string);
@@ -63,9 +70,19 @@ namespace IOOP_Assignment
                 radioChangesRequired.Checked = true;
             }
             richServDescription.Text = obj1.Servdesc;
-            collection_Date = obj1.Collectiondate;
+            //collection_Date = obj1.Collectiondate;
             //MessageBox.Show(collection_Date.ToString()); //for testing
-            CollectionDatePicker.Value = collection_Date.Date;
+            //CollectionDatePicker.Value = collection_Date.Date;
+        }
+
+        //ensuring technician can't pick a date earlier than today
+        private void CollectionDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            if (CollectionDatePicker.Value < DateTime.Today)
+            {
+                MessageBox.Show("You cannot select dates earlier than today!");
+                CollectionDatePicker.Value = DateTime.Today;
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -81,38 +98,60 @@ namespace IOOP_Assignment
         {
             //take in value of orderid, string of change status, string of serv_desc,
             //and value of collection date
-            int flag = 1; //for radiobutton validation
-            
-            ArrayList orderid = new ArrayList();
-            orderid = Technician.viewOrderID();
-            string combo_index_string = comboOrderID.SelectedIndex.ToString();
-            int combo_index_int = Int32.Parse(combo_index_string);
-            orderid_forselection = (int)orderid[combo_index_int];
-
-            //collection_Date_string = CollectionDatePicker.Value.ToString("dd/MM/yyyy");
-
-            if (radioChangesRequired.Checked)
+            if (comboOrderID.Items.Count > 0) //check if there are items
             {
-                status = "Changes Required"; 
-            }
-            else if (radioCompleted.Checked)
-            {
-                status = "Completed";
+                if (comboOrderID.SelectedIndex >= 0) //check if there is a selection
+                {
+                    int flag = 1; //for radiobutton validation
+
+                    ArrayList orderid = new ArrayList();
+                    Technician obj1 = new Technician(technician_ID);
+                    orderid = Technician.viewOrderID(obj1);
+                    string combo_index_string = comboOrderID.SelectedIndex.ToString();
+                    int combo_index_int = Int32.Parse(combo_index_string);
+                    orderid_forselection = (int)orderid[combo_index_int];
+
+                    //collection_Date_string = CollectionDatePicker.Value.ToString("dd/MM/yyyy");
+
+                    if (radioChangesRequired.Checked)
+                    {
+                        status = "Changes Required";
+                    }
+                    else if (radioCompleted.Checked)
+                    {
+                        status = "Completed";
+                    }
+                    else
+                    {
+                        flag = 0;
+                    }
+
+                    if (flag == 1)
+                    {
+                        Technician obj2 = new Technician(technician_ID);
+                        MessageBox.Show(obj2.updateEditServReq(orderid_forselection, status, richServDescription.Text, CollectionDatePicker.Value.Date));
+                        if (radioCompleted.Checked)
+                        {
+                            comboOrderID.Items.Remove(comboOrderID.SelectedItem);
+                        }
+                        comboOrderID.Text = String.Empty;
+                        richServDescription.Text = String.Empty;
+                        Users u = new Users();
+                        u.assignOrder();
+                    }
+                    else
+                    {
+                        MessageBox.Show("You need to select a status.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid. Please select an OrderID.");
+                }
             }
             else
-            {
-                flag = 0;
-            }
+                MessageBox.Show("Invalid. There are no service requests to be edited.");
 
-            if (flag == 1)
-            {
-                Technician obj1 = new Technician();
-                MessageBox.Show(obj1.updateEditServReq(orderid_forselection, status, richServDescription.Text, CollectionDatePicker.Value.Date));
-            }
-            else
-            {
-                MessageBox.Show("You need to select a status.");
-            }
           
         }
 

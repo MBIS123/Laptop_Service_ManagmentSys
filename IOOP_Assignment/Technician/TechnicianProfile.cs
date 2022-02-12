@@ -85,6 +85,7 @@ namespace IOOP_Assignment
         //navigating menu
         private void btnAccess_EditProfile_Click(object sender, EventArgs e)
         {
+            this.Hide();
             UpdateTechnicianProfile utp = new UpdateTechnicianProfile(name);
             utp.StartPosition = FormStartPosition.Manual;
             utp.Location = new Point(100, 100);

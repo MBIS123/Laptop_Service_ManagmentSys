@@ -26,7 +26,7 @@ namespace IOOP_Assignment
         //loading details into fields
         private void UpdateTechnicianProfile_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(name); //for testing
+            //MessageBox.Show(name); //for testing
             Technician obj1 = new Technician(name);
             Technician.viewTechProfile(obj1);
             txtContact.Text = obj1.TechContact;
@@ -49,15 +49,26 @@ namespace IOOP_Assignment
         {
             //validation
             DataValidation objval = new DataValidation();
-            if (objval.isPhoneNum(txtContact.Text) && (objval.isStringNull(txtAddress) == false)) //&& (objval.isEmail(txtEmail.Text))  
+            if (objval.isPhoneNum(txtContact.Text) && (objval.isEmailAddress(txtEmail)) && (objval.isStringNull(txtAddress) == false)) //all valid
             {
                 Technician obj1 = new Technician(name);
                 MessageBox.Show(obj1.updateTechProfileContactDetails(txtContact.Text, txtEmail.Text, txtAddress.Text));
             }
             else
             {
-                MessageBox.Show("Invalid!");
-            }   
+                if (objval.isPhoneNum(txtContact.Text) == false)
+                {
+                    MessageBox.Show("Invalid Contact Number!");
+                }
+                if (objval.isEmailAddress(txtEmail) == false) //emailaddress not valid
+                {
+                    MessageBox.Show("Invalid Email!");
+                }
+                if (objval.isStringNull(txtAddress)) //address not valid
+                {
+                    MessageBox.Show("Invalid Address!");
+                }
+            }
         }
 
         //reset password button: textboxes cleared
@@ -81,7 +92,14 @@ namespace IOOP_Assignment
                 {
                     if (txtNewPW.Text == txtConfirmNewPW.Text) //if newpw and confirm are the same
                     {
-                        MessageBox.Show(obj1.updateTechProfilePassword(txtNewPW.Text)); //update users table
+                        if (txtCurrentPW.Text == txtNewPW.Text)
+                        {
+                            MessageBox.Show("The new password you have entered is the same as your current password. Please try again.");
+                        }
+                        else
+                        {
+                            MessageBox.Show(obj1.updateTechProfilePassword(txtNewPW.Text)); //update users table
+                        }
                     }
                     else //if newpw and confirm are not the same
                     {
@@ -91,7 +109,7 @@ namespace IOOP_Assignment
                 else //if newpw is not valid
                 {
                     MessageBox.Show("The new password you have entered is not valid. Please try again.");
-                    
+
                 }
             }
             else
@@ -104,6 +122,8 @@ namespace IOOP_Assignment
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();
+            TechnicianProfile tp = new TechnicianProfile(name);
+            tp.ShowDialog();
             /*TechnicianDashboard td = new TechnicianDashboard();
             td.StartPosition = FormStartPosition.Manual;
             td.Location = new Point(100, 100);

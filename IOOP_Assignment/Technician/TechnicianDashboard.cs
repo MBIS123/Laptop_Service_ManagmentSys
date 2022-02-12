@@ -32,15 +32,20 @@ namespace IOOP_Assignment
 
         private void TechnicianDashboard_Load(object sender, EventArgs e)
         {
-            Technician obj1 = new Technician(name);
+            Technician obj1 = new Technician(name, technician_ID);
             Technician.viewTechProfile(obj1);
             lblName.Text = obj1.TechName; //loading name into label
-            obj1.loadOrderTable(dataGrid_AllServ);
+            obj1.loadOrderTable(dataGrid_AllServ, technician_ID);
+            Technician.dashboardWidgetValues(obj1);
+            lblWidg_ValuePendServ.Text = obj1.Numberofpending.ToString();
+            lblWidg_ValueUrgServ.Text = obj1.Numberofurgent.ToString();
+            lblWidg_ValueCompServ.Text = obj1.Numberofcompleted.ToString();
         }
 
         //navigating menu
         private void btnAccess_AllServ_Click(object sender, EventArgs e) //edit button
         {
+            //MessageBox.Show(technician_ID.ToString()); //for testing value of technician_ID
             EditServiceRequest ed = new EditServiceRequest(technician_ID, order_id);
             ed.StartPosition = FormStartPosition.Manual;
             ed.Location = new Point(500, 250);
@@ -50,7 +55,7 @@ namespace IOOP_Assignment
         private void btnRefresh_AllServ_Click(object sender, EventArgs e)
         {
             Technician obj1 = new Technician(name);
-            obj1.loadOrderTable(dataGrid_AllServ);
+            obj1.loadOrderTable(dataGrid_AllServ, technician_ID);
         }
 
         private void btnAccess_Profile_Click(object sender, EventArgs e)
