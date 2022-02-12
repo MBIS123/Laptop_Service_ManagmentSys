@@ -12,16 +12,22 @@ namespace IOOP_Assignment
 {
     public partial class frmRegNewCus : Form
     {
-        Receptionist obj1 = new Receptionist();
+        public static string name;
+        Receptionist1 obj1 = new Receptionist1();
         public frmRegNewCus()
         {
             InitializeComponent();
+        }
+        public frmRegNewCus(string n)
+        {
+            InitializeComponent();
+            Name = n;
         }
         string Gender;
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            Receptionist obj1 = new Receptionist(txtName.Text,Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, dateTimePickerDate.Text, txtUsername.Text);
+            Receptionist1 obj1 = new Receptionist1(txtName.Text,Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, dateTimePickerDate.Text, txtUsername.Text);
             obj1.allSecFill();
             MessageBox.Show(obj1.addNewCus());
         }

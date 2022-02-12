@@ -27,8 +27,13 @@ namespace IOOP_Assignment
 
         internal bool isPhoneNum(string input) 
         {
+
+
             if (Regex.IsMatch(input, @"^(\+601)[02-9]-[0-9]{7}$|^(\+601)[1]-[0-9]{8}$"))
+            {
+
                 return true;
+            }
             else
                 return false;
 

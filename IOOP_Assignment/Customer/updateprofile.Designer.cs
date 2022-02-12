@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(update_profile));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnclear = new System.Windows.Forms.Button();
-            this.btnsave = new System.Windows.Forms.Button();
             this.txtconfirmpassw = new System.Windows.Forms.TextBox();
             this.lblconfirmpass = new System.Windows.Forms.Label();
             this.txtnewpassw = new System.Windows.Forms.TextBox();
@@ -42,15 +41,12 @@
             this.lblpassword = new System.Windows.Forms.Label();
             this.txtemail = new System.Windows.Forms.TextBox();
             this.lblemail = new System.Windows.Forms.Label();
-            this.cbxphnum = new System.Windows.Forms.ComboBox();
             this.txtphonenum = new System.Windows.Forms.TextBox();
             this.lblphnum = new System.Windows.Forms.Label();
             this.txtbirthdate = new System.Windows.Forms.TextBox();
             this.lblbirthdate = new System.Windows.Forms.Label();
-            this.txtlastname = new System.Windows.Forms.TextBox();
-            this.txtfirstname = new System.Windows.Forms.TextBox();
-            this.lbllastname = new System.Windows.Forms.Label();
-            this.lblfirstname = new System.Windows.Forms.Label();
+            this.txtname = new System.Windows.Forms.TextBox();
+            this.lblname = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.lbl_personalinfo = new System.Windows.Forms.Label();
             this.lbltitle_accountsetting = new System.Windows.Forms.Label();
@@ -74,6 +70,11 @@
             this.lblwelcome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_cusName = new System.Windows.Forms.Label();
+            this.txtaddress = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnclear_cusInfo = new System.Windows.Forms.Button();
+            this.btn_savePassword = new System.Windows.Forms.Button();
+            this.btnsave_cusInfo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -85,8 +86,12 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox1.Controls.Add(this.btnsave_cusInfo);
+            this.groupBox1.Controls.Add(this.btn_savePassword);
+            this.groupBox1.Controls.Add(this.btnclear_cusInfo);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtaddress);
             this.groupBox1.Controls.Add(this.btnclear);
-            this.groupBox1.Controls.Add(this.btnsave);
             this.groupBox1.Controls.Add(this.txtconfirmpassw);
             this.groupBox1.Controls.Add(this.lblconfirmpass);
             this.groupBox1.Controls.Add(this.txtnewpassw);
@@ -97,15 +102,12 @@
             this.groupBox1.Controls.Add(this.lblpassword);
             this.groupBox1.Controls.Add(this.txtemail);
             this.groupBox1.Controls.Add(this.lblemail);
-            this.groupBox1.Controls.Add(this.cbxphnum);
             this.groupBox1.Controls.Add(this.txtphonenum);
             this.groupBox1.Controls.Add(this.lblphnum);
             this.groupBox1.Controls.Add(this.txtbirthdate);
             this.groupBox1.Controls.Add(this.lblbirthdate);
-            this.groupBox1.Controls.Add(this.txtlastname);
-            this.groupBox1.Controls.Add(this.txtfirstname);
-            this.groupBox1.Controls.Add(this.lbllastname);
-            this.groupBox1.Controls.Add(this.lblfirstname);
+            this.groupBox1.Controls.Add(this.txtname);
+            this.groupBox1.Controls.Add(this.lblname);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.lbl_personalinfo);
             this.groupBox1.Controls.Add(this.lbltitle_accountsetting);
@@ -122,27 +124,18 @@
             // btnclear
             // 
             this.btnclear.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnclear.Location = new System.Drawing.Point(189, 955);
+            this.btnclear.Location = new System.Drawing.Point(290, 920);
             this.btnclear.Name = "btnclear";
-            this.btnclear.Size = new System.Drawing.Size(94, 29);
+            this.btnclear.Size = new System.Drawing.Size(94, 39);
             this.btnclear.TabIndex = 121;
             this.btnclear.Text = "CLEAR";
             this.btnclear.UseVisualStyleBackColor = true;
-            // 
-            // btnsave
-            // 
-            this.btnsave.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnsave.Location = new System.Drawing.Point(67, 955);
-            this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(94, 29);
-            this.btnsave.TabIndex = 120;
-            this.btnsave.Text = "SAVE";
-            this.btnsave.UseVisualStyleBackColor = true;
+            this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
             // 
             // txtconfirmpassw
             // 
             this.txtconfirmpassw.BackColor = System.Drawing.Color.White;
-            this.txtconfirmpassw.Location = new System.Drawing.Point(464, 788);
+            this.txtconfirmpassw.Location = new System.Drawing.Point(464, 749);
             this.txtconfirmpassw.Multiline = true;
             this.txtconfirmpassw.Name = "txtconfirmpassw";
             this.txtconfirmpassw.Size = new System.Drawing.Size(297, 35);
@@ -152,7 +145,7 @@
             // 
             this.lblconfirmpass.AutoSize = true;
             this.lblconfirmpass.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblconfirmpass.Location = new System.Drawing.Point(464, 746);
+            this.lblconfirmpass.Location = new System.Drawing.Point(464, 707);
             this.lblconfirmpass.Name = "lblconfirmpass";
             this.lblconfirmpass.Size = new System.Drawing.Size(187, 19);
             this.lblconfirmpass.TabIndex = 118;
@@ -161,7 +154,7 @@
             // txtnewpassw
             // 
             this.txtnewpassw.BackColor = System.Drawing.Color.White;
-            this.txtnewpassw.Location = new System.Drawing.Point(63, 893);
+            this.txtnewpassw.Location = new System.Drawing.Point(63, 854);
             this.txtnewpassw.Multiline = true;
             this.txtnewpassw.Name = "txtnewpassw";
             this.txtnewpassw.Size = new System.Drawing.Size(297, 35);
@@ -171,7 +164,7 @@
             // 
             this.lblnewpass.AutoSize = true;
             this.lblnewpass.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblnewpass.Location = new System.Drawing.Point(70, 850);
+            this.lblnewpass.Location = new System.Drawing.Point(70, 811);
             this.lblnewpass.Name = "lblnewpass";
             this.lblnewpass.Size = new System.Drawing.Size(144, 19);
             this.lblnewpass.TabIndex = 116;
@@ -180,7 +173,7 @@
             // txtcurrentpassw
             // 
             this.txtcurrentpassw.BackColor = System.Drawing.Color.White;
-            this.txtcurrentpassw.Location = new System.Drawing.Point(64, 788);
+            this.txtcurrentpassw.Location = new System.Drawing.Point(64, 749);
             this.txtcurrentpassw.Multiline = true;
             this.txtcurrentpassw.Name = "txtcurrentpassw";
             this.txtcurrentpassw.Size = new System.Drawing.Size(297, 35);
@@ -190,7 +183,7 @@
             // 
             this.lblcurrentpass.AutoSize = true;
             this.lblcurrentpass.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblcurrentpass.Location = new System.Drawing.Point(70, 746);
+            this.lblcurrentpass.Location = new System.Drawing.Point(70, 707);
             this.lblcurrentpass.Name = "lblcurrentpass";
             this.lblcurrentpass.Size = new System.Drawing.Size(186, 19);
             this.lblcurrentpass.TabIndex = 114;
@@ -200,7 +193,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Wingdings 2", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(16, 679);
+            this.label1.Location = new System.Drawing.Point(16, 640);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 30);
             this.label1.TabIndex = 112;
@@ -210,7 +203,7 @@
             // 
             this.lblpassword.AutoSize = true;
             this.lblpassword.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblpassword.Location = new System.Drawing.Point(67, 684);
+            this.lblpassword.Location = new System.Drawing.Point(67, 645);
             this.lblpassword.Name = "lblpassword";
             this.lblpassword.Size = new System.Drawing.Size(90, 23);
             this.lblpassword.TabIndex = 111;
@@ -219,7 +212,7 @@
             // txtemail
             // 
             this.txtemail.BackColor = System.Drawing.Color.White;
-            this.txtemail.Location = new System.Drawing.Point(63, 603);
+            this.txtemail.Location = new System.Drawing.Point(417, 243);
             this.txtemail.Multiline = true;
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(297, 35);
@@ -229,30 +222,16 @@
             // 
             this.lblemail.AutoSize = true;
             this.lblemail.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblemail.Location = new System.Drawing.Point(67, 558);
+            this.lblemail.Location = new System.Drawing.Point(421, 198);
             this.lblemail.Name = "lblemail";
             this.lblemail.Size = new System.Drawing.Size(148, 19);
             this.lblemail.TabIndex = 109;
             this.lblemail.Text = "E-MAIL ADDRESS";
             // 
-            // cbxphnum
-            // 
-            this.cbxphnum.BackColor = System.Drawing.Color.White;
-            this.cbxphnum.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbxphnum.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cbxphnum.FormattingEnabled = true;
-            this.cbxphnum.Items.AddRange(new object[] {
-            "+60"});
-            this.cbxphnum.Location = new System.Drawing.Point(64, 469);
-            this.cbxphnum.Name = "cbxphnum";
-            this.cbxphnum.Size = new System.Drawing.Size(67, 31);
-            this.cbxphnum.TabIndex = 108;
-            this.cbxphnum.Text = "+60";
-            // 
             // txtphonenum
             // 
             this.txtphonenum.BackColor = System.Drawing.Color.White;
-            this.txtphonenum.Location = new System.Drawing.Point(147, 469);
+            this.txtphonenum.Location = new System.Drawing.Point(64, 473);
             this.txtphonenum.Multiline = true;
             this.txtphonenum.Name = "txtphonenum";
             this.txtphonenum.Size = new System.Drawing.Size(220, 34);
@@ -287,43 +266,24 @@
             this.lblbirthdate.TabIndex = 104;
             this.lblbirthdate.Text = "BIRTH DATE";
             // 
-            // txtlastname
+            // txtname
             // 
-            this.txtlastname.BackColor = System.Drawing.Color.White;
-            this.txtlastname.Location = new System.Drawing.Point(379, 238);
-            this.txtlastname.Multiline = true;
-            this.txtlastname.Name = "txtlastname";
-            this.txtlastname.Size = new System.Drawing.Size(220, 34);
-            this.txtlastname.TabIndex = 103;
+            this.txtname.BackColor = System.Drawing.Color.White;
+            this.txtname.Location = new System.Drawing.Point(63, 238);
+            this.txtname.Multiline = true;
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(220, 34);
+            this.txtname.TabIndex = 102;
             // 
-            // txtfirstname
+            // lblname
             // 
-            this.txtfirstname.BackColor = System.Drawing.Color.White;
-            this.txtfirstname.Location = new System.Drawing.Point(63, 238);
-            this.txtfirstname.Multiline = true;
-            this.txtfirstname.Name = "txtfirstname";
-            this.txtfirstname.Size = new System.Drawing.Size(220, 34);
-            this.txtfirstname.TabIndex = 102;
-            // 
-            // lbllastname
-            // 
-            this.lbllastname.AutoSize = true;
-            this.lbllastname.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbllastname.Location = new System.Drawing.Point(379, 198);
-            this.lbllastname.Name = "lbllastname";
-            this.lbllastname.Size = new System.Drawing.Size(104, 19);
-            this.lbllastname.TabIndex = 101;
-            this.lbllastname.Text = "LAST NAME";
-            // 
-            // lblfirstname
-            // 
-            this.lblfirstname.AutoSize = true;
-            this.lblfirstname.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblfirstname.Location = new System.Drawing.Point(67, 198);
-            this.lblfirstname.Name = "lblfirstname";
-            this.lblfirstname.Size = new System.Drawing.Size(111, 19);
-            this.lblfirstname.TabIndex = 100;
-            this.lblfirstname.Text = "FIRST NAME";
+            this.lblname.AutoSize = true;
+            this.lblname.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblname.Location = new System.Drawing.Point(67, 198);
+            this.lblname.Name = "lblname";
+            this.lblname.Size = new System.Drawing.Size(111, 19);
+            this.lblname.TabIndex = 100;
+            this.lblname.Text = "FIRST NAME";
             // 
             // label17
             // 
@@ -373,7 +333,7 @@
             this.label29.AutoSize = true;
             this.label29.BackColor = System.Drawing.Color.PeachPuff;
             this.label29.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label29.Location = new System.Drawing.Point(67, 696);
+            this.label29.Location = new System.Drawing.Point(67, 657);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(93, 20);
             this.label29.TabIndex = 113;
@@ -556,11 +516,11 @@
             // 
             this.lblwelcome.AutoSize = true;
             this.lblwelcome.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblwelcome.Location = new System.Drawing.Point(41, 205);
+            this.lblwelcome.Location = new System.Drawing.Point(17, 207);
             this.lblwelcome.Name = "lblwelcome";
-            this.lblwelcome.Size = new System.Drawing.Size(169, 25);
+            this.lblwelcome.Size = new System.Drawing.Size(210, 25);
             this.lblwelcome.TabIndex = 67;
-            this.lblwelcome.Text = "Welcome back !";
+            this.lblwelcome.Text = "WELCOME BACK";
             // 
             // pictureBox1
             // 
@@ -572,15 +532,68 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 79;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lbl_cusName
             // 
             this.lbl_cusName.AutoSize = true;
-            this.lbl_cusName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_cusName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_cusName.Location = new System.Drawing.Point(74, 241);
             this.lbl_cusName.Name = "lbl_cusName";
-            this.lbl_cusName.Size = new System.Drawing.Size(0, 25);
+            this.lbl_cusName.Size = new System.Drawing.Size(0, 28);
             this.lbl_cusName.TabIndex = 80;
+            // 
+            // txtaddress
+            // 
+            this.txtaddress.BackColor = System.Drawing.Color.White;
+            this.txtaddress.Location = new System.Drawing.Point(421, 373);
+            this.txtaddress.Multiline = true;
+            this.txtaddress.Name = "txtaddress";
+            this.txtaddress.Size = new System.Drawing.Size(297, 105);
+            this.txtaddress.TabIndex = 122;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(421, 323);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 19);
+            this.label3.TabIndex = 123;
+            this.label3.Text = "ADDRESS";
+            // 
+            // btnclear_cusInfo
+            // 
+            this.btnclear_cusInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnclear_cusInfo.Location = new System.Drawing.Point(220, 547);
+            this.btnclear_cusInfo.Name = "btnclear_cusInfo";
+            this.btnclear_cusInfo.Size = new System.Drawing.Size(94, 33);
+            this.btnclear_cusInfo.TabIndex = 125;
+            this.btnclear_cusInfo.Text = "CLEAR";
+            this.btnclear_cusInfo.UseVisualStyleBackColor = true;
+            this.btnclear_cusInfo.Click += new System.EventHandler(this.btnclear_cusInfo_Click);
+            // 
+            // btn_savePassword
+            // 
+            this.btn_savePassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_savePassword.Location = new System.Drawing.Point(67, 920);
+            this.btn_savePassword.Name = "btn_savePassword";
+            this.btn_savePassword.Size = new System.Drawing.Size(162, 39);
+            this.btn_savePassword.TabIndex = 126;
+            this.btn_savePassword.Text = "SAVE PASSWORD";
+            this.btn_savePassword.UseVisualStyleBackColor = true;
+            this.btn_savePassword.Click += new System.EventHandler(this.btn_savePassword_Click);
+            // 
+            // btnsave_cusInfo
+            // 
+            this.btnsave_cusInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnsave_cusInfo.Location = new System.Drawing.Point(67, 547);
+            this.btnsave_cusInfo.Name = "btnsave_cusInfo";
+            this.btnsave_cusInfo.Size = new System.Drawing.Size(111, 33);
+            this.btnsave_cusInfo.TabIndex = 127;
+            this.btnsave_cusInfo.Text = "SAVE";
+            this.btnsave_cusInfo.UseVisualStyleBackColor = true;
+            this.btnsave_cusInfo.Click += new System.EventHandler(this.btnsave_cusInfo_Click);
             // 
             // update_profile
             // 
@@ -642,17 +655,13 @@
         private Label lblwelcome;
         private TextBox txtemail;
         private Label lblemail;
-        private ComboBox cbxphnum;
         private TextBox txtphonenum;
         private Label lblphnum;
         private TextBox txtbirthdate;
         private Label lblbirthdate;
-        private TextBox txtlastname;
-        private TextBox txtfirstname;
-        private Label lbllastname;
-        private Label lblfirstname;
+        private TextBox txtname;
+        private Label lblname;
         private Label label26;
-        private Button btnsave;
         private TextBox txtconfirmpassw;
         private Label lblconfirmpass;
         private TextBox txtnewpassw;
@@ -665,5 +674,10 @@
         private PictureBox pictureBox1;
         private Button btnclear;
         private Label lbl_cusName;
+        private Label label3;
+        private TextBox txtaddress;
+        private Button btnclear_cusInfo;
+        private Button btn_savePassword;
+        private Button btnsave_cusInfo;
     }
 }

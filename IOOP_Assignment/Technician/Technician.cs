@@ -57,9 +57,25 @@ namespace IOOP_Assignment
         public int Numberofurgent { get => numberofurgent; set => numberofurgent = value; }
         public int Numberofcompleted { get => numberofcompleted; set => numberofcompleted = value; }
 
+        public Technician()
+        {
+
+        }
+
         public Technician(string tn)
         {
             techName = tn;
+        }
+
+        public Technician(int tid)
+        {
+            techID = tid;
+        }
+
+        public Technician(string tn, int tid)
+        {
+            techName = tn;
+            techID = tid;
         }
 
         public Technician(int tid, int ord_id)
@@ -68,15 +84,11 @@ namespace IOOP_Assignment
             orderid_forselection = ord_id;
         }
 
-        public Technician()
-        {
-
-        }
-
         //loading order table into technician dashboard
-        public void loadOrderTable(DataGridView dgv)
+        public void loadOrderTable(DataGridView dgv, int tech_ID)
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [Order]", con);
+            //SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [Order] where TechnicianID = '" + tech_ID + "' AND Status = 'Pending' or Status = 'Changes Required'", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [Order] where TechnicianID = '" + tech_ID + "'", con);
             DataTable dtbl = new DataTable();
             da.Fill(dtbl);
 
@@ -93,11 +105,14 @@ namespace IOOP_Assignment
         public static void dashboardWidgetValues(Technician o1)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("select COUNT(OrderID) FROM [Order] where Status = 'Pending'", con); //no. of pending jobs
+            //number of pending jobs belonging to technician with specific techID
+            SqlCommand cmd = new SqlCommand("select COUNT(OrderID) FROM [Order] where Status = 'Pending' AND TechnicianID = '" + o1.techID + "'", con); 
             o1.numberofpending = (Int32) cmd.ExecuteScalar();
-            SqlCommand cmd2 = new SqlCommand("select COUNT(OrderID) FROM [Order] where [Service Type] = 'Urgent'", con); //no. of pending jobs
+            //no. of urgent jobs belonging to technician with specific techID
+            SqlCommand cmd2 = new SqlCommand("select COUNT(OrderID) FROM [Order] where [Service Type] = 'Urgent' AND TechnicianID = '" + o1.techID + "'", con);
             o1.numberofurgent = (Int32) cmd2.ExecuteScalar();
-            SqlCommand cmd3 = new SqlCommand("select COUNT(OrderID) FROM [Order] where Status = 'Completed'", con); //no. of pending jobs
+            //no. of completed jobs in the month belonging to technician with specific techID
+            SqlCommand cmd3 = new SqlCommand("select COUNT(OrderID) FROM [Order] where Status = 'Completed' AND TechnicianID = '" + o1.techID + "' AND Month([Collection Date]) = Month(GETDATE())", con); 
             o1.numberofcompleted = (Int32) cmd3.ExecuteScalar();
             con.Close();
         }
@@ -106,6 +121,7 @@ namespace IOOP_Assignment
         public static void viewOrderTableforEdit(Technician o1)
         {
             con.Open();
+            Technician obj1 = new Technician(o1.techID);
             SqlCommand cmd = new SqlCommand("SELECT * FROM [Order] where OrderID = '" + o1.orderid_forselection + "'AND TechnicianID = '" + o1.techID + "'", con);
             SqlDataReader sqlDataReader = cmd.ExecuteReader();
             while (sqlDataReader.Read())
@@ -122,11 +138,13 @@ namespace IOOP_Assignment
         }
 
         //loading OrderIDs into array to show in comboOrderID
-        public static ArrayList viewOrderID()
+        public static ArrayList viewOrderID(Technician o1)
         {
             con.Open();
+            //MessageBox.Show(o1.techID.ToString()); //for testing if value of technician_ID (line 48 TechnicianDashboard) is passed
             ArrayList OID = new ArrayList();
-            SqlCommand cmd = new SqlCommand("select [OrderID] FROM [Order] where Status = 'Pending' or Status = 'Changes Required'", con); //only add pending 
+            //SqlCommand cmd = new SqlCommand("select [OrderID] FROM [Order] where Status = 'Pending' or Status = 'Changes Required' AND TechnicianID = '" + techID + "'", con); //only add pending 
+            SqlCommand cmd = new SqlCommand("select [OrderID] FROM [Order] where TechnicianID = '" + o1.techID + "' AND Status = 'Pending' or Status = 'Changes Required'", con); //only add pending 
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -148,7 +166,7 @@ namespace IOOP_Assignment
             collectiondate = date;
             collectiondate_string = collectiondate.ToString("yyyy-MM-dd");
 
-            MessageBox.Show(collectiondate_string);
+            //MessageBox.Show(collectiondate_string); testing if collectiondate is passed into collectiondate_string 
 
             SqlCommand cmd = new SqlCommand("update [Order] set [Status] = '" + servicerequest_status + "', [Service Description/Suggestion] = '" + servdesc + "', [Collection Date] = '" + collectiondate_string + "' where [OrderID] = '" + orderid_forselection + "'", con);
             int i = cmd.ExecuteNonQuery();
