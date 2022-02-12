@@ -19,11 +19,8 @@ namespace IOOP_Assignment
 
         private void button_woc3_Click(object sender, EventArgs e)
         {
-            AdminPage adminPageObj = new AdminPage();
-            adminPageObj.hideAllUserCtrl();
-            UserControlServiceReport uCServiceReport = new UserControlServiceReport();
-            uCServiceReport.Show();
-            uCServiceReport.BringToFront();
+            DashBoard adminPageObj = new DashBoard();
+          
             
         }
 

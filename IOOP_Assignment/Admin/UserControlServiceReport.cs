@@ -21,10 +21,7 @@ namespace IOOP_Assignment
 
         private void UserControlServiceReport_Load(object sender, EventArgs e)
         {
-            if (!this.DesignMode)
-            {
-                dataGVServiceReport.DataSource = GetServiceReportList();
-            }
+
         }
 
         private DataTable GetServiceReportList()

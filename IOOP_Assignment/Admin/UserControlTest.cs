@@ -1,39 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Globalization;
-
+﻿
 
 namespace IOOP_Assignment
 {
-
-    public partial class UserControlRegistration : UserControl
+    public partial class UserControlTest : UserControl
     {
         Admin adminObj = new Admin();
-        DataValidation validtObj = new DataValidation();    
-        
-      
-        public UserControlRegistration()
+        DataValidation validtObj = new DataValidation();
+        public UserControlTest()
         {
             InitializeComponent();
         }
 
-        private void UserControlRegistration_Load(object sender, EventArgs e)
+        private void UserControlTest_Load(object sender, EventArgs e)
         {
-            if (!this.DesignMode)
-            {
-                MessageBox.Show("hi");
-            }
-
 
         }
-
         private void btnRegis_Click(object sender, EventArgs e)
         {
             if (ckBxFilled.Checked)
@@ -85,30 +66,29 @@ namespace IOOP_Assignment
         {
             int sucssCase = 0;
 
-           if(validtObj.isString(txtName.Text) && validtObj.isString(txtAddress.Text))
-                sucssCase +=1;
-           if (validtObj.isDate(txtDateOfBirth))
+            if (validtObj.isString(txtName.Text) && validtObj.isString(txtAddress.Text))
+                sucssCase += 1;
+            if (validtObj.isDate(txtDateOfBirth))
                 sucssCase += 1;
 
-           if (validtObj.isEmailAddress(txtEmailAddress))
+            if (validtObj.isEmailAddress(txtEmailAddress))
                 sucssCase += 1;
 
-           if (validtObj.isIcNum(txtIcNo))
+            if (validtObj.isIcNum(txtIcNo))
                 sucssCase += 1;
 
-           if (validtObj.isPhoneNum(txtContactNo.Text))
+            if (validtObj.isPhoneNum(txtContactNo.Text))
                 sucssCase += 1;
 
             if (sucssCase == 5)  // there are 5 testcase for data validation
                 return true;
             else
             {
-                return false; 
+                return false;
             }
-                
-        }
 
-        private void setValueToVar()  // get the value from textbox and pass to related member field
+        }
+                private void setValueToVar()  // get the value from textbox and pass to related member field
         {
             adminObj.Name = txtName.Text.ToUpper().Replace(" ","");
             adminObj.Address = txtAddress.Text;
@@ -117,22 +97,5 @@ namespace IOOP_Assignment
             adminObj.EmailAddress = txtEmailAddress.Text;
             adminObj.NoIC = txtIcNo.Text;
         }
-
-        private string dateFormation()
-        {
-            DateTime birthDate;
-
-            DateTime.TryParse(txtDateOfBirth.Text, out birthDate);
-
-            string year = birthDate.Year.ToString().PadLeft(4, '0');
-            string day = birthDate.Day.ToString().PadLeft(2, '0');
-            string month = birthDate.Month.ToString().PadLeft(2, '0');
-
-            string formattedBirthDate = year + '-'+ month + '-'+day;
-
-            return formattedBirthDate; // the birthdate are now in YYYY-MM-DD
-
-        }
-
     }
 }
