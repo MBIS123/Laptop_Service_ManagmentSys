@@ -57,22 +57,14 @@ namespace IOOP_Assignment
         public int Numberofurgent { get => numberofurgent; set => numberofurgent = value; }
         public int Numberofcompleted { get => numberofcompleted; set => numberofcompleted = value; }
 
-        public Technician(string tn, int tid)
-        {
-            techName = tn;
-            techID = tid;
-        }
-
-
-        public Technician(int tid, int ord_id)
-        {
-            techID = tid;
-            orderid_forselection = ord_id;
-        }
-
         public Technician()
         {
 
+        }
+
+        public Technician(string tn)
+        {
+            techName = tn;
         }
 
         public Technician(int tid)
@@ -80,9 +72,16 @@ namespace IOOP_Assignment
             techID = tid;
         }
 
-        public Technician(string tn)
+        public Technician(string tn, int tid)
         {
             techName = tn;
+            techID = tid;
+        }
+
+        public Technician(int tid, int ord_id)
+        {
+            techID = tid;
+            orderid_forselection = ord_id;
         }
 
         //loading order table into technician dashboard
