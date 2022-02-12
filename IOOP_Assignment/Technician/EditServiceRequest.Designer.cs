@@ -157,6 +157,7 @@
             this.CollectionDatePicker.Name = "CollectionDatePicker";
             this.CollectionDatePicker.Size = new System.Drawing.Size(500, 29);
             this.CollectionDatePicker.TabIndex = 14;
+            this.CollectionDatePicker.ValueChanged += new System.EventHandler(this.CollectionDatePicker_ValueChanged);
             // 
             // lblServDescription
             // 

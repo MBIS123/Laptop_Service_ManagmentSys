@@ -17,6 +17,11 @@ namespace IOOP_Assignment
         private string username;
         private string password;
 
+        public Users() //u = admin, p = admin
+        {
+
+        }
+
         public Users(string u, string p) //u = admin, p = admin
         {
             username = u;
