@@ -122,6 +122,7 @@ namespace IOOP_Assignment
                         MessageBox.Show(obj2.updateEditServReq(orderid_forselection, status, richServDescription.Text, CollectionDatePicker.Value.Date));
                         comboOrderID.Items.Remove(comboOrderID.SelectedItem);
                         comboOrderID.Text = String.Empty;
+                        richServDescription.Text = String.Empty;
                     }
                     else
                     {
