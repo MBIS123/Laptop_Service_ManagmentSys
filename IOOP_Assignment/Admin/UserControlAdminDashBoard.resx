@@ -66,9 +66,6 @@
   <metadata name="label24.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="pcBxChart.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pcBxChart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1536,9 +1533,6 @@
         WzAGWiwWi8WSLRgDLRaLxWLJDijw/8vM06TYiCeHAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="pcBxRndEdg1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="pcBxRndEdg1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPAAAACUCAYAAACtMKTeAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
@@ -1567,9 +1561,6 @@
         pGvAKOkaMEq6BoySrgGjpGvAKOkaMEq6BoySrgGjpCt4efMf4elMaUvPYmYAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="pcBxRndEdg2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="pcBxRndEdg2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPAAAACUCAYAAACtMKTeAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
@@ -1598,9 +1589,6 @@
         pGvAKOkaMEq6BoySrgGjpGvAKOkaMEq6BoySrgGjpCt4efMf4elMaUvPYmYAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="pcBxRndEdg3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="pcBxRndEdg3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPAAAACUCAYAAACtMKTeAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1

@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancelRegis = new ePOSOne.btnProduct.Button_WOC();
-            this.btnRegis = new ePOSOne.btnProduct.Button_WOC();
             this.lblReminder = new System.Windows.Forms.Label();
             this.ckBxFilled = new System.Windows.Forms.CheckBox();
             this.txtIcNo = new System.Windows.Forms.TextBox();
@@ -55,48 +53,9 @@
             this.txtDateOfBirth = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnRegis = new ePOSOne.btnProduct.Button_WOC();
+            this.btnCancelRegis = new ePOSOne.btnProduct.Button_WOC();
             this.SuspendLayout();
-            // 
-            // btnCancelRegis
-            // 
-            this.btnCancelRegis.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(190)))), ((int)(((byte)(253)))));
-            this.btnCancelRegis.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(190)))), ((int)(((byte)(253)))));
-            this.btnCancelRegis.FlatAppearance.BorderSize = 0;
-            this.btnCancelRegis.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
-            this.btnCancelRegis.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
-            this.btnCancelRegis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelRegis.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCancelRegis.Location = new System.Drawing.Point(431, 453);
-            this.btnCancelRegis.Name = "btnCancelRegis";
-            this.btnCancelRegis.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(119)))), ((int)(((byte)(194)))));
-            this.btnCancelRegis.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(119)))), ((int)(((byte)(194)))));
-            this.btnCancelRegis.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnCancelRegis.Size = new System.Drawing.Size(133, 38);
-            this.btnCancelRegis.TabIndex = 224;
-            this.btnCancelRegis.Text = "Cancel";
-            this.btnCancelRegis.TextColor = System.Drawing.Color.White;
-            this.btnCancelRegis.UseVisualStyleBackColor = true;
-            // 
-            // btnRegis
-            // 
-            this.btnRegis.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(163)))), ((int)(((byte)(246)))));
-            this.btnRegis.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(163)))), ((int)(((byte)(246)))));
-            this.btnRegis.FlatAppearance.BorderSize = 0;
-            this.btnRegis.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
-            this.btnRegis.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
-            this.btnRegis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegis.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnRegis.Location = new System.Drawing.Point(637, 453);
-            this.btnRegis.Name = "btnRegis";
-            this.btnRegis.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(119)))), ((int)(((byte)(194)))));
-            this.btnRegis.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(119)))), ((int)(((byte)(194)))));
-            this.btnRegis.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnRegis.Size = new System.Drawing.Size(133, 38);
-            this.btnRegis.TabIndex = 223;
-            this.btnRegis.Text = "Register";
-            this.btnRegis.TextColor = System.Drawing.Color.White;
-            this.btnRegis.UseVisualStyleBackColor = true;
-            this.btnRegis.Click += new System.EventHandler(this.btnRegis_Click);
             // 
             // lblReminder
             // 
@@ -353,6 +312,47 @@
             this.label2.TabIndex = 227;
             this.label2.Text = "(+601X-XXXXXXXX)";
             // 
+            // btnRegis
+            // 
+            this.btnRegis.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(163)))), ((int)(((byte)(246)))));
+            this.btnRegis.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(163)))), ((int)(((byte)(246)))));
+            this.btnRegis.FlatAppearance.BorderSize = 0;
+            this.btnRegis.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
+            this.btnRegis.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
+            this.btnRegis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegis.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRegis.Location = new System.Drawing.Point(637, 453);
+            this.btnRegis.Name = "btnRegis";
+            this.btnRegis.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(119)))), ((int)(((byte)(194)))));
+            this.btnRegis.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(119)))), ((int)(((byte)(194)))));
+            this.btnRegis.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnRegis.Size = new System.Drawing.Size(133, 38);
+            this.btnRegis.TabIndex = 223;
+            this.btnRegis.Text = "Register";
+            this.btnRegis.TextColor = System.Drawing.Color.White;
+            this.btnRegis.UseVisualStyleBackColor = true;
+            this.btnRegis.Click += new System.EventHandler(this.btnRegis_Click);
+            // 
+            // btnCancelRegis
+            // 
+            this.btnCancelRegis.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(190)))), ((int)(((byte)(253)))));
+            this.btnCancelRegis.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(190)))), ((int)(((byte)(253)))));
+            this.btnCancelRegis.FlatAppearance.BorderSize = 0;
+            this.btnCancelRegis.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
+            this.btnCancelRegis.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
+            this.btnCancelRegis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelRegis.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelRegis.Location = new System.Drawing.Point(431, 453);
+            this.btnCancelRegis.Name = "btnCancelRegis";
+            this.btnCancelRegis.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(119)))), ((int)(((byte)(194)))));
+            this.btnCancelRegis.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(119)))), ((int)(((byte)(194)))));
+            this.btnCancelRegis.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCancelRegis.Size = new System.Drawing.Size(133, 38);
+            this.btnCancelRegis.TabIndex = 224;
+            this.btnCancelRegis.Text = "Cancel";
+            this.btnCancelRegis.TextColor = System.Drawing.Color.White;
+            this.btnCancelRegis.UseVisualStyleBackColor = true;
+            // 
             // UserControlRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -395,9 +395,6 @@
         }
 
         #endregion
-
-        private ePOSOne.btnProduct.Button_WOC btnCancelRegis;
-        private ePOSOne.btnProduct.Button_WOC btnRegis;
         private Label lblReminder;
         private CheckBox ckBxFilled;
         private TextBox txtIcNo;
@@ -426,5 +423,7 @@
         private TextBox txtDateOfBirth;
         private Label label1;
         private Label label2;
+        private ePOSOne.btnProduct.Button_WOC btnRegis;
+        private ePOSOne.btnProduct.Button_WOC btnCancelRegis;
     }
 }

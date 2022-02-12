@@ -12,10 +12,16 @@ namespace IOOP_Assignment
 {
     public partial class frmRegNewCus : Form
     {
+        public static string name;
         Receptionist1 obj1 = new Receptionist1();
         public frmRegNewCus()
         {
             InitializeComponent();
+        }
+        public frmRegNewCus(string n)
+        {
+            InitializeComponent();
+            Name = n;
         }
         string Gender;
 
