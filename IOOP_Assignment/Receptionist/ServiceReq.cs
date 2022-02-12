@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
+    //public static string Name;
     public partial class frmServRequest : Form
     {
         public frmServRequest()
@@ -41,7 +42,7 @@ namespace IOOP_Assignment
                         int servReID = Convert.ToInt32(dataGridViewServ.CurrentRow.Cells[0].Value);
                         string stype = "Normal";
                         string fee = dataGridViewServ.CurrentRow.Cells[2].Value.ToString();
-                        Order objOrder1 = new Order();
+                        Receptionist1 objOrder1 = new Receptionist1();
                         int customerID = Convert.ToInt32(dataGridViewCustomer.CurrentRow.Cells[0].Value);
                         MessageBox.Show(objOrder1.AddOrder(customerID, date, servReID, stype, fee, txtLaptop.Text));
                     }
@@ -50,7 +51,7 @@ namespace IOOP_Assignment
                         int servReID = Convert.ToInt32(dataGridViewServ.CurrentRow.Cells[0].Value);
                         string stype = "Urgent";
                         string fee = dataGridViewServ.CurrentRow.Cells[3].Value.ToString();
-                        Order objOrder2 = new Order();
+                        Receptionist1 objOrder2 = new Receptionist1();
                         int customerID = Convert.ToInt32(dataGridViewCustomer.CurrentRow.Cells[0].Value);
                         MessageBox.Show(objOrder2.AddOrder(customerID, date, servReID, stype, fee, txtLaptop.Text));
                     }
@@ -59,7 +60,7 @@ namespace IOOP_Assignment
         }
         private void frmServRequest_Load(object sender, EventArgs e)
         {
-            Order obj1 = new Order();
+            Receptionist1 obj1 = new Receptionist1();
             obj1.loadCustomerTable(dataGridViewCustomer);
             obj1.loadServReqTable(dataGridViewServ);
 

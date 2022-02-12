@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
+
     public partial class frmReceipt : Form
     {
         public frmReceipt()

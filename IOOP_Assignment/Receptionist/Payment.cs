@@ -15,7 +15,7 @@ namespace IOOP_Assignment
 {
     public partial class frmPayment : Form
     {
-
+        public static string Name;
         public frmPayment()
         {
             InitializeComponent();
