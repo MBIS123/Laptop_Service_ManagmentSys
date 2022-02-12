@@ -70,5 +70,15 @@ namespace IOOP_Assignment
         {
             (dataGridViewCustomer.DataSource as DataTable).DefaultView.RowFilter = string.Format("Name LIKE '%{0}%'", txtSearch.Text);
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            dataGridViewCustomer.ClearSelection();
+            dataGridViewServ.ClearSelection();
+            txtSearch.Clear();
+            txtLaptop.Clear();
+            radBtnNormal.Checked = false;
+            radBtnUrgent.Checked = false;
+        }
     }
 }
