@@ -99,7 +99,7 @@ namespace IOOP_Assignment
             int numOfAvaiTech = (int)numAvailableTech.ExecuteScalar();
 
 
-            if (numOfAvaiTech != 0) // code will only run if there are at  least one technician which is Staus = 'Available'
+            if (numOfAvaiTech != 0) // code will only run if there are at  least one technician which its Sttatus = 'Available'
             {
                 SqlCommand availableTech = new SqlCommand("select top (1) TechnicianID from Technician  where Status ='Available';", con); //first available tech
                 techId = (int)availableTech.ExecuteScalar();
@@ -150,13 +150,11 @@ namespace IOOP_Assignment
                     if (differentDays >= 0)
                     {
                         updtUrgentTechID.ExecuteNonQuery();
-     
-
                     }
                     else
                     {
                         updtNormalTechID.ExecuteNonQuery();
- 
+
                     }
 
                     updtTechStatus.ExecuteNonQuery();

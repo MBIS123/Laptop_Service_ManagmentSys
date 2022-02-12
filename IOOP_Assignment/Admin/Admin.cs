@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
 
 namespace IOOP_Assignment
 {
@@ -61,19 +62,16 @@ namespace IOOP_Assignment
             if (gender.SelectedIndex == -1 && ethnic.SelectedIndex == -1) // ensure admin select something (validation for gender)
             {
                 allInfoFilled = false;
-                MessageBox.Show("first false");
             }
 
             else if (ethnic.SelectedIndex == -1)
             {
                 allInfoFilled = false;
-                MessageBox.Show("secfalse");
             }
 
             else if (gender.SelectedIndex == -1)
             {
                 allInfoFilled = false;
-                MessageBox.Show("third false");
             }
 
             else
@@ -173,8 +171,60 @@ namespace IOOP_Assignment
 
 
         }
+
+        internal void loadtoDataGridView(DataGridView x)
+        {
+
+            DataTable dt = new DataTable();
+
         
+
+
+            x.DataSource = dt;
+
+            conn.Open();
+
+            for (int i=0;i<=5; i++)
+            {
+               
+
+            }
+
+            SqlCommand searchTa = new SqlCommand("select * from [Order] where MONTH([Date Requested]) = 1 ;", conn);
+            SqlDataReader dr = searchTa.ExecuteReader();
+            dt.Load(dr);
+
+            dr.Close();
+
+               
+            conn.Close();
+
+        }
+        
+        internal void addNewYear(ComboBox cmbBxYear)
+        {
+            DateTime tdyDate = DateTime.Now;
+            string tdyYear = tdyDate.Year.ToString();
+            if (tdyYear != cmbBxYear.Items[(cmbBxYear.Items.Count - 1)])
+                cmbBxYear.Items.Add(tdyYear);
+        }
   
+        internal bool chkYearMonthSelected(ComboBox year , ComboBox month)
+        {
+            bool beginSearch = false;
+
+            if (year.SelectedIndex == -1 || month.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please ensure Year and Month are selected !", " Reminder ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                beginSearch = true;
+                MessageBox.Show("yes");
+            }
+            return beginSearch;
+
+        }
   
 
         // messagebox.show("message","title" , MessageBoxButton, ... , MessageBoxIcon,Warning)
