@@ -245,9 +245,11 @@
             // 
             // dateTimePickerDate
             // 
+            this.dateTimePickerDate.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerDate.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePickerDate.Location = new System.Drawing.Point(213, 290);
             this.dateTimePickerDate.Name = "dateTimePickerDate";
-            this.dateTimePickerDate.Size = new System.Drawing.Size(366, 31);
+            this.dateTimePickerDate.Size = new System.Drawing.Size(366, 33);
             this.dateTimePickerDate.TabIndex = 20;
             // 
             // lblUsername

@@ -27,9 +27,9 @@ namespace IOOP_Assignment
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            Receptionist1 obj1 = new Receptionist1(txtName.Text,Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, dateTimePickerDate.Text, txtUsername.Text);
-            obj1.allSecFill();
-            MessageBox.Show(obj1.addNewCus());
+            DateTime bdaydate = DateTime.Parse(dateTimePickerDate.Text);
+            Receptionist1 obj1 = new Receptionist1(txtName.Text,Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate, txtUsername.Text);
+            MessageBox.Show(obj1.AddNewCustomer());
         }
 
         private void frmRegNewCus_Load(object sender, EventArgs e)
