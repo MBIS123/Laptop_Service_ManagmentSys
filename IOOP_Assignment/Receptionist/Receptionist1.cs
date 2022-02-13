@@ -28,7 +28,7 @@ namespace IOOP_Assignment
         private string recEmail;
         private string recAddress;
         private string recPw;
-
+        private string userID;
 
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
@@ -188,6 +188,9 @@ namespace IOOP_Assignment
             con.Open();
             MessageBox.Show(o1.recName.ToString());
             SqlCommand cmd = new SqlCommand("select * from Receptionist where Name = '" + o1.recName + "'", con);
+            SqlCommand cmd2 = new SqlCommand("select [Password] from [Users], [Receptionist] where [Users].UserID = [Receptionist].UserID and [Receptionist].Name = '" + o1.recName + "'", con);
+
+            o1.recPw = cmd2.ExecuteScalar().ToString();
             SqlDataReader sqlDataReader = cmd.ExecuteReader();
             while (sqlDataReader.Read())
             {
@@ -196,11 +199,6 @@ namespace IOOP_Assignment
                 o1.RecAddress = sqlDataReader.GetString(9);
             }
             con.Close();
-        }
-        public static void chckPwd(Receptionist1 o2)
-        {
-            con.Open();
-            SqlCommand cmd2 = new SqlCommand("select [Password] from Users, Receptionist where Users.UserID = Receptionist.UserID and Receptionist.Name = '" + o2.recName + "'", con);
         }
         public string updReceptionist(string ph, string em, string add)
         {
@@ -214,7 +212,7 @@ namespace IOOP_Assignment
             recAddress = add;
 
             SqlCommand cmd = new SqlCommand("Update [Receptionist] set  [Contact No.] = '" + recPhone + "'," +
-                " [Email] = '" + recEmail + "', [Address] = '" + recAddress + " where [UserID] = (select Users.[UserID] from Receptionist, " +
+                " [Email] = '" + recEmail + "', [Address] = '" + recAddress + "'"+" where [UserID] = (select Users.[UserID] from Receptionist, " +
                 "Users where Receptionist.UserID = Users.UserID)", con);
             int i = cmd.ExecuteNonQuery();
 

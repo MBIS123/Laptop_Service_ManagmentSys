@@ -59,42 +59,6 @@ namespace IOOP_Assignment
                 }
             }
         }
-        private void btnConfirm2_Click(object sender, EventArgs e)
-        {
-            Receptionist1 obj1 = new Receptionist1(Name);
-            Receptionist1.chckPwd(obj1);
-            if (txtCurrentPwd.Text == obj1.RecPw) //Current password entered matches
-            {
-                DataValidation objpwval = new DataValidation();
-                if (objpwval.isPassword(txtNewPwd.Text)) //if new pw is valid
-                {
-                    if (txtNewPwd.Text == txtConfirmPwd.Text) //if new password match with confirm password
-                    {
-                        if (txtCurrentPwd.Text == txtNewPwd.Text)// if new password same with old password
-                        {
-                            MessageBox.Show("The new password you have entered is the same as your current password. Please try again!");
-                        }
-                        else
-                        {
-                            MessageBox.Show(obj1.updReceptionistPwd(txtConfirmPwd.Text)); //update to users table
-                        }
-                    }
-                    else //if new pw and confirm pw are different
-                    {
-                        MessageBox.Show("New password does not match the confirmed password. Please try again!");
-                    }
-                }
-                else //if newpw is not valid
-                {
-                    MessageBox.Show("New password entered is not valid. Please try again!");
-
-                }
-            }
-            else // cuurent pw does not match, unable to change pw
-            {
-                MessageBox.Show("Password entered does not match with your current password. Please try again!");
-            }
-        }
         private void btnClear1_Click(object sender, EventArgs e)
         {
             txtMobile.Clear();
@@ -109,9 +73,68 @@ namespace IOOP_Assignment
             txtConfirmPwd.Clear();  
         }
 
+        private void btnConfirm2_Click_1(object sender, EventArgs e)
+        {
+            Receptionist1 obj1 = new Receptionist1(Name);
+            Receptionist1.viewRecProfile(obj1);
+            if (txtCurrentPwd.Text == obj1.RecPw) //Current password entered matches
+            {
+                DataValidation objpwval = new DataValidation();
+                if (objpwval.isPassword(txtNewPwd.Text)) //if new pw is valid
+                {
+                    if (txtCurrentPwd.Text != txtNewPwd.Text)  //if new pw not same with current pw
+                    {
+                        if (txtNewPwd.Text == txtConfirmPwd.Text)// if new pw same with confirm pw
+                        {
+                            MessageBox.Show(obj1.updReceptionistPwd(txtConfirmPwd.Text));//update to users table
+                        }
+                        else
+                        {
+                            MessageBox.Show("New password does not match the confirmed password. Please try again!");
+                        }
+                    }
+                    else //if new pw and current pw same
+                    {
+                        MessageBox.Show("The new password you have entered is the same as your current password. Please try again!");
+                    }
+                }
+                else //if newpw is not valid
+                {
+                    MessageBox.Show("New password entered is not valid. Please try again!");
+
+                }
+            }
+            else // cuurent pw does not match, unable to change pw
+            {
+                MessageBox.Show("Password entered does not match with your current password. Please try again!");
+            }
+        }
         private void linklblNewCusReg_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            frmRegNewCus fRegCus= new frmRegNewCus();
+            fRegCus.Show();
+            this.Hide();
+        }
 
+        private void linklblServReq_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmServRequest fservRq = new frmServRequest();
+            fservRq.Show();
+            this.Hide();
+        }
+
+        private void linklblPayment_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmPayment fpayment = new frmPayment();
+            fpayment.Show();
+            this.Hide();
+        }
+
+        private void linklblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmLogin flogout = new frmLogin();
+            flogout.Show();
+            this.Hide();
         }
     }
 }

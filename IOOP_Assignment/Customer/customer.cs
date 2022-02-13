@@ -12,9 +12,8 @@ namespace IOOP_Assignment
     {
         private int service;
         private string service_type;
-        private string user_name;
+        private string name;
         private string userid;
-        private string customer_id;
         private string CusName;
         private DateTime CusBOD;
         private string CusPhoneNo;
@@ -33,14 +32,10 @@ namespace IOOP_Assignment
         public string CusAddress1 { get => CusAddress; set => CusAddress = value; }
         public string CusPassword1 { get => CusPassword; set => CusPassword = value; }
 
-        public Customers(int serv, string type)
+        
+        public Customers(string n)
         {
-            service = serv;
-            service_type = type;
-        }
-        public Customers(string un)
-        {
-            user_name = un;
+            name = n;
 
         }
         public Customers()
@@ -52,10 +47,10 @@ namespace IOOP_Assignment
         {
             Boolean status;
             con.Open();
-            SqlCommand cmd1 = new SqlCommand("select UserID from Users where UserName = '" + user_name + "'", con);
-            string userid = cmd1.ExecuteScalar().ToString();
+            SqlCommand cmd1 = new SqlCommand("select CustomerID from Customer where Name = '" + name + "'", con);
+            string customerid = cmd1.ExecuteScalar().ToString();
 
-            SqlCommand cmd = new SqlCommand("select Status from [Order], Customer where [Order].CustomerID = Customer.CustomerID and Customer.UserID = '" + userid + "'", con);
+            SqlCommand cmd = new SqlCommand("select Status from [Order] where CustomerID = '" + customerid + "'", con);
             string service_status = cmd.ExecuteScalar().ToString();
 
             if (service_status == "Pending" || service_status == "Changes Required")
@@ -69,20 +64,16 @@ namespace IOOP_Assignment
             con.Close();
             return status;
         }
-        internal string changeservice()
+        internal string changeservice(int ind, string t)
         {
             string status;
+            service = ind;
+            service_type = t;
+
             con.Open();
-
             // the status of the service is pending only can change service
-            SqlCommand cmd1 = new SqlCommand("select UserID from [Users] where UserName = '" + user_name + "'", con);
-            string userid = cmd1.ExecuteScalar().ToString();
-            MessageBox.Show(userid);
-
-            SqlCommand cmd2 = new SqlCommand("select CustomerID from [Customer] where UserId = '" + userid + "'", con);
-            customer_id = cmd2.ExecuteScalar().ToString();
-            MessageBox.Show(customer_id);
-
+            SqlCommand cmd2 = new SqlCommand("select CustomerID from [Customer] where Name = '" + name + "'", con);
+            string customer_id = cmd2.ExecuteScalar().ToString();
 
             SqlCommand cmd = new SqlCommand("update [Order] set [ServiceRequestType ID] = '" + service + "', [Service Type] = '" + service_type + "' where CustomerID ='" + customer_id + "'", con);
 
@@ -104,19 +95,16 @@ namespace IOOP_Assignment
             string stat;
 
             con.Open();
-            SqlCommand cmd0 = new SqlCommand("select UserID from [Users] where UserName = '" + user_name + "'", con);
-            string userid1 = cmd0.ExecuteScalar().ToString();
-            // first, i use username to find out what is thehis/her user id
+            SqlCommand cmd0 = new SqlCommand("select CustomerID from [Customer] where Name = '" + name + "'", con);
+            string customerID = cmd0.ExecuteScalar().ToString();
+            
+            // first, i use customer name to find customer id
 
-            SqlCommand cmd1 = new SqlCommand("select CustomerID from [Customer] where UserId = '" + userid1 + "'", con);
-            string customer_id1 = cmd1.ExecuteScalar().ToString();
-            // then i use user id to find out his/her customer id
-
-            SqlCommand cmd2 = new SqlCommand("select [Service Description/Suggestion] from [Order] where CustomerID =  '" + customer_id1 + "'", con);
-            string service_desc = cmd2.ExecuteScalar().ToString();
+            SqlCommand cmd1 = new SqlCommand("select [Service Description/Suggestion] from [Order] where CustomerID =  '" + customerID + "'", con);
+            string service_desc = cmd1.ExecuteScalar().ToString();
             // By using his/her customer id i can get what is the service description
 
-            int c = cmd2.ExecuteNonQuery();
+            int c = cmd1.ExecuteNonQuery();
             if (c != 0)
             {
                 stat = service_desc;
@@ -131,65 +119,53 @@ namespace IOOP_Assignment
 
         internal string showAmount_ToPaid()
         {
-            string stat1;
+            string stat;
 
             con.Open();
-            SqlCommand cmd0 = new SqlCommand("select UserID from [Users] where UserName = '" + user_name + "'", con);
-            string userid1 = cmd0.ExecuteScalar().ToString();
-            // first, i use username to find out what is thehis/her user id
+            SqlCommand cmd0 = new SqlCommand("select CustomerID from [Customer] where Name = '" + name + "'", con);
+            string customerID = cmd0.ExecuteScalar().ToString();
 
-            SqlCommand cmd1 = new SqlCommand("select CustomerID from [Customer] where UserId = '" + userid1 + "'", con);
-            string customer_id1 = cmd1.ExecuteScalar().ToString();
-
-            SqlCommand cmd3 = new SqlCommand("select [Amount (RM)] from [Order] where CustomerID = '" + customer_id1 + "'", con);
-            string amount1 = cmd3.ExecuteScalar().ToString();
+            SqlCommand cmd3 = new SqlCommand("select [Amount (RM)] from [Order] where CustomerID = '" + customerID + "'", con);
+            string amount = cmd3.ExecuteScalar().ToString();
 
             con.Close();
-            return "RM" + amount1;
+            return "RM" + amount;
         }
 
         internal string showStatus()
         {
-            string stat2;
+            string stat;
 
             con.Open();
-            SqlCommand cmd0 = new SqlCommand("select UserID from [Users] where UserName = '" + user_name + "'", con);
-            string userid1 = cmd0.ExecuteScalar().ToString();
-            // first, i use username to find out what is thehis/her user id
+            SqlCommand cmd0 = new SqlCommand("select CustomerID from [Customer] where Name = '" + name + "'", con);
+            string customerID = cmd0.ExecuteScalar().ToString();
 
-            SqlCommand cmd1 = new SqlCommand("select CustomerID from [Customer] where UserId = '" + userid1 + "'", con);
-            string customer_id1 = cmd1.ExecuteScalar().ToString();
-
-            SqlCommand cmd4 = new SqlCommand("select status from [Order] where CustomerID = '" + customer_id1 + "'", con);
-            string status1 = cmd4.ExecuteScalar().ToString();
+            SqlCommand cmd4 = new SqlCommand("select status from [Order] where CustomerID = '" + customerID + "'", con);
+            string status = cmd4.ExecuteScalar().ToString();
 
             con.Close();
-            return status1;
+            return status;
         }
 
         
 
         internal string showCollec_date()
         {
-            string stat4;
+            string stat;
             con.Open();
-            SqlCommand cmd0 = new SqlCommand("select UserID from [Users] where UserName = '" + user_name + "'", con);
-            string userid1 = cmd0.ExecuteScalar().ToString();
-            // first, i use username to find out what is thehis/her user id
+            SqlCommand cmd0 = new SqlCommand("select CustomerID from [Customer] where Name = '" + name + "'", con);
+            string customerID = cmd0.ExecuteScalar().ToString();
 
-            SqlCommand cmd1 = new SqlCommand("select CustomerID from [Customer] where UserId = '" + userid1 + "'", con);
-            string customer_id1 = cmd1.ExecuteScalar().ToString();
-
-            SqlCommand cmd6 = new SqlCommand("select [Collection Date] from [Order] where CustomerID = '" + customer_id1 + "'", con);
-            string Collec_date1 = cmd6.ExecuteScalar().ToString();
+            SqlCommand cmd6 = new SqlCommand("select [Collection Date] from [Order] where CustomerID = '" + customerID + "'", con);
+            string Collec_date = cmd6.ExecuteScalar().ToString();
 
             con.Close();
-            return Collec_date1;
+            return Collec_date;
         }
 
         internal string store_comment(string c)
         {
-            string stat5;
+            string stat;
             con.Open();
 
             SqlCommand cmd7 = new SqlCommand("update [Order] set Comments ='" + c + "'", con);
@@ -197,30 +173,30 @@ namespace IOOP_Assignment
 
             if (comm != 0)
             {
-                stat5 = "Review send successfully";
+                stat = "Review send successfully";
             }
             else
             {
-                stat5 = "Review not send successfully";
+                stat = "Review not send successfully";
             }
             con.Close();
-            return stat5;
+            return stat;
         }
 
         internal static void viewCustomerProfile(Customers o1) //this parameter is an object of the class customer
         {
             con.Open();
-            SqlCommand cmd8 = new SqlCommand("select UserID from [Users] where UserName = '" + o1.user_name + "'", con);
+            SqlCommand cmd8 = new SqlCommand("select UserID from [Customer] where Name = '" + o1.name + "'", con);
             o1.userid = cmd8.ExecuteScalar().ToString();
-            // i find out what is the userid by his/her username
+            // i find out what is the userid by his/her name
 
-            SqlCommand cmd9 = new SqlCommand("select * from Customer where UserID = '" + o1.userid + "'", con);
-            //using his/her userid, i select all the rows and columns within the table
+            SqlCommand cmd9 = new SqlCommand("select * from Customer where Name = '" + o1.name + "'", con);
+            //using his/her name, i select all the rows and columns within the table
             SqlDataReader sqlDataReader = cmd9.ExecuteReader(); //used for any result set with multiple rows/columns (e.g., SELECT col1, col2 from sometable )
 
             SqlCommand cmd10 = new SqlCommand("select Password from [Users] where UserID = '" + o1.userid + "'", con);
             o1.CusPassword = cmd10.ExecuteScalar().ToString();
-            //In order to get the password, i use his/her userid, customerid and name to find out what is the password
+            //In order to get the password, i use his/her userid to find out what is the password
 
             while (sqlDataReader.Read()) // i read the customer personal details and store it to variable accordingly and display back to my get method at viewprofile form
             {
@@ -236,19 +212,20 @@ namespace IOOP_Assignment
 
 
         }
-
-        internal string updateCustomerProfile(string Name, DateTime date, string ph, string Email, string Address)
+        
+        internal string updateCustomerProfile(string Name,DateTime DOB, string ph, string Email, string Address)
         {
             string stat6;
             con.Open();
-
             CusName = Name;
-            CusBOD = date;
+            CusBOD = DOB;
             CusPhoneNo = ph;
             CusEmail = Email;
             CusAddress = Address;
+            
 
-            SqlCommand cmd12 = new SqlCommand("Update [Customer] set [Name] = '" + CusName + "', [Date of Birth] = '" + CusBOD + "', [Contact No.] = '" + CusPhoneNo + "', [Email] = '" + CusEmail + "', [Address] = '" + CusAddress + "' where [UserID] = '" + userid + "'", con);
+            SqlCommand cmd12 = new SqlCommand("Update [Customer] set [Name] = '" + CusName  +  "', [Date of Birth] = @date, [Contact No.] = '" + CusPhoneNo + "', [Email] = '" + CusEmail + "', [Address] = '" + CusAddress + "' where [Name] = '" + name + "'", con);
+            cmd12.Parameters.AddWithValue("@date", CusBOD);
             int i = cmd12.ExecuteNonQuery();
 
             if (i != 0)
@@ -264,6 +241,7 @@ namespace IOOP_Assignment
             return stat6;
 
         }
+
 
         internal string updateCustomerPassword(string new_passw)
         {
