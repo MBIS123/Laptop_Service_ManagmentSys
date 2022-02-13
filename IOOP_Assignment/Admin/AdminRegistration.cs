@@ -12,14 +12,14 @@ using System.Globalization;
 
 namespace IOOP_Assignment
 {
-    public partial class Registration : Form
+    public partial class AdminRegistration : Form
     {
         Admin adminObjR = new Admin();
         DataValidation validtObj = new DataValidation();
         
 
 
-        public Registration()
+        public AdminRegistration()
         {
             InitializeComponent();
         }
@@ -39,7 +39,7 @@ namespace IOOP_Assignment
                     clearForm();
                 }
                 else
-                    MessageBox.Show(" Entered data does not meet the format.Please try again");
+                    MessageBox.Show(" Entered data does not meet the format.Please try again" ,"Reminder",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
                 MessageBox.Show("Required field was not marked !", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);

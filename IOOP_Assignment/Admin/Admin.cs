@@ -14,6 +14,8 @@ namespace IOOP_Assignment
         DataValidation objValidt = new DataValidation();
 
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString() );
+
+        Users userObj = new Users();
         
 
         private string position;
@@ -31,8 +33,8 @@ namespace IOOP_Assignment
         private int numOfReceptionist;
         private int totalOfServiceRequested;
 
-        private static string[] monthlist = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-
+        private static string[] monthList = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+        private string[] sFMonthList = { "Jan", "Feb", "Mch", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec" };
         public Admin() { } //constructor
 
         
@@ -50,7 +52,7 @@ namespace IOOP_Assignment
         public int NumOfTechnician { get => numOfTechnician; set => numOfTechnician = value; }
         public int NumOfReceptionist { get => numOfReceptionist; set => numOfReceptionist = value; }
         public int TotalOfServiceRequested { get => totalOfServiceRequested; set => totalOfServiceRequested = value; }
-        public static string[] Monthlist { get => monthlist; set => monthlist = value; }
+        public static string[] Monthlist { get => monthList; set => monthList = value; }
 
         internal void validateRegisPosition(RadioButton technician ,RadioButton receptionist)
         {
@@ -125,7 +127,11 @@ namespace IOOP_Assignment
             if (position == "receptionist")
                 cmdInsertReceptionist.ExecuteNonQuery();
             else
+            {
                 cmdInsertTechnician.ExecuteNonQuery();
+                userObj.assignOrder();
+            }
+               
 
 
             conn.Close();
@@ -153,9 +159,9 @@ namespace IOOP_Assignment
         internal  void showRelatedForm(string x)
         {
             AdminDashBoard adminFrm = new AdminDashBoard();
-            MonthlyIncome incomeFrm = new MonthlyIncome();
-            Registration regisFrm = new Registration();
-            ServiceReport reportFrm = new ServiceReport();
+            AdminMonthlyIncome incomeFrm = new AdminMonthlyIncome();
+            AdminRegistration regisFrm = new AdminRegistration();
+            AdminServiceReport reportFrm = new AdminServiceReport();
 
             switch (x)
             {
@@ -205,7 +211,7 @@ namespace IOOP_Assignment
 
         internal DataTable generateServiceReport(ComboBox year , ComboBox month)
         {
-
+            int totalOfServiceRequested = 0;
             DataTable servDT = new DataTable();
             servDT.Columns.Add("Year");
             servDT.Columns.Add("Month");
@@ -223,7 +229,7 @@ namespace IOOP_Assignment
             int[] numOfServeType = new int[8];
             for (int i = 0; i<8;i++ )
             {
-                SqlCommand findNumServeType = new SqlCommand("select COUNT(*) from [Order] where MONTH([Date Requested])=" + searchMonth + " and YEAR([Date Requested]) =" + searchYear + "and [ServiceRequestType ID]="+i+";", conn);
+                SqlCommand findNumServeType = new SqlCommand("select COUNT(*) from [Order] where MONTH([Date Requested])=" + searchMonth + " and YEAR([Date Requested]) =" + searchYear + "and [ServiceRequestType ID]="+(i+1)+";", conn);
                 int serveType = (int)findNumServeType.ExecuteScalar();
                 numOfServeType[i] = serveType;
             }
@@ -247,15 +253,12 @@ namespace IOOP_Assignment
             string selectedYear = year.SelectedItem.ToString();
             int monthIncome;
 
-            incomeDT.Columns.Add(selectedYear);
+            incomeDT.Columns.Add("Year");
             incomeDT.Columns.Add("Month");
-            incomeDT.Columns.Add("Monthly Income");
+            incomeDT.Columns.Add("Monthly Income (RM)");
             conn.Open();
 
-
-
-
-            for (int  i =0; (i<=monthlist.GetUpperBound(0)); i++)
+            for (int  i =0; (i<=monthList.GetUpperBound(0)); i++)
             {
                 try
                 {
@@ -265,7 +268,7 @@ namespace IOOP_Assignment
                 catch (Exception ex){ //will catch System.InvalidCast Exception becuz can't cast null to int (some month has no order , or all order haven't paid in that month)
                     monthIncome = 0;
                 }
-                incomeDT.Rows.Add(selectedYear,monthlist[i], monthIncome);
+                incomeDT.Rows.Add(selectedYear,monthList[i], monthIncome);
             }
 
             conn.Close();
@@ -285,14 +288,16 @@ namespace IOOP_Assignment
             return passMonths;
         }
         internal int[] pass3MonthsIncome()
+
         {
             DateTime[] passMonths = searchPass3Months();
             int[] passMonthIncome = new int[3];
 
+            conn.Open();
 
-
-            for(int i =0; i <3; i++)
+            for(int i =0; i <3; i++) //loop 3 times to get the last 3 month income
             {
+                
                 try
                 {
                     SqlCommand findPassMonthIncome = new SqlCommand("select SUM([Amount (RM)]) from [Order] where MONTH([Date Requested])=" + passMonths[i].Month + " and YEAR([Date Requested]) =" + passMonths[i].Year + " and [Payment Status]='Paid';", conn);
@@ -303,11 +308,77 @@ namespace IOOP_Assignment
                     passMonthIncome[i] = 0;
                 }
             }
-           
+
          return passMonthIncome;
+            conn.Close();
+        }
+
+        internal int[] passMonthsRequestedService()
+        {
+            DateTime[] passMonths = searchPass3Months(); 
+            int[] passMonthsRequestedServ = new int[2];
+
+            for (int i = 0; i < 2; i++) //loop 3 times to get the last 3 month income
+            {
+
+                try
+                {
+                    SqlCommand findPassMonthRequestedOder = new SqlCommand("select count(*) from [Order] where MONTH([Date Requested])=" + passMonths[i].Month + " and YEAR([Date Requested]) =" + passMonths[i].Year + ";", conn);
+                    passMonthsRequestedServ[i] = (int)findPassMonthRequestedOder.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
+                    passMonthsRequestedServ[i] = 0;
+                }
+            }
+
+            return passMonthsRequestedServ;
+
+
 
         }
 
+
+        internal void fillDashBoardServInfo( Label lblTotalServ , Label lblServPct)
+        {
+
+            int[] passMonthsRqtServ = passMonthsRequestedService();
+
+            int lastMonth = passMonthsRqtServ[0];
+            int last2Month = passMonthsRqtServ[1];
+            lblTotalServ.Text = lastMonth.ToString();
+
+            decimal srvRqtPct = ((decimal)lastMonth / (decimal)last2Month) * 100;
+            if (last2Month - lastMonth > 0)
+            {
+                lblServPct.ForeColor = Color.Red;
+                lblServPct.Text = "-" + srvRqtPct.ToString() + "%";
+            }
+            else if(last2Month == lastMonth )
+            {
+                lblServPct.ForeColor = Color.FromArgb(0, 192, 0);
+                lblServPct.Text = "+" + (srvRqtPct-100).ToString() + "%";
+            }
+            else
+            {
+                lblServPct.ForeColor = Color.FromArgb(0, 192, 0);
+                lblServPct.Text = "+" + srvRqtPct.ToString() + "%";
+            }
+        }
+
+        internal void changeMonthBarTitle(Label lblBar1 , Label lblBar2 , Label lblBar3)
+        {
+            DateTime[] searchPass3Month = searchPass3Months(); //return last month , last last month , last last last month.
+
+            int lstMonth = searchPass3Month[0].Month;
+            lblBar1.Text = sFMonthList[lstMonth - 1];
+
+            int lst2Month = searchPass3Month[1].Month;
+            lblBar2.Text = sFMonthList[lst2Month - 1];
+
+            int lst3Month = searchPass3Month[2].Month;
+            lblBar3.Text = sFMonthList[lst3Month - 1];
+        }
         // messagebox.show("message","title" , MessageBoxButton, ... , MessageBoxIcon,Warning)
         /// INSIDE THE ADMIN CLASS I DECLARE A METHOD FIRST
 
