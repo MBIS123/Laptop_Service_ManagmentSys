@@ -101,33 +101,29 @@ namespace IOOP_Assignment
         private void linklblServReq_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmServRequest fservRq = new frmServRequest();
-            fservRq.ShowDialog();
-            frmRegNewCus RegnewCus = new frmRegNewCus();
-            RegnewCus.Hide();
+            fservRq.Show();
+            this.Hide();
         }
 
         private void linklblAccSet_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmAccSet faccSet = new frmAccSet();
-            faccSet.ShowDialog();
-            frmRegNewCus RegnewCus = new frmRegNewCus();
-            RegnewCus.Hide();
+            faccSet.Show();
+            this.Hide();
         }
 
         private void linklblPayment_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmPayment fpayment = new frmPayment();
-            fpayment.ShowDialog();
-            frmRegNewCus RegnewCus = new frmRegNewCus();
-            RegnewCus.Hide();
+            fpayment.Show();
+            this.Hide();
         }
 
         private void linklblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmLogin flogout = new frmLogin();
-            flogout.ShowDialog();
-            frmRegNewCus RegnewCus = new frmRegNewCus();
-            RegnewCus.Hide();
+            flogout.Show();
+            this.Hide();
         }
     }
 }
