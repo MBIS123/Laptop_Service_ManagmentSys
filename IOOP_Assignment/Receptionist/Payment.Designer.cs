@@ -542,6 +542,7 @@
             this.btnClear.TabIndex = 56;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // frmPayment
             // 
@@ -562,6 +563,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.splitter1);
+            this.Name = "frmPayment";
             this.Load += new System.EventHandler(this.frmPayment_Load);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();

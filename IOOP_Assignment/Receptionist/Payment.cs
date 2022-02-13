@@ -90,5 +90,11 @@ namespace IOOP_Assignment
             Receptionist1 obj1 = new Receptionist1();
             obj1.loadPaymentTable(dataGridViewPayment);
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            dataGridViewPayment.ClearSelection();
+            txtAmtPaid.Clear();
+        }
     }
 }
