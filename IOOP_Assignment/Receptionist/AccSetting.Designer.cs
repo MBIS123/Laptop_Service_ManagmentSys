@@ -245,7 +245,6 @@
             this.btnConfirm2.TabIndex = 14;
             this.btnConfirm2.Text = "Confirm";
             this.btnConfirm2.UseVisualStyleBackColor = false;
-            this.btnConfirm2.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // txtAddress
             // 
@@ -493,7 +492,6 @@
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.grpBoxReg);
             this.Controls.Add(this.lblAccSet);
-            this.Name = "frmAccSet";
             this.Text = "Update Profile";
             this.Load += new System.EventHandler(this.frmAccSet_Load);
             this.grpBoxReg.ResumeLayout(false);
