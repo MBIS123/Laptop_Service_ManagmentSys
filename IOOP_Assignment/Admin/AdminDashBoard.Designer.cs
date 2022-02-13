@@ -1,6 +1,6 @@
 ﻿namespace IOOP_Assignment
 {
-    partial class DashBoard
+    partial class AdminDashBoard
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,7 +31,7 @@
             System.Windows.Forms.Label label26;
             System.Windows.Forms.Label label25;
             System.Windows.Forms.Label label24;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashBoard));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.frmHeader = new System.Windows.Forms.Label();

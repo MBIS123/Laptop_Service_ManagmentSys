@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace IOOP_Assignment
 {
-    public partial class DashBoard : Form
+    public partial class AdminDashBoard : Form
     {
         
         Admin adminObjD = new Admin();
@@ -12,7 +12,7 @@ namespace IOOP_Assignment
         string[] monthlist = Admin.Monthlist;
 
 
-        public DashBoard()
+        public AdminDashBoard()
         {
             InitializeComponent();
             

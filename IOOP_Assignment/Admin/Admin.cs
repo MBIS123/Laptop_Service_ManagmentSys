@@ -152,7 +152,7 @@ namespace IOOP_Assignment
     
         internal  void showRelatedForm(string x)
         {
-            DashBoard adminFrm = new DashBoard();
+            AdminDashBoard adminFrm = new AdminDashBoard();
             MonthlyIncome incomeFrm = new MonthlyIncome();
             Registration regisFrm = new Registration();
             ServiceReport reportFrm = new ServiceReport();
