@@ -7,25 +7,41 @@ namespace IOOP_Assignment
     public partial class DashBoard : Form
     {
         
+        Admin adminObjD = new Admin();
+        DateTime[] passMonth = new DateTime[3];
+        string[] monthlist = Admin.Monthlist;
+
 
         public DashBoard()
         {
             InitializeComponent();
+            
         }
 
       
 
         private void Admin_Load(object sender, EventArgs e)
         {
-           
+            adminObjD.numOfUserInDtBase();
+            lblNoOfRecep.Text = adminObjD.NumOfReceptionist.ToString();
+            lblNoOfTech.Text =adminObjD.NumOfTechnician.ToString();
+            passMonth = adminObjD.searchPass3Months();
+            int[] passMonthsIncome = adminObjD.pass3MonthsIncome();
+            int passMonthIncome = passMonthsIncome[0];
+            int pass2MonthIncome = passMonthsIncome[1];
+            int pass3MonthIncome = passMonthsIncome[2];
+
+            lblIncome.Text = passMonthIncome.ToString();
+            MessageBox.Show(passMonthIncome.ToString() + "asdhjk");
+            if ( pass2MonthIncome-passMonthIncome > 0)
+            {
+                lblProfitPct.ForeColor = Color.Red;
+                lblProfitPct.Text = "- " + (Math.Round((decimal)(1 -(passMonthIncome/pass2MonthIncome)),2)*100).ToString() + "%";
+            }
 
 
 
-
-
-
-
-
+             
         }
 
       
@@ -33,31 +49,21 @@ namespace IOOP_Assignment
         private void btnIncome_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MonthlyIncome iObj = new MonthlyIncome();
-            iObj.Show();
-            
+            adminObjD.showRelatedForm("income");
+
 
         }
 
         internal void btnServiceReport_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ServiceReport sObj = new ServiceReport();
-            sObj.Show();
+            adminObjD.showRelatedForm("serviceReport");
         }
 
         private void btnRegistration_Click(object sender, EventArgs e)
         {   
             this.Hide();
-            Registration rObj = new Registration();
-            rObj.Show();
-
-        }
-
-
-
-        private void btnDashBoard_Click(object sender, EventArgs e)
-        {
+            adminObjD.showRelatedForm("registration");
 
         }
 

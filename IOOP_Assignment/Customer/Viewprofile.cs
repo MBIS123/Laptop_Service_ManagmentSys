@@ -27,7 +27,7 @@ namespace IOOP_Assignment.Customer
         {
             lbl_cusName.Text = name;
             Customers obj1 = new Customers(name);
-            Customers.viewCustomerProfile(obj1);
+         //   Customers.viewCustomerProfile(obj1);
             lblcusName.Text = obj1.CusName1; //get customer's name
             lblcusDOB.Text = (obj1.CusBOD1).ToString("dd / MM / yyyy");//get customer's date of birth
             lblcusPhno.Text = obj1.CusPhoneNo1;//get customer'suser's phone number

@@ -232,7 +232,11 @@ namespace IOOP_Assignment
             }
             con.Close();
 
+
+
+
         }
+
         internal string updateCustomerProfile(string Name, DateTime date, string ph, string Email, string Address)
         {
             string stat6;
