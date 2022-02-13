@@ -73,7 +73,7 @@ namespace IOOP_Assignment
                     string receptionist_name = cmd5.ExecuteScalar().ToString();
                     SqlCommand cmd6 = new SqlCommand("select [ReceptionistID] from Receptionist where UserID = (select UserID from users where username = '" + username + "')", con);
                     int receptionist_id = (int)cmd6.ExecuteScalar();
-                    frmServRequest td = new frmServRequest(receptionist_name);
+                    frmRegNewCus td = new frmRegNewCus(receptionist_name);
                     td.ShowDialog(); //adding a simple comment here
                 }
             }

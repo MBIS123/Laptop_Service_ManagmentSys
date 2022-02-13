@@ -226,7 +226,7 @@ namespace IOOP_Assignment
 
         internal static void viewCustomerProfile(Customers o1) //this parameter is an object of the class customer
         {
-            con.Open();
+            /*con.Open();
             SqlCommand cmd8 = new SqlCommand("select UserID from [Users] where UserName = '" + o1.user_name + "'", con);
             o1.userid = cmd8.ExecuteScalar().ToString();
             // i find out what is the userid by his/her username
@@ -258,7 +258,7 @@ namespace IOOP_Assignment
                 o1.CusEmail = sqlDataReader.GetString(7);
                 o1.CusAddress = sqlDataReader.GetString(8);
             }
-            con.Close();
+            con.Close();*/
         }
         internal string updateCustomerProfile(string Name, DateTime date, string ph, string Email, string Address)
         {
