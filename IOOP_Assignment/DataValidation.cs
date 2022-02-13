@@ -105,8 +105,8 @@ namespace IOOP_Assignment
 
         internal bool isDate(TextBox txtBx) // return true it is a date
         {
-            DateTime tempDate;
-            if (DateTime.TryParse(txtBx.Text, out tempDate))
+            DateTime dDate;
+            if (DateTime.TryParse(txtBx.Text, out dDate))
                 return true;
             else
                 return false;

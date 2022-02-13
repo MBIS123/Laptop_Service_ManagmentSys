@@ -31,23 +31,20 @@ namespace IOOP_Assignment
             txtMobile.Text = obj1.RecPhone;
             txtEmail.Text = obj1.RecEmail;
             txtAddress.Text = obj1.RecAddress;
+
         }
 
         private void btnConfirm1_Click(object sender, EventArgs e)
         {
             //validation
             DataValidation objval = new DataValidation();
-            if (objval.isString(txtName.Text) == true && objval.isPhoneNum(txtMobile.Text) == true && (objval.isEmailAddress(txtEmail)) == true && (objval.isStringNull(txtAddress) == false)) //all valid
+            if (objval.isPhoneNum(txtMobile.Text) == true && (objval.isEmailAddress(txtEmail)) == true && (objval.isStringNull(txtAddress) == false)) //all valid
             {
                 Receptionist1 obj1 = new Receptionist1(Name);
-                MessageBox.Show(obj1.updReceptionist(txtName.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text));
+                MessageBox.Show(obj1.updReceptionist(txtMobile.Text, txtEmail.Text, txtAddress.Text));
             }
             else
             {
-                if (objval.isStringNull(txtName))//name not entered
-                {
-                    MessageBox.Show("Please enter your name!");
-                }
                 if (objval.isPhoneNum(txtMobile.Text) == false)//phone number invalid
                 {
                     MessageBox.Show("Please enter a correct phone number!");
@@ -62,7 +59,21 @@ namespace IOOP_Assignment
                 }
             }
         }
-        private void btnConfirm2_Click(object sender, EventArgs e)
+        private void btnClear1_Click(object sender, EventArgs e)
+        {
+            txtMobile.Clear();
+            txtEmail.Clear();
+            txtAddress.Clear();
+        }
+
+        private void btnClear2_Click(object sender, EventArgs e)
+        {
+            txtCurrentPwd.Clear();
+            txtNewPwd.Clear();
+            txtConfirmPwd.Clear();  
+        }
+
+        private void btnConfirm2_Click_1(object sender, EventArgs e)
         {
             Receptionist1 obj1 = new Receptionist1(Name);
             Receptionist1.viewRecProfile(obj1);
@@ -71,20 +82,20 @@ namespace IOOP_Assignment
                 DataValidation objpwval = new DataValidation();
                 if (objpwval.isPassword(txtNewPwd.Text)) //if new pw is valid
                 {
-                    if (txtNewPwd.Text == txtConfirmPwd.Text) //if new password match with confirm password
+                    if (txtCurrentPwd.Text != txtNewPwd.Text)  //if new pw not same with current pw
                     {
-                        if (txtCurrentPwd.Text == txtNewPwd.Text)// if new password same with old password
+                        if (txtNewPwd.Text == txtConfirmPwd.Text)// if new pw same with confirm pw
                         {
-                            MessageBox.Show("The new password you have entered is the same as your current password. Please try again!");
+                            MessageBox.Show(obj1.updReceptionistPwd(txtConfirmPwd.Text));//update to users table
                         }
                         else
                         {
-                            MessageBox.Show(obj1.updReceptionistPwd(txtConfirmPwd.Text)); //update to users table
+                            MessageBox.Show("New password does not match the confirmed password. Please try again!");
                         }
                     }
-                    else //if new pw and confirm pw are different
+                    else //if new pw and current pw same
                     {
-                        MessageBox.Show("New password does not match the confirmed password. Please try again!");
+                        MessageBox.Show("The new password you have entered is the same as your current password. Please try again!");
                     }
                 }
                 else //if newpw is not valid
@@ -98,19 +109,32 @@ namespace IOOP_Assignment
                 MessageBox.Show("Password entered does not match with your current password. Please try again!");
             }
         }
-        private void btnClear1_Click(object sender, EventArgs e)
+        private void linklblNewCusReg_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            txtName.Clear();
-            txtMobile.Clear();
-            txtEmail.Clear();
-            txtAddress.Clear();
+            frmRegNewCus fRegCus= new frmRegNewCus();
+            fRegCus.Show();
+            this.Hide();
         }
 
-        private void btnClear2_Click(object sender, EventArgs e)
+        private void linklblServReq_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            txtCurrentPwd.Clear();
-            txtNewPwd.Clear();
-            txtConfirmPwd.Clear();  
+            frmServRequest fservRq = new frmServRequest();
+            fservRq.Show();
+            this.Hide();
+        }
+
+        private void linklblPayment_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmPayment fpayment = new frmPayment();
+            fpayment.Show();
+            this.Hide();
+        }
+
+        private void linklblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmLogin flogout = new frmLogin();
+            flogout.Show();
+            this.Hide();
         }
     }
 }
