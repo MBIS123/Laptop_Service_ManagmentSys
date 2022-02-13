@@ -32,7 +32,6 @@ namespace IOOP_Assignment
             int pass3MonthIncome = passMonthsIncome[2];
 
             lblIncome.Text = passMonthIncome.ToString();
-            MessageBox.Show(passMonthIncome.ToString() + "asdhjk");
             if ( pass2MonthIncome-passMonthIncome > 0)
             {
                 lblProfitPct.ForeColor = Color.Red;
@@ -165,6 +164,11 @@ namespace IOOP_Assignment
             this.Hide();
             ServiceReport sObj = new ServiceReport();
             sObj.Show();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

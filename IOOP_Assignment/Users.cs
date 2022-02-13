@@ -47,8 +47,11 @@ namespace IOOP_Assignment
 
                 if (user_role == "admin")
                 {
+                    frmLogin objLgn = new frmLogin();
+                    objLgn.Hide();
                     DashBoard a = new DashBoard();
                     a.ShowDialog();
+                  
                 }
                 else if (user_role == "customer")
                 {
