@@ -113,7 +113,7 @@
             // llbchange_serv
             // 
             this.llbchange_serv.AutoSize = true;
-            this.llbchange_serv.BackColor = System.Drawing.Color.PeachPuff;
+            this.llbchange_serv.BackColor = System.Drawing.Color.Tan;
             this.llbchange_serv.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.llbchange_serv.LinkColor = System.Drawing.Color.Black;
             this.llbchange_serv.Location = new System.Drawing.Point(40, 349);
@@ -127,7 +127,7 @@
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.BackColor = System.Drawing.Color.PeachPuff;
+            this.linkLabel2.BackColor = System.Drawing.Color.Tan;
             this.linkLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.linkLabel2.LinkColor = System.Drawing.Color.Black;
             this.linkLabel2.Location = new System.Drawing.Point(40, 426);
@@ -136,6 +136,7 @@
             this.linkLabel2.TabIndex = 35;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "MY  ORDER";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // llbaccount_setting
             // 
@@ -153,7 +154,7 @@
             // llblogout
             // 
             this.llblogout.AutoSize = true;
-            this.llblogout.BackColor = System.Drawing.Color.PeachPuff;
+            this.llblogout.BackColor = System.Drawing.Color.Tan;
             this.llblogout.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.llblogout.LinkColor = System.Drawing.Color.Black;
             this.llblogout.Location = new System.Drawing.Point(40, 560);
@@ -162,10 +163,11 @@
             this.llblogout.TabIndex = 37;
             this.llblogout.TabStop = true;
             this.llblogout.Text = "LOGOUT";
+            this.llblogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblogout_LinkClicked);
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox1.BackColor = System.Drawing.Color.Tan;
             this.groupBox1.Controls.Add(this.btnclear);
             this.groupBox1.Controls.Add(this.btnsave);
             this.groupBox1.Controls.Add(this.label7);
@@ -228,7 +230,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.PeachPuff;
+            this.label8.BackColor = System.Drawing.Color.Tan;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(62, 641);
             this.label8.Name = "label8";
@@ -385,7 +387,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.PeachPuff;
+            this.label1.BackColor = System.Drawing.Color.Tan;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(65, 203);
             this.label1.Name = "label1";
@@ -396,7 +398,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.PeachPuff;
+            this.label10.BackColor = System.Drawing.Color.Tan;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label10.Location = new System.Drawing.Point(65, 363);
             this.label10.Name = "label10";
@@ -407,7 +409,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.PeachPuff;
+            this.label9.BackColor = System.Drawing.Color.Tan;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(62, 508);
             this.label9.Name = "label9";
@@ -418,7 +420,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.PeachPuff;
+            this.label19.BackColor = System.Drawing.Color.Tan;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label19.Location = new System.Drawing.Point(62, 800);
             this.label19.Name = "label19";
@@ -448,7 +450,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox2.BackColor = System.Drawing.Color.Tan;
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Location = new System.Drawing.Point(-26, 337);
             this.groupBox2.Name = "groupBox2";
@@ -459,7 +461,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.PeachPuff;
+            this.label15.BackColor = System.Drawing.Color.Tan;
             this.label15.Font = new System.Drawing.Font("Wingdings 2", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.Location = new System.Drawing.Point(28, 6);
             this.label15.Name = "label15";
@@ -469,7 +471,7 @@
             // 
             // llbmy_order
             // 
-            this.llbmy_order.BackColor = System.Drawing.Color.PeachPuff;
+            this.llbmy_order.BackColor = System.Drawing.Color.Tan;
             this.llbmy_order.Controls.Add(this.label16);
             this.llbmy_order.Location = new System.Drawing.Point(-7, 413);
             this.llbmy_order.Name = "llbmy_order";
@@ -480,7 +482,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.PeachPuff;
+            this.label16.BackColor = System.Drawing.Color.Tan;
             this.label16.Font = new System.Drawing.Font("Wingdings 2", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.Location = new System.Drawing.Point(9, 8);
             this.label16.Name = "label16";
@@ -490,7 +492,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox4.BackColor = System.Drawing.Color.Tan;
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.llbaccount_setting);
             this.groupBox4.Location = new System.Drawing.Point(2, 479);
@@ -502,7 +504,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.PeachPuff;
+            this.label20.BackColor = System.Drawing.Color.Tan;
             this.label20.Font = new System.Drawing.Font("Wingdings", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label20.Location = new System.Drawing.Point(2, 6);
             this.label20.Name = "label20";
@@ -512,7 +514,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox5.BackColor = System.Drawing.Color.Tan;
             this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Location = new System.Drawing.Point(-5, 550);
             this.groupBox5.Name = "groupBox5";
@@ -523,7 +525,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.PeachPuff;
+            this.label14.BackColor = System.Drawing.Color.Tan;
             this.label14.Font = new System.Drawing.Font("Wingdings", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.Location = new System.Drawing.Point(9, 4);
             this.label14.Name = "label14";
@@ -535,7 +537,7 @@
             // 
             this.lbl_cusName.AutoSize = true;
             this.lbl_cusName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_cusName.Location = new System.Drawing.Point(73, 236);
+            this.lbl_cusName.Location = new System.Drawing.Point(59, 241);
             this.lbl_cusName.Name = "lbl_cusName";
             this.lbl_cusName.Size = new System.Drawing.Size(0, 25);
             this.lbl_cusName.TabIndex = 56;
@@ -544,7 +546,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Tan;
+            this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(1064, 968);
             this.Controls.Add(this.lbl_cusName);
             this.Controls.Add(this.label6);

@@ -52,11 +52,12 @@ namespace IOOP_Assignment
                 }
                 else if (user_role == "customer")
                 {
-                    update_profile u = new update_profile(un);// pass username and display at update profile form
-                    Viewprofile v = new Viewprofile(un);
-                    change_service d = new change_service(un); 
-                    Myorder c = new Myorder(un);
-                    c.ShowDialog();
+                    SqlCommand cmd0 = new SqlCommand("select [Name] from Customer where UserID = (select UserID from Users where UserName = '" + username + "')", con);
+                    string customer_name = cmd0.ExecuteScalar().ToString();
+                    Myorder c = new Myorder(customer_name);
+                    c.ShowDialog(); 
+
+
                 }
                 else if (user_role == "technician")
                 {
