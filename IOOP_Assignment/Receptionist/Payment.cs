@@ -53,6 +53,12 @@ namespace IOOP_Assignment
                         }
                         else
                         {
+                            //update Payment Status to Paid
+                            Receptionist1 objPay = new Receptionist1();
+                            string idrow = dataGridViewPayment.CurrentRow.Cells[0].Value.ToString();
+                            //string paymentstat = dataGridViewPayment.CurrentRow.Cells[4].ToString();
+                            MessageBox.Show(objPay.updPaymentStatus(idrow));
+
                             //Calculate the balanced
                             float bal = (float)(Amt - chckTotalAmt);
                             frmReceipt fReceipt = new frmReceipt();
@@ -68,12 +74,6 @@ namespace IOOP_Assignment
                             fReceipt.lblAmtPaid.Text = "RM" + Amt.ToString();
                             fReceipt.lblBal.Text = "RM" + bal.ToString();
                             fReceipt.lblRcn.Text = Name;
-
-                            //update Payment Status to Paid
-                            Receptionist1 objPay = new Receptionist1();
-                            string idrow = dataGridViewPayment.CurrentRow.Cells[0].Value.ToString();
-                            //string paymentstat = dataGridViewPayment.CurrentRow.Cells[4].ToString();
-                            MessageBox.Show(objPay.updPaymentStatus(idrow));
                         }
                     }
                     else

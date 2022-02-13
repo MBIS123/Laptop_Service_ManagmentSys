@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccSet));
-            this.grpBoxReg = new System.Windows.Forms.GroupBox();
+            this.grpBoxAcc = new System.Windows.Forms.GroupBox();
             this.btnClear1 = new System.Windows.Forms.Button();
             this.btnConfirm1 = new System.Windows.Forms.Button();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.linklblPayment = new System.Windows.Forms.LinkLabel();
-            this.grpBoxReg.SuspendLayout();
+            this.grpBoxAcc.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -72,32 +72,32 @@
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // grpBoxReg
+            // grpBoxAcc
             // 
-            this.grpBoxReg.BackColor = System.Drawing.Color.PeachPuff;
-            this.grpBoxReg.Controls.Add(this.btnClear1);
-            this.grpBoxReg.Controls.Add(this.btnConfirm1);
-            this.grpBoxReg.Controls.Add(this.lblPassword);
-            this.grpBoxReg.Controls.Add(this.lblPersonalInfo);
-            this.grpBoxReg.Controls.Add(this.txtCurrentPwd);
-            this.grpBoxReg.Controls.Add(this.lblCurrentPwd);
-            this.grpBoxReg.Controls.Add(this.txtConfirmPwd);
-            this.grpBoxReg.Controls.Add(this.lblConfirmPwd);
-            this.grpBoxReg.Controls.Add(this.txtNewPwd);
-            this.grpBoxReg.Controls.Add(this.lblNewPwd);
-            this.grpBoxReg.Controls.Add(this.btnClear2);
-            this.grpBoxReg.Controls.Add(this.btnConfirm2);
-            this.grpBoxReg.Controls.Add(this.txtAddress);
-            this.grpBoxReg.Controls.Add(this.lblAddress);
-            this.grpBoxReg.Controls.Add(this.txtEmail);
-            this.grpBoxReg.Controls.Add(this.lblEmail);
-            this.grpBoxReg.Controls.Add(this.txtMobile);
-            this.grpBoxReg.Controls.Add(this.lblMobile);
-            this.grpBoxReg.Location = new System.Drawing.Point(214, 68);
-            this.grpBoxReg.Name = "grpBoxReg";
-            this.grpBoxReg.Size = new System.Drawing.Size(617, 502);
-            this.grpBoxReg.TabIndex = 5;
-            this.grpBoxReg.TabStop = false;
+            this.grpBoxAcc.BackColor = System.Drawing.Color.PeachPuff;
+            this.grpBoxAcc.Controls.Add(this.btnClear1);
+            this.grpBoxAcc.Controls.Add(this.btnConfirm1);
+            this.grpBoxAcc.Controls.Add(this.lblPassword);
+            this.grpBoxAcc.Controls.Add(this.lblPersonalInfo);
+            this.grpBoxAcc.Controls.Add(this.txtCurrentPwd);
+            this.grpBoxAcc.Controls.Add(this.lblCurrentPwd);
+            this.grpBoxAcc.Controls.Add(this.txtConfirmPwd);
+            this.grpBoxAcc.Controls.Add(this.lblConfirmPwd);
+            this.grpBoxAcc.Controls.Add(this.txtNewPwd);
+            this.grpBoxAcc.Controls.Add(this.lblNewPwd);
+            this.grpBoxAcc.Controls.Add(this.btnClear2);
+            this.grpBoxAcc.Controls.Add(this.btnConfirm2);
+            this.grpBoxAcc.Controls.Add(this.txtAddress);
+            this.grpBoxAcc.Controls.Add(this.lblAddress);
+            this.grpBoxAcc.Controls.Add(this.txtEmail);
+            this.grpBoxAcc.Controls.Add(this.lblEmail);
+            this.grpBoxAcc.Controls.Add(this.txtMobile);
+            this.grpBoxAcc.Controls.Add(this.lblMobile);
+            this.grpBoxAcc.Location = new System.Drawing.Point(214, 68);
+            this.grpBoxAcc.Name = "grpBoxAcc";
+            this.grpBoxAcc.Size = new System.Drawing.Size(617, 502);
+            this.grpBoxAcc.TabIndex = 5;
+            this.grpBoxAcc.TabStop = false;
             // 
             // btnClear1
             // 
@@ -475,12 +475,12 @@
             this.Controls.Add(this.lblRcn);
             this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.splitter1);
-            this.Controls.Add(this.grpBoxReg);
+            this.Controls.Add(this.grpBoxAcc);
             this.Controls.Add(this.lblAccSet);
             this.Text = "Update Profile";
             this.Load += new System.EventHandler(this.frmAccSet_Load);
-            this.grpBoxReg.ResumeLayout(false);
-            this.grpBoxReg.PerformLayout();
+            this.grpBoxAcc.ResumeLayout(false);
+            this.grpBoxAcc.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -499,7 +499,7 @@
 
         #endregion
 
-        private GroupBox grpBoxReg;
+        private GroupBox grpBoxAcc;
         private TextBox txtNewPwd;
         private Label lblNewPwd;
         private Button btnClear2;
