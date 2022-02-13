@@ -48,7 +48,7 @@ namespace IOOP_Assignment
         {
             var containsNumber = new Regex(@"[0-9]+");
             var containsUpperCase = new Regex(@"[A-Z]+");
-            var contains1SpecialChar = new Regex("^[A-Za-z0-9]+"); //negation of normal characters
+            var contains1SpecialChar = new Regex("[^A-Za-z0-9]+"); //negation of normal characters
             var containsMin8Char = new Regex(@".{8,}"); //. means any character, while , means 8 or more
 
             var isValidPassword = containsNumber.IsMatch(input) && containsUpperCase.IsMatch(input) && contains1SpecialChar.IsMatch(input) && containsMin8Char.IsMatch(input);
