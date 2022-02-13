@@ -32,9 +32,5 @@ namespace IOOP_Assignment
 
         }
 
-        private void lblDateTime_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

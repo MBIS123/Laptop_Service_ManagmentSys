@@ -28,10 +28,10 @@ namespace IOOP_Assignment
         private string recEmail;
         private string recAddress;
         private string recPw;
-
+        private string userID;
 
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
-        
+
 
         public string CusName { get => cusName; set => cusName = value; }
         public string CusGender { get => cusGender; set => cusGender = value; }
@@ -91,10 +91,10 @@ namespace IOOP_Assignment
                 int cusID = numCus + 1;
 
                 SqlCommand cmdUserCus = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users(UserID,UserName,Password,[User Role]) values" +
-                                                       "( " + userID + ","+ " @username, '123456', 'customer'); SET IDENTITY_INSERT Users off; ", con);
+                                                       "( " + userID + "," + " @username, '123456', 'customer'); SET IDENTITY_INSERT Users off;", con);
 
                 SqlCommand cmdNewCus = new SqlCommand("SET IDENTITY_INSERT Customer ON; insert into Customer(CustomerID,UserID,Name,Gender,[Date of Birth],[IC No.],[Contact No.],Email,Address) values" +
-                                                      "( " + cusID + "," + userID + " ,'" + cusName + "','" + cusGender + "','" + cusDob + "','" + cusIC + "','" + cusPhoneNum + "','" + CusEmail + "','" + CusAddress + "); SET IDENTITY_INSERT Customer off; ", con);
+                                                      "( " + cusID + "," + userID + " ,'" + cusName + "','" + cusGender + "','" + cusDob + "','" + cusIC + "','" + cusPhoneNum + "','" + CusEmail + "','" + CusAddress + "') ; SET IDENTITY_INSERT Customer off;", con);
 
                 cmdUserCus.Parameters.AddWithValue("@username", cusUsername);
                 cmdUserCus.ExecuteNonQuery();
@@ -115,7 +115,7 @@ namespace IOOP_Assignment
                 "[Order].Status,[Order].Laptop, [Order].[Amount (RM)], [Order].[Payment Status] " +
                 "From [dbo].[Order] inner join [dbo].[Customer] on [Order].CustomerID=[Customer].CustomerID inner join " +
                 "[dbo].[Types of Service Request] on [Order].[ServiceRequestType ID]=[Types of Service Request].ServiceRequestTypeID where [Order].[Payment Status]='Unpaid'", con);
-            
+
             DataTable dtbl = new DataTable();
             da.Fill(dtbl);
             dgv.DataSource = dtbl;
@@ -183,32 +183,75 @@ namespace IOOP_Assignment
             return status;
         }
 
-        public string updReceptionist(string ph, string em, string add, string pw)
+        public static void viewRecProfile(Receptionist1 o1)
         {
+            con.Open();
+            MessageBox.Show(o1.recName.ToString());
+            SqlCommand cmd = new SqlCommand("select * from Receptionist where Name = '" + o1.recName + "'", con);
+            SqlCommand cmd2 = new SqlCommand("select [Password] from [Users], [Receptionist] where [Users].UserID = [Receptionist].UserID and [Receptionist].Name = '" + o1.recName + "'", con);
+
+            o1.recPw = cmd2.ExecuteScalar().ToString();
+            SqlDataReader sqlDataReader = cmd.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                o1.recPhone = sqlDataReader.GetString(7);
+                o1.recEmail = sqlDataReader.GetString(8);
+                o1.RecAddress = sqlDataReader.GetString(9);
+            }
+            con.Close();
+        }
+        public string updReceptionist(string ph, string em, string add)
+        {
+            SqlCommand cmd1 = new SqlCommand("update [Users] set [Password] = '" + recPw + "' where [UserID] = (select Users.[UserID] from Receptionist, Users where Receptionist.UserID = Users.UserID)", con);
+
             string status;
             con.Open();
 
             recPhone = ph;
             recEmail = em;
             recAddress = add;
-            recPw = pw;
 
-            SqlCommand cmd = new SqlCommand("update [Receptionist] set [Contact No.] = '" + recPhone + "', [Email] = '" + recEmail + "', [Address] = '" + recAddress + "' where [Name] = '" + recName + "'", con);
-            SqlCommand cmd1 = new SqlCommand("update [Users] set [Password] = '" + recPw + "' where [UserID] = (select Users.[UserID] from Receptionist, Users where Receptionist.UserID = Users.UserID)", con);
+            SqlCommand cmd = new SqlCommand("Update [Receptionist] set  [Contact No.] = '" + recPhone + "'," +
+                " [Email] = '" + recEmail + "', [Address] = '" + recAddress + "'"+" where [UserID] = (select Users.[UserID] from Receptionist, " +
+                "Users where Receptionist.UserID = Users.UserID)", con);
             int i = cmd.ExecuteNonQuery();
-            int p = cmd1.ExecuteNonQuery();
-            if (i != 0)
-                status = "Your details have been successfully updated.";
-            else
-                status = "Update Unsuccessful. Please try again.";
 
-            if (p != 0)
-                status = "Your password have been successfully updated.";
+            if (i != 0)
+            {
+                status = "Your personal details have been successfully updated.";
+            }
             else
-                status = "Update Unsuccessful. Please try again.";
+            {
+                status = "Update Unsuccessful. Please try again. ";
+            }
 
             con.Close();
             return status;
+        }
+        internal string updReceptionistPwd(string pw)
+        {
+            string status;
+            con.Open();
+
+            recPw = pw;
+
+            SqlCommand cmd1 = new SqlCommand("update [Users] set [Password] = '" + recPw + "' where [UserID] =" +
+                " (select Users.[UserID] from Receptionist, Users where Receptionist.UserID = Users.UserID)", con);
+            int i = cmd1.ExecuteNonQuery();
+
+            if (i != 0)
+            {
+                status = "Your password have been successfully updated.";
+            }
+            else
+            {
+                status = "Update Unsuccessful. Please try again.";
+            }
+
+            con.Close();
+            return status;
+
+
         }
     }
 }

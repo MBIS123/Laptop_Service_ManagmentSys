@@ -21,23 +21,20 @@ namespace IOOP_Assignment
         private void btnRegistration_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Registration rObj = new Registration();
-            rObj.Show();
+            objAdminI.showRelatedForm("registration");
 
         }
 
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            DashBoard dObj = new DashBoard();
-            dObj.Show();
+            objAdminI.showRelatedForm("dashboard");
         }
 
         private void btnServiceReport_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ServiceReport sObj = new ServiceReport();
-            sObj.Show();
+            objAdminI.showRelatedForm("serviceReport");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -45,6 +42,22 @@ namespace IOOP_Assignment
             Application.Exit();
         }
 
- 
+        private void MonthlyIncome_Load(object sender, EventArgs e)
+        {
+            objAdminI.addNewYear(cmbBxYear);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (cmbBxYear.SelectedIndex != -1)
+                dtGVIncome.DataSource = objAdminI.generateMonthlyIncome(cmbBxYear);
+            else
+                MessageBox.Show("Please select a year !", "Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

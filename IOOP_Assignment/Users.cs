@@ -47,8 +47,11 @@ namespace IOOP_Assignment
 
                 if (user_role == "admin")
                 {
+                    frmLogin objLgn = new frmLogin();
+                    objLgn.Hide();
                     DashBoard a = new DashBoard();
                     a.ShowDialog();
+                  
                 }
                 else if (user_role == "customer")
                 {
@@ -71,9 +74,7 @@ namespace IOOP_Assignment
                 {
                     SqlCommand cmd5 = new SqlCommand("select [name] from Receptionist where UserID = (select UserID from users where username = '" + username + "')", con);
                     string receptionist_name = cmd5.ExecuteScalar().ToString();
-                    SqlCommand cmd6 = new SqlCommand("select [ReceptionistID] from Receptionist where UserID = (select UserID from users where username = '" + username + "')", con);
-                    int receptionist_id = (int)cmd6.ExecuteScalar();
-                    frmRegNewCus td = new frmRegNewCus(receptionist_name);
+                    frmAccSet td = new frmAccSet(receptionist_name);
                     td.ShowDialog(); //adding a simple comment here
                 }
             }
@@ -101,7 +102,7 @@ namespace IOOP_Assignment
             int numOfAvaiTech = (int)numAvailableTech.ExecuteScalar();
 
 
-            if (numOfAvaiTech != 0) // code will only run if there are at  least one technician which is Staus = 'Available'
+            if (numOfAvaiTech != 0) // code will only run if there are at  least one technician which its Sttatus = 'Available'
             {
                 SqlCommand availableTech = new SqlCommand("select top (1) TechnicianID from Technician  where Status ='Available';", con); //first available tech
                 techId = (int)availableTech.ExecuteScalar();
@@ -152,13 +153,11 @@ namespace IOOP_Assignment
                     if (differentDays >= 0)
                     {
                         updtUrgentTechID.ExecuteNonQuery();
-     
-
                     }
                     else
                     {
                         updtNormalTechID.ExecuteNonQuery();
- 
+
                     }
 
                     updtTechStatus.ExecuteNonQuery();

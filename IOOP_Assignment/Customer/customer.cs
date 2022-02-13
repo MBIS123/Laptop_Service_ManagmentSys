@@ -167,24 +167,7 @@ namespace IOOP_Assignment
             return status1;
         }
 
-        internal string showExpec_date()
-        {
-            string stat3;
-
-            con.Open();
-            SqlCommand cmd0 = new SqlCommand("select UserID from [Users] where UserName = '" + user_name + "'", con);
-            string userid1 = cmd0.ExecuteScalar().ToString();
-            // first, i use username to find out what is thehis/her user id
-
-            SqlCommand cmd1 = new SqlCommand("select CustomerID from [Customer] where UserId = '" + userid1 + "'", con);
-            string customer_id1 = cmd1.ExecuteScalar().ToString();
-
-            SqlCommand cmd5 = new SqlCommand("select [Expected Completion Date] from [Order] where CustomerID = '" + customer_id1 + "'", con);
-            string Expec_date1 = cmd5.ExecuteScalar().ToString();
-
-            con.Close();
-            return Expec_date1;
-        }
+        
 
         internal string showCollec_date()
         {
@@ -226,24 +209,13 @@ namespace IOOP_Assignment
 
         internal static void viewCustomerProfile(Customers o1) //this parameter is an object of the class customer
         {
-            /*con.Open();
+            con.Open();
             SqlCommand cmd8 = new SqlCommand("select UserID from [Users] where UserName = '" + o1.user_name + "'", con);
             o1.userid = cmd8.ExecuteScalar().ToString();
             // i find out what is the userid by his/her username
 
-
-            SqlCommand cmd9 = new SqlCommand("select * from Customer where UserID = '" + user_name + "'", con);
-
-            SqlCommand cmd10 = new SqlCommand("select Password from [Users],[Customer] where Users.UserID = Customer.UserID and Customer.Name = '" + o1.CusUName + "'", con);
-            CusPassword = cmd10.ExecuteScalar().ToString();
-
-           SqlCommand cmd10 = new SqlCommand("select Password from [Users],[Customer] where Users.UserID = Customer.UserID and Customer.Name = '" + CusUName + "'", con);
-            CusPassword = cmd10.ExecuteScalar().ToString();
-
-
             SqlCommand cmd9 = new SqlCommand("select * from Customer where UserID = '" + o1.userid + "'", con);
             //using his/her userid, i select all the rows and columns within the table
-
             SqlDataReader sqlDataReader = cmd9.ExecuteReader(); //used for any result set with multiple rows/columns (e.g., SELECT col1, col2 from sometable )
 
             SqlCommand cmd10 = new SqlCommand("select Password from [Users] where UserID = '" + o1.userid + "'", con);
@@ -258,8 +230,13 @@ namespace IOOP_Assignment
                 o1.CusEmail = sqlDataReader.GetString(7);
                 o1.CusAddress = sqlDataReader.GetString(8);
             }
-            con.Close();*/
+            con.Close();
+
+
+
+
         }
+
         internal string updateCustomerProfile(string Name, DateTime date, string ph, string Email, string Address)
         {
             string stat6;

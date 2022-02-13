@@ -44,5 +44,10 @@ namespace IOOP_Assignment
         {
             this.Close();
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

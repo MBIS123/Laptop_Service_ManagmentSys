@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
-    //public static string Name;
     public partial class frmServRequest : Form
     {
+        public static string Name;
         public frmServRequest()
         {
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace IOOP_Assignment
                         Users techForServ1 = new Users();
                         techForServ1.assignOrder();
                     }
-                    if (radBtnUrgent.Checked==true)
+                    else if (radBtnUrgent.Checked==true)
                     {
                         int servReID = Convert.ToInt32(dataGridViewServ.CurrentRow.Cells[0].Value);
                         string stype = "Urgent";
@@ -59,11 +59,16 @@ namespace IOOP_Assignment
                         Users techForServ2 = new Users();
                         techForServ2.assignOrder();
                     }
+                    else
+                    {
+                        MessageBox.Show("Please select a service type!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
         }
         private void frmServRequest_Load(object sender, EventArgs e)
         {
+            lblRcn.Text = Name;
             Receptionist1 obj1 = new Receptionist1();
             obj1.loadCustomerTable(dataGridViewCustomer);
             obj1.loadServReqTable(dataGridViewServ);
@@ -83,6 +88,34 @@ namespace IOOP_Assignment
             txtLaptop.Clear();
             radBtnNormal.Checked = false;
             radBtnUrgent.Checked = false;
+        }
+
+        private void linklblNewCusReg_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmRegNewCus fRegCus = new frmRegNewCus();
+            fRegCus.Show();
+            this.Hide();
+        }
+
+        private void linklblAccSet_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmAccSet faccSet = new frmAccSet();
+            faccSet.Show();
+            this.Hide();
+        }
+
+        private void linklblPayment_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmPayment fpayment = new frmPayment();
+            fpayment.Show();
+            this.Hide();
+        }
+
+        private void linklblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmLogin flogout = new frmLogin();
+            flogout.Show();
+            this.Hide();
         }
     }
 }

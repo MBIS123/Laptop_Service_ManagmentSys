@@ -47,6 +47,9 @@
             this.frmHeader = new System.Windows.Forms.Label();
             this.dtGVIncome = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
+            this.cmbBxYear = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSearch = new ePOSOne.btnProduct.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxIncome)).BeginInit();
@@ -177,6 +180,7 @@
             this.btnLogOut.TabIndex = 281;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // pictureBox2
             // 
@@ -224,7 +228,7 @@
             this.pcBxIncome.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pcBxIncome.Name = "pcBxIncome";
             this.pcBxIncome.Size = new System.Drawing.Size(34, 30);
-            this.pcBxIncome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcBxIncome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcBxIncome.TabIndex = 280;
             this.pcBxIncome.TabStop = false;
             // 
@@ -276,7 +280,7 @@
             this.dtGVIncome.RowHeadersVisible = false;
             this.dtGVIncome.RowHeadersWidth = 51;
             this.dtGVIncome.RowTemplate.Height = 25;
-            this.dtGVIncome.Size = new System.Drawing.Size(775, 269);
+            this.dtGVIncome.Size = new System.Drawing.Size(775, 340);
             this.dtGVIncome.TabIndex = 289;
             // 
             // button2
@@ -292,12 +296,54 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // cmbBxYear
+            // 
+            this.cmbBxYear.FormattingEnabled = true;
+            this.cmbBxYear.Items.AddRange(new object[] {
+            "2021"});
+            this.cmbBxYear.Location = new System.Drawing.Point(743, 88);
+            this.cmbBxYear.Name = "cmbBxYear";
+            this.cmbBxYear.Size = new System.Drawing.Size(121, 23);
+            this.cmbBxYear.TabIndex = 328;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(835, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 15);
+            this.label2.TabIndex = 329;
+            this.label2.Text = "Year";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(163)))), ((int)(((byte)(246)))));
+            this.btnSearch.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSearch.Location = new System.Drawing.Point(887, 86);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(150)))), ((int)(((byte)(239)))));
+            this.btnSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(150)))), ((int)(((byte)(239)))));
+            this.btnSearch.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSearch.Size = new System.Drawing.Size(77, 23);
+            this.btnSearch.TabIndex = 332;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.TextColor = System.Drawing.Color.Black;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // MonthlyIncome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(985, 508);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbBxYear);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dtGVIncome);
             this.Controls.Add(this.sideLabel);
@@ -320,6 +366,7 @@
             this.Name = "MonthlyIncome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MonthlyIncome";
+            this.Load += new System.EventHandler(this.MonthlyIncome_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxIncome)).EndInit();
@@ -349,5 +396,8 @@
         private Label frmHeader;
         private DataGridView dtGVIncome;
         private Button button2;
+        private ComboBox cmbBxYear;
+        private Label label2;
+        private ePOSOne.btnProduct.Button_WOC btnSearch;
     }
 }

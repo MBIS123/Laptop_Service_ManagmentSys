@@ -40,11 +40,11 @@
             // 
             this.lblArrow3.AutoSize = true;
             this.lblArrow3.BackColor = System.Drawing.Color.Gray;
-            this.lblArrow3.Location = new System.Drawing.Point(768, 67);
-            this.lblArrow3.MaximumSize = new System.Drawing.Size(2, 27);
-            this.lblArrow3.MinimumSize = new System.Drawing.Size(2, 27);
+            this.lblArrow3.Location = new System.Drawing.Point(672, 50);
+            this.lblArrow3.MaximumSize = new System.Drawing.Size(2, 20);
+            this.lblArrow3.MinimumSize = new System.Drawing.Size(2, 20);
             this.lblArrow3.Name = "lblArrow3";
-            this.lblArrow3.Size = new System.Drawing.Size(2, 27);
+            this.lblArrow3.Size = new System.Drawing.Size(2, 20);
             this.lblArrow3.TabIndex = 77;
             this.lblArrow3.Text = "label12";
             // 
@@ -52,11 +52,11 @@
             // 
             this.lblArrow1.AutoSize = true;
             this.lblArrow1.BackColor = System.Drawing.Color.Gray;
-            this.lblArrow1.Location = new System.Drawing.Point(268, 64);
-            this.lblArrow1.MaximumSize = new System.Drawing.Size(2, 27);
-            this.lblArrow1.MinimumSize = new System.Drawing.Size(2, 27);
+            this.lblArrow1.Location = new System.Drawing.Point(234, 48);
+            this.lblArrow1.MaximumSize = new System.Drawing.Size(2, 20);
+            this.lblArrow1.MinimumSize = new System.Drawing.Size(2, 20);
             this.lblArrow1.Name = "lblArrow1";
-            this.lblArrow1.Size = new System.Drawing.Size(2, 27);
+            this.lblArrow1.Size = new System.Drawing.Size(2, 20);
             this.lblArrow1.TabIndex = 76;
             this.lblArrow1.Text = "label11";
             // 
@@ -64,20 +64,20 @@
             // 
             this.lblArrow2.AutoSize = true;
             this.lblArrow2.BackColor = System.Drawing.Color.Gray;
-            this.lblArrow2.Location = new System.Drawing.Point(268, 64);
-            this.lblArrow2.MaximumSize = new System.Drawing.Size(571, 3);
-            this.lblArrow2.MinimumSize = new System.Drawing.Size(503, 3);
+            this.lblArrow2.Location = new System.Drawing.Point(234, 48);
+            this.lblArrow2.MaximumSize = new System.Drawing.Size(500, 2);
+            this.lblArrow2.MinimumSize = new System.Drawing.Size(440, 2);
             this.lblArrow2.Name = "lblArrow2";
-            this.lblArrow2.Size = new System.Drawing.Size(503, 3);
+            this.lblArrow2.Size = new System.Drawing.Size(440, 2);
             this.lblArrow2.TabIndex = 75;
             this.lblArrow2.Text = "label10";
             // 
             // lblServType
             // 
             this.lblServType.AutoSize = true;
-            this.lblServType.Location = new System.Drawing.Point(464, 37);
+            this.lblServType.Location = new System.Drawing.Point(406, 28);
             this.lblServType.Name = "lblServType";
-            this.lblServType.Size = new System.Drawing.Size(91, 20);
+            this.lblServType.Size = new System.Drawing.Size(71, 15);
             this.lblServType.TabIndex = 74;
             this.lblServType.Text = "Service Type";
             // 
@@ -89,18 +89,18 @@
             this.dataGVServiceReport.AllowUserToResizeRows = false;
             this.dataGVServiceReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGVServiceReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGVServiceReport.Location = new System.Drawing.Point(17, 97);
-            this.dataGVServiceReport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGVServiceReport.Location = new System.Drawing.Point(15, 73);
             this.dataGVServiceReport.Name = "dataGVServiceReport";
             this.dataGVServiceReport.ReadOnly = true;
             this.dataGVServiceReport.RowHeadersWidth = 51;
             this.dataGVServiceReport.RowTemplate.Height = 25;
-            this.dataGVServiceReport.Size = new System.Drawing.Size(909, 435);
+            this.dataGVServiceReport.Size = new System.Drawing.Size(795, 326);
             this.dataGVServiceReport.TabIndex = 78;
+            this.dataGVServiceReport.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGVServiceReport_CellContentClick);
             // 
             // UserControlServiceReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
@@ -109,9 +109,8 @@
             this.Controls.Add(this.lblArrow1);
             this.Controls.Add(this.lblArrow2);
             this.Controls.Add(this.lblServType);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UserControlServiceReport";
-            this.Size = new System.Drawing.Size(955, 616);
+            this.Size = new System.Drawing.Size(836, 462);
             this.Load += new System.EventHandler(this.UserControlServiceReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGVServiceReport)).EndInit();
             this.ResumeLayout(false);

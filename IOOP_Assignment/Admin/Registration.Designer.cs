@@ -334,6 +334,7 @@
             this.button1.TabIndex = 337;
             this.button1.Text = "Log Out";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox4
             // 
@@ -381,7 +382,7 @@
             this.pcBxIncome.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pcBxIncome.Name = "pcBxIncome";
             this.pcBxIncome.Size = new System.Drawing.Size(34, 30);
-            this.pcBxIncome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcBxIncome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcBxIncome.TabIndex = 336;
             this.pcBxIncome.TabStop = false;
             // 
@@ -717,8 +718,7 @@
             // 
             // Registration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(985, 508);

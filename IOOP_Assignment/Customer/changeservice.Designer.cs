@@ -76,11 +76,11 @@
             // 
             this.lblwelcome.AutoSize = true;
             this.lblwelcome.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblwelcome.Location = new System.Drawing.Point(43, 208);
+            this.lblwelcome.Location = new System.Drawing.Point(24, 208);
             this.lblwelcome.Name = "lblwelcome";
-            this.lblwelcome.Size = new System.Drawing.Size(169, 25);
+            this.lblwelcome.Size = new System.Drawing.Size(210, 25);
             this.lblwelcome.TabIndex = 33;
-            this.lblwelcome.Text = "Welcome back !";
+            this.lblwelcome.Text = "WELCOME BACK";
             this.lblwelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblmyaccount

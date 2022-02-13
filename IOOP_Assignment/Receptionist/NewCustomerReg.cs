@@ -12,7 +12,7 @@ namespace IOOP_Assignment
 {
     public partial class frmRegNewCus : Form
     {
-        public static string name;
+        public static string Name;
         Receptionist1 obj1 = new Receptionist1();
         public frmRegNewCus()
         {
@@ -27,24 +27,62 @@ namespace IOOP_Assignment
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            DateTime bdaydate = DateTime.Parse(dateTimePickerDate.Text);
-            Receptionist1 obj1 = new Receptionist1(txtName.Text,Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate, txtUsername.Text);
-            MessageBox.Show(obj1.AddNewCustomer());
+            DataValidation objval = new DataValidation();
+            if (objval.isString(txtName.Text) == true && objval.isIcNum(txtIC) == true && objval.isPhoneNum(txtMobile.Text) == true
+                && objval.isEmailAddress(txtEmail) == true && objval.isStringNull(txtAddress) == false && objval.isStringNull(txtUsername) == false)
+            {
+                if (radBtnFemale.Checked == true)
+                {
+                    Gender = "Female";
+                    DateTime bdaydate1 = DateTime.Parse(dateTimePickerDate.Text);
+                    Receptionist1 obj1 = new Receptionist1(txtName.Text, Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate1, txtUsername.Text);
+                    MessageBox.Show(obj1.AddNewCustomer());
+                }
+                else if (radBtnMale.Checked ==true)
+                {
+                    Gender = "Male";
+                    DateTime bdaydate2 = DateTime.Parse(dateTimePickerDate.Text);
+                    Receptionist1 obj1 = new Receptionist1(txtName.Text, Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate2, txtUsername.Text);
+                    MessageBox.Show(obj1.AddNewCustomer());
+                }
+                else
+                {
+                    MessageBox.Show("Please choose your gender!");
+                }
+            }
+            else
+            {
+                if (objval.isStringNull(txtName))//name not entered
+                {
+                    MessageBox.Show("Please enter your name!");
+                }
+                if (objval.isIcNum(txtIC) ==false)
+                {
+                    MessageBox.Show("Please enter a correct IC number!");
+                }
+                if (objval.isPhoneNum(txtMobile.Text) == false)//phone number invalid
+                {
+                    MessageBox.Show("Please enter a correct phone number!");
+                }
+                if (objval.isEmailAddress(txtEmail) == false) //email invalid
+                {
+                    MessageBox.Show("Please enter a correct email!");
+                }
+                if (objval.isStringNull(txtAddress)) //address not entered
+                {
+                    MessageBox.Show("Please enter a correct address!");
+                }
+                if (objval.isStringNull(txtUsername))
+                {
+                    MessageBox.Show("Please enter your username!");
+                }
+            }
+            
         }
 
         private void frmRegNewCus_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void radBtnFemale_CheckedChanged(object sender, EventArgs e)
-        {
-            Gender = "Female";
-        }
-
-        private void radBtnMale_CheckedChanged(object sender, EventArgs e)
-        {
-            Gender = "Male";
+            lblRcn.Text = Name;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -57,6 +95,35 @@ namespace IOOP_Assignment
             txtUsername.Clear();
             radBtnFemale.Checked = false;
             radBtnMale.Checked = false;
+        }
+
+
+        private void linklblServReq_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmServRequest fservRq = new frmServRequest();
+            fservRq.Show();
+            this.Hide();
+        }
+
+        private void linklblAccSet_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmAccSet faccSet = new frmAccSet();
+            faccSet.Show();
+            this.Hide();
+        }
+
+        private void linklblPayment_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmPayment fpayment = new frmPayment();
+            fpayment.Show();
+            this.Hide();
+        }
+
+        private void linklblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmLogin flogout = new frmLogin();
+            flogout.Show();
+            this.Hide();
         }
     }
 }
