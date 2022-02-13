@@ -381,7 +381,7 @@
             this.pcBxIncome.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pcBxIncome.Name = "pcBxIncome";
             this.pcBxIncome.Size = new System.Drawing.Size(34, 30);
-            this.pcBxIncome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcBxIncome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcBxIncome.TabIndex = 336;
             this.pcBxIncome.TabStop = false;
             // 

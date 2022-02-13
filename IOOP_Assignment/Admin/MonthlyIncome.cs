@@ -42,6 +42,17 @@ namespace IOOP_Assignment
             Application.Exit();
         }
 
- 
+        private void MonthlyIncome_Load(object sender, EventArgs e)
+        {
+            objAdminI.addNewYear(cmbBxYear);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (cmbBxYear.SelectedIndex != -1)
+                dtGVIncome.DataSource = objAdminI.generateMonthlyIncome(cmbBxYear);
+            else
+                MessageBox.Show("Please select a year !", "Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
 }

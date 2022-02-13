@@ -224,7 +224,7 @@ namespace IOOP_Assignment
             return stat5;
         }
 
-        internal static void viewCustomerProfile(Customers o1) //this parameter is an object of the class customer
+     /*   internal static void viewCustomerProfile(Customers o1) //this parameter is an object of the class customer
         {
             con.Open();
             SqlCommand cmd8 = new SqlCommand("select UserID from [Users] where UserName = '" + o1.user_name + "'", con);
@@ -259,7 +259,7 @@ namespace IOOP_Assignment
                 o1.CusAddress = sqlDataReader.GetString(8);
             }
             con.Close();
-        }
+        }*/
         internal string updateCustomerProfile(string Name, DateTime date, string ph, string Email, string Address)
         {
             string stat6;

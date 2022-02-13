@@ -8,16 +8,40 @@ namespace IOOP_Assignment
     {
         
         Admin adminObjD = new Admin();
+        DateTime[] passMonth = new DateTime[3];
+        string[] monthlist = Admin.Monthlist;
+
+
         public DashBoard()
         {
             InitializeComponent();
+            
         }
 
       
 
         private void Admin_Load(object sender, EventArgs e)
         {
+            adminObjD.numOfUserInDtBase();
+            lblNoOfRecep.Text = adminObjD.NumOfReceptionist.ToString();
+            lblNoOfTech.Text =adminObjD.NumOfTechnician.ToString();
+            passMonth = adminObjD.searchPass3Months();
+            int[] passMonthsIncome = adminObjD.pass3MonthsIncome();
+            int passMonthIncome = passMonthsIncome[0];
+            int pass2MonthIncome = passMonthsIncome[1];
+            int pass3MonthIncome = passMonthsIncome[2];
 
+            lblIncome.Text = passMonthIncome.ToString();
+            MessageBox.Show(passMonthIncome.ToString() + "asdhjk");
+            if ( pass2MonthIncome-passMonthIncome > 0)
+            {
+                lblProfitPct.ForeColor = Color.Red;
+                lblProfitPct.Text = "- " + (Math.Round((decimal)(1 -(passMonthIncome/pass2MonthIncome)),2)*100).ToString() + "%";
+            }
+
+
+
+             
         }
 
       

@@ -28,7 +28,7 @@ namespace IOOP_Assignment
         {
             lbl_cusName.Text = name;
             Customers obj1 = new Customers(name);
-            Customers.viewCustomerProfile(obj1);
+       //     Customers.viewCustomerProfile(obj1);
             txtname.Text = obj1.CusName1;
             txtbirthdate.Text = obj1.CusBOD1.ToString("yyyy/MM/dd");
             txtphonenum.Text = obj1.CusPhoneNo1;
@@ -83,7 +83,7 @@ namespace IOOP_Assignment
             DataValidation obj_validationpassw = new DataValidation(); // for validate password
 
             //view the current password
-            Customers.viewCustomerProfile(obj_passw); // pass in my username inside method viewCustomerProfile
+           // Customers.viewCustomerProfile(obj_passw); // pass in my username inside method viewCustomerProfile
 
             if (txtcurrentpassw.Text == obj_passw.CusPassword1) //compare the current password with get password (from method viewCustomerProfile)
             {

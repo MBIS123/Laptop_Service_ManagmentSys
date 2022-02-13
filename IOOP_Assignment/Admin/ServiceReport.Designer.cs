@@ -278,31 +278,32 @@
             this.dataGVServiceReport.AllowUserToResizeRows = false;
             this.dataGVServiceReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGVServiceReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGVServiceReport.Location = new System.Drawing.Point(155, 144);
+            this.dataGVServiceReport.Location = new System.Drawing.Point(166, 200);
             this.dataGVServiceReport.Name = "dataGVServiceReport";
             this.dataGVServiceReport.ReadOnly = true;
             this.dataGVServiceReport.RowHeadersWidth = 51;
             this.dataGVServiceReport.RowTemplate.Height = 25;
-            this.dataGVServiceReport.Size = new System.Drawing.Size(795, 269);
+            this.dataGVServiceReport.Size = new System.Drawing.Size(795, 137);
             this.dataGVServiceReport.TabIndex = 295;
             // 
             // lblArrow3
             // 
             this.lblArrow3.AutoSize = true;
             this.lblArrow3.BackColor = System.Drawing.Color.Gray;
-            this.lblArrow3.Location = new System.Drawing.Point(770, 123);
+            this.lblArrow3.Location = new System.Drawing.Point(862, 176);
             this.lblArrow3.MaximumSize = new System.Drawing.Size(2, 20);
             this.lblArrow3.MinimumSize = new System.Drawing.Size(2, 20);
             this.lblArrow3.Name = "lblArrow3";
             this.lblArrow3.Size = new System.Drawing.Size(2, 20);
             this.lblArrow3.TabIndex = 294;
             this.lblArrow3.Text = "label12";
+            this.lblArrow3.Click += new System.EventHandler(this.lblArrow3_Click);
             // 
             // lblArrow1
             // 
             this.lblArrow1.AutoSize = true;
             this.lblArrow1.BackColor = System.Drawing.Color.Gray;
-            this.lblArrow1.Location = new System.Drawing.Point(332, 121);
+            this.lblArrow1.Location = new System.Drawing.Point(381, 176);
             this.lblArrow1.MaximumSize = new System.Drawing.Size(2, 20);
             this.lblArrow1.MinimumSize = new System.Drawing.Size(2, 20);
             this.lblArrow1.Name = "lblArrow1";
@@ -314,18 +315,18 @@
             // 
             this.lblArrow2.AutoSize = true;
             this.lblArrow2.BackColor = System.Drawing.Color.Gray;
-            this.lblArrow2.Location = new System.Drawing.Point(332, 121);
+            this.lblArrow2.Location = new System.Drawing.Point(381, 176);
             this.lblArrow2.MaximumSize = new System.Drawing.Size(500, 2);
-            this.lblArrow2.MinimumSize = new System.Drawing.Size(440, 2);
+            this.lblArrow2.MinimumSize = new System.Drawing.Size(483, 2);
             this.lblArrow2.Name = "lblArrow2";
-            this.lblArrow2.Size = new System.Drawing.Size(440, 2);
+            this.lblArrow2.Size = new System.Drawing.Size(483, 2);
             this.lblArrow2.TabIndex = 292;
             this.lblArrow2.Text = "label10";
             // 
             // lblServType
             // 
             this.lblServType.AutoSize = true;
-            this.lblServType.Location = new System.Drawing.Point(504, 101);
+            this.lblServType.Location = new System.Drawing.Point(574, 156);
             this.lblServType.Name = "lblServType";
             this.lblServType.Size = new System.Drawing.Size(71, 15);
             this.lblServType.TabIndex = 291;
@@ -404,7 +405,7 @@
             this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSearch.Location = new System.Drawing.Point(896, 75);
+            this.btnSearch.Location = new System.Drawing.Point(896, 77);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(150)))), ((int)(((byte)(239)))));
             this.btnSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(150)))), ((int)(((byte)(239)))));

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 
+
 namespace IOOP_Assignment
 {
     public partial class Registration : Form
@@ -94,7 +95,6 @@ namespace IOOP_Assignment
 
             if (validtObj.isPhoneNum(txtContactNo.Text))
                 sucssCase += 1;
-            MessageBox.Show("num of tsetcase =" + sucssCase.ToString());
 
             if (sucssCase == 5)  // there are 5 testcase for data validation
                 return true;
@@ -121,13 +121,14 @@ namespace IOOP_Assignment
 
             DateTime.TryParse(txtDateOfBirth.Text, out birthDate);
 
+
             string year = birthDate.Year.ToString().PadLeft(4, '0');
             string day = birthDate.Day.ToString().PadLeft(2, '0');
             string month = birthDate.Month.ToString().PadLeft(2, '0');
 
             string formattedBirthDate = year + '-' + month + '-' + day;
 
-            return formattedBirthDate; // the birthdate are now in YYYY-MM-DD
+            return formattedBirthDate; // the birthdate are now in YYYY-MM-DD   
         }
         
         private void clearForm()

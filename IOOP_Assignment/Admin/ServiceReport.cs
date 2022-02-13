@@ -49,20 +49,25 @@ namespace IOOP_Assignment
 
         private void ServiceReport_Load(object sender, EventArgs e)
         {
-
             objS.addNewYear(cmbBxYear);
-
-            if (!this.DesignMode)
-            {
-                objS.loadtoDataGridView(dataGVServiceReport);
-            }
-
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            bool beginSearch = objS.chkYearMonthSelected(cmbBxYear, cmbBxMonth);
-                
+            bool beginSearch = objS.checkSelectedMonthYear(cmbBxYear, cmbBxMonth);
+
+            if (beginSearch)
+            {
+                dataGVServiceReport.DataSource = objS.generateServiceReport(cmbBxYear, cmbBxMonth);
+            }
+            
+
+
+        }
+
+        private void lblArrow3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
