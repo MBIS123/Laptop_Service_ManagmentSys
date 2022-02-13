@@ -30,7 +30,7 @@ namespace IOOP_Assignment
             Customers obj1 = new Customers(name);
        //     Customers.viewCustomerProfile(obj1);
             txtname.Text = obj1.CusName1;
-            txtbirthdate.Text = obj1.CusBOD1.ToString("yyyy/MM/dd");
+            txtbirthdate.Text = obj1.CusBOD1.ToString("dd/MM/yyyy");
             txtphonenum.Text = obj1.CusPhoneNo1;
             txtemail.Text = obj1.CusEmail1;
             txtaddress.Text = obj1.CusAddress1;
@@ -83,23 +83,29 @@ namespace IOOP_Assignment
             DataValidation obj_validationpassw = new DataValidation(); // for validate password
 
             //view the current password
+
            // Customers.viewCustomerProfile(obj_passw); // pass in my username inside method viewCustomerProfile
+
+
+            Customers.viewCustomerProfile(obj_passw); // pass in my username inside method viewCustomerProfile
+            
 
             if (txtcurrentpassw.Text == obj_passw.CusPassword1) //compare the current password with get password (from method viewCustomerProfile)
             {
-                if ((txtnewpassw.Text == txtconfirmpassw.Text) && (obj_validationpassw.isPassword(txtnewpassw.Text))) // make condition new passw & conf passw must same AND new passw validated
+                if ((txtnewpassw.Text == txtconfirmpassw.Text) && (obj_validationpassw.isPassword(txtnewpassw.Text)) && (obj_validationpassw.isStringNull(txtnewpassw) == false && (obj_validationpassw.isStringNull(txtconfirmpassw) == false)))
+                // make condition new passw & conf passw must same AND new passw validated AND both new passw & conf passw text box cannot be null
                 {
                     MessageBox.Show(obj_passw.updateCustomerPassword(txtnewpassw.Text));
                 }
                 else
                 {
-                    MessageBox.Show("Please make sure :" + "<br>" + "1. New Password and Confirm Password is same." + "<br>" + "2. Incorrect password format.");
+                    MessageBox.Show("Dear customer," + "\n" + "Please make sure :" + "\n" + "1. New Password and Confirm Password is same." + "\n" + "2. Password format is correct." + "\n" + "3. Make sure has not entered null, empty or whitespace value.");
                 }
 
             }
             else
             {
-                MessageBox.Show("Password entered not match current password");
+                MessageBox.Show("Dear customer, password entered not match current password");
             }
 
         }
@@ -108,17 +114,43 @@ namespace IOOP_Assignment
         {
             DataValidation objvalidation = new DataValidation();
 
-            // do all validation for customer's details here 
-            if (objvalidation.isString(txtname.Text) && objvalidation.isDate(txtbirthdate) && objvalidation.isPhoneNum(txtphonenum.Text) && objvalidation.isEmailAddress(txtemail) && objvalidation.isStringNull(txtaddress) == false)
+            //check whether text box is null or not 
+            if (objvalidation.isStringNull(txtname) == true)
             {
-                Customers obj1 = new Customers(name);
-                DateTime DOB = Convert.ToDateTime(txtbirthdate.Text);
-                MessageBox.Show(obj1.updateCustomerProfile(txtname.Text, DOB, txtphonenum.Text, txtemail.Text, txtaddress.Text));
+                MessageBox.Show("Dear customer, you have not entered a new Name");
+            }
+            else if (objvalidation.isStringNull(txtbirthdate) == true)
+            {
+                MessageBox.Show("Dear customer, you have not entered a new Date of Birth");
+            }
+            else if(objvalidation.isStringNull(txtphonenum) == true)
+            {
+                MessageBox.Show("Dear customer, you have not entered a new phone number");
+
+            }
+            else if (objvalidation.isStringNull(txtemail) == true)
+            {
+                MessageBox.Show("Dear customer, you have not entered a new email");
+            }
+            else if(objvalidation.isStringNull(txtaddress) == true)
+            {
+                MessageBox.Show("Dear customer, you have not entered a new address");
             }
             else
             {
-                MessageBox.Show("Invalid format inserted");
+                // do all validation for customer's details here 
+                if (objvalidation.isString(txtname.Text) && objvalidation.isDate(txtbirthdate) && objvalidation.isPhoneNum(txtphonenum.Text) && objvalidation.isEmailAddress(txtemail) && objvalidation.isStringNull(txtaddress) == false)
+                {
+                    Customers obj1 = new Customers(name);
+                    DateTime DOB = Convert.ToDateTime(txtbirthdate.Text);
+                    MessageBox.Show(obj1.updateCustomerProfile(txtname.Text, DOB, txtphonenum.Text, txtemail.Text, txtaddress.Text));
+                }
+                else
+                {
+                    MessageBox.Show("Dear customer, please make sure you have enter new personal information to save.");
+                }
             }
+           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

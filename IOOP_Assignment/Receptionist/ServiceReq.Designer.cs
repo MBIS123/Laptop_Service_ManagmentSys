@@ -447,7 +447,6 @@
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.grpBoxRequest);
-            this.Name = "frmServRequest";
             this.Text = "Service Request ";
             this.Load += new System.EventHandler(this.frmServRequest_Load);
             this.grpBoxRequest.ResumeLayout(false);

@@ -67,6 +67,7 @@ namespace IOOP_Assignment
                                 fReceipt.lblCustomer.Text = this.dataGridViewPayment.CurrentRow.Cells[1].Value.ToString();
                                 fReceipt.lblAmtPaid.Text = "RM" + Amt.ToString();
                                 fReceipt.lblBal.Text = "RM" + bal.ToString();
+                                fReceipt.lblRcn.Text = Name;
 
                                 //update Payment Status to Paid
                                 Receptionist1 objPay = new Receptionist1();
@@ -87,8 +88,15 @@ namespace IOOP_Assignment
 
         private void frmPayment_Load(object sender, EventArgs e)
         {
+            lblName.Text = Name;
             Receptionist1 obj1 = new Receptionist1();
             obj1.loadPaymentTable(dataGridViewPayment);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            dataGridViewPayment.ClearSelection();
+            txtAmtPaid.Clear();
         }
     }
 }

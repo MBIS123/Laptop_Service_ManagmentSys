@@ -152,6 +152,7 @@
             this.llbchange_serv.TabIndex = 69;
             this.llbchange_serv.TabStop = true;
             this.llbchange_serv.Text = "CHANGE  SERVICE";
+            this.llbchange_serv.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbchange_serv_LinkClicked);
             // 
             // groupBox3
             // 
@@ -187,6 +188,7 @@
             this.llbmy_order.TabIndex = 70;
             this.llbmy_order.TabStop = true;
             this.llbmy_order.Text = "MY  ORDER";
+            this.llbmy_order.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbmy_order_LinkClicked);
             // 
             // groupBox4
             // 
@@ -306,7 +308,6 @@
             this.groupBox1.Size = new System.Drawing.Size(626, 858);
             this.groupBox1.TabIndex = 102;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lblcusCurrentPassw
             // 
@@ -371,11 +372,12 @@
             this.btnedit.TabIndex = 120;
             this.btnedit.Text = "EDIT";
             this.btnedit.UseVisualStyleBackColor = true;
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click_1);
             // 
             // lblcurrentpass
             // 
             this.lblcurrentpass.AutoSize = true;
-            this.lblcurrentpass.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblcurrentpass.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.lblcurrentpass.Location = new System.Drawing.Point(66, 618);
             this.lblcurrentpass.Name = "lblcurrentpass";
             this.lblcurrentpass.Size = new System.Drawing.Size(186, 19);
