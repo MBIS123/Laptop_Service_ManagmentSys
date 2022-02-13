@@ -161,10 +161,10 @@ namespace IOOP_Assignment
     
         internal  void showRelatedForm(string x)
         {
-            DashBoard adminFrm = new DashBoard();
-            MonthlyIncome incomeFrm = new MonthlyIncome();
-            Registration regisFrm = new Registration();
-            ServiceReport reportFrm = new ServiceReport();
+            AdminDashBoard adminFrm = new AdminDashBoard();
+            AdminMonthlyIncome incomeFrm = new AdminMonthlyIncome();
+            AdminRegistration regisFrm = new AdminRegistration();
+            AdminServiceReport reportFrm = new AdminServiceReport();
 
             switch (x)
             {

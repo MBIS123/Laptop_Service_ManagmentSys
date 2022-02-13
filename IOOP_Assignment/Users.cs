@@ -49,7 +49,7 @@ namespace IOOP_Assignment
                 {
                     frmLogin objLgn = new frmLogin();
                     objLgn.Hide();
-                    DashBoard a = new DashBoard();
+                    AdminDashBoard a = new AdminDashBoard();
                     a.ShowDialog();
                   
                 }

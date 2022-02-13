@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
-    public partial class MonthlyIncome : Form
+    public partial class AdminMonthlyIncome : Form
     {
         Admin objAdminI = new Admin();
-        public MonthlyIncome()
+        public AdminMonthlyIncome()
         {
             InitializeComponent();
         }

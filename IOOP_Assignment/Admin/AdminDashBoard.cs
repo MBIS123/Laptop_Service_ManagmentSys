@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace IOOP_Assignment
 {
-    public partial class DashBoard : Form
+    public partial class AdminDashBoard : Form
     {
         
         Admin adminObjD = new Admin();
@@ -12,7 +12,7 @@ namespace IOOP_Assignment
         string[] monthlist = Admin.Monthlist;
 
 
-        public DashBoard()
+        public AdminDashBoard()
         {
             InitializeComponent();
             
@@ -147,7 +147,7 @@ namespace IOOP_Assignment
             btnExit.BackColor = Color.FromArgb(10,10,10);
         }
 
-        private void showForm(Registration a)
+        private void showForm(AdminRegistration a)
         {
             this.Hide();
             a.Show();
@@ -162,7 +162,7 @@ namespace IOOP_Assignment
         private void uCBtnServiceReport_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ServiceReport sObj = new ServiceReport();
+            AdminServiceReport sObj = new AdminServiceReport();
             sObj.Show();
         }
 

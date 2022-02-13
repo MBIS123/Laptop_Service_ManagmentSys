@@ -12,14 +12,14 @@ using System.Globalization;
 
 namespace IOOP_Assignment
 {
-    public partial class Registration : Form
+    public partial class AdminRegistration : Form
     {
         Admin adminObjR = new Admin();
         DataValidation validtObj = new DataValidation();
         
 
 
-        public Registration()
+        public AdminRegistration()
         {
             InitializeComponent();
         }

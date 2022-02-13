@@ -11,11 +11,11 @@ using System.Windows.Forms;
 namespace IOOP_Assignment
 {
      
-    public partial class ServiceReport : Form
+    public partial class AdminServiceReport : Form
     {
      
         Admin objS = new Admin();
-        public ServiceReport()
+        public AdminServiceReport()
         {
             InitializeComponent();
         }
