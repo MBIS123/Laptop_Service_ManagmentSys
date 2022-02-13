@@ -492,7 +492,6 @@
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.grpBoxReg);
             this.Controls.Add(this.lblAccSet);
-            this.Name = "frmAccSet";
             this.Text = "Update Profile";
             this.Load += new System.EventHandler(this.frmAccSet_Load);
             this.grpBoxReg.ResumeLayout(false);

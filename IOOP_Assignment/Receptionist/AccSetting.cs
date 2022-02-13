@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
-    //public static string Name;
     public partial class frmAccSet : Form
     {
+        public static string Name;
         public frmAccSet()
         {
             InitializeComponent();
@@ -25,6 +25,7 @@ namespace IOOP_Assignment
 
         private void frmAccSet_Load(object sender, EventArgs e)
         {
+            lblRcn.Text = Name;
             Receptionist1 obj1 = new Receptionist1(Name);
             Receptionist1.viewRecProfile(obj1);
             txtMobile.Text = obj1.RecPhone;
@@ -36,28 +37,28 @@ namespace IOOP_Assignment
         {
             //validation
             DataValidation objval = new DataValidation();
-            if (objval.isString(txtName.Text) && objval.isPhoneNum(txtMobile.Text) && (objval.isEmailAddress(txtEmail)) && (objval.isStringNull(txtAddress) == false)) //all valid
+            if (objval.isString(txtName.Text) == true && objval.isPhoneNum(txtMobile.Text) == true && (objval.isEmailAddress(txtEmail)) == true && (objval.isStringNull(txtAddress) == false)) //all valid
             {
                 Receptionist1 obj1 = new Receptionist1(Name);
                 MessageBox.Show(obj1.updReceptionist(txtName.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text));
             }
             else
             {
-                if (objval.isString(txtName.Text) == false)
+                if (objval.isStringNull(txtName))//name not entered
                 {
-                    MessageBox.Show("Invalid Name!");
+                    MessageBox.Show("Please enter your name!");
                 }
-                if (objval.isPhoneNum(txtMobile.Text) == false)//phone number not valid
+                if (objval.isPhoneNum(txtMobile.Text) == false)//phone number invalid
                 {
-                    MessageBox.Show("Invalid Contact Number!");
+                    MessageBox.Show("Please enter a correct phone number!");
                 }
-                if (objval.isEmailAddress(txtEmail) == false) //email not valid
+                if (objval.isEmailAddress(txtEmail) == false) //email invalid
                 {
-                    MessageBox.Show("Invalid Email!");
+                    MessageBox.Show("Please enter a correct email!");
                 }
-                if (objval.isStringNull(txtAddress)) //address not valid
+                if (objval.isStringNull(txtAddress)) //address not entered
                 {
-                    MessageBox.Show("Invalid Address!");
+                    MessageBox.Show("Please enter a correct address!");
                 }
             }
         }

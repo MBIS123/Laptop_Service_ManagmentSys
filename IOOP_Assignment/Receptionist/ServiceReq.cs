@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
-    //public static string Name;
     public partial class frmServRequest : Form
     {
+        public static string Name;
         public frmServRequest()
         {
             InitializeComponent();
@@ -64,6 +64,7 @@ namespace IOOP_Assignment
         }
         private void frmServRequest_Load(object sender, EventArgs e)
         {
+            lblRcn.Text = Name;
             Receptionist1 obj1 = new Receptionist1();
             obj1.loadCustomerTable(dataGridViewCustomer);
             obj1.loadServReqTable(dataGridViewServ);

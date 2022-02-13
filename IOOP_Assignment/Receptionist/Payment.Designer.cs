@@ -50,21 +50,21 @@
             this.lblAmt = new System.Windows.Forms.Label();
             this.txtAmt = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linklblPayment1 = new System.Windows.Forms.LinkLabel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linklblLogout1 = new System.Windows.Forms.LinkLabel();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.linklblAccSet1 = new System.Windows.Forms.LinkLabel();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.linklblServReq1 = new System.Windows.Forms.LinkLabel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.linklblNewCusReg1 = new System.Windows.Forms.LinkLabel();
+            this.lblRole1 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dataGridViewPayment = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLogo1 = new System.Windows.Forms.PictureBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.txtAmtPaid = new System.Windows.Forms.TextBox();
             this.btnPay = new System.Windows.Forms.Button();
@@ -82,7 +82,7 @@
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPayment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox5
@@ -315,147 +315,147 @@
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.PeachPuff;
-            this.groupBox6.Controls.Add(this.linkLabel1);
+            this.groupBox6.Controls.Add(this.linklblPayment1);
             this.groupBox6.Location = new System.Drawing.Point(2, 416);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(203, 36);
             this.groupBox6.TabIndex = 49;
             this.groupBox6.TabStop = false;
             // 
-            // linkLabel1
+            // linklblPayment1
             // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.DarkRed;
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.linkLabel1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel1.LinkColor = System.Drawing.Color.Blue;
-            this.linkLabel1.Location = new System.Drawing.Point(51, 8);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(94, 20);
-            this.linkLabel1.TabIndex = 28;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "PAYMENT";
+            this.linklblPayment1.ActiveLinkColor = System.Drawing.Color.DarkRed;
+            this.linklblPayment1.AutoSize = true;
+            this.linklblPayment1.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.linklblPayment1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linklblPayment1.LinkColor = System.Drawing.Color.Blue;
+            this.linklblPayment1.Location = new System.Drawing.Point(51, 8);
+            this.linklblPayment1.Name = "linklblPayment1";
+            this.linklblPayment1.Size = new System.Drawing.Size(94, 20);
+            this.linklblPayment1.TabIndex = 28;
+            this.linklblPayment1.TabStop = true;
+            this.linklblPayment1.Text = "PAYMENT";
             // 
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.Color.PeachPuff;
-            this.groupBox7.Controls.Add(this.linkLabel2);
+            this.groupBox7.Controls.Add(this.linklblLogout1);
             this.groupBox7.Location = new System.Drawing.Point(1, 476);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(203, 36);
             this.groupBox7.TabIndex = 45;
             this.groupBox7.TabStop = false;
             // 
-            // linkLabel2
+            // linklblLogout1
             // 
-            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.DarkRed;
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.linkLabel2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel2.LinkColor = System.Drawing.Color.Blue;
-            this.linkLabel2.Location = new System.Drawing.Point(54, 9);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(92, 20);
-            this.linkLabel2.TabIndex = 28;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "LOG OUT";
+            this.linklblLogout1.ActiveLinkColor = System.Drawing.Color.DarkRed;
+            this.linklblLogout1.AutoSize = true;
+            this.linklblLogout1.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.linklblLogout1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linklblLogout1.LinkColor = System.Drawing.Color.Blue;
+            this.linklblLogout1.Location = new System.Drawing.Point(54, 9);
+            this.linklblLogout1.Name = "linklblLogout1";
+            this.linklblLogout1.Size = new System.Drawing.Size(92, 20);
+            this.linklblLogout1.TabIndex = 28;
+            this.linklblLogout1.TabStop = true;
+            this.linklblLogout1.Text = "LOG OUT";
             // 
             // groupBox8
             // 
             this.groupBox8.BackColor = System.Drawing.Color.PeachPuff;
-            this.groupBox8.Controls.Add(this.linkLabel3);
+            this.groupBox8.Controls.Add(this.linklblAccSet1);
             this.groupBox8.Location = new System.Drawing.Point(1, 354);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(203, 40);
             this.groupBox8.TabIndex = 46;
             this.groupBox8.TabStop = false;
             // 
-            // linkLabel3
+            // linklblAccSet1
             // 
-            this.linkLabel3.ActiveLinkColor = System.Drawing.Color.DarkRed;
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.BackColor = System.Drawing.Color.PeachPuff;
-            this.linkLabel3.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.linkLabel3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel3.LinkColor = System.Drawing.Color.Blue;
-            this.linkLabel3.Location = new System.Drawing.Point(11, 12);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(181, 20);
-            this.linkLabel3.TabIndex = 27;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "ACCOUNT SETTING";
+            this.linklblAccSet1.ActiveLinkColor = System.Drawing.Color.DarkRed;
+            this.linklblAccSet1.AutoSize = true;
+            this.linklblAccSet1.BackColor = System.Drawing.Color.PeachPuff;
+            this.linklblAccSet1.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.linklblAccSet1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linklblAccSet1.LinkColor = System.Drawing.Color.Blue;
+            this.linklblAccSet1.Location = new System.Drawing.Point(11, 12);
+            this.linklblAccSet1.Name = "linklblAccSet1";
+            this.linklblAccSet1.Size = new System.Drawing.Size(181, 20);
+            this.linklblAccSet1.TabIndex = 27;
+            this.linklblAccSet1.TabStop = true;
+            this.linklblAccSet1.Text = "ACCOUNT SETTING";
             // 
             // groupBox9
             // 
             this.groupBox9.BackColor = System.Drawing.Color.PeachPuff;
-            this.groupBox9.Controls.Add(this.linkLabel4);
+            this.groupBox9.Controls.Add(this.linklblServReq1);
             this.groupBox9.Location = new System.Drawing.Point(1, 293);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(202, 42);
             this.groupBox9.TabIndex = 47;
             this.groupBox9.TabStop = false;
             // 
-            // linkLabel4
+            // linklblServReq1
             // 
-            this.linkLabel4.ActiveLinkColor = System.Drawing.Color.DarkRed;
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.BackColor = System.Drawing.Color.PeachPuff;
-            this.linkLabel4.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.linkLabel4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel4.LinkColor = System.Drawing.Color.Blue;
-            this.linkLabel4.Location = new System.Drawing.Point(15, 11);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(174, 20);
-            this.linkLabel4.TabIndex = 26;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "SERVICE REQUEST";
+            this.linklblServReq1.ActiveLinkColor = System.Drawing.Color.DarkRed;
+            this.linklblServReq1.AutoSize = true;
+            this.linklblServReq1.BackColor = System.Drawing.Color.PeachPuff;
+            this.linklblServReq1.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.linklblServReq1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linklblServReq1.LinkColor = System.Drawing.Color.Blue;
+            this.linklblServReq1.Location = new System.Drawing.Point(15, 11);
+            this.linklblServReq1.Name = "linklblServReq1";
+            this.linklblServReq1.Size = new System.Drawing.Size(174, 20);
+            this.linklblServReq1.TabIndex = 26;
+            this.linklblServReq1.TabStop = true;
+            this.linklblServReq1.Text = "SERVICE REQUEST";
             // 
             // groupBox10
             // 
             this.groupBox10.BackColor = System.Drawing.Color.PeachPuff;
-            this.groupBox10.Controls.Add(this.linkLabel5);
+            this.groupBox10.Controls.Add(this.linklblNewCusReg1);
             this.groupBox10.Location = new System.Drawing.Point(1, 216);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(202, 59);
             this.groupBox10.TabIndex = 48;
             this.groupBox10.TabStop = false;
             // 
-            // linkLabel5
+            // linklblNewCusReg1
             // 
-            this.linkLabel5.ActiveLinkColor = System.Drawing.Color.DarkRed;
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.BackColor = System.Drawing.Color.PeachPuff;
-            this.linkLabel5.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.linkLabel5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel5.LinkColor = System.Drawing.Color.Blue;
-            this.linkLabel5.Location = new System.Drawing.Point(22, 10);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(157, 40);
-            this.linkLabel5.TabIndex = 25;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "NEW CUSTOMER\r\nREGISTRATION";
+            this.linklblNewCusReg1.ActiveLinkColor = System.Drawing.Color.DarkRed;
+            this.linklblNewCusReg1.AutoSize = true;
+            this.linklblNewCusReg1.BackColor = System.Drawing.Color.PeachPuff;
+            this.linklblNewCusReg1.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.linklblNewCusReg1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linklblNewCusReg1.LinkColor = System.Drawing.Color.Blue;
+            this.linklblNewCusReg1.Location = new System.Drawing.Point(22, 10);
+            this.linklblNewCusReg1.Name = "linklblNewCusReg1";
+            this.linklblNewCusReg1.Size = new System.Drawing.Size(157, 40);
+            this.linklblNewCusReg1.TabIndex = 25;
+            this.linklblNewCusReg1.TabStop = true;
+            this.linklblNewCusReg1.Text = "NEW CUSTOMER\r\nREGISTRATION";
             // 
-            // label1
+            // lblRole1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.SeaShell;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(25, 179);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 22);
-            this.label1.TabIndex = 44;
-            this.label1.Text = "Role: Receptionist";
+            this.lblRole1.AutoSize = true;
+            this.lblRole1.BackColor = System.Drawing.Color.SeaShell;
+            this.lblRole1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRole1.Location = new System.Drawing.Point(25, 179);
+            this.lblRole1.Name = "lblRole1";
+            this.lblRole1.Size = new System.Drawing.Size(158, 22);
+            this.lblRole1.TabIndex = 44;
+            this.lblRole1.Text = "Role: Receptionist";
             // 
-            // label2
+            // lblName
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.SeaShell;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(38, 148);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 22);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "Chew Yong En";
+            this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.SeaShell;
+            this.lblName.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblName.Location = new System.Drawing.Point(38, 148);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(126, 22);
+            this.lblName.TabIndex = 43;
+            this.lblName.Text = "Chew Yong En";
             // 
             // splitter1
             // 
@@ -491,16 +491,16 @@
             this.dataGridViewPayment.Size = new System.Drawing.Size(712, 304);
             this.dataGridViewPayment.TabIndex = 51;
             // 
-            // pictureBox1
+            // pictureBoxLogo1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.SeaShell;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 120);
-            this.pictureBox1.TabIndex = 52;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxLogo1.BackColor = System.Drawing.Color.SeaShell;
+            this.pictureBoxLogo1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo1.BackgroundImage")));
+            this.pictureBoxLogo1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxLogo1.Location = new System.Drawing.Point(13, 12);
+            this.pictureBoxLogo1.Name = "pictureBoxLogo1";
+            this.pictureBoxLogo1.Size = new System.Drawing.Size(180, 120);
+            this.pictureBoxLogo1.TabIndex = 52;
+            this.pictureBoxLogo1.TabStop = false;
             // 
             // lblAmount
             // 
@@ -552,7 +552,7 @@
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.txtAmtPaid);
             this.Controls.Add(this.lblAmount);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxLogo1);
             this.Controls.Add(this.dataGridViewPayment);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.groupBox6);
@@ -560,8 +560,8 @@
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox10);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblRole1);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.splitter1);
             this.Load += new System.EventHandler(this.frmPayment_Load);
             this.groupBox5.ResumeLayout(false);
@@ -587,7 +587,7 @@
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPayment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -616,21 +616,21 @@
         private Label lblAmt;
         private TextBox txtAmt;
         private GroupBox groupBox6;
-        private LinkLabel linkLabel1;
+        private LinkLabel linklblPayment1;
         private GroupBox groupBox7;
-        private LinkLabel linkLabel2;
+        private LinkLabel linklblLogout1;
         private GroupBox groupBox8;
-        private LinkLabel linkLabel3;
+        private LinkLabel linklblAccSet1;
         private GroupBox groupBox9;
-        private LinkLabel linkLabel4;
+        private LinkLabel linklblServReq1;
         private GroupBox groupBox10;
-        private LinkLabel linkLabel5;
-        private Label label1;
-        private Label label2;
+        private LinkLabel linklblNewCusReg1;
+        private Label lblRole1;
+        private Label lblName;
         private Splitter splitter1;
         private Label lblTitle;
         private DataGridView dataGridViewPayment;
-        private PictureBox pictureBox1;
+        private PictureBox pictureBoxLogo1;
         private Label lblAmount;
         private TextBox txtAmtPaid;
         private Button btnPay;

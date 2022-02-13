@@ -91,10 +91,10 @@ namespace IOOP_Assignment
                 int cusID = numCus + 1;
 
                 SqlCommand cmdUserCus = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users(UserID,UserName,Password,[User Role]) values" +
-                                                       "( " + userID + "," + " @username, '123456', 'customer'); SET IDENTITY_INSERT Users off; ", con);
+                                                       "( " + userID + "," + " @username, '123456', 'customer'); SET IDENTITY_INSERT Users off;", con);
 
                 SqlCommand cmdNewCus = new SqlCommand("SET IDENTITY_INSERT Customer ON; insert into Customer(CustomerID,UserID,Name,Gender,[Date of Birth],[IC No.],[Contact No.],Email,Address) values" +
-                                                      "( " + cusID + "," + userID + " ,'" + cusName + "','" + cusGender + "','" + cusDob + "','" + cusIC + "','" + cusPhoneNum + "','" + CusEmail + "','" + CusAddress + "); SET IDENTITY_INSERT Customer off; ", con);
+                                                      "( " + cusID + "," + userID + " ,'" + cusName + "','" + cusGender + "','" + cusDob + "','" + cusIC + "','" + cusPhoneNum + "','" + CusEmail + "','" + CusAddress + "') ; SET IDENTITY_INSERT Customer off;", con);
 
                 cmdUserCus.Parameters.AddWithValue("@username", cusUsername);
                 cmdUserCus.ExecuteNonQuery();
