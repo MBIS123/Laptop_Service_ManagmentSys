@@ -563,7 +563,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.splitter1);
-            this.Name = "frmPayment";
             this.Load += new System.EventHandler(this.frmPayment_Load);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();

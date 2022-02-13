@@ -245,7 +245,6 @@
             this.btnConfirm2.TabIndex = 14;
             this.btnConfirm2.Text = "Confirm";
             this.btnConfirm2.UseVisualStyleBackColor = false;
-            this.btnConfirm2.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // txtAddress
             // 
