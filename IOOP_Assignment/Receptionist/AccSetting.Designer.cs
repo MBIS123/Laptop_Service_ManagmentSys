@@ -225,6 +225,7 @@
             this.btnConfirm2.TabIndex = 14;
             this.btnConfirm2.Text = "Confirm";
             this.btnConfirm2.UseVisualStyleBackColor = false;
+            this.btnConfirm2.Click += new System.EventHandler(this.btnConfirm2_Click_1);
             // 
             // txtAddress
             // 
@@ -313,6 +314,7 @@
             this.linklblLogout.TabIndex = 28;
             this.linklblLogout.TabStop = true;
             this.linklblLogout.Text = "LOG OUT";
+            this.linklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLogout_LinkClicked);
             // 
             // groupBox3
             // 
@@ -363,6 +365,7 @@
             this.linklblServReq.TabIndex = 26;
             this.linklblServReq.TabStop = true;
             this.linklblServReq.Text = "SERVICE REQUEST";
+            this.linklblServReq.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblServReq_LinkClicked);
             // 
             // groupBox1
             // 
@@ -455,6 +458,7 @@
             this.linklblPayment.TabIndex = 28;
             this.linklblPayment.TabStop = true;
             this.linklblPayment.Text = "PAYMENT";
+            this.linklblPayment.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblPayment_LinkClicked);
             // 
             // frmAccSet
             // 
@@ -473,7 +477,6 @@
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.grpBoxReg);
             this.Controls.Add(this.lblAccSet);
-            this.Name = "frmAccSet";
             this.Text = "Update Profile";
             this.Load += new System.EventHandler(this.frmAccSet_Load);
             this.grpBoxReg.ResumeLayout(false);

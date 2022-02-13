@@ -48,7 +48,7 @@ namespace IOOP_Assignment
                         Users techForServ1 = new Users();
                         techForServ1.assignOrder();
                     }
-                    if (radBtnUrgent.Checked==true)
+                    else if (radBtnUrgent.Checked==true)
                     {
                         int servReID = Convert.ToInt32(dataGridViewServ.CurrentRow.Cells[0].Value);
                         string stype = "Urgent";
@@ -58,6 +58,10 @@ namespace IOOP_Assignment
                         MessageBox.Show(objOrder2.AddOrder(customerID, date, servReID, stype, fee, txtLaptop.Text));
                         Users techForServ2 = new Users();
                         techForServ2.assignOrder();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select a service type!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
@@ -84,6 +88,34 @@ namespace IOOP_Assignment
             txtLaptop.Clear();
             radBtnNormal.Checked = false;
             radBtnUrgent.Checked = false;
+        }
+
+        private void linklblNewCusReg_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmRegNewCus fRegCus = new frmRegNewCus();
+            fRegCus.Show();
+            this.Hide();
+        }
+
+        private void linklblAccSet_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmAccSet faccSet = new frmAccSet();
+            faccSet.Show();
+            this.Hide();
+        }
+
+        private void linklblPayment_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmPayment fpayment = new frmPayment();
+            fpayment.Show();
+            this.Hide();
+        }
+
+        private void linklblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmLogin flogout = new frmLogin();
+            flogout.Show();
+            this.Hide();
         }
     }
 }
