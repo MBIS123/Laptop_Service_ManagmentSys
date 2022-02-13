@@ -49,6 +49,7 @@ namespace IOOP_Assignment
                 {
                     frmLogin objLgn = new frmLogin();
                     objLgn.Hide();
+
                     AdminDashBoard a = new AdminDashBoard();
                     a.ShowDialog();
                   
