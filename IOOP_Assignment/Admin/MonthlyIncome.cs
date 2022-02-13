@@ -54,5 +54,14 @@ namespace IOOP_Assignment
             else
                 MessageBox.Show("Please select a year !", "Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+            }
+        }
     }
 }

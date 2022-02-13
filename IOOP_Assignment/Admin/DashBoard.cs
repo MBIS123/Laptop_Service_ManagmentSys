@@ -166,5 +166,14 @@ namespace IOOP_Assignment
             ServiceReport sObj = new ServiceReport();
             sObj.Show();
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+            }
+        }
     }
 }
