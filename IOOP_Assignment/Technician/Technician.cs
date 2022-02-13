@@ -86,6 +86,28 @@ namespace IOOP_Assignment
             orderid_forselection = ord_id;
         }
 
+
+        //loading technician information into dashboard and profile 
+        public static void viewTechProfile(Technician o1)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from Technician where Name = '" + o1.techName + "'", con);
+            SqlCommand cmd2 = new SqlCommand("select [Password] from Users, Technician where Users.UserID = Technician.UserID and Technician.Name = '" + o1.techName + "'", con);
+            o1.techPassword = cmd2.ExecuteScalar().ToString();
+            SqlDataReader sqlDataReader = cmd.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                o1.techGender = sqlDataReader.GetString(3);
+                o1.techDOB = sqlDataReader.GetDateTime(4);
+                o1.techEthnicity = sqlDataReader.GetString(5);
+                o1.techIC = sqlDataReader.GetString(6);
+                o1.techContact = sqlDataReader.GetString(7);
+                o1.techEmail = sqlDataReader.GetString(8);
+                o1.techAddress = sqlDataReader.GetString(9);
+            }
+            con.Close();
+        }
+
         //loading order table into technician dashboard
         public void loadOrderTable(DataGridView dgv, int tech_ID)
         {
@@ -194,27 +216,6 @@ namespace IOOP_Assignment
 
             return status;
 
-        }
-
-        //loading technician information into profile
-        public static void viewTechProfile(Technician o1)
-        {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select * from Technician where Name = '" + o1.techName + "'", con);
-            SqlCommand cmd2 = new SqlCommand("select [Password] from Users, Technician where Users.UserID = Technician.UserID and Technician.Name = '" + o1.techName + "'", con);
-            o1.techPassword = cmd2.ExecuteScalar().ToString();
-            SqlDataReader sqlDataReader = cmd.ExecuteReader();
-            while (sqlDataReader.Read())
-            {
-                o1.techGender = sqlDataReader.GetString(3);
-                o1.techDOB = sqlDataReader.GetDateTime(4);
-                o1.techEthnicity = sqlDataReader.GetString(5);
-                o1.techIC = sqlDataReader.GetString(6);
-                o1.techContact = sqlDataReader.GetString(7);
-                o1.techEmail = sqlDataReader.GetString(8);
-                o1.techAddress = sqlDataReader.GetString(9);
-            }
-            con.Close();
         }
 
         public string updateTechProfileContactDetails(string cont, string em, string add)
