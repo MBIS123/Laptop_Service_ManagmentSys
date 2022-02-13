@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(update_profile));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnsave_cusInfo = new System.Windows.Forms.Button();
+            this.btn_savePassword = new System.Windows.Forms.Button();
+            this.btnclear_cusInfo = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtaddress = new System.Windows.Forms.TextBox();
             this.btnclear = new System.Windows.Forms.Button();
             this.txtconfirmpassw = new System.Windows.Forms.TextBox();
             this.lblconfirmpass = new System.Windows.Forms.Label();
@@ -70,11 +75,7 @@
             this.lblwelcome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_cusName = new System.Windows.Forms.Label();
-            this.txtaddress = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnclear_cusInfo = new System.Windows.Forms.Button();
-            this.btn_savePassword = new System.Windows.Forms.Button();
-            this.btnsave_cusInfo = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -86,6 +87,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnsave_cusInfo);
             this.groupBox1.Controls.Add(this.btn_savePassword);
             this.groupBox1.Controls.Add(this.btnclear_cusInfo);
@@ -121,6 +123,58 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // btnsave_cusInfo
+            // 
+            this.btnsave_cusInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnsave_cusInfo.Location = new System.Drawing.Point(67, 547);
+            this.btnsave_cusInfo.Name = "btnsave_cusInfo";
+            this.btnsave_cusInfo.Size = new System.Drawing.Size(111, 33);
+            this.btnsave_cusInfo.TabIndex = 127;
+            this.btnsave_cusInfo.Text = "SAVE";
+            this.btnsave_cusInfo.UseVisualStyleBackColor = true;
+            this.btnsave_cusInfo.Click += new System.EventHandler(this.btnsave_cusInfo_Click);
+            // 
+            // btn_savePassword
+            // 
+            this.btn_savePassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_savePassword.Location = new System.Drawing.Point(67, 920);
+            this.btn_savePassword.Name = "btn_savePassword";
+            this.btn_savePassword.Size = new System.Drawing.Size(162, 39);
+            this.btn_savePassword.TabIndex = 126;
+            this.btn_savePassword.Text = "SAVE PASSWORD";
+            this.btn_savePassword.UseVisualStyleBackColor = true;
+            this.btn_savePassword.Click += new System.EventHandler(this.btn_savePassword_Click);
+            // 
+            // btnclear_cusInfo
+            // 
+            this.btnclear_cusInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnclear_cusInfo.Location = new System.Drawing.Point(220, 547);
+            this.btnclear_cusInfo.Name = "btnclear_cusInfo";
+            this.btnclear_cusInfo.Size = new System.Drawing.Size(94, 33);
+            this.btnclear_cusInfo.TabIndex = 125;
+            this.btnclear_cusInfo.Text = "CLEAR";
+            this.btnclear_cusInfo.UseVisualStyleBackColor = true;
+            this.btnclear_cusInfo.Click += new System.EventHandler(this.btnclear_cusInfo_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(421, 323);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 19);
+            this.label3.TabIndex = 123;
+            this.label3.Text = "ADDRESS";
+            // 
+            // txtaddress
+            // 
+            this.txtaddress.BackColor = System.Drawing.Color.White;
+            this.txtaddress.Location = new System.Drawing.Point(421, 373);
+            this.txtaddress.Multiline = true;
+            this.txtaddress.Name = "txtaddress";
+            this.txtaddress.Size = new System.Drawing.Size(297, 105);
+            this.txtaddress.TabIndex = 122;
+            // 
             // btnclear
             // 
             this.btnclear.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -135,7 +189,7 @@
             // txtconfirmpassw
             // 
             this.txtconfirmpassw.BackColor = System.Drawing.Color.White;
-            this.txtconfirmpassw.Location = new System.Drawing.Point(464, 749);
+            this.txtconfirmpassw.Location = new System.Drawing.Point(421, 749);
             this.txtconfirmpassw.Multiline = true;
             this.txtconfirmpassw.Name = "txtconfirmpassw";
             this.txtconfirmpassw.Size = new System.Drawing.Size(297, 35);
@@ -145,7 +199,7 @@
             // 
             this.lblconfirmpass.AutoSize = true;
             this.lblconfirmpass.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblconfirmpass.Location = new System.Drawing.Point(464, 707);
+            this.lblconfirmpass.Location = new System.Drawing.Point(421, 707);
             this.lblconfirmpass.Name = "lblconfirmpass";
             this.lblconfirmpass.Size = new System.Drawing.Size(187, 19);
             this.lblconfirmpass.TabIndex = 118;
@@ -543,57 +597,17 @@
             this.lbl_cusName.Size = new System.Drawing.Size(0, 28);
             this.lbl_cusName.TabIndex = 80;
             // 
-            // txtaddress
+            // label4
             // 
-            this.txtaddress.BackColor = System.Drawing.Color.White;
-            this.txtaddress.Location = new System.Drawing.Point(421, 373);
-            this.txtaddress.Multiline = true;
-            this.txtaddress.Name = "txtaddress";
-            this.txtaddress.Size = new System.Drawing.Size(297, 105);
-            this.txtaddress.TabIndex = 122;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(421, 323);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 19);
-            this.label3.TabIndex = 123;
-            this.label3.Text = "ADDRESS";
-            // 
-            // btnclear_cusInfo
-            // 
-            this.btnclear_cusInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnclear_cusInfo.Location = new System.Drawing.Point(220, 547);
-            this.btnclear_cusInfo.Name = "btnclear_cusInfo";
-            this.btnclear_cusInfo.Size = new System.Drawing.Size(94, 33);
-            this.btnclear_cusInfo.TabIndex = 125;
-            this.btnclear_cusInfo.Text = "CLEAR";
-            this.btnclear_cusInfo.UseVisualStyleBackColor = true;
-            this.btnclear_cusInfo.Click += new System.EventHandler(this.btnclear_cusInfo_Click);
-            // 
-            // btn_savePassword
-            // 
-            this.btn_savePassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_savePassword.Location = new System.Drawing.Point(67, 920);
-            this.btn_savePassword.Name = "btn_savePassword";
-            this.btn_savePassword.Size = new System.Drawing.Size(162, 39);
-            this.btn_savePassword.TabIndex = 126;
-            this.btn_savePassword.Text = "SAVE PASSWORD";
-            this.btn_savePassword.UseVisualStyleBackColor = true;
-            this.btn_savePassword.Click += new System.EventHandler(this.btn_savePassword_Click);
-            // 
-            // btnsave_cusInfo
-            // 
-            this.btnsave_cusInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnsave_cusInfo.Location = new System.Drawing.Point(67, 547);
-            this.btnsave_cusInfo.Name = "btnsave_cusInfo";
-            this.btnsave_cusInfo.Size = new System.Drawing.Size(111, 33);
-            this.btnsave_cusInfo.TabIndex = 127;
-            this.btnsave_cusInfo.Text = "SAVE";
-            this.btnsave_cusInfo.UseVisualStyleBackColor = true;
-            this.btnsave_cusInfo.Click += new System.EventHandler(this.btnsave_cusInfo_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(417, 811);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(408, 115);
+            this.label4.TabIndex = 128;
+            this.label4.Text = "Your password should have:\r\n- At least 8 characters\r\n- A mixture of both uppercas" +
+    "e and lowercase letters\r\n- A mixture of letters and numbers\r\n- At least one spec" +
+    "ial character, e.g. , ! @ # ? \"\r\n";
             // 
             // update_profile
             // 
@@ -679,5 +693,6 @@
         private Button btnclear_cusInfo;
         private Button btn_savePassword;
         private Button btnsave_cusInfo;
+        private Label label4;
     }
 }

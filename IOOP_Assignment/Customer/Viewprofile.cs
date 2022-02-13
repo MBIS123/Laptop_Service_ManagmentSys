@@ -21,20 +21,25 @@ namespace IOOP_Assignment.Customer
         {
             InitializeComponent();
             name = n;
-        }
+        }       
 
-        private void Viewprofile_Load(object sender, EventArgs e)
+        private void Viewprofile_Load_1(object sender, EventArgs e)
         {
             lbl_cusName.Text = name;
             Customers obj1 = new Customers(name);
             Customers.viewCustomerProfile(obj1);
             lblcusName.Text = obj1.CusName1; //get customer's name
-            lblcusDOB.Text = (obj1.CusBOD1).ToString("yyyy / MM / dd");//get customer's date of birth
+            lblcusDOB.Text = (obj1.CusBOD1).ToString("dd / MM / yyyy");//get customer's date of birth
             lblcusPhno.Text = obj1.CusPhoneNo1;//get customer'suser's phone number
             lblcusEmail.Text = obj1.CusEmail1;//get user's customer's email
             lblcusAddress.Text = obj1.CusAddress1;//get customer's address
             lblcusCurrentPassw.Text = obj1.CusPassword1;//get customer's password
+        }
 
+        private void btnedit_Click_1(object sender, EventArgs e)
+        {
+            update_profile up_prof = new update_profile();
+            up_prof.ShowDialog();
         }
 
         private void llbchange_serv_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -47,32 +52,6 @@ namespace IOOP_Assignment.Customer
         {
             Myorder order = new Myorder();
             order.ShowDialog();
-        }
-
-        private void btnedit_Click(object sender, EventArgs e)
-        {
-            update_profile up_prof = new update_profile();
-            up_prof.ShowDialog();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void llbaccount_setting_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void lblcusName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Viewprofile_Load_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
