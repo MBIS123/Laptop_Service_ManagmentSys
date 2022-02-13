@@ -8,7 +8,7 @@ namespace IOOP_Assignment
     {
         
         Admin adminObjD = new Admin();
-        DateTime[] passMonth = new DateTime[3];
+   
         string[] monthlist = Admin.Monthlist;
 
 
@@ -25,25 +25,59 @@ namespace IOOP_Assignment
             adminObjD.numOfUserInDtBase();
             lblNoOfRecep.Text = adminObjD.NumOfReceptionist.ToString();
             lblNoOfTech.Text =adminObjD.NumOfTechnician.ToString();
-            passMonth = adminObjD.searchPass3Months();
-            int[] passMonthsIncome = adminObjD.pass3MonthsIncome();
-            int passMonthIncome = passMonthsIncome[0];
-            int pass2MonthIncome = passMonthsIncome[1];
-            int pass3MonthIncome = passMonthsIncome[2];
+            lblTotalRecpTech.Text = (adminObjD.NumOfReceptionist + adminObjD.NumOfTechnician).ToString();
 
-            lblIncome.Text = passMonthIncome.ToString();
-            if ( pass2MonthIncome-passMonthIncome > 0)
+            adminObjD.changeMonthBarTitle(lblMnthBar1,lblMnthBar2,lblMnthBar3);
+            
+
+            int[] passMonthsIncome = adminObjD.pass3MonthsIncome();
+            int lstMthIncome = passMonthsIncome[0];
+            int lst2MthIncome = passMonthsIncome[1];
+            int lst3MthIncome = passMonthsIncome[2];
+            
+            lblIncome.Text = "RM " + lstMthIncome.ToString();
+
+            decimal incomePct = ((decimal)lstMthIncome / (decimal)lst2MthIncome)*100 ;
+            incomePct = Math.Round(incomePct,2);
+
+            if(incomePct > 100)
             {
-                lblProfitPct.ForeColor = Color.Red;
-                lblProfitPct.Text = "- " + (Math.Round((decimal)(1 -(passMonthIncome/pass2MonthIncome)),2)*100).ToString() + "%";
+                incomePct = incomePct - 100;
             }
 
+            if ( lst2MthIncome-lstMthIncome > 0)
+            {
+                lblProfitPct.ForeColor = Color.Red;
+                lblProfitPct.Text = "-" +incomePct.ToString() + "%";
+            }
+            else if (lst2MthIncome == lstMthIncome)
+            {
+                lblProfitPct.ForeColor = Color.FromArgb(0, 192, 0);
+                lblProfitPct.Text = "+" + (incomePct-100).ToString() + "%";
+            }
+            else
+            {
+                lblProfitPct.ForeColor = Color.FromArgb(0, 192, 0);
+                lblProfitPct.Text = "+" + incomePct.ToString() + "%";
+            }
+            adminObjD.fillDashBoardServInfo(lblLstMthServ, lblServPct);
+
+            int sizeLastMonthBar = (int)(((decimal)lstMthIncome / 6000) * 430);
+            lblServBar1.Size = new Size(sizeLastMonthBar, 30);
+            int sizeLast2MonthBar = (int)(((decimal)lst2MthIncome / 6000) * 430);
+            lblServBar2.Size = new Size(sizeLast2MonthBar, 30);
+
+            int sizeLast3MonthBar = (int)(((decimal)lst3MthIncome / 6000) * 430);
+            lblServBar3.Size = new Size(sizeLast3MonthBar, 30);
 
 
-             
+
+
+
+
         }
 
-      
+
 
         private void btnIncome_Click(object sender, EventArgs e)
         {
@@ -167,6 +201,21 @@ namespace IOOP_Assignment
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+            }
+        }
+
+        private void btnServReport_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            adminObjD.showRelatedForm("serviceReport");
+        }
+
+        private void lblMnthBar2_Click(object sender, EventArgs e)
         {
 
         }

@@ -39,7 +39,7 @@ namespace IOOP_Assignment
                     clearForm();
                 }
                 else
-                    MessageBox.Show(" Entered data does not meet the format.Please try again");
+                    MessageBox.Show(" Entered data does not meet the format.Please try again" ,"Reminder",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
                 MessageBox.Show("Required field was not marked !", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -121,7 +121,6 @@ namespace IOOP_Assignment
 
             DateTime.TryParse(txtDateOfBirth.Text, out birthDate);
 
-
             string year = birthDate.Year.ToString().PadLeft(4, '0');
             string day = birthDate.Day.ToString().PadLeft(2, '0');
             string month = birthDate.Month.ToString().PadLeft(2, '0');
@@ -173,7 +172,11 @@ namespace IOOP_Assignment
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+            }
         }
     }
 }
