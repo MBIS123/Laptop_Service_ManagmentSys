@@ -53,6 +53,8 @@ namespace IOOP_Assignment
         public string Servdesc { get => servdesc; set => servdesc = value; }
         public DateTime Collectiondate { get => collectiondate; set => collectiondate = value; }
         public int Orderid_forselection { get => orderid_forselection; set => orderid_forselection = value; }
+
+        //methods for 'auto-filling' dashboard widgets
         public int Numberofpending { get => numberofpending; set => numberofpending = value; }
         public int Numberofurgent { get => numberofurgent; set => numberofurgent = value; }
         public int Numberofcompleted { get => numberofcompleted; set => numberofcompleted = value; }
