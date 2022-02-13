@@ -121,7 +121,6 @@
             this.radBtnFemale.TabStop = true;
             this.radBtnFemale.Text = "Female";
             this.radBtnFemale.UseVisualStyleBackColor = true;
-            this.radBtnFemale.CheckedChanged += new System.EventHandler(this.radBtnFemale_CheckedChanged);
             // 
             // radBtnMale
             // 
@@ -133,7 +132,6 @@
             this.radBtnMale.TabStop = true;
             this.radBtnMale.Text = "Male";
             this.radBtnMale.UseVisualStyleBackColor = true;
-            this.radBtnMale.CheckedChanged += new System.EventHandler(this.radBtnMale_CheckedChanged);
             // 
             // lblIC
             // 
@@ -245,9 +243,11 @@
             // 
             // dateTimePickerDate
             // 
+            this.dateTimePickerDate.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerDate.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePickerDate.Location = new System.Drawing.Point(213, 290);
             this.dateTimePickerDate.Name = "dateTimePickerDate";
-            this.dateTimePickerDate.Size = new System.Drawing.Size(366, 31);
+            this.dateTimePickerDate.Size = new System.Drawing.Size(366, 33);
             this.dateTimePickerDate.TabIndex = 20;
             // 
             // lblUsername
@@ -350,6 +350,7 @@
             this.linklblNewCusReg.TabIndex = 25;
             this.linklblNewCusReg.TabStop = true;
             this.linklblNewCusReg.Text = "NEW CUSTOMER\r\nREGISTRATION";
+        
             // 
             // linklblServReq
             // 
@@ -365,6 +366,7 @@
             this.linklblServReq.TabIndex = 26;
             this.linklblServReq.TabStop = true;
             this.linklblServReq.Text = "SERVICE REQUEST";
+            this.linklblServReq.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblServReq_LinkClicked);
             // 
             // linklblAccSet
             // 
@@ -380,6 +382,7 @@
             this.linklblAccSet.TabIndex = 27;
             this.linklblAccSet.TabStop = true;
             this.linklblAccSet.Text = "ACCOUNT SETTING";
+            this.linklblAccSet.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblAccSet_LinkClicked);
             // 
             // linklblLogout
             // 
@@ -394,6 +397,7 @@
             this.linklblLogout.TabIndex = 28;
             this.linklblLogout.TabStop = true;
             this.linklblLogout.Text = "LOG OUT";
+            this.linklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLogout_LinkClicked);
             // 
             // groupBox1
             // 
@@ -458,6 +462,7 @@
             this.linklblPayment.TabIndex = 28;
             this.linklblPayment.TabStop = true;
             this.linklblPayment.Text = "PAYMENT";
+            this.linklblPayment.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblPayment_LinkClicked);
             // 
             // frmRegNewCus
             // 
@@ -476,7 +481,6 @@
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.grpBoxReg);
             this.Controls.Add(this.lblNewCusReg);
-            this.Name = "frmRegNewCus";
             this.Text = "New Customer Registration  ";
             this.Load += new System.EventHandler(this.frmRegNewCus_Load);
             this.grpBoxReg.ResumeLayout(false);

@@ -12,7 +12,6 @@ namespace IOOP_Assignment
 {
     internal class Receptionist1
     {
-        DataValidation objValid = new DataValidation();
 
         private string cusName;
         private string cusGender;
@@ -20,7 +19,7 @@ namespace IOOP_Assignment
         private string cusPhoneNum;
         private string cusEmail;
         private string cusAddress;
-        private string cusDob;
+        private DateTime cusDob;
         private string cusUsername;
         private static bool allcusinfoFilled = true;
 
@@ -32,7 +31,7 @@ namespace IOOP_Assignment
 
 
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
-        
+
 
         public string CusName { get => cusName; set => cusName = value; }
         public string CusGender { get => cusGender; set => cusGender = value; }
@@ -40,7 +39,9 @@ namespace IOOP_Assignment
         public string CusPhoneNum { get => cusPhoneNum; set => cusPhoneNum = value; }
         public string CusEmail { get => cusEmail; set => cusEmail = value; }
         public string CusAddress { get => cusAddress; set => cusAddress = value; }
-        public string CusDob { get => cusDob; set => cusDob = value; }
+        public DateTime CusDob { get => cusDob; set => cusDob = value; }
+        public string CusUsername { get => cusUsername; set => cusUsername = value; }
+
         public static bool AllcusinfoFilled { get => allcusinfoFilled; set => allcusinfoFilled = value; }
         public string RecName { get => recName; set => recName = value; }
         public string RecPhone { get => recPhone; set => recPhone = value; }
@@ -48,7 +49,7 @@ namespace IOOP_Assignment
         public string RecAddress { get => recAddress; set => recAddress = value; }
         public string RecPw { get => recPw; set => recPw = value; }
 
-        public Receptionist1(string n, string g, string i, string num, string e, string a, string d, string un)
+        public Receptionist1(string n, string g, string i, string num, string e, string a, DateTime d, string un)
         {
             cusName = n;
             cusGender = g;
@@ -56,7 +57,7 @@ namespace IOOP_Assignment
             cusPhoneNum = num;
             cusEmail = e;
             cusAddress = a;
-            cusDob = d;
+            DateTime cusDob = d;
             cusUsername = un;
         }
         public Receptionist1()
@@ -67,50 +68,45 @@ namespace IOOP_Assignment
         {
             recName = un;
         }
-        internal void allSecFill()
-        {
-            if (!allcusinfoFilled) //some infor are not filled
-            {
-                MessageBox.Show("Please ensure every section was filled !", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
 
-        public string addNewCus()
+        public string AddNewCustomer()
         {
-
-            string status= null;
+            string status;
             con.Open();
             bool exists = false;
-            SqlCommand cmd1 = new SqlCommand("select count(*) from Users where Username= '" + cusUsername + "'", con);
-            exists = (int)cmd1.ExecuteScalar() > 0;
-            if (exists)
+            SqlCommand cmdUsernameExist = new SqlCommand("select count(*) from Users where Username= '" + cusUsername + "'", con);
+            //count if the username existed
+            if (exists = (int)cmdUsernameExist.ExecuteScalar() > 0)
             {
                 MessageBox.Show("Username existed. Please enter a valid username");
             }
             else
             {
-                SqlCommand cmd2 = new SqlCommand("insert into Users(Username, Password, User Role) values (@username, '123456', 'customer')", con);
-                SqlCommand cmd3 = new SqlCommand("insert into Customer(Name, Gender, Date of Birth, IC No., Contact No., Email, Address) values(@name, @gender, @dob, @ic, @phone, @email, @address)", con);
-                cmd2.Parameters.AddWithValue("@username", cusUsername);
-                cmd3.Parameters.AddWithValue("@name", cusName);
-                cmd3.Parameters.AddWithValue("@gender", cusGender);
-                cmd3.Parameters.AddWithValue("@dob", cusDob);
-                cmd3.Parameters.AddWithValue("@ic", cusIC);
-                cmd3.Parameters.AddWithValue("@phone", cusPhoneNum);
-                cmd3.Parameters.AddWithValue("@email", cusEmail);
-                cmd3.Parameters.AddWithValue("@address", cusAddress);
+                SqlCommand cmdNumUser = new SqlCommand("select count(*) from Users", con);
+                int numUsers = int.Parse(cmdNumUser.ExecuteScalar().ToString());
+                int userID = numUsers + 1;
 
-                cmd2.ExecuteNonQuery();
-                int i = cmd3.ExecuteNonQuery();
+                SqlCommand cmdNumCus = new SqlCommand("select count(*) from Customer", con);
+                int numCus = int.Parse(cmdNumCus.ExecuteScalar().ToString());
+                int cusID = numCus + 1;
+
+                SqlCommand cmdUserCus = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users(UserID,UserName,Password,[User Role]) values" +
+                                                       "( " + userID + "," + " @username, '123456', 'customer'); SET IDENTITY_INSERT Users off;", con);
+
+                SqlCommand cmdNewCus = new SqlCommand("SET IDENTITY_INSERT Customer ON; insert into Customer(CustomerID,UserID,Name,Gender,[Date of Birth],[IC No.],[Contact No.],Email,Address) values" +
+                                                      "( " + cusID + "," + userID + " ,'" + cusName + "','" + cusGender + "','" + cusDob + "','" + cusIC + "','" + cusPhoneNum + "','" + CusEmail + "','" + CusAddress + "') ; SET IDENTITY_INSERT Customer off;", con);
+
+                cmdUserCus.Parameters.AddWithValue("@username", cusUsername);
+                cmdUserCus.ExecuteNonQuery();
+                int i = cmdNewCus.ExecuteNonQuery();
                 if (i != 0)
                     status = "Registration Successful!";
-                //cmd3.Parameters.AddWithValue("@userID", Convert.ToInt32(cmd2.ExecuteScalar().ToString()));
                 else
                     status = "Unable to Register!";
-
+                return status;
             }
             con.Close();
-            return status;
+            return cusUsername;
         }
         public void loadPaymentTable(DataGridView dgv)
         {
@@ -119,7 +115,7 @@ namespace IOOP_Assignment
                 "[Order].Status,[Order].Laptop, [Order].[Amount (RM)], [Order].[Payment Status] " +
                 "From [dbo].[Order] inner join [dbo].[Customer] on [Order].CustomerID=[Customer].CustomerID inner join " +
                 "[dbo].[Types of Service Request] on [Order].[ServiceRequestType ID]=[Types of Service Request].ServiceRequestTypeID where [Order].[Payment Status]='Unpaid'", con);
-            
+
             DataTable dtbl = new DataTable();
             da.Fill(dtbl);
             dgv.DataSource = dtbl;
@@ -187,32 +183,74 @@ namespace IOOP_Assignment
             return status;
         }
 
-        public string updReceptionist(string ph, string em, string add, string pw)
+        public static void viewRecProfile(Receptionist1 o1)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from Receptionist where Name = '" + o1.recName + "'", con);
+            SqlCommand cmd2 = new SqlCommand("select [Password] from Users, Receptionist where Users.UserID = Receptionist.UserID and Receptionist.Name = '" + o1.recName + "'", con);
+            o1.recPw = cmd2.ExecuteScalar().ToString();
+            SqlDataReader sqlDataReader = cmd.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                o1.recPhone = sqlDataReader.GetString(7);
+                o1.recEmail = sqlDataReader.GetString(8);
+                o1.RecAddress = sqlDataReader.GetString(9);
+            }
+            con.Close();
+        }
+        public string updReceptionist(string nm, string ph, string em, string add)
+        {
+            SqlCommand cmd1 = new SqlCommand("update [Users] set [Password] = '" + recPw + "' where [UserID] = (select Users.[UserID] from Receptionist, Users where Receptionist.UserID = Users.UserID)", con);
+
+            string status;
+            con.Open();
+
+            recName = nm;
+            recPhone = ph;
+            recEmail = em;
+            recAddress = add;
+
+            SqlCommand cmd = new SqlCommand("Update [Receptionist] set [Name] = '" + recName + "', [Contact No.] = '" + recPhone + "'," +
+                " [Email] = '" + recEmail + "', [Address] = '" + recAddress + " where [UserID] = (select Users.[UserID] from Receptionist, " +
+                "Users where Receptionist.UserID = Users.UserID)", con);
+            int i = cmd.ExecuteNonQuery();
+
+            if (i != 0)
+            {
+                status = "Your personal details have been successfully updated.";
+            }
+            else
+            {
+                status = "Update Unsuccessful. Please try again. ";
+            }
+
+            con.Close();
+            return status;
+        }
+        internal string updReceptionistPwd(string pw)
         {
             string status;
             con.Open();
 
-            recPhone = ph;
-            recEmail = em;
-            recAddress = add;
             recPw = pw;
 
-            SqlCommand cmd = new SqlCommand("update [Receptionist] set [Contact No.] = '" + recPhone + "', [Email] = '" + recEmail + "', [Address] = '" + recAddress + "' where [Name] = '" + recName + "'", con);
-            SqlCommand cmd1 = new SqlCommand("update [Users] set [Password] = '" + recPw + "' where [UserID] = (select Users.[UserID] from Receptionist, Users where Receptionist.UserID = Users.UserID)", con);
-            int i = cmd.ExecuteNonQuery();
-            int p = cmd1.ExecuteNonQuery();
-            if (i != 0)
-                status = "Your details have been successfully updated.";
-            else
-                status = "Update Unsuccessful. Please try again.";
+            SqlCommand cmd1 = new SqlCommand("update [Users] set [Password] = '" + recPw + "' where [UserID] =" +
+                " (select Users.[UserID] from Receptionist, Users where Receptionist.UserID = Users.UserID)", con);
+            int i = cmd1.ExecuteNonQuery();
 
-            if (p != 0)
+            if (i != 0)
+            {
                 status = "Your password have been successfully updated.";
+            }
             else
+            {
                 status = "Update Unsuccessful. Please try again.";
+            }
 
             con.Close();
             return status;
+
+
         }
     }
 }

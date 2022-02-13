@@ -92,7 +92,14 @@ namespace IOOP_Assignment
                 {
                     if (txtNewPW.Text == txtConfirmNewPW.Text) //if newpw and confirm are the same
                     {
-                        MessageBox.Show(obj1.updateTechProfilePassword(txtNewPW.Text)); //update users table
+                        if (txtCurrentPW.Text == txtNewPW.Text)
+                        {
+                            MessageBox.Show("The new password you have entered is the same as your current password. Please try again.");
+                        }
+                        else
+                        {
+                            MessageBox.Show(obj1.updateTechProfilePassword(txtNewPW.Text)); //update users table
+                        }
                     }
                     else //if newpw and confirm are not the same
                     {
@@ -102,7 +109,7 @@ namespace IOOP_Assignment
                 else //if newpw is not valid
                 {
                     MessageBox.Show("The new password you have entered is not valid. Please try again.");
-                    
+
                 }
             }
             else

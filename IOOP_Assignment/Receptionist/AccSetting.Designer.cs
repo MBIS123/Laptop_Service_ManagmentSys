@@ -30,14 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccSet));
             this.grpBoxReg = new System.Windows.Forms.GroupBox();
+            this.btnClear1 = new System.Windows.Forms.Button();
+            this.btnConfirm1 = new System.Windows.Forms.Button();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblPersonalInfo = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
             this.txtCurrentPwd = new System.Windows.Forms.TextBox();
             this.lblCurrentPwd = new System.Windows.Forms.Label();
             this.txtConfirmPwd = new System.Windows.Forms.TextBox();
             this.lblConfirmPwd = new System.Windows.Forms.Label();
             this.txtNewPwd = new System.Windows.Forms.TextBox();
             this.lblNewPwd = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnClear2 = new System.Windows.Forms.Button();
+            this.btnConfirm2 = new System.Windows.Forms.Button();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -71,14 +77,20 @@
             // grpBoxReg
             // 
             this.grpBoxReg.BackColor = System.Drawing.Color.PeachPuff;
+            this.grpBoxReg.Controls.Add(this.btnClear1);
+            this.grpBoxReg.Controls.Add(this.btnConfirm1);
+            this.grpBoxReg.Controls.Add(this.lblPassword);
+            this.grpBoxReg.Controls.Add(this.lblPersonalInfo);
+            this.grpBoxReg.Controls.Add(this.txtName);
+            this.grpBoxReg.Controls.Add(this.lblName);
             this.grpBoxReg.Controls.Add(this.txtCurrentPwd);
             this.grpBoxReg.Controls.Add(this.lblCurrentPwd);
             this.grpBoxReg.Controls.Add(this.txtConfirmPwd);
             this.grpBoxReg.Controls.Add(this.lblConfirmPwd);
             this.grpBoxReg.Controls.Add(this.txtNewPwd);
             this.grpBoxReg.Controls.Add(this.lblNewPwd);
-            this.grpBoxReg.Controls.Add(this.btnClear);
-            this.grpBoxReg.Controls.Add(this.btnConfirm);
+            this.grpBoxReg.Controls.Add(this.btnClear2);
+            this.grpBoxReg.Controls.Add(this.btnConfirm2);
             this.grpBoxReg.Controls.Add(this.txtAddress);
             this.grpBoxReg.Controls.Add(this.lblAddress);
             this.grpBoxReg.Controls.Add(this.txtEmail);
@@ -87,14 +99,76 @@
             this.grpBoxReg.Controls.Add(this.lblMobile);
             this.grpBoxReg.Location = new System.Drawing.Point(214, 68);
             this.grpBoxReg.Name = "grpBoxReg";
-            this.grpBoxReg.Size = new System.Drawing.Size(617, 427);
+            this.grpBoxReg.Size = new System.Drawing.Size(617, 541);
             this.grpBoxReg.TabIndex = 5;
             this.grpBoxReg.TabStop = false;
+            // 
+            // btnClear1
+            // 
+            this.btnClear1.BackColor = System.Drawing.Color.White;
+            this.btnClear1.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnClear1.Location = new System.Drawing.Point(358, 257);
+            this.btnClear1.Name = "btnClear1";
+            this.btnClear1.Size = new System.Drawing.Size(112, 34);
+            this.btnClear1.TabIndex = 32;
+            this.btnClear1.Text = "Clear";
+            this.btnClear1.UseVisualStyleBackColor = false;
+            this.btnClear1.Click += new System.EventHandler(this.btnClear1_Click);
+            // 
+            // btnConfirm1
+            // 
+            this.btnConfirm1.BackColor = System.Drawing.Color.White;
+            this.btnConfirm1.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnConfirm1.Location = new System.Drawing.Point(476, 257);
+            this.btnConfirm1.Name = "btnConfirm1";
+            this.btnConfirm1.Size = new System.Drawing.Size(112, 34);
+            this.btnConfirm1.TabIndex = 31;
+            this.btnConfirm1.Text = "Confirm";
+            this.btnConfirm1.UseVisualStyleBackColor = false;
+            this.btnConfirm1.Click += new System.EventHandler(this.btnConfirm1_Click);
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Times New Roman", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblPassword.Location = new System.Drawing.Point(20, 303);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(99, 25);
+            this.lblPassword.TabIndex = 30;
+            this.lblPassword.Text = "Password";
+            // 
+            // lblPersonalInfo
+            // 
+            this.lblPersonalInfo.AutoSize = true;
+            this.lblPersonalInfo.Font = new System.Drawing.Font("Times New Roman", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblPersonalInfo.Location = new System.Drawing.Point(21, 18);
+            this.lblPersonalInfo.Name = "lblPersonalInfo";
+            this.lblPersonalInfo.Size = new System.Drawing.Size(207, 25);
+            this.lblPersonalInfo.TabIndex = 29;
+            this.lblPersonalInfo.Text = "Personal Information";
+            // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtName.Location = new System.Drawing.Point(222, 54);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(366, 33);
+            this.txtName.TabIndex = 28;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblName.Location = new System.Drawing.Point(20, 63);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(67, 25);
+            this.lblName.TabIndex = 27;
+            this.lblName.Text = "Name";
             // 
             // txtCurrentPwd
             // 
             this.txtCurrentPwd.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCurrentPwd.Location = new System.Drawing.Point(222, 193);
+            this.txtCurrentPwd.Location = new System.Drawing.Point(222, 344);
             this.txtCurrentPwd.MaxLength = 8;
             this.txtCurrentPwd.Name = "txtCurrentPwd";
             this.txtCurrentPwd.PasswordChar = '*';
@@ -105,7 +179,7 @@
             // 
             this.lblCurrentPwd.AutoSize = true;
             this.lblCurrentPwd.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCurrentPwd.Location = new System.Drawing.Point(20, 196);
+            this.lblCurrentPwd.Location = new System.Drawing.Point(20, 347);
             this.lblCurrentPwd.Name = "lblCurrentPwd";
             this.lblCurrentPwd.Size = new System.Drawing.Size(184, 25);
             this.lblCurrentPwd.TabIndex = 25;
@@ -114,7 +188,7 @@
             // txtConfirmPwd
             // 
             this.txtConfirmPwd.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtConfirmPwd.Location = new System.Drawing.Point(222, 296);
+            this.txtConfirmPwd.Location = new System.Drawing.Point(222, 447);
             this.txtConfirmPwd.Name = "txtConfirmPwd";
             this.txtConfirmPwd.PasswordChar = '*';
             this.txtConfirmPwd.Size = new System.Drawing.Size(366, 33);
@@ -124,7 +198,7 @@
             // 
             this.lblConfirmPwd.AutoSize = true;
             this.lblConfirmPwd.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblConfirmPwd.Location = new System.Drawing.Point(20, 299);
+            this.lblConfirmPwd.Location = new System.Drawing.Point(20, 450);
             this.lblConfirmPwd.Name = "lblConfirmPwd";
             this.lblConfirmPwd.Size = new System.Drawing.Size(188, 25);
             this.lblConfirmPwd.TabIndex = 22;
@@ -133,7 +207,7 @@
             // txtNewPwd
             // 
             this.txtNewPwd.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNewPwd.Location = new System.Drawing.Point(222, 244);
+            this.txtNewPwd.Location = new System.Drawing.Point(222, 395);
             this.txtNewPwd.Name = "txtNewPwd";
             this.txtNewPwd.PasswordChar = '*';
             this.txtNewPwd.Size = new System.Drawing.Size(366, 33);
@@ -143,39 +217,39 @@
             // 
             this.lblNewPwd.AutoSize = true;
             this.lblNewPwd.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNewPwd.Location = new System.Drawing.Point(20, 247);
+            this.lblNewPwd.Location = new System.Drawing.Point(20, 398);
             this.lblNewPwd.Name = "lblNewPwd";
             this.lblNewPwd.Size = new System.Drawing.Size(151, 25);
             this.lblNewPwd.TabIndex = 18;
             this.lblNewPwd.Text = "New Password";
             // 
-            // btnClear
+            // btnClear2
             // 
-            this.btnClear.BackColor = System.Drawing.Color.White;
-            this.btnClear.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnClear.Location = new System.Drawing.Point(358, 363);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(112, 34);
-            this.btnClear.TabIndex = 15;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear2.BackColor = System.Drawing.Color.White;
+            this.btnClear2.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnClear2.Location = new System.Drawing.Point(358, 491);
+            this.btnClear2.Name = "btnClear2";
+            this.btnClear2.Size = new System.Drawing.Size(112, 34);
+            this.btnClear2.TabIndex = 15;
+            this.btnClear2.Text = "Clear";
+            this.btnClear2.UseVisualStyleBackColor = false;
+            this.btnClear2.Click += new System.EventHandler(this.btnClear2_Click);
             // 
-            // btnConfirm
+            // btnConfirm2
             // 
-            this.btnConfirm.BackColor = System.Drawing.Color.White;
-            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnConfirm.Location = new System.Drawing.Point(476, 363);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(112, 34);
-            this.btnConfirm.TabIndex = 14;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.UseVisualStyleBackColor = false;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            this.btnConfirm2.BackColor = System.Drawing.Color.White;
+            this.btnConfirm2.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnConfirm2.Location = new System.Drawing.Point(476, 491);
+            this.btnConfirm2.Name = "btnConfirm2";
+            this.btnConfirm2.Size = new System.Drawing.Size(112, 34);
+            this.btnConfirm2.TabIndex = 14;
+            this.btnConfirm2.Text = "Confirm";
+            this.btnConfirm2.UseVisualStyleBackColor = false;
             // 
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAddress.Location = new System.Drawing.Point(222, 139);
+            this.txtAddress.Location = new System.Drawing.Point(222, 207);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(366, 33);
             this.txtAddress.TabIndex = 13;
@@ -184,7 +258,7 @@
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblAddress.Location = new System.Drawing.Point(20, 142);
+            this.lblAddress.Location = new System.Drawing.Point(20, 210);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(88, 25);
             this.lblAddress.TabIndex = 12;
@@ -193,7 +267,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.Location = new System.Drawing.Point(222, 86);
+            this.txtEmail.Location = new System.Drawing.Point(222, 154);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(366, 33);
             this.txtEmail.TabIndex = 11;
@@ -202,7 +276,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEmail.Location = new System.Drawing.Point(20, 89);
+            this.lblEmail.Location = new System.Drawing.Point(20, 157);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(68, 25);
             this.lblEmail.TabIndex = 10;
@@ -211,7 +285,7 @@
             // txtMobile
             // 
             this.txtMobile.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMobile.Location = new System.Drawing.Point(222, 34);
+            this.txtMobile.Location = new System.Drawing.Point(222, 102);
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(366, 33);
             this.txtMobile.TabIndex = 9;
@@ -220,7 +294,7 @@
             // 
             this.lblMobile.AutoSize = true;
             this.lblMobile.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMobile.Location = new System.Drawing.Point(20, 37);
+            this.lblMobile.Location = new System.Drawing.Point(20, 105);
             this.lblMobile.Name = "lblMobile";
             this.lblMobile.Size = new System.Drawing.Size(154, 25);
             this.lblMobile.TabIndex = 8;
@@ -373,7 +447,7 @@
             this.splitter1.BackColor = System.Drawing.Color.SeaShell;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(203, 531);
+            this.splitter1.Size = new System.Drawing.Size(203, 632);
             this.splitter1.TabIndex = 34;
             this.splitter1.TabStop = false;
             // 
@@ -406,7 +480,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(842, 531);
+            this.ClientSize = new System.Drawing.Size(842, 632);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -418,8 +492,8 @@
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.grpBoxReg);
             this.Controls.Add(this.lblAccSet);
-            this.Name = "frmAccSet";
             this.Text = "Update Profile";
+            this.Load += new System.EventHandler(this.frmAccSet_Load);
             this.grpBoxReg.ResumeLayout(false);
             this.grpBoxReg.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -443,8 +517,8 @@
         private GroupBox grpBoxReg;
         private TextBox txtNewPwd;
         private Label lblNewPwd;
-        private Button btnClear;
-        private Button btnConfirm;
+        private Button btnClear2;
+        private Button btnConfirm2;
         private TextBox txtAddress;
         private Label lblAddress;
         private TextBox txtEmail;
@@ -470,5 +544,11 @@
         private Splitter splitter1;
         private GroupBox groupBox5;
         private LinkLabel linklblPrintReceipt;
+        private Button btnClear1;
+        private Button btnConfirm1;
+        private Label lblPassword;
+        private Label lblPersonalInfo;
+        private TextBox txtName;
+        private Label lblName;
     }
 }

@@ -53,6 +53,8 @@ namespace IOOP_Assignment
         public string Servdesc { get => servdesc; set => servdesc = value; }
         public DateTime Collectiondate { get => collectiondate; set => collectiondate = value; }
         public int Orderid_forselection { get => orderid_forselection; set => orderid_forselection = value; }
+
+        //methods for 'auto-filling' dashboard widgets
         public int Numberofpending { get => numberofpending; set => numberofpending = value; }
         public int Numberofurgent { get => numberofurgent; set => numberofurgent = value; }
         public int Numberofcompleted { get => numberofcompleted; set => numberofcompleted = value; }
@@ -169,11 +171,25 @@ namespace IOOP_Assignment
             //MessageBox.Show(collectiondate_string); testing if collectiondate is passed into collectiondate_string 
 
             SqlCommand cmd = new SqlCommand("update [Order] set [Status] = '" + servicerequest_status + "', [Service Description/Suggestion] = '" + servdesc + "', [Collection Date] = '" + collectiondate_string + "' where [OrderID] = '" + orderid_forselection + "'", con);
+            //MessageBox.Show(techID.ToString()); //for testing if TechID is passed
+            SqlCommand cmd2 = new SqlCommand("update [Technician] set [Status] = 'Available' where TechnicianID = '" + techID + "'", con);
             int i = cmd.ExecuteNonQuery();
             if (i != 0)
-                status = "The service request has been successfully updated.";
+            {
+                int x = cmd2.ExecuteNonQuery();
+                if (x != 0)
+                {
+                    status = "The service request has been successfully updated.";
+                }
+                else
+                {
+                    status = "Update Unsuccessful. Please try again.";
+                }
+            }
             else
+            {
                 status = "Update Unsuccessful. Please try again.";
+            }
             con.Close();
 
             return status;
