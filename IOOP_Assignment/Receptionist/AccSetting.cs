@@ -31,23 +31,20 @@ namespace IOOP_Assignment
             txtMobile.Text = obj1.RecPhone;
             txtEmail.Text = obj1.RecEmail;
             txtAddress.Text = obj1.RecAddress;
+
         }
 
         private void btnConfirm1_Click(object sender, EventArgs e)
         {
             //validation
             DataValidation objval = new DataValidation();
-            if (objval.isString(txtName.Text) == true && objval.isPhoneNum(txtMobile.Text) == true && (objval.isEmailAddress(txtEmail)) == true && (objval.isStringNull(txtAddress) == false)) //all valid
+            if (objval.isPhoneNum(txtMobile.Text) == true && (objval.isEmailAddress(txtEmail)) == true && (objval.isStringNull(txtAddress) == false)) //all valid
             {
                 Receptionist1 obj1 = new Receptionist1(Name);
-                MessageBox.Show(obj1.updReceptionist(txtName.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text));
+                MessageBox.Show(obj1.updReceptionist(txtMobile.Text, txtEmail.Text, txtAddress.Text));
             }
             else
             {
-                if (objval.isStringNull(txtName))//name not entered
-                {
-                    MessageBox.Show("Please enter your name!");
-                }
                 if (objval.isPhoneNum(txtMobile.Text) == false)//phone number invalid
                 {
                     MessageBox.Show("Please enter a correct phone number!");
@@ -65,7 +62,7 @@ namespace IOOP_Assignment
         private void btnConfirm2_Click(object sender, EventArgs e)
         {
             Receptionist1 obj1 = new Receptionist1(Name);
-            Receptionist1.viewRecProfile(obj1);
+            Receptionist1.chckPwd(obj1);
             if (txtCurrentPwd.Text == obj1.RecPw) //Current password entered matches
             {
                 DataValidation objpwval = new DataValidation();
@@ -100,7 +97,6 @@ namespace IOOP_Assignment
         }
         private void btnClear1_Click(object sender, EventArgs e)
         {
-            txtName.Clear();
             txtMobile.Clear();
             txtEmail.Clear();
             txtAddress.Clear();
@@ -111,6 +107,11 @@ namespace IOOP_Assignment
             txtCurrentPwd.Clear();
             txtNewPwd.Clear();
             txtConfirmPwd.Clear();  
+        }
+
+        private void linklblNewCusReg_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }
