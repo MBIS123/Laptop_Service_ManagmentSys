@@ -22,7 +22,6 @@ namespace IOOP_Assignment
             lblserv_desc.Text = obj1.showservdesc();
             lblamount_pay.Text = obj1.showAmount_ToPaid();
             lblstatus.Text = obj1.showStatus();
-            lblexpected_collect_date.Text = obj1.showExpec_date();
             lblcollec_date.Text = obj1.showCollec_date();
             // i want display service description in my lbl by using method show_servdesc
         }
