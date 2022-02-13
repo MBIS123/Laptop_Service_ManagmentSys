@@ -359,6 +359,7 @@
             this.linklblLogout1.TabIndex = 28;
             this.linklblLogout1.TabStop = true;
             this.linklblLogout1.Text = "LOG OUT";
+            this.linklblLogout1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLogout1_LinkClicked);
             // 
             // groupBox8
             // 
@@ -384,6 +385,7 @@
             this.linklblAccSet1.TabIndex = 27;
             this.linklblAccSet1.TabStop = true;
             this.linklblAccSet1.Text = "ACCOUNT SETTING";
+            this.linklblAccSet1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblAccSet1_LinkClicked);
             // 
             // groupBox9
             // 
@@ -409,6 +411,7 @@
             this.linklblServReq1.TabIndex = 26;
             this.linklblServReq1.TabStop = true;
             this.linklblServReq1.Text = "SERVICE REQUEST";
+            this.linklblServReq1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblServReq1_LinkClicked);
             // 
             // groupBox10
             // 
@@ -434,6 +437,7 @@
             this.linklblNewCusReg1.TabIndex = 25;
             this.linklblNewCusReg1.TabStop = true;
             this.linklblNewCusReg1.Text = "NEW CUSTOMER\r\nREGISTRATION";
+            this.linklblNewCusReg1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblNewCusReg1_LinkClicked);
             // 
             // lblRole1
             // 

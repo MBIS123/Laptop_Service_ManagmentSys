@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmServRequest));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpBoxRequest = new System.Windows.Forms.GroupBox();
             this.dataGridViewServ = new System.Windows.Forms.DataGridView();
             this.btnClear = new System.Windows.Forms.Button();
@@ -55,12 +55,12 @@
             this.lblRcn = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.linklblPrintReceipt = new System.Windows.Forms.LinkLabel();
             this.dataGridViewCustomer = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lblLaptop = new System.Windows.Forms.Label();
             this.txtLaptop = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.linklblPayment = new System.Windows.Forms.LinkLabel();
             this.grpBoxRequest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServ)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -68,8 +68,8 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpBoxRequest
@@ -92,23 +92,23 @@
             // dataGridViewServ
             // 
             this.dataGridViewServ.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewServ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewServ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewServ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewServ.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewServ.DefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridViewServ.Location = new System.Drawing.Point(16, 39);
             this.dataGridViewServ.Name = "dataGridViewServ";
             this.dataGridViewServ.RowHeadersWidth = 62;
@@ -227,6 +227,7 @@
             this.linklblLogout.TabIndex = 28;
             this.linklblLogout.TabStop = true;
             this.linklblLogout.Text = "LOG OUT";
+            this.linklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLogout_LinkClicked);
             // 
             // groupBox3
             // 
@@ -252,6 +253,7 @@
             this.linklblAccSet.TabIndex = 27;
             this.linklblAccSet.TabStop = true;
             this.linklblAccSet.Text = "ACCOUNT SETTING";
+            this.linklblAccSet.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblAccSet_LinkClicked);
             // 
             // groupBox2
             // 
@@ -302,6 +304,7 @@
             this.linklblNewCusReg.TabIndex = 25;
             this.linklblNewCusReg.TabStop = true;
             this.linklblNewCusReg.Text = "NEW CUSTOMER\r\nREGISTRATION";
+            this.linklblNewCusReg.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblNewCusReg_LinkClicked);
             // 
             // lblRole
             // 
@@ -345,50 +348,26 @@
             this.splitter1.TabIndex = 26;
             this.splitter1.TabStop = false;
             // 
-            // groupBox5
-            // 
-            this.groupBox5.BackColor = System.Drawing.Color.PeachPuff;
-            this.groupBox5.Controls.Add(this.linklblPrintReceipt);
-            this.groupBox5.Location = new System.Drawing.Point(2, 419);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(203, 36);
-            this.groupBox5.TabIndex = 31;
-            this.groupBox5.TabStop = false;
-            // 
-            // linklblPrintReceipt
-            // 
-            this.linklblPrintReceipt.ActiveLinkColor = System.Drawing.Color.DarkRed;
-            this.linklblPrintReceipt.AutoSize = true;
-            this.linklblPrintReceipt.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.linklblPrintReceipt.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.linklblPrintReceipt.LinkColor = System.Drawing.Color.Blue;
-            this.linklblPrintReceipt.Location = new System.Drawing.Point(24, 11);
-            this.linklblPrintReceipt.Name = "linklblPrintReceipt";
-            this.linklblPrintReceipt.Size = new System.Drawing.Size(146, 20);
-            this.linklblPrintReceipt.TabIndex = 28;
-            this.linklblPrintReceipt.TabStop = true;
-            this.linklblPrintReceipt.Text = "PRINT RECEIPT";
-            // 
             // dataGridViewCustomer
             // 
             this.dataGridViewCustomer.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewCustomer.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewCustomer.DefaultCellStyle = dataGridViewCellStyle24;
             this.dataGridViewCustomer.Location = new System.Drawing.Point(227, 84);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
             this.dataGridViewCustomer.RowHeadersWidth = 62;
@@ -424,17 +403,42 @@
             this.txtLaptop.Size = new System.Drawing.Size(285, 30);
             this.txtLaptop.TabIndex = 37;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox5.Controls.Add(this.linklblPayment);
+            this.groupBox5.Location = new System.Drawing.Point(1, 418);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(203, 36);
+            this.groupBox5.TabIndex = 41;
+            this.groupBox5.TabStop = false;
+            // 
+            // linklblPayment
+            // 
+            this.linklblPayment.ActiveLinkColor = System.Drawing.Color.DarkRed;
+            this.linklblPayment.AutoSize = true;
+            this.linklblPayment.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.linklblPayment.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linklblPayment.LinkColor = System.Drawing.Color.Blue;
+            this.linklblPayment.Location = new System.Drawing.Point(51, 8);
+            this.linklblPayment.Name = "linklblPayment";
+            this.linklblPayment.Size = new System.Drawing.Size(94, 20);
+            this.linklblPayment.TabIndex = 28;
+            this.linklblPayment.TabStop = true;
+            this.linklblPayment.Text = "PAYMENT";
+            this.linklblPayment.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblPayment_LinkClicked);
+            // 
             // frmServRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(986, 656);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.txtLaptop);
             this.Controls.Add(this.lblLaptop);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dataGridViewCustomer);
-            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -461,9 +465,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,12 +496,12 @@
         private Label lblRcn;
         private PictureBox pictureBoxLogo;
         private Splitter splitter1;
-        private GroupBox groupBox5;
-        private LinkLabel linklblPrintReceipt;
         private DataGridView dataGridViewCustomer;
         private DataGridView dataGridViewServ;
         private DateTimePicker dateTimePicker1;
         private Label lblLaptop;
         private TextBox txtLaptop;
+        private GroupBox groupBox5;
+        private LinkLabel linklblPayment;
     }
 }
