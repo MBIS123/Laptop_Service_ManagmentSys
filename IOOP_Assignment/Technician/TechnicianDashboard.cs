@@ -56,6 +56,11 @@ namespace IOOP_Assignment
         {
             Technician obj1 = new Technician(name);
             obj1.loadOrderTable(dataGrid_AllServ, technician_ID);
+            Technician obj2 = new Technician(name, technician_ID);
+            Technician.dashboardWidgetValues(obj2);
+            lblWidg_ValuePendServ.Text = obj2.Numberofpending.ToString();
+            lblWidg_ValueUrgServ.Text = obj2.Numberofurgent.ToString();
+            lblWidg_ValueCompServ.Text = obj2.Numberofcompleted.ToString();
         }
 
         private void btnAccess_Profile_Click(object sender, EventArgs e)
