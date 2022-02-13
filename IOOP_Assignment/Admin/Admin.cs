@@ -339,34 +339,37 @@ namespace IOOP_Assignment
         }
 
 
-        internal void fillDashBoardServInfo( Label lblTotalServ , Label lblServPct)
+        internal void fillDashBoardServInfo(Label lblTotalServ, Label lblServPct)
         {
 
             int[] passMonthsRqtServ = passMonthsRequestedService();
 
-            int lastMonth = passMonthsRqtServ[0];
-            int last2Month = passMonthsRqtServ[1];
-            lblTotalServ.Text = lastMonth.ToString();
+            int lstMntRqtServ = passMonthsRqtServ[0];
+            int lst2MntRqtServ = passMonthsRqtServ[1];
+            lblTotalServ.Text = lstMntRqtServ.ToString();
 
-            decimal srvRqtPct = ((decimal)lastMonth / (decimal)last2Month) * 100;
-            if (last2Month - lastMonth > 0)
+            if (lst2MntRqtServ != 0)
             {
-                lblServPct.ForeColor = Color.Red;
-                lblServPct.Text = "-" + srvRqtPct.ToString() + "%";
-            }
-            else if(last2Month == lastMonth )
-            {
-                lblServPct.ForeColor = Color.FromArgb(0, 192, 0);
-                lblServPct.Text = "+" + (srvRqtPct-100).ToString() + "%";
-            }
-            else
-            {
-                lblServPct.ForeColor = Color.FromArgb(0, 192, 0);
-                lblServPct.Text = "+" + srvRqtPct.ToString() + "%";
+                decimal srvRqtPct = ((decimal)lstMntRqtServ / (decimal)lst2MntRqtServ) * 100;
+                if (lst2MntRqtServ - lstMntRqtServ > 0)
+                {
+                    lblServPct.ForeColor = Color.Red;
+                    lblServPct.Text = "-" + srvRqtPct.ToString() + "%";
+                }
+                else if (lst2MntRqtServ == lstMntRqtServ)
+                {
+                    lblServPct.ForeColor = Color.FromArgb(0, 192, 0);
+                    lblServPct.Text = "+" + (srvRqtPct - 100).ToString() + "%";
+                }
+                else
+                {
+                    lblServPct.ForeColor = Color.FromArgb(0, 192, 0);
+                    lblServPct.Text = "+" + srvRqtPct.ToString() + "%";
+                }
             }
         }
 
-        internal void changeMonthBarTitle(Label lblBar1 , Label lblBar2 , Label lblBar3)
+        internal void changeMonthBarTitle(Label lblBar1, Label lblBar2, Label lblBar3)
         {
             DateTime[] searchPass3Month = searchPass3Months(); //return last month , last last month , last last last month.
 
@@ -379,10 +382,14 @@ namespace IOOP_Assignment
             int lst3Month = searchPass3Month[2].Month;
             lblBar3.Text = sFMonthList[lst3Month - 1];
         }
+
+
+
+
+    }
         // messagebox.show("message","title" , MessageBoxButton, ... , MessageBoxIcon,Warning)
         /// INSIDE THE ADMIN CLASS I DECLARE A METHOD FIRST
 
     }
 
 
-}

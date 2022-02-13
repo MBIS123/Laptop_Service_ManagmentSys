@@ -587,9 +587,9 @@
             this.lblServPct.ForeColor = System.Drawing.Color.Red;
             this.lblServPct.Location = new System.Drawing.Point(433, 177);
             this.lblServPct.Name = "lblServPct";
-            this.lblServPct.Size = new System.Drawing.Size(49, 16);
+            this.lblServPct.Size = new System.Drawing.Size(199, 16);
             this.lblServPct.TabIndex = 287;
-            this.lblServPct.Text = "-0.02%";
+            this.lblServPct.Text = "Month before last has 0 Orders";
             // 
             // lblLstMthServ
             // 
@@ -673,12 +673,12 @@
             this.lblProfitPct.AutoSize = true;
             this.lblProfitPct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
             this.lblProfitPct.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblProfitPct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblProfitPct.ForeColor = System.Drawing.Color.Red;
             this.lblProfitPct.Location = new System.Drawing.Point(186, 177);
             this.lblProfitPct.Name = "lblProfitPct";
-            this.lblProfitPct.Size = new System.Drawing.Size(59, 16);
+            this.lblProfitPct.Size = new System.Drawing.Size(204, 16);
             this.lblProfitPct.TabIndex = 275;
-            this.lblProfitPct.Text = "+24.70%";
+            this.lblProfitPct.Text = "Month before last has 0 income";
             // 
             // grpBxServRpt
             // 

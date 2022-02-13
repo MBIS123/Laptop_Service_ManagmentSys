@@ -9,7 +9,9 @@ namespace IOOP_Assignment
         
         Admin adminObjD = new Admin();
    
-        string[] monthlist = Admin.Monthlist;
+
+
+
 
 
         public AdminDashBoard()
@@ -37,28 +39,28 @@ namespace IOOP_Assignment
             
             lblIncome.Text = "RM " + lstMthIncome.ToString();
 
-            decimal incomePct = ((decimal)lstMthIncome / (decimal)lst2MthIncome)*100 ;
-            incomePct = Math.Round(incomePct,2);
+            if (lst2MthIncome != 0)
+            {
+                decimal incomePct = ((decimal)lstMthIncome / (decimal)lst2MthIncome) * 100;
+                incomePct = Math.Round(incomePct, 2);
 
-            if(incomePct > 100)
-            {
-                incomePct = incomePct - 100;
-            }
+   
 
-            if ( lst2MthIncome-lstMthIncome > 0)
-            {
-                lblProfitPct.ForeColor = Color.Red;
-                lblProfitPct.Text = "-" +incomePct.ToString() + "%";
-            }
-            else if (lst2MthIncome == lstMthIncome)
-            {
-                lblProfitPct.ForeColor = Color.FromArgb(0, 192, 0);
-                lblProfitPct.Text = "+" + (incomePct-100).ToString() + "%";
-            }
-            else
-            {
-                lblProfitPct.ForeColor = Color.FromArgb(0, 192, 0);
-                lblProfitPct.Text = "+" + incomePct.ToString() + "%";
+                if (lst2MthIncome - lstMthIncome > 0)
+                {
+                    lblProfitPct.ForeColor = Color.Red;
+                    lblProfitPct.Text = "-" + incomePct.ToString() + "%";
+                }
+                else if (lst2MthIncome == lstMthIncome)
+                {
+                    lblProfitPct.ForeColor = Color.FromArgb(0, 192, 0);
+                    lblProfitPct.Text = "+" + (incomePct - 100).ToString() + "%";
+                }
+                else
+                {
+                    lblProfitPct.ForeColor = Color.FromArgb(0, 192, 0);
+                    lblProfitPct.Text = "+" + incomePct.ToString() + "%";
+                }
             }
             adminObjD.fillDashBoardServInfo(lblLstMthServ, lblServPct);
 

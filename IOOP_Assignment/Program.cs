@@ -14,7 +14,7 @@ namespace IOOP_Assignment
             ApplicationConfiguration.Initialize();
 
 
-            Application.Run(new frmLogin());
+            Application.Run(new AdminDashBoard());
 
 
         }
