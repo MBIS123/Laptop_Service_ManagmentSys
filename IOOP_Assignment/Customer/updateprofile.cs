@@ -110,9 +110,26 @@ namespace IOOP_Assignment
             DataValidation objvalidation = new DataValidation();
 
             //check whether text box is null or not 
-            if (objvalidation.isStringNull(txtname) == true && objvalidation.isStringNull(txtbirthdate)== true && objvalidation.isStringNull(txtphonenum)==true && objvalidation.isStringNull(txtemail)==true && objvalidation.isStringNull(txtaddress)==true)
+            if (objvalidation.isStringNull(txtname) == true)
             {
-                MessageBox.Show("Dear customer, you have not entered any changes to your personal information");
+                MessageBox.Show("Dear customer, you have not entered a new Name");
+            }
+            else if (objvalidation.isStringNull(txtbirthdate) == true)
+            {
+                MessageBox.Show("Dear customer, you have not entered a new Date of Birth");
+            }
+            else if(objvalidation.isStringNull(txtphonenum) == true)
+            {
+                MessageBox.Show("Dear customer, you have not entered a new phone number");
+
+            }
+            else if (objvalidation.isStringNull(txtemail) == true)
+            {
+                MessageBox.Show("Dear customer, you have not entered a new email");
+            }
+            else if(objvalidation.isStringNull(txtaddress) == true)
+            {
+                MessageBox.Show("Dear customer, you have not entered a new address");
             }
             else
             {
@@ -125,7 +142,7 @@ namespace IOOP_Assignment
                 }
                 else
                 {
-                    MessageBox.Show("Invalid format inserted");
+                    MessageBox.Show("Dear customer, please make sure you have enter new personal information to save.");
                 }
             }
            
