@@ -12,7 +12,7 @@ namespace IOOP_Assignment
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmRegNewCus());
+            Application.Run(new frmLogin());
 
         }
     }
