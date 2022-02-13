@@ -232,6 +232,7 @@
             this.btnLogOut.TabIndex = 20;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             this.btnLogOut.MouseEnter += new System.EventHandler(this.btnLogOut_MouseEnter);
             this.btnLogOut.MouseLeave += new System.EventHandler(this.btnLogOut_MouseLeave);
             // 

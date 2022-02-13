@@ -20,7 +20,7 @@ namespace IOOP_Assignment
         public change_service(string n)
         {
             InitializeComponent();
-            name = n;
+            name = n;//customer name here
         }
         public change_service()
         {
@@ -56,8 +56,8 @@ namespace IOOP_Assignment
                 if (obj0.validationstatus() == true)
                 {
                     lbl_decided_change_service.Text = "You have change service from " + decide_change_service + " with " + Type + " successfully";
-                    Customers obj1 = new Customers(index, Type);
-                    MessageBox.Show(obj1.changeservice());
+                    Customers obj1 = new Customers(name);
+                    MessageBox.Show(obj1.changeservice(index, Type));
                 }
                 else
                 {
@@ -72,14 +72,18 @@ namespace IOOP_Assignment
 
         private void llbmy_order_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Myorder order = new Myorder();
+            this.Hide();
+            Myorder order = new Myorder(name);
             order.ShowDialog();
+            this.Close();
         }
 
         private void llbaccount_setting_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Viewprofile view_prof = new Viewprofile();
+            this.Hide();
+            Viewprofile view_prof = new Viewprofile(name);
             view_prof.ShowDialog();
+            this.Close();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -95,6 +99,14 @@ namespace IOOP_Assignment
         private void lblwelcome_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void llblogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            frmLogin Login = new frmLogin();
+            Login.ShowDialog();
+            this.Close();
         }
     }
 }

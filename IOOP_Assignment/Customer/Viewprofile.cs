@@ -27,9 +27,9 @@ namespace IOOP_Assignment.Customer
         {
             lbl_cusName.Text = name;
             Customers obj1 = new Customers(name);
-         //   Customers.viewCustomerProfile(obj1);
+            Customers.viewCustomerProfile(obj1);
             lblcusName.Text = obj1.CusName1; //get customer's name
-            lblcusDOB.Text = (obj1.CusBOD1).ToString("dd / MM / yyyy");//get customer's date of birth
+            lblcusDOB.Text = (obj1.CusBOD1.ToString("dd/MM/yyyy"));//get customer's date of birth
             lblcusPhno.Text = obj1.CusPhoneNo1;//get customer'suser's phone number
             lblcusEmail.Text = obj1.CusEmail1;//get user's customer's email
             lblcusAddress.Text = obj1.CusAddress1;//get customer's address
@@ -38,20 +38,32 @@ namespace IOOP_Assignment.Customer
 
         private void btnedit_Click_1(object sender, EventArgs e)
         {
-            update_profile up_prof = new update_profile();
+            update_profile up_prof = new update_profile(name);
             up_prof.ShowDialog();
         }
 
         private void llbchange_serv_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            change_service change = new change_service();
+            this.Hide();
+            change_service change = new change_service(name);
             change.ShowDialog();
+            this.Close();
         }
 
         private void llbmy_order_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            this.Hide();
             Myorder order = new Myorder();
             order.ShowDialog();
+            this.Close();
+        }
+
+        private void llblogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            frmLogin login = new frmLogin();
+            login.ShowDialog();
+            this.Close();
         }
     }
 }

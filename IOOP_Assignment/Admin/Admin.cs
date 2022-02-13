@@ -14,6 +14,8 @@ namespace IOOP_Assignment
         DataValidation objValidt = new DataValidation();
 
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString() );
+
+        Users useObj = new Users();
         
 
         private string position;
@@ -123,9 +125,16 @@ namespace IOOP_Assignment
                                           "( " + recepID + "," + numOfUsers + " ,'" + name + "','" + gender + "','" + dateOfBirth + "','" + ethnicity + "','" + noIC + "','" + phoneNumber + "','" + emailAddress + "','" + address + "'); SET IDENTITY_INSERT Receptionist off; ", conn);
 
             if (position == "receptionist")
+            {
                 cmdInsertReceptionist.ExecuteNonQuery();
+                
+            }
             else
+            {
                 cmdInsertTechnician.ExecuteNonQuery();
+                useObj.assignOrder();
+            }
+                
 
 
             conn.Close();
