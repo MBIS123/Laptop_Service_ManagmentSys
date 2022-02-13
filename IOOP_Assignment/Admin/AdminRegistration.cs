@@ -121,7 +121,6 @@ namespace IOOP_Assignment
 
             DateTime.TryParse(txtDateOfBirth.Text, out birthDate);
 
-
             string year = birthDate.Year.ToString().PadLeft(4, '0');
             string day = birthDate.Day.ToString().PadLeft(2, '0');
             string month = birthDate.Month.ToString().PadLeft(2, '0');
