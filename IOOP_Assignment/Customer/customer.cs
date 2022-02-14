@@ -67,15 +67,15 @@ namespace IOOP_Assignment
         internal string changeservice(int ind, string t)
         {
             string status;
-            service = ind;
-            service_type = t;
+            Service = ind;
+            Service_type = t;
 
             con.Open();
             // the status of the service is pending only can change service
             SqlCommand cmd2 = new SqlCommand("select CustomerID from [Customer] where Name = '" + name + "'", con);
             string customer_id = cmd2.ExecuteScalar().ToString();
 
-            SqlCommand cmd = new SqlCommand("update [Order] set [ServiceRequestType ID] = '" + service + "', [Service Type] = '" + service_type + "' where CustomerID ='" + customer_id + "'", con);
+            SqlCommand cmd = new SqlCommand("update [Order] set [ServiceRequestType ID] = '" + Service + "', [Service Type] = '" + Service_type + "' where CustomerID ='" + customer_id + "'", con);
 
             int i = cmd.ExecuteNonQuery();//executes the command and returns the number of rows affected
             if (i != 0)
