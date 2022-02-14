@@ -1,6 +1,6 @@
 ﻿namespace IOOP_Assignment
 {
-    partial class DashBoard
+    partial class AdminDashBoard
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,7 +31,7 @@
             System.Windows.Forms.Label label26;
             System.Windows.Forms.Label label25;
             System.Windows.Forms.Label label24;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashBoard));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.frmHeader = new System.Windows.Forms.Label();
@@ -53,73 +53,66 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.label53 = new System.Windows.Forms.Label();
             this.lblIncomeClrTitle = new System.Windows.Forms.Label();
-            this.lblServClrTitle = new System.Windows.Forms.Label();
             this.lblIncomeClr = new System.Windows.Forms.Label();
-            this.lblServClr = new System.Windows.Forms.Label();
             this.lblCrtBx = new System.Windows.Forms.Label();
-            this.lblServBar1 = new System.Windows.Forms.Label();
-            this.lblServBar2 = new System.Windows.Forms.Label();
-            this.lblServBar3 = new System.Windows.Forms.Label();
             this.lblRM = new System.Windows.Forms.Label();
-            this.lblNoServ = new System.Windows.Forms.Label();
-            this.lblServIdx1 = new System.Windows.Forms.Label();
-            this.lblServIdx2 = new System.Windows.Forms.Label();
-            this.lblServIdx3 = new System.Windows.Forms.Label();
-            this.lblIncomeBar1 = new System.Windows.Forms.Label();
-            this.lblIncomeBar2 = new System.Windows.Forms.Label();
             this.lblFLM2 = new System.Windows.Forms.Label();
-            this.labelFLM = new System.Windows.Forms.Label();
             this.lblChartName = new System.Windows.Forms.Label();
             this.lblChrtMonth = new System.Windows.Forms.Label();
-            this.lblRctMonth3 = new System.Windows.Forms.Label();
-            this.lblRctMonth2 = new System.Windows.Forms.Label();
-            this.lblRctMonth1 = new System.Windows.Forms.Label();
             this.lblRmIndex3 = new System.Windows.Forms.Label();
             this.lblRmIndex2 = new System.Windows.Forms.Label();
             this.lblRmIndex1 = new System.Windows.Forms.Label();
-            this.lblSerbBar3 = new System.Windows.Forms.Label();
-            this.pcBxChart = new System.Windows.Forms.PictureBox();
             this.lblNoOfTech = new System.Windows.Forms.Label();
             this.lblNoOfRecep = new System.Windows.Forms.Label();
             this.lblNoTechTItle = new System.Windows.Forms.Label();
             this.lblNoRecptTitle = new System.Windows.Forms.Label();
             this.lblTtlStaffTitle = new System.Windows.Forms.Label();
-            this.lblPerfmPct = new System.Windows.Forms.Label();
-            this.lblNoOfServ = new System.Windows.Forms.Label();
+            this.lblServPct = new System.Windows.Forms.Label();
+            this.lblLstMthServ = new System.Windows.Forms.Label();
             this.lblNoServTitle = new System.Windows.Forms.Label();
             this.lblDateRecent2 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.lblMonthTitle = new System.Windows.Forms.Label();
-            this.lblDateRecent1 = new System.Windows.Forms.Label();
             this.lblIncome = new System.Windows.Forms.Label();
             this.lblProfitPct = new System.Windows.Forms.Label();
             this.grpBxServRpt = new System.Windows.Forms.GroupBox();
-            this.uCBtnServiceReport = new ePOSOne.btnProduct.Button_WOC();
+            this.btnServReport = new ePOSOne.btnProduct.Button_WOC();
             this.pcBxServRpt = new System.Windows.Forms.PictureBox();
             this.pcBxRndEdg1 = new System.Windows.Forms.PictureBox();
             this.pcBxRndEdg2 = new System.Windows.Forms.PictureBox();
             this.pcBxRndEdg3 = new System.Windows.Forms.PictureBox();
             this.btnExitAdmin = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pcBxChart = new System.Windows.Forms.PictureBox();
+            this.lblServBar3 = new System.Windows.Forms.Label();
+            this.lblServBar2 = new System.Windows.Forms.Label();
+            this.lblServBar1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblTotalRecpTech = new System.Windows.Forms.Label();
+            this.lblMnthBar1 = new System.Windows.Forms.Label();
+            this.lblMnthBar2 = new System.Windows.Forms.Label();
+            this.lblMnthBar3 = new System.Windows.Forms.Label();
             label26 = new System.Windows.Forms.Label();
             label25 = new System.Windows.Forms.Label();
             label24 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxDashBrd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcBxChart)).BeginInit();
             this.grpBxServRpt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxServRpt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxRndEdg1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxRndEdg2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxRndEdg3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBxChart)).BeginInit();
             this.SuspendLayout();
             // 
             // label26
             // 
             label26.AutoSize = true;
             label26.BackColor = System.Drawing.SystemColors.ControlDark;
-            label26.Location = new System.Drawing.Point(656, 464);
+            label26.Location = new System.Drawing.Point(649, 464);
             label26.MinimumSize = new System.Drawing.Size(1, 1);
             label26.Name = "label26";
             label26.Size = new System.Drawing.Size(1, 15);
@@ -129,7 +122,7 @@
             // 
             label25.AutoSize = true;
             label25.BackColor = System.Drawing.SystemColors.ControlDark;
-            label25.Location = new System.Drawing.Point(511, 464);
+            label25.Location = new System.Drawing.Point(506, 464);
             label25.MinimumSize = new System.Drawing.Size(1, 1);
             label25.Name = "label25";
             label25.Size = new System.Drawing.Size(1, 15);
@@ -139,7 +132,7 @@
             // 
             label24.AutoSize = true;
             label24.BackColor = System.Drawing.SystemColors.ControlDark;
-            label24.Location = new System.Drawing.Point(366, 464);
+            label24.Location = new System.Drawing.Point(363, 464);
             label24.MinimumSize = new System.Drawing.Size(1, 1);
             label24.Name = "label24";
             label24.Size = new System.Drawing.Size(1, 15);
@@ -233,6 +226,7 @@
             this.btnLogOut.TabIndex = 20;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             this.btnLogOut.MouseEnter += new System.EventHandler(this.btnLogOut_MouseEnter);
             this.btnLogOut.MouseLeave += new System.EventHandler(this.btnLogOut_MouseLeave);
             // 
@@ -259,7 +253,6 @@
             this.btnDashBoard.Text = "Dashboard";
             this.btnDashBoard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashBoard.UseVisualStyleBackColor = false;
-            this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click);
             this.btnDashBoard.MouseEnter += new System.EventHandler(this.btnDashBoard_MouseEnter);
             this.btnDashBoard.MouseLeave += new System.EventHandler(this.btnDashBoard_MouseLeave);
             // 
@@ -410,7 +403,7 @@
             // 
             this.label53.AutoSize = true;
             this.label53.BackColor = System.Drawing.Color.Gray;
-            this.label53.Location = new System.Drawing.Point(220, 252);
+            this.label53.Location = new System.Drawing.Point(220, 251);
             this.label53.MinimumSize = new System.Drawing.Size(1, 224);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(1, 224);
@@ -428,78 +421,26 @@
             this.lblIncomeClrTitle.Text = "Income";
             this.lblIncomeClrTitle.UseCompatibleTextRendering = true;
             // 
-            // lblServClrTitle
-            // 
-            this.lblServClrTitle.AutoSize = true;
-            this.lblServClrTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
-            this.lblServClrTitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblServClrTitle.Location = new System.Drawing.Point(687, 279);
-            this.lblServClrTitle.Name = "lblServClrTitle";
-            this.lblServClrTitle.Size = new System.Drawing.Size(39, 20);
-            this.lblServClrTitle.TabIndex = 321;
-            this.lblServClrTitle.Text = "Service";
-            this.lblServClrTitle.UseCompatibleTextRendering = true;
-            // 
             // lblIncomeClr
             // 
             this.lblIncomeClr.AutoSize = true;
-            this.lblIncomeClr.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.lblIncomeClr.Location = new System.Drawing.Point(673, 304);
+            this.lblIncomeClr.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.lblIncomeClr.Location = new System.Drawing.Point(673, 300);
             this.lblIncomeClr.MinimumSize = new System.Drawing.Size(10, 15);
             this.lblIncomeClr.Name = "lblIncomeClr";
             this.lblIncomeClr.Size = new System.Drawing.Size(10, 15);
             this.lblIncomeClr.TabIndex = 320;
-            // 
-            // lblServClr
-            // 
-            this.lblServClr.AutoSize = true;
-            this.lblServClr.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.lblServClr.Location = new System.Drawing.Point(673, 278);
-            this.lblServClr.MinimumSize = new System.Drawing.Size(10, 10);
-            this.lblServClr.Name = "lblServClr";
-            this.lblServClr.Size = new System.Drawing.Size(10, 15);
-            this.lblServClr.TabIndex = 319;
             // 
             // lblCrtBx
             // 
             this.lblCrtBx.AutoSize = true;
             this.lblCrtBx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
             this.lblCrtBx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCrtBx.Location = new System.Drawing.Point(666, 273);
-            this.lblCrtBx.MinimumSize = new System.Drawing.Size(65, 50);
+            this.lblCrtBx.Location = new System.Drawing.Point(670, 294);
+            this.lblCrtBx.MinimumSize = new System.Drawing.Size(65, 30);
             this.lblCrtBx.Name = "lblCrtBx";
-            this.lblCrtBx.Size = new System.Drawing.Size(65, 50);
+            this.lblCrtBx.Size = new System.Drawing.Size(65, 30);
             this.lblCrtBx.TabIndex = 318;
-            // 
-            // lblServBar1
-            // 
-            this.lblServBar1.AutoSize = true;
-            this.lblServBar1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.lblServBar1.Location = new System.Drawing.Point(220, 259);
-            this.lblServBar1.MinimumSize = new System.Drawing.Size(135, 20);
-            this.lblServBar1.Name = "lblServBar1";
-            this.lblServBar1.Size = new System.Drawing.Size(135, 20);
-            this.lblServBar1.TabIndex = 317;
-            // 
-            // lblServBar2
-            // 
-            this.lblServBar2.AutoSize = true;
-            this.lblServBar2.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.lblServBar2.Location = new System.Drawing.Point(220, 335);
-            this.lblServBar2.MinimumSize = new System.Drawing.Size(137, 20);
-            this.lblServBar2.Name = "lblServBar2";
-            this.lblServBar2.Size = new System.Drawing.Size(137, 20);
-            this.lblServBar2.TabIndex = 316;
-            // 
-            // lblServBar3
-            // 
-            this.lblServBar3.AutoSize = true;
-            this.lblServBar3.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.lblServBar3.Location = new System.Drawing.Point(220, 405);
-            this.lblServBar3.MinimumSize = new System.Drawing.Size(123, 20);
-            this.lblServBar3.Name = "lblServBar3";
-            this.lblServBar3.Size = new System.Drawing.Size(123, 20);
-            this.lblServBar3.TabIndex = 315;
             // 
             // lblRM
             // 
@@ -511,93 +452,17 @@
             this.lblRM.TabIndex = 314;
             this.lblRM.Text = "( RM )";
             // 
-            // lblNoServ
-            // 
-            this.lblNoServ.AutoSize = true;
-            this.lblNoServ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
-            this.lblNoServ.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNoServ.Location = new System.Drawing.Point(673, 447);
-            this.lblNoServ.Name = "lblNoServ";
-            this.lblNoServ.Size = new System.Drawing.Size(58, 13);
-            this.lblNoServ.TabIndex = 313;
-            this.lblNoServ.Text = "( No.Serv )";
-            // 
-            // lblServIdx1
-            // 
-            this.lblServIdx1.AutoSize = true;
-            this.lblServIdx1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
-            this.lblServIdx1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblServIdx1.Location = new System.Drawing.Point(354, 451);
-            this.lblServIdx1.Name = "lblServIdx1";
-            this.lblServIdx1.Size = new System.Drawing.Size(25, 13);
-            this.lblServIdx1.TabIndex = 312;
-            this.lblServIdx1.Text = "100";
-            // 
-            // lblServIdx2
-            // 
-            this.lblServIdx2.AutoSize = true;
-            this.lblServIdx2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
-            this.lblServIdx2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblServIdx2.Location = new System.Drawing.Point(501, 451);
-            this.lblServIdx2.Name = "lblServIdx2";
-            this.lblServIdx2.Size = new System.Drawing.Size(25, 13);
-            this.lblServIdx2.TabIndex = 311;
-            this.lblServIdx2.Text = "200";
-            // 
-            // lblServIdx3
-            // 
-            this.lblServIdx3.AutoSize = true;
-            this.lblServIdx3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
-            this.lblServIdx3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblServIdx3.Location = new System.Drawing.Point(635, 447);
-            this.lblServIdx3.Name = "lblServIdx3";
-            this.lblServIdx3.Size = new System.Drawing.Size(25, 13);
-            this.lblServIdx3.TabIndex = 310;
-            this.lblServIdx3.Text = "300";
-            // 
-            // lblIncomeBar1
-            // 
-            this.lblIncomeBar1.AutoSize = true;
-            this.lblIncomeBar1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.lblIncomeBar1.Location = new System.Drawing.Point(220, 279);
-            this.lblIncomeBar1.MinimumSize = new System.Drawing.Size(227, 20);
-            this.lblIncomeBar1.Name = "lblIncomeBar1";
-            this.lblIncomeBar1.Size = new System.Drawing.Size(227, 20);
-            this.lblIncomeBar1.TabIndex = 309;
-            // 
-            // lblIncomeBar2
-            // 
-            this.lblIncomeBar2.AutoSize = true;
-            this.lblIncomeBar2.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.lblIncomeBar2.Location = new System.Drawing.Point(220, 355);
-            this.lblIncomeBar2.MinimumSize = new System.Drawing.Size(182, 20);
-            this.lblIncomeBar2.Name = "lblIncomeBar2";
-            this.lblIncomeBar2.Size = new System.Drawing.Size(182, 20);
-            this.lblIncomeBar2.TabIndex = 308;
-            // 
             // lblFLM2
             // 
             this.lblFLM2.AutoSize = true;
             this.lblFLM2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
             this.lblFLM2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblFLM2.ForeColor = System.Drawing.Color.Gray;
-            this.lblFLM2.Location = new System.Drawing.Point(549, 181);
+            this.lblFLM2.Location = new System.Drawing.Point(433, 158);
             this.lblFLM2.Name = "lblFLM2";
-            this.lblFLM2.Size = new System.Drawing.Size(89, 13);
+            this.lblFLM2.Size = new System.Drawing.Size(168, 13);
             this.lblFLM2.TabIndex = 307;
-            this.lblFLM2.Text = "from last month";
-            // 
-            // labelFLM
-            // 
-            this.labelFLM.AutoSize = true;
-            this.labelFLM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
-            this.labelFLM.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelFLM.ForeColor = System.Drawing.Color.Gray;
-            this.labelFLM.Location = new System.Drawing.Point(310, 181);
-            this.labelFLM.Name = "labelFLM";
-            this.labelFLM.Size = new System.Drawing.Size(89, 13);
-            this.labelFLM.TabIndex = 306;
-            this.labelFLM.Text = "from last month";
+            this.lblFLM2.Text = "Compare to month before last :";
             // 
             // lblChartName
             // 
@@ -621,46 +486,16 @@
             this.lblChrtMonth.TabIndex = 304;
             this.lblChrtMonth.Text = "(Recent 3 month)";
             // 
-            // lblRctMonth3
-            // 
-            this.lblRctMonth3.AutoSize = true;
-            this.lblRctMonth3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
-            this.lblRctMonth3.Location = new System.Drawing.Point(191, 420);
-            this.lblRctMonth3.Name = "lblRctMonth3";
-            this.lblRctMonth3.Size = new System.Drawing.Size(26, 15);
-            this.lblRctMonth3.TabIndex = 303;
-            this.lblRctMonth3.Text = "Oct";
-            // 
-            // lblRctMonth2
-            // 
-            this.lblRctMonth2.AutoSize = true;
-            this.lblRctMonth2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
-            this.lblRctMonth2.Location = new System.Drawing.Point(188, 350);
-            this.lblRctMonth2.Name = "lblRctMonth2";
-            this.lblRctMonth2.Size = new System.Drawing.Size(29, 15);
-            this.lblRctMonth2.TabIndex = 302;
-            this.lblRctMonth2.Text = "Nov";
-            // 
-            // lblRctMonth1
-            // 
-            this.lblRctMonth1.AutoSize = true;
-            this.lblRctMonth1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
-            this.lblRctMonth1.Location = new System.Drawing.Point(188, 274);
-            this.lblRctMonth1.Name = "lblRctMonth1";
-            this.lblRctMonth1.Size = new System.Drawing.Size(27, 15);
-            this.lblRctMonth1.TabIndex = 301;
-            this.lblRctMonth1.Text = "Dec";
-            // 
             // lblRmIndex3
             // 
             this.lblRmIndex3.AutoSize = true;
             this.lblRmIndex3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
             this.lblRmIndex3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblRmIndex3.Location = new System.Drawing.Point(635, 479);
+            this.lblRmIndex3.Location = new System.Drawing.Point(639, 479);
             this.lblRmIndex3.Name = "lblRmIndex3";
-            this.lblRmIndex3.Size = new System.Drawing.Size(37, 13);
+            this.lblRmIndex3.Size = new System.Drawing.Size(31, 13);
             this.lblRmIndex3.TabIndex = 300;
-            this.lblRmIndex3.Text = "30000";
+            this.lblRmIndex3.Text = "6000";
             // 
             // lblRmIndex2
             // 
@@ -669,9 +504,9 @@
             this.lblRmIndex2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblRmIndex2.Location = new System.Drawing.Point(489, 479);
             this.lblRmIndex2.Name = "lblRmIndex2";
-            this.lblRmIndex2.Size = new System.Drawing.Size(37, 13);
+            this.lblRmIndex2.Size = new System.Drawing.Size(31, 13);
             this.lblRmIndex2.TabIndex = 299;
-            this.lblRmIndex2.Text = "20000";
+            this.lblRmIndex2.Text = "4000";
             // 
             // lblRmIndex1
             // 
@@ -680,32 +515,9 @@
             this.lblRmIndex1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblRmIndex1.Location = new System.Drawing.Point(346, 479);
             this.lblRmIndex1.Name = "lblRmIndex1";
-            this.lblRmIndex1.Size = new System.Drawing.Size(37, 13);
+            this.lblRmIndex1.Size = new System.Drawing.Size(31, 13);
             this.lblRmIndex1.TabIndex = 298;
-            this.lblRmIndex1.Text = "10000";
-            // 
-            // lblSerbBar3
-            // 
-            this.lblSerbBar3.AutoSize = true;
-            this.lblSerbBar3.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.lblSerbBar3.Location = new System.Drawing.Point(220, 425);
-            this.lblSerbBar3.MinimumSize = new System.Drawing.Size(372, 20);
-            this.lblSerbBar3.Name = "lblSerbBar3";
-            this.lblSerbBar3.Size = new System.Drawing.Size(372, 20);
-            this.lblSerbBar3.TabIndex = 297;
-            // 
-            // pcBxChart
-            // 
-            this.pcBxChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
-            this.pcBxChart.Image = ((System.Drawing.Image)(resources.GetObject("pcBxChart.Image")));
-            this.pcBxChart.Location = new System.Drawing.Point(170, 211);
-            this.pcBxChart.MaximumSize = new System.Drawing.Size(596, 292);
-            this.pcBxChart.MinimumSize = new System.Drawing.Size(596, 292);
-            this.pcBxChart.Name = "pcBxChart";
-            this.pcBxChart.Size = new System.Drawing.Size(596, 292);
-            this.pcBxChart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcBxChart.TabIndex = 293;
-            this.pcBxChart.TabStop = false;
+            this.lblRmIndex1.Text = "2000";
             // 
             // lblNoOfTech
             // 
@@ -713,7 +525,7 @@
             this.lblNoOfTech.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
             this.lblNoOfTech.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNoOfTech.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblNoOfTech.Location = new System.Drawing.Point(824, 162);
+            this.lblNoOfTech.Location = new System.Drawing.Point(824, 176);
             this.lblNoOfTech.Name = "lblNoOfTech";
             this.lblNoOfTech.Size = new System.Drawing.Size(16, 17);
             this.lblNoOfTech.TabIndex = 292;
@@ -725,7 +537,7 @@
             this.lblNoOfRecep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
             this.lblNoOfRecep.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNoOfRecep.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblNoOfRecep.Location = new System.Drawing.Point(701, 164);
+            this.lblNoOfRecep.Location = new System.Drawing.Point(712, 176);
             this.lblNoOfRecep.Name = "lblNoOfRecep";
             this.lblNoOfRecep.Size = new System.Drawing.Size(16, 17);
             this.lblNoOfRecep.TabIndex = 291;
@@ -737,7 +549,7 @@
             this.lblNoTechTItle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
             this.lblNoTechTItle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNoTechTItle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblNoTechTItle.Location = new System.Drawing.Point(782, 146);
+            this.lblNoTechTItle.Location = new System.Drawing.Point(782, 158);
             this.lblNoTechTItle.Name = "lblNoTechTItle";
             this.lblNoTechTItle.Size = new System.Drawing.Size(96, 13);
             this.lblNoTechTItle.TabIndex = 290;
@@ -749,7 +561,7 @@
             this.lblNoRecptTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
             this.lblNoRecptTitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNoRecptTitle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblNoRecptTitle.Location = new System.Drawing.Point(670, 146);
+            this.lblNoRecptTitle.Location = new System.Drawing.Point(670, 158);
             this.lblNoRecptTitle.Name = "lblNoRecptTitle";
             this.lblNoRecptTitle.Size = new System.Drawing.Size(106, 13);
             this.lblNoRecptTitle.TabIndex = 289;
@@ -759,59 +571,61 @@
             // 
             this.lblTtlStaffTitle.AutoSize = true;
             this.lblTtlStaffTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
-            this.lblTtlStaffTitle.ForeColor = System.Drawing.Color.Gray;
-            this.lblTtlStaffTitle.Location = new System.Drawing.Point(670, 85);
+            this.lblTtlStaffTitle.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTtlStaffTitle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblTtlStaffTitle.Location = new System.Drawing.Point(668, 79);
             this.lblTtlStaffTitle.Name = "lblTtlStaffTitle";
-            this.lblTtlStaffTitle.Size = new System.Drawing.Size(71, 15);
+            this.lblTtlStaffTitle.Size = new System.Drawing.Size(41, 21);
             this.lblTtlStaffTitle.TabIndex = 288;
-            this.lblTtlStaffTitle.Text = "Staff in total";
+            this.lblTtlStaffTitle.Text = "Staff";
             // 
-            // lblPerfmPct
+            // lblServPct
             // 
-            this.lblPerfmPct.AutoSize = true;
-            this.lblPerfmPct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
-            this.lblPerfmPct.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPerfmPct.ForeColor = System.Drawing.Color.Red;
-            this.lblPerfmPct.Location = new System.Drawing.Point(580, 164);
-            this.lblPerfmPct.Name = "lblPerfmPct";
-            this.lblPerfmPct.Size = new System.Drawing.Size(49, 16);
-            this.lblPerfmPct.TabIndex = 287;
-            this.lblPerfmPct.Text = "-0.02%";
+            this.lblServPct.AutoSize = true;
+            this.lblServPct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
+            this.lblServPct.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblServPct.ForeColor = System.Drawing.Color.Red;
+            this.lblServPct.Location = new System.Drawing.Point(433, 177);
+            this.lblServPct.Name = "lblServPct";
+            this.lblServPct.Size = new System.Drawing.Size(199, 16);
+            this.lblServPct.TabIndex = 287;
+            this.lblServPct.Text = "Month before last has 0 Orders";
             // 
-            // lblNoOfServ
+            // lblLstMthServ
             // 
-            this.lblNoOfServ.AutoSize = true;
-            this.lblNoOfServ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
-            this.lblNoOfServ.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNoOfServ.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblNoOfServ.Location = new System.Drawing.Point(433, 165);
-            this.lblNoOfServ.Name = "lblNoOfServ";
-            this.lblNoOfServ.Size = new System.Drawing.Size(24, 17);
-            this.lblNoOfServ.TabIndex = 286;
-            this.lblNoOfServ.Text = "93";
+            this.lblLstMthServ.AutoSize = true;
+            this.lblLstMthServ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
+            this.lblLstMthServ.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblLstMthServ.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblLstMthServ.Location = new System.Drawing.Point(562, 113);
+            this.lblLstMthServ.Name = "lblLstMthServ";
+            this.lblLstMthServ.Size = new System.Drawing.Size(24, 17);
+            this.lblLstMthServ.TabIndex = 286;
+            this.lblLstMthServ.Text = "93";
             // 
             // lblNoServTitle
             // 
             this.lblNoServTitle.AutoSize = true;
             this.lblNoServTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
             this.lblNoServTitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNoServTitle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblNoServTitle.Location = new System.Drawing.Point(433, 146);
+            this.lblNoServTitle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblNoServTitle.Location = new System.Drawing.Point(433, 115);
             this.lblNoServTitle.Name = "lblNoServTitle";
-            this.lblNoServTitle.Size = new System.Drawing.Size(122, 13);
+            this.lblNoServTitle.Size = new System.Drawing.Size(131, 13);
             this.lblNoServTitle.TabIndex = 285;
-            this.lblNoServTitle.Text = "No. of Service Request";
+            this.lblNoServTitle.Text = "Total Requested Service:";
             // 
             // lblDateRecent2
             // 
             this.lblDateRecent2.AutoSize = true;
             this.lblDateRecent2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
-            this.lblDateRecent2.ForeColor = System.Drawing.Color.Gray;
-            this.lblDateRecent2.Location = new System.Drawing.Point(433, 85);
+            this.lblDateRecent2.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDateRecent2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblDateRecent2.Location = new System.Drawing.Point(424, 79);
             this.lblDateRecent2.Name = "lblDateRecent2";
-            this.lblDateRecent2.Size = new System.Drawing.Size(94, 15);
+            this.lblDateRecent2.Size = new System.Drawing.Size(140, 21);
             this.lblDateRecent2.TabIndex = 284;
-            this.lblDateRecent2.Text = "Nov 1 - 31 , 2021";
+            this.lblDateRecent2.Text = "Last Month Orders";
             // 
             // label14
             // 
@@ -834,24 +648,13 @@
             // 
             this.lblMonthTitle.AutoSize = true;
             this.lblMonthTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
-            this.lblMonthTitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMonthTitle.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMonthTitle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblMonthTitle.Location = new System.Drawing.Point(182, 150);
+            this.lblMonthTitle.Location = new System.Drawing.Point(186, 79);
             this.lblMonthTitle.Name = "lblMonthTitle";
-            this.lblMonthTitle.Size = new System.Drawing.Size(105, 13);
+            this.lblMonthTitle.Size = new System.Drawing.Size(183, 21);
             this.lblMonthTitle.TabIndex = 278;
-            this.lblMonthTitle.Text = "December Income -";
-            // 
-            // lblDateRecent1
-            // 
-            this.lblDateRecent1.AutoSize = true;
-            this.lblDateRecent1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
-            this.lblDateRecent1.ForeColor = System.Drawing.Color.Gray;
-            this.lblDateRecent1.Location = new System.Drawing.Point(182, 89);
-            this.lblDateRecent1.Name = "lblDateRecent1";
-            this.lblDateRecent1.Size = new System.Drawing.Size(94, 15);
-            this.lblDateRecent1.TabIndex = 277;
-            this.lblDateRecent1.Text = "Nov 1 - 31 , 2021";
+            this.lblMonthTitle.Text = "Last Month Total Income ";
             // 
             // lblIncome
             // 
@@ -859,7 +662,7 @@
             this.lblIncome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
             this.lblIncome.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblIncome.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblIncome.Location = new System.Drawing.Point(182, 168);
+            this.lblIncome.Location = new System.Drawing.Point(191, 106);
             this.lblIncome.Name = "lblIncome";
             this.lblIncome.Size = new System.Drawing.Size(75, 17);
             this.lblIncome.TabIndex = 276;
@@ -870,16 +673,16 @@
             this.lblProfitPct.AutoSize = true;
             this.lblProfitPct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
             this.lblProfitPct.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblProfitPct.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblProfitPct.Location = new System.Drawing.Point(334, 164);
+            this.lblProfitPct.ForeColor = System.Drawing.Color.Red;
+            this.lblProfitPct.Location = new System.Drawing.Point(186, 177);
             this.lblProfitPct.Name = "lblProfitPct";
-            this.lblProfitPct.Size = new System.Drawing.Size(59, 16);
+            this.lblProfitPct.Size = new System.Drawing.Size(204, 16);
             this.lblProfitPct.TabIndex = 275;
-            this.lblProfitPct.Text = "+24.70%";
+            this.lblProfitPct.Text = "Month before last has 0 income";
             // 
             // grpBxServRpt
             // 
-            this.grpBxServRpt.Controls.Add(this.uCBtnServiceReport);
+            this.grpBxServRpt.Controls.Add(this.btnServReport);
             this.grpBxServRpt.Controls.Add(this.pcBxServRpt);
             this.grpBxServRpt.Location = new System.Drawing.Point(763, 214);
             this.grpBxServRpt.Name = "grpBxServRpt";
@@ -887,26 +690,26 @@
             this.grpBxServRpt.TabIndex = 274;
             this.grpBxServRpt.TabStop = false;
             // 
-            // uCBtnServiceReport
+            // btnServReport
             // 
-            this.uCBtnServiceReport.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(163)))), ((int)(((byte)(246)))));
-            this.uCBtnServiceReport.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
-            this.uCBtnServiceReport.FlatAppearance.BorderSize = 0;
-            this.uCBtnServiceReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
-            this.uCBtnServiceReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
-            this.uCBtnServiceReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uCBtnServiceReport.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uCBtnServiceReport.Location = new System.Drawing.Point(31, 206);
-            this.uCBtnServiceReport.Name = "uCBtnServiceReport";
-            this.uCBtnServiceReport.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(150)))), ((int)(((byte)(239)))));
-            this.uCBtnServiceReport.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(150)))), ((int)(((byte)(239)))));
-            this.uCBtnServiceReport.OnHoverTextColor = System.Drawing.Color.White;
-            this.uCBtnServiceReport.Size = new System.Drawing.Size(133, 38);
-            this.uCBtnServiceReport.TabIndex = 192;
-            this.uCBtnServiceReport.Text = "Service Report";
-            this.uCBtnServiceReport.TextColor = System.Drawing.Color.Black;
-            this.uCBtnServiceReport.UseVisualStyleBackColor = true;
-            this.uCBtnServiceReport.Click += new System.EventHandler(this.uCBtnServiceReport_Click);
+            this.btnServReport.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(163)))), ((int)(((byte)(246)))));
+            this.btnServReport.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
+            this.btnServReport.FlatAppearance.BorderSize = 0;
+            this.btnServReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
+            this.btnServReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
+            this.btnServReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnServReport.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnServReport.Location = new System.Drawing.Point(31, 201);
+            this.btnServReport.Name = "btnServReport";
+            this.btnServReport.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(150)))), ((int)(((byte)(239)))));
+            this.btnServReport.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(150)))), ((int)(((byte)(239)))));
+            this.btnServReport.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnServReport.Size = new System.Drawing.Size(133, 38);
+            this.btnServReport.TabIndex = 331;
+            this.btnServReport.Text = "Service Report";
+            this.btnServReport.TextColor = System.Drawing.Color.Black;
+            this.btnServReport.UseVisualStyleBackColor = true;
+            this.btnServReport.Click += new System.EventHandler(this.btnServReport_Click);
             // 
             // pcBxServRpt
             // 
@@ -968,64 +771,169 @@
             this.btnExitAdmin.UseVisualStyleBackColor = false;
             this.btnExitAdmin.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // DashBoard
+            // label2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(186, 158);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(168, 13);
+            this.label2.TabIndex = 327;
+            this.label2.Text = "Compare to month before last :";
+            // 
+            // pcBxChart
+            // 
+            this.pcBxChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
+            this.pcBxChart.Image = ((System.Drawing.Image)(resources.GetObject("pcBxChart.Image")));
+            this.pcBxChart.Location = new System.Drawing.Point(170, 211);
+            this.pcBxChart.MaximumSize = new System.Drawing.Size(596, 292);
+            this.pcBxChart.MinimumSize = new System.Drawing.Size(596, 292);
+            this.pcBxChart.Name = "pcBxChart";
+            this.pcBxChart.Size = new System.Drawing.Size(596, 292);
+            this.pcBxChart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcBxChart.TabIndex = 293;
+            this.pcBxChart.TabStop = false;
+            // 
+            // lblServBar3
+            // 
+            this.lblServBar3.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.lblServBar3.Location = new System.Drawing.Point(220, 415);
+            this.lblServBar3.MaximumSize = new System.Drawing.Size(430, 30);
+            this.lblServBar3.MinimumSize = new System.Drawing.Size(0, 30);
+            this.lblServBar3.Name = "lblServBar3";
+            this.lblServBar3.Size = new System.Drawing.Size(0, 30);
+            this.lblServBar3.TabIndex = 315;
+            // 
+            // lblServBar2
+            // 
+            this.lblServBar2.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.lblServBar2.Location = new System.Drawing.Point(220, 349);
+            this.lblServBar2.MaximumSize = new System.Drawing.Size(430, 30);
+            this.lblServBar2.MinimumSize = new System.Drawing.Size(0, 30);
+            this.lblServBar2.Name = "lblServBar2";
+            this.lblServBar2.Size = new System.Drawing.Size(0, 30);
+            this.lblServBar2.TabIndex = 316;
+            // 
+            // lblServBar1
+            // 
+            this.lblServBar1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.lblServBar1.Location = new System.Drawing.Point(220, 274);
+            this.lblServBar1.MaximumSize = new System.Drawing.Size(430, 30);
+            this.lblServBar1.Name = "lblServBar1";
+            this.lblServBar1.Size = new System.Drawing.Size(0, 30);
+            this.lblServBar1.TabIndex = 317;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(670, 127);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.TabIndex = 328;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(668, 114);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 15);
+            this.label6.TabIndex = 329;
+            this.label6.Text = "Total R && T :";
+            // 
+            // lblTotalRecpTech
+            // 
+            this.lblTotalRecpTech.AutoSize = true;
+            this.lblTotalRecpTech.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
+            this.lblTotalRecpTech.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalRecpTech.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblTotalRecpTech.Location = new System.Drawing.Point(736, 112);
+            this.lblTotalRecpTech.Name = "lblTotalRecpTech";
+            this.lblTotalRecpTech.Size = new System.Drawing.Size(24, 17);
+            this.lblTotalRecpTech.TabIndex = 330;
+            this.lblTotalRecpTech.Text = "93";
+            // 
+            // lblMnthBar1
+            // 
+            this.lblMnthBar1.AutoSize = true;
+            this.lblMnthBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
+            this.lblMnthBar1.Location = new System.Drawing.Point(187, 274);
+            this.lblMnthBar1.Name = "lblMnthBar1";
+            this.lblMnthBar1.Size = new System.Drawing.Size(27, 15);
+            this.lblMnthBar1.TabIndex = 331;
+            this.lblMnthBar1.Text = "Dec";
+            // 
+            // lblMnthBar2
+            // 
+            this.lblMnthBar2.AutoSize = true;
+            this.lblMnthBar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
+            this.lblMnthBar2.Location = new System.Drawing.Point(187, 352);
+            this.lblMnthBar2.Name = "lblMnthBar2";
+            this.lblMnthBar2.Size = new System.Drawing.Size(27, 15);
+            this.lblMnthBar2.TabIndex = 332;
+            this.lblMnthBar2.Text = "Dec";
+            this.lblMnthBar2.Click += new System.EventHandler(this.lblMnthBar2_Click);
+            // 
+            // lblMnthBar3
+            // 
+            this.lblMnthBar3.AutoSize = true;
+            this.lblMnthBar3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(212)))), ((int)(((byte)(214)))));
+            this.lblMnthBar3.Location = new System.Drawing.Point(187, 428);
+            this.lblMnthBar3.Name = "lblMnthBar3";
+            this.lblMnthBar3.Size = new System.Drawing.Size(27, 15);
+            this.lblMnthBar3.TabIndex = 333;
+            this.lblMnthBar3.Text = "Dec";
+            // 
+            // AdminDashBoard
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(981, 504);
+            this.Controls.Add(this.lblMnthBar3);
+            this.Controls.Add(this.lblMnthBar2);
+            this.Controls.Add(this.lblMnthBar1);
+            this.Controls.Add(this.lblTotalRecpTech);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnExitAdmin);
             this.Controls.Add(this.label53);
             this.Controls.Add(this.lblIncomeClrTitle);
-            this.Controls.Add(this.lblServClrTitle);
             this.Controls.Add(this.lblIncomeClr);
-            this.Controls.Add(this.lblServClr);
-            this.Controls.Add(this.lblCrtBx);
             this.Controls.Add(this.lblServBar1);
             this.Controls.Add(this.lblServBar2);
             this.Controls.Add(this.lblServBar3);
             this.Controls.Add(this.lblRM);
-            this.Controls.Add(this.lblNoServ);
-            this.Controls.Add(this.lblServIdx1);
-            this.Controls.Add(this.lblServIdx2);
-            this.Controls.Add(this.lblServIdx3);
-            this.Controls.Add(this.lblIncomeBar1);
-            this.Controls.Add(this.lblIncomeBar2);
             this.Controls.Add(this.lblFLM2);
-            this.Controls.Add(this.labelFLM);
             this.Controls.Add(this.lblChartName);
             this.Controls.Add(this.lblChrtMonth);
-            this.Controls.Add(this.lblRctMonth3);
-            this.Controls.Add(this.lblRctMonth2);
-            this.Controls.Add(this.lblRctMonth1);
             this.Controls.Add(this.lblRmIndex3);
             this.Controls.Add(this.lblRmIndex2);
             this.Controls.Add(this.lblRmIndex1);
-            this.Controls.Add(this.lblSerbBar3);
             this.Controls.Add(label26);
             this.Controls.Add(label25);
             this.Controls.Add(label24);
-            this.Controls.Add(this.pcBxChart);
             this.Controls.Add(this.lblNoOfTech);
             this.Controls.Add(this.lblNoOfRecep);
             this.Controls.Add(this.lblNoTechTItle);
             this.Controls.Add(this.lblNoRecptTitle);
             this.Controls.Add(this.lblTtlStaffTitle);
-            this.Controls.Add(this.lblPerfmPct);
-            this.Controls.Add(this.lblNoOfServ);
+            this.Controls.Add(this.lblServPct);
+            this.Controls.Add(this.lblLstMthServ);
             this.Controls.Add(this.lblNoServTitle);
             this.Controls.Add(this.lblDateRecent2);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.lblMonthTitle);
-            this.Controls.Add(this.lblDateRecent1);
             this.Controls.Add(this.lblIncome);
             this.Controls.Add(this.lblProfitPct);
-            this.Controls.Add(this.grpBxServRpt);
             this.Controls.Add(this.pcBxRndEdg1);
             this.Controls.Add(this.pcBxRndEdg2);
-            this.Controls.Add(this.pcBxRndEdg3);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.sideLabel);
@@ -1045,23 +953,27 @@
             this.Controls.Add(this.pcBxDashBrd);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.splitter2);
+            this.Controls.Add(this.lblCrtBx);
+            this.Controls.Add(this.pcBxRndEdg3);
+            this.Controls.Add(this.pcBxChart);
+            this.Controls.Add(this.grpBxServRpt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1001, 547);
-            this.Name = "DashBoard";
+            this.Name = "AdminDashBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Dashboard";
             this.Load += new System.EventHandler(this.Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxDashBrd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcBxChart)).EndInit();
             this.grpBxServRpt.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcBxServRpt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxRndEdg1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxRndEdg2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxRndEdg3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBxChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1091,39 +1003,22 @@
         private UserControlTest userControlTest1;
         private Label label53;
         private Label lblIncomeClrTitle;
-        private Label lblServClrTitle;
         private Label lblIncomeClr;
-        private Label lblServClr;
         private Label lblCrtBx;
-        private Label lblServBar1;
-        private Label lblServBar2;
-        private Label lblServBar3;
         private Label lblRM;
-        private Label lblNoServ;
-        private Label lblServIdx1;
-        private Label lblServIdx2;
-        private Label lblServIdx3;
-        private Label lblIncomeBar1;
-        private Label lblIncomeBar2;
         private Label lblFLM2;
-        private Label labelFLM;
         private Label lblChartName;
         private Label lblChrtMonth;
-        private Label lblRctMonth3;
-        private Label lblRctMonth2;
-        private Label lblRctMonth1;
         private Label lblRmIndex3;
         private Label lblRmIndex2;
         private Label lblRmIndex1;
-        private Label lblSerbBar3;
-        private PictureBox pcBxChart;
         private Label lblNoOfTech;
         private Label lblNoOfRecep;
         private Label lblNoTechTItle;
         private Label lblNoRecptTitle;
         private Label lblTtlStaffTitle;
-        private Label lblPerfmPct;
-        private Label lblNoOfServ;
+        private Label lblServPct;
+        private Label lblLstMthServ;
         private Label lblNoServTitle;
         private Label lblDateRecent2;
         private Label label14;
@@ -1133,11 +1028,22 @@
         private Label lblIncome;
         private Label lblProfitPct;
         private GroupBox grpBxServRpt;
-        private ePOSOne.btnProduct.Button_WOC uCBtnServiceReport;
+        private ePOSOne.btnProduct.Button_WOC btnServReport;
         private PictureBox pcBxServRpt;
         private PictureBox pcBxRndEdg1;
         private PictureBox pcBxRndEdg2;
         private PictureBox pcBxRndEdg3;
         private Button btnExitAdmin;
+        private Label label2;
+        private PictureBox pcBxChart;
+        private Label lblServBar3;
+        private Label lblServBar2;
+        private Label lblServBar1;
+        private Label label4;
+        private Label label6;
+        private Label lblTotalRecpTech;
+        private Label lblMnthBar1;
+        private Label lblMnthBar2;
+        private Label lblMnthBar3;
     }
 }

@@ -4,60 +4,68 @@ using System.Data.SqlClient;
 
 namespace IOOP_Assignment
 {
-    public partial class DashBoard : Form
+    public partial class AdminDashBoard : Form
     {
         
+        Admin adminObjD = new Admin();
+   
 
-        public DashBoard()
+
+
+
+
+        public AdminDashBoard()
         {
             InitializeComponent();
+            
         }
 
       
 
         private void Admin_Load(object sender, EventArgs e)
         {
-           
+            adminObjD.numOfUserInDtBase();
+            lblNoOfRecep.Text = adminObjD.NumOfReceptionist.ToString();
+            lblNoOfTech.Text =adminObjD.NumOfTechnician.ToString();
+            lblTotalRecpTech.Text = (adminObjD.NumOfReceptionist + adminObjD.NumOfTechnician).ToString();
+            adminObjD.pass3MonthsIncome();
+            adminObjD.changeMonthBarTitle(lblMnthBar1,lblMnthBar2,lblMnthBar3);
 
+            adminObjD.compareIncomeBetweenMntPct(lblProfitPct);
+            
+            lblIncome.Text = "RM " + adminObjD.LstMthIncome.ToString();
 
+            adminObjD.fillDashBoardServInfo(lblLstMthServ, lblServPct);
 
-
-
-
-
+            int sizeLastMonthBar = (int)(((decimal)adminObjD.LstMthIncome / 6000) * 430);
+            lblServBar1.Size = new Size(sizeLastMonthBar, 30);
+            int sizeLast2MonthBar = (int)(((decimal)adminObjD.Lst2MthIncome / 6000) * 430);
+            lblServBar2.Size = new Size(sizeLast2MonthBar, 30);
+            int sizeLast3MonthBar = (int)(((decimal)adminObjD.Lst3MthIncome / 6000) * 430);
+            lblServBar3.Size = new Size(sizeLast3MonthBar, 30);
 
         }
 
-      
+
 
         private void btnIncome_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MonthlyIncome iObj = new MonthlyIncome();
-            iObj.Show();
-            
+            adminObjD.showRelatedForm("income");
+
 
         }
 
         internal void btnServiceReport_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ServiceReport sObj = new ServiceReport();
-            sObj.Show();
+            adminObjD.showRelatedForm("serviceReport");
         }
 
         private void btnRegistration_Click(object sender, EventArgs e)
         {   
             this.Hide();
-            Registration rObj = new Registration();
-            rObj.Show();
-
-        }
-
-
-
-        private void btnDashBoard_Click(object sender, EventArgs e)
-        {
+            adminObjD.showRelatedForm("registration");
 
         }
 
@@ -142,7 +150,7 @@ namespace IOOP_Assignment
             btnExit.BackColor = Color.FromArgb(10,10,10);
         }
 
-        private void showForm(Registration a)
+        private void showForm(AdminRegistration a)
         {
             this.Hide();
             a.Show();
@@ -157,8 +165,28 @@ namespace IOOP_Assignment
         private void uCBtnServiceReport_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ServiceReport sObj = new ServiceReport();
+            AdminServiceReport sObj = new AdminServiceReport();
             sObj.Show();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+            }
+        }
+
+        private void btnServReport_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            adminObjD.showRelatedForm("serviceReport");
+        }
+
+        private void lblMnthBar2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

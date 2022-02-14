@@ -44,7 +44,9 @@ namespace IOOP_Assignment
 
         }
 
+        private void dataGVServiceReport_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-
-}
+        }
+    }
 }

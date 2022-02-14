@@ -92,7 +92,7 @@
             // 
             this.lbl_cusName.AutoSize = true;
             this.lbl_cusName.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_cusName.Location = new System.Drawing.Point(96, 242);
+            this.lbl_cusName.Location = new System.Drawing.Point(75, 242);
             this.lbl_cusName.Name = "lbl_cusName";
             this.lbl_cusName.Size = new System.Drawing.Size(0, 31);
             this.lbl_cusName.TabIndex = 112;
@@ -252,12 +252,13 @@
             this.llblogout.BackColor = System.Drawing.Color.Tan;
             this.llblogout.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.llblogout.LinkColor = System.Drawing.Color.Black;
-            this.llblogout.Location = new System.Drawing.Point(63, 12);
+            this.llblogout.Location = new System.Drawing.Point(63, 10);
             this.llblogout.Name = "llblogout";
             this.llblogout.Size = new System.Drawing.Size(98, 23);
             this.llblogout.TabIndex = 71;
             this.llblogout.TabStop = true;
             this.llblogout.Text = "LOGOUT";
+            this.llblogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblogout_LinkClicked);
             // 
             // lblmyaccount
             // 
@@ -478,7 +479,7 @@
             // lbltitle_accountsetting
             // 
             this.lbltitle_accountsetting.AutoSize = true;
-            this.lbltitle_accountsetting.BackColor = System.Drawing.Color.Tan;
+            this.lbltitle_accountsetting.BackColor = System.Drawing.Color.PeachPuff;
             this.lbltitle_accountsetting.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbltitle_accountsetting.Location = new System.Drawing.Point(46, 56);
             this.lbltitle_accountsetting.Name = "lbltitle_accountsetting";

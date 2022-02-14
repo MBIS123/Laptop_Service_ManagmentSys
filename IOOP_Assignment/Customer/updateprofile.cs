@@ -1,4 +1,4 @@
-﻿using IOOP_Assignment.Customer;
+using IOOP_Assignment.Customer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

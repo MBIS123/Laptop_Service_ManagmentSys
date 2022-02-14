@@ -86,117 +86,8 @@ namespace IOOP_Assignment
             orderid_forselection = ord_id;
         }
 
-        //loading order table into technician dashboard
-        public void loadOrderTable(DataGridView dgv, int tech_ID)
-        {
-            //SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [Order] where TechnicianID = '" + tech_ID + "' AND Status = 'Pending' or Status = 'Changes Required'", con);
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [Order] where TechnicianID = '" + tech_ID + "'", con);
-            DataTable dtbl = new DataTable();
-            da.Fill(dtbl);
 
-            //method 1 - direct method that shows all columns
-            //dataGrid_AllServ.DataSource = dtbl;
-
-            //method 2 - indirect method that shows select columns
-            dgv.AutoGenerateColumns = false;
-            dgv.DataSource = dtbl;
-            con.Close();
-        }
-
-        //loading number of pending jobs into dashboard widget
-        public static void dashboardWidgetValues(Technician o1)
-        {
-            con.Open();
-            //number of pending jobs belonging to technician with specific techID
-            SqlCommand cmd = new SqlCommand("select COUNT(OrderID) FROM [Order] where Status = 'Pending' AND TechnicianID = '" + o1.techID + "'", con); 
-            o1.numberofpending = (Int32) cmd.ExecuteScalar();
-            //no. of urgent jobs belonging to technician with specific techID
-            SqlCommand cmd2 = new SqlCommand("select COUNT(OrderID) FROM [Order] where [Service Type] = 'Urgent' AND TechnicianID = '" + o1.techID + "'", con);
-            o1.numberofurgent = (Int32) cmd2.ExecuteScalar();
-            //no. of completed jobs in the month belonging to technician with specific techID
-            SqlCommand cmd3 = new SqlCommand("select COUNT(OrderID) FROM [Order] where Status = 'Completed' AND TechnicianID = '" + o1.techID + "' AND Month([Collection Date]) = Month(GETDATE())", con); 
-            o1.numberofcompleted = (Int32) cmd3.ExecuteScalar();
-            con.Close();
-        }
-
-        //loading details from order table into edit service request
-        public static void viewOrderTableforEdit(Technician o1)
-        {
-            con.Open();
-            Technician obj1 = new Technician(o1.techID);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM [Order] where OrderID = '" + o1.orderid_forselection + "'AND TechnicianID = '" + o1.techID + "'", con);
-            SqlDataReader sqlDataReader = cmd.ExecuteReader();
-            while (sqlDataReader.Read())
-            {
-                o1.servicerequest_status = sqlDataReader.GetString(5); //true or false...
-                if (!sqlDataReader.IsDBNull(7))
-                {
-                    o1.servdesc = sqlDataReader.GetString(7);
-                    o1.collectiondate = sqlDataReader.GetDateTime(8);
-                }
-            }
-            con.Close();
-
-        }
-
-        //loading OrderIDs into array to show in comboOrderID
-        public static ArrayList viewOrderID(Technician o1)
-        {
-            con.Open();
-            //MessageBox.Show(o1.techID.ToString()); //for testing if value of technician_ID (line 48 TechnicianDashboard) is passed
-            ArrayList OID = new ArrayList();
-            //SqlCommand cmd = new SqlCommand("select [OrderID] FROM [Order] where Status = 'Pending' or Status = 'Changes Required' AND TechnicianID = '" + techID + "'", con); //only add pending 
-            SqlCommand cmd = new SqlCommand("select [OrderID] FROM [Order] where TechnicianID = '" + o1.techID + "' AND Status = 'Pending' or Status = 'Changes Required'", con); //only add pending 
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                OID.Add(reader.GetValue(0));
-            }
-            con.Close();
-            return OID;
-        }
-
-        //updating service request in edit service request form
-        public string updateEditServReq(int oid, string stat, string serv_desc, DateTime date)
-        {
-            string status;
-            con.Open();
-
-            orderid_forselection = oid;
-            servicerequest_status = stat;
-            servdesc = serv_desc;
-            collectiondate = date;
-            collectiondate_string = collectiondate.ToString("yyyy-MM-dd");
-
-            //MessageBox.Show(collectiondate_string); testing if collectiondate is passed into collectiondate_string 
-
-            SqlCommand cmd = new SqlCommand("update [Order] set [Status] = '" + servicerequest_status + "', [Service Description/Suggestion] = '" + servdesc + "', [Collection Date] = '" + collectiondate_string + "' where [OrderID] = '" + orderid_forselection + "'", con);
-            //MessageBox.Show(techID.ToString()); //for testing if TechID is passed
-            SqlCommand cmd2 = new SqlCommand("update [Technician] set [Status] = 'Available' where TechnicianID = '" + techID + "'", con);
-            int i = cmd.ExecuteNonQuery();
-            if (i != 0)
-            {
-                int x = cmd2.ExecuteNonQuery();
-                if (x != 0)
-                {
-                    status = "The service request has been successfully updated.";
-                }
-                else
-                {
-                    status = "Update Unsuccessful. Please try again.";
-                }
-            }
-            else
-            {
-                status = "Update Unsuccessful. Please try again.";
-            }
-            con.Close();
-
-            return status;
-
-        }
-
-        //loading technician information into profile
+        //loading technician information into dashboard and profile 
         public static void viewTechProfile(Technician o1)
         {
             con.Open();
@@ -254,6 +145,115 @@ namespace IOOP_Assignment
             con.Close();
 
             return status;
+        }
+
+        //loading order table into technician dashboard
+        public void loadOrderTable(DataGridView dgv, int tech_ID)
+        {
+            //SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [Order] where TechnicianID = '" + tech_ID + "' AND Status = 'Pending' or Status = 'Changes Required'", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [Order] where TechnicianID = '" + tech_ID + "'", con);
+            DataTable dtbl = new DataTable();
+            da.Fill(dtbl);
+
+            //method 1 - direct method that shows all columns
+            //dataGrid_AllServ.DataSource = dtbl;
+
+            //method 2 - indirect method that shows select columns
+            dgv.AutoGenerateColumns = false;
+            dgv.DataSource = dtbl;
+            con.Close();
+        }
+
+        //loading number of pending jobs into dashboard widget
+        public static void dashboardWidgetValues(Technician o1)
+        {
+            con.Open();
+            //number of pending jobs belonging to technician with specific techID
+            SqlCommand cmd = new SqlCommand("select COUNT(OrderID) FROM [Order] where Status = 'Pending' AND TechnicianID = '" + o1.techID + "'", con); 
+            o1.numberofpending = (Int32) cmd.ExecuteScalar();
+            //no. of urgent jobs belonging to technician with specific techID
+            SqlCommand cmd2 = new SqlCommand("select COUNT(OrderID) FROM [Order] where [Service Type] = 'Urgent' AND TechnicianID = '" + o1.techID + "'", con);
+            o1.numberofurgent = (Int32) cmd2.ExecuteScalar();
+            //no. of completed jobs in the month belonging to technician with specific techID
+            SqlCommand cmd3 = new SqlCommand("select COUNT(OrderID) FROM [Order] where Status = 'Completed' AND TechnicianID = '" + o1.techID + "' AND Month([Collection Date]) = Month(GETDATE())", con); 
+            o1.numberofcompleted = (Int32) cmd3.ExecuteScalar();
+            con.Close();
+        }
+
+        //loading details from order table into edit service request
+        public static void viewOrderTableforEdit(Technician o1)
+        {
+            con.Open();
+            //Technician obj1 = new Technician(o1.techID);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [Order] where OrderID = '" + o1.orderid_forselection + "'AND TechnicianID = '" + o1.techID + "'", con);
+            SqlDataReader sqlDataReader = cmd.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                o1.servicerequest_status = sqlDataReader.GetString(5); 
+                if (!sqlDataReader.IsDBNull(7))
+                {
+                    o1.servdesc = sqlDataReader.GetString(7);
+                    o1.collectiondate = sqlDataReader.GetDateTime(8);
+                }
+            }
+            con.Close();
+        }
+
+        //loading OrderIDs into array to show in comboOrderID
+        public static ArrayList viewOrderID(Technician o1)
+        {
+            con.Open();
+            //MessageBox.Show(o1.techID.ToString()); //for testing if value of technician_ID (line 48 TechnicianDashboard) is passed
+            ArrayList OID = new ArrayList();
+            //SqlCommand cmd = new SqlCommand("select [OrderID] FROM [Order] where Status = 'Pending' or Status = 'Changes Required' AND TechnicianID = '" + techID + "'", con); //only add pending 
+            SqlCommand cmd = new SqlCommand("select [OrderID] FROM [Order] where TechnicianID = '" + o1.techID + "' AND Status = 'Pending' or Status = 'Changes Required'", con); //only add pending 
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                OID.Add(reader.GetValue(0));
+            }
+            con.Close();
+            return OID;
+        }
+
+        //updating service request in edit service request form
+        public string updateEditServReq(int oid, string stat, string serv_desc, DateTime date)
+        {
+            string status;
+            con.Open();
+
+            orderid_forselection = oid;
+            servicerequest_status = stat;
+            servdesc = serv_desc;
+            collectiondate = date;
+            collectiondate_string = collectiondate.ToString("yyyy-MM-dd");
+
+            //MessageBox.Show(collectiondate_string); testing if collectiondate is passed into collectiondate_string 
+
+            SqlCommand cmd = new SqlCommand("update [Order] set [Status] = '" + servicerequest_status + "', [Service Description/Suggestion] = '" + servdesc + "', [Collection Date] = '" + collectiondate_string + "' where [OrderID] = '" + orderid_forselection + "'", con);
+            //MessageBox.Show(techID.ToString()); //for testing if TechID is passed
+            SqlCommand cmd2 = new SqlCommand("update [Technician] set [Status] = 'Available' where TechnicianID = '" + techID + "'", con);
+            int i = cmd.ExecuteNonQuery();
+            if (i != 0)
+            {
+                int x = cmd2.ExecuteNonQuery();
+                if (x != 0)
+                {
+                    status = "The service request has been successfully updated.";
+                }
+                else
+                {
+                    status = "Update Unsuccessful. Please try again.";
+                }
+            }
+            else
+            {
+                status = "Update Unsuccessful. Please try again.";
+            }
+            con.Close();
+
+            return status;
+
         }
     }
 }

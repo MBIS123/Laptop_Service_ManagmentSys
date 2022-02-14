@@ -463,6 +463,7 @@
             this.llblogout.TabIndex = 71;
             this.llblogout.TabStop = true;
             this.llblogout.Text = "LOGOUT";
+            this.llblogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblogout_LinkClicked);
             // 
             // llbmy_order
             // 
