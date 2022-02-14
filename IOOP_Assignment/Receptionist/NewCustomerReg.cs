@@ -36,14 +36,14 @@ namespace IOOP_Assignment
                     Gender = "Female";
                     DateTime bdaydate1 = DateTime.Parse(dateTimePickerDate.Text);
                     Receptionist1 obj1 = new Receptionist1(txtName.Text, Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate1, txtUsername.Text);
-                    MessageBox.Show(obj1.AddNewCustomer());
+                    obj1.AddNewCustomer();
                 }
                 else if (radBtnMale.Checked ==true)
                 {
                     Gender = "Male";
                     DateTime bdaydate2 = DateTime.Parse(dateTimePickerDate.Text);
                     Receptionist1 obj1 = new Receptionist1(txtName.Text, Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate2, txtUsername.Text);
-                    MessageBox.Show(obj1.AddNewCustomer());
+                    obj1.AddNewCustomer();
                 }
                 else
                 {
