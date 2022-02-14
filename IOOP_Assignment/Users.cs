@@ -135,8 +135,6 @@ namespace IOOP_Assignment
 
 
                 SqlCommand updtUrgentTechID = new SqlCommand("update [Order] set TechnicianID = " + techId + " where OrderID = " + urgOrderID + ";", con);
-
-
                 SqlCommand updtNormalTechID = new SqlCommand("update [Order] set TechnicianID = " + techId + " where OrderID = " + nmlOrderID + ";", con);
 
                 if (numOfNormalPendingOrder == 0 && numOfUrgentPendingOrder == 0) { }  // code wont run if there are no pending order
