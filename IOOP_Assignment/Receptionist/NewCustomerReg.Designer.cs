@@ -44,8 +44,9 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.grpBoxReg = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblDOB = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
@@ -64,8 +65,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.linklblPayment = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
             this.grpBoxReg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -210,10 +210,10 @@
             // grpBoxReg
             // 
             this.grpBoxReg.BackColor = System.Drawing.Color.PeachPuff;
+            this.grpBoxReg.Controls.Add(this.dateTimePickerDate);
             this.grpBoxReg.Controls.Add(this.label2);
             this.grpBoxReg.Controls.Add(this.label1);
             this.grpBoxReg.Controls.Add(this.txtUsername);
-            this.grpBoxReg.Controls.Add(this.dateTimePickerDate);
             this.grpBoxReg.Controls.Add(this.lblUsername);
             this.grpBoxReg.Controls.Add(this.lblDOB);
             this.grpBoxReg.Controls.Add(this.btnClear);
@@ -237,6 +237,28 @@
             this.grpBoxReg.TabIndex = 3;
             this.grpBoxReg.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(214, 142);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(159, 20);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "eg. yymmdd-xx-xxxx";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(213, 208);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 20);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "eg. +6012-3456789";
+            // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -244,15 +266,6 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(366, 33);
             this.txtUsername.TabIndex = 21;
-            // 
-            // dateTimePickerDate
-            // 
-            this.dateTimePickerDate.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePickerDate.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePickerDate.Location = new System.Drawing.Point(213, 330);
-            this.dateTimePickerDate.Name = "dateTimePickerDate";
-            this.dateTimePickerDate.Size = new System.Drawing.Size(366, 33);
-            this.dateTimePickerDate.TabIndex = 20;
             // 
             // lblUsername
             // 
@@ -467,27 +480,13 @@
             this.linklblPayment.Text = "PAYMENT";
             this.linklblPayment.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblPayment_LinkClicked);
             // 
-            // label1
+            // dateTimePickerDate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(213, 208);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 20);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "eg. +6012-3456789";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(214, 142);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 20);
-            this.label2.TabIndex = 42;
-            this.label2.Text = "eg. yymmdd-xx-xxxx";
+            this.dateTimePickerDate.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerDate.Location = new System.Drawing.Point(213, 330);
+            this.dateTimePickerDate.Name = "dateTimePickerDate";
+            this.dateTimePickerDate.Size = new System.Drawing.Size(366, 31);
+            this.dateTimePickerDate.TabIndex = 43;
             // 
             // frmRegNewCus
             // 
@@ -547,7 +546,6 @@
         private Button btnConfirm;
         private Label lblDOB;
         private TextBox txtUsername;
-        private DateTimePicker dateTimePickerDate;
         private Label lblUsername;
         private Splitter splitter1;
         private PictureBox pictureBoxLogo;
@@ -565,5 +563,6 @@
         private LinkLabel linklblPayment;
         private Label label1;
         private Label label2;
+        private DateTimePicker dateTimePickerDate;
     }
 }

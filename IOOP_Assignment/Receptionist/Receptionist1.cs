@@ -21,6 +21,7 @@ namespace IOOP_Assignment
         private string cusAddress;
         private DateTime cusDob;
         private string cusUsername;
+        private int numOfUsers;
 
         private string recName;
         private string recPhone;
@@ -66,41 +67,43 @@ namespace IOOP_Assignment
             recName = un;
         }
 
-        public string AddNewCustomer()
+        public void AddNewCustomer()
         {
-            string status;
+            con.Open();
+            bool exists = true;
+            SqlCommand cmdUsernameExist = new SqlCommand("select count(*) from Users where Username= '" + cusUsername + "'", con);
+            //count if the username existed
+            exists = (int)cmdUsernameExist.ExecuteScalar() > 0;
+            if (exists== false)
+            {
+                int userID = numOfUsers + 1;
+                SqlCommand cmdUser = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users( UserName, Password,[User Role]) values" +
+                        "(@username, '123456', 'customer'); SET IDENTITY_INSERT Users off;", con);
+                cmdUser.Parameters.AddWithValue("@username", cusUsername);
+                cmdUser.ExecuteNonQuery();
+                string birthdate = CusDob.ToString("yyyy-MM-dd");
+                SqlCommand cmdNewCus = new SqlCommand("SET IDENTITY_INSERT Customer ON; insert into Customer(UserID,Name,Gender,[Date of Birth],[IC No.]," +
+                        "[Contact No.],Email,Address) values" +
+                        "( " + userID + " ,'" + cusName + "','" + cusGender + "','" + birthdate + "','" + cusIC + "','" + cusPhoneNum + "','" + CusEmail + "','" + CusAddress + "'); SET IDENTITY_INSERT Customer off; ", con);
+
+                cmdNewCus.ExecuteNonQuery();
+            }
+            else
+            {
+                MessageBox.Show("Username existed. Please enter a new username!");
+            }
+            con.Close();
+        }
+        public void chckUsername()
+        {
             con.Open();
             bool exists = false;
             SqlCommand cmdUsernameExist = new SqlCommand("select count(*) from Users where Username= '" + cusUsername + "'", con);
             //count if the username existed
-            if (exists = (int)cmdUsernameExist.ExecuteScalar() > 0)
-            {
-                MessageBox.Show("Username existed. Please enter a valid username");
-            }
-            else
-            {
-                /*SqlCommand cmdNumCus = new SqlCommand("select count(*) from Customer", con);
-                int numCus = int.Parse(cmdNumCus.ExecuteScalar().ToString());
-                int cusID = numCus + 1;*/
-
-                SqlCommand cmdUserCus = new SqlCommand("insert into Users(UserName,Password,[User Role]) values (@username, '123456', 'customer')", con);
-                cmdUserCus.Parameters.AddWithValue("@username", cusUsername);
-                cmdUserCus.ExecuteNonQuery();
-                SqlCommand cmdNumUser = new SqlCommand("select count(*) from Users", con);
-                int userID = int.Parse(cmdNumUser.ExecuteScalar().ToString());
-                SqlCommand cmdNewCus = new SqlCommand(" insert into Customer(UserID,Name,Gender,[Date of Birth],[IC No.],[Contact No.],Email,Address) values" +
-                                                      "( " + userID + " ,'" + cusName + "','" + cusGender + "','" +  cusDob + "','" + cusIC + "','" + cusPhoneNum + "','" + CusEmail + "','" + CusAddress + "')", con);
-
-                int i = cmdNewCus.ExecuteNonQuery();
-                if (i != 0)
-                    status = "Registration Successful! Customer Password is 123456.";
-                else
-                    status = "Unable to Register!";
-                return status;
-                con.Close();
-            }
-            return cusUsername;
+            exists = (int)cmdUsernameExist.ExecuteScalar() > 0; 
+            con.Close();
         }
+
         public void loadPaymentTable(DataGridView dgv)
         {
             SqlDataAdapter da = new SqlDataAdapter("select [Order].OrderID,[Customer].Name," +
