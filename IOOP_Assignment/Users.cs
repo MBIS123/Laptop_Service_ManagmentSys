@@ -114,22 +114,20 @@ namespace IOOP_Assignment
 
 
                 SqlCommand updtTechStatus = new SqlCommand("update Technician set Status = 'Unavailable' where TechnicianID = " + techId + ";", con);
-
+                SqlCommand findFirstNormalOrder = new SqlCommand("select top (1) OrderID,[Date Requested] from [Order] where TechnicianID is null and [Service Type]='Normal'order by [Date Requested] ASC;", con);
+                SqlCommand findFirstUrgOrder = new SqlCommand("select top (1) OrderID,[Date Requested] from [Order] where TechnicianID is null and [Service Type]='Urgent'order by [Date Requested] ASC;", con);
 
                 if (numOfNormalPendingOrder == 0 && numOfUrgentPendingOrder == 0) { }
 
                 else if (numOfNormalPendingOrder != 0 && numOfUrgentPendingOrder != 0)
                 {
 
-                    MessageBox.Show("hi");
-                    SqlCommand findFirstNormalOrder = new SqlCommand("select top (1) OrderID,[Date Requested] from [Order] where TechnicianID is null and [Service Type]='Normal'order by [Date Requested] ASC;", con);
                     SqlDataReader nmlRead = findFirstNormalOrder.ExecuteReader();
                     nmlRead.Read();
                     nmlOrderID = nmlRead.GetInt32(0);
                     nmlRequestDate = nmlRead.GetDateTime(1);
                     nmlRead.Close();
 
-                    SqlCommand findFirstUrgOrder = new SqlCommand("select top (1) OrderID,[Date Requested] from [Order] where TechnicianID is null and [Service Type]='Urgent'order by [Date Requested] ASC;", con);
                     SqlDataReader urgtRead = findFirstUrgOrder.ExecuteReader();
                     urgtRead.Read();
                     urgOrderID = urgtRead.GetInt32(0);
@@ -138,8 +136,6 @@ namespace IOOP_Assignment
 
 
                     SqlCommand updtUrgentTechID = new SqlCommand("update [Order] set TechnicianID = " + techId + " where OrderID = " + urgOrderID + ";", con);
-
-
                     SqlCommand updtNormalTechID = new SqlCommand("update [Order] set TechnicianID = " + techId + " where OrderID = " + nmlOrderID + ";", con);
 
 
@@ -164,7 +160,6 @@ namespace IOOP_Assignment
                 else if (numOfNormalPendingOrder == 0) //  if no normal order then no need search for normal order , just arranged urgent order and assign to technician
                 {
 
-                    SqlCommand findFirstUrgOrder = new SqlCommand("select top (1) OrderID,[Date Requested] from [Order] where TechnicianID is null and [Service Type]='Urgent'order by [Date Requested] ASC;", con);
 
                     SqlDataReader urgtRead = findFirstUrgOrder.ExecuteReader();
                     urgtRead.Read();
@@ -182,7 +177,6 @@ namespace IOOP_Assignment
                 else if (numOfUrgentPendingOrder == 0) //  if no urgent order then no need search for urgent order , just arranged normal order and assign to technician
                 {
 
-                    SqlCommand findFirstNormalOrder = new SqlCommand("select top (1) OrderID,[Date Requested] from [Order] where TechnicianID is null and [Service Type]='Normal'order by [Date Requested] ASC;", con);
 
                     SqlDataReader nmlRead = findFirstNormalOrder.ExecuteReader();
                     nmlRead.Read();

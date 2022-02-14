@@ -11,7 +11,7 @@ namespace IOOP_Assignment
    
         string[] monthlist = Admin.Monthlist;
 
-
+        Users userObj = new Users();
         public AdminDashBoard()
         {
             InitializeComponent();
@@ -72,7 +72,7 @@ namespace IOOP_Assignment
 
 
 
-
+            userObj.assignOrder();
 
 
         }
