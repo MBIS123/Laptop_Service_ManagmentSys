@@ -184,12 +184,12 @@ namespace IOOP_Assignment
         public static void viewOrderTableforEdit(Technician o1)
         {
             con.Open();
-            Technician obj1 = new Technician(o1.techID);
+            //Technician obj1 = new Technician(o1.techID);
             SqlCommand cmd = new SqlCommand("SELECT * FROM [Order] where OrderID = '" + o1.orderid_forselection + "'AND TechnicianID = '" + o1.techID + "'", con);
             SqlDataReader sqlDataReader = cmd.ExecuteReader();
             while (sqlDataReader.Read())
             {
-                o1.servicerequest_status = sqlDataReader.GetString(5); //true or false...
+                o1.servicerequest_status = sqlDataReader.GetString(5); 
                 if (!sqlDataReader.IsDBNull(7))
                 {
                     o1.servdesc = sqlDataReader.GetString(7);
