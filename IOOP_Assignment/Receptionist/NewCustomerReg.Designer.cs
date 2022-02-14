@@ -64,6 +64,8 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.linklblPayment = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.grpBoxReg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -155,7 +157,7 @@
             // 
             this.lblMobile.AutoSize = true;
             this.lblMobile.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMobile.Location = new System.Drawing.Point(15, 160);
+            this.lblMobile.Location = new System.Drawing.Point(15, 180);
             this.lblMobile.Name = "lblMobile";
             this.lblMobile.Size = new System.Drawing.Size(154, 25);
             this.lblMobile.TabIndex = 8;
@@ -164,7 +166,7 @@
             // txtMobile
             // 
             this.txtMobile.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMobile.Location = new System.Drawing.Point(213, 152);
+            this.txtMobile.Location = new System.Drawing.Point(213, 172);
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(366, 33);
             this.txtMobile.TabIndex = 9;
@@ -173,7 +175,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEmail.Location = new System.Drawing.Point(15, 204);
+            this.lblEmail.Location = new System.Drawing.Point(15, 244);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(68, 25);
             this.lblEmail.TabIndex = 10;
@@ -182,7 +184,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.Location = new System.Drawing.Point(213, 196);
+            this.txtEmail.Location = new System.Drawing.Point(213, 236);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(366, 33);
             this.txtEmail.TabIndex = 11;
@@ -191,7 +193,7 @@
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblAddress.Location = new System.Drawing.Point(15, 251);
+            this.lblAddress.Location = new System.Drawing.Point(15, 291);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(88, 25);
             this.lblAddress.TabIndex = 12;
@@ -200,7 +202,7 @@
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAddress.Location = new System.Drawing.Point(213, 243);
+            this.txtAddress.Location = new System.Drawing.Point(213, 283);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(366, 33);
             this.txtAddress.TabIndex = 13;
@@ -208,6 +210,8 @@
             // grpBoxReg
             // 
             this.grpBoxReg.BackColor = System.Drawing.Color.PeachPuff;
+            this.grpBoxReg.Controls.Add(this.label2);
+            this.grpBoxReg.Controls.Add(this.label1);
             this.grpBoxReg.Controls.Add(this.txtUsername);
             this.grpBoxReg.Controls.Add(this.dateTimePickerDate);
             this.grpBoxReg.Controls.Add(this.lblUsername);
@@ -229,14 +233,14 @@
             this.grpBoxReg.Controls.Add(this.lblName);
             this.grpBoxReg.Location = new System.Drawing.Point(227, 56);
             this.grpBoxReg.Name = "grpBoxReg";
-            this.grpBoxReg.Size = new System.Drawing.Size(602, 432);
+            this.grpBoxReg.Size = new System.Drawing.Size(602, 477);
             this.grpBoxReg.TabIndex = 3;
             this.grpBoxReg.TabStop = false;
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtUsername.Location = new System.Drawing.Point(213, 334);
+            this.txtUsername.Location = new System.Drawing.Point(213, 374);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(366, 33);
             this.txtUsername.TabIndex = 21;
@@ -245,7 +249,7 @@
             // 
             this.dateTimePickerDate.CustomFormat = "dd/MM/yyyy";
             this.dateTimePickerDate.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePickerDate.Location = new System.Drawing.Point(213, 290);
+            this.dateTimePickerDate.Location = new System.Drawing.Point(213, 330);
             this.dateTimePickerDate.Name = "dateTimePickerDate";
             this.dateTimePickerDate.Size = new System.Drawing.Size(366, 33);
             this.dateTimePickerDate.TabIndex = 20;
@@ -254,7 +258,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblUsername.Location = new System.Drawing.Point(16, 342);
+            this.lblUsername.Location = new System.Drawing.Point(16, 382);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(107, 25);
             this.lblUsername.TabIndex = 18;
@@ -264,7 +268,7 @@
             // 
             this.lblDOB.AutoSize = true;
             this.lblDOB.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDOB.Location = new System.Drawing.Point(16, 296);
+            this.lblDOB.Location = new System.Drawing.Point(16, 336);
             this.lblDOB.Name = "lblDOB";
             this.lblDOB.Size = new System.Drawing.Size(60, 25);
             this.lblDOB.TabIndex = 16;
@@ -274,7 +278,7 @@
             // 
             this.btnClear.BackColor = System.Drawing.Color.White;
             this.btnClear.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnClear.Location = new System.Drawing.Point(342, 385);
+            this.btnClear.Location = new System.Drawing.Point(342, 425);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(112, 34);
             this.btnClear.TabIndex = 15;
@@ -286,7 +290,7 @@
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.White;
             this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnConfirm.Location = new System.Drawing.Point(467, 385);
+            this.btnConfirm.Location = new System.Drawing.Point(467, 425);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(112, 34);
             this.btnConfirm.TabIndex = 14;
@@ -299,7 +303,7 @@
             this.splitter1.BackColor = System.Drawing.Color.SeaShell;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(203, 526);
+            this.splitter1.Size = new System.Drawing.Size(203, 545);
             this.splitter1.TabIndex = 4;
             this.splitter1.TabStop = false;
             // 
@@ -350,7 +354,6 @@
             this.linklblNewCusReg.TabIndex = 25;
             this.linklblNewCusReg.TabStop = true;
             this.linklblNewCusReg.Text = "NEW CUSTOMER\r\nREGISTRATION";
-        
             // 
             // linklblServReq
             // 
@@ -464,12 +467,34 @@
             this.linklblPayment.Text = "PAYMENT";
             this.linklblPayment.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblPayment_LinkClicked);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(213, 208);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 20);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "eg. +6012-3456789";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(214, 142);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(159, 20);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "eg. yymmdd-xx-xxxx";
+            // 
             // frmRegNewCus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(858, 526);
+            this.ClientSize = new System.Drawing.Size(858, 545);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -538,5 +563,7 @@
         private GroupBox groupBox4;
         private GroupBox groupBox5;
         private LinkLabel linklblPayment;
+        private Label label1;
+        private Label label2;
     }
 }
