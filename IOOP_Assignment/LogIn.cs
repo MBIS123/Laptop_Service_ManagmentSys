@@ -30,7 +30,7 @@ namespace IOOP_Assignment
         {
             string stat;
             //users obj1 = new User(username, password);
-            Users obj1 = new Users(txtUsername.Text, txtPwd.Text); //calling constructor on line19 in users.cs
+            Users obj1 = new Users(txtUsername.Text, txtPwd.Text); 
             stat = obj1.login(txtUsername.Text);
             if (stat == "Incorrect username or password entered!")
             {

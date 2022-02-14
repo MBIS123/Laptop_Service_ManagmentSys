@@ -23,8 +23,6 @@ namespace IOOP_Assignment
 
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
-        public int Service { get => service; set => service = value; }
-        public string Service_type { get => service_type; set => service_type = value; }
         public string CusName1 { get => CusName; set => CusName = value; }
         public DateTime CusBOD1 { get => CusBOD; set => CusBOD = value; }
         public string CusPhoneNo1 { get => CusPhoneNo; set => CusPhoneNo = value; }
@@ -67,15 +65,15 @@ namespace IOOP_Assignment
         internal string changeservice(int ind, string t)
         {
             string status;
-            Service = ind;
-            Service_type = t;
+            service = ind;
+            service_type = t;
 
             con.Open();
             // the status of the service is pending only can change service
             SqlCommand cmd2 = new SqlCommand("select CustomerID from [Customer] where Name = '" + name + "'", con);
             string customer_id = cmd2.ExecuteScalar().ToString();
 
-            SqlCommand cmd = new SqlCommand("update [Order] set [ServiceRequestType ID] = '" + Service + "', [Service Type] = '" + Service_type + "' where CustomerID ='" + customer_id + "'", con);
+            SqlCommand cmd = new SqlCommand("update [Order] set [ServiceRequestType ID] = '" + service + "', [Service Type] = '" + service_type + "' where CustomerID ='" + customer_id + "'", con);
 
             int i = cmd.ExecuteNonQuery();//executes the command and returns the number of rows affected
             if (i != 0)
@@ -96,8 +94,8 @@ namespace IOOP_Assignment
 
             con.Open();
             SqlCommand cmd0 = new SqlCommand("select CustomerID from [Customer] where Name = '" + name + "'", con);
+            MessageBox.Show(name);
             string customerID = cmd0.ExecuteScalar().ToString();
-            
             // first, i use customer name to find customer id
 
             SqlCommand cmd1 = new SqlCommand("select [Service Description/Suggestion] from [Order] where CustomerID =  '" + customerID + "'", con);
@@ -119,7 +117,6 @@ namespace IOOP_Assignment
 
         internal string showAmount_ToPaid()
         {
-            string stat;
 
             con.Open();
             SqlCommand cmd0 = new SqlCommand("select CustomerID from [Customer] where Name = '" + name + "'", con);
@@ -134,8 +131,6 @@ namespace IOOP_Assignment
 
         internal string showStatus()
         {
-            string stat;
-
             con.Open();
             SqlCommand cmd0 = new SqlCommand("select CustomerID from [Customer] where Name = '" + name + "'", con);
             string customerID = cmd0.ExecuteScalar().ToString();
@@ -151,7 +146,6 @@ namespace IOOP_Assignment
 
         internal string showCollec_date()
         {
-            string stat;
             con.Open();
             SqlCommand cmd0 = new SqlCommand("select CustomerID from [Customer] where Name = '" + name + "'", con);
             string customerID = cmd0.ExecuteScalar().ToString();

@@ -33,18 +33,18 @@
             this.lblwelcome = new System.Windows.Forms.Label();
             this.lblmyaccount = new System.Windows.Forms.Label();
             this.llbchange_serv = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.llb_myorder = new System.Windows.Forms.LinkLabel();
             this.llbaccount_setting = new System.Windows.Forms.LinkLabel();
             this.llblogout = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnclear = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbl_collecDate = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtreview = new System.Windows.Forms.TextBox();
             this.lblcollec_date = new System.Windows.Forms.Label();
-            this.lblstatus = new System.Windows.Forms.Label();
+            this.lbl_orderstatus = new System.Windows.Forms.Label();
             this.lblamount_pay = new System.Windows.Forms.Label();
             this.lblserv_desc = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.lblreview = new System.Windows.Forms.Label();
-            this.lblsuggestion = new System.Windows.Forms.Label();
+            this.lblstatus = new System.Windows.Forms.Label();
             this.lblamount = new System.Windows.Forms.Label();
             this.lbldesc = new System.Windows.Forms.Label();
             this.lbltitle_myorder = new System.Windows.Forms.Label();
@@ -124,19 +124,18 @@
             this.llbchange_serv.Text = "CHANGE  SERVICE";
             this.llbchange_serv.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbchange_serv_LinkClicked);
             // 
-            // linkLabel2
+            // llb_myorder
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.BackColor = System.Drawing.Color.Tan;
-            this.linkLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel2.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel2.Location = new System.Drawing.Point(40, 426);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(121, 23);
-            this.linkLabel2.TabIndex = 35;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "MY  ORDER";
-           // this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.llb_myorder.AutoSize = true;
+            this.llb_myorder.BackColor = System.Drawing.Color.Tan;
+            this.llb_myorder.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.llb_myorder.LinkColor = System.Drawing.Color.Black;
+            this.llb_myorder.Location = new System.Drawing.Point(40, 426);
+            this.llb_myorder.Name = "llb_myorder";
+            this.llb_myorder.Size = new System.Drawing.Size(121, 23);
+            this.llb_myorder.TabIndex = 35;
+            this.llb_myorder.TabStop = true;
+            this.llb_myorder.Text = "MY  ORDER";
             // 
             // llbaccount_setting
             // 
@@ -170,12 +169,12 @@
             this.groupBox1.BackColor = System.Drawing.Color.Tan;
             this.groupBox1.Controls.Add(this.btnclear);
             this.groupBox1.Controls.Add(this.btnsave);
-            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.lbl_collecDate);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtreview);
             this.groupBox1.Controls.Add(this.lblcollec_date);
-            this.groupBox1.Controls.Add(this.lblstatus);
+            this.groupBox1.Controls.Add(this.lbl_orderstatus);
             this.groupBox1.Controls.Add(this.lblamount_pay);
             this.groupBox1.Controls.Add(this.lblserv_desc);
             this.groupBox1.Controls.Add(this.label13);
@@ -183,7 +182,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.lblreview);
-            this.groupBox1.Controls.Add(this.lblsuggestion);
+            this.groupBox1.Controls.Add(this.lblstatus);
             this.groupBox1.Controls.Add(this.lblamount);
             this.groupBox1.Controls.Add(this.lbldesc);
             this.groupBox1.Controls.Add(this.lbltitle_myorder);
@@ -217,15 +216,15 @@
             this.btnsave.UseVisualStyleBackColor = true;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
-            // label7
+            // lbl_collecDate
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(62, 627);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 23);
-            this.label7.TabIndex = 63;
-            this.label7.Text = "Collection Date ";
+            this.lbl_collecDate.AutoSize = true;
+            this.lbl_collecDate.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lbl_collecDate.Location = new System.Drawing.Point(62, 627);
+            this.lbl_collecDate.Name = "lbl_collecDate";
+            this.lbl_collecDate.Size = new System.Drawing.Size(145, 23);
+            this.lbl_collecDate.TabIndex = 63;
+            this.lbl_collecDate.Text = "Collection Date ";
             // 
             // label8
             // 
@@ -266,14 +265,14 @@
             this.lblcollec_date.Size = new System.Drawing.Size(0, 20);
             this.lblcollec_date.TabIndex = 60;
             // 
-            // lblstatus
+            // lbl_orderstatus
             // 
-            this.lblstatus.AutoSize = true;
-            this.lblstatus.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblstatus.Location = new System.Drawing.Point(62, 545);
-            this.lblstatus.Name = "lblstatus";
-            this.lblstatus.Size = new System.Drawing.Size(0, 20);
-            this.lblstatus.TabIndex = 59;
+            this.lbl_orderstatus.AutoSize = true;
+            this.lbl_orderstatus.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_orderstatus.Location = new System.Drawing.Point(62, 545);
+            this.lbl_orderstatus.Name = "lbl_orderstatus";
+            this.lbl_orderstatus.Size = new System.Drawing.Size(0, 20);
+            this.lbl_orderstatus.TabIndex = 59;
             // 
             // lblamount_pay
             // 
@@ -343,15 +342,15 @@
             this.lblreview.TabIndex = 44;
             this.lblreview.Text = "Leave a review / comment ";
             // 
-            // lblsuggestion
+            // lblstatus
             // 
-            this.lblsuggestion.AutoSize = true;
-            this.lblsuggestion.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblsuggestion.Location = new System.Drawing.Point(62, 493);
-            this.lblsuggestion.Name = "lblsuggestion";
-            this.lblsuggestion.Size = new System.Drawing.Size(62, 23);
-            this.lblsuggestion.TabIndex = 42;
-            this.lblsuggestion.Text = "Status";
+            this.lblstatus.AutoSize = true;
+            this.lblstatus.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblstatus.Location = new System.Drawing.Point(62, 493);
+            this.lblstatus.Name = "lblstatus";
+            this.lblstatus.Size = new System.Drawing.Size(62, 23);
+            this.lblstatus.TabIndex = 42;
+            this.lblstatus.Text = "Status";
             // 
             // lblamount
             // 
@@ -552,7 +551,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.llblogout);
-            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.llb_myorder);
             this.Controls.Add(this.llbchange_serv);
             this.Controls.Add(this.lblmyaccount);
             this.Controls.Add(this.lblwelcome);
@@ -587,13 +586,13 @@
         private Label lblwelcome;
         private Label lblmyaccount;
         private LinkLabel llbchange_serv;
-        private LinkLabel linkLabel2;
+        private LinkLabel llb_myorder;
         private LinkLabel llbaccount_setting;
         private LinkLabel llblogout;
         private GroupBox groupBox1;
         private TextBox txtreview;
         private Label lblcollec_date;
-        private Label lblstatus;
+        private Label lbl_orderstatus;
         private Label lblamount_pay;
         private Label lblserv_desc;
         private Label label13;
@@ -601,7 +600,7 @@
         private Label label4;
         private Label label17;
         private Label lblreview;
-        private Label lblsuggestion;
+        private Label lblstatus;
         private Label lblamount;
         private Label lbldesc;
         private Label lbltitle_myorder;
@@ -621,7 +620,7 @@
         private Label label14;
         private Button btnclear;
         private Button btnsave;
-        private Label label7;
+        private Label lbl_collecDate;
         private Label label8;
         private Label label3;
         private Label lbl_cusName;

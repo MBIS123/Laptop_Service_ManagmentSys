@@ -108,6 +108,45 @@ namespace IOOP_Assignment
             con.Close();
         }
 
+        public string updateTechProfileContactDetails(string cont, string em, string add)
+        {
+            string status;
+            con.Open();
+
+            techContact = cont;
+            techEmail = em;
+            techAddress = add;
+
+            SqlCommand cmd = new SqlCommand("update [Technician] set [Contact No.] = '" + techContact + "', [Email] = '" + techEmail + "', [Address] = '" + techAddress + "' where [Name] = '" + techName + "'", con);
+            int i = cmd.ExecuteNonQuery();
+            if (i != 0)
+                status = "Your details have been successfully updated.";
+            else
+                status = "Update Unsuccessful. Please try again.";
+            con.Close();
+
+            return status;
+        }
+        public string updateTechProfilePassword(string pw)
+        {
+            string status;
+            con.Open();
+
+            techPassword = pw;
+
+            SqlCommand cmd = new SqlCommand("update [Users] set [Password] = '" + techPassword + "' where [UserID] = (select Users.[UserID] from Technician, Users where Technician.UserID = Users.UserID)", con);
+            //("select [Password] from Users, Technician where Users.UserID = Technician.UserID and Technician.Name = '" + o1.techName + "'", con);
+
+            int i = cmd.ExecuteNonQuery();
+            if (i != 0)
+                status = "Your password has been successfully updated.";
+            else
+                status = "Update Unsuccessful. Please try again.";
+            con.Close();
+
+            return status;
+        }
+
         //loading order table into technician dashboard
         public void loadOrderTable(DataGridView dgv, int tech_ID)
         {
@@ -145,12 +184,12 @@ namespace IOOP_Assignment
         public static void viewOrderTableforEdit(Technician o1)
         {
             con.Open();
-            Technician obj1 = new Technician(o1.techID);
+            //Technician obj1 = new Technician(o1.techID);
             SqlCommand cmd = new SqlCommand("SELECT * FROM [Order] where OrderID = '" + o1.orderid_forselection + "'AND TechnicianID = '" + o1.techID + "'", con);
             SqlDataReader sqlDataReader = cmd.ExecuteReader();
             while (sqlDataReader.Read())
             {
-                o1.servicerequest_status = sqlDataReader.GetString(5); //true or false...
+                o1.servicerequest_status = sqlDataReader.GetString(5); 
                 if (!sqlDataReader.IsDBNull(7))
                 {
                     o1.servdesc = sqlDataReader.GetString(7);
@@ -158,7 +197,6 @@ namespace IOOP_Assignment
                 }
             }
             con.Close();
-
         }
 
         //loading OrderIDs into array to show in comboOrderID
@@ -216,45 +254,6 @@ namespace IOOP_Assignment
 
             return status;
 
-        }
-
-        public string updateTechProfileContactDetails(string cont, string em, string add)
-        {
-            string status;
-            con.Open();
-
-            techContact = cont;
-            techEmail = em;
-            techAddress = add;
-
-            SqlCommand cmd = new SqlCommand("update [Technician] set [Contact No.] = '" + techContact + "', [Email] = '" + techEmail + "', [Address] = '" + techAddress + "' where [Name] = '" + techName + "'", con);
-            int i = cmd.ExecuteNonQuery();
-            if (i != 0)
-                status = "Your details have been successfully updated.";
-            else
-                status = "Update Unsuccessful. Please try again.";
-            con.Close();
-
-            return status;
-        }
-        public string updateTechProfilePassword(string pw)
-        {
-            string status;
-            con.Open();
-
-            techPassword = pw;
-
-            SqlCommand cmd = new SqlCommand("update [Users] set [Password] = '" + techPassword + "' where [UserID] = (select Users.[UserID] from Technician, Users where Technician.UserID = Users.UserID)", con);
-            //("select [Password] from Users, Technician where Users.UserID = Technician.UserID and Technician.Name = '" + o1.techName + "'", con);
-
-            int i = cmd.ExecuteNonQuery();
-            if (i != 0)
-                status = "Your password has been successfully updated.";
-            else
-                status = "Update Unsuccessful. Please try again.";
-            con.Close();
-
-            return status;
         }
     }
 }
