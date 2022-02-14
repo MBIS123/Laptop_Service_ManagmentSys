@@ -46,11 +46,10 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_takenote = new System.Windows.Forms.Label();
             this.rdb_urgent = new System.Windows.Forms.RadioButton();
             this.rdb_normal = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnback = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.lbl_decided_change_service = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -255,11 +254,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Tan;
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.lbl_takenote);
             this.groupBox1.Controls.Add(this.rdb_urgent);
             this.groupBox1.Controls.Add(this.rdb_normal);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.btnback);
             this.groupBox1.Controls.Add(this.btnConfirm);
             this.groupBox1.Controls.Add(this.lbl_decided_change_service);
             this.groupBox1.Controls.Add(this.label1);
@@ -278,20 +276,20 @@
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
             // 
-            // label4
+            // lbl_takenote
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Linen;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(116, 599);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(20);
-            this.label4.Size = new System.Drawing.Size(549, 86);
-            this.label4.TabIndex = 77;
-            this.label4.Text = "Dear customer please take note after change service request\r\nand amount of fees t" +
+            this.lbl_takenote.AutoSize = true;
+            this.lbl_takenote.BackColor = System.Drawing.Color.Linen;
+            this.lbl_takenote.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lbl_takenote.ForeColor = System.Drawing.Color.Red;
+            this.lbl_takenote.Location = new System.Drawing.Point(116, 599);
+            this.lbl_takenote.Name = "lbl_takenote";
+            this.lbl_takenote.Padding = new System.Windows.Forms.Padding(20);
+            this.lbl_takenote.Size = new System.Drawing.Size(549, 86);
+            this.lbl_takenote.TabIndex = 77;
+            this.lbl_takenote.Text = "Dear customer please take note after change service request\r\nand amount of fees t" +
     "o pay will change accordingly !";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_takenote.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // rdb_urgent
             // 
@@ -331,20 +329,10 @@
     "        RM200\r\nRM100            RM150\r\nRM80              RM130\r\nRM70            " +
     "  RM100";
             // 
-            // btnback
-            // 
-            this.btnback.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnback.Location = new System.Drawing.Point(429, 829);
-            this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(119, 29);
-            this.btnback.TabIndex = 73;
-            this.btnback.Text = "BACK";
-            this.btnback.UseVisualStyleBackColor = true;
-            // 
             // btnConfirm
             // 
             this.btnConfirm.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnConfirm.Location = new System.Drawing.Point(236, 829);
+            this.btnConfirm.Location = new System.Drawing.Point(340, 836);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(119, 29);
             this.btnConfirm.TabIndex = 72;
@@ -561,11 +549,10 @@
         private Label label11;
         private Label label12;
         private PictureBox pictureBox1;
-        private Button btnback;
         private Label label3;
         private RadioButton rdb_urgent;
         private RadioButton rdb_normal;
-        private Label label4;
+        private Label lbl_takenote;
         private Label lbl_cusName;
     }
 }
