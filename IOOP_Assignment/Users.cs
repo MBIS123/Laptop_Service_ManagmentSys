@@ -47,16 +47,21 @@ namespace IOOP_Assignment
 
                 if (user_role == "admin")
                 {
+                    frmLogin objLgn = new frmLogin();
+                    objLgn.Hide();
+
                     AdminDashBoard a = new AdminDashBoard();
                     a.ShowDialog();
+                  
                 }
                 else if (user_role == "customer")
                 {
-                    update_profile u = new update_profile(un);// pass username and display at update profile form
-                    Viewprofile v = new Viewprofile(un);
-                    change_service d = new change_service(un); 
-                    Myorder c = new Myorder(un);
-                    c.ShowDialog();
+                    SqlCommand cmd0 = new SqlCommand("select [Name] from Customer where UserID = (select UserID from Users where UserName = '" + username + "')", con);
+                    string customer_name = cmd0.ExecuteScalar().ToString();
+                    Myorder c = new Myorder(customer_name);
+                    c.ShowDialog(); 
+
+
                 }
                 else if (user_role == "technician")
                 {
@@ -71,7 +76,7 @@ namespace IOOP_Assignment
                 {
                     SqlCommand cmd5 = new SqlCommand("select [name] from Receptionist where UserID = (select UserID from users where username = '" + username + "')", con);
                     string receptionist_name = cmd5.ExecuteScalar().ToString();
-                    frmRegNewCus td = new frmRegNewCus(receptionist_name);
+                    frmAccSet td = new frmAccSet(receptionist_name);
                     td.ShowDialog(); //adding a simple comment here
                 }
             }

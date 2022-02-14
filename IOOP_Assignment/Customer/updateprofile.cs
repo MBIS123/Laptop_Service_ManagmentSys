@@ -28,9 +28,9 @@ namespace IOOP_Assignment
         {
             lbl_cusName.Text = name;
             Customers obj1 = new Customers(name);
-       //     Customers.viewCustomerProfile(obj1);
+            Customers.viewCustomerProfile(obj1);
             txtname.Text = obj1.CusName1;
-            txtbirthdate.Text = obj1.CusBOD1.ToString("dd/MM/yyyy");
+            dtp_DOB.Value = obj1.CusBOD1;
             txtphonenum.Text = obj1.CusPhoneNo1;
             txtemail.Text = obj1.CusEmail1;
             txtaddress.Text = obj1.CusAddress1;
@@ -40,20 +40,26 @@ namespace IOOP_Assignment
 
         private void llbaccount_setting_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            this.Hide();
             Viewprofile view_prof = new Viewprofile();
             view_prof.ShowDialog();
+            this.Close();
         }
 
         private void llbchange_serv_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            change_service change = new change_service();
+            this.Hide();
+            change_service change = new change_service(name);
             change.ShowDialog();
+            this.Close();
         }
 
         private void llbmy_order_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Myorder order = new Myorder();
+            this.Hide();
+            Myorder order = new Myorder(name);
             order.ShowDialog();
+            this.Close();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -71,7 +77,6 @@ namespace IOOP_Assignment
         private void btnclear_cusInfo_Click(object sender, EventArgs e)
         {
             txtname.Text = String.Empty;
-            txtbirthdate.Text = String.Empty;
             txtphonenum.Text = String.Empty;
             txtemail.Text = String.Empty;
             txtaddress.Text = String.Empty;
@@ -83,10 +88,6 @@ namespace IOOP_Assignment
             DataValidation obj_validationpassw = new DataValidation(); // for validate password
 
             //view the current password
-
-           // Customers.viewCustomerProfile(obj_passw); // pass in my username inside method viewCustomerProfile
-
-
             Customers.viewCustomerProfile(obj_passw); // pass in my username inside method viewCustomerProfile
             
 
@@ -113,49 +114,50 @@ namespace IOOP_Assignment
         private void btnsave_cusInfo_Click(object sender, EventArgs e)
         {
             DataValidation objvalidation = new DataValidation();
+            // do all validation for customer's details here 
 
-            //check whether text box is null or not 
-            if (objvalidation.isStringNull(txtname) == true)
+            if ((objvalidation.isString(txtname.Text))  && (objvalidation.isPhoneNum(txtphonenum.Text)) && (objvalidation.isEmailAddress(txtemail)) && (objvalidation.isStringNull(txtaddress) == false))
             {
-                MessageBox.Show("Dear customer, you have not entered a new Name");
-            }
-            else if (objvalidation.isStringNull(txtbirthdate) == true)
-            {
-                MessageBox.Show("Dear customer, you have not entered a new Date of Birth");
-            }
-            else if(objvalidation.isStringNull(txtphonenum) == true)
-            {
-                MessageBox.Show("Dear customer, you have not entered a new phone number");
-
-            }
-            else if (objvalidation.isStringNull(txtemail) == true)
-            {
-                MessageBox.Show("Dear customer, you have not entered a new email");
-            }
-            else if(objvalidation.isStringNull(txtaddress) == true)
-            {
-                MessageBox.Show("Dear customer, you have not entered a new address");
+                Customers obj1 = new Customers(name);
+                MessageBox.Show(obj1.updateCustomerProfile(txtname.Text, dtp_DOB.Value, txtphonenum.Text, txtemail.Text, txtaddress.Text));
             }
             else
             {
-                // do all validation for customer's details here 
-                if (objvalidation.isString(txtname.Text) && objvalidation.isDate(txtbirthdate) && objvalidation.isPhoneNum(txtphonenum.Text) && objvalidation.isEmailAddress(txtemail) && objvalidation.isStringNull(txtaddress) == false)
+                if (objvalidation.isStringNull(txtname) == true || objvalidation.isString(txtname.Text) == false)
                 {
-                    Customers obj1 = new Customers(name);
-                    DateTime DOB = Convert.ToDateTime(txtbirthdate.Text);
-                    MessageBox.Show(obj1.updateCustomerProfile(txtname.Text, DOB, txtphonenum.Text, txtemail.Text, txtaddress.Text));
+                    MessageBox.Show("Dear customer," + "\n" + "1. Please make sure you have entered a new Name" + "\n" + "2. Please make sure format is correct");
                 }
-                else
+                if (dtp_DOB.Value == null)
                 {
-                    MessageBox.Show("Dear customer, please make sure you have enter new personal information to save.");
+                    MessageBox.Show("Dear customer," + "\n" + "1. Please make sure you have entered a new date of birth" + "\n" + "2. Please make sure format is correct");
                 }
+                if (objvalidation.isStringNull(txtphonenum) == true || objvalidation.isPhoneNum(txtphonenum.Text)==false)
+                {
+                    MessageBox.Show("Dear customer," + "\n" + "1. Please make sure you have entered a new phone number" + "\n" + "2. Please make sure format is correct");
+                }
+                if(objvalidation.isStringNull(txtemail) == true || objvalidation.isEmailAddress(txtemail)==false)
+                {
+                    MessageBox.Show("Dear customer," + "\n" + "1. Please make sure you have entered a new email" + "\n" + "2. Please make sure format is correct");
+                }
+                if(objvalidation.isStringNull(txtaddress) == true)
+                {
+                    MessageBox.Show("Dear customer," + "\n" + "Please make sure you have entered a new address");
+                }
+                
             }
-           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void llblogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            frmLogin login = new frmLogin();
+            login.ShowDialog();
+            this.Close();
         }
     }
 }

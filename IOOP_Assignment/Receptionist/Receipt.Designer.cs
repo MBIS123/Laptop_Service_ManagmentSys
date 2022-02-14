@@ -301,7 +301,6 @@
             this.lblDateTime.Size = new System.Drawing.Size(157, 22);
             this.lblDateTime.TabIndex = 51;
             this.lblDateTime.Text = "1.1.2022 16:50:42";
-            this.lblDateTime.Click += new System.EventHandler(this.lblDateTime_Click);
             // 
             // lblDateT
             // 
