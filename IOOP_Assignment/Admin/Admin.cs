@@ -30,8 +30,12 @@ namespace IOOP_Assignment
         private bool allInfoFilled = true;  // used for validation purpose
         private int numOfUsers;
         private int numOfTechnician;
-        private int numOfReceptionist;
+        private int numOfReceptionist; 
         private int totalOfServiceRequested;
+        // used for setting up dashboard
+        private int lstMthIncome;
+        private int lst2MthIncome;
+        private int lst3MthIncome;
 
         private static string[] monthList = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
         private string[] sFMonthList = { "Jan", "Feb", "Mch", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec" };
@@ -53,6 +57,9 @@ namespace IOOP_Assignment
         public int NumOfReceptionist { get => numOfReceptionist; set => numOfReceptionist = value; }
         public int TotalOfServiceRequested { get => totalOfServiceRequested; set => totalOfServiceRequested = value; }
         public static string[] Monthlist { get => monthList; set => monthList = value; }
+        public int LstMthIncome { get => lstMthIncome; set => lstMthIncome = value; }
+        public int Lst2MthIncome { get => lst2MthIncome; set => lst2MthIncome = value; }
+        public int Lst3MthIncome { get => lst3MthIncome; set => lst3MthIncome = value; }
 
         internal void validateRegisPosition(RadioButton technician ,RadioButton receptionist)
         {
@@ -287,7 +294,7 @@ namespace IOOP_Assignment
 
             return passMonths;
         }
-        internal int[] pass3MonthsIncome()
+        internal void pass3MonthsIncome()
 
         {
             DateTime[] passMonths = searchPass3Months();
@@ -308,8 +315,10 @@ namespace IOOP_Assignment
                     passMonthIncome[i] = 0;
                 }
             }
+            lstMthIncome = passMonthIncome[0];
+            lst2MthIncome = passMonthIncome[1];
+            lst3MthIncome = passMonthIncome[2];
 
-         return passMonthIncome;
             conn.Close();
         }
 
@@ -317,8 +326,8 @@ namespace IOOP_Assignment
         {
             DateTime[] passMonths = searchPass3Months(); 
             int[] passMonthsRequestedServ = new int[2];
-
-            for (int i = 0; i < 2; i++) //loop 3 times to get the last 3 month income
+            conn.Open();
+            for (int i = 0; i < 2; i++) //loop 3 times to get the last 3 month requested service
             {
 
                 try
@@ -331,7 +340,7 @@ namespace IOOP_Assignment
                     passMonthsRequestedServ[i] = 0;
                 }
             }
-
+            conn.Close();
             return passMonthsRequestedServ;
 
 
@@ -383,6 +392,33 @@ namespace IOOP_Assignment
             lblBar3.Text = sFMonthList[lst3Month - 1];
         }
 
+        internal void compareIncomeBetweenMntPct(Label lblIncomePct)
+        {
+            if (lst2MthIncome != 0)
+            {
+                decimal incomePct = ((decimal)lstMthIncome / (decimal)lst2MthIncome) * 100;
+                incomePct = Math.Round(incomePct, 2);
+
+
+
+                if (lst2MthIncome - lstMthIncome > 0)
+                {
+                    lblIncomePct.ForeColor = Color.Red;
+                    lblIncomePct.Text = "-" + incomePct.ToString() + "%";
+                }
+                else if (lst2MthIncome == lstMthIncome)
+                {
+                    lblIncomePct.ForeColor = Color.FromArgb(0, 192, 0);
+                    lblIncomePct.Text = "+" + (incomePct - 100).ToString() + "%";
+                }
+                else
+                {
+                    lblIncomePct.ForeColor = Color.FromArgb(0, 192, 0);
+                    lblIncomePct.Text = "+" + incomePct.ToString() + "%";
+                }
+            }
+
+        }
 
 
 

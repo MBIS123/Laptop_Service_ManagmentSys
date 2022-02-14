@@ -28,54 +28,21 @@ namespace IOOP_Assignment
             lblNoOfRecep.Text = adminObjD.NumOfReceptionist.ToString();
             lblNoOfTech.Text =adminObjD.NumOfTechnician.ToString();
             lblTotalRecpTech.Text = (adminObjD.NumOfReceptionist + adminObjD.NumOfTechnician).ToString();
-
+            adminObjD.pass3MonthsIncome();
             adminObjD.changeMonthBarTitle(lblMnthBar1,lblMnthBar2,lblMnthBar3);
+
+            adminObjD.compareIncomeBetweenMntPct(lblProfitPct);
             
+            lblIncome.Text = "RM " + adminObjD.LstMthIncome.ToString();
 
-            int[] passMonthsIncome = adminObjD.pass3MonthsIncome();
-            int lstMthIncome = passMonthsIncome[0];
-            int lst2MthIncome = passMonthsIncome[1];
-            int lst3MthIncome = passMonthsIncome[2];
-            
-            lblIncome.Text = "RM " + lstMthIncome.ToString();
-
-            if (lst2MthIncome != 0)
-            {
-                decimal incomePct = ((decimal)lstMthIncome / (decimal)lst2MthIncome) * 100;
-                incomePct = Math.Round(incomePct, 2);
-
-   
-
-                if (lst2MthIncome - lstMthIncome > 0)
-                {
-                    lblProfitPct.ForeColor = Color.Red;
-                    lblProfitPct.Text = "-" + incomePct.ToString() + "%";
-                }
-                else if (lst2MthIncome == lstMthIncome)
-                {
-                    lblProfitPct.ForeColor = Color.FromArgb(0, 192, 0);
-                    lblProfitPct.Text = "+" + (incomePct - 100).ToString() + "%";
-                }
-                else
-                {
-                    lblProfitPct.ForeColor = Color.FromArgb(0, 192, 0);
-                    lblProfitPct.Text = "+" + incomePct.ToString() + "%";
-                }
-            }
             adminObjD.fillDashBoardServInfo(lblLstMthServ, lblServPct);
 
-            int sizeLastMonthBar = (int)(((decimal)lstMthIncome / 6000) * 430);
+            int sizeLastMonthBar = (int)(((decimal)adminObjD.LstMthIncome / 6000) * 430);
             lblServBar1.Size = new Size(sizeLastMonthBar, 30);
-            int sizeLast2MonthBar = (int)(((decimal)lst2MthIncome / 6000) * 430);
+            int sizeLast2MonthBar = (int)(((decimal)adminObjD.Lst2MthIncome / 6000) * 430);
             lblServBar2.Size = new Size(sizeLast2MonthBar, 30);
-
-            int sizeLast3MonthBar = (int)(((decimal)lst3MthIncome / 6000) * 430);
+            int sizeLast3MonthBar = (int)(((decimal)adminObjD.Lst3MthIncome / 6000) * 430);
             lblServBar3.Size = new Size(sizeLast3MonthBar, 30);
-
-
-
-
-
 
         }
 
