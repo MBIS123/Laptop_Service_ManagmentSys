@@ -1,6 +1,6 @@
 ﻿namespace IOOP_Assignment
 {
-    partial class ServiceReport
+    partial class AdminServiceReport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServiceReport));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminServiceReport));
             this.sideLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -186,6 +186,7 @@
             this.btnLogOut.TabIndex = 281;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // pictureBox2
             // 
@@ -278,7 +279,7 @@
             this.dataGVServiceReport.AllowUserToResizeRows = false;
             this.dataGVServiceReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGVServiceReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGVServiceReport.Location = new System.Drawing.Point(166, 200);
+            this.dataGVServiceReport.Location = new System.Drawing.Point(155, 187);
             this.dataGVServiceReport.Name = "dataGVServiceReport";
             this.dataGVServiceReport.ReadOnly = true;
             this.dataGVServiceReport.RowHeadersWidth = 51;
@@ -290,7 +291,7 @@
             // 
             this.lblArrow3.AutoSize = true;
             this.lblArrow3.BackColor = System.Drawing.Color.Gray;
-            this.lblArrow3.Location = new System.Drawing.Point(862, 176);
+            this.lblArrow3.Location = new System.Drawing.Point(851, 163);
             this.lblArrow3.MaximumSize = new System.Drawing.Size(2, 20);
             this.lblArrow3.MinimumSize = new System.Drawing.Size(2, 20);
             this.lblArrow3.Name = "lblArrow3";
@@ -303,7 +304,7 @@
             // 
             this.lblArrow1.AutoSize = true;
             this.lblArrow1.BackColor = System.Drawing.Color.Gray;
-            this.lblArrow1.Location = new System.Drawing.Point(381, 176);
+            this.lblArrow1.Location = new System.Drawing.Point(370, 163);
             this.lblArrow1.MaximumSize = new System.Drawing.Size(2, 20);
             this.lblArrow1.MinimumSize = new System.Drawing.Size(2, 20);
             this.lblArrow1.Name = "lblArrow1";
@@ -315,7 +316,7 @@
             // 
             this.lblArrow2.AutoSize = true;
             this.lblArrow2.BackColor = System.Drawing.Color.Gray;
-            this.lblArrow2.Location = new System.Drawing.Point(381, 176);
+            this.lblArrow2.Location = new System.Drawing.Point(370, 163);
             this.lblArrow2.MaximumSize = new System.Drawing.Size(500, 2);
             this.lblArrow2.MinimumSize = new System.Drawing.Size(483, 2);
             this.lblArrow2.Name = "lblArrow2";
@@ -326,7 +327,7 @@
             // lblServType
             // 
             this.lblServType.AutoSize = true;
-            this.lblServType.Location = new System.Drawing.Point(574, 156);
+            this.lblServType.Location = new System.Drawing.Point(563, 143);
             this.lblServType.Name = "lblServType";
             this.lblServType.Size = new System.Drawing.Size(71, 15);
             this.lblServType.TabIndex = 291;
@@ -351,7 +352,7 @@
             this.cmbBxYear.FormattingEnabled = true;
             this.cmbBxYear.Items.AddRange(new object[] {
             "2021"});
-            this.cmbBxYear.Location = new System.Drawing.Point(644, 77);
+            this.cmbBxYear.Location = new System.Drawing.Point(621, 90);
             this.cmbBxYear.Name = "cmbBxYear";
             this.cmbBxYear.Size = new System.Drawing.Size(121, 23);
             this.cmbBxYear.TabIndex = 327;
@@ -373,7 +374,7 @@
             "October",
             "November",
             "December"});
-            this.cmbBxMonth.Location = new System.Drawing.Point(780, 77);
+            this.cmbBxMonth.Location = new System.Drawing.Point(757, 90);
             this.cmbBxMonth.Name = "cmbBxMonth";
             this.cmbBxMonth.Size = new System.Drawing.Size(97, 23);
             this.cmbBxMonth.TabIndex = 328;
@@ -381,7 +382,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(736, 59);
+            this.label2.Location = new System.Drawing.Point(713, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 15);
             this.label2.TabIndex = 329;
@@ -390,7 +391,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(834, 59);
+            this.label4.Location = new System.Drawing.Point(811, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 15);
             this.label4.TabIndex = 330;
@@ -405,7 +406,7 @@
             this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSearch.Location = new System.Drawing.Point(896, 77);
+            this.btnSearch.Location = new System.Drawing.Point(873, 90);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(150)))), ((int)(((byte)(239)))));
             this.btnSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(150)))), ((int)(((byte)(239)))));

@@ -136,7 +136,7 @@
             this.linkLabel2.TabIndex = 35;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "MY  ORDER";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+           // this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // llbaccount_setting
             // 

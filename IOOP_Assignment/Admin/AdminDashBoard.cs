@@ -4,15 +4,17 @@ using System.Data.SqlClient;
 
 namespace IOOP_Assignment
 {
-    public partial class DashBoard : Form
+    public partial class AdminDashBoard : Form
     {
         
         Admin adminObjD = new Admin();
-        DateTime[] passMonth = new DateTime[3];
-        string[] monthlist = Admin.Monthlist;
+   
 
 
-        public DashBoard()
+
+
+
+        public AdminDashBoard()
         {
             InitializeComponent();
             
@@ -25,25 +27,26 @@ namespace IOOP_Assignment
             adminObjD.numOfUserInDtBase();
             lblNoOfRecep.Text = adminObjD.NumOfReceptionist.ToString();
             lblNoOfTech.Text =adminObjD.NumOfTechnician.ToString();
-            passMonth = adminObjD.searchPass3Months();
-            int[] passMonthsIncome = adminObjD.pass3MonthsIncome();
-            int passMonthIncome = passMonthsIncome[0];
-            int pass2MonthIncome = passMonthsIncome[1];
-            int pass3MonthIncome = passMonthsIncome[2];
+            lblTotalRecpTech.Text = (adminObjD.NumOfReceptionist + adminObjD.NumOfTechnician).ToString();
+            adminObjD.pass3MonthsIncome();
+            adminObjD.changeMonthBarTitle(lblMnthBar1,lblMnthBar2,lblMnthBar3);
 
-            lblIncome.Text = passMonthIncome.ToString();
-            if ( pass2MonthIncome-passMonthIncome > 0)
-            {
-                lblProfitPct.ForeColor = Color.Red;
-                lblProfitPct.Text = "- " + (Math.Round((decimal)(1 -(passMonthIncome/pass2MonthIncome)),2)*100).ToString() + "%";
-            }
+            adminObjD.compareIncomeBetweenMntPct(lblProfitPct);
+            
+            lblIncome.Text = "RM " + adminObjD.LstMthIncome.ToString();
 
+            adminObjD.fillDashBoardServInfo(lblLstMthServ, lblServPct);
 
+            int sizeLastMonthBar = (int)(((decimal)adminObjD.LstMthIncome / 6000) * 430);
+            lblServBar1.Size = new Size(sizeLastMonthBar, 30);
+            int sizeLast2MonthBar = (int)(((decimal)adminObjD.Lst2MthIncome / 6000) * 430);
+            lblServBar2.Size = new Size(sizeLast2MonthBar, 30);
+            int sizeLast3MonthBar = (int)(((decimal)adminObjD.Lst3MthIncome / 6000) * 430);
+            lblServBar3.Size = new Size(sizeLast3MonthBar, 30);
 
-             
         }
 
-      
+
 
         private void btnIncome_Click(object sender, EventArgs e)
         {
@@ -147,7 +150,7 @@ namespace IOOP_Assignment
             btnExit.BackColor = Color.FromArgb(10,10,10);
         }
 
-        private void showForm(Registration a)
+        private void showForm(AdminRegistration a)
         {
             this.Hide();
             a.Show();
@@ -162,11 +165,26 @@ namespace IOOP_Assignment
         private void uCBtnServiceReport_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ServiceReport sObj = new ServiceReport();
+            AdminServiceReport sObj = new AdminServiceReport();
             sObj.Show();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+            }
+        }
+
+        private void btnServReport_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            adminObjD.showRelatedForm("serviceReport");
+        }
+
+        private void lblMnthBar2_Click(object sender, EventArgs e)
         {
 
         }

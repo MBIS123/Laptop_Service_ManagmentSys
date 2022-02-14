@@ -11,11 +11,11 @@ using System.Windows.Forms;
 namespace IOOP_Assignment
 {
      
-    public partial class ServiceReport : Form
+    public partial class AdminServiceReport : Form
     {
      
         Admin objS = new Admin();
-        public ServiceReport()
+        public AdminServiceReport()
         {
             InitializeComponent();
         }
@@ -68,6 +68,15 @@ namespace IOOP_Assignment
         private void lblArrow3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+            }
         }
     }
 }
