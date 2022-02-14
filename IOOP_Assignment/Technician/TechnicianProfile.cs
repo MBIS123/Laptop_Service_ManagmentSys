@@ -41,6 +41,38 @@ namespace IOOP_Assignment
             txtAddress.Text = obj1.TechAddress;
         }
 
+        //navigating menu
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+            }
+        }
+        private void btnAccess_EditProfile_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UpdateTechnicianProfile utp = new UpdateTechnicianProfile(name);
+            utp.StartPosition = FormStartPosition.Manual;
+            utp.Location = new Point(100, 100);
+            utp.ShowDialog();
+        }
+
+        private void btnAccess_Dashboard_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TechnicianDashboard td = new TechnicianDashboard();
+            td.StartPosition = FormStartPosition.Manual;
+            td.Location = new Point(100, 100);
+            td.ShowDialog();
+        }
+
+        private void txtIC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         //for changes in button color when user hovers over button 
         private void btnAccess_Dashboard_MouseLeave(object sender, EventArgs e)
         {
@@ -80,39 +112,6 @@ namespace IOOP_Assignment
         private void btnAccess_EditProfile_MouseEnter(object sender, EventArgs e)
         {
             btnAccess_EditProfile.BackColor= Color.SteelBlue;
-        }
-
-        //navigating menu
-        private void btnAccess_EditProfile_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            UpdateTechnicianProfile utp = new UpdateTechnicianProfile(name);
-            utp.StartPosition = FormStartPosition.Manual;
-            utp.Location = new Point(100, 100);
-            utp.ShowDialog();
-        }
-
-        private void btnAccess_Dashboard_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            TechnicianDashboard td = new TechnicianDashboard();
-            td.StartPosition = FormStartPosition.Manual;
-            td.Location = new Point(100, 100);
-            td.ShowDialog();
-        }
-
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
-            {
-                this.Hide();
-            }
-        }
-
-        private void txtIC_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
