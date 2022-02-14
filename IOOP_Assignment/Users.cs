@@ -103,7 +103,6 @@ namespace IOOP_Assignment
             SqlCommand numAvailableTech = new SqlCommand("select count(*) from Technician where Status= 'Available';", con);
             int numOfAvaiTech = (int)numAvailableTech.ExecuteScalar();
 
-
             if (numOfAvaiTech != 0) // code will only run if there are at  least one technician which its Sttatus = 'Available'
             {
                 SqlCommand availableTech = new SqlCommand("select top (1) TechnicianID from Technician  where Status ='Available';", con); //first available tech
@@ -115,34 +114,30 @@ namespace IOOP_Assignment
                 SqlCommand cmdUrgentPendingOrder = new SqlCommand("select count(*) from [Order] where [Service Type] ='Urgent' and TechnicianID is null;", con);
                 int numOfUrgentPendingOrder = (int)cmdUrgentPendingOrder.ExecuteScalar();
 
-
                 SqlCommand updtTechStatus = new SqlCommand("update Technician set Status = 'Unavailable' where TechnicianID = " + techId + ";", con);
                 SqlCommand findFirstNormalOrder = new SqlCommand("select top (1) OrderID,[Date Requested] from [Order] where TechnicianID is null and [Service Type]='Normal'order by [Date Requested] ASC;", con);
                 SqlCommand findFirstUrgOrder = new SqlCommand("select top (1) OrderID,[Date Requested] from [Order] where TechnicianID is null and [Service Type]='Urgent'order by [Date Requested] ASC;", con);
 
-                SqlDataReader nmlRead = findFirstNormalOrder.ExecuteReader();
-                nmlRead.Read();
-                nmlOrderID = nmlRead.GetInt32(0);
-                nmlRequestDate = nmlRead.GetDateTime(1);
-                nmlRead.Close();
-
-                SqlDataReader urgtRead = findFirstUrgOrder.ExecuteReader();
-                urgtRead.Read();
-                urgOrderID = urgtRead.GetInt32(0);
-                urgRequestDate = urgtRead.GetDateTime(1);
-                urgtRead.Close();
-
-
-
-                SqlCommand updtUrgentTechID = new SqlCommand("update [Order] set TechnicianID = " + techId + " where OrderID = " + urgOrderID + ";", con);
-                SqlCommand updtNormalTechID = new SqlCommand("update [Order] set TechnicianID = " + techId + " where OrderID = " + nmlOrderID + ";", con);
-
-                if (numOfNormalPendingOrder == 0 && numOfUrgentPendingOrder == 0) { }  // code wont run if there are no pending order
+                if (numOfNormalPendingOrder == 0 && numOfUrgentPendingOrder == 0) { }
 
                 else if (numOfNormalPendingOrder != 0 && numOfUrgentPendingOrder != 0)
                 {
-                    DateTime nmlWaitDate = nmlRequestDate.AddDays(14);
+                    SqlDataReader nmlRead = findFirstNormalOrder.ExecuteReader();
+                    nmlRead.Read();
+                    nmlOrderID = nmlRead.GetInt32(0);
+                    nmlRequestDate = nmlRead.GetDateTime(1);
+                    nmlRead.Close();
 
+                    SqlDataReader urgtRead = findFirstUrgOrder.ExecuteReader();
+                    urgtRead.Read();
+                    urgOrderID = urgtRead.GetInt32(0);
+                    urgRequestDate = urgtRead.GetDateTime(1);
+                    urgtRead.Close();
+
+                    SqlCommand updtUrgentTechID = new SqlCommand("update [Order] set TechnicianID = " + techId + " where OrderID = " + urgOrderID + ";", con);
+                    SqlCommand updtNormalTechID = new SqlCommand("update [Order] set TechnicianID = " + techId + " where OrderID = " + nmlOrderID + ";", con);
+
+                    DateTime nmlWaitDate = nmlRequestDate.AddDays(14);
                     int differentDays = (int)(nmlWaitDate - urgRequestDate).TotalDays;    // if normalorder are  urg order waiting together within 14 day urg will get assign to technician
 
                     if (differentDays >= 0)
@@ -153,25 +148,34 @@ namespace IOOP_Assignment
                     {
                         updtNormalTechID.ExecuteNonQuery();
                     }
-
                     updtTechStatus.ExecuteNonQuery();
                 }
                 else if (numOfNormalPendingOrder == 0) //  if no normal order then no need search for normal order , just arranged urgent order and assign to technician
                 {
+                    SqlDataReader urgtRead = findFirstUrgOrder.ExecuteReader();
+                    urgtRead.Read();
+                    urgOrderID = urgtRead.GetInt32(0);
+                    urgtRead.Close();
+
+                    SqlCommand updtUrgentTechID = new SqlCommand("update [Order] set TechnicianID = " + techId + " where OrderID = " + urgOrderID + ";", con);
                     updtUrgentTechID.ExecuteNonQuery();
                     updtTechStatus.ExecuteNonQuery();
                 }
 
                 else if (numOfUrgentPendingOrder == 0) //  if no urgent order then no need search for urgent order , just arranged normal order and assign to technician
                 {
+                    SqlDataReader nmlRead = findFirstNormalOrder.ExecuteReader();
+                    nmlRead.Read();
+                    nmlOrderID = nmlRead.GetInt32(0);
+                    nmlRead.Close();
+
+                    SqlCommand updtNormalTechID = new SqlCommand("update [Order] set TechnicianID = " + techId + " where OrderID = " + nmlOrderID + ";", con);
                     updtNormalTechID.ExecuteNonQuery();
                     updtTechStatus.ExecuteNonQuery();
-                }
 
+                }
                 con.Close();
             }
-
-
         }
 
 
