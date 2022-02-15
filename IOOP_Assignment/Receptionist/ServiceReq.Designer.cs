@@ -37,7 +37,6 @@
             this.dataGridViewServ = new System.Windows.Forms.DataGridView();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblServType = new System.Windows.Forms.Label();
-            this.btnConfirm = new System.Windows.Forms.Button();
             this.radBtnUrgent = new System.Windows.Forms.RadioButton();
             this.radBtnNormal = new System.Windows.Forms.RadioButton();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@
             this.txtLaptop = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.linklblPayment = new System.Windows.Forms.LinkLabel();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.grpBoxRequest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServ)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -75,10 +75,10 @@
             // grpBoxRequest
             // 
             this.grpBoxRequest.BackColor = System.Drawing.Color.PeachPuff;
+            this.grpBoxRequest.Controls.Add(this.btnConfirm);
             this.grpBoxRequest.Controls.Add(this.dataGridViewServ);
             this.grpBoxRequest.Controls.Add(this.btnClear);
             this.grpBoxRequest.Controls.Add(this.lblServType);
-            this.grpBoxRequest.Controls.Add(this.btnConfirm);
             this.grpBoxRequest.Controls.Add(this.radBtnUrgent);
             this.grpBoxRequest.Controls.Add(this.radBtnNormal);
             this.grpBoxRequest.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -138,18 +138,6 @@
             this.lblServType.Size = new System.Drawing.Size(139, 25);
             this.lblServType.TabIndex = 4;
             this.lblServType.Text = "Service Type:";
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.BackColor = System.Drawing.Color.White;
-            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnConfirm.Location = new System.Drawing.Point(339, 316);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(222, 34);
-            this.btnConfirm.TabIndex = 3;
-            this.btnConfirm.Text = "Confirm Order";
-            this.btnConfirm.UseVisualStyleBackColor = false;
-            this.btnConfirm.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // radBtnUrgent
             // 
@@ -429,6 +417,18 @@
             this.linklblPayment.Text = "PAYMENT";
             this.linklblPayment.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblPayment_LinkClicked);
             // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.White;
+            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnConfirm.Location = new System.Drawing.Point(331, 316);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(230, 34);
+            this.btnConfirm.TabIndex = 36;
+            this.btnConfirm.Text = "Confirm Order";
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
             // frmServRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -479,7 +479,6 @@
         private GroupBox grpBoxRequest;
         private Button btnClear;
         private Label lblServType;
-        private Button btnConfirm;
         private RadioButton radBtnUrgent;
         private RadioButton radBtnNormal;
         private Label lblTitle;
@@ -504,5 +503,6 @@
         private TextBox txtLaptop;
         private GroupBox groupBox5;
         private LinkLabel linklblPayment;
+        private Button btnConfirm;
     }
 }

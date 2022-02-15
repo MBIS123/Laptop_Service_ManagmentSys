@@ -73,6 +73,9 @@ namespace IOOP_Assignment
                     string receptionist_name = cmd5.ExecuteScalar().ToString();
                     frmAccSet td = new frmAccSet(receptionist_name);
                     td.ShowDialog(); //adding a simple comment here
+                    frmRegNewCus u = new frmRegNewCus(receptionist_name);// pass username and display at update profile form
+                    frmPayment v = new frmPayment(receptionist_name);
+                    frmServRequest d = new frmServRequest(receptionist_name);
                 }
             }
             else

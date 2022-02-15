@@ -12,7 +12,7 @@ namespace IOOP_Assignment
 {
     public partial class frmAccSet : Form
     {
-        public static string Name;
+        private static string Name;
         public frmAccSet()
         {
             InitializeComponent();
