@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccSet));
             this.grpBoxAcc = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnClear1 = new System.Windows.Forms.Button();
             this.btnConfirm1 = new System.Windows.Forms.Button();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -63,8 +65,6 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.linklblPayment = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.grpBoxAcc.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -102,6 +102,30 @@
             this.grpBoxAcc.Size = new System.Drawing.Size(611, 603);
             this.grpBoxAcc.TabIndex = 5;
             this.grpBoxAcc.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(222, 451);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(320, 95);
+            this.label4.TabIndex = 129;
+            this.label4.Text = "Your password should have:\r\n- At least 8 characters\r\n- A mixture of both uppercas" +
+    "e and lowercase letters\r\n- A mixture of letters and numbers\r\n- At least one spec" +
+    "ial character, e.g. , ! @ # ? \"\r\n";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(224, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 20);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "eg. +6012-3456789";
             // 
             // btnClear1
             // 
@@ -464,34 +488,9 @@
             this.linklblPayment.Text = "PAYMENT";
             this.linklblPayment.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblPayment_LinkClicked);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(224, 97);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 20);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "eg. +6012-3456789";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(222, 451);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(320, 95);
-            this.label4.TabIndex = 129;
-            this.label4.Text = "Your password should have:\r\n- At least 8 characters\r\n- A mixture of both uppercas" +
-    "e and lowercase letters\r\n- A mixture of letters and numbers\r\n- At least one spec" +
-    "ial character, e.g. , ! @ # ? \"\r\n";
-            // 
             // frmAccSet
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(854, 688);
             this.Controls.Add(this.groupBox6);

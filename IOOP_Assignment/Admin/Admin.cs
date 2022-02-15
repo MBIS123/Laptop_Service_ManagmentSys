@@ -39,7 +39,6 @@ namespace IOOP_Assignment
 
         private string[] monthList = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
         private string[] sFMonthList = { "Jan", "Feb", "Mch", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec" };
-        public Admin() { } //constructor
 
 
 
@@ -60,10 +59,7 @@ namespace IOOP_Assignment
         public int Lst2MthIncome { get => lst2MthIncome; set => lst2MthIncome = value; }
         public int Lst3MthIncome { get => lst3MthIncome; set => lst3MthIncome = value; }
 
-        internal void loadAdminName(Label adnName)
-        {
-            
-        }
+      
         internal void validateRegisPosition(RadioButton technician ,RadioButton receptionist)
         {
             if (technician.Checked == true)

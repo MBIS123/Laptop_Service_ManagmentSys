@@ -50,7 +50,6 @@ namespace IOOP_Assignment
                 {
                     SqlCommand cmdFindAdminName = new SqlCommand("select [Name] from Admin where UserID = (select UserID from Users where UserName = '" + username + "')", con);
                     string adminName = cmdFindAdminName.ExecuteScalar().ToString();
-                    MessageBox.Show(adminName);
                     AdminDashBoard a = new AdminDashBoard(adminName);
                     a.ShowDialog();
                   
