@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpBoxRequest = new System.Windows.Forms.GroupBox();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.dataGridViewServ = new System.Windows.Forms.DataGridView();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblServType = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.txtLaptop = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.linklblPayment = new System.Windows.Forms.LinkLabel();
-            this.btnConfirm = new System.Windows.Forms.Button();
             this.grpBoxRequest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServ)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -88,6 +88,18 @@
             this.grpBoxRequest.TabIndex = 5;
             this.grpBoxRequest.TabStop = false;
             this.grpBoxRequest.Text = "Requested Service";
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.White;
+            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnConfirm.Location = new System.Drawing.Point(331, 316);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(230, 34);
+            this.btnConfirm.TabIndex = 36;
+            this.btnConfirm.Text = "Confirm Order";
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // dataGridViewServ
             // 
@@ -417,22 +429,9 @@
             this.linklblPayment.Text = "PAYMENT";
             this.linklblPayment.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblPayment_LinkClicked);
             // 
-            // btnConfirm
-            // 
-            this.btnConfirm.BackColor = System.Drawing.Color.White;
-            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnConfirm.Location = new System.Drawing.Point(331, 316);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(230, 34);
-            this.btnConfirm.TabIndex = 36;
-            this.btnConfirm.Text = "Confirm Order";
-            this.btnConfirm.UseVisualStyleBackColor = false;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
             // frmServRequest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(986, 656);
             this.Controls.Add(this.groupBox5);

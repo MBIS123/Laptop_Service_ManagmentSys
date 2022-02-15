@@ -550,6 +550,7 @@
             // 
             // frmPayment
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(957, 541);
             this.Controls.Add(this.btnClear);

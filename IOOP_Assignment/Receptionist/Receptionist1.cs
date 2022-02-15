@@ -68,8 +68,12 @@ namespace IOOP_Assignment
             recName = un;
         }
 
-        public void AddNewCustomer()
+        public void AddNewCustomer(DateTime d )
         {
+            cusDob = d;
+            string cusDob_string = cusDob.ToString("yyyy-MM-dd");
+
+
             con.Open();
             bool exists = true;
             SqlCommand cmdUsernameExist = new SqlCommand("select count(*) from Users where Username= '" + cusUsername + "'", con);
@@ -86,16 +90,16 @@ namespace IOOP_Assignment
                 int userID = numOfUsers + 1;
                 int cusID = numOfCus + 1;
 
+                MessageBox.Show(cusDob_string.ToString());
                 SqlCommand cmdUser = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users(UserID, UserName, Password,[User Role]) values" +
                         "( " + userID + ",'" + cusUsername + "','123456', 'customer'); SET IDENTITY_INSERT Users off;", con);
                 cmdUser.ExecuteNonQuery();
-
-                string birthdate = CusDob.ToString("yyyy-MM-dd");
                 SqlCommand cmdNewCus = new SqlCommand("SET IDENTITY_INSERT Customer ON; insert into Customer(CustomerID, UserID,Name,Gender,[Date of Birth],[IC No.]," +
                         "[Contact No.],Email,Address) values" +
-                        "( " + cusID + "," + userID + " ,'" + cusName + "','" + cusGender + "','" + birthdate + "','" + cusIC + "','" + cusPhoneNum + "','" + CusEmail + "','" + CusAddress + "'); SET IDENTITY_INSERT Customer off; ", con);
-
+                        "( " + cusID + "," + userID + " ,'" + cusName + "','" + cusGender + "','" + cusDob_string + "','" + cusIC + "','" + cusPhoneNum + "','" + CusEmail + "','" + CusAddress + "'); SET IDENTITY_INSERT Customer off; ", con);
+                //cmdNewCus.Parameters.AddWithValue("@date", bdate);
                 cmdNewCus.ExecuteNonQuery();
+                MessageBox.Show("Customer Register Successfully! Customer Password is 123456.");
             }
             else
             {
