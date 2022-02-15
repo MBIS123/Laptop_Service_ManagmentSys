@@ -44,14 +44,14 @@ namespace IOOP_Assignment
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            Customers obj1 = new Customers();
+            Customers obj1 = new Customers(name);
             if (txtreview.Text != "")
             {
                 MessageBox.Show(obj1.store_comment(txtreview.Text));
             }
             else
             {
-                MessageBox.Show("You have not entered any comment yet !");
+                MessageBox.Show("You have not entered any comment yet !", "Error");
             }
 
         }
@@ -63,10 +63,11 @@ namespace IOOP_Assignment
 
         private void llblogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            frmLogin login = new frmLogin();
-            login.ShowDialog();
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+            }
         }
 
         

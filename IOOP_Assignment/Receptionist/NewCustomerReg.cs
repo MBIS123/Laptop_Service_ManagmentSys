@@ -13,7 +13,6 @@ namespace IOOP_Assignment
     public partial class frmRegNewCus : Form
     {
         private static string Name;
-
         public frmRegNewCus()
         {
             InitializeComponent();
@@ -23,40 +22,48 @@ namespace IOOP_Assignment
             InitializeComponent();
             Name = n;
         }
+
         string Gender;
+        private void frmRegNewCus_Load(object sender, EventArgs e)
+        {
+            lblRcn.Text = Name;
+        }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             DataValidation objval = new DataValidation();
-            if (objval.isString(txtName.Text) == true && objval.isIcNum(txtIC) == true && objval.isPhoneNum(txtMobile.Text) == true
-                && objval.isEmailAddress(txtEmail) == true && objval.isStringNull(txtAddress) == false && objval.isStringNull(txtUsername) == false)
+            if (objval.isString(txtName.Text) == true && objval.isIcNum(txtIC) == true 
+                && objval.isPhoneNum(txtMobile.Text) == true
+                && objval.isEmailAddress(txtEmail) == true && objval.isStringNull(txtAddress) == false 
+                && objval.isStringNull(txtUsername) == false)
             {
+                DateTime bdaydate = dateTimePickerDate.Value.Date;
                 if (radBtnFemale.Checked == true)
                 {
                     Gender = "Female";
-                    DateTime bdaydate1 = DateTime.Parse(dateTimePickerDate.Text);
-                    Receptionist1 obj1 = new Receptionist1(txtName.Text, Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate1, txtUsername.Text);
-                    obj1.AddNewCustomer();
+                    Receptionist1 obj1 = new Receptionist1(txtName.Text, Gender, txtIC.Text, 
+                        txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate, txtUsername.Text);
+                    obj1.AddNewCustomer(bdaydate);
                 }
-                else if (radBtnMale.Checked ==true)
+                else if (radBtnMale.Checked == true)
                 {
                     Gender = "Male";
-                    DateTime bdaydate2 = DateTime.Parse(dateTimePickerDate.Text);
-                    Receptionist1 obj1 = new Receptionist1(txtName.Text, Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate2, txtUsername.Text);
-                    obj1.AddNewCustomer();
+                    Receptionist1 obj1 = new Receptionist1(txtName.Text, Gender, txtIC.Text, 
+                        txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate, txtUsername.Text);
+                    obj1.AddNewCustomer(bdaydate);
                 }
                 else
                 {
-                    MessageBox.Show("Please choose your gender!");
+                    MessageBox.Show("Please choose the gender of the customer!");
                 }
             }
             else
             {
                 if (objval.isStringNull(txtName))//name not entered
                 {
-                    MessageBox.Show("Please enter your name!");
+                    MessageBox.Show("Please enter customer name!");
                 }
-                if (objval.isIcNum(txtIC) ==false)
+                if (objval.isIcNum(txtIC) == false)
                 {
                     MessageBox.Show("Please enter a correct IC number!");
                 }
@@ -74,15 +81,10 @@ namespace IOOP_Assignment
                 }
                 if (objval.isStringNull(txtUsername))
                 {
-                    MessageBox.Show("Please enter your username!");
+                    MessageBox.Show("Please enter customer username!");
                 }
             }
-            
-        }
 
-        private void frmRegNewCus_Load(object sender, EventArgs e)
-        {
-            lblRcn.Text = Name;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -96,7 +98,6 @@ namespace IOOP_Assignment
             radBtnFemale.Checked = false;
             radBtnMale.Checked = false;
         }
-
 
         private void linklblServReq_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

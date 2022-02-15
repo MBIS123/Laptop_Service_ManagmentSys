@@ -575,8 +575,8 @@
             this.Controls.Add(this.llbmy_order);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox5);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Myorder";
             this.Text = "MyOrder";
             this.Load += new System.EventHandler(this.Myorder_Load);

@@ -161,8 +161,11 @@ namespace IOOP_Assignment
         {
             string stat;
             con.Open();
+            SqlCommand cmd = new SqlCommand("select CustomerID from [Customer] where Name = '" + name + "'", con);
+            MessageBox.Show(name);
+            string customerID = cmd.ExecuteScalar().ToString();
 
-            SqlCommand cmd7 = new SqlCommand("update [Order] set Comments ='" + c + "'", con);
+            SqlCommand cmd7 = new SqlCommand("update [Order] set Comments ='" + c  + "' where [CustomerID] = '" + customerID + "'" , con);
             int comm = cmd7.ExecuteNonQuery();
 
             if (comm != 0)
@@ -218,7 +221,10 @@ namespace IOOP_Assignment
             CusAddress = Address;
             
 
-            SqlCommand cmd12 = new SqlCommand("Update [Customer] set [Name] = '" + CusName  +  "', [Date of Birth] = @date, [Contact No.] = '" + CusPhoneNo + "', [Email] = '" + CusEmail + "', [Address] = '" + CusAddress + "' where [Name] = '" + name + "'", con);
+            SqlCommand cmd12 = new SqlCommand("Update [Customer] set [Name] = '" + CusName  +  
+                "', [Date of Birth] = @date, [Contact No.] = '" + CusPhoneNo + "', [Email] = '" + CusEmail +
+                "', [Address] = '" + CusAddress + "' where [Name] = '" + name + "'", con);
+
             cmd12.Parameters.AddWithValue("@date", CusBOD);
             int i = cmd12.ExecuteNonQuery();
 

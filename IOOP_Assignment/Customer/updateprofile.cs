@@ -92,20 +92,22 @@ namespace IOOP_Assignment
 
             if (txtcurrentpassw.Text == obj_passw.CusPassword1) //compare the current password with get password (from method viewCustomerProfile)
             {
-                if ((txtnewpassw.Text == txtconfirmpassw.Text) && (obj_validationpassw.isPassword(txtnewpassw.Text)) && (obj_validationpassw.isStringNull(txtnewpassw) == false && (obj_validationpassw.isStringNull(txtconfirmpassw) == false)))
+                if ((txtnewpassw.Text == txtconfirmpassw.Text) && (obj_validationpassw.isPassword(txtnewpassw.Text)) && 
+                    (obj_validationpassw.isStringNull(txtnewpassw) == false && (obj_validationpassw.isStringNull(txtconfirmpassw) == false)))
                 // make condition new passw & conf passw must same AND new passw validated AND both new passw & conf passw text box cannot be null
                 {
                     MessageBox.Show(obj_passw.updateCustomerPassword(txtnewpassw.Text));
                 }
                 else
                 {
-                    MessageBox.Show("Dear customer," + "\n" + "Please make sure :" + "\n" + "1. New Password and Confirm Password is same." + "\n" + "2. Password format is correct." + "\n" + "3. Make sure has not entered null, empty or whitespace value.");
+                    MessageBox.Show("Dear customer," + "\n" + "Please make sure :" + "\n" + "1. New Password and Confirm Password is same." + "\n" 
+                        + "2. Password format is correct." + "\n" + "3. Make sure has not entered null, empty or whitespace value.", "Error");
                 }
 
             }
             else
             {
-                MessageBox.Show("Dear customer, password entered not match current password");
+                MessageBox.Show("Dear customer, password entered not match current password", "Error");
             }
 
         }
@@ -124,23 +126,23 @@ namespace IOOP_Assignment
             {
                 if (objvalidation.isStringNull(txtname) == true || objvalidation.isString(txtname.Text) == false)
                 {
-                    MessageBox.Show("Dear customer," + "\n" + "1. Please make sure you have entered a new Name" + "\n" + "2. Please make sure format is correct");
+                    MessageBox.Show("Dear customer," + "\n" + "1. Please make sure you have entered a new Name" + "\n" + "2. Please make sure format is correct","Error");
                 }
                 if (dtp_DOB.Value == null)
                 {
-                    MessageBox.Show("Dear customer," + "\n" + "1. Please make sure you have entered a new date of birth" + "\n" + "2. Please make sure format is correct");
+                    MessageBox.Show("Dear customer," + "\n" + "1. Please make sure you have entered a new date of birth" + "\n" + "2. Please make sure format is correct", "Error");
                 }
                 if (objvalidation.isStringNull(txtphonenum) == true || objvalidation.isPhoneNum(txtphonenum.Text) == false)
                 {
-                    MessageBox.Show("Dear customer," + "\n" + "1. Please make sure you have entered a new phone number" + "\n" + "2. Please make sure format is correct");
+                    MessageBox.Show("Dear customer," + "\n" + "1. Please make sure you have entered a new phone number" + "\n" + "2. Please make sure format is correct", "Error");
                 }
                 if (objvalidation.isStringNull(txtemail) == true || objvalidation.isEmailAddress(txtemail) == false)
                 {
-                    MessageBox.Show("Dear customer," + "\n" + "1. Please make sure you have entered a new email" + "\n" + "2. Please make sure format is correct");
+                    MessageBox.Show("Dear customer," + "\n" + "1. Please make sure you have entered a new email" + "\n" + "2. Please make sure format is correct", "Error");
                 }
                 if (objvalidation.isStringNull(txtaddress) == true)
                 {
-                    MessageBox.Show("Dear customer," + "\n" + "Please make sure you have entered a new address");
+                    MessageBox.Show("Dear customer," + "\n" + "Please make sure you have entered a new address", "Error");
                 }
 
             }
@@ -153,10 +155,11 @@ namespace IOOP_Assignment
 
         private void llblogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            frmLogin login = new frmLogin();
-            login.ShowDialog();
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+            }
         }
 
         private void lblname_Click(object sender, EventArgs e)
