@@ -93,7 +93,7 @@ namespace IOOP_Assignment
                 failedCase += 1;
                 MessageBox.Show("Invalid name entered.Please enter a valid name", "Registration Failed",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }  
-            if(!(validtObj.isStringNull(txtAddress)))
+            if((validtObj.isStringNull(txtAddress)))
             {
                 failedCase += 1;
                 MessageBox.Show("Invalid address entered.Please enter a valid address", "Registration Failed",MessageBoxButtons.OK, MessageBoxIcon.Warning);

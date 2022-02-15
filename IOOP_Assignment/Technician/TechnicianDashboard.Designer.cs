@@ -47,6 +47,16 @@
             this.lblWidg_TextPendServ = new System.Windows.Forms.Label();
             this.btnAccess_AllServ = new System.Windows.Forms.Button();
             this.dataGrid_AllServ = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CollectionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Laptop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTable_TextAllServ = new System.Windows.Forms.Label();
             this.panelTable_Pend = new System.Windows.Forms.Panel();
             this.btnRefresh_AllServ = new System.Windows.Forms.Button();
@@ -62,16 +72,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CollectionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Laptop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMenuProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -92,17 +92,19 @@
             this.panelMenu.Controls.Add(this.lblName);
             this.panelMenu.Controls.Add(this.picLogo);
             this.panelMenu.Location = new System.Drawing.Point(2, 1);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(248, 716);
+            this.panelMenu.Size = new System.Drawing.Size(217, 537);
             this.panelMenu.TabIndex = 6;
             // 
             // btnLogOut
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLogOut.Location = new System.Drawing.Point(41, 587);
+            this.btnLogOut.Location = new System.Drawing.Point(36, 440);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(173, 40);
+            this.btnLogOut.Size = new System.Drawing.Size(151, 30);
             this.btnLogOut.TabIndex = 5;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
@@ -114,10 +116,11 @@
             // 
             this.btnAccess_Profile.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnAccess_Profile.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAccess_Profile.Location = new System.Drawing.Point(41, 342);
+            this.btnAccess_Profile.Location = new System.Drawing.Point(36, 256);
+            this.btnAccess_Profile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccess_Profile.Name = "btnAccess_Profile";
-            this.btnAccess_Profile.Padding = new System.Windows.Forms.Padding(4);
-            this.btnAccess_Profile.Size = new System.Drawing.Size(173, 40);
+            this.btnAccess_Profile.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAccess_Profile.Size = new System.Drawing.Size(151, 30);
             this.btnAccess_Profile.TabIndex = 4;
             this.btnAccess_Profile.Text = "Profile";
             this.btnAccess_Profile.UseVisualStyleBackColor = false;
@@ -129,10 +132,11 @@
             // 
             this.btnAccess_Dashboard.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnAccess_Dashboard.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAccess_Dashboard.Location = new System.Drawing.Point(41, 272);
+            this.btnAccess_Dashboard.Location = new System.Drawing.Point(36, 204);
+            this.btnAccess_Dashboard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccess_Dashboard.Name = "btnAccess_Dashboard";
-            this.btnAccess_Dashboard.Padding = new System.Windows.Forms.Padding(4);
-            this.btnAccess_Dashboard.Size = new System.Drawing.Size(173, 40);
+            this.btnAccess_Dashboard.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAccess_Dashboard.Size = new System.Drawing.Size(151, 30);
             this.btnAccess_Dashboard.TabIndex = 2;
             this.btnAccess_Dashboard.Text = "Dashboard";
             this.btnAccess_Dashboard.UseVisualStyleBackColor = false;
@@ -142,9 +146,10 @@
             // picMenuProfile
             // 
             this.picMenuProfile.Image = ((System.Drawing.Image)(resources.GetObject("picMenuProfile.Image")));
-            this.picMenuProfile.Location = new System.Drawing.Point(93, 436);
+            this.picMenuProfile.Location = new System.Drawing.Point(81, 327);
+            this.picMenuProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picMenuProfile.Name = "picMenuProfile";
-            this.picMenuProfile.Size = new System.Drawing.Size(63, 82);
+            this.picMenuProfile.Size = new System.Drawing.Size(55, 62);
             this.picMenuProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMenuProfile.TabIndex = 1;
             this.picMenuProfile.TabStop = false;
@@ -153,9 +158,9 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblName.Location = new System.Drawing.Point(52, 529);
+            this.lblName.Location = new System.Drawing.Point(46, 397);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(66, 25);
+            this.lblName.Size = new System.Drawing.Size(52, 20);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "name";
             // 
@@ -164,9 +169,10 @@
             this.picLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(52, 30);
+            this.picLogo.Location = new System.Drawing.Point(46, 22);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(143, 131);
+            this.picLogo.Size = new System.Drawing.Size(125, 98);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
@@ -176,18 +182,19 @@
             this.panelWidget_Comp.BackColor = System.Drawing.Color.Khaki;
             this.panelWidget_Comp.Controls.Add(this.lblWidg_TextCompServ);
             this.panelWidget_Comp.Controls.Add(this.lblWidg_ValueCompServ);
-            this.panelWidget_Comp.Location = new System.Drawing.Point(1118, 62);
+            this.panelWidget_Comp.Location = new System.Drawing.Point(978, 46);
+            this.panelWidget_Comp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelWidget_Comp.Name = "panelWidget_Comp";
-            this.panelWidget_Comp.Size = new System.Drawing.Size(237, 100);
+            this.panelWidget_Comp.Size = new System.Drawing.Size(207, 75);
             this.panelWidget_Comp.TabIndex = 9;
             // 
             // lblWidg_TextCompServ
             // 
             this.lblWidg_TextCompServ.AutoSize = true;
             this.lblWidg_TextCompServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblWidg_TextCompServ.Location = new System.Drawing.Point(63, 15);
+            this.lblWidg_TextCompServ.Location = new System.Drawing.Point(55, 11);
             this.lblWidg_TextCompServ.Name = "lblWidg_TextCompServ";
-            this.lblWidg_TextCompServ.Size = new System.Drawing.Size(171, 72);
+            this.lblWidg_TextCompServ.Size = new System.Drawing.Size(133, 56);
             this.lblWidg_TextCompServ.TabIndex = 0;
             this.lblWidg_TextCompServ.Text = "Completed\r\nThis Month";
             // 
@@ -195,9 +202,9 @@
             // 
             this.lblWidg_ValueCompServ.AutoSize = true;
             this.lblWidg_ValueCompServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblWidg_ValueCompServ.Location = new System.Drawing.Point(3, 10);
+            this.lblWidg_ValueCompServ.Location = new System.Drawing.Point(3, 8);
             this.lblWidg_ValueCompServ.Name = "lblWidg_ValueCompServ";
-            this.lblWidg_ValueCompServ.Size = new System.Drawing.Size(69, 77);
+            this.lblWidg_ValueCompServ.Size = new System.Drawing.Size(56, 61);
             this.lblWidg_ValueCompServ.TabIndex = 2;
             this.lblWidg_ValueCompServ.Text = "1";
             this.lblWidg_ValueCompServ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -207,18 +214,19 @@
             this.panelWidget_Urg.BackColor = System.Drawing.Color.Khaki;
             this.panelWidget_Urg.Controls.Add(this.lblWidg_ValueUrgServ);
             this.panelWidget_Urg.Controls.Add(this.lblWidg_TextUrgServ);
-            this.panelWidget_Urg.Location = new System.Drawing.Point(783, 62);
+            this.panelWidget_Urg.Location = new System.Drawing.Point(685, 46);
+            this.panelWidget_Urg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelWidget_Urg.Name = "panelWidget_Urg";
-            this.panelWidget_Urg.Size = new System.Drawing.Size(237, 100);
+            this.panelWidget_Urg.Size = new System.Drawing.Size(207, 75);
             this.panelWidget_Urg.TabIndex = 8;
             // 
             // lblWidg_ValueUrgServ
             // 
             this.lblWidg_ValueUrgServ.AutoSize = true;
             this.lblWidg_ValueUrgServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblWidg_ValueUrgServ.Location = new System.Drawing.Point(11, 10);
+            this.lblWidg_ValueUrgServ.Location = new System.Drawing.Point(10, 8);
             this.lblWidg_ValueUrgServ.Name = "lblWidg_ValueUrgServ";
-            this.lblWidg_ValueUrgServ.Size = new System.Drawing.Size(69, 77);
+            this.lblWidg_ValueUrgServ.Size = new System.Drawing.Size(56, 61);
             this.lblWidg_ValueUrgServ.TabIndex = 2;
             this.lblWidg_ValueUrgServ.Text = "1";
             this.lblWidg_ValueUrgServ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -227,9 +235,9 @@
             // 
             this.lblWidg_TextUrgServ.AutoSize = true;
             this.lblWidg_TextUrgServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblWidg_TextUrgServ.Location = new System.Drawing.Point(86, 31);
+            this.lblWidg_TextUrgServ.Location = new System.Drawing.Point(75, 23);
             this.lblWidg_TextUrgServ.Name = "lblWidg_TextUrgServ";
-            this.lblWidg_TextUrgServ.Size = new System.Drawing.Size(110, 36);
+            this.lblWidg_TextUrgServ.Size = new System.Drawing.Size(87, 28);
             this.lblWidg_TextUrgServ.TabIndex = 0;
             this.lblWidg_TextUrgServ.Text = "Urgent";
             // 
@@ -238,18 +246,19 @@
             this.panelWidget_Pend.BackColor = System.Drawing.Color.Khaki;
             this.panelWidget_Pend.Controls.Add(this.lblWidg_ValuePendServ);
             this.panelWidget_Pend.Controls.Add(this.lblWidg_TextPendServ);
-            this.panelWidget_Pend.Location = new System.Drawing.Point(447, 62);
+            this.panelWidget_Pend.Location = new System.Drawing.Point(391, 46);
+            this.panelWidget_Pend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelWidget_Pend.Name = "panelWidget_Pend";
-            this.panelWidget_Pend.Size = new System.Drawing.Size(237, 100);
+            this.panelWidget_Pend.Size = new System.Drawing.Size(207, 75);
             this.panelWidget_Pend.TabIndex = 5;
             // 
             // lblWidg_ValuePendServ
             // 
             this.lblWidg_ValuePendServ.AutoSize = true;
             this.lblWidg_ValuePendServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblWidg_ValuePendServ.Location = new System.Drawing.Point(13, 10);
+            this.lblWidg_ValuePendServ.Location = new System.Drawing.Point(11, 8);
             this.lblWidg_ValuePendServ.Name = "lblWidg_ValuePendServ";
-            this.lblWidg_ValuePendServ.Size = new System.Drawing.Size(69, 77);
+            this.lblWidg_ValuePendServ.Size = new System.Drawing.Size(56, 61);
             this.lblWidg_ValuePendServ.TabIndex = 1;
             this.lblWidg_ValuePendServ.Text = "2";
             this.lblWidg_ValuePendServ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -258,9 +267,9 @@
             // 
             this.lblWidg_TextPendServ.AutoSize = true;
             this.lblWidg_TextPendServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblWidg_TextPendServ.Location = new System.Drawing.Point(88, 31);
+            this.lblWidg_TextPendServ.Location = new System.Drawing.Point(77, 23);
             this.lblWidg_TextPendServ.Name = "lblWidg_TextPendServ";
-            this.lblWidg_TextPendServ.Size = new System.Drawing.Size(129, 36);
+            this.lblWidg_TextPendServ.Size = new System.Drawing.Size(101, 28);
             this.lblWidg_TextPendServ.TabIndex = 0;
             this.lblWidg_TextPendServ.Text = "Pending";
             // 
@@ -268,10 +277,11 @@
             // 
             this.btnAccess_AllServ.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnAccess_AllServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAccess_AllServ.Location = new System.Drawing.Point(987, 403);
+            this.btnAccess_AllServ.Location = new System.Drawing.Point(864, 302);
+            this.btnAccess_AllServ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccess_AllServ.Name = "btnAccess_AllServ";
-            this.btnAccess_AllServ.Padding = new System.Windows.Forms.Padding(4);
-            this.btnAccess_AllServ.Size = new System.Drawing.Size(173, 40);
+            this.btnAccess_AllServ.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAccess_AllServ.Size = new System.Drawing.Size(151, 30);
             this.btnAccess_AllServ.TabIndex = 3;
             this.btnAccess_AllServ.Text = "Edit";
             this.btnAccess_AllServ.UseVisualStyleBackColor = false;
@@ -294,12 +304,102 @@
             this.CollectionDate,
             this.Comments,
             this.Laptop});
-            this.dataGrid_AllServ.Location = new System.Drawing.Point(0, 61);
+            this.dataGrid_AllServ.Location = new System.Drawing.Point(0, 46);
+            this.dataGrid_AllServ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGrid_AllServ.Name = "dataGrid_AllServ";
             this.dataGrid_AllServ.RowHeadersWidth = 51;
             this.dataGrid_AllServ.RowTemplate.Height = 29;
-            this.dataGrid_AllServ.Size = new System.Drawing.Size(1160, 323);
+            this.dataGrid_AllServ.Size = new System.Drawing.Size(1015, 242);
             this.dataGrid_AllServ.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "OrderID";
+            this.dataGridViewTextBoxColumn7.HeaderText = "OrderID";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "CustomerID";
+            this.dataGridViewTextBoxColumn8.HeaderText = "CustomerID";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Date Requested";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Date Requested";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "ServiceRequestType ID";
+            this.dataGridViewTextBoxColumn10.HeaderText = "ServiceRequestType ID";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Service Type";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Service Type";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Status";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Service Description/Suggestion";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Service Description/Suggestion";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 125;
+            // 
+            // CollectionDate
+            // 
+            this.CollectionDate.DataPropertyName = "Collection Date";
+            this.CollectionDate.HeaderText = "Collection Date";
+            this.CollectionDate.MinimumWidth = 6;
+            this.CollectionDate.Name = "CollectionDate";
+            this.CollectionDate.ReadOnly = true;
+            this.CollectionDate.Width = 125;
+            // 
+            // Comments
+            // 
+            this.Comments.DataPropertyName = "Comments";
+            this.Comments.HeaderText = "Comments";
+            this.Comments.MinimumWidth = 6;
+            this.Comments.Name = "Comments";
+            this.Comments.ReadOnly = true;
+            this.Comments.Width = 125;
+            // 
+            // Laptop
+            // 
+            this.Laptop.DataPropertyName = "Laptop";
+            this.Laptop.HeaderText = "Laptop";
+            this.Laptop.MinimumWidth = 6;
+            this.Laptop.Name = "Laptop";
+            this.Laptop.ReadOnly = true;
+            this.Laptop.Width = 125;
             // 
             // lblTable_TextAllServ
             // 
@@ -307,7 +407,7 @@
             this.lblTable_TextAllServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTable_TextAllServ.Location = new System.Drawing.Point(3, 0);
             this.lblTable_TextAllServ.Name = "lblTable_TextAllServ";
-            this.lblTable_TextAllServ.Size = new System.Drawing.Size(320, 36);
+            this.lblTable_TextAllServ.Size = new System.Drawing.Size(255, 28);
             this.lblTable_TextAllServ.TabIndex = 7;
             this.lblTable_TextAllServ.Text = "Your Service Requests:";
             // 
@@ -317,19 +417,21 @@
             this.panelTable_Pend.Controls.Add(this.lblTable_TextAllServ);
             this.panelTable_Pend.Controls.Add(this.dataGrid_AllServ);
             this.panelTable_Pend.Controls.Add(this.btnAccess_AllServ);
-            this.panelTable_Pend.Location = new System.Drawing.Point(299, 185);
+            this.panelTable_Pend.Location = new System.Drawing.Point(262, 139);
+            this.panelTable_Pend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelTable_Pend.Name = "panelTable_Pend";
-            this.panelTable_Pend.Size = new System.Drawing.Size(1163, 453);
+            this.panelTable_Pend.Size = new System.Drawing.Size(1018, 340);
             this.panelTable_Pend.TabIndex = 13;
             // 
             // btnRefresh_AllServ
             // 
             this.btnRefresh_AllServ.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnRefresh_AllServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRefresh_AllServ.Location = new System.Drawing.Point(798, 403);
+            this.btnRefresh_AllServ.Location = new System.Drawing.Point(698, 302);
+            this.btnRefresh_AllServ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh_AllServ.Name = "btnRefresh_AllServ";
-            this.btnRefresh_AllServ.Padding = new System.Windows.Forms.Padding(4);
-            this.btnRefresh_AllServ.Size = new System.Drawing.Size(173, 40);
+            this.btnRefresh_AllServ.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnRefresh_AllServ.Size = new System.Drawing.Size(151, 30);
             this.btnRefresh_AllServ.TabIndex = 8;
             this.btnRefresh_AllServ.Text = "Refresh";
             this.btnRefresh_AllServ.UseVisualStyleBackColor = false;
@@ -421,102 +523,12 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 125;
             // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "OrderID";
-            this.dataGridViewTextBoxColumn7.HeaderText = "OrderID";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "CustomerID";
-            this.dataGridViewTextBoxColumn8.HeaderText = "CustomerID";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Date Requested";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Date Requested";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "ServiceRequestType ID";
-            this.dataGridViewTextBoxColumn10.HeaderText = "ServiceRequestType ID";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Service Type";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Service Type";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Status";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Status";
-            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Service Description/Suggestion";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Service Description/Suggestion";
-            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Width = 125;
-            // 
-            // CollectionDate
-            // 
-            this.CollectionDate.DataPropertyName = "Collection Date";
-            this.CollectionDate.HeaderText = "Collection Date";
-            this.CollectionDate.MinimumWidth = 6;
-            this.CollectionDate.Name = "CollectionDate";
-            this.CollectionDate.ReadOnly = true;
-            this.CollectionDate.Width = 125;
-            // 
-            // Comments
-            // 
-            this.Comments.DataPropertyName = "Comments";
-            this.Comments.HeaderText = "Comments";
-            this.Comments.MinimumWidth = 6;
-            this.Comments.Name = "Comments";
-            this.Comments.ReadOnly = true;
-            this.Comments.Width = 125;
-            // 
-            // Laptop
-            // 
-            this.Laptop.DataPropertyName = "Laptop";
-            this.Laptop.HeaderText = "Laptop";
-            this.Laptop.MinimumWidth = 6;
-            this.Laptop.Name = "Laptop";
-            this.Laptop.ReadOnly = true;
-            this.Laptop.Width = 125;
-            // 
             // TechnicianDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightYellow;
-            this.ClientSize = new System.Drawing.Size(1496, 666);
+            this.ClientSize = new System.Drawing.Size(1309, 500);
             this.ControlBox = false;
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelWidget_Comp);
@@ -524,6 +536,7 @@
             this.Controls.Add(this.panelWidget_Pend);
             this.Controls.Add(this.panelTable_Pend);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "TechnicianDashboard";
             this.Text = "Technician Dashboard";
