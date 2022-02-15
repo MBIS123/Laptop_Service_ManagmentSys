@@ -12,7 +12,10 @@ namespace IOOP_Assignment
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmWelcome());
+
+
+            Application.Run(new AdminDashBoard());
+
 
         }
     }

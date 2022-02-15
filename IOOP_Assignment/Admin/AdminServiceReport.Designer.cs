@@ -1,6 +1,6 @@
 ﻿namespace IOOP_Assignment
 {
-    partial class ServiceReport
+    partial class AdminServiceReport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServiceReport));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminServiceReport));
             this.sideLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -51,6 +51,11 @@
             this.lblArrow2 = new System.Windows.Forms.Label();
             this.lblServType = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
+            this.cmbBxYear = new System.Windows.Forms.ComboBox();
+            this.cmbBxMonth = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSearch = new ePOSOne.btnProduct.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxServRpt)).BeginInit();
@@ -181,6 +186,7 @@
             this.btnLogOut.TabIndex = 281;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // pictureBox2
             // 
@@ -273,31 +279,32 @@
             this.dataGVServiceReport.AllowUserToResizeRows = false;
             this.dataGVServiceReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGVServiceReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGVServiceReport.Location = new System.Drawing.Point(155, 130);
+            this.dataGVServiceReport.Location = new System.Drawing.Point(155, 187);
             this.dataGVServiceReport.Name = "dataGVServiceReport";
             this.dataGVServiceReport.ReadOnly = true;
             this.dataGVServiceReport.RowHeadersWidth = 51;
             this.dataGVServiceReport.RowTemplate.Height = 25;
-            this.dataGVServiceReport.Size = new System.Drawing.Size(795, 326);
+            this.dataGVServiceReport.Size = new System.Drawing.Size(795, 137);
             this.dataGVServiceReport.TabIndex = 295;
             // 
             // lblArrow3
             // 
             this.lblArrow3.AutoSize = true;
             this.lblArrow3.BackColor = System.Drawing.Color.Gray;
-            this.lblArrow3.Location = new System.Drawing.Point(812, 107);
+            this.lblArrow3.Location = new System.Drawing.Point(851, 163);
             this.lblArrow3.MaximumSize = new System.Drawing.Size(2, 20);
             this.lblArrow3.MinimumSize = new System.Drawing.Size(2, 20);
             this.lblArrow3.Name = "lblArrow3";
             this.lblArrow3.Size = new System.Drawing.Size(2, 20);
             this.lblArrow3.TabIndex = 294;
             this.lblArrow3.Text = "label12";
+            this.lblArrow3.Click += new System.EventHandler(this.lblArrow3_Click);
             // 
             // lblArrow1
             // 
             this.lblArrow1.AutoSize = true;
             this.lblArrow1.BackColor = System.Drawing.Color.Gray;
-            this.lblArrow1.Location = new System.Drawing.Point(374, 105);
+            this.lblArrow1.Location = new System.Drawing.Point(370, 163);
             this.lblArrow1.MaximumSize = new System.Drawing.Size(2, 20);
             this.lblArrow1.MinimumSize = new System.Drawing.Size(2, 20);
             this.lblArrow1.Name = "lblArrow1";
@@ -309,18 +316,18 @@
             // 
             this.lblArrow2.AutoSize = true;
             this.lblArrow2.BackColor = System.Drawing.Color.Gray;
-            this.lblArrow2.Location = new System.Drawing.Point(374, 105);
+            this.lblArrow2.Location = new System.Drawing.Point(370, 163);
             this.lblArrow2.MaximumSize = new System.Drawing.Size(500, 2);
-            this.lblArrow2.MinimumSize = new System.Drawing.Size(440, 2);
+            this.lblArrow2.MinimumSize = new System.Drawing.Size(483, 2);
             this.lblArrow2.Name = "lblArrow2";
-            this.lblArrow2.Size = new System.Drawing.Size(440, 2);
+            this.lblArrow2.Size = new System.Drawing.Size(483, 2);
             this.lblArrow2.TabIndex = 292;
             this.lblArrow2.Text = "label10";
             // 
             // lblServType
             // 
             this.lblServType.AutoSize = true;
-            this.lblServType.Location = new System.Drawing.Point(546, 85);
+            this.lblServType.Location = new System.Drawing.Point(563, 143);
             this.lblServType.Name = "lblServType";
             this.lblServType.Size = new System.Drawing.Size(71, 15);
             this.lblServType.TabIndex = 291;
@@ -339,12 +346,88 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // cmbBxYear
+            // 
+            this.cmbBxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBxYear.FormattingEnabled = true;
+            this.cmbBxYear.Items.AddRange(new object[] {
+            "2021"});
+            this.cmbBxYear.Location = new System.Drawing.Point(621, 90);
+            this.cmbBxYear.Name = "cmbBxYear";
+            this.cmbBxYear.Size = new System.Drawing.Size(121, 23);
+            this.cmbBxYear.TabIndex = 327;
+            // 
+            // cmbBxMonth
+            // 
+            this.cmbBxMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBxMonth.FormattingEnabled = true;
+            this.cmbBxMonth.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.cmbBxMonth.Location = new System.Drawing.Point(757, 90);
+            this.cmbBxMonth.Name = "cmbBxMonth";
+            this.cmbBxMonth.Size = new System.Drawing.Size(97, 23);
+            this.cmbBxMonth.TabIndex = 328;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(713, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 15);
+            this.label2.TabIndex = 329;
+            this.label2.Text = "Year";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(811, 72);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 15);
+            this.label4.TabIndex = 330;
+            this.label4.Text = "Month";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(163)))), ((int)(((byte)(246)))));
+            this.btnSearch.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSearch.Location = new System.Drawing.Point(873, 90);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(150)))), ((int)(((byte)(239)))));
+            this.btnSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(150)))), ((int)(((byte)(239)))));
+            this.btnSearch.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSearch.Size = new System.Drawing.Size(77, 23);
+            this.btnSearch.TabIndex = 331;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.TextColor = System.Drawing.Color.Black;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // ServiceReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(985, 508);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbBxMonth);
+            this.Controls.Add(this.cmbBxYear);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.dataGVServiceReport);
             this.Controls.Add(this.lblArrow3);
@@ -371,6 +454,7 @@
             this.Name = "ServiceReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ServiceReport";
+            this.Load += new System.EventHandler(this.ServiceReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBxServRpt)).EndInit();
@@ -404,5 +488,10 @@
         private Label lblArrow2;
         private Label lblServType;
         private Button btnExit;
+        private ComboBox cmbBxYear;
+        private ComboBox cmbBxMonth;
+        private Label label2;
+        private Label label4;
+        private ePOSOne.btnProduct.Button_WOC btnSearch;
     }
 }

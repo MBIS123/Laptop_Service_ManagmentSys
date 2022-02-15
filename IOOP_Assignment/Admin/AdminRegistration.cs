@@ -9,16 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 
+
 namespace IOOP_Assignment
 {
-    public partial class Registration : Form
+    public partial class AdminRegistration : Form
     {
         Admin adminObjR = new Admin();
         DataValidation validtObj = new DataValidation();
         
 
 
-        public Registration()
+        public AdminRegistration()
         {
             InitializeComponent();
         }
@@ -38,7 +39,7 @@ namespace IOOP_Assignment
                     clearForm();
                 }
                 else
-                    MessageBox.Show(" Entered data does not meet the format.Please try again");
+                    MessageBox.Show(" Entered data does not meet the format.Please try again" ,"Reminder",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
                 MessageBox.Show("Required field was not marked !", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -49,7 +50,7 @@ namespace IOOP_Assignment
         {
            
 
-            if (!allFilled(ckBxFilled)) // if not allfilled then need to fill in again ant chkbox will become unchecked
+            if (!allFilled(ckBxFilled)) // if not allfilled then need to fill in again and chkbox will become unchecked
                 ckBxFilled.Checked = false;
 
         }
@@ -60,12 +61,9 @@ namespace IOOP_Assignment
             if (chkBx.Checked)
             {
                 adminObjR.AllInfoFilled = true;
-                MessageBox.Show(adminObjR.AllInfoFilled.ToString());
                 adminObjR.validateRegisCheckComboBx(cmbBxGender, cmbBxEthnic); // will set the value of selected combo box index  to related variable
-                MessageBox.Show(adminObjR.AllInfoFilled.ToString() + "for combobox");
 
                 adminObjR.validateRegisPosition(rdBtnTech, rdBtnRecep);       // will set the value of selected radioButton for position to related variable
-                MessageBox.Show(adminObjR.AllInfoFilled.ToString()+ "regis positon");
             }
             bool filledInfo = adminObjR.AllInfoFilled; // will return false if the radio button was not click , and checkbox index = -1;
 
@@ -84,7 +82,7 @@ namespace IOOP_Assignment
         {
             int sucssCase = 0;
 
-            if (validtObj.isString(txtName.Text) && validtObj.isString(txtAddress.Text))
+            if (validtObj.isString(txtName.Text))
                 sucssCase += 1;
             if (validtObj.isDate(txtDateOfBirth))
                 sucssCase += 1;
@@ -97,7 +95,6 @@ namespace IOOP_Assignment
 
             if (validtObj.isPhoneNum(txtContactNo.Text))
                 sucssCase += 1;
-            MessageBox.Show("num of tsetcase =" + sucssCase.ToString());
 
             if (sucssCase == 5)  // there are 5 testcase for data validation
                 return true;
@@ -130,7 +127,7 @@ namespace IOOP_Assignment
 
             string formattedBirthDate = year + '-' + month + '-' + day;
 
-            return formattedBirthDate; // the birthdate are now in YYYY-MM-DD
+            return formattedBirthDate; // the birthdate are now in YYYY-MM-DD   
         }
         
         private void clearForm()
@@ -153,22 +150,19 @@ namespace IOOP_Assignment
         private void btnIncome_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MonthlyIncome iObj = new MonthlyIncome();
-            iObj.Show();
+            adminObjR.showRelatedForm("income");
         }
 
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            DashBoard dObj = new DashBoard();
-            dObj.Show();
+            adminObjR.showRelatedForm("dashboard");
         }
 
         private void btnServiceReport_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ServiceReport sObj = new ServiceReport();
-            sObj.Show();
+            adminObjR.showRelatedForm("serviceReport");
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -176,5 +170,13 @@ namespace IOOP_Assignment
             Application.Exit();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+            }
+        }
     }
 }
