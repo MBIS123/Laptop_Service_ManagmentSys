@@ -12,8 +12,7 @@ namespace IOOP_Assignment
 {
     public partial class frmRegNewCus : Form
     {
-        public static string Name;
-        Receptionist1 obj1 = new Receptionist1();
+        private static string Name;
         public frmRegNewCus()
         {
             InitializeComponent();
@@ -23,7 +22,12 @@ namespace IOOP_Assignment
             InitializeComponent();
             Name = n;
         }
+
         string Gender;
+        private void frmRegNewCus_Load(object sender, EventArgs e)
+        {
+            lblRcn.Text = Name;
+        }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
@@ -31,19 +35,18 @@ namespace IOOP_Assignment
             if (objval.isString(txtName.Text) == true && objval.isIcNum(txtIC) == true && objval.isPhoneNum(txtMobile.Text) == true
                 && objval.isEmailAddress(txtEmail) == true && objval.isStringNull(txtAddress) == false && objval.isStringNull(txtUsername) == false)
             {
+                DateTime bdaydate = dateTimePickerDate.Value.Date;
                 if (radBtnFemale.Checked == true)
                 {
                     Gender = "Female";
-                    DateTime bdaydate1 = DateTime.Parse(dateTimePickerDate.Text);
-                    Receptionist1 obj1 = new Receptionist1(txtName.Text, Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate1, txtUsername.Text);
-                    obj1.AddNewCustomer();
+                    Receptionist1 obj1 = new Receptionist1(txtName.Text, Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate, txtUsername.Text);
+                    obj1.AddNewCustomer(bdaydate);
                 }
-                else if (radBtnMale.Checked ==true)
+                else if (radBtnMale.Checked == true)
                 {
                     Gender = "Male";
-                    DateTime bdaydate2 = DateTime.Parse(dateTimePickerDate.Text);
-                    Receptionist1 obj1 = new Receptionist1(txtName.Text, Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate2, txtUsername.Text);
-                    obj1.AddNewCustomer();
+                    Receptionist1 obj1 = new Receptionist1(txtName.Text, Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate, txtUsername.Text);
+                    obj1.AddNewCustomer(bdaydate);
                 }
                 else
                 {
@@ -56,7 +59,7 @@ namespace IOOP_Assignment
                 {
                     MessageBox.Show("Please enter your name!");
                 }
-                if (objval.isIcNum(txtIC) ==false)
+                if (objval.isIcNum(txtIC) == false)
                 {
                     MessageBox.Show("Please enter a correct IC number!");
                 }
@@ -77,12 +80,7 @@ namespace IOOP_Assignment
                     MessageBox.Show("Please enter your username!");
                 }
             }
-            
-        }
 
-        private void frmRegNewCus_Load(object sender, EventArgs e)
-        {
-            lblRcn.Text = Name;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -96,7 +94,6 @@ namespace IOOP_Assignment
             radBtnFemale.Checked = false;
             radBtnMale.Checked = false;
         }
-
 
         private void linklblServReq_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

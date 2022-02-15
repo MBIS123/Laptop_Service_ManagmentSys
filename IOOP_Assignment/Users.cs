@@ -48,10 +48,9 @@ namespace IOOP_Assignment
 
                 if (user_role == "admin")
                 {
-                    frmLogin objLgn = new frmLogin();
-                    objLgn.Hide();
-
-                    AdminDashBoard a = new AdminDashBoard();
+                    SqlCommand cmdFindAdminName = new SqlCommand("select [Name] from Admin where UserID = (select UserID from Users where UserName = '" + username + "')", con);
+                    string adminName = cmdFindAdminName.ExecuteScalar().ToString();
+                    AdminDashBoard a = new AdminDashBoard(adminName);
                     a.ShowDialog();
                   
                 }
@@ -79,6 +78,9 @@ namespace IOOP_Assignment
                     string receptionist_name = cmd5.ExecuteScalar().ToString();
                     frmAccSet td = new frmAccSet(receptionist_name);
                     td.ShowDialog(); //adding a simple comment here
+                    frmRegNewCus u = new frmRegNewCus(receptionist_name);// pass username and display at update profile form
+                    frmPayment v = new frmPayment(receptionist_name);
+                    frmServRequest d = new frmServRequest(receptionist_name);
                 }
             }
             else

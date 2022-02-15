@@ -22,6 +22,7 @@ namespace IOOP_Assignment
         private DateTime cusDob;
         private string cusUsername;
         private int numOfUsers;
+        private int numOfCus;
 
         private string recName;
         private string recPhone;
@@ -60,15 +61,19 @@ namespace IOOP_Assignment
         }
         public Receptionist1()
         {
-
+            
         }
         public Receptionist1(string un)
         {
             recName = un;
         }
 
-        public void AddNewCustomer()
+        public void AddNewCustomer(DateTime d )
         {
+            cusDob = d;
+            string cusDob_string = cusDob.ToString("yyyy-MM-dd");
+
+
             con.Open();
             bool exists = true;
             SqlCommand cmdUsernameExist = new SqlCommand("select count(*) from Users where Username= '" + cusUsername + "'", con);
@@ -76,31 +81,29 @@ namespace IOOP_Assignment
             exists = (int)cmdUsernameExist.ExecuteScalar() > 0;
             if (exists== false)
             {
-                int userID = numOfUsers + 1;
-                SqlCommand cmdUser = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users( UserName, Password,[User Role]) values" +
-                        "(@username, '123456', 'customer'); SET IDENTITY_INSERT Users off;", con);
-                cmdUser.Parameters.AddWithValue("@username", cusUsername);
-                cmdUser.ExecuteNonQuery();
-                string birthdate = CusDob.ToString("yyyy-MM-dd");
-                SqlCommand cmdNewCus = new SqlCommand("SET IDENTITY_INSERT Customer ON; insert into Customer(UserID,Name,Gender,[Date of Birth],[IC No.]," +
-                        "[Contact No.],Email,Address) values" +
-                        "( " + userID + " ,'" + cusName + "','" + cusGender + "','" + birthdate + "','" + cusIC + "','" + cusPhoneNum + "','" + CusEmail + "','" + CusAddress + "'); SET IDENTITY_INSERT Customer off; ", con);
+                SqlCommand cmdNumUser = new SqlCommand("select count(*) from Users", con);
+                numOfUsers = int.Parse(cmdNumUser.ExecuteScalar().ToString());
 
+                SqlCommand cmdNumCus = new SqlCommand("select count(*) from Customer", con);
+                numOfCus = int.Parse(cmdNumCus.ExecuteScalar().ToString());
+
+                int userID = numOfUsers + 1;
+                int cusID = numOfCus + 1;
+
+                SqlCommand cmdUser = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users(UserID, UserName, Password,[User Role]) values" +
+                        "( " + userID + ",'" + cusUsername + "','123456', 'customer'); SET IDENTITY_INSERT Users off;", con);
+                cmdUser.ExecuteNonQuery();
+                SqlCommand cmdNewCus = new SqlCommand("SET IDENTITY_INSERT Customer ON; insert into Customer(CustomerID, UserID,Name,Gender,[Date of Birth],[IC No.]," +
+                        "[Contact No.],Email,Address) values" +
+                        "( " + cusID + "," + userID + " ,'" + cusName + "','" + cusGender + "','" + cusDob_string + "','" + cusIC + "','" + cusPhoneNum + "','" + CusEmail + "','" + CusAddress + "'); SET IDENTITY_INSERT Customer off; ", con);
+                //cmdNewCus.Parameters.AddWithValue("@date", bdate);
                 cmdNewCus.ExecuteNonQuery();
+                MessageBox.Show("Customer Register Successfully! Customer Password is 123456.");
             }
             else
             {
                 MessageBox.Show("Username existed. Please enter a new username!");
             }
-            con.Close();
-        }
-        public void chckUsername()
-        {
-            con.Open();
-            bool exists = false;
-            SqlCommand cmdUsernameExist = new SqlCommand("select count(*) from Users where Username= '" + cusUsername + "'", con);
-            //count if the username existed
-            exists = (int)cmdUsernameExist.ExecuteScalar() > 0; 
             con.Close();
         }
 
@@ -182,7 +185,6 @@ namespace IOOP_Assignment
         public static void viewRecProfile(Receptionist1 o1)
         {
             con.Open();
-            MessageBox.Show(o1.recName.ToString());
             SqlCommand cmd = new SqlCommand("select * from Receptionist where Name = '" + o1.recName + "'", con);
             SqlCommand cmd2 = new SqlCommand("select [Password] from [Users], [Receptionist] where [Users].UserID = [Receptionist].UserID and [Receptionist].Name = '" + o1.recName + "'", con);
 

@@ -12,7 +12,7 @@ namespace IOOP_Assignment
 {
     public partial class frmAccSet : Form
     {
-        public static string Name;
+        private static string Name;
         public frmAccSet()
         {
             InitializeComponent();
@@ -111,7 +111,7 @@ namespace IOOP_Assignment
         }
         private void linklblNewCusReg_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmRegNewCus fRegCus= new frmRegNewCus();
+            frmRegNewCus fRegCus= new frmRegNewCus(Name);
             fRegCus.Show();
             this.Hide();
         }

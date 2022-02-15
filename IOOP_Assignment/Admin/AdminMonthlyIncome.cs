@@ -12,29 +12,37 @@ namespace IOOP_Assignment
 {
     public partial class AdminMonthlyIncome : Form
     {
-        Admin objAdminI = new Admin();
+        Admin iAdminObj = new Admin();
+        public static string adminName;
+
         public AdminMonthlyIncome()
         {
             InitializeComponent();
+        }
+        public AdminMonthlyIncome(string admnName)
+        {
+            InitializeComponent();
+            adminName = admnName;
+            
         }
 
         private void btnRegistration_Click(object sender, EventArgs e)
         {
             this.Hide();
-            objAdminI.showRelatedForm("registration");
+            iAdminObj.showRelatedForm("registration");
 
         }
 
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            objAdminI.showRelatedForm("dashboard");
+            iAdminObj.showRelatedForm("dashboard");
         }
 
         private void btnServiceReport_Click(object sender, EventArgs e)
         {
             this.Hide();
-            objAdminI.showRelatedForm("serviceReport");
+            iAdminObj.showRelatedForm("serviceReport");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -44,13 +52,14 @@ namespace IOOP_Assignment
 
         private void MonthlyIncome_Load(object sender, EventArgs e)
         {
-            objAdminI.addNewYear(cmbBxYear);
+            iAdminObj.addNewYear(cmbBxYear);
+            lblAdminName.Text =adminName;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (cmbBxYear.SelectedIndex != -1)
-                dtGVIncome.DataSource = objAdminI.generateMonthlyIncome(cmbBxYear);
+                dtGVIncome.DataSource = iAdminObj.generateMonthlyIncome(cmbBxYear);
             else
                 MessageBox.Show("Please select a year !", "Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }

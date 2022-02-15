@@ -1,5 +1,4 @@
-﻿using Assignment;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -15,7 +14,7 @@ namespace IOOP_Assignment
 {
     public partial class frmPayment : Form
     {
-        public static string Name;
+        private static string Name;
         public frmPayment()
         {
             InitializeComponent();
@@ -81,6 +80,10 @@ namespace IOOP_Assignment
                         MessageBox.Show("Enter numbers only!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Please select one row only for payment!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
