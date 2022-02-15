@@ -37,12 +37,12 @@ namespace IOOP_Assignment
         private int lst2MthIncome;
         private int lst3MthIncome;
 
-        private static string[] monthList = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+        private string[] monthList = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
         private string[] sFMonthList = { "Jan", "Feb", "Mch", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec" };
         public Admin() { } //constructor
 
-        
-        
+
+
         public string Position { get => position; set => position = value; }
         public string Name { get => name; set => name = value; }
         public string Gender { get => gender; set => gender = value; }
@@ -56,11 +56,15 @@ namespace IOOP_Assignment
         public int NumOfTechnician { get => numOfTechnician; set => numOfTechnician = value; }
         public int NumOfReceptionist { get => numOfReceptionist; set => numOfReceptionist = value; }
         public int TotalOfServiceRequested { get => totalOfServiceRequested; set => totalOfServiceRequested = value; }
-        public static string[] Monthlist { get => monthList; set => monthList = value; }
+        public  string[] Monthlist { get => monthList; set => monthList = value; }
         public int LstMthIncome { get => lstMthIncome; set => lstMthIncome = value; }
         public int Lst2MthIncome { get => lst2MthIncome; set => lst2MthIncome = value; }
         public int Lst3MthIncome { get => lst3MthIncome; set => lst3MthIncome = value; }
 
+        internal void loadAdminName(Label adnName)
+        {
+            
+        }
         internal void validateRegisPosition(RadioButton technician ,RadioButton receptionist)
         {
             if (technician.Checked == true)

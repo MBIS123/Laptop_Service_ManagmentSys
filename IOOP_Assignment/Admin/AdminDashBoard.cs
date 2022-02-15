@@ -7,166 +7,77 @@ namespace IOOP_Assignment
     public partial class AdminDashBoard : Form
     {
         
-        Admin adminObjD = new Admin();
-   
+        public static string adminName;
 
-
-
-
+        Admin dAminObj = new Admin();
 
         public AdminDashBoard()
         {
             InitializeComponent();
             
         }
-
-      
+        public AdminDashBoard(string adnName)
+        {
+            InitializeComponent();
+            adminName = adnName;
+        }
+   
 
         private void Admin_Load(object sender, EventArgs e)
         {
-            adminObjD.numOfUserInDtBase();
-            lblNoOfRecep.Text = adminObjD.NumOfReceptionist.ToString();
-            lblNoOfTech.Text =adminObjD.NumOfTechnician.ToString();
-            lblTotalRecpTech.Text = (adminObjD.NumOfReceptionist + adminObjD.NumOfTechnician).ToString();
-            adminObjD.pass3MonthsIncome();
-            adminObjD.changeMonthBarTitle(lblMnthBar1,lblMnthBar2,lblMnthBar3);
-
-            adminObjD.compareIncomeBetweenMntPct(lblProfitPct);
+            dAminObj.numOfUserInDtBase();
+            lblAdminName.Text = adminName;
+            lblNoOfRecep.Text = dAminObj.NumOfReceptionist.ToString();
+            lblNoOfTech.Text =dAminObj.NumOfTechnician.ToString();
+            lblTotalRecpTech.Text = (dAminObj.NumOfReceptionist + dAminObj.NumOfTechnician).ToString();
+            dAminObj.pass3MonthsIncome();
+            dAminObj.changeMonthBarTitle(lblMnthBar1,lblMnthBar2,lblMnthBar3);
+            dAminObj.compareIncomeBetweenMntPct(lblProfitPct);
             
-            lblIncome.Text = "RM " + adminObjD.LstMthIncome.ToString();
+            lblIncome.Text = "RM " + dAminObj.LstMthIncome.ToString();
 
-            adminObjD.fillDashBoardServInfo(lblLstMthServ, lblServPct);
+            dAminObj.fillDashBoardServInfo(lblLstMthServ, lblServPct);
 
-            int sizeLastMonthBar = (int)(((decimal)adminObjD.LstMthIncome / 6000) * 430);
+            int sizeLastMonthBar = (int)(((decimal)dAminObj.LstMthIncome / 6000) * 430);
             lblServBar1.Size = new Size(sizeLastMonthBar, 30);
-            int sizeLast2MonthBar = (int)(((decimal)adminObjD.Lst2MthIncome / 6000) * 430);
+            int sizeLast2MonthBar = (int)(((decimal)dAminObj.Lst2MthIncome / 6000) * 430);
             lblServBar2.Size = new Size(sizeLast2MonthBar, 30);
-            int sizeLast3MonthBar = (int)(((decimal)adminObjD.Lst3MthIncome / 6000) * 430);
+            int sizeLast3MonthBar = (int)(((decimal)dAminObj.Lst3MthIncome / 6000) * 430);
             lblServBar3.Size = new Size(sizeLast3MonthBar, 30);
 
+            AdminMonthlyIncome objM = new AdminMonthlyIncome(adminName);
+            AdminRegistration objR = new AdminRegistration(adminName);
+            AdminServiceReport objS = new AdminServiceReport(adminName);
+
         }
-
-
 
         private void btnIncome_Click(object sender, EventArgs e)
         {
             this.Hide();
-            adminObjD.showRelatedForm("income");
-
-
+            dAminObj.showRelatedForm("income");
         }
 
         internal void btnServiceReport_Click(object sender, EventArgs e)
         {
             this.Hide();
-            adminObjD.showRelatedForm("serviceReport");
+            dAminObj.showRelatedForm("serviceReport");
         }
+
 
         private void btnRegistration_Click(object sender, EventArgs e)
         {   
             this.Hide();
-            adminObjD.showRelatedForm("registration");
-
+            dAminObj.showRelatedForm("registration");
         }
-
-
-        private void btnDashBoard_MouseLeave(object sender, EventArgs e)
-        {
-            btnDashBoard.BackColor = ColorTranslator.FromHtml("#0A0909");
-        }
-
-        private void btnDashBoard_MouseEnter(object sender, EventArgs e)
-        {
-            btnDashBoard.BackColor = ColorTranslator.FromHtml("#464646");
-        }
-
-        //DEFINED FUNCTION
-
-
-        private void chgForeColour(Button x) //changeThe fore color of button to indicate which user control was shown
-        {
-            btnDashBoard.ForeColor= Color.White;  
-            btnRegistration.ForeColor= Color.White;
-            btnServiceReport.ForeColor= Color.White;
-            btnIncome.ForeColor= Color.White;
-          x.ForeColor = Color.FromArgb(36, 192, 251);
-
-        }
-
-        private void chgSideLabelLocation(Button x)
-        {
-            sideLabel.Location =  new Point(3,x.Location.Y);
-        }
-
-       //yused to show related user control
-
-        private void btnRegistration_MouseEnter(object sender, EventArgs e)
-        {
-            btnRegistration.BackColor = ColorTranslator.FromHtml("#464646");
-        }
-
-        private void btnRegistration_MouseLeave(object sender, EventArgs e)
-        {
-            btnRegistration.BackColor = ColorTranslator.FromHtml("#0A0909");
-        }
-
-        private void btnIncome_MouseEnter(object sender, EventArgs e)
-        {
-            btnIncome.BackColor = ColorTranslator.FromHtml("#464646");
-        }
-
-        private void btnIncome_MouseLeave(object sender, EventArgs e)
-        {
-            btnIncome.BackColor = ColorTranslator.FromHtml("#0A0909");
-        }
-
-        private void btnServiceReport_MouseEnter(object sender, EventArgs e)
-        {
-            btnServiceReport.BackColor = ColorTranslator.FromHtml("#464646");
-        }
-
-        private void btnServiceReport_MouseLeave(object sender, EventArgs e)
-        {
-            btnServiceReport.BackColor = ColorTranslator.FromHtml("#0A0909");
-        }
-
-        private void btnLogOut_MouseEnter(object sender, EventArgs e)
-        {
-            btnLogOut.BackColor = Color.FromArgb(57,57,57);
-        }
-
-        private void btnLogOut_MouseLeave(object sender, EventArgs e)
-        {
-            btnLogOut.BackColor = Color.FromArgb(20,20,20);
-        }
-
-        private void btnExit_MouseEnter(object sender, EventArgs e)
-        {
-            btnExit.BackColor = Color.FromArgb(57, 57, 57);
-        }
-
-        private void btnExit_MouseLeave(object sender, EventArgs e)
-        {
-            btnExit.BackColor = Color.FromArgb(10,10,10);
-        }
-
-        private void showForm(AdminRegistration a)
-        {
-            this.Hide();
-            a.Show();
-        }
-
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        private void uCBtnServiceReport_Click(object sender, EventArgs e)
+        private void btnServReport_Click(object sender, EventArgs e) // the blue button
         {
             this.Hide();
-            AdminServiceReport sObj = new AdminServiceReport();
-            sObj.Show();
+            dAminObj.showRelatedForm("serviceReport");
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -178,15 +89,7 @@ namespace IOOP_Assignment
             }
         }
 
-        private void btnServReport_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            adminObjD.showRelatedForm("serviceReport");
-        }
 
-        private void lblMnthBar2_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

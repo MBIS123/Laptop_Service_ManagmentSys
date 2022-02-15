@@ -14,10 +14,16 @@ namespace IOOP_Assignment
     public partial class AdminServiceReport : Form
     {
      
-        Admin objS = new Admin();
-        public AdminServiceReport()
+        Admin sAdminObj = new Admin();
+        public static string adminName;
+
+        public AdminServiceReport(string admName)
         {
             InitializeComponent();
+            adminName = admName;
+        }
+        public AdminServiceReport()
+        {
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -32,42 +38,36 @@ namespace IOOP_Assignment
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            objS.showRelatedForm("dashboard");
+            sAdminObj.showRelatedForm("dashboard");
         }
 
         private void btnRegistration_Click(object sender, EventArgs e)
         {
             this.Hide();
-            objS.showRelatedForm("registration");
+            sAdminObj.showRelatedForm("registration");
         }
 
         private void btnIncome_Click(object sender, EventArgs e)
         {
             this.Hide();
-            objS.showRelatedForm("income");
+            sAdminObj.showRelatedForm("income");
         }
 
         private void ServiceReport_Load(object sender, EventArgs e)
         {
-            objS.addNewYear(cmbBxYear);
+            sAdminObj.addNewYear(cmbBxYear);
+            lblAdminName.Text = adminName;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            bool beginSearch = objS.checkSelectedMonthYear(cmbBxYear, cmbBxMonth);
+            bool beginSearch = sAdminObj.checkSelectedMonthYear(cmbBxYear, cmbBxMonth);
 
             if (beginSearch)
             {
-                dataGVServiceReport.DataSource = objS.generateServiceReport(cmbBxYear, cmbBxMonth);
+                dataGVServiceReport.DataSource = sAdminObj.generateServiceReport(cmbBxYear, cmbBxMonth);
             }
-            
-
-
-        }
-
-        private void lblArrow3_Click(object sender, EventArgs e)
-        {
-
+       
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)

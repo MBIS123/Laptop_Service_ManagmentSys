@@ -50,7 +50,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblAdminName = new System.Windows.Forms.Label();
             this.pcBxIncome = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
@@ -361,18 +361,18 @@
             this.label5.TabIndex = 333;
             this.label5.Text = "Role : Admin";
             // 
-            // label4
+            // lblAdminName
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(8, 156);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.MaximumSize = new System.Drawing.Size(130, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 15);
-            this.label4.TabIndex = 332;
-            this.label4.Text = "TANJINHAO";
+            this.lblAdminName.AutoSize = true;
+            this.lblAdminName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.lblAdminName.ForeColor = System.Drawing.Color.White;
+            this.lblAdminName.Location = new System.Drawing.Point(8, 156);
+            this.lblAdminName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAdminName.MaximumSize = new System.Drawing.Size(130, 15);
+            this.lblAdminName.Name = "lblAdminName";
+            this.lblAdminName.Size = new System.Drawing.Size(71, 15);
+            this.lblAdminName.TabIndex = 332;
+            this.lblAdminName.Text = "TANJINHAO";
             // 
             // pcBxIncome
             // 
@@ -716,7 +716,7 @@
             this.label3.TabIndex = 374;
             this.label3.Text = "(XXXXXX-XX-XXXX)";
             // 
-            // Registration
+            // AdminRegistration
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
@@ -761,7 +761,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblAdminName);
             this.Controls.Add(this.pcBxIncome);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.splitter1);
@@ -776,7 +776,7 @@
             this.Controls.Add(this.pcBxRegis);
             this.Controls.Add(this.frmHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Registration";
+            this.Name = "AdminRegistration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
             this.Load += new System.EventHandler(this.Registration_Load);
@@ -815,7 +815,7 @@
         private Button button1;
         private PictureBox pictureBox4;
         private Label label5;
-        private Label label4;
+        private Label lblAdminName;
         private PictureBox pcBxIncome;
         private Label label7;
         private Splitter splitter1;

@@ -35,7 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.frmHeader = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblAdminName = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnLogOut = new System.Windows.Forms.Button();
@@ -175,18 +175,18 @@
             this.frmHeader.TabIndex = 8;
             this.frmHeader.Text = "Admin DashBoard";
             // 
-            // label3
+            // lblAdminName
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(8, 156);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.MaximumSize = new System.Drawing.Size(130, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 15);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "TANJINHAO";
+            this.lblAdminName.AutoSize = true;
+            this.lblAdminName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.lblAdminName.ForeColor = System.Drawing.Color.White;
+            this.lblAdminName.Location = new System.Drawing.Point(8, 156);
+            this.lblAdminName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAdminName.MaximumSize = new System.Drawing.Size(130, 15);
+            this.lblAdminName.Name = "lblAdminName";
+            this.lblAdminName.Size = new System.Drawing.Size(71, 15);
+            this.lblAdminName.TabIndex = 10;
+            this.lblAdminName.Text = "TANJINHAO";
             // 
             // label5
             // 
@@ -227,8 +227,6 @@
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            this.btnLogOut.MouseEnter += new System.EventHandler(this.btnLogOut_MouseEnter);
-            this.btnLogOut.MouseLeave += new System.EventHandler(this.btnLogOut_MouseLeave);
             // 
             // dateTimePicker1
             // 
@@ -253,8 +251,6 @@
             this.btnDashBoard.Text = "Dashboard";
             this.btnDashBoard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashBoard.UseVisualStyleBackColor = false;
-            this.btnDashBoard.MouseEnter += new System.EventHandler(this.btnDashBoard_MouseEnter);
-            this.btnDashBoard.MouseLeave += new System.EventHandler(this.btnDashBoard_MouseLeave);
             // 
             // btnServiceReport
             // 
@@ -272,8 +268,6 @@
             this.btnServiceReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnServiceReport.UseVisualStyleBackColor = false;
             this.btnServiceReport.Click += new System.EventHandler(this.btnServiceReport_Click);
-            this.btnServiceReport.MouseEnter += new System.EventHandler(this.btnServiceReport_MouseEnter);
-            this.btnServiceReport.MouseLeave += new System.EventHandler(this.btnServiceReport_MouseLeave);
             // 
             // btnIncome
             // 
@@ -291,8 +285,6 @@
             this.btnIncome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIncome.UseVisualStyleBackColor = false;
             this.btnIncome.Click += new System.EventHandler(this.btnIncome_Click);
-            this.btnIncome.MouseEnter += new System.EventHandler(this.btnIncome_MouseEnter);
-            this.btnIncome.MouseLeave += new System.EventHandler(this.btnIncome_MouseLeave);
             // 
             // btnRegistration
             // 
@@ -310,8 +302,6 @@
             this.btnRegistration.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistration.UseVisualStyleBackColor = false;
             this.btnRegistration.Click += new System.EventHandler(this.btnRegistration_Click);
-            this.btnRegistration.MouseEnter += new System.EventHandler(this.btnRegistration_MouseEnter);
-            this.btnRegistration.MouseLeave += new System.EventHandler(this.btnRegistration_MouseLeave);
             // 
             // button6
             // 
@@ -396,8 +386,6 @@
             this.btnExit.Size = new System.Drawing.Size(31, 30);
             this.btnExit.TabIndex = 273;
             this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.MouseEnter += new System.EventHandler(this.btnExit_MouseEnter);
-            this.btnExit.MouseLeave += new System.EventHandler(this.btnExit_MouseLeave);
             // 
             // label53
             // 
@@ -876,7 +864,6 @@
             this.lblMnthBar2.Size = new System.Drawing.Size(27, 15);
             this.lblMnthBar2.TabIndex = 332;
             this.lblMnthBar2.Text = "Dec";
-            this.lblMnthBar2.Click += new System.EventHandler(this.lblMnthBar2_Click);
             // 
             // lblMnthBar3
             // 
@@ -948,7 +935,7 @@
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblAdminName);
             this.Controls.Add(this.frmHeader);
             this.Controls.Add(this.pcBxDashBrd);
             this.Controls.Add(this.splitter1);
@@ -983,7 +970,7 @@
         private PictureBox pictureBox1;
         private Splitter splitter2;
         private Label frmHeader;
-        private Label label3;
+        private Label lblAdminName;
         private Label label5;
         private PictureBox pictureBox2;
         private Button btnLogOut;
@@ -999,8 +986,6 @@
         private Button button1;
         private Splitter splitter1;
         private Button btnExit;
-        private UserControlRegistration userControlRegistration1;
-        private UserControlTest userControlTest1;
         private Label label53;
         private Label lblIncomeClrTitle;
         private Label lblIncomeClr;
