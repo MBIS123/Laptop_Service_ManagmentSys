@@ -65,5 +65,10 @@ namespace IOOP_Assignment.Customer
             login.ShowDialog();
             this.Close();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

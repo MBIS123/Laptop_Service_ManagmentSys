@@ -21,14 +21,13 @@ namespace IOOP_Assignment
         private string cusAddress;
         private DateTime cusDob;
         private string cusUsername;
-        private static bool allcusinfoFilled = true;
+        private int numOfUsers;
 
         private string recName;
         private string recPhone;
         private string recEmail;
         private string recAddress;
         private string recPw;
-        private string userID;
 
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
@@ -42,7 +41,6 @@ namespace IOOP_Assignment
         public DateTime CusDob { get => cusDob; set => cusDob = value; }
         public string CusUsername { get => cusUsername; set => cusUsername = value; }
 
-        public static bool AllcusinfoFilled { get => allcusinfoFilled; set => allcusinfoFilled = value; }
         public string RecName { get => recName; set => recName = value; }
         public string RecPhone { get => recPhone; set => recPhone = value; }
         public string RecEmail { get => recEmail; set => recEmail = value; }
@@ -69,45 +67,43 @@ namespace IOOP_Assignment
             recName = un;
         }
 
-        public string AddNewCustomer()
+        public void AddNewCustomer()
         {
-            string status;
+            con.Open();
+            bool exists = true;
+            SqlCommand cmdUsernameExist = new SqlCommand("select count(*) from Users where Username= '" + cusUsername + "'", con);
+            //count if the username existed
+            exists = (int)cmdUsernameExist.ExecuteScalar() > 0;
+            if (exists== false)
+            {
+                int userID = numOfUsers + 1;
+                SqlCommand cmdUser = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users( UserName, Password,[User Role]) values" +
+                        "(@username, '123456', 'customer'); SET IDENTITY_INSERT Users off;", con);
+                cmdUser.Parameters.AddWithValue("@username", cusUsername);
+                cmdUser.ExecuteNonQuery();
+                string birthdate = CusDob.ToString("yyyy-MM-dd");
+                SqlCommand cmdNewCus = new SqlCommand("SET IDENTITY_INSERT Customer ON; insert into Customer(UserID,Name,Gender,[Date of Birth],[IC No.]," +
+                        "[Contact No.],Email,Address) values" +
+                        "( " + userID + " ,'" + cusName + "','" + cusGender + "','" + birthdate + "','" + cusIC + "','" + cusPhoneNum + "','" + CusEmail + "','" + CusAddress + "'); SET IDENTITY_INSERT Customer off; ", con);
+
+                cmdNewCus.ExecuteNonQuery();
+            }
+            else
+            {
+                MessageBox.Show("Username existed. Please enter a new username!");
+            }
+            con.Close();
+        }
+        public void chckUsername()
+        {
             con.Open();
             bool exists = false;
             SqlCommand cmdUsernameExist = new SqlCommand("select count(*) from Users where Username= '" + cusUsername + "'", con);
             //count if the username existed
-            if (exists = (int)cmdUsernameExist.ExecuteScalar() > 0)
-            {
-                MessageBox.Show("Username existed. Please enter a valid username");
-            }
-            else
-            {
-                SqlCommand cmdNumUser = new SqlCommand("select count(*) from Users", con);
-                int numUsers = int.Parse(cmdNumUser.ExecuteScalar().ToString());
-                int userID = numUsers + 1;
-
-                SqlCommand cmdNumCus = new SqlCommand("select count(*) from Customer", con);
-                int numCus = int.Parse(cmdNumCus.ExecuteScalar().ToString());
-                int cusID = numCus + 1;
-
-                SqlCommand cmdUserCus = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users(UserID,UserName,Password,[User Role]) values" +
-                                                       "( " + userID + "," + " @username, '123456', 'customer'); SET IDENTITY_INSERT Users off;", con);
-
-                SqlCommand cmdNewCus = new SqlCommand("SET IDENTITY_INSERT Customer ON; insert into Customer(CustomerID,UserID,Name,Gender,[Date of Birth],[IC No.],[Contact No.],Email,Address) values" +
-                                                      "( " + cusID + "," + userID + " ,'" + cusName + "','" + cusGender + "','" + cusDob + "','" + cusIC + "','" + cusPhoneNum + "','" + CusEmail + "','" + CusAddress + "') ; SET IDENTITY_INSERT Customer off;", con);
-
-                cmdUserCus.Parameters.AddWithValue("@username", cusUsername);
-                cmdUserCus.ExecuteNonQuery();
-                int i = cmdNewCus.ExecuteNonQuery();
-                if (i != 0)
-                    status = "Registration Successful!";
-                else
-                    status = "Unable to Register!";
-                return status;
-            }
+            exists = (int)cmdUsernameExist.ExecuteScalar() > 0; 
             con.Close();
-            return cusUsername;
         }
+
         public void loadPaymentTable(DataGridView dgv)
         {
             SqlDataAdapter da = new SqlDataAdapter("select [Order].OrderID,[Customer].Name," +

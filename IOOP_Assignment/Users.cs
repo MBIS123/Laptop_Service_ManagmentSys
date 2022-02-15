@@ -14,6 +14,7 @@ namespace IOOP_Assignment
 {
     internal class Users
     {
+        //member field
         private string username;
         private string password;
 
@@ -28,7 +29,7 @@ namespace IOOP_Assignment
             password = p;
         }
 
-        public string login(string un) //login method, un = admin
+        public string login(string un) //login method
         {
             string status = null;
 

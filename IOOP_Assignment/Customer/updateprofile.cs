@@ -1,4 +1,4 @@
-﻿using IOOP_Assignment.Customer;
+using IOOP_Assignment.Customer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,7 +34,6 @@ namespace IOOP_Assignment
             txtphonenum.Text = obj1.CusPhoneNo1;
             txtemail.Text = obj1.CusEmail1;
             txtaddress.Text = obj1.CusAddress1;
-            txtcurrentpassw.Text = obj1.CusPassword1;
 
         }
 
@@ -67,7 +66,7 @@ namespace IOOP_Assignment
 
         }
 
-       
+
         private void btnclear_Click(object sender, EventArgs e)
         {
             txtcurrentpassw.Text = String.Empty;
@@ -89,7 +88,7 @@ namespace IOOP_Assignment
 
             //view the current password
             Customers.viewCustomerProfile(obj_passw); // pass in my username inside method viewCustomerProfile
-            
+
 
             if (txtcurrentpassw.Text == obj_passw.CusPassword1) //compare the current password with get password (from method viewCustomerProfile)
             {
@@ -116,7 +115,7 @@ namespace IOOP_Assignment
             DataValidation objvalidation = new DataValidation();
             // do all validation for customer's details here 
 
-            if ((objvalidation.isString(txtname.Text))  && (objvalidation.isPhoneNum(txtphonenum.Text)) && (objvalidation.isEmailAddress(txtemail)) && (objvalidation.isStringNull(txtaddress) == false))
+            if ((objvalidation.isString(txtname.Text)) && (objvalidation.isPhoneNum(txtphonenum.Text)) && (objvalidation.isEmailAddress(txtemail)) && (objvalidation.isStringNull(txtaddress) == false))
             {
                 Customers obj1 = new Customers(name);
                 MessageBox.Show(obj1.updateCustomerProfile(txtname.Text, dtp_DOB.Value, txtphonenum.Text, txtemail.Text, txtaddress.Text));
@@ -131,19 +130,19 @@ namespace IOOP_Assignment
                 {
                     MessageBox.Show("Dear customer," + "\n" + "1. Please make sure you have entered a new date of birth" + "\n" + "2. Please make sure format is correct");
                 }
-                if (objvalidation.isStringNull(txtphonenum) == true || objvalidation.isPhoneNum(txtphonenum.Text)==false)
+                if (objvalidation.isStringNull(txtphonenum) == true || objvalidation.isPhoneNum(txtphonenum.Text) == false)
                 {
                     MessageBox.Show("Dear customer," + "\n" + "1. Please make sure you have entered a new phone number" + "\n" + "2. Please make sure format is correct");
                 }
-                if(objvalidation.isStringNull(txtemail) == true || objvalidation.isEmailAddress(txtemail)==false)
+                if (objvalidation.isStringNull(txtemail) == true || objvalidation.isEmailAddress(txtemail) == false)
                 {
                     MessageBox.Show("Dear customer," + "\n" + "1. Please make sure you have entered a new email" + "\n" + "2. Please make sure format is correct");
                 }
-                if(objvalidation.isStringNull(txtaddress) == true)
+                if (objvalidation.isStringNull(txtaddress) == true)
                 {
                     MessageBox.Show("Dear customer," + "\n" + "Please make sure you have entered a new address");
                 }
-                
+
             }
         }
 
@@ -159,6 +158,10 @@ namespace IOOP_Assignment
             login.ShowDialog();
             this.Close();
         }
+
+        private void lblname_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-
