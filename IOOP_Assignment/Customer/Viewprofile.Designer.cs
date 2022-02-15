@@ -527,6 +527,8 @@
             this.Controls.Add(this.lblmyaccount);
             this.Controls.Add(this.lblwelcome);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Viewprofile";
             this.Text = "Viewprofile";
             this.Load += new System.EventHandler(this.Viewprofile_Load_1);

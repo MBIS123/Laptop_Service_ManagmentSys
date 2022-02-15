@@ -500,6 +500,8 @@
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.lblmyaccount);
             this.Controls.Add(this.lblwelcome);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "change_service";
             this.Text = "ChangeService";
             this.Load += new System.EventHandler(this.change_service_Load);
