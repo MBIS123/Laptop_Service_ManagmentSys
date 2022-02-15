@@ -12,8 +12,8 @@ namespace IOOP_Assignment
 {
     public partial class frmRegNewCus : Form
     {
-        public static string Name;
-        Receptionist1 obj1 = new Receptionist1();
+        private static string Name;
+
         public frmRegNewCus()
         {
             InitializeComponent();

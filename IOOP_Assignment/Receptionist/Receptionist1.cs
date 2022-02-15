@@ -60,7 +60,7 @@ namespace IOOP_Assignment
         }
         public Receptionist1()
         {
-
+            
         }
         public Receptionist1(string un)
         {
@@ -92,15 +92,6 @@ namespace IOOP_Assignment
             {
                 MessageBox.Show("Username existed. Please enter a new username!");
             }
-            con.Close();
-        }
-        public void chckUsername()
-        {
-            con.Open();
-            bool exists = false;
-            SqlCommand cmdUsernameExist = new SqlCommand("select count(*) from Users where Username= '" + cusUsername + "'", con);
-            //count if the username existed
-            exists = (int)cmdUsernameExist.ExecuteScalar() > 0; 
             con.Close();
         }
 

@@ -8,13 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Assignment
+namespace IOOP_Assignment
 {
     public partial class frmWelcome : Form
     {
         public frmWelcome()
         {
             InitializeComponent();
+        }
+
+        private void pictureBoxLogo_Click(object sender, EventArgs e)
+        {
+            frmLogin fLogin = new frmLogin();
+            fLogin.Show();
+            this.Hide();
         }
     }
 }

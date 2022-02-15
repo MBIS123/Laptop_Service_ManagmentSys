@@ -1,4 +1,4 @@
-﻿namespace Assignment
+﻿namespace IOOP_Assignment
 {
     partial class frmWelcome
     {
@@ -64,6 +64,7 @@
             this.pictureBoxLogo.Size = new System.Drawing.Size(461, 302);
             this.pictureBoxLogo.TabIndex = 3;
             this.pictureBoxLogo.TabStop = false;
+            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
             // 
             // frmWelcome
             // 
