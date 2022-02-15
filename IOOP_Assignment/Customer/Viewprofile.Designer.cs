@@ -304,11 +304,12 @@
             this.groupBox1.Controls.Add(this.label26);
             this.groupBox1.Controls.Add(this.label29);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(345, -4);
+            this.groupBox1.Location = new System.Drawing.Point(345, -10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(626, 858);
+            this.groupBox1.Size = new System.Drawing.Size(626, 798);
             this.groupBox1.TabIndex = 102;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lblcusCurrentPassw
             // 
@@ -431,9 +432,9 @@
             this.lblbirthdate.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.lblbirthdate.Location = new System.Drawing.Point(67, 311);
             this.lblbirthdate.Name = "lblbirthdate";
-            this.lblbirthdate.Size = new System.Drawing.Size(108, 19);
+            this.lblbirthdate.Size = new System.Drawing.Size(135, 19);
             this.lblbirthdate.TabIndex = 104;
-            this.lblbirthdate.Text = "BIRTH DATE";
+            this.lblbirthdate.Text = "DATE OF BIRTH";
             // 
             // lbladdress
             // 
