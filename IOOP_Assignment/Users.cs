@@ -14,6 +14,7 @@ namespace IOOP_Assignment
 {
     internal class Users
     {
+        //member field
         private string username;
         private string password;
 
@@ -28,7 +29,7 @@ namespace IOOP_Assignment
             password = p;
         }
 
-        public string login(string un) //login method, un = admin
+        public string login(string un) //login method
         {
             string status = null;
 
@@ -47,10 +48,10 @@ namespace IOOP_Assignment
 
                 if (user_role == "admin")
                 {
-                    frmLogin objLgn = new frmLogin();
-                    objLgn.Hide();
-
-                    AdminDashBoard a = new AdminDashBoard();
+                    SqlCommand cmdFindAdminName = new SqlCommand("select [Name] from Admin where UserID = (select UserID from Users where UserName = '" + username + "')", con);
+                    string adminName = cmdFindAdminName.ExecuteScalar().ToString();
+                    MessageBox.Show(adminName);
+                    AdminDashBoard a = new AdminDashBoard(adminName);
                     a.ShowDialog();
                   
                 }

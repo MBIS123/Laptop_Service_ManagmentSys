@@ -40,7 +40,7 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblAdminName = new System.Windows.Forms.Label();
             this.pcBxIncome = new System.Windows.Forms.PictureBox();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.splitter1 = new System.Windows.Forms.Splitter();
@@ -207,18 +207,18 @@
             this.label5.TabIndex = 277;
             this.label5.Text = "Role : Admin";
             // 
-            // label3
+            // lblAdminName
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(8, 156);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.MaximumSize = new System.Drawing.Size(130, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 15);
-            this.label3.TabIndex = 276;
-            this.label3.Text = "TANJINHAO";
+            this.lblAdminName.AutoSize = true;
+            this.lblAdminName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.lblAdminName.ForeColor = System.Drawing.Color.White;
+            this.lblAdminName.Location = new System.Drawing.Point(8, 156);
+            this.lblAdminName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAdminName.MaximumSize = new System.Drawing.Size(130, 15);
+            this.lblAdminName.Name = "lblAdminName";
+            this.lblAdminName.Size = new System.Drawing.Size(71, 15);
+            this.lblAdminName.TabIndex = 276;
+            this.lblAdminName.Text = "TANJINHAO";
             // 
             // pcBxIncome
             // 
@@ -336,7 +336,7 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // MonthlyIncome
+            // AdminMonthlyIncome
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(229)))), ((int)(((byte)(237)))));
@@ -357,13 +357,13 @@
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblAdminName);
             this.Controls.Add(this.pcBxIncome);
             this.Controls.Add(this.frmHeader);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.splitter2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MonthlyIncome";
+            this.Name = "AdminMonthlyIncome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MonthlyIncome";
             this.Load += new System.EventHandler(this.MonthlyIncome_Load);
@@ -389,7 +389,7 @@
         private Button btnLogOut;
         private PictureBox pictureBox2;
         private Label label5;
-        private Label label3;
+        private Label lblAdminName;
         private PictureBox pcBxIncome;
         private Splitter splitter2;
         private Splitter splitter1;

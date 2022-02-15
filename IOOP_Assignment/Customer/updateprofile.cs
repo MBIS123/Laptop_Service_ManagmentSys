@@ -34,7 +34,6 @@ namespace IOOP_Assignment
             txtphonenum.Text = obj1.CusPhoneNo1;
             txtemail.Text = obj1.CusEmail1;
             txtaddress.Text = obj1.CusAddress1;
-            txtcurrentpassw.Text = obj1.CusPassword1;
 
         }
 
@@ -158,6 +157,11 @@ namespace IOOP_Assignment
             frmLogin login = new frmLogin();
             login.ShowDialog();
             this.Close();
+        }
+
+        private void lblname_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -38,7 +38,7 @@
             this.btnsave_cusInfo = new System.Windows.Forms.Button();
             this.btn_savePassword = new System.Windows.Forms.Button();
             this.btnclear_cusInfo = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbladdress = new System.Windows.Forms.Label();
             this.txtaddress = new System.Windows.Forms.TextBox();
             this.btnclear = new System.Windows.Forms.Button();
             this.txtconfirmpassw = new System.Windows.Forms.TextBox();
@@ -98,7 +98,7 @@
             this.groupBox1.Controls.Add(this.btnsave_cusInfo);
             this.groupBox1.Controls.Add(this.btn_savePassword);
             this.groupBox1.Controls.Add(this.btnclear_cusInfo);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lbladdress);
             this.groupBox1.Controls.Add(this.txtaddress);
             this.groupBox1.Controls.Add(this.btnclear);
             this.groupBox1.Controls.Add(this.txtconfirmpassw);
@@ -211,15 +211,15 @@
             this.btnclear_cusInfo.UseVisualStyleBackColor = true;
             this.btnclear_cusInfo.Click += new System.EventHandler(this.btnclear_cusInfo_Click);
             // 
-            // label3
+            // lbladdress
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(421, 341);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 19);
-            this.label3.TabIndex = 123;
-            this.label3.Text = "ADDRESS";
+            this.lbladdress.AutoSize = true;
+            this.lbladdress.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lbladdress.Location = new System.Drawing.Point(421, 341);
+            this.lbladdress.Name = "lbladdress";
+            this.lbladdress.Size = new System.Drawing.Size(85, 19);
+            this.lbladdress.TabIndex = 123;
+            this.lbladdress.Text = "ADDRESS";
             // 
             // txtaddress
             // 
@@ -362,9 +362,9 @@
             this.lblbirthdate.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.lblbirthdate.Location = new System.Drawing.Point(67, 311);
             this.lblbirthdate.Name = "lblbirthdate";
-            this.lblbirthdate.Size = new System.Drawing.Size(108, 19);
+            this.lblbirthdate.Size = new System.Drawing.Size(135, 19);
             this.lblbirthdate.TabIndex = 104;
-            this.lblbirthdate.Text = "BIRTH DATE";
+            this.lblbirthdate.Text = "DATE OF BIRTH";
             // 
             // txtname
             // 
@@ -381,9 +381,10 @@
             this.lblname.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.lblname.Location = new System.Drawing.Point(67, 198);
             this.lblname.Name = "lblname";
-            this.lblname.Size = new System.Drawing.Size(111, 19);
+            this.lblname.Size = new System.Drawing.Size(59, 19);
             this.lblname.TabIndex = 100;
-            this.lblname.Text = "FIRST NAME";
+            this.lblname.Text = "NAME";
+            this.lblname.Click += new System.EventHandler(this.lblname_Click);
             // 
             // label17
             // 
@@ -722,7 +723,7 @@
         private PictureBox pictureBox1;
         private Button btnclear;
         private Label lbl_cusName;
-        private Label label3;
+        private Label lbladdress;
         private TextBox txtaddress;
         private Button btnclear_cusInfo;
         private Button btn_savePassword;

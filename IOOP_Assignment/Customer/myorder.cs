@@ -21,7 +21,7 @@ namespace IOOP_Assignment
             Customers obj1 = new Customers(name);
             lblserv_desc.Text = obj1.showservdesc();
             lblamount_pay.Text = obj1.showAmount_ToPaid();
-            lblstatus.Text = obj1.showStatus();
+            lbl_orderstatus.Text = obj1.showStatus();
             lblcollec_date.Text = obj1.showCollec_date();
         }
 
@@ -68,5 +68,7 @@ namespace IOOP_Assignment
             login.ShowDialog();
             this.Close();
         }
+
+        
     }
 }
