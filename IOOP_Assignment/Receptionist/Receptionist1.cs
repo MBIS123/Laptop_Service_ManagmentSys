@@ -22,6 +22,7 @@ namespace IOOP_Assignment
         private DateTime cusDob;
         private string cusUsername;
         private int numOfUsers;
+        private int numOfCus;
 
         private string recName;
         private string recPhone;
@@ -76,15 +77,23 @@ namespace IOOP_Assignment
             exists = (int)cmdUsernameExist.ExecuteScalar() > 0;
             if (exists== false)
             {
+                SqlCommand cmdNumUser = new SqlCommand("select count(*) from Users", con);
+                numOfUsers = int.Parse(cmdNumUser.ExecuteScalar().ToString());
+
+                SqlCommand cmdNumCus = new SqlCommand("select count(*) from Customer", con);
+                numOfCus = int.Parse(cmdNumCus.ExecuteScalar().ToString());
+
                 int userID = numOfUsers + 1;
-                SqlCommand cmdUser = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users( UserName, Password,[User Role]) values" +
-                        "(@username, '123456', 'customer'); SET IDENTITY_INSERT Users off;", con);
-                cmdUser.Parameters.AddWithValue("@username", cusUsername);
+                int cusID = numOfCus + 1;
+
+                SqlCommand cmdUser = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users(UserID, UserName, Password,[User Role]) values" +
+                        "( " + userID + ",'" + cusUsername + "','123456', 'customer'); SET IDENTITY_INSERT Users off;", con);
                 cmdUser.ExecuteNonQuery();
+
                 string birthdate = CusDob.ToString("yyyy-MM-dd");
-                SqlCommand cmdNewCus = new SqlCommand("SET IDENTITY_INSERT Customer ON; insert into Customer(UserID,Name,Gender,[Date of Birth],[IC No.]," +
+                SqlCommand cmdNewCus = new SqlCommand("SET IDENTITY_INSERT Customer ON; insert into Customer(CustomerID, UserID,Name,Gender,[Date of Birth],[IC No.]," +
                         "[Contact No.],Email,Address) values" +
-                        "( " + userID + " ,'" + cusName + "','" + cusGender + "','" + birthdate + "','" + cusIC + "','" + cusPhoneNum + "','" + CusEmail + "','" + CusAddress + "'); SET IDENTITY_INSERT Customer off; ", con);
+                        "( " + cusID + "," + userID + " ,'" + cusName + "','" + cusGender + "','" + birthdate + "','" + cusIC + "','" + cusPhoneNum + "','" + CusEmail + "','" + CusAddress + "'); SET IDENTITY_INSERT Customer off; ", con);
 
                 cmdNewCus.ExecuteNonQuery();
             }
