@@ -38,9 +38,10 @@ namespace IOOP_Assignment
         {
             //validation
             DataValidation objval = new DataValidation();
-            if (objval.isPhoneNum(txtMobile.Text) == true && (objval.isEmailAddress(txtEmail)) == true && (objval.isStringNull(txtAddress) == false)) //all valid
+            if (objval.isPhoneNum(txtMobile.Text) == true && (objval.isEmailAddress(txtEmail)) == true &&
+                (objval.isStringNull(txtAddress) == false)) //all valid
             {
-                Receptionist1 obj1 = new Receptionist1(Name);
+                Receptionist1 obj1 = new Receptionist1();
                 MessageBox.Show(obj1.updReceptionist(txtMobile.Text, txtEmail.Text, txtAddress.Text));
             }
             else
