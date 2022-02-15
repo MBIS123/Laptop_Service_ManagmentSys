@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace IOOP_Assignment
 {
@@ -103,13 +104,15 @@ namespace IOOP_Assignment
                 return false;
         }
 
-        internal bool isDate(TextBox txtBx) // return true it is a date
+        internal bool isDateInFormat(TextBox txtBx) // return true it is a date
         {
             DateTime dDate;
-            if (DateTime.TryParse(txtBx.Text, out dDate))
+            string temp = txtBx.Text;
+            temp = temp.Replace("-","");
+            if (DateTime.TryParseExact(temp, "yyyyddMM", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out dDate))
                 return true;
             else
-                return false;
+                return false ;
 
         }
         internal bool isEmailAddress(TextBox txtBx) // return true if email was correct
@@ -121,6 +124,15 @@ namespace IOOP_Assignment
         }
 
 
+        internal bool isDate(TextBox txtBx) // return true it is a date
+        {
+            DateTime dDate;
+            if (DateTime.TryParse(txtBx.Text, out dDate))
+                return true;
+            else
+                return false;
+
+        }
 
 
     }
