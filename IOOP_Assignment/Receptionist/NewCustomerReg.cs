@@ -32,32 +32,36 @@ namespace IOOP_Assignment
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             DataValidation objval = new DataValidation();
-            if (objval.isString(txtName.Text) == true && objval.isIcNum(txtIC) == true && objval.isPhoneNum(txtMobile.Text) == true
-                && objval.isEmailAddress(txtEmail) == true && objval.isStringNull(txtAddress) == false && objval.isStringNull(txtUsername) == false)
+            if (objval.isString(txtName.Text) == true && objval.isIcNum(txtIC) == true 
+                && objval.isPhoneNum(txtMobile.Text) == true
+                && objval.isEmailAddress(txtEmail) == true && objval.isStringNull(txtAddress) == false 
+                && objval.isStringNull(txtUsername) == false)
             {
                 DateTime bdaydate = dateTimePickerDate.Value.Date;
                 if (radBtnFemale.Checked == true)
                 {
                     Gender = "Female";
-                    Receptionist1 obj1 = new Receptionist1(txtName.Text, Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate, txtUsername.Text);
+                    Receptionist1 obj1 = new Receptionist1(txtName.Text, Gender, txtIC.Text, 
+                        txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate, txtUsername.Text);
                     obj1.AddNewCustomer(bdaydate);
                 }
                 else if (radBtnMale.Checked == true)
                 {
                     Gender = "Male";
-                    Receptionist1 obj1 = new Receptionist1(txtName.Text, Gender, txtIC.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate, txtUsername.Text);
+                    Receptionist1 obj1 = new Receptionist1(txtName.Text, Gender, txtIC.Text, 
+                        txtMobile.Text, txtEmail.Text, txtAddress.Text, bdaydate, txtUsername.Text);
                     obj1.AddNewCustomer(bdaydate);
                 }
                 else
                 {
-                    MessageBox.Show("Please choose your gender!");
+                    MessageBox.Show("Please choose the gender of the customer!");
                 }
             }
             else
             {
                 if (objval.isStringNull(txtName))//name not entered
                 {
-                    MessageBox.Show("Please enter your name!");
+                    MessageBox.Show("Please enter customer name!");
                 }
                 if (objval.isIcNum(txtIC) == false)
                 {
@@ -77,7 +81,7 @@ namespace IOOP_Assignment
                 }
                 if (objval.isStringNull(txtUsername))
                 {
-                    MessageBox.Show("Please enter your username!");
+                    MessageBox.Show("Please enter customer username!");
                 }
             }
 
