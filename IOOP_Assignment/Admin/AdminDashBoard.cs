@@ -22,7 +22,6 @@ namespace IOOP_Assignment
             adminName = adnName;
         }
    
-
         private void Admin_Load(object sender, EventArgs e)
         {
             dAminObj.numOfUserInDtBase();

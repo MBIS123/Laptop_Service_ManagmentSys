@@ -56,7 +56,6 @@ namespace IOOP_Assignment
         public int NumOfTechnician { get => numOfTechnician; set => numOfTechnician = value; }
         public int NumOfReceptionist { get => numOfReceptionist; set => numOfReceptionist = value; }
         public int TotalOfServiceRequested { get => totalOfServiceRequested; set => totalOfServiceRequested = value; }
-        public  string[] Monthlist { get => monthList; set => monthList = value; }
         public int LstMthIncome { get => lstMthIncome; set => lstMthIncome = value; }
         public int Lst2MthIncome { get => lst2MthIncome; set => lst2MthIncome = value; }
         public int Lst3MthIncome { get => lst3MthIncome; set => lst3MthIncome = value; }
