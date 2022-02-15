@@ -90,7 +90,6 @@ namespace IOOP_Assignment
                 int userID = numOfUsers + 1;
                 int cusID = numOfCus + 1;
 
-                MessageBox.Show(cusDob_string.ToString());
                 SqlCommand cmdUser = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users(UserID, UserName, Password,[User Role]) values" +
                         "( " + userID + ",'" + cusUsername + "','123456', 'customer'); SET IDENTITY_INSERT Users off;", con);
                 cmdUser.ExecuteNonQuery();
@@ -186,7 +185,6 @@ namespace IOOP_Assignment
         public static void viewRecProfile(Receptionist1 o1)
         {
             con.Open();
-            MessageBox.Show(o1.recName.ToString());
             SqlCommand cmd = new SqlCommand("select * from Receptionist where Name = '" + o1.recName + "'", con);
             SqlCommand cmd2 = new SqlCommand("select [Password] from [Users], [Receptionist] where [Users].UserID = [Receptionist].UserID and [Receptionist].Name = '" + o1.recName + "'", con);
 
