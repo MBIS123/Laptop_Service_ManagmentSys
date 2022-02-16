@@ -60,10 +60,12 @@ namespace IOOP_Assignment.Customer
 
         private void llblogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            frmLogin login = new frmLogin();
-            login.ShowDialog();
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+            }
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

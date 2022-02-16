@@ -60,7 +60,7 @@
             // 
             this.lblUpdateAddress.AutoSize = true;
             this.lblUpdateAddress.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblUpdateAddress.Location = new System.Drawing.Point(6, 281);
+            this.lblUpdateAddress.Location = new System.Drawing.Point(6, 309);
             this.lblUpdateAddress.Name = "lblUpdateAddress";
             this.lblUpdateAddress.Size = new System.Drawing.Size(104, 29);
             this.lblUpdateAddress.TabIndex = 25;
@@ -70,7 +70,7 @@
             // 
             this.lblUpdateEmail.AutoSize = true;
             this.lblUpdateEmail.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblUpdateEmail.Location = new System.Drawing.Point(6, 153);
+            this.lblUpdateEmail.Location = new System.Drawing.Point(6, 191);
             this.lblUpdateEmail.Name = "lblUpdateEmail";
             this.lblUpdateEmail.Size = new System.Drawing.Size(170, 29);
             this.lblUpdateEmail.TabIndex = 23;
@@ -80,7 +80,7 @@
             // 
             this.lblUpdateContact.AutoSize = true;
             this.lblUpdateContact.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblUpdateContact.Location = new System.Drawing.Point(6, 57);
+            this.lblUpdateContact.Location = new System.Drawing.Point(6, 82);
             this.lblUpdateContact.Name = "lblUpdateContact";
             this.lblUpdateContact.Size = new System.Drawing.Size(146, 29);
             this.lblUpdateContact.TabIndex = 21;
@@ -90,7 +90,7 @@
             // 
             this.lblUpdateProfile.AutoSize = true;
             this.lblUpdateProfile.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblUpdateProfile.Location = new System.Drawing.Point(25, 31);
+            this.lblUpdateProfile.Location = new System.Drawing.Point(22, 23);
             this.lblUpdateProfile.Name = "lblUpdateProfile";
             this.lblUpdateProfile.Size = new System.Drawing.Size(218, 36);
             this.lblUpdateProfile.TabIndex = 20;
@@ -100,9 +100,10 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnClose.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnClose.Location = new System.Drawing.Point(1329, 671);
+            this.btnClose.Location = new System.Drawing.Point(1340, 672);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Padding = new System.Windows.Forms.Padding(4);
+            this.btnClose.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnClose.Size = new System.Drawing.Size(173, 40);
             this.btnClose.TabIndex = 19;
             this.btnClose.Text = "Close";
@@ -115,10 +116,11 @@
             // 
             this.btnSaveContactDetails.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnSaveContactDetails.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSaveContactDetails.Location = new System.Drawing.Point(398, 508);
+            this.btnSaveContactDetails.Location = new System.Drawing.Point(392, 491);
+            this.btnSaveContactDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSaveContactDetails.Name = "btnSaveContactDetails";
-            this.btnSaveContactDetails.Padding = new System.Windows.Forms.Padding(4);
-            this.btnSaveContactDetails.Size = new System.Drawing.Size(245, 40);
+            this.btnSaveContactDetails.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSaveContactDetails.Size = new System.Drawing.Size(261, 40);
             this.btnSaveContactDetails.TabIndex = 18;
             this.btnSaveContactDetails.Text = "Save Contact Details";
             this.btnSaveContactDetails.UseVisualStyleBackColor = false;
@@ -130,10 +132,11 @@
             // 
             this.btnResetContactDetails.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnResetContactDetails.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnResetContactDetails.Location = new System.Drawing.Point(130, 508);
+            this.btnResetContactDetails.Location = new System.Drawing.Point(72, 491);
+            this.btnResetContactDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnResetContactDetails.Name = "btnResetContactDetails";
-            this.btnResetContactDetails.Padding = new System.Windows.Forms.Padding(4);
-            this.btnResetContactDetails.Size = new System.Drawing.Size(245, 40);
+            this.btnResetContactDetails.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnResetContactDetails.Size = new System.Drawing.Size(261, 40);
             this.btnResetContactDetails.TabIndex = 17;
             this.btnResetContactDetails.Text = "Reset Contact Details";
             this.btnResetContactDetails.UseVisualStyleBackColor = false;
@@ -143,17 +146,18 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(241, 281);
+            this.txtAddress.Location = new System.Drawing.Point(212, 309);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(435, 110);
+            this.txtAddress.Size = new System.Drawing.Size(476, 84);
             this.txtAddress.TabIndex = 31;
             // 
             // lblAddLine1Example
             // 
             this.lblAddLine1Example.AutoSize = true;
             this.lblAddLine1Example.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblAddLine1Example.Location = new System.Drawing.Point(241, 402);
+            this.lblAddLine1Example.Location = new System.Drawing.Point(212, 400);
             this.lblAddLine1Example.Name = "lblAddLine1Example";
             this.lblAddLine1Example.Size = new System.Drawing.Size(385, 44);
             this.lblAddLine1Example.TabIndex = 33;
@@ -176,7 +180,9 @@
             this.grpUpdateContactDetails.Cursor = System.Windows.Forms.Cursors.Default;
             this.grpUpdateContactDetails.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.grpUpdateContactDetails.Location = new System.Drawing.Point(25, 98);
+            this.grpUpdateContactDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpUpdateContactDetails.Name = "grpUpdateContactDetails";
+            this.grpUpdateContactDetails.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpUpdateContactDetails.Size = new System.Drawing.Size(726, 554);
             this.grpUpdateContactDetails.TabIndex = 44;
             this.grpUpdateContactDetails.TabStop = false;
@@ -186,7 +192,7 @@
             // 
             this.lblContactExample.AutoSize = true;
             this.lblContactExample.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblContactExample.Location = new System.Drawing.Point(241, 105);
+            this.lblContactExample.Location = new System.Drawing.Point(212, 118);
             this.lblContactExample.Name = "lblContactExample";
             this.lblContactExample.Size = new System.Drawing.Size(338, 22);
             this.lblContactExample.TabIndex = 46;
@@ -196,7 +202,7 @@
             // 
             this.lblEmailExample.AutoSize = true;
             this.lblEmailExample.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblEmailExample.Location = new System.Drawing.Point(241, 200);
+            this.lblEmailExample.Location = new System.Drawing.Point(212, 226);
             this.lblEmailExample.Name = "lblEmailExample";
             this.lblEmailExample.Size = new System.Drawing.Size(211, 22);
             this.lblEmailExample.TabIndex = 45;
@@ -204,16 +210,18 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(241, 150);
+            this.txtEmail.Location = new System.Drawing.Point(212, 188);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(435, 37);
+            this.txtEmail.Size = new System.Drawing.Size(476, 37);
             this.txtEmail.TabIndex = 44;
             // 
             // txtContact
             // 
-            this.txtContact.Location = new System.Drawing.Point(241, 54);
+            this.txtContact.Location = new System.Drawing.Point(212, 79);
+            this.txtContact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(435, 37);
+            this.txtContact.Size = new System.Drawing.Size(476, 37);
             this.txtContact.TabIndex = 43;
             // 
             // grpUpdatePW
@@ -230,7 +238,9 @@
             this.grpUpdatePW.Controls.Add(this.lblNewPW);
             this.grpUpdatePW.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.grpUpdatePW.Location = new System.Drawing.Point(776, 98);
+            this.grpUpdatePW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpUpdatePW.Name = "grpUpdatePW";
+            this.grpUpdatePW.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpUpdatePW.Size = new System.Drawing.Size(726, 554);
             this.grpUpdatePW.TabIndex = 45;
             this.grpUpdatePW.TabStop = false;
@@ -240,7 +250,7 @@
             // 
             this.lblPWGuidelines.AutoSize = true;
             this.lblPWGuidelines.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblPWGuidelines.Location = new System.Drawing.Point(241, 205);
+            this.lblPWGuidelines.Location = new System.Drawing.Point(211, 236);
             this.lblPWGuidelines.Name = "lblPWGuidelines";
             this.lblPWGuidelines.Size = new System.Drawing.Size(418, 110);
             this.lblPWGuidelines.TabIndex = 47;
@@ -252,10 +262,11 @@
             // 
             this.btnSavePW.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnSavePW.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSavePW.Location = new System.Drawing.Point(396, 508);
+            this.btnSavePW.Location = new System.Drawing.Point(396, 491);
+            this.btnSavePW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSavePW.Name = "btnSavePW";
-            this.btnSavePW.Padding = new System.Windows.Forms.Padding(4);
-            this.btnSavePW.Size = new System.Drawing.Size(245, 40);
+            this.btnSavePW.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSavePW.Size = new System.Drawing.Size(261, 40);
             this.btnSavePW.TabIndex = 46;
             this.btnSavePW.Text = "Save Password";
             this.btnSavePW.UseVisualStyleBackColor = false;
@@ -267,10 +278,11 @@
             // 
             this.btnResetPW.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnResetPW.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnResetPW.Location = new System.Drawing.Point(120, 508);
+            this.btnResetPW.Location = new System.Drawing.Point(106, 491);
+            this.btnResetPW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnResetPW.Name = "btnResetPW";
-            this.btnResetPW.Padding = new System.Windows.Forms.Padding(4);
-            this.btnResetPW.Size = new System.Drawing.Size(245, 40);
+            this.btnResetPW.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnResetPW.Size = new System.Drawing.Size(261, 40);
             this.btnResetPW.TabIndex = 43;
             this.btnResetPW.Text = "Reset Password";
             this.btnResetPW.UseVisualStyleBackColor = false;
@@ -280,33 +292,36 @@
             // 
             // txtConfirmNewPW
             // 
-            this.txtConfirmNewPW.Location = new System.Drawing.Point(241, 354);
+            this.txtConfirmNewPW.Location = new System.Drawing.Point(211, 391);
+            this.txtConfirmNewPW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtConfirmNewPW.Name = "txtConfirmNewPW";
             this.txtConfirmNewPW.PasswordChar = '*';
-            this.txtConfirmNewPW.Size = new System.Drawing.Size(435, 37);
+            this.txtConfirmNewPW.Size = new System.Drawing.Size(476, 37);
             this.txtConfirmNewPW.TabIndex = 45;
             // 
             // txtNewPW
             // 
-            this.txtNewPW.Location = new System.Drawing.Point(241, 145);
+            this.txtNewPW.Location = new System.Drawing.Point(211, 191);
+            this.txtNewPW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNewPW.Name = "txtNewPW";
             this.txtNewPW.PasswordChar = '*';
-            this.txtNewPW.Size = new System.Drawing.Size(435, 37);
+            this.txtNewPW.Size = new System.Drawing.Size(476, 37);
             this.txtNewPW.TabIndex = 44;
             // 
             // txtCurrentPW
             // 
-            this.txtCurrentPW.Location = new System.Drawing.Point(241, 54);
+            this.txtCurrentPW.Location = new System.Drawing.Point(211, 79);
+            this.txtCurrentPW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCurrentPW.Name = "txtCurrentPW";
             this.txtCurrentPW.PasswordChar = '*';
-            this.txtCurrentPW.Size = new System.Drawing.Size(435, 37);
+            this.txtCurrentPW.Size = new System.Drawing.Size(381, 37);
             this.txtCurrentPW.TabIndex = 43;
             // 
             // lblConfirmNewPW
             // 
             this.lblConfirmNewPW.AutoSize = true;
             this.lblConfirmNewPW.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblConfirmNewPW.Location = new System.Drawing.Point(7, 357);
+            this.lblConfirmNewPW.Location = new System.Drawing.Point(6, 391);
             this.lblConfirmNewPW.Name = "lblConfirmNewPW";
             this.lblConfirmNewPW.Size = new System.Drawing.Size(165, 58);
             this.lblConfirmNewPW.TabIndex = 40;
@@ -316,7 +331,7 @@
             // 
             this.lblCurrentPW.AutoSize = true;
             this.lblCurrentPW.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCurrentPW.Location = new System.Drawing.Point(6, 57);
+            this.lblCurrentPW.Location = new System.Drawing.Point(5, 77);
             this.lblCurrentPW.Name = "lblCurrentPW";
             this.lblCurrentPW.Size = new System.Drawing.Size(166, 58);
             this.lblCurrentPW.TabIndex = 21;
@@ -326,7 +341,7 @@
             // 
             this.lblNewPW.AutoSize = true;
             this.lblNewPW.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNewPW.Location = new System.Drawing.Point(6, 145);
+            this.lblNewPW.Location = new System.Drawing.Point(6, 191);
             this.lblNewPW.Name = "lblNewPW";
             this.lblNewPW.Size = new System.Drawing.Size(134, 58);
             this.lblNewPW.TabIndex = 23;
@@ -346,6 +361,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grpUpdateContactDetails);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "UpdateTechnicianProfile";
             this.Text = "Update Profile";

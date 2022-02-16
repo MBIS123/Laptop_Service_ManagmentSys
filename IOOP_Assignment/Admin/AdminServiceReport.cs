@@ -24,6 +24,7 @@ namespace IOOP_Assignment
         }
         public AdminServiceReport()
         {
+            InitializeComponent();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

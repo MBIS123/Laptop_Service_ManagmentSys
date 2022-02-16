@@ -65,9 +65,10 @@
             // 
             this.btnAccess_Profile.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnAccess_Profile.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAccess_Profile.Location = new System.Drawing.Point(41, 342);
+            this.btnAccess_Profile.Location = new System.Drawing.Point(26, 306);
+            this.btnAccess_Profile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccess_Profile.Name = "btnAccess_Profile";
-            this.btnAccess_Profile.Padding = new System.Windows.Forms.Padding(4);
+            this.btnAccess_Profile.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAccess_Profile.Size = new System.Drawing.Size(173, 40);
             this.btnAccess_Profile.TabIndex = 4;
             this.btnAccess_Profile.Text = "Profile";
@@ -79,9 +80,10 @@
             // 
             this.btnAccess_Dashboard.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnAccess_Dashboard.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAccess_Dashboard.Location = new System.Drawing.Point(41, 272);
+            this.btnAccess_Dashboard.Location = new System.Drawing.Point(26, 245);
+            this.btnAccess_Dashboard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccess_Dashboard.Name = "btnAccess_Dashboard";
-            this.btnAccess_Dashboard.Padding = new System.Windows.Forms.Padding(4);
+            this.btnAccess_Dashboard.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAccess_Dashboard.Size = new System.Drawing.Size(173, 40);
             this.btnAccess_Dashboard.TabIndex = 2;
             this.btnAccess_Dashboard.Text = "Dashboard";
@@ -93,7 +95,8 @@
             // picMenuProfile
             // 
             this.picMenuProfile.Image = ((System.Drawing.Image)(resources.GetObject("picMenuProfile.Image")));
-            this.picMenuProfile.Location = new System.Drawing.Point(93, 436);
+            this.picMenuProfile.Location = new System.Drawing.Point(76, 417);
+            this.picMenuProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picMenuProfile.Name = "picMenuProfile";
             this.picMenuProfile.Size = new System.Drawing.Size(63, 82);
             this.picMenuProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -105,9 +108,10 @@
             this.picLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(52, 30);
+            this.picLogo.Location = new System.Drawing.Point(46, 60);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(143, 131);
+            this.picLogo.Size = new System.Drawing.Size(125, 98);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
@@ -122,15 +126,17 @@
             this.panelMenu.Controls.Add(this.lblName);
             this.panelMenu.Controls.Add(this.picLogo);
             this.panelMenu.Location = new System.Drawing.Point(3, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(248, 716);
+            this.panelMenu.Size = new System.Drawing.Size(217, 670);
             this.panelMenu.TabIndex = 7;
             // 
             // btnLogOut
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLogOut.Location = new System.Drawing.Point(41, 587);
+            this.btnLogOut.Location = new System.Drawing.Point(26, 598);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(173, 40);
             this.btnLogOut.TabIndex = 5;
@@ -153,6 +159,7 @@
             // 
             this.picProfile.Image = ((System.Drawing.Image)(resources.GetObject("picProfile.Image")));
             this.picProfile.Location = new System.Drawing.Point(563, 63);
+            this.picProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picProfile.Name = "picProfile";
             this.picProfile.Size = new System.Drawing.Size(229, 203);
             this.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -174,7 +181,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(287, 30);
+            this.label2.Location = new System.Drawing.Point(273, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 36);
             this.label2.TabIndex = 10;
@@ -196,6 +203,7 @@
             // 
             this.txtGender.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtGender.Location = new System.Drawing.Point(443, 374);
+            this.txtGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGender.Name = "txtGender";
             this.txtGender.ReadOnly = true;
             this.txtGender.Size = new System.Drawing.Size(198, 38);
@@ -215,7 +223,8 @@
             // txtDOB
             // 
             this.txtDOB.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDOB.Location = new System.Drawing.Point(443, 435);
+            this.txtDOB.Location = new System.Drawing.Point(443, 438);
+            this.txtDOB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDOB.Name = "txtDOB";
             this.txtDOB.ReadOnly = true;
             this.txtDOB.Size = new System.Drawing.Size(198, 38);
@@ -225,7 +234,7 @@
             // 
             this.lblEthnicity.AutoSize = true;
             this.lblEthnicity.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblEthnicity.Location = new System.Drawing.Point(283, 507);
+            this.lblEthnicity.Location = new System.Drawing.Point(283, 511);
             this.lblEthnicity.Name = "lblEthnicity";
             this.lblEthnicity.Size = new System.Drawing.Size(105, 29);
             this.lblEthnicity.TabIndex = 15;
@@ -235,7 +244,8 @@
             // txtEthnicity
             // 
             this.txtEthnicity.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEthnicity.Location = new System.Drawing.Point(443, 500);
+            this.txtEthnicity.Location = new System.Drawing.Point(443, 506);
+            this.txtEthnicity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEthnicity.Name = "txtEthnicity";
             this.txtEthnicity.ReadOnly = true;
             this.txtEthnicity.Size = new System.Drawing.Size(198, 38);
@@ -245,7 +255,7 @@
             // 
             this.lblIC.AutoSize = true;
             this.lblIC.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblIC.Location = new System.Drawing.Point(283, 567);
+            this.lblIC.Location = new System.Drawing.Point(283, 587);
             this.lblIC.Name = "lblIC";
             this.lblIC.Size = new System.Drawing.Size(80, 29);
             this.lblIC.TabIndex = 17;
@@ -255,7 +265,8 @@
             // txtIC
             // 
             this.txtIC.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtIC.Location = new System.Drawing.Point(443, 560);
+            this.txtIC.Location = new System.Drawing.Point(443, 578);
+            this.txtIC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIC.Name = "txtIC";
             this.txtIC.ReadOnly = true;
             this.txtIC.Size = new System.Drawing.Size(198, 38);
@@ -265,18 +276,19 @@
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAddress.Location = new System.Drawing.Point(871, 500);
+            this.txtAddress.Location = new System.Drawing.Point(871, 511);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.ReadOnly = true;
-            this.txtAddress.Size = new System.Drawing.Size(198, 98);
+            this.txtAddress.Size = new System.Drawing.Size(198, 74);
             this.txtAddress.TabIndex = 24;
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAddress.Location = new System.Drawing.Point(699, 507);
+            this.lblAddress.Location = new System.Drawing.Point(699, 511);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(101, 29);
             this.lblAddress.TabIndex = 23;
@@ -286,7 +298,8 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.Location = new System.Drawing.Point(871, 435);
+            this.txtEmail.Location = new System.Drawing.Point(871, 443);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(198, 38);
@@ -296,7 +309,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblEmail.Location = new System.Drawing.Point(699, 443);
+            this.lblEmail.Location = new System.Drawing.Point(699, 448);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(166, 29);
             this.lblEmail.TabIndex = 21;
@@ -307,6 +320,7 @@
             // 
             this.txtContact.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtContact.Location = new System.Drawing.Point(871, 374);
+            this.txtContact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContact.Name = "txtContact";
             this.txtContact.ReadOnly = true;
             this.txtContact.Size = new System.Drawing.Size(198, 38);
@@ -327,7 +341,8 @@
             // 
             this.btnAccess_EditProfile.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnAccess_EditProfile.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAccess_EditProfile.Location = new System.Drawing.Point(896, 611);
+            this.btnAccess_EditProfile.Location = new System.Drawing.Point(896, 598);
+            this.btnAccess_EditProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccess_EditProfile.Name = "btnAccess_EditProfile";
             this.btnAccess_EditProfile.Size = new System.Drawing.Size(173, 40);
             this.btnAccess_EditProfile.TabIndex = 6;
@@ -341,6 +356,7 @@
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.txtName.Location = new System.Drawing.Point(586, 284);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(189, 42);
@@ -375,6 +391,7 @@
             this.Controls.Add(this.picProfile);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "TechnicianProfile";
             this.Text = "Profile";

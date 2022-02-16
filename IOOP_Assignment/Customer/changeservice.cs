@@ -55,18 +55,23 @@ namespace IOOP_Assignment
             {
                 if (obj0.validationstatus() == true)
                 {
-                    lbl_decided_change_service.Text = "You have change service from " + decide_change_service + " with " + Type + " successfully";
+                    lbl_decided_change_service.Text = ("You have change service from " + decide_change_service + " with " + Type + " successfully");
                     Customers obj1 = new Customers(name);
                     MessageBox.Show(obj1.changeservice(index, Type));
                 }
                 else
                 {
-                    MessageBox.Show("Your service status is completed. You are not allowed to change service anymore");
+                    DialogResult dialogResult = MessageBox.Show("Your service status is completed. You are not allowed to change service anymore","Error",MessageBoxButtons.OK);
+                    if(dialogResult == DialogResult.OK)
+                    {
+                        change_service change = new change_service();
+                        change.ShowDialog();
+                    }
                 }
 
             }
             else
-                MessageBox.Show("You have not choose service / service type yet");
+                MessageBox.Show("You have not choose service / service type yet","Error");
 
         }
 
@@ -103,10 +108,11 @@ namespace IOOP_Assignment
 
         private void llblogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            frmLogin Login = new frmLogin();
-            Login.ShowDialog();
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+            }
         }
 
         

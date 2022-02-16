@@ -19,8 +19,6 @@ namespace IOOP_Assignment
 
         DataValidation validtObj = new DataValidation();
         
-
-
         public AdminRegistration()
         {
             InitializeComponent();
@@ -34,34 +32,6 @@ namespace IOOP_Assignment
         private void Registration_Load(object sender, EventArgs e)
         {
             lblAdminName.Text = adminName;
-        }
-        private void btnRegis_Click(object sender, EventArgs e)
-        {
-            if (ckBxFilled.Checked == true)
-            {
-                if (isValidated())
-                {
-                    setValueToVar();
-                    rAdminObj.insertDataBase();
-                    MessageBox.Show("Registration Successfully !");
-                    clearForm();
-                }
-                else
-                {
-                    MessageBox.Show(" Entered data does not meet the format.Please try again", "Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    ckBxFilled.Checked = false;
-                }
-                
-            }
-            else
-                MessageBox.Show("Required field was not marked !", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-        }
-
-        private void ckBxFilled_MouseClick(object sender, MouseEventArgs e)
-        {         
-            if (!allFilled(ckBxFilled)) // if not allfilled then need to fill in again and chkbox will become unchecked
-                ckBxFilled.Checked = false;
         }
 
         private bool allFilled(CheckBox chkBx)
@@ -91,15 +61,15 @@ namespace IOOP_Assignment
             if (!(validtObj.isString(txtName.Text)))
             {
                 failedCase += 1;
-                MessageBox.Show("Invalid name entered.Please enter a valid name", "Registration Failed",MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }  
-            if(!(validtObj.isStringNull(txtAddress)))
+                MessageBox.Show("Invalid name entered.Please enter a valid name", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if ((validtObj.isStringNull(txtAddress)))
             {
                 failedCase += 1;
-                MessageBox.Show("Invalid address entered.Please enter a valid address", "Registration Failed",MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            } 
+                MessageBox.Show("Invalid address entered.Please enter a valid address", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
-            if (!(validtObj.isDate(txtDateOfBirth)))
+            if (!(validtObj.isDateInFormat(txtDateOfBirth)))
             {
                 failedCase += 1;
                 MessageBox.Show("Invalid date of Birth entered.Please enter a valid birthdate", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -121,21 +91,41 @@ namespace IOOP_Assignment
                 MessageBox.Show("Invalid contact no entered.Please enter a valid contact no", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            if (failedCase >=1)  // return false if any of the test case were failed
+            if (failedCase >= 1)  // return false if any of the test case were failed
                 return false;
             else
                 return true;
 
         }
 
-        private void setValueToVar()  // get the value from textbox and pass to related member field
+
+        private void ckBxFilled_MouseClick(object sender, MouseEventArgs e)
         {
-            rAdminObj.Name = txtName.Text.ToUpper().Replace(" ", "");
-            rAdminObj.Address = txtAddress.Text;
-            rAdminObj.PhoneNumber = txtContactNo.Text;
-            rAdminObj.DateOfBirth = dateFormation();
-            rAdminObj.EmailAddress = txtEmailAddress.Text;
-            rAdminObj.NoIC = txtIcNo.Text;
+            if (!allFilled(ckBxFilled)) // if not allfilled then need to fill in again and chkbox will become unchecked
+                ckBxFilled.Checked = false;
+        }
+
+        private void btnRegis_Click(object sender, EventArgs e)
+        {
+            if (ckBxFilled.Checked == true)
+            {
+                if (isValidated())
+                {
+                    setValueToVar();
+                    rAdminObj.insertDataBase();
+                    MessageBox.Show("Registration Successfully !");
+                    clearForm();
+                }
+                else
+                {
+                    MessageBox.Show(" Entered data does not meet the format.Please try again", "Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ckBxFilled.Checked = false;
+                }
+
+            }
+            else
+                MessageBox.Show("Required field was not marked !", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
 
         private string dateFormation()
@@ -148,7 +138,17 @@ namespace IOOP_Assignment
             string formattedBirthDate = year + '-' + month + '-' + day;
             return formattedBirthDate; // the birthdate are now in YYYY-MM-DD   
         }
-        
+
+        private void setValueToVar()  // get the value from textbox and pass to related member field
+        {
+            rAdminObj.Name = txtName.Text.ToUpper().Replace(" ", "");
+            rAdminObj.Address = txtAddress.Text;
+            rAdminObj.PhoneNumber = txtContactNo.Text;
+            rAdminObj.DateOfBirth = txtDateOfBirth.Text;
+            rAdminObj.EmailAddress = txtEmailAddress.Text;
+            rAdminObj.NoIC = txtIcNo.Text;
+        }
+
         private void clearForm()
         {
             txtIcNo.Text =String.Empty;
