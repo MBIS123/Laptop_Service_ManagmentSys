@@ -122,7 +122,11 @@ namespace IOOP_Assignment
 
         private void linklblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+            }
         }
     }
 }
