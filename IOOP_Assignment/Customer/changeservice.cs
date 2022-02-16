@@ -44,7 +44,7 @@ namespace IOOP_Assignment
 
         private void lstservices_SelectedIndexChanged(object sender, EventArgs e)
         {
-            index = lstservices.SelectedIndex;
+            index = lstservices.SelectedIndex + 1;
         }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
@@ -57,7 +57,7 @@ namespace IOOP_Assignment
                 {
                     lbl_decided_change_service.Text = ("You have change service from " + decide_change_service + " with " + Type + " successfully");
                     Customers obj1 = new Customers(name);
-                    if (index == 0)
+                    if (index == 1)
                     {
                         if (Type != "Normal")
                         {
@@ -68,7 +68,7 @@ namespace IOOP_Assignment
                             amount = 50;
                         }
                     }
-                    else if (index == 1)
+                    else if (index == 2)
                     {
                         if (Type != "Normal")
                         {
@@ -79,7 +79,7 @@ namespace IOOP_Assignment
                             amount = 60;
                         }
                     }
-                    else if (index == 2)
+                    else if (index == 3)
                     {
                         if (Type != "Normal")
                         {
@@ -90,7 +90,7 @@ namespace IOOP_Assignment
                             amount = 380;
                         }
                     }
-                    else if (index == 3)
+                    else if (index == 4)
                     {
                         if (Type != "Normal")
                         {
@@ -101,7 +101,7 @@ namespace IOOP_Assignment
                             amount = 160;
                         }
                     }
-                    else if (index == 4)
+                    else if (index == 5)
                     {
                         if (Type != "Normal")
                         {
@@ -112,7 +112,7 @@ namespace IOOP_Assignment
                             amount = 180;
                         }
                     }
-                    else if (index == 5)
+                    else if (index == 6)
                     {
                         if (Type != "Normal")
                         {
@@ -123,7 +123,7 @@ namespace IOOP_Assignment
                             amount = 100;
                         }
                     }
-                    else if (index == 6)
+                    else if (index == 7)
                     {
                         if (Type != "Normal")
                         {

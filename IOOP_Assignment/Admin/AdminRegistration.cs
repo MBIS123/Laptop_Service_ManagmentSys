@@ -18,17 +18,18 @@ namespace IOOP_Assignment
         public static string adminName;
 
         DataValidation validtObj = new DataValidation();
-        
-        public AdminRegistration()
-        {
-            InitializeComponent();
-        }
-
         public AdminRegistration(string admName)
         {
             InitializeComponent();
             adminName = admName;
         }
+
+        public AdminRegistration()
+        {
+            InitializeComponent();
+        }
+
+      
         private void Registration_Load(object sender, EventArgs e)
         {
             lblAdminName.Text = adminName;

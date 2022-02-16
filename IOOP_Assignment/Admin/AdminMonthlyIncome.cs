@@ -15,16 +15,17 @@ namespace IOOP_Assignment
         Admin iAdminObj = new Admin();
         public static string adminName;
 
-        public AdminMonthlyIncome()
-        {
-            InitializeComponent();
-        }
         public AdminMonthlyIncome(string admnName)
         {
             InitializeComponent();
             adminName = admnName;
-            
         }
+
+        public AdminMonthlyIncome()
+        {
+            InitializeComponent();
+        }
+      
         private void MonthlyIncome_Load(object sender, EventArgs e)
         {
             iAdminObj.addNewYear(cmbBxYear);
