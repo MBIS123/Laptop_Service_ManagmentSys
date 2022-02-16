@@ -46,7 +46,7 @@ namespace IOOP_Assignment
             bool filledInfo = rAdminObj.AllInfoFilled; // will return false if the radio button was not click , and checkbox index = -1;
 
             if ((validtObj.isStringNull(txtName) || validtObj.isStringNull(txtDateOfBirth) || validtObj.isStringNull(txtAddress)
-                || validtObj.isStringNull(txtEmailAddress) || validtObj.isStringNull(txtIcNo) || validtObj.isStringNull(txtContactNo)) || !filledInfo) // if gt null value
+                || validtObj.isStringNull(txtEmailAddress) || validtObj.isStringNull(txtIcNo) || validtObj.isStringNull(txtContactNo)) || !filledInfo) 
             {
                 MessageBox.Show("Please ensure every section was filled !", " Reminder ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -102,7 +102,7 @@ namespace IOOP_Assignment
 
         private void ckBxFilled_MouseClick(object sender, MouseEventArgs e)
         {
-            if (!allFilled(ckBxFilled)) // if not allfilled then need to fill in again and chkbox will become unchecked
+            if (!allFilled(ckBxFilled)) // if not allfilled then chkbox will become unchecked
                 ckBxFilled.Checked = false;
         }
 
@@ -119,14 +119,14 @@ namespace IOOP_Assignment
                 }
                 else
                 {
-                    MessageBox.Show(" Entered data does not meet the format.Please try again", "Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(" Entered data does not meet the format.Please try again", "Reminder",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     ckBxFilled.Checked = false;
                 }
-
             }
             else
-                MessageBox.Show("Required field was not marked !", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                MessageBox.Show("Required field was not marked !", "Registration Failed", MessageBoxButtons.OK, 
+                    MessageBoxIcon.Warning);
         }
         private void setValueToVar()  // get the value from textbox and pass to related member field
         {
@@ -137,8 +137,7 @@ namespace IOOP_Assignment
             rAdminObj.EmailAddress = txtEmailAddress.Text;
             rAdminObj.NoIC = txtIcNo.Text;
         }
-
-        private void clearForm()
+      private void clearForm()
         {
             txtIcNo.Text =String.Empty;
             txtName.Text = String.Empty;
@@ -154,6 +153,7 @@ namespace IOOP_Assignment
             cmbBxGender.SelectedIndex = -1;
 
         }
+
 
         private void btnIncome_Click(object sender, EventArgs e)
         {
