@@ -30,6 +30,7 @@ namespace IOOP_Assignment
             lblNoOfRecep.Text = dAminObj.NumOfReceptionist.ToString();
             lblNoOfTech.Text =dAminObj.NumOfTechnician.ToString();
             lblTotalRecpTech.Text = (dAminObj.NumOfReceptionist + dAminObj.NumOfTechnician).ToString();
+            dAminObj.searchPass3Months();
             dAminObj.pass3MonthsIncome();
             dAminObj.changeMonthBarTitle(lblMnthBar1,lblMnthBar2,lblMnthBar3);
             dAminObj.compareIncomeBetweenMntPct(lblProfitPct);
@@ -72,7 +73,7 @@ namespace IOOP_Assignment
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+           dAminObj.exitSystem();
         }
         private void btnServReport_Click(object sender, EventArgs e) // the blue button
         {
