@@ -47,11 +47,11 @@
             // 
             this.btnReset.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnReset.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnReset.Location = new System.Drawing.Point(242, 278);
+            this.btnReset.Location = new System.Drawing.Point(242, 361);
             this.btnReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnReset.Size = new System.Drawing.Size(151, 30);
+            this.btnReset.Size = new System.Drawing.Size(173, 40);
             this.btnReset.TabIndex = 4;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
@@ -63,11 +63,11 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnSave.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.Location = new System.Drawing.Point(416, 279);
+            this.btnSave.Location = new System.Drawing.Point(425, 361);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnSave.Size = new System.Drawing.Size(151, 30);
+            this.btnSave.Size = new System.Drawing.Size(173, 40);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -79,11 +79,11 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnClose.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnClose.Location = new System.Drawing.Point(592, 279);
+            this.btnClose.Location = new System.Drawing.Point(604, 361);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnClose.Size = new System.Drawing.Size(151, 30);
+            this.btnClose.Size = new System.Drawing.Size(173, 40);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -95,7 +95,7 @@
             // 
             this.lblEditServ.AutoSize = true;
             this.lblEditServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEditServ.Location = new System.Drawing.Point(10, 17);
+            this.lblEditServ.Location = new System.Drawing.Point(12, 23);
             this.lblEditServ.Name = "lblEditServ";
             this.lblEditServ.Size = new System.Drawing.Size(296, 36);
             this.lblEditServ.TabIndex = 8;
@@ -105,7 +105,7 @@
             // 
             this.lblOrderID.AutoSize = true;
             this.lblOrderID.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderID.Location = new System.Drawing.Point(10, 77);
+            this.lblOrderID.Location = new System.Drawing.Point(12, 103);
             this.lblOrderID.Name = "lblOrderID";
             this.lblOrderID.Size = new System.Drawing.Size(103, 29);
             this.lblOrderID.TabIndex = 9;
@@ -114,10 +114,10 @@
             // comboOrderID
             // 
             this.comboOrderID.FormattingEnabled = true;
-            this.comboOrderID.Location = new System.Drawing.Point(242, 77);
+            this.comboOrderID.Location = new System.Drawing.Point(277, 103);
             this.comboOrderID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboOrderID.Name = "comboOrderID";
-            this.comboOrderID.Size = new System.Drawing.Size(123, 28);
+            this.comboOrderID.Size = new System.Drawing.Size(140, 28);
             this.comboOrderID.TabIndex = 10;
             this.comboOrderID.SelectionChangeCommitted += new System.EventHandler(this.comboOrderID_SelectionChangeCommitted);
             // 
@@ -125,17 +125,18 @@
             // 
             this.lblChange.AutoSize = true;
             this.lblChange.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblChange.Location = new System.Drawing.Point(10, 121);
+            this.lblChange.Location = new System.Drawing.Point(12, 171);
             this.lblChange.Name = "lblChange";
             this.lblChange.Size = new System.Drawing.Size(172, 29);
             this.lblChange.TabIndex = 11;
             this.lblChange.Text = "Change Status";
+            this.lblChange.Click += new System.EventHandler(this.lblChange_Click);
             // 
             // radioCompleted
             // 
             this.radioCompleted.AutoSize = true;
             this.radioCompleted.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.radioCompleted.Location = new System.Drawing.Point(455, 121);
+            this.radioCompleted.Location = new System.Drawing.Point(504, 172);
             this.radioCompleted.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioCompleted.Name = "radioCompleted";
             this.radioCompleted.Size = new System.Drawing.Size(140, 29);
@@ -149,7 +150,7 @@
             // 
             this.lblCollectDate.AutoSize = true;
             this.lblCollectDate.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCollectDate.Location = new System.Drawing.Point(10, 230);
+            this.lblCollectDate.Location = new System.Drawing.Point(12, 313);
             this.lblCollectDate.Name = "lblCollectDate";
             this.lblCollectDate.Size = new System.Drawing.Size(183, 29);
             this.lblCollectDate.TabIndex = 13;
@@ -158,10 +159,10 @@
             // CollectionDatePicker
             // 
             this.CollectionDatePicker.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CollectionDatePicker.Location = new System.Drawing.Point(242, 230);
+            this.CollectionDatePicker.Location = new System.Drawing.Point(277, 313);
             this.CollectionDatePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CollectionDatePicker.Name = "CollectionDatePicker";
-            this.CollectionDatePicker.Size = new System.Drawing.Size(438, 29);
+            this.CollectionDatePicker.Size = new System.Drawing.Size(500, 29);
             this.CollectionDatePicker.TabIndex = 14;
             this.CollectionDatePicker.ValueChanged += new System.EventHandler(this.CollectionDatePicker_ValueChanged);
             // 
@@ -169,7 +170,7 @@
             // 
             this.lblServDescription.AutoSize = true;
             this.lblServDescription.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblServDescription.Location = new System.Drawing.Point(10, 156);
+            this.lblServDescription.Location = new System.Drawing.Point(12, 227);
             this.lblServDescription.Name = "lblServDescription";
             this.lblServDescription.Size = new System.Drawing.Size(235, 58);
             this.lblServDescription.TabIndex = 15;
@@ -178,10 +179,10 @@
             // richServDescription
             // 
             this.richServDescription.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.richServDescription.Location = new System.Drawing.Point(242, 156);
+            this.richServDescription.Location = new System.Drawing.Point(277, 227);
             this.richServDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richServDescription.Name = "richServDescription";
-            this.richServDescription.Size = new System.Drawing.Size(438, 44);
+            this.richServDescription.Size = new System.Drawing.Size(500, 58);
             this.richServDescription.TabIndex = 16;
             this.richServDescription.Text = "";
             // 
@@ -189,7 +190,7 @@
             // 
             this.radioChangesRequired.AutoSize = true;
             this.radioChangesRequired.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.radioChangesRequired.Location = new System.Drawing.Point(242, 121);
+            this.radioChangesRequired.Location = new System.Drawing.Point(277, 172);
             this.radioChangesRequired.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioChangesRequired.Name = "radioChangesRequired";
             this.radioChangesRequired.Size = new System.Drawing.Size(209, 29);
@@ -205,7 +206,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.PeachPuff;
-            this.ClientSize = new System.Drawing.Size(748, 316);
+            this.ClientSize = new System.Drawing.Size(855, 422);
             this.ControlBox = false;
             this.Controls.Add(this.radioChangesRequired);
             this.Controls.Add(this.richServDescription);

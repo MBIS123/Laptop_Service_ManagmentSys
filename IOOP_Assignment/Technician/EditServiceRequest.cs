@@ -200,6 +200,11 @@ namespace IOOP_Assignment
         {
 
         }
+
+        private void lblChange_Click(object sender, EventArgs e)
+        {
+
+        }
         //close window button
     }
 }
