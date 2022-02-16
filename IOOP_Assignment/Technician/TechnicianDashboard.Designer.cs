@@ -160,7 +160,7 @@
             this.lblName.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblName.Location = new System.Drawing.Point(46, 397);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(52, 20);
+            this.lblName.Size = new System.Drawing.Size(66, 25);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "name";
             // 
@@ -194,7 +194,7 @@
             this.lblWidg_TextCompServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblWidg_TextCompServ.Location = new System.Drawing.Point(55, 11);
             this.lblWidg_TextCompServ.Name = "lblWidg_TextCompServ";
-            this.lblWidg_TextCompServ.Size = new System.Drawing.Size(133, 56);
+            this.lblWidg_TextCompServ.Size = new System.Drawing.Size(171, 72);
             this.lblWidg_TextCompServ.TabIndex = 0;
             this.lblWidg_TextCompServ.Text = "Completed\r\nThis Month";
             // 
@@ -204,7 +204,7 @@
             this.lblWidg_ValueCompServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblWidg_ValueCompServ.Location = new System.Drawing.Point(3, 8);
             this.lblWidg_ValueCompServ.Name = "lblWidg_ValueCompServ";
-            this.lblWidg_ValueCompServ.Size = new System.Drawing.Size(56, 61);
+            this.lblWidg_ValueCompServ.Size = new System.Drawing.Size(69, 77);
             this.lblWidg_ValueCompServ.TabIndex = 2;
             this.lblWidg_ValueCompServ.Text = "1";
             this.lblWidg_ValueCompServ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -226,7 +226,7 @@
             this.lblWidg_ValueUrgServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblWidg_ValueUrgServ.Location = new System.Drawing.Point(10, 8);
             this.lblWidg_ValueUrgServ.Name = "lblWidg_ValueUrgServ";
-            this.lblWidg_ValueUrgServ.Size = new System.Drawing.Size(56, 61);
+            this.lblWidg_ValueUrgServ.Size = new System.Drawing.Size(69, 77);
             this.lblWidg_ValueUrgServ.TabIndex = 2;
             this.lblWidg_ValueUrgServ.Text = "1";
             this.lblWidg_ValueUrgServ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -237,7 +237,7 @@
             this.lblWidg_TextUrgServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblWidg_TextUrgServ.Location = new System.Drawing.Point(75, 23);
             this.lblWidg_TextUrgServ.Name = "lblWidg_TextUrgServ";
-            this.lblWidg_TextUrgServ.Size = new System.Drawing.Size(87, 28);
+            this.lblWidg_TextUrgServ.Size = new System.Drawing.Size(110, 36);
             this.lblWidg_TextUrgServ.TabIndex = 0;
             this.lblWidg_TextUrgServ.Text = "Urgent";
             // 
@@ -258,7 +258,7 @@
             this.lblWidg_ValuePendServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblWidg_ValuePendServ.Location = new System.Drawing.Point(11, 8);
             this.lblWidg_ValuePendServ.Name = "lblWidg_ValuePendServ";
-            this.lblWidg_ValuePendServ.Size = new System.Drawing.Size(56, 61);
+            this.lblWidg_ValuePendServ.Size = new System.Drawing.Size(69, 77);
             this.lblWidg_ValuePendServ.TabIndex = 1;
             this.lblWidg_ValuePendServ.Text = "2";
             this.lblWidg_ValuePendServ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -269,7 +269,7 @@
             this.lblWidg_TextPendServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblWidg_TextPendServ.Location = new System.Drawing.Point(77, 23);
             this.lblWidg_TextPendServ.Name = "lblWidg_TextPendServ";
-            this.lblWidg_TextPendServ.Size = new System.Drawing.Size(101, 28);
+            this.lblWidg_TextPendServ.Size = new System.Drawing.Size(129, 36);
             this.lblWidg_TextPendServ.TabIndex = 0;
             this.lblWidg_TextPendServ.Text = "Pending";
             // 
@@ -407,7 +407,7 @@
             this.lblTable_TextAllServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTable_TextAllServ.Location = new System.Drawing.Point(3, 0);
             this.lblTable_TextAllServ.Name = "lblTable_TextAllServ";
-            this.lblTable_TextAllServ.Size = new System.Drawing.Size(255, 28);
+            this.lblTable_TextAllServ.Size = new System.Drawing.Size(320, 36);
             this.lblTable_TextAllServ.TabIndex = 7;
             this.lblTable_TextAllServ.Text = "Your Service Requests:";
             // 
@@ -525,7 +525,8 @@
             // 
             // TechnicianDashboard
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightYellow;
             this.ClientSize = new System.Drawing.Size(1309, 500);

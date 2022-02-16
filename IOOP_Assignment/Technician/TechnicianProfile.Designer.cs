@@ -152,7 +152,7 @@
             this.lblName.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblName.Location = new System.Drawing.Point(46, 397);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(0, 20);
+            this.lblName.Size = new System.Drawing.Size(0, 25);
             this.lblName.TabIndex = 0;
             // 
             // picProfile
@@ -172,7 +172,7 @@
             this.lblText_Technician.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblText_Technician.Location = new System.Drawing.Point(540, 247);
             this.lblText_Technician.Name = "lblText_Technician";
-            this.lblText_Technician.Size = new System.Drawing.Size(98, 24);
+            this.lblText_Technician.Size = new System.Drawing.Size(119, 29);
             this.lblText_Technician.TabIndex = 9;
             this.lblText_Technician.Text = "Technician";
             this.lblText_Technician.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -183,7 +183,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(251, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 28);
+            this.label2.Size = new System.Drawing.Size(104, 36);
             this.label2.TabIndex = 10;
             this.label2.Text = "Profile";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -194,7 +194,7 @@
             this.lblGender.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblGender.Location = new System.Drawing.Point(248, 284);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(77, 24);
+            this.lblGender.Size = new System.Drawing.Size(94, 29);
             this.lblGender.TabIndex = 11;
             this.lblGender.Text = "Gender";
             this.lblGender.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -206,7 +206,7 @@
             this.txtGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGender.Name = "txtGender";
             this.txtGender.ReadOnly = true;
-            this.txtGender.Size = new System.Drawing.Size(174, 32);
+            this.txtGender.Size = new System.Drawing.Size(174, 38);
             this.txtGender.TabIndex = 12;
             // 
             // lblDOB
@@ -215,7 +215,7 @@
             this.lblDOB.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDOB.Location = new System.Drawing.Point(248, 332);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(123, 24);
+            this.lblDOB.Size = new System.Drawing.Size(150, 29);
             this.lblDOB.TabIndex = 13;
             this.lblDOB.Text = "Date of Birth";
             this.lblDOB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -227,7 +227,7 @@
             this.txtDOB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDOB.Name = "txtDOB";
             this.txtDOB.ReadOnly = true;
-            this.txtDOB.Size = new System.Drawing.Size(174, 32);
+            this.txtDOB.Size = new System.Drawing.Size(174, 38);
             this.txtDOB.TabIndex = 14;
             // 
             // lblEthnicity
@@ -236,7 +236,7 @@
             this.lblEthnicity.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblEthnicity.Location = new System.Drawing.Point(248, 380);
             this.lblEthnicity.Name = "lblEthnicity";
-            this.lblEthnicity.Size = new System.Drawing.Size(87, 24);
+            this.lblEthnicity.Size = new System.Drawing.Size(105, 29);
             this.lblEthnicity.TabIndex = 15;
             this.lblEthnicity.Text = "Ethnicity";
             this.lblEthnicity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -248,7 +248,7 @@
             this.txtEthnicity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEthnicity.Name = "txtEthnicity";
             this.txtEthnicity.ReadOnly = true;
-            this.txtEthnicity.Size = new System.Drawing.Size(174, 32);
+            this.txtEthnicity.Size = new System.Drawing.Size(174, 38);
             this.txtEthnicity.TabIndex = 16;
             // 
             // lblIC
@@ -257,7 +257,7 @@
             this.lblIC.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblIC.Location = new System.Drawing.Point(248, 425);
             this.lblIC.Name = "lblIC";
-            this.lblIC.Size = new System.Drawing.Size(64, 24);
+            this.lblIC.Size = new System.Drawing.Size(80, 29);
             this.lblIC.TabIndex = 17;
             this.lblIC.Text = "IC No.";
             this.lblIC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -269,7 +269,7 @@
             this.txtIC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIC.Name = "txtIC";
             this.txtIC.ReadOnly = true;
-            this.txtIC.Size = new System.Drawing.Size(174, 32);
+            this.txtIC.Size = new System.Drawing.Size(174, 38);
             this.txtIC.TabIndex = 18;
             this.txtIC.TextChanged += new System.EventHandler(this.txtIC_TextChanged);
             // 
@@ -290,7 +290,7 @@
             this.lblAddress.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblAddress.Location = new System.Drawing.Point(612, 380);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(83, 24);
+            this.lblAddress.Size = new System.Drawing.Size(101, 29);
             this.lblAddress.TabIndex = 23;
             this.lblAddress.Text = "Address";
             this.lblAddress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -302,7 +302,7 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(174, 32);
+            this.txtEmail.Size = new System.Drawing.Size(174, 38);
             this.txtEmail.TabIndex = 22;
             // 
             // lblEmail
@@ -311,7 +311,7 @@
             this.lblEmail.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblEmail.Location = new System.Drawing.Point(612, 332);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(136, 24);
+            this.lblEmail.Size = new System.Drawing.Size(166, 29);
             this.lblEmail.TabIndex = 21;
             this.lblEmail.Text = "Email Address";
             this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -323,7 +323,7 @@
             this.txtContact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContact.Name = "txtContact";
             this.txtContact.ReadOnly = true;
-            this.txtContact.Size = new System.Drawing.Size(174, 32);
+            this.txtContact.Size = new System.Drawing.Size(174, 38);
             this.txtContact.TabIndex = 20;
             // 
             // lblContact
@@ -332,7 +332,7 @@
             this.lblContact.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblContact.Location = new System.Drawing.Point(612, 284);
             this.lblContact.Name = "lblContact";
-            this.lblContact.Size = new System.Drawing.Size(116, 24);
+            this.lblContact.Size = new System.Drawing.Size(142, 29);
             this.lblContact.TabIndex = 19;
             this.lblContact.Text = "Contact No.";
             this.lblContact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -359,12 +359,13 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(166, 35);
+            this.txtName.Size = new System.Drawing.Size(166, 42);
             this.txtName.TabIndex = 25;
             // 
             // TechnicianProfile
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightYellow;
             this.ClientSize = new System.Drawing.Size(976, 500);

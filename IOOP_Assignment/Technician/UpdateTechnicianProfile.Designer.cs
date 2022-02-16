@@ -62,7 +62,7 @@
             this.lblUpdateAddress.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUpdateAddress.Location = new System.Drawing.Point(5, 211);
             this.lblUpdateAddress.Name = "lblUpdateAddress";
-            this.lblUpdateAddress.Size = new System.Drawing.Size(85, 24);
+            this.lblUpdateAddress.Size = new System.Drawing.Size(104, 29);
             this.lblUpdateAddress.TabIndex = 25;
             this.lblUpdateAddress.Text = "Address";
             // 
@@ -72,7 +72,7 @@
             this.lblUpdateEmail.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUpdateEmail.Location = new System.Drawing.Point(5, 115);
             this.lblUpdateEmail.Name = "lblUpdateEmail";
-            this.lblUpdateEmail.Size = new System.Drawing.Size(140, 24);
+            this.lblUpdateEmail.Size = new System.Drawing.Size(170, 29);
             this.lblUpdateEmail.TabIndex = 23;
             this.lblUpdateEmail.Text = "Email Address";
             // 
@@ -82,7 +82,7 @@
             this.lblUpdateContact.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUpdateContact.Location = new System.Drawing.Point(5, 43);
             this.lblUpdateContact.Name = "lblUpdateContact";
-            this.lblUpdateContact.Size = new System.Drawing.Size(120, 24);
+            this.lblUpdateContact.Size = new System.Drawing.Size(146, 29);
             this.lblUpdateContact.TabIndex = 21;
             this.lblUpdateContact.Text = "Contact No.";
             // 
@@ -92,7 +92,7 @@
             this.lblUpdateProfile.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUpdateProfile.Location = new System.Drawing.Point(22, 23);
             this.lblUpdateProfile.Name = "lblUpdateProfile";
-            this.lblUpdateProfile.Size = new System.Drawing.Size(172, 28);
+            this.lblUpdateProfile.Size = new System.Drawing.Size(218, 36);
             this.lblUpdateProfile.TabIndex = 20;
             this.lblUpdateProfile.Text = "Update Profile:";
             // 
@@ -159,7 +159,7 @@
             this.lblAddLine1Example.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblAddLine1Example.Location = new System.Drawing.Point(211, 302);
             this.lblAddLine1Example.Name = "lblAddLine1Example";
-            this.lblAddLine1Example.Size = new System.Drawing.Size(329, 36);
+            this.lblAddLine1Example.Size = new System.Drawing.Size(385, 44);
             this.lblAddLine1Example.TabIndex = 33;
             this.lblAddLine1Example.Text = "e.g. No. 44, Jalan Desa Melur 4/1, Bukit Tangan, \r\nShah Alam, Selangor";
             // 
@@ -194,7 +194,7 @@
             this.lblContactExample.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblContactExample.Location = new System.Drawing.Point(211, 79);
             this.lblContactExample.Name = "lblContactExample";
-            this.lblContactExample.Size = new System.Drawing.Size(273, 18);
+            this.lblContactExample.Size = new System.Drawing.Size(338, 22);
             this.lblContactExample.TabIndex = 46;
             this.lblContactExample.Text = "e.g. +6012-3456789 or +6011-23456789";
             // 
@@ -204,7 +204,7 @@
             this.lblEmailExample.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblEmailExample.Location = new System.Drawing.Point(211, 150);
             this.lblEmailExample.Name = "lblEmailExample";
-            this.lblEmailExample.Size = new System.Drawing.Size(176, 18);
+            this.lblEmailExample.Size = new System.Drawing.Size(211, 22);
             this.lblEmailExample.TabIndex = 45;
             this.lblEmailExample.Text = "e.g. johndoe@gmail.com";
             // 
@@ -213,7 +213,7 @@
             this.txtEmail.Location = new System.Drawing.Point(211, 112);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(381, 31);
+            this.txtEmail.Size = new System.Drawing.Size(381, 37);
             this.txtEmail.TabIndex = 44;
             // 
             // txtContact
@@ -221,7 +221,7 @@
             this.txtContact.Location = new System.Drawing.Point(211, 40);
             this.txtContact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(381, 31);
+            this.txtContact.Size = new System.Drawing.Size(381, 37);
             this.txtContact.TabIndex = 43;
             // 
             // grpUpdatePW
@@ -252,7 +252,7 @@
             this.lblPWGuidelines.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblPWGuidelines.Location = new System.Drawing.Point(211, 154);
             this.lblPWGuidelines.Name = "lblPWGuidelines";
-            this.lblPWGuidelines.Size = new System.Drawing.Size(355, 90);
+            this.lblPWGuidelines.Size = new System.Drawing.Size(418, 110);
             this.lblPWGuidelines.TabIndex = 47;
             this.lblPWGuidelines.Text = "Your password should have:\r\n- At least 8 characters\r\n- A mixture of both uppercas" +
     "e and lowercase letters\r\n- A mixture of letters and numbers\r\n- At least one spec" +
@@ -296,7 +296,7 @@
             this.txtConfirmNewPW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtConfirmNewPW.Name = "txtConfirmNewPW";
             this.txtConfirmNewPW.PasswordChar = '*';
-            this.txtConfirmNewPW.Size = new System.Drawing.Size(381, 31);
+            this.txtConfirmNewPW.Size = new System.Drawing.Size(381, 37);
             this.txtConfirmNewPW.TabIndex = 45;
             // 
             // txtNewPW
@@ -305,7 +305,7 @@
             this.txtNewPW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNewPW.Name = "txtNewPW";
             this.txtNewPW.PasswordChar = '*';
-            this.txtNewPW.Size = new System.Drawing.Size(381, 31);
+            this.txtNewPW.Size = new System.Drawing.Size(381, 37);
             this.txtNewPW.TabIndex = 44;
             // 
             // txtCurrentPW
@@ -314,7 +314,7 @@
             this.txtCurrentPW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCurrentPW.Name = "txtCurrentPW";
             this.txtCurrentPW.PasswordChar = '*';
-            this.txtCurrentPW.Size = new System.Drawing.Size(381, 31);
+            this.txtCurrentPW.Size = new System.Drawing.Size(381, 37);
             this.txtCurrentPW.TabIndex = 43;
             // 
             // lblConfirmNewPW
@@ -323,7 +323,7 @@
             this.lblConfirmNewPW.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblConfirmNewPW.Location = new System.Drawing.Point(6, 268);
             this.lblConfirmNewPW.Name = "lblConfirmNewPW";
-            this.lblConfirmNewPW.Size = new System.Drawing.Size(137, 48);
+            this.lblConfirmNewPW.Size = new System.Drawing.Size(165, 58);
             this.lblConfirmNewPW.TabIndex = 40;
             this.lblConfirmNewPW.Text = "Confirm New \r\nPassword";
             // 
@@ -333,7 +333,7 @@
             this.lblCurrentPW.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCurrentPW.Location = new System.Drawing.Point(5, 43);
             this.lblCurrentPW.Name = "lblCurrentPW";
-            this.lblCurrentPW.Size = new System.Drawing.Size(140, 48);
+            this.lblCurrentPW.Size = new System.Drawing.Size(166, 58);
             this.lblCurrentPW.TabIndex = 21;
             this.lblCurrentPW.Text = "Enter Current \r\nPassword";
             // 
@@ -343,13 +343,14 @@
             this.lblNewPW.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNewPW.Location = new System.Drawing.Point(5, 109);
             this.lblNewPW.Name = "lblNewPW";
-            this.lblNewPW.Size = new System.Drawing.Size(111, 48);
+            this.lblNewPW.Size = new System.Drawing.Size(134, 58);
             this.lblNewPW.TabIndex = 23;
             this.lblNewPW.Text = "Enter New \r\nPassword";
             // 
             // UpdateTechnicianProfile
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.PeachPuff;
