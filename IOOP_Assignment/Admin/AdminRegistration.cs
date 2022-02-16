@@ -18,17 +18,18 @@ namespace IOOP_Assignment
         public static string adminName;
 
         DataValidation validtObj = new DataValidation();
-        
-        public AdminRegistration()
-        {
-            InitializeComponent();
-        }
-
         public AdminRegistration(string admName)
         {
             InitializeComponent();
             adminName = admName;
         }
+
+        public AdminRegistration()
+        {
+            InitializeComponent();
+        }
+
+      
         private void Registration_Load(object sender, EventArgs e)
         {
             lblAdminName.Text = adminName;
@@ -127,18 +128,6 @@ namespace IOOP_Assignment
                 MessageBox.Show("Required field was not marked !", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
         }
-
-        private string dateFormation()
-        {
-            DateTime birthDate;
-            DateTime.TryParse(txtDateOfBirth.Text, out birthDate);
-            string year = birthDate.Year.ToString().PadLeft(4, '0');
-            string day = birthDate.Day.ToString().PadLeft(2, '0');
-            string month = birthDate.Month.ToString().PadLeft(2, '0');
-            string formattedBirthDate = year + '-' + month + '-' + day;
-            return formattedBirthDate; // the birthdate are now in YYYY-MM-DD   
-        }
-
         private void setValueToVar()  // get the value from textbox and pass to related member field
         {
             rAdminObj.Name = txtName.Text.ToUpper().Replace(" ", "");
@@ -186,7 +175,7 @@ namespace IOOP_Assignment
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            rAdminObj.exitSystem();
         }
 
         private void button1_Click(object sender, EventArgs e)

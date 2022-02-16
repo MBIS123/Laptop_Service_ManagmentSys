@@ -723,9 +723,9 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label4.Location = new System.Drawing.Point(605, 265);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 15);
+            this.label4.Size = new System.Drawing.Size(91, 15);
             this.label4.TabIndex = 375;
-            this.label4.Text = "(YYYY-DD)";
+            this.label4.Text = "(YYYY-MM-DD)";
             // 
             // AdminRegistration
             // 

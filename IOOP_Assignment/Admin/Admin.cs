@@ -28,17 +28,18 @@ namespace IOOP_Assignment
         private int numOfUsers;
         private int numOfTechnician;
         private int numOfReceptionist; 
-
         private int totalOfServiceRequested;
         // used for setting up dashboard
         private int lstMthIncome;
         private int lst2MthIncome;
-        private int lst3MthIncome; 
+        private int lst3MthIncome;
+        private DateTime[] passMonths = new DateTime[3];  // will store lastmonth , lastlastmonth ,lastlastlastmonth
         //For displaying the monthly Income data in Monthly Income form
         private string[] monthList = { "January", "February", "March", "April", "May", "June", "July",
                                         "August", "September", "October", "November", "December" }; 
         // for the month label display in admin
-        private string[] sFMonthList = { "Jan", "Feb", "Mch", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec" }; 
+        private string[] sFMonthList = { "Jan", "Feb", "Mch", "Apr", "May", "June",
+                                        "July", "Aug", "Sept", "Oct", "Nov", "Dec" }; 
 
         public string Position { get => position; set => position = value; }
         public string Name { get => name; set => name = value; }
@@ -66,16 +67,16 @@ namespace IOOP_Assignment
             switch (x)
             {
                 case "dashboard":
-                    adminFrm.Show();
+                    adminFrm.ShowDialog();
                     break;
                 case "income":
-                    incomeFrm.Show();
+                    incomeFrm.ShowDialog();
                     break;
                 case "registration":
-                    regisFrm.Show();
+                    regisFrm.ShowDialog();
                     break;
                 case "serviceReport":
-                    reportFrm.Show();
+                    reportFrm.ShowDialog();
                     break;
             }
         }
@@ -101,19 +102,19 @@ namespace IOOP_Assignment
             if (currentYear != cmbBxYear.Items[(cmbBxYear.Items.Count - 1)])
                 cmbBxYear.Items.Add(currentYear);
         }
-        internal DateTime[] searchPass3Months()
+        internal void searchPass3Months()  
         {
-            DateTime[] passMonths = new DateTime[3];
+            
             DateTime tdyDate = DateTime.Now;
             passMonths[0] = tdyDate.AddDays(-(tdyDate.Day) - 1);
             passMonths[1] = passMonths[0].AddDays(-(passMonths[0].Day) - 1);
             passMonths[2] = passMonths[1].AddDays(-(passMonths[1].Day) - 1);
 
-            return passMonths;
+           
         }
         internal void pass3MonthsIncome()
         {
-            DateTime[] passMonths = searchPass3Months();
+            
             int[] passMonthIncome = new int[3];
 
             conn.Open();
@@ -135,10 +136,9 @@ namespace IOOP_Assignment
             lst3MthIncome = passMonthIncome[2];
             conn.Close();
         }
-
-        internal int[] passMonthsRequestedService()
+        internal int[] passMonthsRequestedService() 
         {
-            DateTime[] passMonths = searchPass3Months();
+            
             int[] passMonthsRequestedServ = new int[2];
             conn.Open();
             for (int i = 0; i < 2; i++) //loop 3 times to get the last 3 month requested service
@@ -202,7 +202,7 @@ namespace IOOP_Assignment
                 else if (lst2MthIncome == lstMthIncome)
                 {
                     lblIncomePct.ForeColor = Color.FromArgb(0, 192, 0);
-                    lblIncomePct.Text = "+" + (incomePct - 100).ToString() + "%";
+                    lblIncomePct.Text = "+0%";
                 }
                 else
                 {
@@ -212,18 +212,16 @@ namespace IOOP_Assignment
             }
         } //for dashboard
 
-
-        internal void changeMonthBarTitle(Label lblBar1, Label lblBar2, Label lblBar3)
+        internal void changeMonthBarTitle(Label lblBar1, Label lblBar2, Label lblBar3) //changed
         {
-            DateTime[] searchPass3Month = searchPass3Months(); //return last month , last last month , last last last month.
-
-            int lstMonth = searchPass3Month[0].Month;
+          
+            int lstMonth = passMonths[0].Month;
             lblBar1.Text = sFMonthList[lstMonth - 1];
 
-            int lst2Month = searchPass3Month[1].Month;
+            int lst2Month = passMonths[1].Month;
             lblBar2.Text = sFMonthList[lst2Month - 1];
 
-            int lst3Month = searchPass3Month[2].Month;
+            int lst3Month = passMonths[2].Month;
             lblBar3.Text = sFMonthList[lst3Month - 1];
         }
         internal void validateRegisPosition(RadioButton technician ,RadioButton receptionist)
@@ -251,7 +249,6 @@ namespace IOOP_Assignment
             {
                 allInfoFilled = false;
             }
-
             else
             {
                 this.gender = gender.SelectedItem.ToString();
@@ -280,21 +277,26 @@ namespace IOOP_Assignment
             numOfUserInDtBase();
             string userName = generateUserName();
             string password = position + "123";
-
-            conn.Open();
+            
             numOfUsers += 1;     //generating new user
             int techID = numOfTechnician +1;
             int recepID =  numOfReceptionist + 1;
+            conn.Open();
 
-            SqlCommand cmdInsertStaffToUser = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users(UserID,UserName,Password,[User Role]) values" +
+            SqlCommand cmdInsertStaffToUser = new SqlCommand("SET IDENTITY_INSERT Users ON; insert into Users(UserID,UserName,Password,[User Role]) values" +              
                                                        "( "+ numOfUsers+" ,'"+userName+"','"+password+"','"+position+ "' ); SET IDENTITY_INSERT Users off; ",conn);
             cmdInsertStaffToUser.ExecuteNonQuery();
 
-            SqlCommand cmdInsertTechnician = new SqlCommand("SET IDENTITY_INSERT Technician ON; insert into Technician(TechnicianID,UserID,Name,Gender,[Date of Birth],Ethnicity,[IC No.],[Contact No.],Email,Address,Status) values" +
-                                                      "( "+techID+","+ numOfUsers + " ,'" + name + "','" + gender + "','" + dateOfBirth + "','"+ethnicity + "','"+noIC+ "','"+phoneNumber + "','" +emailAddress+ "','"+address+ "','Available'); SET IDENTITY_INSERT Technician off; ", conn);
+            SqlCommand cmdInsertTechnician = new SqlCommand("SET IDENTITY_INSERT Technician ON; insert into Technician(TechnicianID,UserID,Name,Gender," +          //put in this way for documentation
+                                                            "[Date of Birth],Ethnicity,[IC No.],[Contact No.],Email,Address,Status) values" +
+                                                      "( "+techID+","+ numOfUsers + " ,'" + name + "','" + gender + "','" + dateOfBirth + "','"+
+                                                            ethnicity + "','"+noIC+ "','"+phoneNumber + "','" +emailAddress+ "','"+address+ "','Available');" +
+                                                           " SET IDENTITY_INSERT Technician off; ", conn);
 
-            SqlCommand cmdInsertReceptionist = new SqlCommand("SET IDENTITY_INSERT Receptionist ON; insert into Receptionist (ReceptionistID,UserID,Name,Gender,[Date of Birth],Ethnicity,[IC No.],[Contact No.],Email,Address) values" +
-                                          "( " + recepID + "," + numOfUsers + " ,'" + name + "','" + gender + "','" + dateOfBirth + "','" + ethnicity + "','" + noIC + "','" + phoneNumber + "','" + emailAddress + "','" + address + "'); SET IDENTITY_INSERT Receptionist off; ", conn);
+            SqlCommand cmdInsertReceptionist = new SqlCommand("SET IDENTITY_INSERT Receptionist ON; insert into Receptionist (ReceptionistID,UserID,Name,Gender," +
+                                                              "[Date of Birth],Ethnicity,[IC No.],[Contact No.],Email,Address) values" +
+                                                           "( " + recepID + "," + numOfUsers + " ,'" + name + "','" + gender + "','" + dateOfBirth + "','" + ethnicity + "','" + noIC + "','"+ 
+                                                                       phoneNumber + "','" + emailAddress + "','" + address + "'); SET IDENTITY_INSERT Receptionist off; ", conn);
 
             if (position == "receptionist")
                 cmdInsertReceptionist.ExecuteNonQuery();
@@ -303,8 +305,6 @@ namespace IOOP_Assignment
                 cmdInsertTechnician.ExecuteNonQuery();
                 userObj.assignOrder();
             }
-               
-
 
             conn.Close();
         }
@@ -345,7 +345,8 @@ namespace IOOP_Assignment
             int[] numOfServeType = new int[8];
             for (int i = 0; i<8;i++ )
             {
-                SqlCommand findNumServeType = new SqlCommand("select COUNT(*) from [Order] where MONTH([Date Requested])=" + searchMonth + " and YEAR([Date Requested]) =" + searchYear + "and [ServiceRequestType ID]="+(i+1)+";", conn);
+                SqlCommand findNumServeType = new SqlCommand("select COUNT(*) from [Order] where MONTH([Date Requested])=" + searchMonth +
+                                          " and YEAR([Date Requested]) =" + searchYear + "and [ServiceRequestType ID]="+(i+1)+";", conn);
                 int serveType = (int)findNumServeType.ExecuteScalar();
                 numOfServeType[i] = serveType;
             }
@@ -377,7 +378,8 @@ namespace IOOP_Assignment
             {
                 try
                 {
-                    SqlCommand findMonthlyIncome = new SqlCommand("select SUM([Amount (RM)]) from [Order] where MONTH([Date Requested])=" + (i + 1) + " and YEAR([Date Requested]) =" + selectedYear + " and [Payment Status]='Paid';", conn);
+                    SqlCommand findMonthlyIncome = new SqlCommand("select SUM([Amount (RM)]) from [Order] where MONTH([Date Requested])=" 
+                                                    + (i + 1) + " and YEAR([Date Requested]) =" + selectedYear + " and [Payment Status]='Paid';", conn);
                     monthIncome = (int)findMonthlyIncome.ExecuteScalar();
                 }
                 catch (Exception ex){ //will catch System.InvalidCast Exception becuz can't cast null to int (some month has no order , or all order haven't paid in that month)
@@ -391,6 +393,14 @@ namespace IOOP_Assignment
 
         } 
     
+        internal void exitSystem()
+        {
+            DialogResult dialogResult = MessageBox.Show("Exiting LPDoctor ?", "Application Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
         
 

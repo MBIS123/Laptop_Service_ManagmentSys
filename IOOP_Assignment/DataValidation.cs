@@ -104,16 +104,15 @@ namespace IOOP_Assignment
                 return false;
         }
 
-        internal bool isDateInFormat(TextBox txtBx) // return true it is a date
+        internal bool isDateInFormat(TextBox txtBx) // return true if date fullfille the format
         {
             DateTime dDate;
             string temp = txtBx.Text;
             temp = temp.Replace("-","");
-            if (DateTime.TryParseExact(temp, "yyyyddMM", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out dDate))
+            if (DateTime.TryParseExact(temp, "yyyyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out dDate))
                 return true;
             else
                 return false ;
-
         }
         internal bool isEmailAddress(TextBox txtBx) // return true if email was correct
         {

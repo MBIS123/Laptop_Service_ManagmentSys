@@ -12,6 +12,7 @@ namespace IOOP_Assignment
     {
         private int service;
         private string service_type;
+        private int service_amount;
         private string name;
         private string userid;
         private string CusName;
@@ -55,6 +56,15 @@ namespace IOOP_Assignment
             {
                 status = true;
             }
+            else if(service_status == "Changes Required")
+            {
+                status = true;
+
+                SqlCommand cmd2 = new SqlCommand("update [Order] set [Status] = Pending", con);
+                cmd2.ExecuteNonQuery();
+                status = true;
+                
+            }
             else
             {
                 status = false;
@@ -62,19 +72,28 @@ namespace IOOP_Assignment
             con.Close();
             return status;
         }
-        internal string changeservice(int ind, string t)
+        internal string changeservice(int ind, string t, int amount)
         {
             string status;
             service = ind;
             service_type = t;
-
+            service_amount = amount;
             con.Open();
             // the status of the service is pending only can change service
             SqlCommand cmd2 = new SqlCommand("select CustomerID from [Customer] where Name = '" + name + "'", con);
             string customer_id = cmd2.ExecuteScalar().ToString();
+            
+            SqlCommand cmd3 = new SqlCommand("select Status from [Order] where CustomerID = '" + customer_id + "'", con);
+            string service_status = cmd3.ExecuteScalar().ToString();
 
-            SqlCommand cmd = new SqlCommand("update [Order] set [ServiceRequestType ID] = '" + service + "', [Service Type] = '" + service_type + "' where CustomerID ='" + customer_id + "'", con);
+            if (service_status == "Changes Required")
+            {
+                string pending_status = "Pending";
+                SqlCommand cmd4 = new SqlCommand("update [Order] set [Status] = '" + pending_status + "' where CustomerID = '" + customer_id + "'", con);
+                cmd4.ExecuteNonQuery();
+            }
 
+            SqlCommand cmd = new SqlCommand("update [Order] set [ServiceRequestType ID] = '" + service + "', [Service Type] = '" + service_type + "', [Amount (RM)] = '" + amount + "' where CustomerID = '" + customer_id + "'", con);
             int i = cmd.ExecuteNonQuery();//executes the command and returns the number of rows affected
             if (i != 0)
             {

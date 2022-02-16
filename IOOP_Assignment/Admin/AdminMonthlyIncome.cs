@@ -15,22 +15,27 @@ namespace IOOP_Assignment
         Admin iAdminObj = new Admin();
         public static string adminName;
 
-        public AdminMonthlyIncome()
-        {
-            InitializeComponent();
-        }
         public AdminMonthlyIncome(string admnName)
         {
             InitializeComponent();
             adminName = admnName;
-            
+        }
+
+        public AdminMonthlyIncome()
+        {
+            InitializeComponent();
+        }
+      
+        private void MonthlyIncome_Load(object sender, EventArgs e)
+        {
+            iAdminObj.addNewYear(cmbBxYear);
+            lblAdminName.Text = adminName;
         }
 
         private void btnRegistration_Click(object sender, EventArgs e)
         {
             this.Hide();
             iAdminObj.showRelatedForm("registration");
-
         }
 
         private void btnDashBoard_Click(object sender, EventArgs e)
@@ -47,14 +52,10 @@ namespace IOOP_Assignment
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            iAdminObj.exitSystem();
         }
 
-        private void MonthlyIncome_Load(object sender, EventArgs e)
-        {
-            iAdminObj.addNewYear(cmbBxYear);
-            lblAdminName.Text =adminName;
-        }
+       
 
         private void btnSearch_Click(object sender, EventArgs e)
         {

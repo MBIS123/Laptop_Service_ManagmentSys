@@ -11,6 +11,9 @@ namespace IOOP_Assignment
 
         Admin dAminObj = new Admin();
 
+        AdminMonthlyIncome objM = new AdminMonthlyIncome(adminName);
+        AdminRegistration objR = new AdminRegistration(adminName);
+        AdminServiceReport objS = new AdminServiceReport(adminName);
         public AdminDashBoard()
         {
             InitializeComponent();
@@ -30,6 +33,7 @@ namespace IOOP_Assignment
             lblNoOfRecep.Text = dAminObj.NumOfReceptionist.ToString();
             lblNoOfTech.Text =dAminObj.NumOfTechnician.ToString();
             lblTotalRecpTech.Text = (dAminObj.NumOfReceptionist + dAminObj.NumOfTechnician).ToString();
+            dAminObj.searchPass3Months();
             dAminObj.pass3MonthsIncome();
             dAminObj.changeMonthBarTitle(lblMnthBar1,lblMnthBar2,lblMnthBar3);
             dAminObj.compareIncomeBetweenMntPct(lblProfitPct);
@@ -44,10 +48,6 @@ namespace IOOP_Assignment
             lblServBar2.Size = new Size(sizeLast2MonthBar, 30);
             int sizeLast3MonthBar = (int)(((decimal)dAminObj.Lst3MthIncome / 6000) * 430);
             lblServBar3.Size = new Size(sizeLast3MonthBar, 30);
-
-            AdminMonthlyIncome objM = new AdminMonthlyIncome(adminName);
-            AdminRegistration objR = new AdminRegistration(adminName);
-            AdminServiceReport objS = new AdminServiceReport(adminName);
 
         }
 
@@ -72,7 +72,7 @@ namespace IOOP_Assignment
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+           dAminObj.exitSystem();
         }
         private void btnServReport_Click(object sender, EventArgs e) // the blue button
         {
