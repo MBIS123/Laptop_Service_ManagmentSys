@@ -13,8 +13,7 @@ namespace IOOP_Assignment
         {
             ApplicationConfiguration.Initialize();
             Application.Run(new frmLogin());
-
-
         }
+
     }
 }

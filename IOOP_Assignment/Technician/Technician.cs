@@ -206,7 +206,7 @@ namespace IOOP_Assignment
             //MessageBox.Show(o1.techID.ToString()); //for testing if value of technician_ID (line 48 TechnicianDashboard) is passed
             ArrayList OID = new ArrayList();
             //SqlCommand cmd = new SqlCommand("select [OrderID] FROM [Order] where Status = 'Pending' or Status = 'Changes Required' AND TechnicianID = '" + techID + "'", con); //only add pending 
-            SqlCommand cmd = new SqlCommand("select [OrderID] FROM [Order] where TechnicianID = '" + o1.techID + "' AND Status = 'Pending' or Status = 'Changes Required'", con); //only add pending 
+            SqlCommand cmd = new SqlCommand("select [OrderID] FROM [Order] where TechnicianID = '" + o1.techID + "' AND Status = 'Pending'", con); //only add pending 
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {

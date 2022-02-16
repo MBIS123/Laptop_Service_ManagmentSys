@@ -298,6 +298,7 @@
             // 
             // cmbBxYear
             // 
+            this.cmbBxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBxYear.FormattingEnabled = true;
             this.cmbBxYear.Items.AddRange(new object[] {
             "2021"});
