@@ -94,17 +94,17 @@
             this.panelMenu.Location = new System.Drawing.Point(2, 1);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(217, 537);
+            this.panelMenu.Size = new System.Drawing.Size(217, 666);
             this.panelMenu.TabIndex = 6;
             // 
             // btnLogOut
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLogOut.Location = new System.Drawing.Point(36, 440);
+            this.btnLogOut.Location = new System.Drawing.Point(26, 597);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(151, 30);
+            this.btnLogOut.Size = new System.Drawing.Size(173, 40);
             this.btnLogOut.TabIndex = 5;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
@@ -116,11 +116,11 @@
             // 
             this.btnAccess_Profile.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnAccess_Profile.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAccess_Profile.Location = new System.Drawing.Point(36, 256);
+            this.btnAccess_Profile.Location = new System.Drawing.Point(26, 306);
             this.btnAccess_Profile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccess_Profile.Name = "btnAccess_Profile";
             this.btnAccess_Profile.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnAccess_Profile.Size = new System.Drawing.Size(151, 30);
+            this.btnAccess_Profile.Size = new System.Drawing.Size(173, 40);
             this.btnAccess_Profile.TabIndex = 4;
             this.btnAccess_Profile.Text = "Profile";
             this.btnAccess_Profile.UseVisualStyleBackColor = false;
@@ -132,11 +132,11 @@
             // 
             this.btnAccess_Dashboard.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnAccess_Dashboard.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAccess_Dashboard.Location = new System.Drawing.Point(36, 204);
+            this.btnAccess_Dashboard.Location = new System.Drawing.Point(26, 245);
             this.btnAccess_Dashboard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccess_Dashboard.Name = "btnAccess_Dashboard";
             this.btnAccess_Dashboard.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnAccess_Dashboard.Size = new System.Drawing.Size(151, 30);
+            this.btnAccess_Dashboard.Size = new System.Drawing.Size(173, 40);
             this.btnAccess_Dashboard.TabIndex = 2;
             this.btnAccess_Dashboard.Text = "Dashboard";
             this.btnAccess_Dashboard.UseVisualStyleBackColor = false;
@@ -146,10 +146,10 @@
             // picMenuProfile
             // 
             this.picMenuProfile.Image = ((System.Drawing.Image)(resources.GetObject("picMenuProfile.Image")));
-            this.picMenuProfile.Location = new System.Drawing.Point(81, 327);
+            this.picMenuProfile.Location = new System.Drawing.Point(76, 417);
             this.picMenuProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picMenuProfile.Name = "picMenuProfile";
-            this.picMenuProfile.Size = new System.Drawing.Size(55, 62);
+            this.picMenuProfile.Size = new System.Drawing.Size(63, 82);
             this.picMenuProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMenuProfile.TabIndex = 1;
             this.picMenuProfile.TabStop = false;
@@ -158,7 +158,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblName.Location = new System.Drawing.Point(46, 397);
+            this.lblName.Location = new System.Drawing.Point(44, 507);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(66, 25);
             this.lblName.TabIndex = 0;
@@ -169,7 +169,7 @@
             this.picLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(46, 22);
+            this.picLogo.Location = new System.Drawing.Point(46, 60);
             this.picLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(125, 98);
@@ -182,17 +182,17 @@
             this.panelWidget_Comp.BackColor = System.Drawing.Color.Khaki;
             this.panelWidget_Comp.Controls.Add(this.lblWidg_TextCompServ);
             this.panelWidget_Comp.Controls.Add(this.lblWidg_ValueCompServ);
-            this.panelWidget_Comp.Location = new System.Drawing.Point(978, 46);
+            this.panelWidget_Comp.Location = new System.Drawing.Point(1085, 59);
             this.panelWidget_Comp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelWidget_Comp.Name = "panelWidget_Comp";
-            this.panelWidget_Comp.Size = new System.Drawing.Size(207, 75);
+            this.panelWidget_Comp.Size = new System.Drawing.Size(237, 100);
             this.panelWidget_Comp.TabIndex = 9;
             // 
             // lblWidg_TextCompServ
             // 
             this.lblWidg_TextCompServ.AutoSize = true;
             this.lblWidg_TextCompServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblWidg_TextCompServ.Location = new System.Drawing.Point(55, 11);
+            this.lblWidg_TextCompServ.Location = new System.Drawing.Point(63, 13);
             this.lblWidg_TextCompServ.Name = "lblWidg_TextCompServ";
             this.lblWidg_TextCompServ.Size = new System.Drawing.Size(171, 72);
             this.lblWidg_TextCompServ.TabIndex = 0;
@@ -214,10 +214,10 @@
             this.panelWidget_Urg.BackColor = System.Drawing.Color.Khaki;
             this.panelWidget_Urg.Controls.Add(this.lblWidg_ValueUrgServ);
             this.panelWidget_Urg.Controls.Add(this.lblWidg_TextUrgServ);
-            this.panelWidget_Urg.Location = new System.Drawing.Point(685, 46);
+            this.panelWidget_Urg.Location = new System.Drawing.Point(756, 59);
             this.panelWidget_Urg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelWidget_Urg.Name = "panelWidget_Urg";
-            this.panelWidget_Urg.Size = new System.Drawing.Size(207, 75);
+            this.panelWidget_Urg.Size = new System.Drawing.Size(237, 100);
             this.panelWidget_Urg.TabIndex = 8;
             // 
             // lblWidg_ValueUrgServ
@@ -235,7 +235,7 @@
             // 
             this.lblWidg_TextUrgServ.AutoSize = true;
             this.lblWidg_TextUrgServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblWidg_TextUrgServ.Location = new System.Drawing.Point(75, 23);
+            this.lblWidg_TextUrgServ.Location = new System.Drawing.Point(96, 30);
             this.lblWidg_TextUrgServ.Name = "lblWidg_TextUrgServ";
             this.lblWidg_TextUrgServ.Size = new System.Drawing.Size(110, 36);
             this.lblWidg_TextUrgServ.TabIndex = 0;
@@ -246,10 +246,10 @@
             this.panelWidget_Pend.BackColor = System.Drawing.Color.Khaki;
             this.panelWidget_Pend.Controls.Add(this.lblWidg_ValuePendServ);
             this.panelWidget_Pend.Controls.Add(this.lblWidg_TextPendServ);
-            this.panelWidget_Pend.Location = new System.Drawing.Point(391, 46);
+            this.panelWidget_Pend.Location = new System.Drawing.Point(436, 59);
             this.panelWidget_Pend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelWidget_Pend.Name = "panelWidget_Pend";
-            this.panelWidget_Pend.Size = new System.Drawing.Size(207, 75);
+            this.panelWidget_Pend.Size = new System.Drawing.Size(237, 100);
             this.panelWidget_Pend.TabIndex = 5;
             // 
             // lblWidg_ValuePendServ
@@ -267,7 +267,7 @@
             // 
             this.lblWidg_TextPendServ.AutoSize = true;
             this.lblWidg_TextPendServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblWidg_TextPendServ.Location = new System.Drawing.Point(77, 23);
+            this.lblWidg_TextPendServ.Location = new System.Drawing.Point(86, 30);
             this.lblWidg_TextPendServ.Name = "lblWidg_TextPendServ";
             this.lblWidg_TextPendServ.Size = new System.Drawing.Size(129, 36);
             this.lblWidg_TextPendServ.TabIndex = 0;
@@ -277,11 +277,11 @@
             // 
             this.btnAccess_AllServ.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnAccess_AllServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAccess_AllServ.Location = new System.Drawing.Point(864, 302);
+            this.btnAccess_AllServ.Location = new System.Drawing.Point(1001, 412);
             this.btnAccess_AllServ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccess_AllServ.Name = "btnAccess_AllServ";
             this.btnAccess_AllServ.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnAccess_AllServ.Size = new System.Drawing.Size(151, 30);
+            this.btnAccess_AllServ.Size = new System.Drawing.Size(173, 40);
             this.btnAccess_AllServ.TabIndex = 3;
             this.btnAccess_AllServ.Text = "Edit";
             this.btnAccess_AllServ.UseVisualStyleBackColor = false;
@@ -304,12 +304,12 @@
             this.CollectionDate,
             this.Comments,
             this.Laptop});
-            this.dataGrid_AllServ.Location = new System.Drawing.Point(0, 46);
+            this.dataGrid_AllServ.Location = new System.Drawing.Point(0, 50);
             this.dataGrid_AllServ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGrid_AllServ.Name = "dataGrid_AllServ";
             this.dataGrid_AllServ.RowHeadersWidth = 51;
             this.dataGrid_AllServ.RowTemplate.Height = 29;
-            this.dataGrid_AllServ.Size = new System.Drawing.Size(1015, 242);
+            this.dataGrid_AllServ.Size = new System.Drawing.Size(1174, 336);
             this.dataGrid_AllServ.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn7
@@ -417,21 +417,21 @@
             this.panelTable_Pend.Controls.Add(this.lblTable_TextAllServ);
             this.panelTable_Pend.Controls.Add(this.dataGrid_AllServ);
             this.panelTable_Pend.Controls.Add(this.btnAccess_AllServ);
-            this.panelTable_Pend.Location = new System.Drawing.Point(262, 139);
+            this.panelTable_Pend.Location = new System.Drawing.Point(263, 196);
             this.panelTable_Pend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelTable_Pend.Name = "panelTable_Pend";
-            this.panelTable_Pend.Size = new System.Drawing.Size(1018, 340);
+            this.panelTable_Pend.Size = new System.Drawing.Size(1198, 459);
             this.panelTable_Pend.TabIndex = 13;
             // 
             // btnRefresh_AllServ
             // 
             this.btnRefresh_AllServ.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnRefresh_AllServ.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRefresh_AllServ.Location = new System.Drawing.Point(698, 302);
+            this.btnRefresh_AllServ.Location = new System.Drawing.Point(822, 412);
             this.btnRefresh_AllServ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh_AllServ.Name = "btnRefresh_AllServ";
             this.btnRefresh_AllServ.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnRefresh_AllServ.Size = new System.Drawing.Size(151, 30);
+            this.btnRefresh_AllServ.Size = new System.Drawing.Size(173, 40);
             this.btnRefresh_AllServ.TabIndex = 8;
             this.btnRefresh_AllServ.Text = "Refresh";
             this.btnRefresh_AllServ.UseVisualStyleBackColor = false;
@@ -529,7 +529,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightYellow;
-            this.ClientSize = new System.Drawing.Size(1309, 500);
+            this.ClientSize = new System.Drawing.Size(1496, 666);
             this.ControlBox = false;
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelWidget_Comp);
