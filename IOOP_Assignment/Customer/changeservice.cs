@@ -55,7 +55,7 @@ namespace IOOP_Assignment
             {
                 if (obj0.validationstatus() == true)
                 {
-                    lbl_decided_change_service.Text = ("You have change service from " + decide_change_service + " with " + Type + " successfully");
+                    lbl_decided_change_service.Text = ("You have changed service to " + decide_change_service + " with " + Type + " successfully");
                     Customers obj1 = new Customers(name);
                     if (index == 1)
                     {
