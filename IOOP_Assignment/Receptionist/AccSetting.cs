@@ -133,8 +133,6 @@ namespace IOOP_Assignment
 
         private void linklblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmLogin flogout = new frmLogin();
-            flogout.Show();
             this.Hide();
         }
     }

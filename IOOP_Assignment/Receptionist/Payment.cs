@@ -61,7 +61,6 @@ namespace IOOP_Assignment
                             //Calculate the balanced
                             float bal = (float)(Amt - chckTotalAmt);
                             frmReceipt fReceipt = new frmReceipt();
-                            this.Hide();
                             fReceipt.Show();
 
                             //Pass values to receipt for printing
@@ -124,8 +123,6 @@ namespace IOOP_Assignment
 
         private void linklblLogout1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmLogin flogout = new frmLogin();
-            flogout.Show();
             this.Hide();
         }
     }
