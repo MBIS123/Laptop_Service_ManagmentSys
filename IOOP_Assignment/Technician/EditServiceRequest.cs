@@ -130,14 +130,14 @@ namespace IOOP_Assignment
                     {
                         Technician obj2 = new Technician(technician_ID);
                         MessageBox.Show(obj2.updateEditServReq(orderid_forselection, status, richServDescription.Text, CollectionDatePicker.Value.Date));
-                        if (radioCompleted.Checked)
+                        if (radioCompleted.Checked || radioChangesRequired.Checked) 
                         {
-                            comboOrderID.Items.Remove(comboOrderID.SelectedItem);
+                            comboOrderID.Items.Remove(comboOrderID.SelectedItem); //remove from combobox
                         }
                         comboOrderID.Text = String.Empty;
                         richServDescription.Text = String.Empty;
                         Users u = new Users();
-                        u.assignOrder();
+                        u.assignOrder(); //assign new order if current order marked as 'changes required' or 'completed'
                     }
                     else
                     {
