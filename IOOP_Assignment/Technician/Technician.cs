@@ -133,8 +133,9 @@ namespace IOOP_Assignment
             con.Open();
 
             techPassword = pw;
+            
 
-            SqlCommand cmd = new SqlCommand("update [Users] set [Password] = '" + techPassword + "' where [UserID] = (select Users.[UserID] from Technician, Users where Technician.UserID = Users.UserID)", con);
+            SqlCommand cmd = new SqlCommand("update [Users] set [Password] = '" + techPassword + "' where [UserID] = (select Technician.[UserID] from Technician where Technician.[TechnicianID] = '" + techID + "')", con);
             //("select [Password] from Users, Technician where Users.UserID = Technician.UserID and Technician.Name = '" + o1.techName + "'", con);
 
             int i = cmd.ExecuteNonQuery();

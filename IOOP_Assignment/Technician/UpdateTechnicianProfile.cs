@@ -13,6 +13,7 @@ namespace IOOP_Assignment
     public partial class UpdateTechnicianProfile : Form
     {
         public static string name;
+        public static int id;
         public UpdateTechnicianProfile()
         {
             InitializeComponent();
@@ -21,6 +22,13 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
             name = n;
+        }
+
+        public UpdateTechnicianProfile(string n, int i)
+        {
+            InitializeComponent();
+            name = n;
+            id = i;
         }
 
         //loading details into fields
@@ -83,7 +91,7 @@ namespace IOOP_Assignment
         private void btnSavePW_Click(object sender, EventArgs e)
         {
             //validation part 1: check if password matches original password
-            Technician obj1 = new Technician(name);
+            Technician obj1 = new Technician(name, id);
             Technician.viewTechProfile(obj1);
             if (txtCurrentPW.Text == obj1.TechPassword)
             {

@@ -113,7 +113,6 @@ namespace IOOP_Assignment
 
             con.Open();
             SqlCommand cmd0 = new SqlCommand("select CustomerID from [Customer] where Name = '" + name + "'", con);
-            MessageBox.Show(name);
             string customerID = cmd0.ExecuteScalar().ToString();
             // first, i use customer name to find customer id
 
@@ -181,7 +180,6 @@ namespace IOOP_Assignment
             string stat;
             con.Open();
             SqlCommand cmd = new SqlCommand("select CustomerID from [Customer] where Name = '" + name + "'", con);
-            MessageBox.Show(name);
             string customerID = cmd.ExecuteScalar().ToString();
 
             SqlCommand cmd7 = new SqlCommand("update [Order] set Comments ='" + c  + "' where [CustomerID] = '" + customerID + "'" , con);

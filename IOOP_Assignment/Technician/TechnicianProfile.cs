@@ -13,6 +13,7 @@ namespace IOOP_Assignment
     public partial class TechnicianProfile : Form
     {
         public static string name;
+        public static int tech_ID;
 
         public TechnicianProfile()
         {
@@ -23,6 +24,13 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
             name = n;
+        }
+
+        public TechnicianProfile(string n, int tid)
+        {
+            InitializeComponent();
+            name = n;
+            tech_ID = tid;
         }
 
         //loading details into Profile
@@ -53,7 +61,7 @@ namespace IOOP_Assignment
         private void btnAccess_EditProfile_Click(object sender, EventArgs e)
         {
             this.Hide();
-            UpdateTechnicianProfile utp = new UpdateTechnicianProfile(name);
+            UpdateTechnicianProfile utp = new UpdateTechnicianProfile(name, tech_ID);
             utp.StartPosition = FormStartPosition.Manual;
             utp.Location = new Point(100, 100);
             utp.ShowDialog();

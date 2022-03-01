@@ -66,7 +66,7 @@ namespace IOOP_Assignment
         private void btnAccess_Profile_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TechnicianProfile tp = new TechnicianProfile(name);
+            TechnicianProfile tp = new TechnicianProfile(name, technician_ID);
             tp.StartPosition = FormStartPosition.Manual;
             tp.Location = new Point(100, 100);
             tp.ShowDialog();
