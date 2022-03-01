@@ -172,7 +172,7 @@ namespace IOOP_Assignment
             SqlCommand cmd = new SqlCommand("select COUNT(OrderID) FROM [Order] where Status = 'Pending' AND TechnicianID = '" + o1.techID + "'", con); 
             o1.numberofpending = (Int32) cmd.ExecuteScalar();
             //no. of urgent jobs belonging to technician with specific techID
-            SqlCommand cmd2 = new SqlCommand("select COUNT(OrderID) FROM [Order] where [Service Type] = 'Urgent' AND TechnicianID = '" + o1.techID + "'", con);
+            SqlCommand cmd2 = new SqlCommand("select COUNT(OrderID) FROM [Order] where [Service Type] = 'Urgent' AND [Status] = 'Pending' AND TechnicianID = '" + o1.techID + "'", con);
             o1.numberofurgent = (Int32) cmd2.ExecuteScalar();
             //no. of completed jobs in the month belonging to technician with specific techID
             SqlCommand cmd3 = new SqlCommand("select COUNT(OrderID) FROM [Order] where Status = 'Completed' AND TechnicianID = '" + o1.techID + "' AND Month([Collection Date]) = Month(GETDATE())", con); 
